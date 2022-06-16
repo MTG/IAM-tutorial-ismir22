@@ -1,55 +1,23 @@
-# Markdown Files
+# Melodic Analysis
 
-Whether you write your book's content in Jupyter Notebooks (`.ipynb`) or
-in regular markdown files (`.md`), you'll write in the same flavor of markdown
-called **MyST Markdown**.
-This is a simple file to help you get started and show off some syntax.
+The melodic framework of the Indian Art Music traditions is built around the concept of rāga in Carnatic and raag in Hindustani music. Built on top of a single tonic (shadjam), the rāga provides the rules for the melodic performance, which combines precomposed and improvised elements.  In this part of the tutorial, attendees will study tools for the identification of the tonic [7], and the extraction of the predominant melody, in the form of continuous and time-aligned pitch contours [8]. These important features are subsequently used for the tasks of intonation analysis [9], melodic pattern recognition [10, 11], and rāga identification [12, 13, 14]. 
 
-## What is MyST?
+## Important Melodic Concepts in Indian Art Music
 
-MyST stands for "Markedly Structured Text". It
-is a slight variation on a flavor of markdown called "CommonMark" markdown,
-with small syntax extensions to allow you to write **roles** and **directives**
-in the Sphinx ecosystem.
+svara, raga, gamaka, prayoga, pidi, pakad etc...
 
-For more about MyST, see [the MyST Markdown Overview](https://jupyterbook.org/content/myst.html).
+### Hindustani
 
-## Sample Roles and Directives
+Maybe Kaustuv here?
 
-Roles and directives are two of the most powerful tools in Jupyter Book. They
-are kind of like functions, but written in a markup language. They both
-serve a similar purpose, but **roles are written in one line**, whereas
-**directives span many lines**. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.
+### Carnatic
 
-Here is a "note" directive:
+Brindha + Lara here
 
-```{note}
-Here is a note
-```
+## Task 1...
 
-It will be rendered in a special box when you build your book.
+task 1 guide 
 
-Here is an inline directive to refer to a document: {doc}`markdown-notebooks`.
+## Task 2...
 
-
-## Citations
-
-You can also cite references that are stored in a `bibtex` file. For example,
-the following syntax: `` {cite}`holdgraf_evidence_2014` `` will render like
-this: {cite}`holdgraf_evidence_2014`.
-
-Moreover, you can insert a bibliography into your page with this syntax:
-The `{bibliography}` directive must be used for all the `{cite}` roles to
-render properly.
-For example, if the references for your book are stored in `references.bib`,
-then the bibliography is inserted with:
-
-```{bibliography}
-```
-
-## Learn more
-
-This is just a simple starter to get you started.
-You can learn a lot more at [jupyterbook.org](https://jupyterbook.org).
+task 2 guide
