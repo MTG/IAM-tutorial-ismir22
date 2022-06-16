@@ -1,0 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: introduction
+- file: corpora_and_datasets
+- file: melodic_analysis
+- file: rhythmic_analysis
+- file: structure_analysis
+- file: timbre_analysis
+- file: conclusion
