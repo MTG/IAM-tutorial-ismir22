@@ -1,0 +1,27 @@
+format: jb-book
+root: landing
+parts:
+- caption: Introduction
+  chapters:
+  - file: introduction
+- caption: Corpora and Datasets
+  chapters:
+  - file: corpora_and_datasets
+- caption: Melodic Analysis
+  chapters:
+  - file: melodic_analysis
+- caption: Rhythmic Analysis
+  chapters:
+  - file: rhythmic_analysis
+- caption: Structure Analysis
+  chapters:
+  - file: structure_analysis
+- caption: Timbre Analysis
+  chapters:
+  - file: timbre_analysis
+- caption: Conclusion
+  chapters:
+  - file: conclusion
+- caption: Resources
+  chapters:
+  - file: resources
