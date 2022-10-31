@@ -3,25 +3,27 @@ root: landing
 parts:
 - caption: Introduction
   chapters:
-  - file: introduction
+    - file: introduction
 - caption: Corpora and Datasets
   chapters:
-  - file: corpora_and_datasets
+    - file: corpora_and_datasets/corpora
+    - file: corpora_and_datasets/datasets
 - caption: Melodic Analysis
   chapters:
-  - file: melodic_analysis
+    - file: melodic_analysis/intro
+    - file: melodic_analysis/melody-extraction
 - caption: Rhythmic Analysis
   chapters:
-  - file: rhythmic_analysis
+    - file: rhythmic_analysis/intro
 - caption: Structure Analysis
   chapters:
-  - file: structure_analysis
+    - file: structure_analysis/intro
 - caption: Timbre Analysis
   chapters:
-  - file: timbre_analysis
+    - file: timbre_analysis/intro
 - caption: Conclusion
   chapters:
-  - file: conclusion
+    - file: conclusion
 - caption: Resources
   chapters:
-  - file: resources
+    - file: resources

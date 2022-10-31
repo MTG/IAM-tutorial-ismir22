@@ -21,7 +21,7 @@
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -37,7 +37,7 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -381,31 +381,37 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#datasets">
-   Datasets
+  <a class="reference internal nav-link" href="#dunya-corpora">
+   Dunya corpora
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#saraga">
-     Saraga
+    <a class="reference internal nav-link" href="#dunya-website">
+     Dunya website
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#varnam-dataset">
-     Varnam Dataset
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compmusic">
-     CompMusic
+    <a class="reference internal nav-link" href="#dunya-python-api">
+     Dunya Python API
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#accessing">
-   Accessing
+  <a class="reference internal nav-link" href="#datasets">
+   Datasets
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mirdata">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       mirdata
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -427,31 +433,37 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#datasets">
-   Datasets
+  <a class="reference internal nav-link" href="#dunya-corpora">
+   Dunya corpora
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#saraga">
-     Saraga
+    <a class="reference internal nav-link" href="#dunya-website">
+     Dunya website
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#varnam-dataset">
-     Varnam Dataset
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compmusic">
-     CompMusic
+    <a class="reference internal nav-link" href="#dunya-python-api">
+     Dunya Python API
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#accessing">
-   Accessing
+  <a class="reference internal nav-link" href="#datasets">
+   Datasets
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mirdata">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       mirdata
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -465,25 +477,66 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="corpora-and-datasets">
 <h1>Corpora and Datasets<a class="headerlink" href="#corpora-and-datasets" title="Permalink to this headline">#</a></h1>
-<p>Open acccess datasets for the computaAn introduction to interacting with the Carnatic and Hindustani portion of the Dunya corpora [2] and the derivative dataset, Saraga, a large and open dataset, compiled and organized alongside experts and practitioners of the traditions [3]. We also present the tools that can be used to access and interact with the data, e.g. PyCompMusic [4], mirdata [5] or MusicBrainz [6].tional study of this music</p>
+<p>Corpus-based research builds on top of collections of data</p>
+<p>An introduction to interacting with the Carnatic and Hindustani portion of the Dunya corpora [2] and the derivative dataset, Saraga, a large and open dataset, compiled and organized alongside experts and practitioners of the traditions [3]. We also present the tools that can be used to access and interact with the data, e.g. PyCompMusic [4], mirdata [5] or MusicBrainz [6].</p>
+<section id="dunya-corpora">
+<h2>Dunya corpora<a class="headerlink" href="#dunya-corpora" title="Permalink to this headline">#</a></h2>
+<p>Dunya comprises the music corpora and related software tools that have been developed as part of the CompMusic project. These corpora have been created with the aim of studying particular music traditions and they include audio recordings plus complementary musically-relevant metadata, expert annotations, and automatically-extracted features.</p>
+<p>The metadata is provided by <a class="reference external" href="https://musicbrainz.org/">MusicBrainz</a>. You can use MusicBrainz to browse the recordings included in the Dunya corpora and the respective metadata. In fact, all recordings in Dunya are tagged with a MusicBrainzID (stylized as <code class="docutils literal notranslate"><span class="pre">mbid</span></code>), which also serves as a unique identifier for each entry in the Dunya database.</p>
+<p>In Dunya, each corpus has specific characteristics and the developed software tools allow to process the available information in order to study and explore the characteristics of each musical repertoire. Let us now review the tools to access, browse, and parse the data in the Dunya corpora:</p>
+<section id="dunya-website">
+<h3>Dunya website<a class="headerlink" href="#dunya-website" title="Permalink to this headline">#</a></h3>
+<p>You can browse through the Dunya corpora using <a class="reference external" href="https://dunya.compmusic.upf.edu/">the Dunya website</a>.</p>
+<figure class="align-default" id="dunya-traditions">
+<img alt="Dunya traditions" src="_images/dunya_1.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Musical traditions represented in the Dunya corpora</span><a class="headerlink" href="#dunya-traditions" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Although focusing on Carnatic and Hindustani music in this tutorial, note that Dunya opens the door for computational research of other traditions too! The Dunya website includes also an interactive interface to listen to some examples of the data in the corpora and visualize the available annotations and features.</p>
+</section>
+<section id="dunya-python-api">
+<h3>Dunya Python API<a class="headerlink" href="#dunya-python-api" title="Permalink to this headline">#</a></h3>
+<p>The data in Dunya can be programatically browsed, parsed and downloaded using the Dunya Python API in <a class="reference external" href="https://dunya.compmusic.upf.edu/docs/search.html">pycompmusic</a>. We have ported pycompmusic into compIAM, so the corpora can be accessed through compIAM as well. Through this software, you can parse statistics in the databaset, while the data in Dunya can be filtered by tradition, artist, raaga, taala.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To access the data in Dunya, you need a personal access token. You get the said token by registering to Dunya using the website.</p>
+</div>
+<p>You can easily initialize a Corpora instance of compIAM as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">load_corpora</span>
+<span class="n">carnatic_corpora</span> <span class="o">=</span> <span class="n">load_corpora</span><span class="p">(</span><span class="s2">&quot;carnatic&quot;</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="s2">&quot;your-token-goes-here&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Carnatic and Hindustani corpora are both divided in two parts, one part licensed under Creative Commons 4.0 which can be openly shared for research purposes, while the other part is restricted and is only shared under an explicit research-related request. You can request access to the non-CC part of the corpora through the Dunya website. If granted, your access token will allow you to access these data. Set the cc parameter to False in <code class="docutils literal notranslate"><span class="pre">compiam.load_corpora()</span></code> to load these collection.</p>
+</div>
+<p>Our corpora class include methods to get an overview of the available data in the database. Let us get you some examples below:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">get_collection()</span></code>: prints you out all available recordings in the collection.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_recording(mbid=&lt;specific-musicbrainz-id&gt;)</span></code>: given a MusicBrainz ID, prints out the available data for the associated recording.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_recording(mbid=&lt;specific-musicbrainz-id&gt;)</span></code>: given a MusicBrainz ID, prints out the available data for the associated recording.</p></li>
+</ul>
+</section>
+</section>
 <section id="datasets">
 <h2>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">#</a></h2>
-<section id="saraga">
-<h3>Saraga<a class="headerlink" href="#saraga" title="Permalink to this headline">#</a></h3>
-<p>Intro to saraga, link to documentation</p>
+<section id="mirdata">
+<h3><code class="docutils literal notranslate"><span class="pre">mirdata</span></code><a class="headerlink" href="#mirdata" title="Permalink to this headline">#</a></h3>
+<p><a class="reference external" href="https://mirdata.readthedocs.io/en/stable/">mirdata</a> is an open-source and pip-installable Python library that provides tools for working with common Music Information Retrieval (MIR) datasets. Given the crucial importance and relevance of such a software for data and corpus-driven research, we have done a great effort integrating several IAM-centered datasets in mirdata. To date, the following datasets can be found in the latest mirdata release:</p>
+<ul class="simple">
+<li><p>Carnatic collection of Saraga [x]</p></li>
+<li><p>Hindustani collection of Saraga [x]</p></li>
+<li><p>Carnatic Varnam Dataset [x]</p></li>
+<li><p>Carnatic Music Rhythm [x]</p></li>
+<li><p>Hindustani Music Rhythm [x]</p></li>
+<li><p>Indian Art Music Raga Dataset [x]</p></li>
+<li><p>Mridangam Stroke Dataset [x]</p></li>
+<li><p>Four-Way Tabla Dataset (ISMIR 2021) [x]</p></li>
+</ul>
+<p>compIAM provides access to these datasets through the mirdata loaders. Therefore, by using an alias of mirdata method <code class="docutils literal notranslate"><span class="pre">mirdata.initialize()</span></code> as <code class="docutils literal notranslate"><span class="pre">compiam.initialize()</span></code> you can also access the datasets
+integrated to mirdata!</p>
 </section>
-<section id="varnam-dataset">
-<h3>Varnam Dataset<a class="headerlink" href="#varnam-dataset" title="Permalink to this headline">#</a></h3>
-<p>intro, link</p>
-</section>
-<section id="compmusic">
-<h3>CompMusic<a class="headerlink" href="#compmusic" title="Permalink to this headline">#</a></h3>
-<p>intro, link</p>
-</section>
-</section>
-<section id="accessing">
-<h2>Accessing<a class="headerlink" href="#accessing" title="Permalink to this headline">#</a></h2>
-<p>Standardized tool to access each datasets</p>
 </section>
 </section>
 

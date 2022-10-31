@@ -1,0 +1,721 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Datasets &#8212; Computational Methods for Supporting Corpus-Based Research on Indian Art Music</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction to the IAM melodic framework" href="../melodic_analysis/intro.html" />
+    <link rel="prev" title="Accessing the Dunya Corpora" href="corpora.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Methods for Supporting Corpus-Based Research on Indian Art Music</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../landing.html">
+                    Computational Methods for Supporting Corpus-Based Research on Indian Art Music
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Corpora and Datasets
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="corpora.html">
+   Accessing the Dunya Corpora
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Datasets
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Melodic Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../melodic_analysis/intro.html">
+   Introduction to the IAM melodic framework
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../melodic_analysis/melody-extraction.html">
+   Melodic analysis tools
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Rhythmic Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../rhythmic_analysis/intro.html">
+   Rhythmic Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Structure Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../structure_analysis/intro.html">
+   Introduction to musical structure in IAM
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Timbre Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../timbre_analysis/intro.html">
+   Introduction to timbre in IAM
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Conclusion
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../conclusion.html">
+   Markdown Files
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resources.html">
+   Resources
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/MTG/compIAM/master?urlpath=tree/webbook/corpora_and_datasets/datasets.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/MTG/compIAM/webbook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/MTG/compIAM/webbook/issues/new?title=Issue%20on%20page%20%2Fcorpora_and_datasets/datasets.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/corpora_and_datasets/datasets.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mirdata">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     mirdata
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Datasets</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mirdata">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     mirdata
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="datasets">
+<span id="id1"></span><h1>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">#</a></h1>
+<p>Datasets are key for the data-driven computational research of a music tradition. Thoroughly designed collections of data that represent the most relevant aspects of a musical repertoire may open the door for solutions of several problems. For that reason, huge efforts have been made within the scope of this tutorial and <code class="docutils literal notranslate"><span class="pre">compiam</span></code> to (1) boost the visibility and access to Carnatic and Hindustani music datasets, and (2) provide standardized tools to get and use the said datasets.</p>
+<section id="mirdata">
+<h2><code class="docutils literal notranslate"><span class="pre">mirdata</span></code><a class="headerlink" href="#mirdata" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://mirdata.readthedocs.io/en/stable/">mirdata</a> is an open-source and pip-installable Python library that provides tools for working with common Music Information Retrieval (MIR) datasets. Given the crucial importance and relevance of such a software for data and corpus-driven research, we have done a great efforts to integrate several IAM-centered datasets into mirdata. To date, the following datasets can be found in the latest mirdata release:</p>
+<ul class="simple">
+<li><p>Carnatic collection of Saraga [x]</p></li>
+<li><p>Hindustani collection of Saraga [x]</p></li>
+<li><p>Carnatic Varnam Dataset [x]</p></li>
+<li><p>Carnatic Music Rhythm [x]</p></li>
+<li><p>Hindustani Music Rhythm [x]</p></li>
+<li><p>Indian Art Music Raga Dataset [x]</p></li>
+<li><p>Mridangam Stroke Dataset [x]</p></li>
+<li><p>Four-Way Tabla Dataset (ISMIR 2021) [x]</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">compIAM</span></code> provides access to these datasets through the mirdata loaders.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can use an alias of the mirdata method <code class="docutils literal notranslate"><span class="pre">mirdata.initialize()</span></code> as <code class="docutils literal notranslate"><span class="pre">compiam.load_dataset()</span></code> to access the mirdata loaders for Indian Art Music datasets from our library!</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="c1"># %pip install compiam</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">compiam</span>
+<span class="n">saraga_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;saraga_carnatic&quot;</span><span class="p">)</span>
+
+<span class="c1">## Let&#39;s get a random track from the dataset!</span>
+<span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Track(
+  audio_ghatam_path=&quot;...tic/Dr S Sundar at Arkay by S Sundar/Enadhu Manam Kavalai/Enadhu Manam Kavalai.multitrack-ghatam.mp3&quot;,
+  audio_mridangam_left_path=&quot;... Sundar at Arkay by S Sundar/Enadhu Manam Kavalai/Enadhu Manam Kavalai.multitrack-mridangam-left.mp3&quot;,
+  audio_mridangam_right_path=&quot;...Sundar at Arkay by S Sundar/Enadhu Manam Kavalai/Enadhu Manam Kavalai.multitrack-mridangam-right.mp3&quot;,
+  audio_path=&quot;...araga1.5_carnatic/Dr S Sundar at Arkay by S Sundar/Enadhu Manam Kavalai/Enadhu Manam Kavalai.mp3.mp3&quot;,
+  audio_violin_path=&quot;...tic/Dr S Sundar at Arkay by S Sundar/Enadhu Manam Kavalai/Enadhu Manam Kavalai.multitrack-violin.mp3&quot;,
+  audio_vocal_path=&quot;...atic/Dr S Sundar at Arkay by S Sundar/Enadhu Manam Kavalai/Enadhu Manam Kavalai.multitrack-vocal.mp3&quot;,
+  audio_vocal_s_path=&quot;...ic/Dr S Sundar at Arkay by S Sundar/Enadhu Manam Kavalai/Enadhu Manam Kavalai.multitrack-vocal-s.mp3&quot;,
+  ctonic_path=&quot;...ga1.5_carnatic/Dr S Sundar at Arkay by S Sundar/Enadhu Manam Kavalai/Enadhu Manam Kavalai.ctonic.txt&quot;,
+  metadata_path=&quot;...c/saraga1.5_carnatic/Dr S Sundar at Arkay by S Sundar/Enadhu Manam Kavalai/Enadhu Manam Kavalai.json&quot;,
+  phrases_path=None,
+  pitch_path=&quot;...aga1.5_carnatic/Dr S Sundar at Arkay by S Sundar/Enadhu Manam Kavalai/Enadhu Manam Kavalai.pitch.txt&quot;,
+  pitch_vocal_path=None,
+  sama_path=&quot;..._carnatic/Dr S Sundar at Arkay by S Sundar/Enadhu Manam Kavalai/Enadhu Manam Kavalai.sama-manual.txt&quot;,
+  sections_path=None,
+  tempo_path=&quot;...carnatic/Dr S Sundar at Arkay by S Sundar/Enadhu Manam Kavalai/Enadhu Manam Kavalai.tempo-manual.txt&quot;,
+  track_id=&quot;55_Enadhu_Manam_Kavalai&quot;,
+  audio: The track&#39;s audio
+
+        Returns,
+  metadata: ,
+  phrases: ,
+  pitch: ,
+  pitch_vocal: ,
+  sama: ,
+  sections: ,
+  tempo: ,
+  tonic: ,
+)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">compiam.list_datasets()</span></code> to list the available datasets to use.</p>
+</div>
+<p>Accessing the datasets through <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> brings numerous advantages and provides a more standardized and easy integration of the said datasets into our pipelines. See:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1">## Loading all tracks from the dataset</span>
+<span class="n">carnatic_tracks</span> <span class="o">=</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()</span>
+
+<span class="c1">## Get available ragas</span>
+<span class="n">available_raagas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">])</span>
+<span class="n">available_raagas</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">yf</span><span class="o">/</span><span class="mi">3</span><span class="n">lw11pf14m3d33prjyb0l7840000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_78073</span><span class="o">/</span><span class="mf">4020414023.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Get available ragas</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">available_raagas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">available_raagas</span>
+
+<span class="nn">/var/folders/yf/3lw11pf14m3d33prjyb0l7840000gn/T/ipykernel_78073/4020414023.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Get available ragas</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">available_raagas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">available_raagas</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/mirdata/core.py</span> in <span class="ni">__get__</span><span class="nt">(self, obj, cls)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>         <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>             <span class="k">return</span> <span class="bp">self</span>
+<span class="ne">---&gt; </span><span class="mi">46</span>         <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>         <span class="k">return</span> <span class="n">value</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> 
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/mirdata/datasets/saraga_carnatic.py</span> in <span class="ni">metadata</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span>     <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span>     <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">163</span>         <span class="k">return</span> <span class="n">load_metadata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata_path</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span> 
+<span class="g g-Whitespace">    </span><span class="mi">165</span>     <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/mirdata/io.py</span> in <span class="ni">wrapper</span><span class="nt">(file_path_or_obj)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>             <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">22</span>             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>                 <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/smart_open/smart_open_lib.py</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>         <span class="n">transport_params</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span> 
+<span class="ne">--&gt; </span><span class="mi">177</span>     <span class="n">fobj</span> <span class="o">=</span> <span class="n">_shortcut_open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span>         <span class="n">uri</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span>         <span class="n">mode</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.9/site-packages/smart_open/smart_open_lib.py</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>         <span class="n">open_kwargs</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">errors</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span> 
+<span class="ne">--&gt; </span><span class="mi">363</span>     <span class="k">return</span> <span class="n">_builtin_open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span> 
+<span class="g g-Whitespace">    </span><span class="mi">365</span> 
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/Users/genisplaja/mir_datasets/saraga_carnatic/saraga1.5_carnatic/Sumitra Nitin at Arkay by Sumitra Nitin/Dorakuna/Dorakuna.json&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Grouping recordings per raaga is a common organization strategy for the melodic analysis of Carnatic and Hindustani Music. This is very easy!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raaga_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">available_raagas</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">raaga_dict</span><span class="p">[</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Displaying available tracks for raaga </span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span> \
+    <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">available_raagas</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">raaga_dict</span><span class="p">[</span><span class="n">available_raagas</span><span class="p">[</span><span class="mi">0</span><span class="p">]]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cool! However… how about the actual audio and annotations? Let us show how easy is to load the data for a track in the dataset:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Audio</span>
+
+<span class="c1">## Selecting a track for a particular raaga</span>
+<span class="n">example_track</span> <span class="o">=</span> <span class="n">raaga_dict</span><span class="p">[</span><span class="n">available_raagas</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1">## Loading audio directly from track</span>
+<span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">example_track</span><span class="o">.</span><span class="n">audio</span>
+
+<span class="c1">## Loading audio from track methods</span>
+<span class="n">audio_path</span> <span class="o">=</span> <span class="n">example_track</span><span class="o">.</span><span class="n">audio_path</span>  <span class="c1"># Audio path of recording</span>
+<span class="n">audio_2</span><span class="p">,</span> <span class="n">sr_2</span> <span class="o">=</span> <span class="n">example_track</span><span class="o">.</span><span class="n">load_audio</span><span class="p">(</span><span class="n">audio_path</span><span class="p">)</span>  <span class="c1"># Loading audio</span>
+
+<span class="k">assert</span> <span class="n">audio</span> <span class="o">==</span> <span class="n">audio</span>
+<span class="k">assert</span> <span class="n">sr</span> <span class="o">==</span> <span class="n">sr_2</span>
+
+<span class="n">Audio</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./corpora_and_datasets"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="corpora.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Accessing the Dunya Corpora</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../melodic_analysis/intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction to the IAM melodic framework</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Thomas Nuttall, Genís Plaja<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
