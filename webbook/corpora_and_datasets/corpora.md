@@ -1,10 +1,10 @@
 Accessing the Dunya Corpora
 ===========================
 
-Corpus-based research builds on top of collections of data 
+Corpus-based research builds on top of collections of data that have been designed with a purpose, have good coverage, are complete, and the data have good quality, and finally that ensures reusability, i.e. the research built on top of these collections of data ensures *real-world results* {cite}`serra_2014`. The corpora in Dunya, built within the context of the CompMusic project, have been designed taking these requirements into account.
 
 ## What do the corpora include?
-Dunya comprises the music corpora and related software tools that have been developed as part of the CompMusic project. These corpora have been created with the aim of studying particular music traditions and they include audio recordings plus complementary musically-relevant metadata, expert annotations, and automatically-extracted features. 
+The corpora in Dunya include audio recordings plus complementary musically-relevant metadata, expert annotations, and automatically-extracted features.
 
 The metadata is provided by [MusicBrainz](https://musicbrainz.org/). You can use MusicBrainz to browse the recordings included in the Dunya corpora and the respective metadata. In fact, all recordings in Dunya are tagged with a MusicBrainzID (stylized as ``mbid``), which also serves as a unique identifier for each entry in the Dunya database.
 
@@ -29,7 +29,7 @@ Although focusing on Carnatic and Hindustani music in this tutorial, note that D
 The data in Dunya can be programatically browsed, parsed and downloaded using the Dunya Python API in [pycompmusic](https://dunya.compmusic.upf.edu/docs/search.html). We have ported pycompmusic into compIAM, so the corpora can be accessed through compIAM as well. Through this software, you can parse statistics in the databaset, while the data in Dunya can be filtered by tradition, artist, raaga, taala. 
 
 ```{note}
-To access the data in Dunya, you need a personal access token. You get the said token by registering to Dunya using the website.
+To access the data in Dunya, you need a personal access token. You get the said token by registering to Dunya through the website.
 ```
 
 You can easily initialize a Corpora instance of compIAM as:
