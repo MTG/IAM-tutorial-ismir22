@@ -3,7 +3,7 @@
 
 title: Computational Methods for Supporting Corpus-Based Research on Indian Art Music
 author: Thomas Nuttall, Genís Plaja
-#logo: logo.png
+#logo: images/logo.png TODO
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -14,6 +14,13 @@ execute:
 latex:
   latex_documents:
     targetname: book.tex
+
+# Add binder and collab options
+launch_buttons:
+  notebook_interface: "classic"
+  colab_url: "https://colab.research.google.com"
+  thebe: true
+  binderhub_url: "https://mybinder.org"
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:

@@ -7,13 +7,13 @@ The melodic framework of the Indian Art Music traditions is built around the con
 
 svara, raga, gamaka, prayoga, pidi, pakad etc...
 
-### Hindustani
-
-Maybe Kaustuv here?
-
 ### Carnatic
 
 Brindha + Lara here
+
+### Hindustani
+
+Maybe Kaustuv here?
 
 ## Task 1...
 

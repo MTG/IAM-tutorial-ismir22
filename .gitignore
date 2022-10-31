@@ -68,3 +68,9 @@ target/
 
 # Project specific directories
 output/
+
+# Thumbnails
+._*
+
+# build
+./webbook/_build

@@ -3,8 +3,6 @@ Accessing the Dunya Corpora
 
 Corpus-based research builds on top of collections of data 
 
-An introduction to interacting with the Carnatic and Hindustani portion of the Dunya corpora [2] and the derivative dataset, Saraga, a large and open dataset, compiled and organized alongside experts and practitioners of the traditions [3]. We also present the tools that can be used to access and interact with the data, e.g. PyCompMusic [4], mirdata [5] or MusicBrainz [6].
-
 ## What do the corpora include?
 Dunya comprises the music corpora and related software tools that have been developed as part of the CompMusic project. These corpora have been created with the aim of studying particular music traditions and they include audio recordings plus complementary musically-relevant metadata, expert annotations, and automatically-extracted features. 
 
