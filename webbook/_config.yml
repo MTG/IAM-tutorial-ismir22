@@ -19,8 +19,8 @@ latex:
 launch_buttons:
   notebook_interface: "classic"
   colab_url: "https://colab.research.google.com"
-  thebe: true
-  binderhub_url: "https://mybinder.org"
+  #thebe: true
+  #binderhub_url: "https://mybinder.org"
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
