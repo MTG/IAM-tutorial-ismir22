@@ -4,7 +4,7 @@ parts:
 - caption: Introduction
   chapters:
     - file: introduction/welcome
-    - file: introduction/setup
+    - file: introduction/compiam
     - file: introduction/indian-art-music
 
 - caption: Corpora and Datasets

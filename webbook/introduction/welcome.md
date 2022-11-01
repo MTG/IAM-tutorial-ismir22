@@ -1,5 +1,5 @@
-Welcome and tutorial outline
-============================
+Welcome and setup
+=================
 
 Introduction paragraph to project
 
@@ -13,3 +13,8 @@ Melodic analysis - tonic, pitch, patterns and raga identification
 Rhythmic analysis - tala, sama, and percussion pattern tracking
 Structure analysis - section identification
 Timbre analysis - instrument classification
+
+
+## Setting everything up
+
+This webbook composed by pieces of text, audiovisual content, and snippets of code which can be interactively run, for you to get familiar with 

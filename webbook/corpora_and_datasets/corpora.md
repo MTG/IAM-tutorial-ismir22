@@ -1,5 +1,5 @@
-Accessing the Dunya Corpora
-===========================
+(corpora)=
+# Accessing the Dunya Corpora
 
 Corpus-based research builds on top of collections of data that have been designed with a purpose, have good coverage, are complete, and the data have good quality, and finally that ensures reusability, i.e. the research built on top of these collections of data ensures *real-world results* {cite}`serra_2014`. The corpora in Dunya, built within the context of the CompMusic project, have been designed taking these requirements into account.
 
