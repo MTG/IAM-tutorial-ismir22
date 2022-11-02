@@ -38,3 +38,6 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+# Exclude this patterns from build
+exclude_patterns: [.github/*, .venv/*]
