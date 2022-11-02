@@ -10,7 +10,7 @@ The metadata is provided by [`MusicBrainz`](https://musicbrainz.org/). You can u
 
 | **Content types**       | **Brief description**                                                                                            |
 |-------------------------|------------------------------------------------------------------------------------------------------------------|
-| **Audio**               | Music mixtures, in some cases accompanied by multi-track audio for some instruments                              |
+| **Audio**               | Music mixtures, in some cases accompanied by multi-track audio for particular instruments                        |
 | **Metadata**            | Musically-relevant tags <br> **e.g.** raga, tala, artists, concert, album, instruments                           |
 | **Expert annotations**  | Expert and time-aligned annotations for relevant musical concepts <br> **e.g.** sama, melodic phrases, sections  |
 | **Computed features**   | Features computed using baseline methods, <br> **e.g.** pitch tracks, tonic, akshara pulses                      |
@@ -51,6 +51,7 @@ carnatic_corpora = load_corpora("carnatic", cc=True, token="your-token-goes-here
 Carnatic and Hindustani corpora are both divided in two parts, one part licensed under Creative Commons 4.0 which can be openly shared for research purposes, while the other part is restricted and is only shared under an explicit research-related request. You can request access to the non-CC part of the corpora through the Dunya website. If granted, your access token will allow you to access these data. Set the cc parameter to False in ``compiam.load_corpora()`` to load these collection.
 ```
 
+### Browsing the corpora using the API
 Our corpora class include methods to get an overview of the available data in the database. Let us get you some examples below:
 
 * ``get_collection()``: prints you out all available recordings in the collection.
@@ -59,8 +60,16 @@ Our corpora class include methods to get an overview of the available data in th
 * ``list_concerts()``: list all available concerts in the selected database.
 * ``list_available_types(mbid=<artists-musicbrainz-id>)``:  prints you out the available types of file available for a particular recording.
 
-Use these functions (check the entire list out in LINK TO DOCUMENTATION) to browse and explore the corpora. The next step is to get the data!
+See the entire list of methods in the [`compiam` Corpora class documentation](TODO: link).
+
+### Getting the data
+The Dunya Python API also provides methods to get the data. You may use these set of functionalities to parse and/or download into your machine a particular annotation, metadata file, or audio track.
 
 * ``get_annotation(<recording-musicbrainz-id>, <annotation-type>)``: download annotation from database given a recording id and the annotation type.
-* ``save_annotation(<recording-musicbrainz-id>, <annotation-type>, <path/to/save>)``: an extension of ``get_annotation()`` but writiing the annotation to a file.
+* ``save_annotation(<recording-musicbrainz-id>, <annotation-type>, <path/to/save>)``: an extension of ``get_annotation()`` but writing the annotation to a file.
 * ``download_mp3(<recording-musicbrainz-id>, <path/to/save>)``: download and save the audio for a recording.
+
+```{tip}
+Loop through a list of ``mbid`` and run the downloading functions to get the data for a specific collection of recordings.
+```
+
