@@ -1,5 +1,4 @@
-References
-==========
+# References
 
 Need a text here?
 

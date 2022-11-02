@@ -1,5 +1,5 @@
-Timbre in IAM
-=============
+(timbre-intro)=
+# Timbre in IAM
 
 Timbre is a relevant musical dimension in Indian Art Music traditions given the uniqueness of the instrumentation.
 

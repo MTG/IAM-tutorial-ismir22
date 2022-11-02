@@ -1,5 +1,5 @@
-Welcome and setup
-=================
+(welcome-setup)=
+# Welcome and setup
 
 Introduction paragraph to project
 

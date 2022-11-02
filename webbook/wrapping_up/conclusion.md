@@ -1,4 +1,4 @@
-Concluding the tutorial
-=======================
+(conclusion)=
+# Concluding the tutorial
 
 Final remarks?

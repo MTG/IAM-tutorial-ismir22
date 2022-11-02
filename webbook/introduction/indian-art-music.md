@@ -1,5 +1,5 @@
-Indian Art Music
-================
+(indian-art-music)=
+# Indian Art Music
 
 
 Brief introduction to Indian Art Music, why is it important, what can be achieved by the computational study of this music

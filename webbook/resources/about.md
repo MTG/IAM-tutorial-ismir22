@@ -1,3 +1,2 @@
-About the authoring of this tutorial
-====================================
+# About the authoring of this tutorial
 

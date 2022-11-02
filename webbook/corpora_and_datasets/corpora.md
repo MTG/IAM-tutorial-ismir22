@@ -6,9 +6,18 @@ Corpus-based research builds on top of collections of data that have been design
 ## What do the corpora include?
 The corpora in Dunya include audio recordings plus complementary musically-relevant metadata, expert annotations, and automatically-extracted features.
 
-The metadata is provided by [MusicBrainz](https://musicbrainz.org/). You can use MusicBrainz to browse the recordings included in the Dunya corpora and the respective metadata. In fact, all recordings in Dunya are tagged with a MusicBrainzID (stylized as ``mbid``), which also serves as a unique identifier for each entry in the Dunya database.
+The metadata is provided by [`MusicBrainz`](https://musicbrainz.org/). You can use `MusicBrainz` to browse the recordings included in the Dunya corpora and the respective metadata. In fact, all recordings in Dunya are tagged with a MusicBrainzID (stylized as ``mbid``), which also serves as a unique identifier for each entry in the Dunya database.
 
-In Dunya, each corpus has specific characteristics and the developed software tools allow to process the available information in order to study and explore the characteristics of each musical repertoire. Let us now review the tools to access, browse, and parse the data in the Dunya corpora:
+| **Content types**       | **Brief description**                                                                                            |
+|-------------------------|------------------------------------------------------------------------------------------------------------------|
+| **Audio**               | Music mixtures, in some cases accompanied by multi-track audio for some instruments                              |
+| **Metadata**            | Musically-relevant tags <br> **e.g.** raga, tala, artists, concert, album, instruments                           |
+| **Expert annotations**  | Expert and time-aligned annotations for relevant musical concepts <br> **e.g.** sama, melodic phrases, sections  |
+| **Computed features**   | Features computed using baseline methods, <br> **e.g.** pitch tracks, tonic, akshara pulses                      |
+
+In Dunya, each corpus has specific characteristics and the developed software tools allow to process the available information in order to study and explore the characteristics of each musical repertoire. 
+
+Let us now review the tools to access, browse, and parse the data in the Dunya corpora:
 
 
 ## Dunya website
@@ -26,13 +35,13 @@ Although focusing on Carnatic and Hindustani music in this tutorial, note that D
 
 
 ## Dunya Python API
-The data in Dunya can be programatically browsed, parsed and downloaded using the Dunya Python API in [pycompmusic](https://dunya.compmusic.upf.edu/docs/search.html). We have ported pycompmusic into compIAM, so the corpora can be accessed through compIAM as well. Through this software, you can parse statistics in the databaset, while the data in Dunya can be filtered by tradition, artist, raaga, taala. 
+The data in Dunya can be programatically browsed, parsed and downloaded using the Dunya Python API in [`pycompmusic`](https://dunya.compmusic.upf.edu/docs/search.html). We have ported `pycompmusic` into `compiam`, so the corpora can be accessed through `compiam` as well. Through this software, you can parse statistics in the databaset, while the data in Dunya can be filtered by tradition, artist, raaga, taala. 
 
 ```{note}
 To access the data in Dunya, you need a personal access token. You get the said token by registering to Dunya through the website.
 ```
 
-You can easily initialize a Corpora instance of compIAM as:
+You can easily initialize a Corpora instance of `compiam` as:
 ```python
 from compiam import load_corpora
 carnatic_corpora = load_corpora("carnatic", cc=True, token="your-token-goes-here")

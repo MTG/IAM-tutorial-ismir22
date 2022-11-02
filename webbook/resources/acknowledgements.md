@@ -1,4 +1,3 @@
-Acknowledgements
-================
+# Acknowledgements
 
 Mention all people involved, compmusic, musical ai...
