@@ -1,18 +1,17 @@
 (welcome-setup)=
 # Welcome and setup
-
-Introduction paragraph to project
+**Welcome to this tutorial, we are very glad to have you here!** In this tutorial we are going to cover TODO: what?
 
 ## Structure of the tutorial
-
 See the outline in the left side of the page for the complete structure of the tutorial. 
-We organize the contents in the main musical aspects studied in the computational analysis of Carnatic and Hindustani Music: [melody](melody-intro), [rhythm](rhythm-intro), [structure](structure-intro), and[timbre](timbre-intro). Each of these sections is opened with a musicological introduction of the important concepts of Indian Art Music. 
+We organize the contents in the main musical aspects studied in the computational analysis of Carnatic and Hindustani Music: [melody](melody-intro), [rhythm](rhythm-intro), [structure](structure-intro), and[timbre](timbre-intro). Each of these sections is opened with a musicological introduction in which the important concepts of Indian Art Music are presented and discussed.
 
-Prior to going through the discussed technologies, we introduce the data (talk about corpora and datasets).
+Before going through the discussed technologies, we introduce the sources of data for the computational analysis of Indian Art Music that are available in the literature and are crucial for the development and evaluation of reliable tools for the said topic. 
+
+This tutorial is filled with code snippets, audiovisual examples, relevant references, notes, and tips. Take your time to go through all included materials, and enjoy learning!
 
 
 ## Setting everything up
-
 This is an online, interactive, and self-contained book based on [Jupyter Book](https://jupyterbook.org/en/stable/index.html). It is composed by pieces of text, audiovisual content, and snippets of code which can be interactively run, for you to get familiar with the included tools and collections of data.  
 
 This cool interface helps readers go through the learning materials without actually the need of installing complicated software. However, there are different ways in which you can explore and run the code in this tutorial. Next up, we briefly present the additional features of this webbook.
@@ -46,3 +45,6 @@ You may be interested in building this book in your own machine. This can be don
 ```{note}
 You may also download the source code of a particular page using the downloading button also on the top right of the page. If the page includes runable code, you may get the ``.ipynb`` file to run it locally as well.
 ```
+
+## Getting in touch
+Do not hesitate to [get in touch]("mailto:genis.plaja@upf.edu,thomas.nuttall@upf.edu") for any enquiries, questions, and suggestions! If you encounter an error, problem, or even a typo, please [do open an issue](https://github.com/MTG/IAM-tutorial-ismir22/issues) in the tutorial repository.
