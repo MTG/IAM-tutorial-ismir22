@@ -1,7 +1,6 @@
 (corpora)=
 # Accessing the Dunya Corpora
-
-Corpus-based research builds on top of collections of data that have been designed with a purpose, have good coverage, are complete, and the data have good quality, and finally that ensures reusability, i.e. the research built on top of these collections of data ensures *real-world results* {cite}`serra_2014`. The corpora in Dunya, built within the context of the CompMusic project, have been designed taking these requirements into account.
+In a computer science context, a corpus is a large collection of data and annotations. Corpus-based research should build on top of collections of data that have been designed with a **purpose**, have **good coverage**, are **complete**, the data have **good quality**, and finally that ensures **reusability** {cite}`serra_2014`. The research built on top of these collections of data ensures *real-world results*. The corpora in Dunya, built within the context of the CompMusic project, have been designed taking these requirements into account.
 
 ## What do the corpora include?
 The corpora in Dunya include audio recordings plus complementary musically-relevant metadata, expert annotations, and automatically-extracted features.
@@ -13,7 +12,7 @@ The metadata is provided by [`MusicBrainz`](https://musicbrainz.org/). You can u
 | **Audio**               | Music mixtures, in some cases accompanied by multi-track audio for particular instruments                        |
 | **Metadata**            | Musically-relevant tags <br> **e.g.** raga, tala, artists, concert, album, instruments                           |
 | **Expert annotations**  | Expert and time-aligned annotations for relevant musical concepts <br> **e.g.** sama, melodic phrases, sections  |
-| **Computed features**   | Features computed using baseline methods, <br> **e.g.** pitch tracks, tonic, akshara pulses                      |
+| **Computed features**   | Features computed using baseline methods <br> **e.g.** pitch tracks, tonic, akshara pulses                      |
 
 In Dunya, each corpus has specific characteristics and the developed software tools allow to process the available information in order to study and explore the characteristics of each musical repertoire. 
 
@@ -21,7 +20,7 @@ Let us now review the tools to access, browse, and parse the data in the Dunya c
 
 
 ## Dunya website
-You can browse through the Dunya corpora using [the Dunya website](https://dunya.compmusic.upf.edu/). The Dunya website includes also an interactive interface to listen to some examples of the data in the corpora and visualize the available annotations and features.
+You can browse through the Dunya corpora using [the Dunya website](https://dunya.compmusic.upf.edu/). The Dunya website includes also an interactive interface to listen to some examples of the data in the corpora and visualize the available annotations and features {cite}`dunya`.
 
 ```{figure} ../images/dunya_1.png
 ---
@@ -55,10 +54,10 @@ Carnatic and Hindustani corpora are both divided in two parts, one part licensed
 Our corpora class include methods to get an overview of the available data in the database. Let us get you some examples below:
 
 * ``get_collection()``: prints you out all available recordings in the collection.
-* ``get_recording(mbid=<recording-musicbrainz-id>)``: prints out the available data for the recording associated with the input mbid.
-* ``get_artist(mbid=<artists-musicbrainz-id>)``: prints out the available information for the artist associated with the input mbid.
+* ``get_recording(<recording-musicbrainz-id>)``: prints out the available data for the recording associated with the input mbid.
+* ``get_artist(<artists-musicbrainz-id>)``: prints out the available information for the artist associated with the input mbid.
 * ``list_concerts()``: list all available concerts in the selected database.
-* ``list_available_types(mbid=<artists-musicbrainz-id>)``:  prints you out the available types of file available for a particular recording.
+* ``list_available_types(<artists-musicbrainz-id>)``:  prints you out the available types of file available for a particular recording.
 
 See the entire list of methods in the [`compiam` Corpora class documentation](TODO: link).
 
