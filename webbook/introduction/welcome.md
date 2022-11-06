@@ -33,7 +33,7 @@ You may be interested in building this book in your own machine. This can be don
     git clone https://github.com/MTG/IAM-tutorial-ismir22
     cd IAM-tutorial-ismir22
     ```
-2) Create an virtual environment for this project. You may use [venv](TODO:venv_tuto) or [conda](TODO:conda_tuto). Activate the new environment.
+2) Create an virtual environment for this project. You may use [venv](https://docs.python.org/3/tutorial/venv.html) or [conda](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html). Activate the new environment.
 3) Install the required dependencies. These are included in the ``requirements.txt`` file.
     ```bash
     pip install -r requirements.txt

@@ -25,7 +25,13 @@ launch_buttons:
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
-  - references.bib
+  - bibliography/indian_art_music.bib
+  - bibliography/corpora_and_datasets.bib
+  - bibliography/melodic_analysis.bib
+  - bibliography/rhythmic_analysis.bib
+  - bibliography/structure_analysis.bib
+  - bibliography/timbre_analysis.bib
+
 
 # Information about where the book exists on the web
 repository:
