@@ -17,7 +17,7 @@ This tutorial is meant to be a starting point for cross-level researchers that a
 
 ## Reference this Book
 
-If you would like to reference this book please use 
+If you would like to reference this book please use.
 
 ```
 reference here
