@@ -5,7 +5,13 @@ parts:
   chapters:
     - file: introduction/welcome
     - file: introduction/compiam
-    - file: introduction/indian-art-music
+
+- caption: Indian Art Music
+  chapters:
+    - file: indian-art-music/intro
+    - file: indian-art-music/instrumentation
+    - file: indian-art-music/format
+    - file: indian-art-music/melodic-concepts
 
 - caption: Corpora and Datasets
   chapters:
