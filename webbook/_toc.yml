@@ -6,6 +6,7 @@ parts:
     - file: introduction/welcome
     - file: introduction/compiam
     - file: introduction/indian-art-music
+    - file: introduction/rhythm
 
 - caption: Corpora and Datasets
   chapters:
