@@ -17,16 +17,29 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-print("Available melodic tools: {}".format(compiam.melody.list_tools()))
-print("Available rhythmic tools: {}".format(compiam.rhythm.list_tools()))
+## Getting a list of available datasets
+print("Available datasets through compiam are: {}".format(compiam.list_datasets()))
+
+## Initializing dataloader for an example dataset
+fw_tabla_dataset = load_dataset("four_way_tabla")
+fw_tabla_dataset
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2896/2108873368.py[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0mprint[0m[0;34m([0m[0;34m"Available melodic tools: {}"[0m[0;34m.[0m[0mformat[0m[0;34m([0m[0mcompiam[0m[0;34m.[0m[0mmelody[0m[0;34m.[0m[0mlist_tools[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0mprint[0m[0;34m([0m[0;34m"Available rhythmic tools: {}"[0m[0;34m.[0m[0mformat[0m[0;34m([0m[0mcompiam[0m[0;34m.[0m[0mrhythm[0m[0;34m.[0m[0mlist_tools[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+[0;32m/tmp/ipykernel_2990/2337061529.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      3[0m [0;34m[0m[0m
+[1;32m      4[0m [0;31m## Initializing dataloader for an example dataset[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 5[0;31m [0mfw_tabla_dataset[0m [0;34m=[0m [0mload_dataset[0m[0;34m([0m[0;34m"four_way_tabla"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      6[0m [0mfw_tabla_dataset[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mNameError[0m: name 'compiam' is not defined
-NameError: name 'compiam' is not defined
+[0;32m/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/__init__.py[0m in [0;36mload_dataset[0;34m(dataset_name, data_home, version)[0m
+[1;32m     41[0m     """
+[1;32m     42[0m     [0;32mif[0m [0mdataset_name[0m [0;32mnot[0m [0;32min[0m [0mdatasets_list[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 43[0;31m         [0;32mraise[0m [0mValueError[0m[0;34m([0m[0;34m"Invalid dataset {}"[0m[0;34m.[0m[0mformat[0m[0;34m([0m[0mdataset_name[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     44[0m     return mirdata.initialize(
+[1;32m     45[0m         [0mdataset_name[0m[0;34m=[0m[0mdataset_name[0m[0;34m,[0m [0mdata_home[0m[0;34m=[0m[0mdata_home[0m[0;34m,[0m [0mversion[0m[0;34m=[0m[0mversion[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mValueError[0m: Invalid dataset four_way_tabla
+ValueError: Invalid dataset four_way_tabla
 

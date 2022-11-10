@@ -649,18 +649,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2896</span><span class="o">/</span><span class="mf">4124723954.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">## Importing compiam to the project</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">compiam</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;compiam&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="available-components">
@@ -706,13 +694,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2896</span><span class="o">/</span><span class="mf">2108873368.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available melodic tools: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()))</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available rhythmic tools: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">rhythm</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()))</span>
-
-<span class="ne">NameError</span>: name &#39;compiam&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Available melodic tools: [&#39;DEEPSRGM&#39;, &#39;FTANetCarnatic&#39;, &#39;Melodia&#39;, &#39;TonicIndianMultiPitch&#39;]
+Available rhythmic tools: [&#39;AksharaPulseTracker&#39;, &#39;FourWayTabla&#39;]
 </pre></div>
 </div>
 </div>
@@ -767,6 +750,29 @@ title="Print to PDF"
 <span class="c1">## Initializing dataloader for an example dataset</span>
 <span class="n">fw_tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
 <span class="n">fw_tabla_dataset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Available datasets through compiam are: [&#39;saraga_carnatic&#39;, &#39;saraga_hindustani&#39;, &#39;mridangam_stroke&#39;]
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2990</span><span class="o">/</span><span class="mf">2337061529.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">## Initializing dataloader for an example dataset</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">fw_tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">fw_tabla_dataset</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/__init__.py</span> in <span class="ni">load_dataset</span><span class="nt">(dataset_name, data_home, version)</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span><span class="s2">     if dataset_name not in datasets_list:</span>
+<span class="ne">---&gt; </span><span class="mi">43</span><span class="s2">         raise ValueError(&quot;Invalid dataset </span><span class="si">{}</span><span class="s2">&quot;.format(dataset_name))</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span><span class="s2">     return mirdata.initialize(</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span><span class="s2">         dataset_name=dataset_name, data_home=data_home, version=version</span>
+
+<span class="ne">ValueError</span>: Invalid dataset four_way_tabla
 </pre></div>
 </div>
 </div>

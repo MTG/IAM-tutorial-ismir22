@@ -24,12 +24,19 @@ pitch_track = melodia.extract("/path/to/audio")
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2953/142289344.py[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mfrom[0m [0mcompiam[0m[0;34m.[0m[0mmelody[0m [0;32mimport[0m [0mMelodia[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0mmelodia[0m [0;34m=[0m [0mMelodia[0m[0;34m([0m[0;34m)[0m  [0;31m# initializing a melodia instance[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      3[0m [0mpitch_track[0m [0;34m=[0m [0mmelodia[0m[0;34m.[0m[0mextract[0m[0;34m([0m[0;34m"/path/to/audio"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+[0;32m/tmp/ipykernel_3061/142289344.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;32mfrom[0m [0mcompiam[0m[0;34m.[0m[0mmelody[0m [0;32mimport[0m [0mMelodia[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      2[0m [0mmelodia[0m [0;34m=[0m [0mMelodia[0m[0;34m([0m[0;34m)[0m  [0;31m# initializing a melodia instance[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 3[0;31m [0mpitch_track[0m [0;34m=[0m [0mmelodia[0m[0;34m.[0m[0mextract[0m[0;34m([0m[0;34m"/path/to/audio"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/melody/melodia.py[0m in [0;36mextract[0;34m(self, path_to_audio)[0m
+[1;32m     76[0m         """
+[1;32m     77[0m         [0;32mif[0m [0;32mnot[0m [0mos[0m[0;34m.[0m[0mpath[0m[0;34m.[0m[0mexists[0m[0;34m([0m[0mpath_to_audio[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 78[0;31m             [0;32mraise[0m [0mValueError[0m[0;34m([0m[0;34m"Target audio not found."[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     79[0m         [0maudio[0m [0;34m=[0m [0mestd[0m[0;34m.[0m[0mEqloudLoader[0m[0;34m([0m[0mfilename[0m[0;34m=[0m[0mpath_to_audio[0m[0;34m)[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     80[0m         extractor = estd.PredominantPitchMelodia(
 
-[0;31mModuleNotFoundError[0m: No module named 'compiam'
-ModuleNotFoundError: No module named 'compiam'
+[0;31mValueError[0m: Target audio not found.
+ValueError: Target audio not found.
 

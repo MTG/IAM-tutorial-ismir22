@@ -522,18 +522,6 @@ Let’s extract the pitch from an audio sample using Melodia<span id="id2">[<a c
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2953</span><span class="o">/</span><span class="mf">3656839994.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;pip&#39;</span><span class="p">,</span> <span class="s1">&#39;install compiam&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">compiam</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;compiam&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -544,14 +532,24 @@ Let’s extract the pitch from an audio sample using Melodia<span id="id2">[<a c
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   INFO   ] MusicExtractorSVM: no classifier models were configured by default
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2953</span><span class="o">/</span><span class="mf">142289344.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">Melodia</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3061</span><span class="o">/</span><span class="mf">142289344.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">Melodia</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">melodia</span> <span class="o">=</span> <span class="n">Melodia</span><span class="p">()</span>  <span class="c1"># initializing a melodia instance</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;compiam&#39;
+<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/melody/melodia.py</span> in <span class="ni">extract</span><span class="nt">(self, path_to_audio)</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span><span class="s2">         if not os.path.exists(path_to_audio):</span>
+<span class="ne">---&gt; </span><span class="mi">78</span><span class="s2">             raise ValueError(&quot;Target audio not found.&quot;)</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span><span class="s2">         audio = estd.EqloudLoader(filename=path_to_audio)()</span>
+<span class="g g-Whitespace">     </span><span class="mi">80</span><span class="s2">         extractor = estd.PredominantPitchMelodia(</span>
+
+<span class="ne">ValueError</span>: Target audio not found.
 </pre></div>
 </div>
 </div>
