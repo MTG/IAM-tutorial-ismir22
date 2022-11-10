@@ -113,7 +113,7 @@ We consulted a senior professional Carnatic percussionist for the complete set o
 
 
 
-### Rhythm in Hindustani Music
+## Rhythm in Hindustani Music
 As previously mentioned, several different styles of Hindustani music exist, each with it's own variation of instrumentation. For example, the percussive accompaniment in a typical khyāl performance is the tabla, in the dhrupad style, it is the pakhāvaj. Here we focus on khyāl, the most popular style.
 
 The artists in Hindustani music belong to what are called gharānās, or stylistic schools. Though all the gharānā use the same music concepts and basic style, each of them have their own nuances that are well distinguished and documented {cite}`mehta_2008`.
@@ -156,7 +156,15 @@ The special case of ēktāl needs additional mention here. Ēktāl has six equal
 ### Percussion in Performance
 Hindustani music uses the tabla as the main percussion accompaniment. It consists of two drums: a left hand bass drum called the bāyān or diggā and a right hand drum called the dāyān that can produce a variety of pitched sounds.
 
-Tabla acts as the timekeeper during the performance indicating the progression through the tāl cycles using pre-defined rhythmic patterns (called the ṭhēkā) for each tāl. The lead musician improvises over these cycles, with limited rhythmic improvisation during the main piece. The ṭhēkās are specific canonical tabla bōl patterns defined for each tāl as illustrated in Table 2.5. However, the musician playing tabla improvises these patterns playing many variations with filler strokes and short improvisatory patterns. {cite}`miron_2011`, {cite}`clayton_2000`, {cite}`a_e_dutta_1995`, {cite}`beronja_2008`, and {cite}`naimpalli_2005` provide a more detailed discussion of tāl in Hindustani music including ṭhēkās for commonly used tāls.
+Tabla acts as the timekeeper during the performance indicating the progression through the tāl cycles using pre-defined rhythmic patterns (called the ṭhēkā) for each tāl. The lead musician improvises over these cycles, with limited rhythmic improvisation during the main piece. The ṭhēkās are specific canonical tabla bōl patterns defined for each tāl as illustrated in {numref}`thekas`. However, the musician playing tabla improvises these patterns playing many variations with filler strokes and short improvisatory patterns. {cite}`miron_2011`, {cite}`clayton_2000`, {cite}`a_e_dutta_1995`, {cite}`beronja_2008`, and {cite}`naimpalli_2005` provide a more detailed discussion of tāl in Hindustani music including ṭhēkās for commonly used tāls.
+
+```{figure} images/thekas.png
+:name: thekas
+
+- The ṭhēkās for four popular Hindustani tāls, showing the bōl
+for each mātrā. The sam is shown with × and vibhāgs boundaries are
+separated with a vertical line. Each mātrā of a cycle has equal duration.
+```
 
 To showcase the nuances of a tāl as well as the skill of the percussionist with the tabla, Hindustani music performances feature tabla solos. A tabla solo is intricate and elaborate, with a variety of pre-composed forms used for developing further elaborations. There are specific principles that govern these elaborations {cite}`gottlieb_1993`. Musical forms of tabla such as the ṭhēkā, kāyadā, palaṭā, rēlā, pēśkār and gaṭ are a part of the solo performance and have different functional and aesthetic roles in a solo performance. A percussion solo shows a variety of improvisation possible in the framework of the tāl, with the role of timekeeping taken up by the lead musician during the solo.
 
