@@ -14,7 +14,7 @@ Many rāgas involve heavy use of gamakas (ornamentation) such as oscillations, s
 
 It’s important to note that gamakas are not superficial decoration but rather are integral to musical meaning {cite}`viswanathan_analysis_1977`. For example, when two rāgas have the same svaras, it is often the gamakas used that disambiguate the rāgas {cite}`kassebaum_karnatak_2000`.
  
-Gamakas, can greatly alter the sound of the notated svaras (notes); for example, some gamakas do not rest at all on the theoretical pitch of the notated svara, and instead involve oscillations between pitches either side of it {cite}krishna_carnatic_2012`, as seen in the following figure.
+Gamakas, can greatly alter the sound of the notated svaras (notes); for example, some gamakas do not rest at all on the theoretical pitch of the notated svara, and instead involve oscillations between pitches either side of it {cite}`krishna_carnatic_2012`, as seen in {numref}`pitch_plot_mgmpmmgrg`.
 
 
 ```{figure} ../images/pitch_plot.png
@@ -25,7 +25,7 @@ name: pitch_plot_mgmpmmgrg
 Pitch movement for the sañcāra ‘mgmpmmgrg’ from the recording of Koti Janmani in rāga rītigauḷa, performed by the Akkarai Sisters. It can be seen that the long ga at the end of the phrase is performed as an oscillation between ri and ma, which is typical for this rāga.
 ```
 
-This oscillatory movement is particularly characteristic of the Carnatic style, and can often subsume individual svaras {cite}`pearson_coarticulation_2016`. The surface effect on the melodic line is that it typically has fewer stable pitch regions than many other styles, as seen in the pitch movement plot. Such qualities makes it impossible for researchers who are not themselves Carnatic musicians to reliably identify svaras from audio recordings. Recent work has attempted to automate this task by creating descriptive transcriptions that assign svara names to key points in the melodic flow {cite}`viraraghavan_state-based_2020`, `ranjani_compact_2019, ranjani_quantized_2017`. However, such descriptive transcriptions do not necessarily align with the underlying svaras that musicians would use to notate the phrase, which may or may not be a problem, depending on the research question and purpose of the transcription. 
+This oscillatory movement is particularly characteristic of the Carnatic style, and can often subsume individual svaras {cite}`pearson_coarticulation_2016`. The surface effect on the melodic line is that it typically has fewer stable pitch regions than many other styles, as seen in {numref}`pitch_plot_mgmpmmgrg`. Such qualities makes it impossible for researchers who are not themselves Carnatic musicians to reliably identify svaras from audio recordings. Recent work has attempted to automate this task by creating descriptive transcriptions that assign svara names to key points in the melodic flow {cite}`viraraghavan_state-based_2020`, `ranjani_compact_2019, ranjani_quantized_2017`. However, such descriptive transcriptions do not necessarily align with the underlying svaras that musicians would use to notate the phrase, which may or may not be a problem, depending on the research question and purpose of the transcription. 
 
 > **Implications for MIR:**
 > The heavy use of gamakas, especially oscillations, makes automated transcription of Carnatic music a challenging task. 
