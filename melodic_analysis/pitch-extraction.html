@@ -129,6 +129,11 @@ const thebe_selector_output = ".output, .cell_output"
    Indian Art Music
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/rhythm.html">
+   Rhythm
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -537,17 +542,17 @@ Let’s extract the pitch from an audio sample using Melodia<span id="id2">[<a c
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3061</span><span class="o">/</span><span class="mf">142289344.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2989</span><span class="o">/</span><span class="mf">142289344.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">Melodia</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">melodia</span> <span class="o">=</span> <span class="n">Melodia</span><span class="p">()</span>  <span class="c1"># initializing a melodia instance</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/melody/melodia.py</span> in <span class="ni">extract</span><span class="nt">(self, path_to_audio)</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">77</span><span class="s2">         if not os.path.exists(path_to_audio):</span>
-<span class="ne">---&gt; </span><span class="mi">78</span><span class="s2">             raise ValueError(&quot;Target audio not found.&quot;)</span>
-<span class="g g-Whitespace">     </span><span class="mi">79</span><span class="s2">         audio = estd.EqloudLoader(filename=path_to_audio)()</span>
-<span class="g g-Whitespace">     </span><span class="mi">80</span><span class="s2">         extractor = estd.PredominantPitchMelodia(</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span><span class="s2">         if not os.path.exists(path_to_audio):</span>
+<span class="ne">---&gt; </span><span class="mi">77</span><span class="s2">             raise ValueError(&quot;Target audio not found.&quot;)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span><span class="s2">         audio = estd.EqloudLoader(filename=path_to_audio)()</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span><span class="s2">         extractor = estd.PredominantPitchMelodia(</span>
 
 <span class="ne">ValueError</span>: Target audio not found.
 </pre></div>
@@ -615,7 +620,7 @@ Let’s extract the pitch from an audio sample using Melodia<span id="id2">[<a c
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Thomas Nuttall, Genís Plaja<br/>
+    By Thomas Nuttall, Genís Plaja, Lara Pearson, Brindha Manickavasakan, Kaustuv Kanti Ganguli, Ajay Srinivasamurthy and Xavier Serra<br/>
   
       &copy; Copyright 2022.<br/>
 </p>
