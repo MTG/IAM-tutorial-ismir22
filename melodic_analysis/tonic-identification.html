@@ -149,6 +149,21 @@ const thebe_selector_output = ".output, .cell_output"
    Musical format
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../indian-art-music/melody-carnatic.html">
+   Carnatic Melodic Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../indian-art-music/rhythm-carnatic.html">
+   Rhythm and Percussion in Carnatic Music
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../indian-art-music/rhythm-hindustani.html">
+   Rhythm and Percussion in Hindustani Music
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -526,6 +541,18 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3263</span><span class="o">/</span><span class="mf">3933193606.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">compiam</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">TonicIndianMultiPitch</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;TonicIndianMultiPitch&#39; from &#39;compiam.melody&#39; (/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/melody/__init__.py)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -539,10 +566,16 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   INFO   ] MusicExtractorSVM: no classifier models were configured by default
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;binResolution&#39;, &#39;extract&#39;, &#39;frameSize&#39;, &#39;harmonicWeight&#39;, &#39;hopSize&#39;, &#39;magnitudeCompression&#39;, &#39;magnitudeThreshold&#39;, &#39;maxTonicFrequency&#39;, &#39;minTonicFrequency&#39;, &#39;numberHarmonics&#39;, &#39;referenceFrequency&#39;, &#39;sampleRate&#39;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3263</span><span class="o">/</span><span class="mf">3611672670.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># We first initialize the tool we have just imported</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tonic_multipitch</span> <span class="o">=</span> <span class="n">TonicIndianMultiPitch</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Let&#39;s first see the specific attributes of this tool</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">attributes</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">tonic_multipitch</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;__&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;TonicIndianMultiPitch&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -552,17 +585,6 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can print out the standard value for a particular parameter</span>
 <span class="n">tonic_multipitch</span><span class="o">.</span><span class="n">TODO</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3113</span><span class="o">/</span><span class="mf">3484813783.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># We can print out the standard value for a particular parameter</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tonic_multipitch</span><span class="o">.</span><span class="n">TODO</span>
-
-<span class="ne">AttributeError</span>: &#39;TonicIndianMultiPitch&#39; object has no attribute &#39;TODO&#39;
 </pre></div>
 </div>
 </div>

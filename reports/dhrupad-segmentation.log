@@ -17,23 +17,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# We first initialize the tool we have just imported
-tonic_multipitch = TonicIndianMultiPitch()
-
-# Let's first see the specific attributes of this tool
-attributes = [x for x in dir(tonic_multipitch) if "__" not in x]
-print(attributes)
+from compiam.structure import DhrupadBandishSegmentation
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_3263/3611672670.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [0;31m# We first initialize the tool we have just imported[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 2[0;31m [0mtonic_multipitch[0m [0;34m=[0m [0mTonicIndianMultiPitch[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      3[0m [0;34m[0m[0m
-[1;32m      4[0m [0;31m# Let's first see the specific attributes of this tool[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m [0mattributes[0m [0;34m=[0m [0;34m[[0m[0mx[0m [0;32mfor[0m [0mx[0m [0;32min[0m [0mdir[0m[0;34m([0m[0mtonic_multipitch[0m[0;34m)[0m [0;32mif[0m [0;34m"__"[0m [0;32mnot[0m [0;32min[0m [0mx[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
-
-[0;31mNameError[0m: name 'TonicIndianMultiPitch' is not defined
-NameError: name 'TonicIndianMultiPitch' is not defined
+[0;31mImportError[0m                               Traceback (most recent call last)
+[0;32m/tmp/ipykernel_3368/3549311264.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0;32mfrom[0m [0mcompiam[0m[0;34m.[0m[0mstructure[0m [0;32mimport[0m [0mDhrupadBandishSegmentation[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;31mImportError[0m: cannot import name 'DhrupadBandishSegmentation' from 'compiam.structure' (/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/structure/__init__.py)
+ImportError: cannot import name 'DhrupadBandishSegmentation' from 'compiam.structure' (/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/structure/__init__.py)
 
