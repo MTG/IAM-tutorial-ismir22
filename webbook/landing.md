@@ -21,11 +21,18 @@ If you would like to reference this book please use.
 
 ```bibtex
 @book{iam_tutorial_ismir22,
-	Author = {Thomas Nuttall and Genís Plaja-Roglans and Lara Pearson and Brindha Manickavasakan and Kaustuv Kanti Ganguli and Ajay Srinivasamurthy and Xavier Serra},
-    Address = {Bengaluru, India},
-	Publisher = {https://mtg.github.io/IAM-tutorial-ismir22},
-	Title = {Computational Methods for Supporting Corpus-Based Research on Indian Art Music},
-	Year = 2022,
-	Url = {https://mtg.github.io/IAM-tutorial-ismir22}
+  Author = {
+    Thomas Nuttall and 
+    Genís Plaja-Roglans and 
+    Lara Pearson and 
+    Brindha Manickavasakan and 
+    Kaustuv Kanti Ganguli and 
+    Ajay Srinivasamurthy and 
+    Xavier Serra},
+  Address = {Bengaluru, India},
+  Publisher = {https://mtg.github.io/IAM-tutorial-ismir22},
+  Title = {Computational Methods for Supporting Corpus-Based Research on Indian Art Music},
+  Year = 2022,
+  Url = {https://mtg.github.io/IAM-tutorial-ismir22}
 }
 ```

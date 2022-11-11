@@ -14,9 +14,9 @@ parts:
       title: Instrumentation
     - file: indian-art-music/format
       title: Musical format
-    - file: indian-art-music/melodic-concepts
-    - file: indian-art-music/rhythmic-concepts
-      title: Rhythmic concepts
+    - file: indian-art-music/melody-carnatic
+    - file: indian-art-music/rhythm-carnatic
+    - file: indian-art-music/rhythm-hindustani
 
 - caption: Corpora and Datasets
   chapters:
