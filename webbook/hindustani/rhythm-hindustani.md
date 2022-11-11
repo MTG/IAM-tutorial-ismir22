@@ -27,7 +27,7 @@ There are over 70 different Hindustani tāls defined, while about 15 tāls are p
 
 ```{figure} images/hindustani_tala_illustrated.png
 ---
-alt: Hinsutani Tala
+alt: Hindustani Tala
 name: hindustani_tala_fig
 ---
 
