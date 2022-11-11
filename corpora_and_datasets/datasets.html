@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="IAM melodic framework" href="../melodic_analysis/intro.html" />
+    <link rel="next" title="Tonic identification" href="../melodic_analysis/tonic-identification.html" />
     <link rel="prev" title="Accessing the Dunya Corpora" href="corpora.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -124,14 +124,36 @@ const thebe_selector_output = ".output, .cell_output"
    compIAM
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Indian Art Music
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/indian-art-music.html">
-   Indian Art Music
+  <a class="reference internal" href="../indian-art-music/intro.html">
+   Introduction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/rhythm.html">
-   Rhythm
+  <a class="reference internal" href="../indian-art-music/instrumentation.html">
+   Instrumentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../indian-art-music/format.html">
+   Musical format
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../indian-art-music/melodic-concepts.html">
+   Carnatic Melodic Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../indian-art-music/rhythmic-concepts.html">
+   Rhythmic concepts
   </a>
  </li>
 </ul>
@@ -158,11 +180,6 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../melodic_analysis/intro.html">
-   IAM melodic framework
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../melodic_analysis/tonic-identification.html">
    Tonic identification
@@ -191,11 +208,6 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../rhythmic_analysis/intro.html">
-   IAM rhythmic framework
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../rhythmic_analysis/akshara-pulse-tracker.html">
    Akshara pulse tracker
   </a>
@@ -213,11 +225,6 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../structure_analysis/intro.html">
-   Musical structure in IAM
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../structure_analysis/dhrupad-segmentation.html">
    Dhrupad bandish segmentation
   </a>
@@ -229,11 +236,6 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../timbre_analysis/intro.html">
-   Timbre in IAM
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../timbre_analysis/stroke-classification.html">
    Stroke classification
@@ -578,16 +580,16 @@ title="Print to PDF"
 <p>Datasets are key for the data-driven computational research of a music tradition. Thoroughly designed collections of data that represent the most relevant aspects of a musical repertoire may open the door for solutions of several problems. For that reason, huge efforts have been made within the scope of this tutorial and <code class="docutils literal notranslate"><span class="pre">compiam</span></code> to (1) boost the visibility and access to Carnatic and Hindustani music datasets, and (2) provide standardized tools to get and use the said datasets.</p>
 <section id="mirdata">
 <h2><code class="docutils literal notranslate"><span class="pre">mirdata</span></code><a class="headerlink" href="#mirdata" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://mirdata.readthedocs.io/en/stable/"><code class="docutils literal notranslate"><span class="pre">mirdata</span></code></a> is an open-source and pip-installable Python library that provides tools for working with common Music Information Retrieval (MIR) datasets <span id="id2">[<a class="reference internal" href="../resources/references.html#id5" title="Rachel Bittner, Magdalena Fuentes, David Rubinstein, Andreas Jansson, Keunwoo Choi, and Thor Kell. mirdata: Software for Reproducible Usage of Datasets. In In Proc. of the 20th International Society for Music Information Retrieval Conference (ISMIR), Delft, The Netherlands., 99–106. 2019.">BFR+19</a>]</span>. Given the crucial importance and relevance of such a software for data and corpus-driven research, we have done a great efforts to integrate several IAM-centered datasets into <code class="docutils literal notranslate"><span class="pre">mirdata</span></code>. To date, the following datasets can be found in the latest <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> release:</p>
+<p><a class="reference external" href="https://mirdata.readthedocs.io/en/stable/"><code class="docutils literal notranslate"><span class="pre">mirdata</span></code></a> is an open-source and pip-installable Python library that provides tools for working with common Music Information Retrieval (MIR) datasets <span id="id2">[<a class="reference internal" href="../resources/references.html#id20" title="Rachel Bittner, Magdalena Fuentes, David Rubinstein, Andreas Jansson, Keunwoo Choi, and Thor Kell. mirdata: Software for Reproducible Usage of Datasets. In In Proc. of the 20th International Society for Music Information Retrieval Conference (ISMIR), Delft, The Netherlands., 99–106. 2019.">BFR+19</a>]</span>. Given the crucial importance and relevance of such a software for data and corpus-driven research, we have done a great efforts to integrate several IAM-centered datasets into <code class="docutils literal notranslate"><span class="pre">mirdata</span></code>. To date, the following datasets can be found in the latest <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> release:</p>
 <ul class="simple">
-<li><p>Carnatic collection of Saraga <span id="id3">[<a class="reference internal" href="../resources/references.html#id11" title="Ajay Srinivasamurthy, Sankalp Gulati, Rafael Caro Repetto, and Xavier Serra. Saraga: Open Datasets for Research on Indian Art Music. Empirical Musicology Review, 2020.">SGRS20</a>]</span></p></li>
-<li><p>Hindustani collection of Saraga <span id="id4">[<a class="reference internal" href="../resources/references.html#id11" title="Ajay Srinivasamurthy, Sankalp Gulati, Rafael Caro Repetto, and Xavier Serra. Saraga: Open Datasets for Research on Indian Art Music. Empirical Musicology Review, 2020.">SGRS20</a>]</span></p></li>
-<li><p>Carnatic Varnam Dataset <span id="id5">[<a class="reference internal" href="../resources/references.html#id8" title="Gopala Krishna Koduri, Vignesh Ishwar, Joan Serrà, and Xavier Serra. Intonation analysis of rāgas in Carnatic music. Journal of New Music Research, pages 73–94, 2014. doi:10.1109/ICASSP.2016.7471640.">KISS14</a>]</span></p></li>
-<li><p>Carnatic Music Rhythm <span id="id6">[<a class="reference internal" href="../resources/references.html#id6" title="Ajay Srinivasamurthy and Xavier Serra. A supervised approach to hierarchical metrical cycle tracking from audio music recordings. In In Proc. of the International Conference on Acoustics, Speech and Signal Processing (ICASSP), 5217–5221. Institute of Electrical and Electronics Engineers Inc., 2014.">SS14</a>]</span></p></li>
-<li><p>Hindustani Music Rhythm <span id="id7">[<a class="reference internal" href="../resources/references.html#id7" title="Ajay Srinivasamurthy, Andre Holzapfel, Ali Taylan Cemgil, and Xavier Serra. A generalized bayesian model for tracking long metrical cycles in acoustic music signals. In In Proc. of the International Conference on Acoustics, Speech and Signal Processing (ICASSP), 76–80. 2016. doi:10.1109/ICASSP.2014.6854598.">SHCS16</a>]</span></p></li>
-<li><p>Indian Art Music Raga Dataset <span id="id8">[<a class="reference internal" href="../resources/references.html#id9" title="Sankalp Gulati, Joan Serrà, Kaustuv K Ganguli, S Sertan, and Xavier Serra. Time-delayed melody surfaces for Raga recognition. In In Proc. of the 17th International Society for Music Information Retrieval Conference (ISMIR), New York City, USA., 751–757. 2016. doi:10.1080/09298215.2013.866145.">GSG+16</a>]</span></p></li>
-<li><p>Mridangam Stroke Dataset <span id="id9">[<a class="reference internal" href="../resources/references.html#id10" title="A. Anantapadmanabhan, J. P. Bello, R. Krishnan, and H. Murthy. Tonic-Independent Stroke Transcription of the Mridangam. In AES 53rd International Conference: Semantic Audio, London, UK. 2014.">ABKM14</a>]</span></p></li>
-<li><p>Four-Way Tabla Dataset (ISMIR 2021) <span id="id10">[<a class="reference internal" href="../resources/references.html#id12" title="M.A. Rohit, Amitrajit Bhattacharjee, and Preeti Rao. Four-way classification of tabla strokes with models adapted from automatic drum transcription. In In Proc. of the 22nd International Society for Music Information Retrieval Conference, ISMIR, Online, 19–26. 2021.">RBR21</a>]</span></p></li>
+<li><p>Carnatic collection of Saraga <span id="id3">[<a class="reference internal" href="../resources/references.html#id26" title="Ajay Srinivasamurthy, Sankalp Gulati, Rafael Caro Repetto, and Xavier Serra. Saraga: Open Datasets for Research on Indian Art Music. Empirical Musicology Review, 2020.">SGRS20</a>]</span></p></li>
+<li><p>Hindustani collection of Saraga <span id="id4">[<a class="reference internal" href="../resources/references.html#id26" title="Ajay Srinivasamurthy, Sankalp Gulati, Rafael Caro Repetto, and Xavier Serra. Saraga: Open Datasets for Research on Indian Art Music. Empirical Musicology Review, 2020.">SGRS20</a>]</span></p></li>
+<li><p>Carnatic Varnam Dataset <span id="id5">[<a class="reference internal" href="../resources/references.html#id23" title="Gopala Krishna Koduri, Vignesh Ishwar, Joan Serrà, and Xavier Serra. Intonation analysis of rāgas in Carnatic music. Journal of New Music Research, pages 73–94, 2014. doi:10.1109/ICASSP.2016.7471640.">KISS14</a>]</span></p></li>
+<li><p>Carnatic Music Rhythm <span id="id6">[<a class="reference internal" href="../resources/references.html#id21" title="Ajay Srinivasamurthy and Xavier Serra. A supervised approach to hierarchical metrical cycle tracking from audio music recordings. In In Proc. of the International Conference on Acoustics, Speech and Signal Processing (ICASSP), 5217–5221. Institute of Electrical and Electronics Engineers Inc., 2014.">SS14</a>]</span></p></li>
+<li><p>Hindustani Music Rhythm <span id="id7">[<a class="reference internal" href="../resources/references.html#id22" title="Ajay Srinivasamurthy, Andre Holzapfel, Ali Taylan Cemgil, and Xavier Serra. A generalized bayesian model for tracking long metrical cycles in acoustic music signals. In In Proc. of the International Conference on Acoustics, Speech and Signal Processing (ICASSP), 76–80. 2016. doi:10.1109/ICASSP.2014.6854598.">SHCS16</a>]</span></p></li>
+<li><p>Indian Art Music Raga Dataset <span id="id8">[<a class="reference internal" href="../resources/references.html#id24" title="Sankalp Gulati, Joan Serrà, Kaustuv K Ganguli, S Sertan, and Xavier Serra. Time-delayed melody surfaces for Raga recognition. In In Proc. of the 17th International Society for Music Information Retrieval Conference (ISMIR), New York City, USA., 751–757. 2016. doi:10.1080/09298215.2013.866145.">GSG+16</a>]</span></p></li>
+<li><p>Mridangam Stroke Dataset <span id="id9">[<a class="reference internal" href="../resources/references.html#id25" title="A. Anantapadmanabhan, J. P. Bello, R. Krishnan, and H. Murthy. Tonic-Independent Stroke Transcription of the Mridangam. In AES 53rd International Conference: Semantic Audio, London, UK. 2014.">ABKM14</a>]</span></p></li>
+<li><p>Four-Way Tabla Dataset (ISMIR 2021) <span id="id10">[<a class="reference internal" href="../resources/references.html#id27" title="M.A. Rohit, Amitrajit Bhattacharjee, and Preeti Rao. Four-way classification of tabla strokes with models adapted from automatic drum transcription. In In Proc. of the 22nd International Society for Music Information Retrieval Conference, ISMIR, Online, 19–26. 2021.">RBR21</a>]</span></p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">compiam</span></code> provides access to these datasets through the mirdata loaders. Make sure to check the <a class="reference external" href="https://mirdata.readthedocs.io/en/stable/source/mirdata.html#dataset-loaders"><code class="docutils literal notranslate"><span class="pre">mirdata</span></code> documentation</a> to learn the functionalities of the loaders.</p>
 <div class="admonition note">
@@ -617,19 +619,19 @@ title="Print to PDF"
   audio_ghatam_path=None,
   audio_mridangam_left_path=None,
   audio_mridangam_right_path=None,
-  audio_path=&quot;...Sastri Hall by Sanjay Subrahmanyan/Oorilen Kaani Illai/Sanjay Subrahmanyan - Oorilen Kaani Illai.mp3&quot;,
+  audio_path=&quot;...ignesh Ishwar at Nada Inbam by Vignesh Ishwar/Lokavana Chatura/Vignesh Ishwar - Lokavana Chatura.mp3&quot;,
   audio_violin_path=None,
   audio_vocal_path=None,
   audio_vocal_s_path=None,
-  ctonic_path=&quot;...Hall by Sanjay Subrahmanyan/Oorilen Kaani Illai/Sanjay Subrahmanyan - Oorilen Kaani Illai.ctonic.txt&quot;,
-  metadata_path=&quot;...astri Hall by Sanjay Subrahmanyan/Oorilen Kaani Illai/Sanjay Subrahmanyan - Oorilen Kaani Illai.json&quot;,
-  phrases_path=&quot;...anjay Subrahmanyan/Oorilen Kaani Illai/Sanjay Subrahmanyan - Oorilen Kaani Illai.mphrases-manual.txt&quot;,
-  pitch_path=&quot;... Hall by Sanjay Subrahmanyan/Oorilen Kaani Illai/Sanjay Subrahmanyan - Oorilen Kaani Illai.pitch.txt&quot;,
+  ctonic_path=&quot;...Ishwar at Nada Inbam by Vignesh Ishwar/Lokavana Chatura/Vignesh Ishwar - Lokavana Chatura.ctonic.txt&quot;,
+  metadata_path=&quot;...gnesh Ishwar at Nada Inbam by Vignesh Ishwar/Lokavana Chatura/Vignesh Ishwar - Lokavana Chatura.json&quot;,
+  phrases_path=&quot;... Nada Inbam by Vignesh Ishwar/Lokavana Chatura/Vignesh Ishwar - Lokavana Chatura.mphrases-manual.txt&quot;,
+  pitch_path=&quot;... Ishwar at Nada Inbam by Vignesh Ishwar/Lokavana Chatura/Vignesh Ishwar - Lokavana Chatura.pitch.txt&quot;,
   pitch_vocal_path=None,
-  sama_path=&quot;...by Sanjay Subrahmanyan/Oorilen Kaani Illai/Sanjay Subrahmanyan - Oorilen Kaani Illai.sama-manual.txt&quot;,
-  sections_path=&quot;...jay Subrahmanyan/Oorilen Kaani Illai/Sanjay Subrahmanyan - Oorilen Kaani Illai.sections-manual-p.txt&quot;,
-  tempo_path=&quot;...y Sanjay Subrahmanyan/Oorilen Kaani Illai/Sanjay Subrahmanyan - Oorilen Kaani Illai.tempo-manual.txt&quot;,
-  track_id=&quot;158_Oorilen_Kaani_Illai&quot;,
+  sama_path=&quot;...r at Nada Inbam by Vignesh Ishwar/Lokavana Chatura/Vignesh Ishwar - Lokavana Chatura.sama-manual.txt&quot;,
+  sections_path=&quot;...ada Inbam by Vignesh Ishwar/Lokavana Chatura/Vignesh Ishwar - Lokavana Chatura.sections-manual-p.txt&quot;,
+  tempo_path=&quot;... at Nada Inbam by Vignesh Ishwar/Lokavana Chatura/Vignesh Ishwar - Lokavana Chatura.tempo-manual.txt&quot;,
+  track_id=&quot;26_Lokavana_Chatura&quot;,
   audio: The track&#39;s audio
 
         Returns,
@@ -669,13 +671,13 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2892</span><span class="o">/</span><span class="mf">4020414023.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2890</span><span class="o">/</span><span class="mf">4020414023.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> 
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Get available ragas</span>
 <span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">available_raagas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">])</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">available_raagas</span>
 
-<span class="nn">/tmp/ipykernel_2892/4020414023.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="nn">/tmp/ipykernel_2890/4020414023.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> 
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Get available ragas</span>
 <span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">available_raagas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">])</span>
@@ -801,10 +803,10 @@ title="Print to PDF"
             <p class="prev-next-title">Accessing the Dunya Corpora</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../melodic_analysis/intro.html" title="next page">
+    <a class='right-next' id="next-link" href="../melodic_analysis/tonic-identification.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">IAM melodic framework</p>
+        <p class="prev-next-title">Tonic identification</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -124,14 +124,36 @@ const thebe_selector_output = ".output, .cell_output"
    compIAM
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Indian Art Music
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/indian-art-music.html">
-   Indian Art Music
+  <a class="reference internal" href="../indian-art-music/intro.html">
+   Introduction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/rhythm.html">
-   Rhythm
+  <a class="reference internal" href="../indian-art-music/instrumentation.html">
+   Instrumentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../indian-art-music/format.html">
+   Musical format
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../indian-art-music/melodic-concepts.html">
+   Carnatic Melodic Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../indian-art-music/rhythmic-concepts.html">
+   Rhythmic concepts
   </a>
  </li>
 </ul>
@@ -158,11 +180,6 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   IAM melodic framework
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tonic-identification.html">
    Tonic identification
@@ -191,11 +208,6 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../rhythmic_analysis/intro.html">
-   IAM rhythmic framework
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../rhythmic_analysis/akshara-pulse-tracker.html">
    Akshara pulse tracker
   </a>
@@ -213,11 +225,6 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../structure_analysis/intro.html">
-   Musical structure in IAM
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../structure_analysis/dhrupad-segmentation.html">
    Dhrupad bandish segmentation
   </a>
@@ -229,11 +236,6 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../timbre_analysis/intro.html">
-   Timbre in IAM
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../timbre_analysis/stroke-classification.html">
    Stroke classification
@@ -516,8 +518,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="pitch-extraction">
 <span id="melody-extraction"></span><h1>Pitch extraction<a class="headerlink" href="#pitch-extraction" title="Permalink to this headline">#</a></h1>
-<p>As seen in the melodic introduction, predominant and vocal pitch is a very relevant feature to tackle the melodic analysis of Carnatic and Hindustani Music. In an Indian Art Music context, this task has been mainly approached through <em>heuristic-based approaches</em><span id="id1">[<a class="reference internal" href="../resources/references.html#id16" title="Vishweshwara Rao and Preeti Rao. Vocal melody extraction in the presence of pitched accompaniment in polyphonic music. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 2145–2154, 2010. doi:10.1109/TASL.2010.2042124.">RR10</a>, <a class="reference internal" href="../resources/references.html#id17" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>, which have been used yet in recent years.
-Let’s extract the pitch from an audio sample using Melodia<span id="id2">[<a class="reference internal" href="../resources/references.html#id17" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>.</p>
+<p>As seen in the melodic introduction, predominant and vocal pitch is a very relevant feature to tackle the melodic analysis of Carnatic and Hindustani Music. In an Indian Art Music context, this task has been mainly approached through <em>heuristic-based approaches</em><span id="id1">[<a class="reference internal" href="../resources/references.html#id31" title="Vishweshwara Rao and Preeti Rao. Vocal melody extraction in the presence of pitched accompaniment in polyphonic music. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 2145–2154, 2010. doi:10.1109/TASL.2010.2042124.">RR10</a>, <a class="reference internal" href="../resources/references.html#id32" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>, which have been used yet in recent years.
+Let’s extract the pitch from an audio sample using Melodia<span id="id2">[<a class="reference internal" href="../resources/references.html#id32" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
