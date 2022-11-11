@@ -1,6 +1,6 @@
 # Computational Methods for Supporting Corpus-Based Research on Indian Art Music
 
-**This tutorial book has been written by Thomas Nuttall, Genís Plaja, Lara Pearson, Brindha Manickavasakan, Kaustuv Kanti Ganguli, Ajay Srinivasamurthy and Xavier Serra.** 
+**By Thomas Nuttall, Genís Plaja, Lara Pearson, Brindha Manickavasakan, Kaustuv Kanti Ganguli, Ajay Srinivasamurthy and Xavier Serra.** 
 <br>
 Presented at the International Society of Music Information Retrieval (ISMIR) 2022, in Bengaluru, India.
 
