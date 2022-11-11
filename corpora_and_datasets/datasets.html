@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Datasets &#8212; Computational Methods for Supporting Corpus-Based Research on Indian Art Music</title>
+    <title>Datasets</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -90,9 +90,12 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">Computational Methods for Supporting Corpus-Based Research on Indian Art Music</h1>
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -619,19 +622,19 @@ title="Print to PDF"
   audio_ghatam_path=None,
   audio_mridangam_left_path=None,
   audio_mridangam_right_path=None,
-  audio_path=&quot;...ignesh Ishwar at Nada Inbam by Vignesh Ishwar/Lokavana Chatura/Vignesh Ishwar - Lokavana Chatura.mp3&quot;,
+  audio_path=&quot;...ay at Sastri Hall by Sanjay Subrahmanyan/Uppum karpuramum/Sanjay Subrahmanyan - Uppum karpuramum.mp3&quot;,
   audio_violin_path=None,
   audio_vocal_path=None,
   audio_vocal_s_path=None,
-  ctonic_path=&quot;...Ishwar at Nada Inbam by Vignesh Ishwar/Lokavana Chatura/Vignesh Ishwar - Lokavana Chatura.ctonic.txt&quot;,
-  metadata_path=&quot;...gnesh Ishwar at Nada Inbam by Vignesh Ishwar/Lokavana Chatura/Vignesh Ishwar - Lokavana Chatura.json&quot;,
-  phrases_path=&quot;... Nada Inbam by Vignesh Ishwar/Lokavana Chatura/Vignesh Ishwar - Lokavana Chatura.mphrases-manual.txt&quot;,
-  pitch_path=&quot;... Ishwar at Nada Inbam by Vignesh Ishwar/Lokavana Chatura/Vignesh Ishwar - Lokavana Chatura.pitch.txt&quot;,
+  ctonic_path=&quot;...astri Hall by Sanjay Subrahmanyan/Uppum karpuramum/Sanjay Subrahmanyan - Uppum karpuramum.ctonic.txt&quot;,
+  metadata_path=&quot;...y at Sastri Hall by Sanjay Subrahmanyan/Uppum karpuramum/Sanjay Subrahmanyan - Uppum karpuramum.json&quot;,
+  phrases_path=&quot;...l by Sanjay Subrahmanyan/Uppum karpuramum/Sanjay Subrahmanyan - Uppum karpuramum.mphrases-manual.txt&quot;,
+  pitch_path=&quot;...Sastri Hall by Sanjay Subrahmanyan/Uppum karpuramum/Sanjay Subrahmanyan - Uppum karpuramum.pitch.txt&quot;,
   pitch_vocal_path=None,
-  sama_path=&quot;...r at Nada Inbam by Vignesh Ishwar/Lokavana Chatura/Vignesh Ishwar - Lokavana Chatura.sama-manual.txt&quot;,
-  sections_path=&quot;...ada Inbam by Vignesh Ishwar/Lokavana Chatura/Vignesh Ishwar - Lokavana Chatura.sections-manual-p.txt&quot;,
-  tempo_path=&quot;... at Nada Inbam by Vignesh Ishwar/Lokavana Chatura/Vignesh Ishwar - Lokavana Chatura.tempo-manual.txt&quot;,
-  track_id=&quot;26_Lokavana_Chatura&quot;,
+  sama_path=&quot;... Hall by Sanjay Subrahmanyan/Uppum karpuramum/Sanjay Subrahmanyan - Uppum karpuramum.sama-manual.txt&quot;,
+  sections_path=&quot;...by Sanjay Subrahmanyan/Uppum karpuramum/Sanjay Subrahmanyan - Uppum karpuramum.sections-manual-p.txt&quot;,
+  tempo_path=&quot;...Hall by Sanjay Subrahmanyan/Uppum karpuramum/Sanjay Subrahmanyan - Uppum karpuramum.tempo-manual.txt&quot;,
+  track_id=&quot;160_Uppum_karpuramum&quot;,
   audio: The track&#39;s audio
 
         Returns,
@@ -671,13 +674,13 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2890</span><span class="o">/</span><span class="mf">4020414023.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2970</span><span class="o">/</span><span class="mf">4020414023.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> 
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Get available ragas</span>
 <span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">available_raagas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">])</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">available_raagas</span>
 
-<span class="nn">/tmp/ipykernel_2890/4020414023.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="nn">/tmp/ipykernel_2970/4020414023.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> 
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Get available ragas</span>
 <span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">available_raagas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">])</span>

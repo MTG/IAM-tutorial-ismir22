@@ -29,13 +29,13 @@ available_raagas
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2890/4020414023.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_2970/4020414023.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      5[0m [0;34m[0m[0m
 [1;32m      6[0m [0;31m## Get available ragas[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 7[0;31m [0mavailable_raagas[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0munique[0m[0;34m([0m[0;34m[[0m[0mcarnatic_tracks[0m[0;34m[[0m[0mx[0m[0;34m][0m[0;34m.[0m[0mmetadata[0m[0;34m[[0m[0;34m"raaga"[0m[0;34m][0m [0;32mfor[0m [0mx[0m [0;32min[0m [0msaraga_carnatic[0m[0;34m.[0m[0mtrack_ids[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      8[0m [0mavailable_raagas[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/tmp/ipykernel_2890/4020414023.py[0m in [0;36m<listcomp>[0;34m(.0)[0m
+[0;32m/tmp/ipykernel_2970/4020414023.py[0m in [0;36m<listcomp>[0;34m(.0)[0m
 [1;32m      5[0m [0;34m[0m[0m
 [1;32m      6[0m [0;31m## Get available ragas[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 7[0;31m [0mavailable_raagas[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0munique[0m[0;34m([0m[0;34m[[0m[0mcarnatic_tracks[0m[0;34m[[0m[0mx[0m[0;34m][0m[0;34m.[0m[0mmetadata[0m[0;34m[[0m[0;34m"raaga"[0m[0;34m][0m [0;32mfor[0m [0mx[0m [0;32min[0m [0msaraga_carnatic[0m[0;34m.[0m[0mtrack_ids[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
