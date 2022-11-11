@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Carnatic Music in Performance: Instrumentation" href="../carnatic/instrumentation.html" />
+    <link rel="next" title="Indian Art Music" href="iam.html" />
     <link rel="prev" title="Welcome and setup" href="welcome.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -125,6 +125,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    compIAM package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="iam.html">
+   What is Indian Art Music?
   </a>
  </li>
 </ul>
@@ -681,6 +686,28 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+
+  <span class="n">File</span> <span class="s2">&quot;/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/IPython/core/interactiveshell.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3553</span><span class="p">,</span> <span class="ow">in</span> <span class="n">run_code</span>
+    <span class="n">exec</span><span class="p">(</span><span class="n">code_obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_global_ns</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_ns</span><span class="p">)</span>
+
+  <span class="n">File</span> <span class="s2">&quot;/tmp/ipykernel_2975/4124723954.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">4</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">import</span> <span class="nn">compiam</span>
+
+  <span class="n">File</span> <span class="s2">&quot;/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/__init__.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">melody</span><span class="p">,</span> <span class="n">rhythm</span><span class="p">,</span> <span class="n">structure</span><span class="p">,</span> <span class="n">timbre</span>
+
+  <span class="n">File</span> <span class="s2">&quot;/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/rhythm/__init__.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">14</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">from</span> <span class="nn">compiam.rhythm</span> <span class="kn">import</span> <span class="n">transcription</span>
+
+<span class="gt">  File</span><span class="nn"> &quot;/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/rhythm/transcription/__init__.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span>
+     <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="available-components">
@@ -722,12 +749,6 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available melodic tools: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available rhythmic tools: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">rhythm</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Available melodic tools: [&#39;FTANetCarnatic&#39;, &#39;Melodia&#39;, &#39;DEEPSRGM&#39;, &#39;TonicIndianMultiPitch&#39;]
-Available rhythmic tools: [&#39;AksharaPulseTracker&#39;, &#39;FourWayTabla&#39;]
 </pre></div>
 </div>
 </div>
@@ -782,29 +803,6 @@ Available rhythmic tools: [&#39;AksharaPulseTracker&#39;, &#39;FourWayTabla&#39;
 <span class="c1">## Initializing dataloader for an example dataset</span>
 <span class="n">fw_tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
 <span class="n">fw_tabla_dataset</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Available datasets through compiam are: [&#39;saraga_carnatic&#39;, &#39;saraga_hindustani&#39;, &#39;mridangam_stroke&#39;]
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3015</span><span class="o">/</span><span class="mf">2337061529.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">## Initializing dataloader for an example dataset</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">fw_tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">fw_tabla_dataset</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/__init__.py</span> in <span class="ni">load_dataset</span><span class="nt">(dataset_name, data_home, version)</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span>     <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span><span class="s2">     if dataset_name not in datasets_list:</span>
-<span class="ne">---&gt; </span><span class="mi">43</span><span class="s2">         raise ValueError(&quot;Invalid dataset </span><span class="si">{}</span><span class="s2">&quot;.format(dataset_name))</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span><span class="s2">     return mirdata.initialize(</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span><span class="s2">         dataset_name=dataset_name, data_home=data_home, version=version</span>
-
-<span class="ne">ValueError</span>: Invalid dataset four_way_tabla
 </pre></div>
 </div>
 </div>
@@ -900,10 +898,10 @@ Available rhythmic tools: [&#39;AksharaPulseTracker&#39;, &#39;FourWayTabla&#39;
             <p class="prev-next-title">Welcome and setup</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../carnatic/instrumentation.html" title="next page">
+    <a class='right-next' id="next-link" href="iam.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Carnatic Music in Performance: Instrumentation</p>
+        <p class="prev-next-title">Indian Art Music</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

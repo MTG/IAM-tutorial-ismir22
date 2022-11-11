@@ -3,7 +3,9 @@
 **By Thomas Nuttall, Genís Plaja, Lara Pearson, Brindha Manickavasakan, Kaustuv Kanti Ganguli, Ajay Srinivasamurthy and Xavier Serra.** 
 <br>
 
-PLEASE NOTE: This web book is a work in progress, many sections are incomplete.
+```{warning}
+This web book is a work in progress, many sections are incomplete.
+```
 
 To be presented at the International Society of Music Information Retrieval (ISMIR) 2022, in Bengaluru, India.
 
