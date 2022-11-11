@@ -5,8 +5,18 @@ parts:
   chapters:
     - file: introduction/welcome
     - file: introduction/compiam
-    - file: introduction/indian-art-music
-    - file: introduction/rhythm
+
+- caption: Indian Art Music
+  chapters:
+    - file: indian-art-music/intro
+      title: Introduction
+    - file: indian-art-music/instrumentation
+      title: Instrumentation
+    - file: indian-art-music/format
+      title: Musical format
+    - file: indian-art-music/melodic-concepts
+    - file: indian-art-music/rhythmic-concepts
+      title: Rhythmic concepts
 
 - caption: Corpora and Datasets
   chapters:
@@ -15,7 +25,7 @@ parts:
 
 - caption: Melodic Analysis
   chapters:
-    - file: melodic_analysis/intro
+    #- file: melodic_analysis/intro
     - file: melodic_analysis/tonic-identification
     - file: melodic_analysis/pitch-extraction
     - file: melodic_analysis/melodic-pattern-discovery
@@ -23,18 +33,18 @@ parts:
 
 - caption: Rhythmic Analysis
   chapters:
-    - file: rhythmic_analysis/intro
+    #- file: rhythmic_analysis/intro
     - file: rhythmic_analysis/akshara-pulse-tracker
     - file: rhythmic_analysis/percussion-transcription
 
 - caption: Structure Analysis
   chapters:
-    - file: structure_analysis/intro
+    #- file: structure_analysis/intro
     - file: structure_analysis/dhrupad-segmentation
 
 - caption: Timbre Analysis
   chapters:
-    - file: timbre_analysis/intro
+    #- file: timbre_analysis/intro
     - file: timbre_analysis/stroke-classification
 
 - caption: Wrapping up
