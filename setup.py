@@ -23,7 +23,7 @@ setup(
     description="Tutorial webbook to get started with the computational analysis of Indian Art Music",
     long_description=README,
     long_description_content_type="text/markdown",
-    author_email=["genis.plaja@upf.edu", "thomas.nuttall@upf.edu"],
+    author_email=["thomas.nuttall@upf.edu", "genis.plaja@upf.edu"],
     license="GNU GENERAL PUBLIC LICENSE",
     packages=find_packages(),
     keywords=["indian art music", "computational musicology"],
