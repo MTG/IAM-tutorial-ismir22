@@ -101,3 +101,5 @@ name: bols
 | TRA                  | TRA    | Two quick successive closed strokes on dāyān (played as a flam)                  |
 ```
 
+
+This section has been adapted, with consent, from the PhD thesis of Ajay Srinivasamurthy {cite}`ajaythesis`
