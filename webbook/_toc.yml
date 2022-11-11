@@ -5,18 +5,24 @@ parts:
   chapters:
     - file: introduction/welcome
     - file: introduction/compiam
-
-- caption: Indian Art Music
-  chapters:
     - file: indian-art-music/intro
-      title: Introduction
+      title: What is Indian Art Music?
+
+- caption: Carnatic Music
+  chapters:
     - file: indian-art-music/instrumentation
       title: Instrumentation
     - file: indian-art-music/format
       title: Musical format
     - file: indian-art-music/melody-carnatic
+      title: Melody
     - file: indian-art-music/rhythm-carnatic
+      title: Rhythm
+
+- caption: Hindustani Music
+  chapters:
     - file: indian-art-music/rhythm-hindustani
+      title: Rhythm
 
 - caption: Corpora and Datasets
   chapters:
