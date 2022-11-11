@@ -27,7 +27,7 @@ fw_tabla_dataset
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mValueError[0m                                Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2998/2337061529.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_2999/2337061529.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      3[0m [0;34m[0m[0m
 [1;32m      4[0m [0;31m## Initializing dataloader for an example dataset[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 5[0;31m [0mfw_tabla_dataset[0m [0;34m=[0m [0mload_dataset[0m[0;34m([0m[0;34m"four_way_tabla"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
