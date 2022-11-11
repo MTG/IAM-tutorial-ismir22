@@ -77,3 +77,6 @@ name: solkattu
 | TM       | An open bass stroke on the left head          |
 | TG       | Pitch modulated bass stroke on the left head  |
 ```
+
+
+This section has been adapted, with consent, from the PhD thesis of Ajay Srinivasamurthy {cite}`ajaythesis`
