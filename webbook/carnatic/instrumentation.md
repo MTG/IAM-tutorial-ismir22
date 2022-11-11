@@ -2,7 +2,7 @@
 ### Vocal-led performance group 
 
 
-```{figure} ../images/vocal.png
+```{figure} ../images/vocal.jpg
 ---
 alt: Carnatic vocal performance
 name: carnatic_vocal_performance
@@ -25,7 +25,7 @@ The most popular performance format today is vocal-led, either by a single or mu
 There are also instrumental-led performances, without vocalists: for example, groups led by vīṇa, veṇu (flute), violin, saxophone, mandolin, and others. 
 
 
-```{figure} ../images/instrumental.png
+```{figure} ../images/instrumental.jpg
 ---
 alt: Carnatic instrumental performance (example 1)
 name: carnatic_instrumental_performance_1
@@ -36,7 +36,7 @@ Vīṇa performance led R.S. Jayalakshmi and Charulatha Chandrasekar, Umayalpura
 In addition, there is the closely related tradition, Periya Mēḷam, performed more often in temple and ritual settings but also having a concert tradition. Here the main instruments are nāgasvaram, tavil and tāḷam cymbals.
 
 
-```{figure} ../images/instrumental_2.png
+```{figure} ../images/instrumental_2.jpg
 ---
 alt: Carnatic instrumental performance (example 2)
 name: carnatic_instrumental_performance_2
