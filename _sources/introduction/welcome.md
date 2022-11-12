@@ -2,6 +2,8 @@
 # Welcome and setup
 **Welcome to this tutorial, we are very glad to have you here!** 
 
+
+(tutorial-structure)=
 ## Structure of the tutorial
 See the outline in the left side of the page for the complete structure of the tutorial. If not visible, click on the menu button (**☰**) and it will appear. The contents in this tutorial are organized in the main musical aspects studied in the computational analysis of Carnatic and Hindustani Music: [melody](melody-intro), [rhythm](rhythm-intro), [structure](structure-intro), and [timbre](timbre-intro). Each of these sections is opened with a musicological introduction in which the important concepts of Indian Art Music are presented and discussed.
 
@@ -10,6 +12,7 @@ Before going through the technologies, we introduce the sources of data for the 
 This tutorial is filled with code snippets, audiovisual examples, relevant references, notes, and tips. Take your time to go through all included materials, and **enjoy learning!**
 
 
+(setting-up)=
 ## Setting everything up
 This is an online, interactive, and self-contained book based on [Jupyter Book](https://jupyterbook.org/en/stable/index.html). It is composed by pieces of text, audiovisual content, and snippets of code which can be interactively run, for you to get familiar with the included tools and collections of data.  
 
@@ -25,6 +28,7 @@ Google Collab hosts GPU/TPU access, which you can use to run the ML/DL based cod
 ```
 
 
+(building-locally)=
 ### Building this book locally
 You may be interested in building this book in your own machine. This can be done in a few steps.
 
@@ -45,5 +49,6 @@ You may be interested in building this book in your own machine. This can be don
 You may download the source code of a particular page using the download button (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/download.svg" width="20" height="20">) also on the top right of the page. If the page includes runable code, you may get the ``.ipynb`` file to run it locally as well.
 ```
 
+(getting-in-touch)=
 ## Getting in touch
 Do not hesitate to [get in touch](mailto:genis.plaja@upf.edu,thomas.nuttall@upf.edu) for any enquiries, questions, and suggestions! If you encounter an error, problem, or even a typo, please [do open an issue](https://github.com/MTG/IAM-tutorial-ismir22/issues) in the tutorial repository, which may be rapidly done by clicking in the GitHub button on the top right (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg" width="20" height="20">).

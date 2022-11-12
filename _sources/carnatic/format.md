@@ -1,8 +1,12 @@
+(carnatic-formats)=
 ## Musical Formats and Performance Structure
+
+(carnatic-improvisation)=
 ### Pre-composed or improvisational?
 In Carnatic music there are formats that are more precomposed, and formats that are more improvisational in their respective creative processes. Typically, the strongly precomposed formats are referred to as ‘kalpita saṅgīta’ or ‘compositions’, and the more improvisational sections are referred to as ‘manodharma saṅgīta’. It should be noted that in practice the performance of compositions often also includes some spontaneous variations (some extemporization), while the manodharma sections are based around well known, and hence precomposed, phrases {cite}`ramanathan_improvisation_2007`. Therefore, the performance of both formats actually include improvisational and precomposed elements, but to different degrees and in different ways {cite}`nooshin_improvisation_2006, pearson_improvisation_2021`. Furthermore, a composition itself is a composer’s imagined creation, that originally involved both improvisational and precomposed elements, and that later becomes part of the repertoire of precomposed formats.  
 
 
+(carnatic-variation)=
 ### Variation in the performance of a given composition
 In this tradition, compositions are handed down orally through the teaching lineage, and as a result, different lineages may perform slightly different versions of the same composition {cite}`pearson_inscription_2022`. Therefore, published notations may also differ despite being of the same composition. Furthermore, as noted above, experienced musicians may add melodic variations on some lines of the composition during performance {cite}`vijayakrishnan_function_2009`. The upshot of all this is that we cannot expect a published notation to align precisely with what is performed. 
 
@@ -11,6 +15,7 @@ In this tradition, compositions are handed down orally through the teaching line
 > with no published notation, means that Carnatic-based MIR tends to focus on audio recordings. 
 
 
+(carnatic-kalpita-sangita)=
 ### Kalpita saṅgīta
 
 Types of compositions include kīrtana, varṇam, padam, and tillānā. These usually have three sections - pallavi, anupallavi and caraṇa. The pallavi is the refrain-like portion that returns again after the anupallavi and caraṇa. The presentation of a composition is in the order ‘pallavi-anupallavi-pallavi-caraṇa-pallavi’ (see {numref}`carnatic_structure_diagram`). 
@@ -25,12 +30,13 @@ name: carnatic_structure_diagram
 Graphic showing the typical structure of a composition, e.g., a kīrtana. Time runs from left to right, with the pallavi opening the sequence. 
 ```
 
+(carnatic-manodharma-sangita)=
 ### Manodharma saṅgīta
 Manodharma formats include ālāpana, niraval, kalpanasvara, and tani āvarttanam. 
 
 Manodharma saṅgīta can be translated as ‘music of the imagination’ {cite}`kassebaum_karnatak_2000` referring to the way in which these formats are created on the spot (not fully pre-composed), based on existing materials (phrases) and using structural principles that are acquired by musicians through practice and exposure to the style. 
 
-These formats are typically performed alongside a composition, usually in the same rāga. For example, if the composition is a kīrtana in rāga Bhairavi, then the performer would usually open with ālāpana in the same rāga. Ālapana is a creative exploration of the rāga, without lyrics or meter, which is sung using extended vowels and syllables such as ‘ta’, ‘da’, ‘ri’ and ‘na’. Next the vocalist would perform the kīrtana, including a section of niraval (extemporization on a particular line of sāhitya in the kīrtana, chosen by the performer) and then end with some rounds of kalpanasvara (improvised passages of [sargam](https://mtg.github.io/IAM-tutorial-ismir22/introduction/melodic-concepts.html#svara) syllables in different speeds). The tani āvartana is the percussion solo, involving a combination of pre-composed (by the percussionists involved) and improvisational elements.
+These formats are typically performed alongside a composition, usually in the same rāga. For example, if the composition is a kīrtana in rāga Bhairavi, then the performer would usually open with ālāpana in the same rāga. Ālapana is a creative exploration of the rāga, without lyrics or meter, which is sung using extended vowels and syllables such as ‘ta’, ‘da’, ‘ri’ and ‘na’. Next the vocalist would perform the kīrtana, including a section of niraval (extemporization on a particular line of sāhitya in the kīrtana, chosen by the performer) and then end with some rounds of kalpanasvara (improvised passages of [sargam](carnatic-svara) syllables in different speeds). The tani āvartana is the percussion solo, involving a combination of pre-composed (by the percussionists involved) and improvisational elements.
 
 
 ```{figure} ../images/structure_2.png

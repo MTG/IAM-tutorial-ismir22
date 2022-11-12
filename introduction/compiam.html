@@ -674,7 +674,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<span id="compiam-installation"></span><h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">compiam</span></code> is registered to PyPI, therefore the latest release can be installed with:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -686,32 +686,10 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-
-  <span class="n">File</span> <span class="s2">&quot;/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/IPython/core/interactiveshell.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3553</span><span class="p">,</span> <span class="ow">in</span> <span class="n">run_code</span>
-    <span class="n">exec</span><span class="p">(</span><span class="n">code_obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_global_ns</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_ns</span><span class="p">)</span>
-
-  <span class="n">File</span> <span class="s2">&quot;/tmp/ipykernel_2975/4124723954.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">4</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-    <span class="kn">import</span> <span class="nn">compiam</span>
-
-  <span class="n">File</span> <span class="s2">&quot;/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/__init__.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-    <span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">melody</span><span class="p">,</span> <span class="n">rhythm</span><span class="p">,</span> <span class="n">structure</span><span class="p">,</span> <span class="n">timbre</span>
-
-  <span class="n">File</span> <span class="s2">&quot;/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/rhythm/__init__.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">14</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-    <span class="kn">from</span> <span class="nn">compiam.rhythm</span> <span class="kn">import</span> <span class="n">transcription</span>
-
-<span class="gt">  File</span><span class="nn"> &quot;/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/rhythm/transcription/__init__.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
-    <span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span>
-     <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="available-components">
-<h2>Available components<a class="headerlink" href="#available-components" title="Permalink to this headline">#</a></h2>
+<span id="compiam-components"></span><h2>Available components<a class="headerlink" href="#available-components" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">compiam</span></code> includes the following components:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -736,7 +714,7 @@ title="Print to PDF"
 </table>
 </section>
 <section id="basic-usage">
-<h2>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">#</a></h2>
+<span id="compiam-usage"></span><h2>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">compiam</span></code> does not have terminal functionalities but it is to be used within Python based-projects. First, import the library to your Python project with: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">compiam</span></code>.</p>
 <section id="importing-the-integrated-tools">
 <h3>Importing the integrated tools<a class="headerlink" href="#importing-the-integrated-tools" title="Permalink to this headline">#</a></h3>
@@ -761,7 +739,7 @@ title="Print to PDF"
 <p>Each tool includes specific methods and attributes, so make sure to carefully check the [<code class="docutils literal notranslate"><span class="pre">compiam</span></code> documentation](TODO: link) before using a particular tool. However, integrated tools all include a <code class="docutils literal notranslate"><span class="pre">.extract()</span></code> (for <em>heuristic-based</em> tools) or a <code class="docutils literal notranslate"><span class="pre">.predict()</span></code> (for <em>data-based</em> tools) to directly run the tool on sample audios.</p>
 </section>
 <section id="wrappers">
-<h3>Wrappers<a class="headerlink" href="#wrappers" title="Permalink to this headline">#</a></h3>
+<span id="compiam-wrappers"></span><h3>Wrappers<a class="headerlink" href="#wrappers" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">compiam</span></code> also includes wrappers to easily initialize relevant datasets, corpora, and also pre-trained models for particular problems.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -851,7 +829,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="contributing">
-<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">#</a></h2>
+<span id="compiam-contributing"></span><h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">compiam</span></code> is continuously evolving and <strong>it is very much open to contributions!</strong> We have put together <span class="xref myst">complete set of contribution guidelines</span> to help you improving and/or expanding the library. Potential contributions are:</p>
 <ul class="simple">
 <li><p>Adding new implementations of tools or models.</p></li>
