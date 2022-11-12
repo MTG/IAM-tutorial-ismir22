@@ -1,14 +1,17 @@
+(hindustani-rhythm)=
 ## Rhythm and Percussion in Hindustani Music
 As previously mentioned, several different styles of Hindustani music exist, each with it's own variation of instrumentation. For example, the percussive accompaniment in a typical khyāl performance is the tabla, in the dhrupad style, it is the pakhāvaj. Here we focus on khyāl, the most popular style.
 
 The artists in Hindustani music belong to what are called gharānās, or stylistic schools. Though all the gharānā use the same music concepts and basic style, each of them have their own nuances that are well distinguished and documented {cite}`mehta_2008`.
 
+
+(hindustani-meter)=
 ### Meter
 {cite}`clayton_2000` provides a comprehensive introduction to rhythm in Hindustani music. The definition of tāl in Hindustani music is similar to the tāḷa in Carnatic music. A tāl has fixed-length cycles, each of which is called an āvart. An āvart is divided into isochronous basic time units called mātrā. The mātrās of a tāl are grouped into sections, sometimes with unequal time-spans, called the vibhāgs. Vibhāgs are indicated through the hand gestures of a thālī (clap) and a khālī (wave). The first mātrā of an āvart (the downbeat) is referred to as sam, marking the end of the previous cycle and the beginning of the next cycle. The first mātrā of the cycle (sam) is highly significant structurally, with many important melodic and rhythmic events happening at the sam. The sam also frequently marks the coming together of the rhythmic streams of soloist and accompanist, and the resolution point for rhythmic tension {cite}`clayton_2000`.
 
 ```{table} Structure of Hindustani tāls. For each tāl, the number of vibhāgs and the number of mātrās in each āvart is shown. The last column of the table shows the grouping of the mātrās in the āvart into vibhāgs, and the length of each vibhāg, e.g. each avart of rūpak tāl has three vibhāgs consisting of three, two, two mātrās respectively
 ---
-name: hind_tala_tab
+name: hind-tala-tab
 ---
 
 | Tāl       | # Vibhāg | # Mātrās | Mātrā grouping |
@@ -23,12 +26,12 @@ There are also tempo classes called lay in Hindustani music which can vary betwe
 
 As with Carnatic music, in Hindustani music there are significant differences in terminology describing meter when compared with Eurogenetic music. The definition of beat pulsation, as foot tapping instances in time, is also a problem with Hindustani music. Depending on the lay, the mātrā can be defined to be the subdivisions (for dr̥t lay) or as beats (for vilaṁbit and madhya lay). To maintain consistency, using accepted conventions, we note that the concepts of mātrā and the āvart of Hindustani music bear analogy to the beat and the bar metrical levels of Eurogenetic music. This implies that there is no well defined subdivision pulsation defined in Hindustani music. The possibly unequal vibhāgs are the sections of the tāl.
 
-There are over 70 different Hindustani tāls defined, while about 15 tāls are performed in practice. {numref}`hindustani_tala_fig` shows four popular Hindustani tāls - tīntāl, ēktāl, jhaptāl, and rūpak tāl. The structure of these tāls are also described in {numref}`hind_tala_tab`. The figure also shows the sam (shown as ×) and the vibhāgs (indicated with thālī/khālī pattern using numerals). A khālī is shown with a 0, while the thālī are shown with non-zero numerals. The thālī and khālī pattern of a tāl decides the accents of the tāl. The sam has the strongest accent (with certain exceptions, such as rūpak tāl) followed by the thālī instants. The khālī instants have the least accent.
+There are over 70 different Hindustani tāls defined, while about 15 tāls are performed in practice. {numref}`hindustani-tala-fig` shows four popular Hindustani tāls - tīntāl, ēktāl, jhaptāl, and rūpak tāl. The structure of these tāls are also described in {numref}`hind-tala-tab`. The figure also shows the sam (shown as ×) and the vibhāgs (indicated with thālī/khālī pattern using numerals). A khālī is shown with a 0, while the thālī are shown with non-zero numerals. The thālī and khālī pattern of a tāl decides the accents of the tāl. The sam has the strongest accent (with certain exceptions, such as rūpak tāl) followed by the thālī instants. The khālī instants have the least accent.
 
 ```{figure} images/hindustani_tala_illustrated.png
 ---
 alt: Hindustani Tala
-name: hindustani_tala_fig
+name: hindustani-tala-fig
 ---
 
 An āvart of four popular Hindustani tāls, showing the mātrās
@@ -44,10 +47,11 @@ name: ektal
 An alternative structure of Ēktāl in dr̥t lay
 ```
 
-A jhaptāl āvart has 10 mātrās with four unequal vibhāgs ({numref}`hindustani_tala_fig`d), while a tīntāl āvart has 16 mātrās with four equal vibhāgs ({numref}`hindustani_tala_fig`a). We can also note from {numref}`hindustani_tala_fig`b that the sam is a khāli in rūpak tāl, which has 7 mātrās with three unequal vibhāgs.
+A jhaptāl āvart has 10 mātrās with four unequal vibhāgs ({numref}`hindustani-tala-fig`d), while a tīntāl āvart has 16 mātrās with four equal vibhāgs ({numref}`hindustani-tala-fig`a). We can also note from {numref}`hindustani-tala-fig`b that the sam is a khāli in rūpak tāl, which has 7 mātrās with three unequal vibhāgs.
 
-The special case of ēktāl needs additional mention here. Ēktāl has six equal duration vibhāgs and 12 mātrās in a cycle as shown in {numref}`hindustani_tala_fig`c. However, in dr̥t lay, an alternative structure emerges, which is represented as four equal duration vibhāgs of three mātrās each as shown in {numref}`ektal`. For consistency, we use the structure as shown in {numref}`hindustani_tala_fig` here.
+The special case of ēktāl needs additional mention here. Ēktāl has six equal duration vibhāgs and 12 mātrās in a cycle as shown in {numref}`hindustani-tala-fig`c. However, in dr̥t lay, an alternative structure emerges, which is represented as four equal duration vibhāgs of three mātrās each as shown in {numref}`ektal`. For consistency, we use the structure as shown in {numref}`hindustani-tala-fig` here.
 
+(hindustani-percussion)=
 ### Percussion in Performance
 Hindustani music uses the tabla as the main percussion accompaniment. It consists of two drums: a left hand bass drum called the bāyān or diggā and a right hand drum called the dāyān that can produce a variety of pitched sounds.
 
@@ -68,6 +72,7 @@ To showcase the nuances of a tāl as well as the skill of the percussionist with
 
 In Hindustani music, the tempo is measured in mātrās per minute (MPM). The music has a wide range of tempo, divided into tempo classes called lay as described before. The mainly performed ones are the the slow (vilaṁbit), medium (madhya), and fast (dr̥t) classes. The boundary between these tempo classes is not well defined with possible overlaps. In this dissertation, after consultation with a professional Hindustani musician, we use the commonly agreed tempo ranges for these classes: vilaṁbit lay for a median tempo between 10-60 MPM, madhya lay for 60-150 MPM, and dr̥t lay for >150 MPM. This large range of allowed tempi means that the duration of a tāl cycle in Hindustani music ranges from less than 2 seconds to over a minute. A mātrā in vilaṁbit lay hence can last about 6 seconds, and to maintain a continuous rhythmic pulse, several filler strokes are played on the tabla. Hence the surface rhythm apparent from audio recordings can be quite different from the underlying metrical structure.
 
+(bols)=
 ### Bōls
 Similar to mridangam, the tabla repertoire is transmitted using onomatopoeic oral mnemonic syllables called the bōl. Tabla has different stylistic schools called gharānās. The repertoires of major gharānās of tabla differ in aspects such as the use of specific bōls, the dynamics of strokes, ornamentation and rhythmical phrases {cite}`beronja_2008`. But there are also many similarities due to the fact that the same forms and standard phrases reappear across these repertoires {cite}`gottlieb_1993`.
 
@@ -101,5 +106,6 @@ name: bols
 | TRA                  | TRA    | Two quick successive closed strokes on dāyān (played as a flam)                  |
 ```
 
-
+```{note}
 This section has been adapted, with consent, from the PhD thesis of Ajay Srinivasamurthy {cite}`ajaythesis`
+```
