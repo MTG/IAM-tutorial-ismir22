@@ -614,52 +614,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/rhythm/transcription/tabla_transcription/__init__.py:22,</span> in <span class="ni">FourWayTabla.__init__</span><span class="nt">(self, model_path, n_folds, seq_length, hop_dur, device)</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">global</span> <span class="n">torch</span>
-<span class="ne">---&gt; </span><span class="mi">22</span> <span class="kn">import</span> <span class="nn">torch</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">global</span> <span class="n">onsetCNN_D</span><span class="p">,</span> <span class="n">onsetCNN_RT</span><span class="p">,</span> <span class="n">onsetCNN</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">torch</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">195</span>
-<span class="g g-Whitespace">    </span><span class="mi">194</span> <span class="k">if</span> <span class="n">USE_GLOBAL_DEPS</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">195</span>     <span class="n">_load_global_deps</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="kn">from</span> <span class="nn">torch._C</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/__init__.py:148,</span> in <span class="ni">_load_global_deps</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">146</span> <span class="n">lib_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">here</span><span class="p">),</span> <span class="s1">&#39;lib&#39;</span><span class="p">,</span> <span class="n">lib_name</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">148</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">CDLL</span><span class="p">(</span><span class="n">lib_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">ctypes</span><span class="o">.</span><span class="n">RTLD_GLOBAL</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/ctypes/__init__.py:373,</span> in <span class="ni">CDLL.__init__</span><span class="nt">(self, name, mode, handle, use_errno, use_last_error, winmode)</span>
-<span class="g g-Whitespace">    </span><span class="mi">372</span> <span class="k">if</span> <span class="n">handle</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">373</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_handle</span> <span class="o">=</span> <span class="n">_dlopen</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="ne">OSError</span>: /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/lib/libtorch_global_deps.so: cannot open shared object file: No such file or directory
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.rhythm.transcription</span> <span class="kn">import</span> <span class="n">FourWayTabla</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">FourWayTabla</span><span class="p">()</span>  <span class="c1"># initializing a melodia instance</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">FourWayTabla</span><span class="p">()</span>  <span class="c1"># initializing a melodia instance</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/rhythm/transcription/tabla_transcription/__init__.py:41,</span> in <span class="ni">FourWayTabla.__init__</span><span class="nt">(self, model_path, n_folds, seq_length, hop_dur, device)</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span>     <span class="kn">from</span> <span class="nn">compiam.rhythm.transcription.tabla_transcription.utils</span> <span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span>         <span class="n">TablaDataset</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span>         <span class="n">gen_melgrams</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span>         <span class="n">load_mel_data</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span>     <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="k">except</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">41</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span>         <span class="s2">&quot;In order to use this tool you need to have torch installed. &quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span>         <span class="s2">&quot;Please install torch using: pip install torch&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="c1">###</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">device</span><span class="p">:</span>
-
-<span class="ne">ImportError</span>: In order to use this tool you need to have torch installed. Please install torch using: pip install torch
+<span class="ne">AttributeError</span>: &#39;FourWayTabla&#39; object has no attribute &#39;extract&#39;
 </pre></div>
 </div>
 </div>
