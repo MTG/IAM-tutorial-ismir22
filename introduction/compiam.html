@@ -768,18 +768,24 @@ title="Print to PDF"
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2879</span><span class="o">/</span><span class="mf">2337061529.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available datasets through compiam are: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">list_datasets</span><span class="p">()))</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">## Initializing dataloader for an example dataset</span>
 <span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">fw_tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">fw_tabla_dataset</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/__init__.py</span> in <span class="ni">load_dataset</span><span class="nt">(dataset_name, data_home, version)</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span>     <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span><span class="s2">     if dataset_name not in datasets_list:</span>
-<span class="ne">---&gt; </span><span class="mi">43</span><span class="s2">         raise ValueError(&quot;Invalid dataset </span><span class="si">{}</span><span class="s2">&quot;.format(dataset_name))</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span><span class="s2">     return mirdata.initialize(</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span><span class="s2">         dataset_name=dataset_name, data_home=data_home, version=version</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/__init__.py:43,</span> in <span class="ni">load_dataset</span><span class="nt">(dataset_name, data_home, version)</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="sd">&quot;&quot;&quot;Alias function to load a mirdata Dataset class.</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="sd"> :param dataset_name: the dataset&#39;s name, see mirdata.DATASETS for a</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span><span class="sd"> :returns: a mirdata.core.Dataset object.</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span> <span class="k">if</span> <span class="n">dataset_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">datasets_list</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">43</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid dataset </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">return</span> <span class="n">mirdata</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="n">dataset_name</span><span class="o">=</span><span class="n">dataset_name</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="n">data_home</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">version</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="p">)</span>
 
 <span class="ne">ValueError</span>: Invalid dataset four_way_tabla
 </pre></div>
@@ -839,19 +845,28 @@ indicate that such tools have pre-trained models available, which may be loaded 
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModelNotDefinedError</span><span class="g g-Whitespace">                      </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2879</span><span class="o">/</span><span class="mf">2139212540.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Loading pre-trained four-way tabla model and dataset</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">trained_four_way</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;rhythm:four-way-tabla&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Getting audio from random track in the dataset</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/__init__.py</span> in <span class="ni">load_model</span><span class="nt">(model_name, models_dict)</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span>         <span class="k">raise</span> <span class="n">ModelNotDefinedError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span>             <span class="p">(</span>
-<span class="ne">---&gt; </span><span class="mi">21</span>                 <span class="sa">f</span><span class="s2">&quot;Model, </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> does not exist in compiam.data.models_dict, please follow &quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span>                 <span class="s2">&quot;instructions for adding new model to in ``data.py`` documentation&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>             <span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/__init__.py:19,</span> in <span class="ni">load_model</span><span class="nt">(model_name, models_dict)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="sd">&quot;&quot;&quot;Wrapper for loading pre-trained models.</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="sd"> :param model_name: name of the model, extractors, or algorithm to load.</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="sd"> :param models_dict: dict object including the available models.</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="sd"> :returns: specific Class of the selected model.</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">model_name</span> <span class="ow">in</span> <span class="n">models_dict</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">19</span>     <span class="k">raise</span> <span class="n">ModelNotDefinedError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>         <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>             <span class="sa">f</span><span class="s2">&quot;Model, </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> does not exist in compiam.data.models_dict, please follow &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>             <span class="s2">&quot;instructions for adding new model to in ``data.py`` documentation&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">m_dict</span> <span class="o">=</span> <span class="n">models_dict</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="n">module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">import_module</span><span class="p">(</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;module_name&quot;</span><span class="p">]),</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;class_name&quot;</span><span class="p">])</span>
 
 <span class="ne">ModelNotDefinedError</span>: Model, rhythm:four-way-tabla does not exist in compiam.data.models_dict, please follow instructions for adding new model to in ``data.py`` documentation
 </pre></div>
