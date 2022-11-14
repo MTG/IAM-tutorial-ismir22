@@ -32,7 +32,6 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-%%capture
-%pip install torch==1.8.0
+%sx pip install torch==1.8.0
 -------------------
 

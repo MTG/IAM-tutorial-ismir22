@@ -600,8 +600,7 @@ title="Print to PDF"
 <p><span id="id2">[<a class="reference internal" href="../resources/references.html#id25" title="A. Anantapadmanabhan, J. P. Bello, R. Krishnan, and H. Murthy. Tonic-Independent Stroke Transcription of the Mridangam. In AES 53rd International Conference: Semantic Audio, London, UK. 2014.">ABKM14</a>, <a class="reference internal" href="../resources/references.html#id70" title="A. Anantapadmanabhan, A. Bellur, and H. A. Murthy. Modal analysis and transcription of strokes of the mridangam using non-negative matrix factorization. IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), Vancouver, Canada, pages 313–318, 2013.">ABM13</a>]</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="o">%</span><span class="n">pip</span> <span class="n">install</span> <span class="n">compiam</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">sx</span> pip install compiam
 
 <span class="kn">import</span> <span class="nn">compiam</span>
 </pre></div>
@@ -610,21 +609,24 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.timbre</span> <span class="kn">import</span> <span class="n">MridangamStrokeClassification</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.timbre.stroke_classification</span> <span class="kn">import</span> <span class="n">MridangamStrokeClassification</span>
 <span class="n">melodia</span> <span class="o">=</span> <span class="n">MridangamStrokeClassification</span><span class="p">()</span>  <span class="c1"># initializing a melodia instance</span>
 <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   INFO   ] MusicExtractorSVM: no classifier models were configured by default
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3259</span><span class="o">/</span><span class="mf">3013074821.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.timbre</span> <span class="kn">import</span> <span class="n">MridangamStrokeClassification</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3414</span><span class="o">/</span><span class="mf">1622499123.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.timbre.stroke_classification</span> <span class="kn">import</span> <span class="n">MridangamStrokeClassification</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">melodia</span> <span class="o">=</span> <span class="n">MridangamStrokeClassification</span><span class="p">()</span>  <span class="c1"># initializing a melodia instance</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
 
-<span class="ne">ImportError</span>: cannot import name &#39;MridangamStrokeClassification&#39; from &#39;compiam.timbre&#39; (/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/timbre/__init__.py)
+<span class="ne">AttributeError</span>: &#39;MridangamStrokeClassification&#39; object has no attribute &#39;extract&#39;
 </pre></div>
 </div>
 </div>
@@ -635,7 +637,7 @@ title="Print to PDF"
 <p><span id="id3">[<a class="reference internal" href="../resources/references.html#id27" title="M.A. Rohit, Amitrajit Bhattacharjee, and Preeti Rao. Four-way classification of tabla strokes with models adapted from automatic drum transcription. In In Proc. of the 22nd International Society for Music Information Retrieval Conference, ISMIR, Online, 19–26. 2021.">RBR21</a>]</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.rhythm</span> <span class="kn">import</span> <span class="n">FourWayTabla</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.rhythm.transcription</span> <span class="kn">import</span> <span class="n">FourWayTabla</span>
 <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">FourWayTabla</span><span class="p">()</span>  <span class="c1"># initializing a melodia instance</span>
 <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
 </pre></div>
@@ -643,13 +645,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3259</span><span class="o">/</span><span class="mf">3515735684.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.rhythm</span> <span class="kn">import</span> <span class="n">FourWayTabla</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3414</span><span class="o">/</span><span class="mf">1500222521.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.rhythm.transcription</span> <span class="kn">import</span> <span class="n">FourWayTabla</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">FourWayTabla</span><span class="p">()</span>  <span class="c1"># initializing a melodia instance</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
 
-<span class="ne">ImportError</span>: cannot import name &#39;FourWayTabla&#39; from &#39;compiam.rhythm&#39; (/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/rhythm/__init__.py)
+<span class="ne">AttributeError</span>: &#39;FourWayTabla&#39; object has no attribute &#39;extract&#39;
 </pre></div>
 </div>
 </div>

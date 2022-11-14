@@ -551,8 +551,7 @@ title="Print to PDF"
 <p>Intro here…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="o">%</span><span class="n">pip</span> <span class="n">install</span> <span class="n">compiam</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">sx</span> pip install compiam
 
 <span class="kn">import</span> <span class="nn">compiam</span>
 </pre></div>
@@ -575,8 +574,15 @@ title="Print to PDF"
 <p>We already see that the available tool appears with a <code class="docutils literal notranslate"><span class="pre">*</span></code> at the end of the name, which indicates that it may be loaded using the <code class="docutils literal notranslate"><span class="pre">compiam.load_models()</span></code> wrapper. Observing <a class="reference external" href="https://mtg.github.io/compIAM/source/melody.html#module-compiam.melody.raga_recognition.deepsrgm">the entry of this tool in the <code class="docutils literal notranslate"><span class="pre">compiam</span></code> documentation</a>, we note that an optional dependency is needed to properly load this tool. Let’s install it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="o">%</span><span class="n">pip</span> <span class="n">install</span> <span class="n">torch</span><span class="o">==</span><span class="mf">1.8.0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">sx</span> pip install <span class="nv">torch</span><span class="o">==</span><span class="m">1</span>.8.0
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
 </div>

@@ -678,8 +678,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">compiam</span></code> is registered to PyPI, therefore the latest release can be installed with:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="o">%</span><span class="n">pip</span> <span class="n">install</span> <span class="n">compiam</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">sx</span> pip install compiam
 
 <span class="c1">## Importing compiam to the project</span>
 <span class="kn">import</span> <span class="nn">compiam</span>
@@ -798,7 +797,7 @@ Available rhythmic tools: [&#39;akshara_pulse_tracker.AksharaPulseTracker&#39;, 
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2906</span><span class="o">/</span><span class="mf">2337061529.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3064</span><span class="o">/</span><span class="mf">2337061529.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> 
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">## Initializing dataloader for an example dataset</span>
 <span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">fw_tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
@@ -869,7 +868,7 @@ indicate that such tools have pre-trained models available, which may be loaded 
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModelNotDefinedError</span><span class="g g-Whitespace">                      </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2906</span><span class="o">/</span><span class="mf">2139212540.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3064</span><span class="o">/</span><span class="mf">2139212540.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Loading pre-trained four-way tabla model and dataset</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">trained_four_way</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;rhythm:four-way-tabla&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
