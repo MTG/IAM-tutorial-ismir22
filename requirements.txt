@@ -1,5 +1,6 @@
 jupyter-book
 jupyterlab
+ipython
 matplotlib>=3.0.0
 numpy==1.19.5
 librosa==0.8.0
