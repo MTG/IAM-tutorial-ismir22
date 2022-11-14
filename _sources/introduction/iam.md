@@ -13,7 +13,7 @@ The tutorial covers two contemporary styles – Carnatic and Hindustani – that
 
 (hindustani-music)=
 ## Hindustani Music
-Meanwhile, **Hindustani music** is the term used to refer to the related styles performed more in the north of India. See now an example below featuring Ashwini Bhide Deshpande performing Rāg Rāgeśrī at the FEA-curated Gayatri Festival 2016. She is accompanied by Vishwanath Shirodkar on tabla, Seema Shirodkar on harmonium, Swarangi Marathe and Shamika Bhide on tambūrās and supporting vocals. Video from the First Edition Arts Channel. 
+Meanwhile, **Hindustani music** is the term used to refer to the related styles performed more in the north of India. An example is given below featuring Ashwini Bhide Deshpande performing Rāg Rāgeśrī at the FEA-curated Gayatri Festival 2016. She is accompanied by Vishwanath Shirodkar on tabla, Seema Shirodkar on harmonium, Swarangi Marathe and Shamika Bhide on tambūrās and supporting vocals. Video from the First Edition Arts Channel. 
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/AQtWq88xFls" title="Example video" frameborder="2" allow="accelerometer; autoplay; clipboard-write; encrypted-media" allowfullscreen></iframe>
 

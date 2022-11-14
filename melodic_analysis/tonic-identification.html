@@ -548,37 +548,38 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="tonic-identification">
 <span id="id1"></span><h1>Tonic identification<a class="headerlink" href="#tonic-identification" title="Permalink to this headline">#</a></h1>
-<p>As a common step in the walkthroughs in this tutorial, let us first start by installing and importing the latest released version of <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>TODO: link to musicological sections.</p>
+</div>
+<p>Let us first start by installing and importing the latest released version of <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="o">%</span><span class="n">pip</span> <span class="n">install</span> <span class="n">compiam</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>All notebooks in this tutorial are meant to be standalone. Therefore, for each tool walkthrough we will install and import <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="o">%</span><span class="n">pip</span> <span class="n">install</span> <span class="n">compiam</span>
-
-<span class="kn">import</span> <span class="nn">compiam</span>
-<span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">TonicIndianMultiPitch</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3122</span><span class="o">/</span><span class="mf">3933193606.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">compiam</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">TonicIndianMultiPitch</span>
-
-<span class="ne">ImportError</span>: cannot import name &#39;TonicIndianMultiPitch&#39; from &#39;compiam.melody&#39; (/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/melody/__init__.py)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">compiam</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available methods for tonic identification: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span>\
+    <span class="nb">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">tonic_identification</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We first initialize the tool we have just imported</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing the tool</span>
+<span class="kn">from</span> <span class="nn">compiam.melody.tonic_identification</span> <span class="kn">import</span> <span class="n">TonicIndianMultiPitch</span>
+
+<span class="c1"># We first initialize the tool we have just imported</span>
 <span class="n">tonic_multipitch</span> <span class="o">=</span> <span class="n">TonicIndianMultiPitch</span><span class="p">()</span>
 
 <span class="c1"># Let&#39;s first see the specific attributes of this tool</span>
@@ -587,26 +588,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3122</span><span class="o">/</span><span class="mf">3611672670.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># We first initialize the tool we have just imported</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tonic_multipitch</span> <span class="o">=</span> <span class="n">TonicIndianMultiPitch</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Let&#39;s first see the specific attributes of this tool</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">attributes</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">tonic_multipitch</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;__&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;TonicIndianMultiPitch&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <p>We observe a long list of attributes for this tool. That is because this is an <strong>extractor</strong>. Within the context of this tutorial, we use this concept to refer to <strong>heuristic-based</strong> tools that extract or compute a particular representation from a music signal. In this case, the tonic of the input musical recording. Heuristic-based approaches are commonly tuned by a list of particular parameter, which can be tuned to improve the performance for particular cases.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can print out the standard value for a particular parameter</span>
-<span class="n">tonic_multipitch</span><span class="o">.</span><span class="n">TODO</span>
+<span class="n">tonic_multipitch</span><span class="o">.</span><span class="n">minTonicFrequency</span>
 </pre></div>
 </div>
 </div>
@@ -628,7 +615,7 @@ title="Print to PDF"
 <li><p>Otherwise, if available, you may get the audios from the Dunya database.</p></li>
 </ul>
 <p>Accessing the data in Dunya requires you to have a unique and non-shareable access token. For that reason, we cannot provide an interactive walkthrough of how to parse audio examples from Dunya.</p>
-<p>We list here an example code block that may be run to parse audio from Dunya, and we provide, within the tutorial materials, a couple of audio excerpts to show you through the available tools.</p>
+<p><strong>Not a problem though!</strong> We list here an example code block that may be run to parse audio from Dunya, and we provide, within the tutorial materials, a couple of audio excerpts to show you through the available tools.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can get a random recording from the dataloader using <code class="docutils literal notranslate"><span class="pre">dataset.choice_track()</span></code>.</p>
