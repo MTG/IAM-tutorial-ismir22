@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Stroke classification</title>
+    <title>Stroke classification &#8212; My Jupyter Book</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -97,6 +97,8 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="../_static/logo.png" class="logo" alt="logo">
       
       
+      <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
+      
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
@@ -127,63 +129,26 @@ const thebe_selector_output = ".output, .cell_output"
    compIAM package
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Indian Art Music
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/iam.html">
+  <a class="reference internal" href="../indian_art_music/iam.html">
    What is Indian Art Music?
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Carnatic Music
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../carnatic/instrumentation.html">
-   Instrumentation
+  <a class="reference internal" href="../indian_art_music/carnatic-music.html">
+   Carnatic Music
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../carnatic/format.html">
-   Musical format
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../carnatic/melody-carnatic.html">
-   Melody
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../carnatic/rhythm-carnatic.html">
-   Rhythm
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Hindustani Music
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../hindustani/instrumentation.html">
-   Instrumentation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../hindustani/format.html">
-   Musical format
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../hindustani/melody-hindustani.html">
-   Melody
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../hindustani/rhythm-hindustani.html">
-   Rhythm
+  <a class="reference internal" href="../indian_art_music/hindustani-music.html">
+   Hindustani music
   </a>
  </li>
 </ul>
@@ -598,16 +563,17 @@ title="Print to PDF"
 <section id="mridangam">
 <h2>Mridangam<a class="headerlink" href="#mridangam" title="Permalink to this headline">#</a></h2>
 <p><span id="id2">[<a class="reference internal" href="../resources/references.html#id25" title="A. Anantapadmanabhan, J. P. Bello, R. Krishnan, and H. Murthy. Tonic-Independent Stroke Transcription of the Mridangam. In AES 53rd International Conference: Semantic Audio, London, UK. 2014.">ABKM14</a>, <a class="reference internal" href="../resources/references.html#id70" title="A. Anantapadmanabhan, A. Bellur, and H. A. Murthy. Modal analysis and transcription of strokes of the mridangam using non-negative matrix factorization. IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), Vancouver, Canada, pages 313–318, 2013.">ABM13</a>]</span></p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">sx</span> pip install compiam
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install compiam
 
+<span class="c1">## Importing compiam to the project</span>
 <span class="kn">import</span> <span class="nn">compiam</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+
+<span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -617,6 +583,50 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.timbre.stroke_classification</span> <span class="kn">import</span> <span class="n">MridangamStrokeClassification</span>
 <span class="n">melodia</span> <span class="o">=</span> <span class="n">MridangamStrokeClassification</span><span class="p">()</span>  <span class="c1"># initializing a melodia instance</span>
 <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.7.15</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">timbre</span><span class="o">/</span><span class="n">stroke_classification</span><span class="o">/</span><span class="n">mridangam_stroke_classification</span><span class="o">/</span><span class="n">stroke_features</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">8</span>     <span class="kn">import</span> <span class="nn">essentia.standard</span> <span class="k">as</span> <span class="nn">estd</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">except</span><span class="p">:</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;essentia&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/timbre/stroke_classification/mridangam_stroke_classification/__init__.py</span> in <span class="ni">__init__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>             <span class="k">global</span> <span class="n">features_for_pred</span><span class="p">,</span> <span class="n">process_strokes</span><span class="p">,</span> <span class="n">features_for_pred</span><span class="p">,</span> <span class="n">normalise_features</span>
+<span class="ne">---&gt; </span><span class="mi">23</span>             <span class="kn">from</span> <span class="nn">compiam.timbre.stroke_classification.mridangam_stroke_classification.stroke_features</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>                 <span class="n">features_for_pred</span><span class="p">,</span>
+
+<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.7.15</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">timbre</span><span class="o">/</span><span class="n">stroke_classification</span><span class="o">/</span><span class="n">mridangam_stroke_classification</span><span class="o">/</span><span class="n">stroke_features</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+<span class="ne">---&gt; </span><span class="mi">11</span>         <span class="s2">&quot;In order to use this tool you need to have essentia installed. &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="s2">&quot;Please install essentia using: pip install essentia&quot;</span>
+
+<span class="ne">ImportError</span>: In order to use this tool you need to have essentia installed. Please install essentia using: pip install essentia
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3336</span><span class="o">/</span><span class="mf">1622499123.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.timbre.stroke_classification</span> <span class="kn">import</span> <span class="n">MridangamStrokeClassification</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">melodia</span> <span class="o">=</span> <span class="n">MridangamStrokeClassification</span><span class="p">()</span>  <span class="c1"># initializing a melodia instance</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/timbre/stroke_classification/mridangam_stroke_classification/__init__.py</span> in <span class="ni">__init__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span>         <span class="k">except</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span>             <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+<span class="ne">---&gt; </span><span class="mi">31</span>                 <span class="s2">&quot;In order to use this tool you need to have essentia installed. &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span>                 <span class="s2">&quot;Please install essentia using: pip install essentia&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>             <span class="p">)</span>
+
+<span class="ne">ImportError</span>: In order to use this tool you need to have essentia installed. Please install essentia using: pip install essentia
 </pre></div>
 </div>
 </div>
@@ -630,6 +640,50 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.rhythm.transcription</span> <span class="kn">import</span> <span class="n">FourWayTabla</span>
 <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">FourWayTabla</span><span class="p">()</span>  <span class="c1"># initializing a melodia instance</span>
 <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
+<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/rhythm/transcription/tabla_transcription/__init__.py</span> in <span class="ni">__init__</span><span class="nt">(self, model_path, n_folds, seq_length, hop_dur, device)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>             <span class="k">global</span> <span class="n">torch</span>
+<span class="ne">---&gt; </span><span class="mi">22</span>             <span class="kn">import</span> <span class="nn">torch</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> 
+
+<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.7.15</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">torch</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">    </span><span class="mi">194</span>     <span class="k">if</span> <span class="n">USE_GLOBAL_DEPS</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">195</span>         <span class="n">_load_global_deps</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span>     <span class="kn">from</span> <span class="nn">torch._C</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/torch/__init__.py</span> in <span class="ni">_load_global_deps</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span> 
+<span class="ne">--&gt; </span><span class="mi">148</span>     <span class="n">ctypes</span><span class="o">.</span><span class="n">CDLL</span><span class="p">(</span><span class="n">lib_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">ctypes</span><span class="o">.</span><span class="n">RTLD_GLOBAL</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/ctypes/__init__.py</span> in <span class="ni">__init__</span><span class="nt">(self, name, mode, handle, use_errno, use_last_error)</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span>         <span class="k">if</span> <span class="n">handle</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">364</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_handle</span> <span class="o">=</span> <span class="n">_dlopen</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="ne">OSError</span>: /opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/torch/lib/libtorch_global_deps.so: cannot open shared object file: No such file or directory
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3336</span><span class="o">/</span><span class="mf">1500222521.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.rhythm.transcription</span> <span class="kn">import</span> <span class="n">FourWayTabla</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">FourWayTabla</span><span class="p">()</span>  <span class="c1"># initializing a melodia instance</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/rhythm/transcription/tabla_transcription/__init__.py</span> in <span class="ni">__init__</span><span class="nt">(self, model_path, n_folds, seq_length, hop_dur, device)</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span>         <span class="k">except</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span>             <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+<span class="ne">---&gt; </span><span class="mi">42</span>                 <span class="s2">&quot;In order to use this tool you need to have torch installed. &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>                 <span class="s2">&quot;Please install torch using: pip install torch&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>             <span class="p">)</span>
+
+<span class="ne">ImportError</span>: In order to use this tool you need to have torch installed. Please install torch using: pip install torch
 </pre></div>
 </div>
 </div>

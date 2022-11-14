@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Datasets</title>
+    <title>Datasets &#8212; My Jupyter Book</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -97,6 +97,8 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="../_static/logo.png" class="logo" alt="logo">
       
       
+      <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
+      
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
@@ -127,63 +129,26 @@ const thebe_selector_output = ".output, .cell_output"
    compIAM package
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Indian Art Music
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/iam.html">
+  <a class="reference internal" href="../indian_art_music/iam.html">
    What is Indian Art Music?
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Carnatic Music
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../carnatic/instrumentation.html">
-   Instrumentation
+  <a class="reference internal" href="../indian_art_music/carnatic-music.html">
+   Carnatic Music
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../carnatic/format.html">
-   Musical format
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../carnatic/melody-carnatic.html">
-   Melody
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../carnatic/rhythm-carnatic.html">
-   Rhythm
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Hindustani Music
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../hindustani/instrumentation.html">
-   Instrumentation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../hindustani/format.html">
-   Musical format
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../hindustani/melody-hindustani.html">
-   Melody
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../hindustani/rhythm-hindustani.html">
-   Rhythm
+  <a class="reference internal" href="../indian_art_music/hindustani-music.html">
+   Hindustani music
   </a>
  </li>
 </ul>
@@ -628,15 +593,21 @@ title="Print to PDF"
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">sx</span> pip install compiam
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install compiam
+
+<span class="c1"># Import compiam</span>
+<span class="kn">import</span> <span class="nn">compiam</span>
+
+<span class="c1"># Supress warnings to keep the tutorial clean</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">compiam</span>
-<span class="n">saraga_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;saraga_carnatic&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">saraga_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;saraga_carnatic&quot;</span><span class="p">)</span>
 
 <span class="c1">## Let&#39;s get a random track from the dataset!</span>
 <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
@@ -648,19 +619,19 @@ title="Print to PDF"
   audio_ghatam_path=None,
   audio_mridangam_left_path=None,
   audio_mridangam_right_path=None,
-  audio_path=&quot;...hal by Sanjay Subrahmanyan/Pavamaana Suthudu Pattu/Sanjay Subrahmanyan - Pavamaana Suthudu Pattu.mp3&quot;,
+  audio_path=&quot;... Kamarajar Hall by Sanjay Subrahmanyan/Ozhukkam Uyirinum/Sanjay Subrahmanyan - Ozhukkam Uyirinum.mp3&quot;,
   audio_violin_path=None,
   audio_vocal_path=None,
   audio_vocal_s_path=None,
-  ctonic_path=&quot;...Sanjay Subrahmanyan/Pavamaana Suthudu Pattu/Sanjay Subrahmanyan - Pavamaana Suthudu Pattu.ctonic.txt&quot;,
-  metadata_path=&quot;...al by Sanjay Subrahmanyan/Pavamaana Suthudu Pattu/Sanjay Subrahmanyan - Pavamaana Suthudu Pattu.json&quot;,
-  phrases_path=&quot;...brahmanyan/Pavamaana Suthudu Pattu/Sanjay Subrahmanyan - Pavamaana Suthudu Pattu.mphrases-manual.txt&quot;,
-  pitch_path=&quot;... Sanjay Subrahmanyan/Pavamaana Suthudu Pattu/Sanjay Subrahmanyan - Pavamaana Suthudu Pattu.pitch.txt&quot;,
+  ctonic_path=&quot;...jar Hall by Sanjay Subrahmanyan/Ozhukkam Uyirinum/Sanjay Subrahmanyan - Ozhukkam Uyirinum.ctonic.txt&quot;,
+  metadata_path=&quot;...Kamarajar Hall by Sanjay Subrahmanyan/Ozhukkam Uyirinum/Sanjay Subrahmanyan - Ozhukkam Uyirinum.json&quot;,
+  phrases_path=&quot;...by Sanjay Subrahmanyan/Ozhukkam Uyirinum/Sanjay Subrahmanyan - Ozhukkam Uyirinum.mphrases-manual.txt&quot;,
+  pitch_path=&quot;...ajar Hall by Sanjay Subrahmanyan/Ozhukkam Uyirinum/Sanjay Subrahmanyan - Ozhukkam Uyirinum.pitch.txt&quot;,
   pitch_vocal_path=None,
-  sama_path=&quot;...y Subrahmanyan/Pavamaana Suthudu Pattu/Sanjay Subrahmanyan - Pavamaana Suthudu Pattu.sama-manual.txt&quot;,
-  sections_path=&quot;...ahmanyan/Pavamaana Suthudu Pattu/Sanjay Subrahmanyan - Pavamaana Suthudu Pattu.sections-manual-p.txt&quot;,
-  tempo_path=&quot;... Subrahmanyan/Pavamaana Suthudu Pattu/Sanjay Subrahmanyan - Pavamaana Suthudu Pattu.tempo-manual.txt&quot;,
-  track_id=&quot;100_Pavamaana_Suthudu_Pattu&quot;,
+  sama_path=&quot;...all by Sanjay Subrahmanyan/Ozhukkam Uyirinum/Sanjay Subrahmanyan - Ozhukkam Uyirinum.sama-manual.txt&quot;,
+  sections_path=&quot;... Sanjay Subrahmanyan/Ozhukkam Uyirinum/Sanjay Subrahmanyan - Ozhukkam Uyirinum.sections-manual-p.txt&quot;,
+  tempo_path=&quot;...ll by Sanjay Subrahmanyan/Ozhukkam Uyirinum/Sanjay Subrahmanyan - Ozhukkam Uyirinum.tempo-manual.txt&quot;,
+  track_id=&quot;36_Ozhukkam_Uyirinum&quot;,
   audio: The track&#39;s audio
 
         Returns,
@@ -700,13 +671,13 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2949</span><span class="o">/</span><span class="mf">4020414023.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2948</span><span class="o">/</span><span class="mf">4020414023.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> 
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Get available ragas</span>
 <span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">available_raagas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">])</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">available_raagas</span>
 
-<span class="nn">/tmp/ipykernel_2949/4020414023.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="nn">/tmp/ipykernel_2948/4020414023.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> 
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Get available ragas</span>
 <span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">available_raagas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">])</span>
@@ -755,7 +726,7 @@ title="Print to PDF"
 <p>Grouping recordings per raaga is a common organization strategy for the melodic analysis of Carnatic and Hindustani Music. This is very easy!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>See a detailed discussion about the concept of raaga in the <span class="xref myst">melodic section</span> of the tutorial.</p>
+<p>See a detailed discussion about the concept of raaga in the <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-raga"><span class="std std-ref">designated section</span></a> in the tutorial.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -772,7 +743,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2949</span><span class="o">/</span><span class="mf">879981331.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2948</span><span class="o">/</span><span class="mf">879981331.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">raaga_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">available_raagas</span><span class="p">}</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">:</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">if</span> <span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -809,7 +780,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2949</span><span class="o">/</span><span class="mf">2538142328.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2948</span><span class="o">/</span><span class="mf">2538142328.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> 
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">## Selecting a track for a particular raaga</span>
 <span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">example_track</span> <span class="o">=</span> <span class="n">raaga_dict</span><span class="p">[</span><span class="n">available_raagas</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span>

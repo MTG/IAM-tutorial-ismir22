@@ -59,7 +59,7 @@ Our corpora class include methods to get an overview of the available data in th
 * ``list_concerts()``: list all available concerts in the selected database.
 * ``list_available_types(<artists-musicbrainz-id>)``:  prints you out the available types of file available for a particular recording.
 
-See the entire list of methods in the [`compiam` Corpora class documentation](TODO: link).
+See the entire list of methods in the [`compiam` Corpora class documentation](https://mtg.github.io/compIAM/source/datasets.html#access-the-dunya-corpora).
 
 ### Getting the data
 The Dunya Python API also provides methods to get the data. You may use these set of functionalities to parse and/or download into your machine a particular annotation, metadata file, or audio track.
