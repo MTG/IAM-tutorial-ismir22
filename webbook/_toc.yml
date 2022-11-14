@@ -9,7 +9,7 @@ parts:
 - caption: Indian Art Music
   chapters:
     - file: indian_art_music/iam
-      Title: What is Indian Art Music?
+      title: What is Indian Art Music?
     - file: indian_art_music/carnatic-music
     - file: indian_art_music/hindustani-music
 
