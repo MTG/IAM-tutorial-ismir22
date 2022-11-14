@@ -75,7 +75,7 @@ To showcase the nuances of a tāl as well as the skill of the percussionist with
 
 In Hindustani music, the tempo is measured in mātrās per minute (MPM). The music has a wide range of tempo, divided into tempo classes called lay as described before. The mainly performed ones are the the slow (vilaṁbit), medium (madhya), and fast (dr̥t) classes. The boundary between these tempo classes is not well defined with possible overlaps. In this dissertation, after consultation with a professional Hindustani musician, we use the commonly agreed tempo ranges for these classes: vilaṁbit lay for a median tempo between 10-60 MPM, madhya lay for 60-150 MPM, and dr̥t lay for >150 MPM. This large range of allowed tempi means that the duration of a tāl cycle in Hindustani music ranges from less than 2 seconds to over a minute. A mātrā in vilaṁbit lay hence can last about 6 seconds, and to maintain a continuous rhythmic pulse, several filler strokes are played on the tabla. Hence the surface rhythm apparent from audio recordings can be quite different from the underlying metrical structure.
 
-(bols)=
+(hindustani-bols)=
 ### Bōls
 Similar to mridangam, the tabla repertoire is transmitted using onomatopoeic oral mnemonic syllables called the bōl. Tabla has different stylistic schools called gharānās. The repertoires of major gharānās of tabla differ in aspects such as the use of specific bōls, the dynamics of strokes, ornamentation and rhythmical phrases {cite}`beronja_2008`. But there are also many similarities due to the fact that the same forms and standard phrases reappear across these repertoires {cite}`gottlieb_1993`.
 

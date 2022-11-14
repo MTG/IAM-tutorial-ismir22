@@ -77,5 +77,5 @@ workspace/
 webbook/_build/
 
 # old structure
-webbook/carnatic
-webbook/hindustani
+webbook/carnatic/
+webbook/hindustani/
