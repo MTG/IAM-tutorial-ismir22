@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Datasets &#8212; My Jupyter Book</title>
+    <title>Datasets</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -96,8 +96,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       <img src="../_static/logo.png" class="logo" alt="logo">
       
-      
-      <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -607,42 +605,237 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">saraga_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;saraga_carnatic&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mridangam_stroke</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;mridangam_stroke&quot;</span><span class="p">)</span>
+<span class="n">mridangam_stroke</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
+<span class="n">mridangam_stroke</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
 
 <span class="c1">## Let&#39;s get a random track from the dataset!</span>
-<span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
+<span class="n">mridangam_stroke</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00B [00:00, ?B/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 8.00k/124M [00:01&lt;8:49:46, 4.10kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 32.0k/124M [00:02&lt;1:51:51, 19.4kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 80.0k/124M [00:02&lt;38:43, 56.0kB/s]  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 112k/124M [00:02&lt;27:33, 78.7kB/s] 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 256k/124M [00:02&lt;09:26, 230kB/s] 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 528k/124M [00:02&lt;04:02, 536kB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|          | 1.05M/124M [00:02&lt;01:48, 1.19MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|▏         | 2.11M/124M [00:03&lt;00:49, 2.58MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|▎         | 4.12M/124M [00:03&lt;00:23, 5.28MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|▌         | 6.27M/124M [00:03&lt;00:16, 7.58MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|▋         | 9.14M/124M [00:03&lt;00:11, 10.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|▉         | 11.8M/124M [00:03&lt;00:09, 12.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|█▏        | 14.5M/124M [00:03&lt;00:08, 13.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|█▍        | 17.1M/124M [00:04&lt;00:07, 14.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|█▌        | 20.0M/124M [00:04&lt;00:06, 15.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|█▊        | 22.6M/124M [00:04&lt;00:06, 16.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|██        | 25.4M/124M [00:04&lt;00:06, 16.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|██▎       | 28.3M/124M [00:04&lt;00:05, 17.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|██▌       | 31.2M/124M [00:04&lt;00:05, 17.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|██▋       | 33.7M/124M [00:05&lt;00:05, 17.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 29%|██▉       | 36.5M/124M [00:05&lt;00:05, 17.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 32%|███▏      | 39.3M/124M [00:05&lt;00:05, 17.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 34%|███▍      | 42.1M/124M [00:05&lt;00:04, 17.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 36%|███▌      | 45.0M/124M [00:05&lt;00:04, 18.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███▊      | 47.8M/124M [00:05&lt;00:04, 18.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 41%|████      | 50.7M/124M [00:06&lt;00:04, 18.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 43%|████▎     | 53.4M/124M [00:06&lt;00:04, 17.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 45%|████▌     | 56.3M/124M [00:06&lt;00:03, 18.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 47%|████▋     | 59.0M/124M [00:06&lt;00:03, 17.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 50%|████▉     | 61.9M/124M [00:06&lt;00:03, 18.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 52%|█████▏    | 64.6M/124M [00:06&lt;00:03, 17.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 54%|█████▍    | 67.5M/124M [00:07&lt;00:03, 17.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|█████▋    | 70.1M/124M [00:07&lt;00:03, 17.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 59%|█████▊    | 72.8M/124M [00:07&lt;00:03, 17.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 61%|██████    | 75.6M/124M [00:07&lt;00:02, 17.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 63%|██████▎   | 78.5M/124M [00:07&lt;00:02, 17.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 66%|██████▌   | 81.4M/124M [00:07&lt;00:02, 18.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 68%|██████▊   | 84.3M/124M [00:08&lt;00:02, 18.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 70%|███████   | 87.0M/124M [00:08&lt;00:02, 17.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 72%|███████▏  | 89.8M/124M [00:08&lt;00:02, 17.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 74%|███████▍  | 92.4M/124M [00:08&lt;00:01, 17.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 77%|███████▋  | 95.2M/124M [00:08&lt;00:01, 17.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 79%|███████▊  | 97.8M/124M [00:08&lt;00:01, 17.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 81%|████████  | 101M/124M [00:09&lt;00:01, 17.7MB/s] 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 83%|████████▎ | 104M/124M [00:09&lt;00:01, 18.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 86%|████████▌ | 106M/124M [00:09&lt;00:01, 17.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 88%|████████▊ | 109M/124M [00:09&lt;00:00, 18.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 90%|█████████ | 112M/124M [00:09&lt;00:00, 17.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 92%|█████████▏| 115M/124M [00:09&lt;00:00, 18.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 94%|█████████▍| 117M/124M [00:09&lt;00:00, 17.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 97%|█████████▋| 120M/124M [00:10&lt;00:00, 17.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 99%|█████████▉| 123M/124M [00:10&lt;00:00, 17.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>124MB [00:10, 12.6MB/s]                           
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/6976 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|▋         | 516/6976 [00:00&lt;00:01, 5154.57it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|█▍        | 1032/6976 [00:00&lt;00:01, 5125.56it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|██▏       | 1545/6976 [00:00&lt;00:01, 4964.83it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|███       | 2106/6976 [00:00&lt;00:00, 5212.35it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███▊      | 2629/6976 [00:00&lt;00:00, 5005.20it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 46%|████▌     | 3187/6976 [00:00&lt;00:00, 5191.62it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 54%|█████▎    | 3744/6976 [00:00&lt;00:00, 5310.51it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 61%|██████▏   | 4289/6976 [00:00&lt;00:00, 5351.13it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 69%|██████▉   | 4826/6976 [00:00&lt;00:00, 4975.94it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 76%|███████▋  | 5335/6976 [00:01&lt;00:00, 5007.25it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 84%|████████▎ | 5840/6976 [00:01&lt;00:00, 4989.23it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 91%|█████████ | 6342/6976 [00:01&lt;00:00, 4813.45it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 98%|█████████▊| 6828/6976 [00:01&lt;00:00, 4825.62it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 6976/6976 [00:01&lt;00:00, 5013.00it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Track(
-  audio_ghatam_path=None,
-  audio_mridangam_left_path=None,
-  audio_mridangam_right_path=None,
-  audio_path=&quot;... Kamarajar Hall by Sanjay Subrahmanyan/Ozhukkam Uyirinum/Sanjay Subrahmanyan - Ozhukkam Uyirinum.mp3&quot;,
-  audio_violin_path=None,
-  audio_vocal_path=None,
-  audio_vocal_s_path=None,
-  ctonic_path=&quot;...jar Hall by Sanjay Subrahmanyan/Ozhukkam Uyirinum/Sanjay Subrahmanyan - Ozhukkam Uyirinum.ctonic.txt&quot;,
-  metadata_path=&quot;...Kamarajar Hall by Sanjay Subrahmanyan/Ozhukkam Uyirinum/Sanjay Subrahmanyan - Ozhukkam Uyirinum.json&quot;,
-  phrases_path=&quot;...by Sanjay Subrahmanyan/Ozhukkam Uyirinum/Sanjay Subrahmanyan - Ozhukkam Uyirinum.mphrases-manual.txt&quot;,
-  pitch_path=&quot;...ajar Hall by Sanjay Subrahmanyan/Ozhukkam Uyirinum/Sanjay Subrahmanyan - Ozhukkam Uyirinum.pitch.txt&quot;,
-  pitch_vocal_path=None,
-  sama_path=&quot;...all by Sanjay Subrahmanyan/Ozhukkam Uyirinum/Sanjay Subrahmanyan - Ozhukkam Uyirinum.sama-manual.txt&quot;,
-  sections_path=&quot;... Sanjay Subrahmanyan/Ozhukkam Uyirinum/Sanjay Subrahmanyan - Ozhukkam Uyirinum.sections-manual-p.txt&quot;,
-  tempo_path=&quot;...ll by Sanjay Subrahmanyan/Ozhukkam Uyirinum/Sanjay Subrahmanyan - Ozhukkam Uyirinum.tempo-manual.txt&quot;,
-  track_id=&quot;36_Ozhukkam_Uyirinum&quot;,
+  audio_path=&quot;/home/runner/mir_datasets/mridangam_stroke/mridangam_stroke_1.5/C/225600__akshaylaya__num-c-058.wav&quot;,
+  stroke_name=&quot;num&quot;,
+  tonic=&quot;C&quot;,
+  track_id=&quot;225600&quot;,
   audio: The track&#39;s audio
 
         Returns,
-  metadata: ,
-  phrases: ,
-  pitch: ,
-  pitch_vocal: ,
-  sama: ,
-  sections: ,
-  tempo: ,
-  tonic: ,
 )
 </pre></div>
 </div>
@@ -660,139 +853,67 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1">## Loading all tracks from the dataset</span>
-<span class="n">carnatic_tracks</span> <span class="o">=</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()</span>
+<span class="n">mridangam_tracks</span> <span class="o">=</span> <span class="n">mridangam_stroke</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()</span>
 
 <span class="c1">## Get available ragas</span>
-<span class="n">available_raagas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">])</span>
-<span class="n">available_raagas</span>
+<span class="n">available_strokes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">mridangam_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span> \
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mridangam_stroke</span><span class="o">.</span><span class="n">track_ids</span><span class="p">])</span>
+<span class="n">available_strokes</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2948</span><span class="o">/</span><span class="mf">4020414023.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Get available ragas</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">available_raagas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">available_raagas</span>
-
-<span class="nn">/tmp/ipykernel_2948/4020414023.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Get available ragas</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">available_raagas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">available_raagas</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/mirdata/core.py</span> in <span class="ni">__get__</span><span class="nt">(self, obj, cls)</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span>         <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span>             <span class="k">return</span> <span class="bp">self</span>
-<span class="ne">---&gt; </span><span class="mi">46</span>         <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>         <span class="k">return</span> <span class="n">value</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/mirdata/datasets/saraga_carnatic.py</span> in <span class="ni">metadata</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span>     <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span>     <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">163</span>         <span class="k">return</span> <span class="n">load_metadata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata_path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">164</span> 
-<span class="g g-Whitespace">    </span><span class="mi">165</span>     <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/mirdata/io.py</span> in <span class="ni">wrapper</span><span class="nt">(file_path_or_obj)</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span>             <span class="k">return</span> <span class="kc">None</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">22</span>             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>                 <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/smart_open/smart_open_lib.py</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span>         <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span>         <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">184</span>         <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span>     <span class="k">if</span> <span class="n">fobj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/smart_open/smart_open_lib.py</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">361</span>         <span class="n">open_kwargs</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">errors</span>
-<span class="g g-Whitespace">    </span><span class="mi">362</span> 
-<span class="ne">--&gt; </span><span class="mi">363</span>     <span class="k">return</span> <span class="n">_builtin_open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">364</span> 
-<span class="g g-Whitespace">    </span><span class="mi">365</span> 
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/home/runner/mir_datasets/saraga_carnatic/saraga1.5_carnatic/Sumitra Nitin at Arkay by Sumitra Nitin/Dorakuna/Dorakuna.json&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;bheem&#39;, &#39;cha&#39;, &#39;dheem&#39;, &#39;dhin&#39;, &#39;num&#39;, &#39;ta&#39;, &#39;tha&#39;, &#39;tham&#39;, &#39;thi&#39;,
+       &#39;thom&#39;], dtype=&#39;&lt;U5&#39;)
 </pre></div>
 </div>
 </div>
 </div>
-<p>Grouping recordings per raaga is a common organization strategy for the melodic analysis of Carnatic and Hindustani Music. This is very easy!</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See a detailed discussion about the concept of raaga in the <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-raga"><span class="std std-ref">designated section</span></a> in the tutorial.</p>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">mirdata</span></code> loaders help on getting the data loaded and organized without the need of writing functions to do that ourselves. In this example below, we create a dictionary in which stroke names are keys and for each key we have a list of audio samples including their respective stroke.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raaga_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">available_raagas</span><span class="p">}</span>
-<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">raaga_dict</span><span class="p">[</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stroke_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">item</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">available_strokes</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">mridangam_stroke</span><span class="o">.</span><span class="n">track_ids</span><span class="p">:</span>
+    <span class="n">stroke_dict</span><span class="p">[</span><span class="n">mridangam_tracks</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mridangam_tracks</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Displaying available tracks for raaga </span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span> \
-    <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">available_raagas</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">raaga_dict</span><span class="p">[</span><span class="n">available_raagas</span><span class="p">[</span><span class="mi">0</span><span class="p">]]))</span>
+<span class="n">stroke_dict</span><span class="p">[</span><span class="s1">&#39;bheem&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2948</span><span class="o">/</span><span class="mf">879981331.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">raaga_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">available_raagas</span><span class="p">}</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">if</span> <span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="n">raaga_dict</span><span class="p">[</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-
-<span class="ne">NameError</span>: name &#39;available_raagas&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/runner/mir_datasets/mridangam_stroke/mridangam_stroke_1.5/B/224030__akshaylaya__bheem-b-001.wav&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>Cool! However… how about the actual audio and annotations? Let us show how easy is to load the data for a track in the dataset:</p>
+<p><strong>Let’s play this example!</strong> Audio (and also annotations!) can be easily loaded from each track.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Audio</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s first get a random track</span>
+<span class="n">random_track</span> <span class="o">=</span> <span class="n">mridangam_tracks</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
 
-<span class="c1">## Selecting a track for a particular raaga</span>
-<span class="n">example_track</span> <span class="o">=</span> <span class="n">raaga_dict</span><span class="p">[</span><span class="n">available_raagas</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="c1">## Loading audio directly from track</span>
-<span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">example_track</span><span class="o">.</span><span class="n">audio</span>
-
-<span class="c1">## Loading audio from track methods</span>
-<span class="n">audio_path</span> <span class="o">=</span> <span class="n">example_track</span><span class="o">.</span><span class="n">audio_path</span>  <span class="c1"># Audio path of recording</span>
-<span class="n">audio_2</span><span class="p">,</span> <span class="n">sr_2</span> <span class="o">=</span> <span class="n">example_track</span><span class="o">.</span><span class="n">load_audio</span><span class="p">(</span><span class="n">audio_path</span><span class="p">)</span>  <span class="c1"># Loading audio</span>
-
-<span class="k">assert</span> <span class="n">audio</span> <span class="o">==</span> <span class="n">audio</span>
-<span class="k">assert</span> <span class="n">sr</span> <span class="o">==</span> <span class="n">sr_2</span>
-
-<span class="n">Audio</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">IPython</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Play recording of id: </span><span class="si">{}</span><span class="s2">, including stroke </span><span class="si">{}</span><span class="s2"> and tonic </span><span class="si">{}</span><span class="s2">&quot;</span>\
+    <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">random_track</span><span class="o">.</span><span class="n">track_id</span><span class="p">,</span> <span class="n">random_track</span><span class="o">.</span><span class="n">stroke_name</span><span class="p">,</span> <span class="n">random_track</span><span class="o">.</span><span class="n">tonic</span><span class="p">))</span>
+<span class="n">IPython</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">random_track</span><span class="o">.</span><span class="n">audio</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2948</span><span class="o">/</span><span class="mf">2538142328.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">## Selecting a track for a particular raaga</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">example_track</span> <span class="o">=</span> <span class="n">raaga_dict</span><span class="p">[</span><span class="n">available_raagas</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Loading audio directly from track</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2833</span><span class="o">/</span><span class="mf">990698747.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Let&#39;s first get a random track</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">random_track</span> <span class="o">=</span> <span class="n">mridangam_tracks</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">IPython</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Play recording of id: </span><span class="si">{}</span><span class="s2">, including stroke </span><span class="si">{}</span><span class="s2"> and tonic </span><span class="si">{}</span><span class="s2">&quot;</span>\
 
-<span class="ne">NameError</span>: name &#39;raaga_dict&#39; is not defined
+<span class="ne">AttributeError</span>: &#39;dict&#39; object has no attribute &#39;choice_track&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>TODO: Get now some other data… pitch, sections…</p>
 </section>
 </section>
 </section>

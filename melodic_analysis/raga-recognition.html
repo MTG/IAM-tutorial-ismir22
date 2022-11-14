@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Automatic raga recognition &#8212; My Jupyter Book</title>
+    <title>Automatic raga recognition</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -96,8 +96,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       <img src="../_static/logo.png" class="logo" alt="logo">
       
-      
-      <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -513,7 +511,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="automatic-raga-recognition">
 <span id="raga-recognition"></span><h1>Automatic raga recognition<a class="headerlink" href="#automatic-raga-recognition" title="Permalink to this headline">#</a></h1>
-<p>Intro here…</p>
+<p>Automatic raga recognition works intend to identify the raga that is performed in an Indian Art Music recording. Historically, raga recognition approaches have been based on melodic features from the vocal line, trying to identify relationships between the sung patterns and scales. More recently, this problem is being addressed by passing the melodic features through DL models that learn the relationships within the data and learn to discriminate between the different ragas in a dataset <span id="id1">[<a class="reference internal" href="../resources/references.html#id48" title="M. Clayton, P. Rao, N. Shikarpur, S. Roychowdhury, and J. Li. Raga classification from vocal performances using multimodal analysis. In In Proc. of the 23rd International Conference on Music Information Retrieval (ISMIR), Bengaluru, India. 2022.">CRS+22</a>, <a class="reference internal" href="../resources/references.html#id46" title="Siji John, M.S. Sinith, Sudheesh R S, and Lalu P P. Classification of indian classical carnatic music based on raga using deep learning. IEEE Recent Advances in Intelligent Computational Systems (RAICS), pages 110-113, 2020. doi:10.1109/RAICS51191.2020.9332482.">JSSP20</a>, <a class="reference internal" href="../resources/references.html#id45" title="Sathwik Tejaswi Madhusudhan and Girish Chowdhary. DEEPSRGM - Sequence classification and ranking in Indian classical music with deep learning. In In Proc. of the 20th International Society for Music Information Retrieval Conference, (ISMIR), Delft, The Netherlands., 533–540. 2019.">MC19</a>, <a class="reference internal" href="../resources/references.html#id43" title="Joe Cheri Ross, Abhijit Mishra, Kaustuv Kanti Ganguli, Pushpak Bhattacharyya, and Preeti Rao. Identifying raga similarity through embeddings learned from compositions' notation. In In Proc. of the 18th International Society for Music Information Retrieval Conference (ISMIR), 515–522. 2017.">RMG+17</a>]</span>.</p>
+<p>This is a core task within the melodic analysis of Indian Art Music, and most of the research on this topic build on top of the Dunya Carnatic and Hindustani corpora <span id="id2">[<a class="reference internal" href="../resources/references.html#id19" title="Ajay Srinivasamurthy, Gopala Krishna Koduri, Sankalp Gulati, Vignesh Ishwar, and Xavier Serra. Corpora for music information research in Indian art music. In In Proc. of the 40th International Computer Music Conference (ICMC), Athens, Greece., 1029–1036. 2014.">SKG+14</a>]</span>.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install compiam
@@ -529,20 +528,20 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Let’s first list the available tools for the task of raga recognition.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;Available methods for raga recognition: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span>\
-    <span class="nb">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">raga_recognition</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">raga_recognition</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Available methods for raga recognition: [&#39;DEEPSRGM*&#39;]&quot;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;DEEPSRGM*&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p>We already see that the available tool appears with a <code class="docutils literal notranslate"><span class="pre">*</span></code> at the end of the name, which indicates that it may be loaded using the <code class="docutils literal notranslate"><span class="pre">compiam.load_models()</span></code> wrapper. Observing <a class="reference external" href="https://mtg.github.io/compIAM/source/melody.html#module-compiam.melody.raga_recognition.deepsrgm">the entry of this tool in the <code class="docutils literal notranslate"><span class="pre">compiam</span></code> documentation</a>, we note that an optional dependency is needed to properly load this tool. Let’s install it:</p>
+<p>We already see that the available tool appears with <code class="docutils literal notranslate"><span class="pre">*</span></code> at the end of the name, which indicates that it may be loaded using the <code class="docutils literal notranslate"><span class="pre">compiam.load_models()</span></code> wrapper. Observing <a class="reference external" href="https://mtg.github.io/compIAM/source/melody.html#module-compiam.melody.raga_recognition.deepsrgm">the entry of this tool in the <code class="docutils literal notranslate"><span class="pre">compiam</span></code> documentation</a>, we note that an optional dependency is needed to properly load this tool. Let’s install it:</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install torch==1.8.0
@@ -550,7 +549,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>TODO: text</p>
+<p>DEEPSRGM <span id="id3">[<a class="reference internal" href="../resources/references.html#id45" title="Sathwik Tejaswi Madhusudhan and Girish Chowdhary. DEEPSRGM - Sequence classification and ranking in Indian classical music with deep learning. In In Proc. of the 20th International Society for Music Information Retrieval Conference, (ISMIR), Delft, The Netherlands., 533–540. 2019.">MC19</a>]</span> is a DL-based model that uses melodic features to automatically identify the raga from an Indian Art Music recording. In the original paper, the authors use the Indian Art Music Raga Dataset <span id="id4">[<a class="reference internal" href="../resources/references.html#id24" title="Sankalp Gulati, Joan Serrà, Kaustuv K Ganguli, S Sertan, and Xavier Serra. Time-delayed melody surfaces for Raga recognition. In In Proc. of the 17th International Society for Music Information Retrieval Conference (ISMIR), New York City, USA., 751–757. 2016. doi:10.1080/09298215.2013.866145.">GSG+16</a>]</span>, and report accuracy higher than 90%.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing a tool for automatic recognition</span>

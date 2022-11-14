@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Tonic identification &#8212; My Jupyter Book</title>
+    <title>Tonic identification</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -96,8 +96,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       <img src="../_static/logo.png" class="logo" alt="logo">
       
-      
-      <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -539,13 +537,12 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;Available methods for tonic identification: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span>\
-    <span class="nb">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">tonic_identification</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">tonic_identification</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Available methods for tonic identification: [&#39;TonicIndianMultiPitch&#39;]&quot;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;TonicIndianMultiPitch&#39;]
 </pre></div>
 </div>
 </div>
@@ -557,6 +554,28 @@ title="Print to PDF"
 
 <span class="c1"># We first initialize the tool we have just imported</span>
 <span class="n">tonic_multipitch</span> <span class="o">=</span> <span class="n">TonicIndianMultiPitch</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   INFO   ] MusicExtractorSVM: no classifier models were configured by default
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>We observe that an error shows up:</strong> we need <code class="docutils literal notranslate"><span class="pre">essentia</span></code> to use this tool, and <code class="docutils literal notranslate"><span class="pre">essentia</span></code> is an optional dependency that is not installed by default.</p>
+<p>Let’s install essentia and re-import the tool.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install essentia
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We initialize the tool again</span>
+<span class="n">tonic_multipitch</span> <span class="o">=</span> <span class="n">TonicIndianMultiPitch</span><span class="p">()</span>
 
 <span class="c1"># Let&#39;s first see the specific attributes of this tool</span>
 <span class="n">attributes</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">tonic_multipitch</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;__&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
@@ -565,33 +584,18 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/melody/tonic_identification/tonic_multipitch.py</span> in <span class="ni">__init__</span><span class="nt">(self, binResolution, frameSize, harmonicWeight, hopSize, magnitudeCompression, magnitudeThreshold, maxTonicFrequency, minTonicFrequency, numberHarmonics, referenceFrequency, sampleRate)</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span>             <span class="k">global</span> <span class="n">estd</span>
-<span class="ne">---&gt; </span><span class="mi">28</span>             <span class="kn">import</span> <span class="nn">essentia.standard</span> <span class="k">as</span> <span class="nn">estd</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span>         <span class="k">except</span><span class="p">:</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;essentia&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3190</span><span class="o">/</span><span class="mf">1129701635.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># We first initialize the tool we have just imported</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">tonic_multipitch</span> <span class="o">=</span> <span class="n">TonicIndianMultiPitch</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> 
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Let&#39;s first see the specific attributes of this tool</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.15/x64/lib/python3.7/site-packages/compiam/melody/tonic_identification/tonic_multipitch.py</span> in <span class="ni">__init__</span><span class="nt">(self, binResolution, frameSize, harmonicWeight, hopSize, magnitudeCompression, magnitudeThreshold, maxTonicFrequency, minTonicFrequency, numberHarmonics, referenceFrequency, sampleRate)</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span>         <span class="k">except</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span>             <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
-<span class="ne">---&gt; </span><span class="mi">31</span>                 <span class="s2">&quot;In order to use this tool you need to have essentia installed. &quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span>                 <span class="s2">&quot;Please install essentia using: pip install essentia&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span>             <span class="p">)</span>
-
-<span class="ne">ImportError</span>: In order to use this tool you need to have essentia installed. Please install essentia using: pip install essentia
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;binResolution&#39;,
+ &#39;extract&#39;,
+ &#39;frameSize&#39;,
+ &#39;harmonicWeight&#39;,
+ &#39;hopSize&#39;,
+ &#39;magnitudeCompression&#39;,
+ &#39;magnitudeThreshold&#39;,
+ &#39;maxTonicFrequency&#39;,
+ &#39;minTonicFrequency&#39;,
+ &#39;numberHarmonics&#39;,
+ &#39;referenceFrequency&#39;,
+ &#39;sampleRate&#39;]
 </pre></div>
 </div>
 </div>
@@ -605,13 +609,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3190</span><span class="o">/</span><span class="mf">3466630956.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># We can print out the standard value for a particular parameter</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tonic_multipitch</span><span class="o">.</span><span class="n">minTonicFrequency</span>
-
-<span class="ne">NameError</span>: name &#39;tonic_multipitch&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100
 </pre></div>
 </div>
 </div>
@@ -629,7 +627,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3190</span><span class="o">/</span><span class="mf">3195729691.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3115</span><span class="o">/</span><span class="mf">3195729691.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Loading Tonic dataset using the mirdata loader</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tonic_dataset</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;compmusic_indian_tonic&quot;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;./workspace/&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">tonic_dataset</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
@@ -668,7 +666,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3190</span><span class="o">/</span><span class="mf">270111603.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3115</span><span class="o">/</span><span class="mf">270111603.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">random_track</span> <span class="o">=</span> <span class="n">tonic_dataset</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MusicBrainz ID of random track: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">random_track</span><span class="o">.</span><span class="n">mbid</span><span class="p">))</span>
 
