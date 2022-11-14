@@ -7,10 +7,11 @@ parts:
     - file: introduction/compiam
 
 - caption: Indian Art Music
-    - file: indian-art-music/iam
-      title: What is Indian Art Music?
-    - file: indian-art-music/carnatic-music
-    - file: indian-art-music/hindustani-music
+  chapters:
+    - file: indian_art_music/iam
+      Title: What is Indian Art Music?
+    - file: indian_art_music/carnatic-music
+    - file: indian_art_music/hindustani-music
 
 - caption: Corpora and Datasets
   chapters:
