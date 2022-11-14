@@ -10,7 +10,7 @@
 alt: Carnatic vocal performance
 name: carnatic_vocal_performance
 ---
-A Carnatic music performance, led by the vocalists R.K. Shriramkumar, Amritha Murali, Ramakrishnan Murthy, accompanied by Madan Mohan on violin, Arun Prakash on mṛdaṅgam and Nanditha Kannan on the tambūrā. Image by Rajappane Raju. 
+A Carnatic music performance, led by the vocalists R.K. Shriramkumar, Amritha Murali, Ramakrishnan Murthy, accompanied by Madan Mohan on violin, Arunprakash Krishnan on mṛdaṅgam and Nanditha Kannan on the tambūrā. Image by Rajappane Raju. 
 ```
 
 The most popular performance format today is vocal-led, either by a single or multiple vocalists.
