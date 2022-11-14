@@ -629,7 +629,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="c1"># %pip install compiam</span>
+<span class="o">%</span><span class="n">pip</span> <span class="n">install</span> <span class="n">compiam</span>
 </pre></div>
 </div>
 </div>
@@ -647,21 +647,21 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Track(
   audio_ghatam_path=None,
-  audio_mridangam_left_path=&quot;...humudi Sudhakar at Arkay by Modhumudi Sudhakar/Entha Muddo/Entha Muddo.multitrack-mridangam-left.mp3&quot;,
-  audio_mridangam_right_path=&quot;...umudi Sudhakar at Arkay by Modhumudi Sudhakar/Entha Muddo/Entha Muddo.multitrack-mridangam-right.mp3&quot;,
-  audio_path=&quot;...saraga1.5_carnatic/Modhumudi Sudhakar at Arkay by Modhumudi Sudhakar/Entha Muddo/Entha Muddo.mp3.mp3&quot;,
-  audio_violin_path=&quot;...atic/Modhumudi Sudhakar at Arkay by Modhumudi Sudhakar/Entha Muddo/Entha Muddo.multitrack-violin.mp3&quot;,
-  audio_vocal_path=&quot;...natic/Modhumudi Sudhakar at Arkay by Modhumudi Sudhakar/Entha Muddo/Entha Muddo.multitrack-vocal.mp3&quot;,
+  audio_mridangam_left_path=None,
+  audio_mridangam_right_path=None,
+  audio_path=&quot;...carnatic/Live at Vani Mahal by Sanjay Subrahmanyan/Aru marundu/Sanjay Subrahmanyan - Aru marundu.mp3&quot;,
+  audio_violin_path=None,
+  audio_vocal_path=None,
   audio_vocal_s_path=None,
-  ctonic_path=&quot;...aga1.5_carnatic/Modhumudi Sudhakar at Arkay by Modhumudi Sudhakar/Entha Muddo/Entha Muddo.ctonic.txt&quot;,
-  metadata_path=&quot;...ic/saraga1.5_carnatic/Modhumudi Sudhakar at Arkay by Modhumudi Sudhakar/Entha Muddo/Entha Muddo.json&quot;,
-  phrases_path=None,
-  pitch_path=&quot;...raga1.5_carnatic/Modhumudi Sudhakar at Arkay by Modhumudi Sudhakar/Entha Muddo/Entha Muddo.pitch.txt&quot;,
+  ctonic_path=&quot;...c/Live at Vani Mahal by Sanjay Subrahmanyan/Aru marundu/Sanjay Subrahmanyan - Aru marundu.ctonic.txt&quot;,
+  metadata_path=&quot;...arnatic/Live at Vani Mahal by Sanjay Subrahmanyan/Aru marundu/Sanjay Subrahmanyan - Aru marundu.json&quot;,
+  phrases_path=&quot;... Vani Mahal by Sanjay Subrahmanyan/Aru marundu/Sanjay Subrahmanyan - Aru marundu.mphrases-manual.txt&quot;,
+  pitch_path=&quot;...ic/Live at Vani Mahal by Sanjay Subrahmanyan/Aru marundu/Sanjay Subrahmanyan - Aru marundu.pitch.txt&quot;,
   pitch_vocal_path=None,
-  sama_path=None,
-  sections_path=None,
-  tempo_path=None,
-  track_id=&quot;132_Entha_Muddo&quot;,
+  sama_path=&quot;...e at Vani Mahal by Sanjay Subrahmanyan/Aru marundu/Sanjay Subrahmanyan - Aru marundu.sama-manual.txt&quot;,
+  sections_path=&quot;...ani Mahal by Sanjay Subrahmanyan/Aru marundu/Sanjay Subrahmanyan - Aru marundu.sections-manual-p.txt&quot;,
+  tempo_path=&quot;... at Vani Mahal by Sanjay Subrahmanyan/Aru marundu/Sanjay Subrahmanyan - Aru marundu.tempo-manual.txt&quot;,
+  track_id=&quot;106_Aru_marundu&quot;,
   audio: The track&#39;s audio
 
         Returns,
@@ -701,13 +701,13 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3085</span><span class="o">/</span><span class="mf">4020414023.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2868</span><span class="o">/</span><span class="mf">4020414023.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> 
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Get available ragas</span>
 <span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">available_raagas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">])</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">available_raagas</span>
 
-<span class="nn">/tmp/ipykernel_3085/4020414023.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="nn">/tmp/ipykernel_2868/4020414023.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> 
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Get available ragas</span>
 <span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">available_raagas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">])</span>
@@ -770,6 +770,20 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2868</span><span class="o">/</span><span class="mf">879981331.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">raaga_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">available_raagas</span><span class="p">}</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">track_ids</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">if</span> <span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="n">raaga_dict</span><span class="p">[</span><span class="n">carnatic_tracks</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+
+<span class="ne">NameError</span>: name &#39;available_raagas&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <p>Cool! However… how about the actual audio and annotations? Let us show how easy is to load the data for a track in the dataset:</p>
 <div class="cell docutils container">
@@ -790,6 +804,20 @@ title="Print to PDF"
 <span class="k">assert</span> <span class="n">sr</span> <span class="o">==</span> <span class="n">sr_2</span>
 
 <span class="n">Audio</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2868</span><span class="o">/</span><span class="mf">2538142328.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">## Selecting a track for a particular raaga</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">example_track</span> <span class="o">=</span> <span class="n">raaga_dict</span><span class="p">[</span><span class="n">available_raagas</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Loading audio directly from track</span>
+
+<span class="ne">NameError</span>: name &#39;raaga_dict&#39; is not defined
 </pre></div>
 </div>
 </div>

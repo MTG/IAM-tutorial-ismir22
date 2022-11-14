@@ -34,5 +34,7 @@ Here is a preview of the cell contents:
 -------------------
 %%capture
 %pip install compiam
+
+import compiam
 -------------------
 
