@@ -1,3 +1,6 @@
+(hindustani-music)=
+# Hindustani music
+
 (hindustani-rhythm)=
 ## Rhythm and Percussion in Hindustani Music
 As previously mentioned, several different styles of Hindustani music exist, each with it's own variation of instrumentation. For example, the percussive accompaniment in a typical khyāl performance is the tabla, in the dhrupad style, it is the pakhāvaj. Here we focus on khyāl, the most popular style.

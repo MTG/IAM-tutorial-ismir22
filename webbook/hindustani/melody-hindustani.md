@@ -1,3 +1,0 @@
-## Hindustani Melodic Concepts
-
-WIP
