@@ -564,6 +564,15 @@ title="Print to PDF"
 </div>
 </div>
 <p>Melodia has been found, in the original paper experiments and also in the <a class="reference external" href="https://nema.lis.illinois.edu/nema_out/mirex2011/results/ame/indian08/sg1results.html">MIREX campaign</a>, to decently work on Indian Art Music samples. However, recent DL-based models have claimed the state-of-the-art for the task of pitch extraction. Maybe we can use a Carnatic-trained version of one of these models to extract the pitch?</p>
+<p>Let us first uninstall essentia to clean our environment from optional dependencies, and start from scratch for the next tool.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> uninstall -y essentia
+</pre></div>
+</div>
+</div>
+</div>
+<p>And let’s now import a DL model that learns to automatically extract the predominant melody from audio recordings.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction</span> <span class="kn">import</span> <span class="n">FTANetCarnatic</span>
@@ -579,6 +588,30 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Let’s first deactivate the GPU usage, since we assume no CUDA-capable GPU is available in most of the cases. We import <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> and set the visible GPU devices to none.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have an available GPU in which you can allocate the model, get the index of the GPU (probably index 0 if you have only a single instance) and change <code class="docutils literal notranslate"><span class="pre">tf.config.set_visible_devices([],</span> <span class="pre">&quot;GPU&quot;)</span></code> for <code class="docutils literal notranslate"><span class="pre">os.environ[&quot;CUDA_VISIBLE_DEVICES&quot;]</span> <span class="pre">=</span> <span class="pre">&quot;0&quot;</span></code></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">set_visible_devices</span><span class="p">([],</span> <span class="s2">&quot;GPU&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-15 14:38:07.860422: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.14/x64/lib
+2022-11-15 14:38:07.860456: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-15 14:38:09.562446: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.14/x64/lib
+2022-11-15 14:38:09.562481: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-11-15 14:38:09.562507: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az377-996): /proc/driver/nvidia/version does not exist
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">FTANetCarnatic</span><span class="p">()</span>  <span class="c1"># initializing an FTANet instance</span>
@@ -587,14 +620,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-14 23:48:00.967866: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.14/x64/lib
-2022-11-14 23:48:00.967898: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-14 23:48:02.300963: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.14/x64/lib
-2022-11-14 23:48:02.300997: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-2022-11-14 23:48:02.301020: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az700-816): /proc/driver/nvidia/version does not exist
-2022-11-14 23:48:02.301218: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-15 14:38:09.585692: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
 </pre></div>
 </div>

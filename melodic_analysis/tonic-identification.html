@@ -558,7 +558,34 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   INFO   ] MusicExtractorSVM: no classifier models were configured by default
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/tonic_identification/tonic_multipitch.py:28,</span> in <span class="ni">TonicIndianMultiPitch.__init__</span><span class="nt">(self, binResolution, frameSize, harmonicWeight, hopSize, magnitudeCompression, magnitudeThreshold, maxTonicFrequency, minTonicFrequency, numberHarmonics, referenceFrequency, sampleRate)</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>     <span class="k">global</span> <span class="n">estd</span>
+<span class="ne">---&gt; </span><span class="mi">28</span>     <span class="kn">import</span> <span class="nn">essentia.standard</span> <span class="k">as</span> <span class="nn">estd</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="k">except</span><span class="p">:</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;essentia&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">compiam.melody.tonic_identification</span> <span class="kn">import</span> <span class="n">TonicIndianMultiPitch</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># We first initialize the tool we have just imported</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">tonic_multipitch</span> <span class="o">=</span> <span class="n">TonicIndianMultiPitch</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/tonic_identification/tonic_multipitch.py:30,</span> in <span class="ni">TonicIndianMultiPitch.__init__</span><span class="nt">(self, binResolution, frameSize, harmonicWeight, hopSize, magnitudeCompression, magnitudeThreshold, maxTonicFrequency, minTonicFrequency, numberHarmonics, referenceFrequency, sampleRate)</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span>     <span class="kn">import</span> <span class="nn">essentia.standard</span> <span class="k">as</span> <span class="nn">estd</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="k">except</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">30</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span>         <span class="s2">&quot;In order to use this tool you need to have essentia installed. &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span>         <span class="s2">&quot;Please install essentia using: pip install essentia&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="c1">###</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span> <span class="bp">self</span><span class="o">.</span><span class="n">binResolution</span> <span class="o">=</span> <span class="n">binResolution</span>
+
+<span class="ne">ImportError</span>: In order to use this tool you need to have essentia installed. Please install essentia using: pip install essentia
 </pre></div>
 </div>
 </div>
@@ -584,6 +611,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   INFO   ] MusicExtractorSVM: no classifier models were configured by default
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;binResolution&#39;,
  &#39;extract&#39;,
  &#39;frameSize&#39;,
@@ -689,14 +719,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>Let’s select a couple of random recordings from the Indian Art Music Tonic dataset to extract the tonic from.</p>
-<div class="cell tag_remove-output docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> uninstall essentia
-<span class="o">%</span><span class="k">pip</span> uninstall compiam
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 
     <script type="text/x-thebe-config">
