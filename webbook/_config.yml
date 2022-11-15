@@ -10,7 +10,7 @@ logo: images/logo.png
 execute:
   execute_notebooks: force
   allow_errors: true
-  timeout: 600
+  timeout: 500
 
 # Define the name of the latex output file for PDF builds
 latex:
