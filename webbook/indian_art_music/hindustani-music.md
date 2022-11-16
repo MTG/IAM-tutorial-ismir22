@@ -31,7 +31,7 @@ As with Carnatic music, in Hindustani music there are significant differences in
 
 There are over 70 different Hindustani tāls defined, while about 15 tāls are performed in practice. {numref}`hindustani-tala-fig` shows four popular Hindustani tāls - tīntāl, ēktāl, jhaptāl, and rūpak tāl. The structure of these tāls are also described in {numref}`hind-tala-tab`. The figure also shows the sam (shown as ×) and the vibhāgs (indicated with thālī/khālī pattern using numerals). A khālī is shown with a 0, while the thālī are shown with non-zero numerals. The thālī and khālī pattern of a tāl decides the accents of the tāl. The sam has the strongest accent (with certain exceptions, such as rūpak tāl) followed by the thālī instants. The khālī instants have the least accent.
 
-```{figure} images/hindustani_tala_illustrated.png
+```{figure} ../images/hindustani_tala_illustrated.png
 ---
 alt: Hindustani Tala
 name: hindustani-tala-fig

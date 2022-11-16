@@ -24,6 +24,7 @@ parts:
     - file: melodic_analysis/pitch-extraction
     - file: melodic_analysis/melodic-pattern-discovery
     - file: melodic_analysis/raga-recognition
+    - file: resources/online-vis/view
 
 - caption: Rhythmic Analysis
   chapters:
