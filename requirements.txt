@@ -1,20 +1,8 @@
-jupyter-book
-jupyterlab
-ipywidgets
-ipython
-matplotlib>=3.0.0
-numpy>=1.20.3
-librosa==0.8.0
-SoundFile~=0.10.3.post1
-joblib>=1.2.0
-pathlib~=1.0.1
-pytsmod~=0.3.3
-scipy~=1.4.1
-scikit-learn~=0.24.2
-tqdm~=4.64.1
-mirdata==0.3.6
-Jinja2
-zope
+jupyter-book==0.13.1 
+jupyterlab==3.5.0
+ipywidgets==8.0.2
+ipython==8.6.0
+Jinja2==3.1.2
 
 ### Dependencies installed in deployment action
 # compiam
