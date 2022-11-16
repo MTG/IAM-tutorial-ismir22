@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/style.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -50,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Pitch extraction" href="pitch-extraction.html" />
@@ -191,6 +194,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="raga-recognition.html">
    Automatic raga recognition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resources/online-vis/view.html">
+   Searching for sañcāras
   </a>
  </li>
 </ul>
@@ -511,9 +519,10 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="tonic-identification">
 <span id="id1"></span><h1>Tonic identification<a class="headerlink" href="#tonic-identification" title="Permalink to this headline">#</a></h1>
+<p>As mentioned in the <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-tambura-drone"><span class="std std-ref">introduction of the tambūrā drone</span></a>, the sa played by the tambūrā is very important from a computational analysis point of view, because it provides information to locate the sa of the melody (and also the rest of svāras in the rāga), while it is also veru useful to normalise the melodic lines for better information processing.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>TODO: link to musicological sections.</p>
+<p>Despite no term as ‘tonic’ exists in Indian Art Music, it is used in the literature to refer to the task of ‘tonic identification’.</p>
 </div>
 <p>Let us first start by installing and importing the latest released version of <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
 <div class="cell tag_remove-output docutils container">
@@ -542,7 +551,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;TonicIndianMultiPitch&#39;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">tonic_identification</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;compiam&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -558,34 +572,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/tonic_identification/tonic_multipitch.py:28,</span> in <span class="ni">TonicIndianMultiPitch.__init__</span><span class="nt">(self, binResolution, frameSize, harmonicWeight, hopSize, magnitudeCompression, magnitudeThreshold, maxTonicFrequency, minTonicFrequency, numberHarmonics, referenceFrequency, sampleRate)</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span>     <span class="k">global</span> <span class="n">estd</span>
-<span class="ne">---&gt; </span><span class="mi">28</span>     <span class="kn">import</span> <span class="nn">essentia.standard</span> <span class="k">as</span> <span class="nn">estd</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="k">except</span><span class="p">:</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;essentia&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">compiam.melody.tonic_identification</span> <span class="kn">import</span> <span class="n">TonicIndianMultiPitch</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># We first initialize the tool we have just imported</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">tonic_multipitch</span> <span class="o">=</span> <span class="n">TonicIndianMultiPitch</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/tonic_identification/tonic_multipitch.py:30,</span> in <span class="ni">TonicIndianMultiPitch.__init__</span><span class="nt">(self, binResolution, frameSize, harmonicWeight, hopSize, magnitudeCompression, magnitudeThreshold, maxTonicFrequency, minTonicFrequency, numberHarmonics, referenceFrequency, sampleRate)</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span>     <span class="kn">import</span> <span class="nn">essentia.standard</span> <span class="k">as</span> <span class="nn">estd</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="k">except</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">30</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span>         <span class="s2">&quot;In order to use this tool you need to have essentia installed. &quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span>         <span class="s2">&quot;Please install essentia using: pip install essentia&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span>     <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="c1">###</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span> <span class="bp">self</span><span class="o">.</span><span class="n">binResolution</span> <span class="o">=</span> <span class="n">binResolution</span>
-
-<span class="ne">ImportError</span>: In order to use this tool you need to have essentia installed. Please install essentia using: pip install essentia
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 </pre></div>
 </div>
 </div>
@@ -611,21 +598,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   INFO   ] MusicExtractorSVM: no classifier models were configured by default
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;binResolution&#39;,
- &#39;extract&#39;,
- &#39;frameSize&#39;,
- &#39;harmonicWeight&#39;,
- &#39;hopSize&#39;,
- &#39;magnitudeCompression&#39;,
- &#39;magnitudeThreshold&#39;,
- &#39;maxTonicFrequency&#39;,
- &#39;minTonicFrequency&#39;,
- &#39;numberHarmonics&#39;,
- &#39;referenceFrequency&#39;,
- &#39;sampleRate&#39;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Let&#39;s first see the specific attributes of this tool</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">attributes</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">tonic_multipitch</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;__&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">pprint</span><span class="p">(</span><span class="n">attributes</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;pprint&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -656,27 +636,14 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Loading Tonic dataset using the mirdata loader</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tonic_dataset</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;compmusic_indian_tonic&quot;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;./workspace/&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">tonic_dataset</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">tonic_dataset</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/__init__.py:43,</span> in <span class="ni">load_dataset</span><span class="nt">(dataset_name, data_home, version)</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="sd">&quot;&quot;&quot;Alias function to load a mirdata Dataset class.</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="sd"> :param dataset_name: the dataset&#39;s name, see mirdata.DATASETS for a</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span><span class="sd"> :returns: a mirdata.core.Dataset object.</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span> <span class="k">if</span> <span class="n">dataset_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">datasets_list</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">43</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid dataset </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">return</span> <span class="n">mirdata</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="n">dataset_name</span><span class="o">=</span><span class="n">dataset_name</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="n">data_home</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">version</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="p">)</span>
-
-<span class="ne">ValueError</span>: Invalid dataset compmusic_indian_tonic
+<span class="ne">NameError</span>: name &#39;compiam&#39; is not defined
 </pre></div>
 </div>
 </div>

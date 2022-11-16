@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/style.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -50,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Indian Art Music" href="../indian_art_music/iam.html" />
@@ -191,6 +194,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../melodic_analysis/raga-recognition.html">
    Automatic raga recognition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resources/online-vis/view.html">
+   Searching for sañcāras
   </a>
  </li>
 </ul>
@@ -695,16 +703,23 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;Available melodic tools: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()))</span>
-<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;Available rhythmic tools: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">rhythm</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&quot;Available melodic tools: [&#39;pitch_extraction.FTANetCarnatic*&#39;, &quot;
- &quot;&#39;pitch_extraction.Melodia&#39;, &#39;raga_recognition.DEEPSRGM*&#39;, &quot;
- &quot;&#39;tonic_identification.TonicIndianMultiPitch&#39;]&quot;)
-(&quot;Available rhythmic tools: [&#39;akshara_pulse_tracker.AksharaPulseTracker&#39;, &quot;
- &quot;&#39;transcription.FourWayTabla*&#39;, &#39;transcription.MnemonicTranscription&#39;]&quot;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pretty printing has been turned OFF
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;Available rhythmic tools: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">rhythm</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pretty printing has been turned ON
 </pre></div>
 </div>
 </div>
@@ -750,6 +765,38 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">## Let us firts import the wrappers</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">load_dataset</span><span class="p">,</span> <span class="n">load_corpora</span><span class="p">,</span> <span class="n">load_model</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">mirdata</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">import_module</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">melody</span><span class="p">,</span> <span class="n">rhythm</span><span class="p">,</span> <span class="n">structure</span><span class="p">,</span> <span class="n">timbre</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">compiam.dunya</span> <span class="kn">import</span> <span class="n">Corpora</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">compiam.data</span> <span class="kn">import</span> <span class="n">models_dict</span><span class="p">,</span> <span class="n">datasets_list</span><span class="p">,</span> <span class="n">corpora_list</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">melody</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">17</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">pitch_extraction</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">raga_recognition</span>
+<span class="ne">---&gt; </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">pattern</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="c1"># Show user the available tasks</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span> <span class="nf">list_tasks</span><span class="p">():</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">melody</span><span class="o">/</span><span class="n">pattern</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">compiam.utils</span> <span class="kn">import</span> <span class="n">get_tool_list</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">compiam.data</span> <span class="kn">import</span> <span class="n">models_dict</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">compiam.melody.pattern.sancara_search.models</span> <span class="kn">import</span> <span class="n">CAEWrapper</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">compiam.melody.pattern.sancara_search.extraction.core</span> <span class="kn">import</span> <span class="n">self_similarity</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Show user the available tools</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;compiam.melody.pattern.sancara_search&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -763,31 +810,15 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Available datasets through compiam are: [&#39;saraga_carnatic&#39;, &#39;saraga_hindustani&#39;, &#39;mridangam_stroke&#39;]
-</pre></div>
-</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available datasets through compiam are: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">list_datasets</span><span class="p">()))</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">## Getting a list of available datasets</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available datasets through compiam are: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">list_datasets</span><span class="p">()))</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">## Initializing dataloader for an example dataset</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">fw_tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">fw_tabla_dataset</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">fw_tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/__init__.py:43,</span> in <span class="ni">load_dataset</span><span class="nt">(dataset_name, data_home, version)</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="sd">&quot;&quot;&quot;Alias function to load a mirdata Dataset class.</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="sd"> :param dataset_name: the dataset&#39;s name, see mirdata.DATASETS for a</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span><span class="sd"> :returns: a mirdata.core.Dataset object.</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span> <span class="k">if</span> <span class="n">dataset_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">datasets_list</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">43</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid dataset </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">return</span> <span class="n">mirdata</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="n">dataset_name</span><span class="o">=</span><span class="n">dataset_name</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="n">data_home</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">version</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="p">)</span>
-
-<span class="ne">ValueError</span>: Invalid dataset four_way_tabla
+<span class="ne">NameError</span>: name &#39;compiam&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -815,12 +846,18 @@ indicate that such tools have pre-trained models available, which may be loaded 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Getting a list of available pre-trained models</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available pre-trained ML/DL models through compiam are </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">list_models</span><span class="p">()))</span>
+<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;Available pre-trained ML/DL models through compiam are </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">list_models</span><span class="p">()))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Available pre-trained ML/DL models through compiam are [&#39;melody:deepsrgm&#39;, &#39;melody:ftanet-carnatic&#39;, &#39;rhythm:1way-tabla&#39;, &#39;rhythm:4way-tabla&#39;, &#39;structure:dhrupad-bandish-segmentation&#39;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">## Getting a list of available pre-trained models</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;Available pre-trained ML/DL models through compiam are </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">list_models</span><span class="p">()))</span>
+
+<span class="ne">NameError</span>: name &#39;pprint&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -830,7 +867,7 @@ indicate that such tools have pre-trained models available, which may be loaded 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loading pre-trained four-way tabla model and dataset</span>
-<span class="n">trained_four_way</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;rhythm:four-way-tabla&quot;</span><span class="p">)</span>
+<span class="n">trained_four_way</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;rhythm:4way-tabla&quot;</span><span class="p">)</span>
 <span class="n">tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
 
 <span class="c1"># Getting audio from random track in the dataset</span>
@@ -844,31 +881,14 @@ indicate that such tools have pre-trained models available, which may be loaded 
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModelNotDefinedError</span><span class="g g-Whitespace">                      </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Loading pre-trained four-way tabla model and dataset</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">trained_four_way</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;rhythm:four-way-tabla&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">trained_four_way</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;rhythm:4way-tabla&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Getting audio from random track in the dataset</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/__init__.py:19,</span> in <span class="ni">load_model</span><span class="nt">(model_name, models_dict)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="sd">&quot;&quot;&quot;Wrapper for loading pre-trained models.</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="sd"> :param model_name: name of the model, extractors, or algorithm to load.</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="sd"> :param models_dict: dict object including the available models.</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="sd"> :returns: specific Class of the selected model.</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">model_name</span> <span class="ow">in</span> <span class="n">models_dict</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">19</span>     <span class="k">raise</span> <span class="n">ModelNotDefinedError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span>         <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span>             <span class="sa">f</span><span class="s2">&quot;Model, </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> does not exist in compiam.data.models_dict, please follow &quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span>             <span class="s2">&quot;instructions for adding new model to in ``data.py`` documentation&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">m_dict</span> <span class="o">=</span> <span class="n">models_dict</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="n">module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">import_module</span><span class="p">(</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;module_name&quot;</span><span class="p">]),</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;class_name&quot;</span><span class="p">])</span>
-
-<span class="ne">ModelNotDefinedError</span>: Model, rhythm:four-way-tabla does not exist in compiam.data.models_dict, please follow instructions for adding new model to in ``data.py`` documentation
+<span class="ne">NameError</span>: name &#39;load_model&#39; is not defined
 </pre></div>
 </div>
 </div>

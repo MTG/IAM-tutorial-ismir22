@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/style.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -50,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Discussion" href="../wrapping_up/discussion.html" />
@@ -191,6 +194,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../melodic_analysis/raga-recognition.html">
    Automatic raga recognition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resources/online-vis/view.html">
+   Searching for sañcāras
   </a>
  </li>
 </ul>
@@ -512,11 +520,6 @@ title="Print to PDF"
    Mridangam
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tabla">
-   Tabla
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -539,11 +542,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mridangam">
    Mridangam
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tabla">
-   Tabla
   </a>
  </li>
 </ul>
@@ -579,48 +577,157 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.timbre.stroke_classification</span> <span class="kn">import</span> <span class="n">MridangamStrokeClassification</span>
-<span class="n">melodia</span> <span class="o">=</span> <span class="n">MridangamStrokeClassification</span><span class="p">()</span>  <span class="c1"># initializing a melodia instance</span>
-<span class="n">pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
+<span class="n">mridangam_stroke_classification</span> <span class="o">=</span> <span class="n">MridangamStrokeClassification</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   INFO   ] MusicExtractorSVM: no classifier models were configured by default
-</pre></div>
-</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.timbre.stroke_classification</span> <span class="kn">import</span> <span class="n">MridangamStrokeClassification</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">melodia</span> <span class="o">=</span> <span class="n">MridangamStrokeClassification</span><span class="p">()</span>  <span class="c1"># initializing a melodia instance</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.timbre.stroke_classification</span> <span class="kn">import</span> <span class="n">MridangamStrokeClassification</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">mridangam_stroke_classification</span> <span class="o">=</span> <span class="n">MridangamStrokeClassification</span><span class="p">()</span>
 
-<span class="ne">AttributeError</span>: &#39;MridangamStrokeClassification&#39; object has no attribute &#39;extract&#39;
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">mirdata</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">import_module</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">melody</span><span class="p">,</span> <span class="n">rhythm</span><span class="p">,</span> <span class="n">structure</span><span class="p">,</span> <span class="n">timbre</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">compiam.dunya</span> <span class="kn">import</span> <span class="n">Corpora</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">compiam.data</span> <span class="kn">import</span> <span class="n">models_dict</span><span class="p">,</span> <span class="n">datasets_list</span><span class="p">,</span> <span class="n">corpora_list</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">melody</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">17</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">pitch_extraction</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">raga_recognition</span>
+<span class="ne">---&gt; </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">pattern</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="c1"># Show user the available tasks</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span> <span class="nf">list_tasks</span><span class="p">():</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">melody</span><span class="o">/</span><span class="n">pattern</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">compiam.utils</span> <span class="kn">import</span> <span class="n">get_tool_list</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">compiam.data</span> <span class="kn">import</span> <span class="n">models_dict</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">compiam.melody.pattern.sancara_search.models</span> <span class="kn">import</span> <span class="n">CAEWrapper</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">compiam.melody.pattern.sancara_search.extraction.core</span> <span class="kn">import</span> <span class="n">self_similarity</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Show user the available tools</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;compiam.melody.pattern.sancara_search&#39;
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="tabla">
-<h2>Tabla<a class="headerlink" href="#tabla" title="Permalink to this headline">#</a></h2>
-<p><span id="id3">[<a class="reference internal" href="../resources/references.html#id27" title="M.A. Rohit, Amitrajit Bhattacharjee, and Preeti Rao. Four-way classification of tabla strokes with models adapted from automatic drum transcription. In In Proc. of the 22nd International Society for Music Information Retrieval Conference, ISMIR, Online, 19–26. 2021.">RBR21</a>]</span></p>
+<p>Let’s start by loading the mridangam stroke dataset. Since <code class="docutils literal notranslate"><span class="pre">MridangamStrokeClassification</span></code>is based on the Mridangam Stroke Dataset, <code class="docutils literal notranslate"><span class="pre">compiam</span></code> includes a specific function to load the dataset and integrate it to the pipeline.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">load_mridangam_dataset</span><span class="p">(</span><span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;../workspace/&quot;</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function does not return a dataloader. Instead, the dataloader lives within the tool class. We will see how this works in the following steps of this walkthrough.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.rhythm.transcription</span> <span class="kn">import</span> <span class="n">FourWayTabla</span>
-<span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">FourWayTabla</span><span class="p">()</span>  <span class="c1"># initializing a melodia instance</span>
-<span class="n">pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print list of available mirdangam strokes in the dataset</span>
+<span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">list_strokes</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.rhythm.transcription</span> <span class="kn">import</span> <span class="n">FourWayTabla</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">FourWayTabla</span><span class="p">()</span>  <span class="c1"># initializing a melodia instance</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;/path/to/audio&quot;</span><span class="p">)</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Print list of available mirdangam strokes in the dataset</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">list_strokes</span><span class="p">()</span>
 
-<span class="ne">AttributeError</span>: &#39;FourWayTabla&#39; object has no attribute &#39;extract&#39;
+<span class="ne">NameError</span>: name &#39;mridangam_stroke_classification&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s train and evaluate a very basic model to perform classification of mridangam strokes. We first use a util function in <code class="docutils literal notranslate"><span class="pre">compiam</span></code> to separate a part of the mridangam dataset, which we will use for evaluation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.utils.datasets</span> <span class="kn">import</span> <span class="n">split_mirdata_tracks</span>
+
+<span class="n">train_split</span><span class="p">,</span> <span class="n">evaluation_split</span> <span class="o">=</span> <span class="n">split_mirdata_tracks</span><span class="p">(</span><span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">dataset</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">evaluation_split</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.utils.datasets</span> <span class="kn">import</span> <span class="n">split_mirdata_tracks</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">train_split</span><span class="p">,</span> <span class="n">evaluation_split</span> <span class="o">=</span> <span class="n">split_mirdata_tracks</span><span class="p">(</span><span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">dataset</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">evaluation_split</span>
+
+<span class="ne">NameError</span>: name &#39;mridangam_stroke_classification&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our class will assume that the entire dataset is used for the training process. We need to update the dataset in the class with the training split.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">mridangam_tracks</span> <span class="o">=</span> <span class="n">train_split</span>
+<span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">mridangam_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">train_split</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">mridangam_tracks</span> <span class="o">=</span> <span class="n">train_split</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">mridangam_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">train_split</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="ne">NameError</span>: name &#39;train_split&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Let’s now train the model!</strong> We will train Support Vector Machine (SVM) model using <code class="docutils literal notranslate"><span class="pre">scikit</span> <span class="pre">learn</span></code>. The mridangam stroke classification tool in <code class="docutils literal notranslate"><span class="pre">compiam</span></code> uses the <a class="reference external" href="https://essentia.upf.edu/streaming_extractor_music.html">MusicExtraction in Essentia</a> to compute low-level features from the stroke recordings and feed the model.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also train a different model and compare the performance. We offer other options (see <a class="reference external" href="https://mtg.github.io/compIAM/source/timbre.html#mridangam-stroke-classification">the documentation of the tool</a>), but feel free to open a Pull Request in <code class="docutils literal notranslate"><span class="pre">compiam</span></code> to add more models to the available options.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svm__accuracy</span> <span class="o">=</span> <span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">train_model</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">svm__accuracy</span> <span class="o">=</span> <span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">train_model</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;mridangam_stroke_classification&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>We got a message that the model has been properly trained. That is good! We have also got the accuracy returned in case we want to store it, re-train the model again using different settings, and compare.</p>
+<p>Now we can predict the stroke on a particular list of instances. First, we need to get the list of paths for the <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> dataset split we generated a few steps earlier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eval_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">evaluation_split</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">audio_path</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">evaluation_split</span><span class="o">.</span><span class="n">keys</span><span class="p">())]</span>
+
+<span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">eval_paths</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">eval_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">evaluation_split</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">audio_path</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">evaluation_split</span><span class="o">.</span><span class="n">keys</span><span class="p">())]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">eval_paths</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;evaluation_split&#39; is not defined
 </pre></div>
 </div>
 </div>

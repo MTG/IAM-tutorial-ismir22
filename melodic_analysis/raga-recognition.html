@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/style.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -50,9 +51,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Akshara pulse tracker" href="../rhythmic_analysis/akshara-pulse-tracker.html" />
+    <link rel="next" title="Searching for sañcāras" href="../resources/online-vis/view.html" />
     <link rel="prev" title="Melodic pattern dicovery" href="melodic-pattern-discovery.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -191,6 +194,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Automatic raga recognition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resources/online-vis/view.html">
+   Searching for sañcāras
   </a>
  </li>
 </ul>
@@ -536,7 +544,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;DEEPSRGM*&#39;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">raga_recognition</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;compiam&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -560,6 +573,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/nn/modules/rnn.py:60: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(&quot;dropout option adds dropout after all but last &quot;
+</pre></div>
+</div>
+</div>
 </div>
 <p>However, this is a non-trained instance of DEEPSRGM, and as suggested by the output of <code class="docutils literal notranslate"><span class="pre">compiam.melody.raga_recognition.list_tools()</span></code>, said model appears with a <code class="docutils literal notranslate"><span class="pre">*</span></code> in the name so a trained instance may be loaded using the wrapper for models.</p>
 <div class="admonition tip">
@@ -573,11 +592,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;melody:deepsrgm&#39;,
- &#39;melody:ftanet-carnatic&#39;,
- &#39;rhythm:1way-tabla&#39;,
- &#39;rhythm:4way-tabla&#39;,
- &#39;structure:dhrupad-bandish-segmentation&#39;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">compiam</span><span class="o">.</span><span class="n">list_models</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;compiam&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -594,43 +614,14 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">UnboundLocalError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># We initialize an instance of the tool</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">deepsrgm</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:deepsrgm&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Showing raga mapping</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">mapping</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/__init__.py:28,</span> in <span class="ni">load_model</span><span class="nt">(model_name, models_dict)</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">m_dict</span> <span class="o">=</span> <span class="n">models_dict</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="n">module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">import_module</span><span class="p">(</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;module_name&quot;</span><span class="p">]),</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;class_name&quot;</span><span class="p">])</span>
-<span class="ne">---&gt; </span><span class="mi">28</span> <span class="k">return</span> <span class="n">module</span><span class="p">(</span><span class="o">**</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">])</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/raga_recognition/deepsrgm/__init__.py:47,</span> in <span class="ni">DEEPSRGM.__init__</span><span class="nt">(self, model_path, mapping_path, dataset_home, device)</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="c1">## Loading LSTM model by default</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">47</span>     <span class="bp">self</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model_path</span><span class="p">,</span> <span class="n">rnn</span><span class="o">=</span><span class="s2">&quot;lstm&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapping_path</span> <span class="o">=</span> <span class="n">mapping_path</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_ragas</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>     <span class="mi">5</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="mi">8</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="mi">28</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span> <span class="p">]</span>  <span class="c1"># pre-defined for release 0.1</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/raga_recognition/deepsrgm/__init__.py:105,</span> in <span class="ni">DEEPSRGM.load_model</span><span class="nt">(self, model_path, rnn)</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span>     <span class="k">if</span> <span class="n">model_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">103</span>         <span class="n">weights_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="s2">&quot;lstm_25_checkpoint.pth&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">105</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">weights_path</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">106</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span><span class="sd">         Given path to model weights not found. Make sure you enter the path correctly.</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span> <span class="n">weights</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">weights_path</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
-
-<span class="ne">UnboundLocalError</span>: local variable &#39;weights_path&#39; referenced before assignment
+<span class="ne">NameError</span>: name &#39;compiam&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -640,6 +631,17 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize saraga Carnatic on our example audio folder</span>
 <span class="n">saraga_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;saraga_carnatic&quot;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;./../audio/&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Initialize saraga Carnatic on our example audio folder</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">saraga_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;saraga_carnatic&quot;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;./../audio/&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;compiam&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -658,8 +660,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;This recordings includes raaga Bhairavi, which has unique Dunya ID &#39;
- &#39;123b09bd-9901-4e64-a65a-10b02c9e0597&#39;)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">track_data</span> <span class="o">=</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()[</span><span class="s2">&quot;109_Sri_Raghuvara_Sugunaalaya&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;This recordings includes raaga </span><span class="si">{}</span><span class="s2">, which has unique Dunya ID </span><span class="si">{}</span><span class="s2">&quot;</span>\
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">track_data</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">track_data</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;uuid&quot;</span><span class="p">]))</span>
+
+<span class="ne">NameError</span>: name &#39;saraga_carnatic&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -668,53 +676,10 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Computing features for the given recording</span>
-<span class="n">feat</span> <span class="o">=</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">get_features</span><span class="p">(</span><span class="n">track_data</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
+<span class="c1">#feat = deepsrgm.get_features(track_data.audio_path)</span>
 
 <span class="c1"># Predicting raga!</span>
-<span class="n">deepsrgm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModelNotDefinedError</span><span class="g g-Whitespace">                      </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/raga_recognition/deepsrgm/__init__.py:168,</span> in <span class="ni">DEEPSRGM.get_features</span><span class="nt">(self, audio_file, pitch_file, tonic_file, from_mirdata, track_id, k)</span>
-<span class="g g-Whitespace">    </span><span class="mi">167</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">168</span>     <span class="n">melodia</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:melodia&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">169</span>     <span class="n">tonic_extraction</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:tonic-multipitch&quot;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/__init__.py:19,</span> in <span class="ni">load_model</span><span class="nt">(model_name, models_dict)</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">model_name</span> <span class="ow">in</span> <span class="n">models_dict</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">19</span>     <span class="k">raise</span> <span class="n">ModelNotDefinedError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span>         <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span>             <span class="sa">f</span><span class="s2">&quot;Model, </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> does not exist in compiam.data.models_dict, please follow &quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span>             <span class="s2">&quot;instructions for adding new model to in ``data.py`` documentation&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">m_dict</span> <span class="o">=</span> <span class="n">models_dict</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span>
-
-<span class="ne">ModelNotDefinedError</span>: Model, melody:melodia does not exist in compiam.data.models_dict, please follow instructions for adding new model to in ``data.py`` documentation
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Computing features for the given recording</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">feat</span> <span class="o">=</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">get_features</span><span class="p">(</span><span class="n">track_data</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Predicting raga!</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/raga_recognition/deepsrgm/__init__.py:171,</span> in <span class="ni">DEEPSRGM.get_features</span><span class="nt">(self, audio_file, pitch_file, tonic_file, from_mirdata, track_id, k)</span>
-<span class="g g-Whitespace">    </span><span class="mi">169</span>     <span class="n">tonic_extraction</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:tonic-multipitch&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">170</span> <span class="k">except</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">171</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span>         <span class="s2">&quot;In order to use these tools to extract the features you need to have essentia installed. &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">173</span>         <span class="s2">&quot;Please install essentia using: pip install essentia&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">audio_file</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;Input audio not found.&quot;</span><span class="p">)</span>
-
-<span class="ne">ImportError</span>: In order to use these tools to extract the features you need to have essentia installed. Please install essentia using: pip install essentia
+<span class="c1">#deepsrgm.predict(feat)</span>
 </pre></div>
 </div>
 </div>
@@ -755,10 +720,10 @@ title="Print to PDF"
             <p class="prev-next-title">Melodic pattern dicovery</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../rhythmic_analysis/akshara-pulse-tracker.html" title="next page">
+    <a class='right-next' id="next-link" href="../resources/online-vis/view.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Akshara pulse tracker</p>
+        <p class="prev-next-title">Searching for sañcāras</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
