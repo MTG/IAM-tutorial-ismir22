@@ -537,40 +537,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">os</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">load_model</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">compiam.visualisation.waveform_player</span> <span class="kn">import</span> <span class="n">Player</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">compiam.melody.pattern.sancara_search.extraction.evaluation</span> <span class="kn">import</span> <span class="n">load_annotations_brindha</span><span class="p">,</span> <span class="n">to_aeneas</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">mirdata</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">import_module</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">melody</span><span class="p">,</span> <span class="n">rhythm</span><span class="p">,</span> <span class="n">structure</span><span class="p">,</span> <span class="n">timbre</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">compiam.dunya</span> <span class="kn">import</span> <span class="n">Corpora</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">compiam.data</span> <span class="kn">import</span> <span class="n">models_dict</span><span class="p">,</span> <span class="n">datasets_list</span><span class="p">,</span> <span class="n">corpora_list</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">melody</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">17</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">pitch_extraction</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">raga_recognition</span>
-<span class="ne">---&gt; </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">pattern</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="c1"># Show user the available tasks</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span> <span class="nf">list_tasks</span><span class="p">():</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">melody</span><span class="o">/</span><span class="n">pattern</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">7</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">compiam.data</span> <span class="kn">import</span> <span class="n">models_dict</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">compiam.melody.pattern.sancara_search.models</span> <span class="kn">import</span> <span class="n">CAEWrapper</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">compiam.melody.pattern.sancara_search.extraction.core</span> <span class="kn">import</span> <span class="n">self_similarity</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Show user the available tools</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">def</span> <span class="nf">list_tools</span><span class="p">():</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;compiam.melody.pattern.sancara_search.extraction&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -588,11 +554,55 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">TemplateNotFound</span><span class="g g-Whitespace">                          </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">Player</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">audio_path</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;Player&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/visualisation/waveform_player/core.py:73,</span> in <span class="ni">Player.__init__</span><span class="nt">(self, titles, files, annotations, height, width, gains, mutes, solos)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>         <span class="n">height</span> <span class="o">+=</span> <span class="mi">200</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span> <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;annotations.html&quot;</span> <span class="k">if</span> <span class="n">annotations</span> <span class="k">else</span> <span class="s2">&quot;multi-channel.html&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="s1">&#39;&lt;iframe srcdoc=&quot;&#39;</span> <span class="o">+</span>
+<span class="ne">---&gt; </span><span class="mi">73</span>     <span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">make_playlist_iframe</span><span class="p">(</span><span class="n">titles</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="n">gains</span><span class="p">,</span> <span class="n">mutes</span><span class="p">,</span> <span class="n">solos</span><span class="p">,</span> <span class="n">annotations</span><span class="o">=</span><span class="n">annotations</span><span class="p">,</span> <span class="n">template_name</span><span class="o">=</span><span class="n">template_name</span><span class="p">))</span> <span class="o">+</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span>     <span class="sa">f</span><span class="s1">&#39;&quot; height=</span><span class="si">{</span><span class="n">height</span><span class="si">}</span><span class="s1"> width=</span><span class="si">{</span><span class="n">width</span><span class="si">}</span><span class="s1">&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/visualisation/waveform_player/core.py:49,</span> in <span class="ni">make_playlist_iframe</span><span class="nt">(titles, files, gains, mutes, solos, annotations, template_name)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="n">templateLoader</span> <span class="o">=</span> <span class="n">jinja2</span><span class="o">.</span><span class="n">FileSystemLoader</span><span class="p">(</span><span class="n">searchpath</span><span class="o">=</span><span class="n">WPDIR</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="n">templateEnv</span> <span class="o">=</span> <span class="n">jinja2</span><span class="o">.</span><span class="n">Environment</span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n">templateLoader</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">49</span> <span class="n">template</span> <span class="o">=</span> <span class="n">templateEnv</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="n">template_name</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span> <span class="k">return</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">({</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="s1">&#39;local_text&#39;</span><span class="p">:</span> <span class="n">local_text</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span>     <span class="s1">&#39;play_list_json&#39;</span><span class="p">:</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">json_track_list</span><span class="p">(</span><span class="n">titles</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="n">gains</span><span class="p">,</span> <span class="n">mutes</span><span class="p">,</span> <span class="n">solos</span><span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span>     <span class="s1">&#39;annotations_data&#39;</span><span class="p">:</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">annotations</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="p">})</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/jinja2/environment.py:1010,</span> in <span class="ni">Environment.get_template</span><span class="nt">(self, name, parent, globals)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1007</span> <span class="k">if</span> <span class="n">parent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1008</span>     <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">join_path</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1010</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_template</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">globals</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/jinja2/environment.py:969,</span> in <span class="ni">Environment._load_template</span><span class="nt">(self, name, globals)</span>
+<span class="g g-Whitespace">    </span><span class="mi">965</span>             <span class="n">template</span><span class="o">.</span><span class="n">globals</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">globals</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">967</span>         <span class="k">return</span> <span class="n">template</span>
+<span class="ne">--&gt; </span><span class="mi">969</span> <span class="n">template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loader</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_globals</span><span class="p">(</span><span class="nb">globals</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">971</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">972</span>     <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">cache_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">template</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/jinja2/loaders.py:126,</span> in <span class="ni">BaseLoader.load</span><span class="nt">(self, environment, name, globals)</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span>     <span class="nb">globals</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span> <span class="c1"># first we try to get the source for this template together</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span> <span class="c1"># with the filename and the uptodate function.</span>
+<span class="ne">--&gt; </span><span class="mi">126</span> <span class="n">source</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">uptodate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_source</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span> <span class="c1"># try to load the code from the bytecode cache if there is a</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span> <span class="c1"># bytecode cache configured.</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="n">bcc</span> <span class="o">=</span> <span class="n">environment</span><span class="o">.</span><span class="n">bytecode_cache</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/jinja2/loaders.py:218,</span> in <span class="ni">FileSystemLoader.get_source</span><span class="nt">(self, environment, template)</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span>     <span class="c1"># Use normpath to convert Windows altsep to sep.</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span>     <span class="k">return</span> <span class="n">contents</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="n">uptodate</span>
+<span class="ne">--&gt; </span><span class="mi">218</span> <span class="k">raise</span> <span class="n">TemplateNotFound</span><span class="p">(</span><span class="n">template</span><span class="p">)</span>
+
+<span class="ne">TemplateNotFound</span>: multi-channel.html
 </pre></div>
 </div>
 </div>
