@@ -532,12 +532,12 @@ title="Print to PDF"
 <p>Let’s first list the available tools for the task of raga recognition.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">raga_recognition</span><span class="o">.</span><span class="n">list_tools</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">raga_recognition</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;DEEPSRGM*&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;DEEPSRGM*&#39;]
 </pre></div>
 </div>
 </div>
@@ -588,6 +588,8 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We initialize an instance of the tool</span>
 <span class="n">deepsrgm</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:deepsrgm&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">deepsrgm</span><span class="o">.</span><span class="n">rnn</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">deepsrgm</span><span class="o">.</span><span class="n">model_path</span><span class="p">)</span>
 
 <span class="c1"># Showing raga mapping</span>
 <span class="n">deepsrgm</span><span class="o">.</span><span class="n">mapping</span>
@@ -600,8 +602,8 @@ title="Print to PDF"
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># We initialize an instance of the tool</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">deepsrgm</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:deepsrgm&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Showing raga mapping</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">mapping</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">deepsrgm</span><span class="o">.</span><span class="n">rnn</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">deepsrgm</span><span class="o">.</span><span class="n">model_path</span><span class="p">)</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/__init__.py:28,</span> in <span class="ni">load_model</span><span class="nt">(model_name, models_dict)</span>
 <span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">m_dict</span> <span class="o">=</span> <span class="n">models_dict</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span>
