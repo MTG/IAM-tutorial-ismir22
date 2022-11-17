@@ -1,6 +1,6 @@
 jupyter-book==0.13.1 
 jupyterlab~=3.0
-ipywidgets==8.0.0
+ipywidgets>=7.0.0,<8
 ipython==8.6.0
 Jinja2==3.1.2
 
