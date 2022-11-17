@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -538,12 +539,12 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">tonic_identification</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">tonic_identification</span><span class="o">.</span><span class="n">list_tools</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;TonicIndianMultiPitch&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;TonicIndianMultiPitch&#39;]
 </pre></div>
 </div>
 </div>
@@ -601,7 +602,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We observe a long list of attributes for this tool. That is because this is an <strong>extractor</strong>. Within the context of this tutorial, we use this concept to refer to <strong>heuristic-based</strong> tools that extract or compute a particular representation from a music signal. In this case, the tonic of the input musical recording. Heuristic-based approaches are commonly tuned by a list of particular parameter, which can be tuned to improve the performance for particular cases.</p>
+<p>We observe a long list of attributes for this tool. That is because this is an <strong>extractor</strong>. Within the context of this tutorial, we use this concept to refer to <strong>heuristic-based</strong> tools that extract or compute a particular representation from a music signal. In this case, the tonic of the input musical recording. Heuristic-based approaches are commonly tuned by a list of particular parameters, which can be tuned to improve the performance for particular cases.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can print out the standard value for a particular parameter</span>
@@ -652,7 +653,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Right! We now have the dataset. Unfortunately, we observe that the audio tracks for this collections are not opnly available but only shared under explicit request. <strong>However that is not a problem!</strong> Possible solutions:</p>
+<p>Right! We now have the dataset. Unfortunately, we observe that the audio tracks for this collections are not openly available but only shared under explicit request.</p>
+<p><strong>However that is not a problem!</strong> Possible solutions:</p>
 <ul class="simple">
 <li><p>You may request the audios as follow the instructions on the dataloader to have them considered.</p></li>
 <li><p>Otherwise, if available, you may get the audios from the Dunya database.</p></li>
@@ -666,7 +668,9 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random_track</span> <span class="o">=</span> <span class="n">tonic_dataset</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MusicBrainz ID of random track: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">random_track</span><span class="o">.</span><span class="n">mbid</span><span class="p">))</span>
+
+<span class="c1"># We can print the mbid from the randomly chosen track</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random_track</span><span class="o">.</span><span class="n">mbid</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -675,19 +679,25 @@ title="Print to PDF"
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">random_track</span> <span class="o">=</span> <span class="n">tonic_dataset</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MusicBrainz ID of random track: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">random_track</span><span class="o">.</span><span class="n">mbid</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># We can print the mbid from the randomly chosen track</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">random_track</span><span class="o">.</span><span class="n">mbid</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;tonic_dataset&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
+<p>Having a MusicBrainz ID at hand, we could a code snippet, as the example below, to get the audio from the Dunya database.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">compiam</span>
 <span class="n">carnatic_corpora</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_corpora</span><span class="p">(</span><span class="s2">&quot;carnatic&quot;</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="s2">&quot;&lt;your-token-goes-here&gt;&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">carnatic_corpora</span><span class="o">.</span><span class="n">get_collection</span><span class="p">())</span>  <span class="c1"># Print out the available recordings in the database</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">carnatic_corpora</span><span class="o">.</span><span class="n">get_recording</span><span class="p">(</span><span class="s2">&quot;&lt;mbid&gt;&quot;</span><span class="p">))</span>  <span class="c1"># Print out available data for specific track</span>
 <span class="n">carnatic_corpora</span><span class="o">.</span><span class="n">download_mp3</span><span class="p">(</span><span class="s2">&quot;&lt;mbid&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;path/to/save&quot;</span><span class="p">)</span>  <span class="c1"># Download and save mp3 audio for particular track</span>
 </pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Please keep in mind that not all recordings in Dunya can be downloaded with a regular token. You may need to request access through the Dunya website in order to get your token upgraded and get access to the restricted (see the <a class="reference internal" href="../corpora_and_datasets/corpora.html#dunya-python-api"><span class="std std-ref">Section about accessing the Dunya corpora</span></a>).</p>
 </div>
 <p>Let’s select a couple of random recordings from the Indian Art Music Tonic dataset to extract the tonic from.</p>
 </section>

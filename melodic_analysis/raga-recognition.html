@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -531,12 +532,12 @@ title="Print to PDF"
 <p>Let’s first list the available tools for the task of raga recognition.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">raga_recognition</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">raga_recognition</span><span class="o">.</span><span class="n">list_tools</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;DEEPSRGM*&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;DEEPSRGM*&#39;]
 </pre></div>
 </div>
 </div>
@@ -564,7 +565,7 @@ title="Print to PDF"
 <p>However, this is a non-trained instance of DEEPSRGM, and as suggested by the output of <code class="docutils literal notranslate"><span class="pre">compiam.melody.raga_recognition.list_tools()</span></code>, said model appears with a <code class="docutils literal notranslate"><span class="pre">*</span></code> in the name so a trained instance may be loaded using the wrapper for models.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You can also browse the available pre-trained models by running <code class="docutils literal notranslate"><span class="pre">compiam.list_models()</span></code>. That will also help getting the</p>
+<p>You can also browse the available pre-trained models by running <code class="docutils literal notranslate"><span class="pre">compiam.list_models()</span></code>. That will also help getting the melodic aspect in which they can be classified on.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -607,32 +608,32 @@ title="Print to PDF"
 <span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="n">module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">import_module</span><span class="p">(</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;module_name&quot;</span><span class="p">]),</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;class_name&quot;</span><span class="p">])</span>
 <span class="ne">---&gt; </span><span class="mi">28</span> <span class="k">return</span> <span class="n">module</span><span class="p">(</span><span class="o">**</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">])</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/raga_recognition/deepsrgm/__init__.py:47,</span> in <span class="ni">DEEPSRGM.__init__</span><span class="nt">(self, model_path, mapping_path, dataset_home, device)</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="c1">## Loading LSTM model by default</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">47</span>     <span class="bp">self</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="n">rnn</span><span class="o">=</span><span class="s2">&quot;lstm&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapping_path</span> <span class="o">=</span> <span class="n">mapping_path</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_ragas</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>     <span class="mi">5</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="mi">8</span><span class="p">,</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/raga_recognition/deepsrgm/__init__.py:49,</span> in <span class="ni">DEEPSRGM.__init__</span><span class="nt">(self, model_path, rnn, mapping_path, dataset_home, device)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="c1">## Loading LSTM model by default</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">49</span>     <span class="bp">self</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="n">model_path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model_path</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">rnn</span><span class="p">],</span> <span class="n">rnn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rnn</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapping_path</span> <span class="o">=</span> <span class="n">mapping_path</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected_ragas</span> <span class="o">=</span> <span class="p">[</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span>     <span class="mi">5</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span>     <span class="mi">8</span><span class="p">,</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="mi">28</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span> <span class="p">]</span>  <span class="c1"># pre-defined for release 0.1</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span>     <span class="mi">28</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="p">]</span>  <span class="c1"># pre-defined for release 0.1</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/raga_recognition/deepsrgm/__init__.py:110,</span> in <span class="ni">DEEPSRGM.load_model</span><span class="nt">(self, model_path, rnn)</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span>         <span class="n">weights_path</span> <span class="o">=</span> <span class="n">model_path</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">weights_path</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">110</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span><span class="sd">         Given path to model weights not found. Make sure you enter the path correctly.</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span><span class="sd">         A training process for DEEPSRGM is under development right now and will be added </span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span><span class="sd">         to the library soon. Meanwhile, we provide the weights in the latest repository </span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span><span class="sd">         version (https://github.com/MTG/compIAM) so make sure you have these available before </span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span><span class="sd">         loading the DEEPSRGM. The weights are stored in .pth file format.</span>
-<span class="g g-Whitespace">    </span><span class="mi">117</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span> <span class="n">weights</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">weights_path</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="n">new_weights</span> <span class="o">=</span> <span class="n">weights</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/raga_recognition/deepsrgm/__init__.py:99,</span> in <span class="ni">DEEPSRGM.load_model</span><span class="nt">(self, model_path, rnn)</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span>     <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_model</span><span class="p">(</span><span class="n">rnn</span><span class="o">=</span><span class="s2">&quot;gru&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">model_path</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">99</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>         <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span><span class="sd">         Given path to model weights not found. Make sure you enter the path correctly.</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span><span class="sd">         A training process for DEEPSRGM is under development right now and will be added </span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span><span class="sd">         to the library soon. Meanwhile, we provide the weights in the latest repository </span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span><span class="sd">         version (https://github.com/MTG/compIAM) so make sure you have these available before </span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span><span class="sd">         loading the DEEPSRGM. The weights are stored in .pth file format.</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="n">weights</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span> <span class="n">new_weights</span> <span class="o">=</span> <span class="n">weights</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="ne">ValueError</span>: 
                 <span class="n">Given</span> <span class="n">path</span> <span class="n">to</span> <span class="n">model</span> <span class="n">weights</span> <span class="ow">not</span> <span class="n">found</span><span class="o">.</span> <span class="n">Make</span> <span class="n">sure</span> <span class="n">you</span> <span class="n">enter</span> <span class="n">the</span> <span class="n">path</span> <span class="n">correctly</span><span class="o">.</span>
@@ -662,14 +663,14 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">track_data</span> <span class="o">=</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()[</span><span class="s2">&quot;109_Sri_Raghuvara_Sugunaalaya&quot;</span><span class="p">]</span>
-<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;This recordings includes raaga </span><span class="si">{}</span><span class="s2">, which has unique Dunya ID </span><span class="si">{}</span><span class="s2">&quot;</span>\
-    <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">track_data</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">track_data</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;uuid&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This recording includes raaga:&quot;</span><span class="p">,</span> <span class="n">track_data</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This recordings has unique Dunya ID:&quot;</span><span class="p">,</span> <span class="n">track_data</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;uuid&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;This recordings includes raaga Bhairavi, which has unique Dunya ID &#39;
- &#39;123b09bd-9901-4e64-a65a-10b02c9e0597&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This recording includes raaga: Bhairavi
+This recordings has unique Dunya ID: 123b09bd-9901-4e64-a65a-10b02c9e0597
 </pre></div>
 </div>
 </div>
@@ -678,10 +679,41 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Computing features for the given recording</span>
-<span class="c1">#feat = deepsrgm.get_features(track_data.audio_path)</span>
+<span class="n">feat</span> <span class="o">=</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">get_features</span><span class="p">(</span><span class="n">track_data</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
 
 <span class="c1"># Predicting raga!</span>
-<span class="c1">#deepsrgm.predict(feat)</span>
+<span class="n">deepsrgm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   INFO   ] MusicExtractorSVM: no classifier models were configured by default
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting pitch track using melodia...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting tonic using multi-pitch approach...
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">feat</span> <span class="o">=</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">get_features</span><span class="p">(</span><span class="n">track_data</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Predicting raga!</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/raga_recognition/deepsrgm/__init__.py:207,</span> in <span class="ni">DEEPSRGM.predict</span><span class="nt">(self, features, threshold)</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span>         <span class="s2">&quot;Please first extract features using .get_features() and use </span><span class="se">\</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span><span class="s2">         these as input for this predict function.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="c1"># Make sure mapping is loaded</span>
+<span class="ne">--&gt; </span><span class="mi">207</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapping</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">208</span>     <span class="bp">self</span><span class="o">.</span><span class="n">load_mapping</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">selected_ragas</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span> <span class="c1"># Make sure model is loaded</span>
+
+<span class="ne">AttributeError</span>: &#39;DEEPSRGM&#39; object has no attribute &#39;mapping&#39;
 </pre></div>
 </div>
 </div>

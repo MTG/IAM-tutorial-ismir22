@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -567,15 +568,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.timbre.stroke_classification</span> <span class="kn">import</span> <span class="n">MridangamStrokeClassification</span>
 <span class="n">mridangam_stroke_classification</span> <span class="o">=</span> <span class="n">MridangamStrokeClassification</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 </pre></div>
 </div>
 </div>
@@ -618,12 +614,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;227421&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;227291&#39;,
  Track(
-   audio_path=&quot;../workspace/mridangam_stroke_1.5/C#/227421__akshaylaya__thi-csh-178.wav&quot;,
+   audio_path=&quot;../workspace/mridangam_stroke_1.5/C#/227291__akshaylaya__thi-csh-048.wav&quot;,
    stroke_name=&quot;thi&quot;,
    tonic=&quot;C#&quot;,
-   track_id=&quot;227421&quot;,
+   track_id=&quot;227291&quot;,
    audio: The track&#39;s audio
  
          Returns,
@@ -653,54 +649,29 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>The model has been trained. That is good! We have also got the accuracy returned in case we want to store it, re-train the model again using different settings, and compare.</p>
+<p><strong>The model has been trained. That is good!</strong> We have also got the accuracy returned in case we want to store it, re-train the model again using different settings, and compare.</p>
 <p>Now we can predict the stroke on a particular list of instances. First, we need to get the list of paths for the <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> dataset split we generated a few steps earlier.</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get paths from created evaluation split</span>
 <span class="n">eval_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">evaluation_split</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">audio_path</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">evaluation_split</span><span class="o">.</span><span class="n">keys</span><span class="p">())]</span>
 
 <span class="c1"># Compute prediction from list of paths</span>
 <span class="n">prediction</span> <span class="o">=</span> <span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">eval_paths</span><span class="p">)</span>
-
-<span class="c1"># Visualise and evaluate a single prediction from the model output</span>
-<span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualise and evaluate a single prediction from the model output</span>
+<span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ WARNING  ] clipping oddtoevenharmonicenergyratio to maximum allowed value
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ WARNING  ] clipping oddtoevenharmonicenergyratio to maximum allowed value
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ WARNING  ] clipping oddtoevenharmonicenergyratio to maximum allowed value
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ WARNING  ] clipping oddtoevenharmonicenergyratio to maximum allowed value
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ WARNING  ] clipping oddtoevenharmonicenergyratio to maximum allowed value
-[ WARNING  ] clipping oddtoevenharmonicenergyratio to maximum allowed value
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ WARNING  ] clipping oddtoevenharmonicenergyratio to maximum allowed value
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">prediction</span> <span class="o">=</span> <span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">eval_paths</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Visualise and evaluate a single prediction from the model output</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/random.py:291,</span> in <span class="ni">Random.choice</span><span class="nt">(self, seq)</span>
-<span class="g g-Whitespace">    </span><span class="mi">289</span> <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">290</span>     <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s1">&#39;Cannot choose from an empty sequence&#39;</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span>
-<span class="ne">--&gt; </span><span class="mi">291</span> <span class="k">return</span> <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-
-<span class="ne">KeyError</span>: 213
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;../workspace/mridangam_stroke_1.5/C/225969__akshaylaya__tha-c-163.wav&#39;,
+ &#39;tha&#39;)
 </pre></div>
 </div>
 </div>
