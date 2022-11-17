@@ -564,106 +564,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction</span> <span class="kn">import</span> <span class="n">Melodia</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">melodia</span> <span class="o">=</span> <span class="n">Melodia</span><span class="p">()</span>  <span class="c1"># initializing a melodia instance</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;../audio/testing_samples/test_1.wav&quot;</span><span class="p">)</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">mirdata</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">import_module</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">melody</span><span class="p">,</span> <span class="n">rhythm</span><span class="p">,</span> <span class="n">structure</span><span class="p">,</span> <span class="n">timbre</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">compiam.dunya</span> <span class="kn">import</span> <span class="n">Corpora</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">compiam.data</span> <span class="kn">import</span> <span class="n">models_dict</span><span class="p">,</span> <span class="n">datasets_list</span><span class="p">,</span> <span class="n">corpora_list</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">melody</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">15</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1">### IMPORT HERE THE CONSIDERED TASKS</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">tonic_identification</span>
-<span class="ne">---&gt; </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">pitch_extraction</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">raga_recognition</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">pattern</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">melody</span><span class="o">/</span><span class="n">pitch_extraction</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">7</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">compiam.data</span> <span class="kn">import</span> <span class="n">models_dict</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction.melodia</span> <span class="kn">import</span> <span class="n">Melodia</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction.ftanet_carnatic</span> <span class="kn">import</span> <span class="n">FTANetCarnatic</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Show user the available tools</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">def</span> <span class="nf">list_tools</span><span class="p">():</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">melody</span><span class="o">/</span><span class="n">pitch_extraction</span><span class="o">/</span><span class="n">ftanet_carnatic</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">compiam.exceptions</span> <span class="kn">import</span> <span class="n">ModelNotFoundError</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span> <span class="nn">compiam.utils.pitch</span> <span class="kn">import</span> <span class="n">normalisation</span><span class="p">,</span> <span class="n">resampling</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction.ftanet_carnatic.pitch_processing</span> <span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">batchize_test</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">get_est_arr</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction.ftanet_carnatic.cfp</span> <span class="kn">import</span> <span class="n">cfp_process</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="k">class</span> <span class="nc">FTANetCarnatic</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">melody</span><span class="o">/</span><span class="n">pitch_extraction</span><span class="o">/</span><span class="n">ftanet_carnatic</span><span class="o">/</span><span class="n">pitch_processing</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">9</span>
-<span class="nn">      1 # The functions</span> in <span class="ni">this file were directly ported </span><span class="nt">(and in some cases adapted)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># from the original repoository ofthe FTA-Net (https://github.com/yushuai/FTANet-melodic).</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># We documented these for a more clear usage of the code by the CompIAM users. For direct</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># use of the FTA-Net as designed and published by the authors, please refer to the original</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># mentioned GitHub repository.</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction.ftanet_carnatic.cfp</span> <span class="kn">import</span> <span class="n">get_CenFreq</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="k">def</span> <span class="nf">batchize_test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">430</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="sd">&quot;&quot;&quot;Re-arrange CFP features to fit the FTA-Net model.</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="sd">     :param data: input CFP features for the FTA-Net.</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="sd">     :param size: size of the batches.</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span><span class="sd">     :returns: batched features.</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span><span class="sd">     &quot;&quot;&quot;</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">melody</span><span class="o">/</span><span class="n">pitch_extraction</span><span class="o">/</span><span class="n">ftanet_carnatic</span><span class="o">/</span><span class="n">cfp</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">13</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">import</span> <span class="nn">soundfile</span> <span class="k">as</span> <span class="nn">sf</span>
-<span class="ne">---&gt; </span><span class="mi">13</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">np</span><span class="o">.</span><span class="n">seterr</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="k">def</span> <span class="nf">STFT</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fr</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">Hop</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">22</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="k">del</span> <span class="n">_hard_dependencies</span><span class="p">,</span> <span class="n">_dependency</span><span class="p">,</span> <span class="n">_missing_dependencies</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="c1"># numpy compat</span>
-<span class="ne">---&gt; </span><span class="mi">22</span> <span class="kn">from</span> <span class="nn">pandas.compat</span> <span class="kn">import</span> <span class="n">is_numpy_dev</span> <span class="k">as</span> <span class="n">_is_numpy_dev</span>  <span class="c1"># pyright: ignore # noqa:F401</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="kn">from</span> <span class="nn">pandas._libs</span> <span class="kn">import</span> <span class="n">hashtable</span> <span class="k">as</span> <span class="n">_hashtable</span><span class="p">,</span> <span class="n">lib</span> <span class="k">as</span> <span class="n">_lib</span><span class="p">,</span> <span class="n">tslib</span> <span class="k">as</span> <span class="n">_tslib</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">compat</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">18</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">pandas._typing</span> <span class="kn">import</span> <span class="n">F</span>
-<span class="ne">---&gt; </span><span class="mi">18</span> <span class="kn">from</span> <span class="nn">pandas.compat.numpy</span> <span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span>     <span class="n">is_numpy_dev</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="n">np_version_under1p21</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span> <span class="nn">pandas.compat.pyarrow</span> <span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">pa_version_under1p01</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">pa_version_under2p0</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span>     <span class="n">pa_version_under9p0</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">compat</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">22</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="n">np_percentile_argname</span> <span class="o">=</span> <span class="s2">&quot;interpolation&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">if</span> <span class="n">_nlv</span> <span class="o">&lt;</span> <span class="n">Version</span><span class="p">(</span><span class="n">_min_numpy_ver</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">22</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="sa">f</span><span class="s2">&quot;this version of pandas is incompatible with numpy &lt; </span><span class="si">{</span><span class="n">_min_numpy_ver</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>         <span class="sa">f</span><span class="s2">&quot;your numpy version is </span><span class="si">{</span><span class="n">_np_version</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span>         <span class="sa">f</span><span class="s2">&quot;Please upgrade numpy to &gt;= </span><span class="si">{</span><span class="n">_min_numpy_ver</span><span class="si">}</span><span class="s2"> to use this pandas version&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span>     <span class="s2">&quot;np&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span>     <span class="s2">&quot;_np_version&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span>     <span class="s2">&quot;is_numpy_dev&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="p">]</span>
-
-<span class="ne">ImportError</span>: this version of pandas is incompatible with numpy &lt; 1.20.3
-<span class="n">your</span> <span class="n">numpy</span> <span class="n">version</span> <span class="ow">is</span> <span class="mf">1.19.5</span><span class="o">.</span>
-<span class="n">Please</span> <span class="n">upgrade</span> <span class="n">numpy</span> <span class="n">to</span> <span class="o">&gt;=</span> <span class="mf">1.20.3</span> <span class="n">to</span> <span class="n">use</span> <span class="n">this</span> <span class="n">pandas</span> <span class="n">version</span>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 </pre></div>
 </div>
 </div>
@@ -681,108 +582,6 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction</span> <span class="kn">import</span> <span class="n">FTANetCarnatic</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction</span> <span class="kn">import</span> <span class="n">FTANetCarnatic</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">mirdata</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">import_module</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">melody</span><span class="p">,</span> <span class="n">rhythm</span><span class="p">,</span> <span class="n">structure</span><span class="p">,</span> <span class="n">timbre</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">compiam.dunya</span> <span class="kn">import</span> <span class="n">Corpora</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">compiam.data</span> <span class="kn">import</span> <span class="n">models_dict</span><span class="p">,</span> <span class="n">datasets_list</span><span class="p">,</span> <span class="n">corpora_list</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">melody</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">15</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1">### IMPORT HERE THE CONSIDERED TASKS</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">tonic_identification</span>
-<span class="ne">---&gt; </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">pitch_extraction</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">raga_recognition</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">compiam.melody</span> <span class="kn">import</span> <span class="n">pattern</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">melody</span><span class="o">/</span><span class="n">pitch_extraction</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">7</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">compiam.data</span> <span class="kn">import</span> <span class="n">models_dict</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction.melodia</span> <span class="kn">import</span> <span class="n">Melodia</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction.ftanet_carnatic</span> <span class="kn">import</span> <span class="n">FTANetCarnatic</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Show user the available tools</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">def</span> <span class="nf">list_tools</span><span class="p">():</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">melody</span><span class="o">/</span><span class="n">pitch_extraction</span><span class="o">/</span><span class="n">ftanet_carnatic</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">compiam.exceptions</span> <span class="kn">import</span> <span class="n">ModelNotFoundError</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span> <span class="nn">compiam.utils.pitch</span> <span class="kn">import</span> <span class="n">normalisation</span><span class="p">,</span> <span class="n">resampling</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction.ftanet_carnatic.pitch_processing</span> <span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">batchize_test</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">get_est_arr</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction.ftanet_carnatic.cfp</span> <span class="kn">import</span> <span class="n">cfp_process</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="k">class</span> <span class="nc">FTANetCarnatic</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">melody</span><span class="o">/</span><span class="n">pitch_extraction</span><span class="o">/</span><span class="n">ftanet_carnatic</span><span class="o">/</span><span class="n">pitch_processing</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">9</span>
-<span class="nn">      1 # The functions</span> in <span class="ni">this file were directly ported </span><span class="nt">(and in some cases adapted)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># from the original repoository ofthe FTA-Net (https://github.com/yushuai/FTANet-melodic).</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># We documented these for a more clear usage of the code by the CompIAM users. For direct</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># use of the FTA-Net as designed and published by the authors, please refer to the original</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># mentioned GitHub repository.</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction.ftanet_carnatic.cfp</span> <span class="kn">import</span> <span class="n">get_CenFreq</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="k">def</span> <span class="nf">batchize_test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">430</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="sd">&quot;&quot;&quot;Re-arrange CFP features to fit the FTA-Net model.</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="sd">     :param data: input CFP features for the FTA-Net.</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="sd">     :param size: size of the batches.</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span><span class="sd">     :returns: batched features.</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span><span class="sd">     &quot;&quot;&quot;</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compiam</span><span class="o">/</span><span class="n">melody</span><span class="o">/</span><span class="n">pitch_extraction</span><span class="o">/</span><span class="n">ftanet_carnatic</span><span class="o">/</span><span class="n">cfp</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">13</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">import</span> <span class="nn">soundfile</span> <span class="k">as</span> <span class="nn">sf</span>
-<span class="ne">---&gt; </span><span class="mi">13</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">np</span><span class="o">.</span><span class="n">seterr</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="k">def</span> <span class="nf">STFT</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fr</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">Hop</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">22</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="k">del</span> <span class="n">_hard_dependencies</span><span class="p">,</span> <span class="n">_dependency</span><span class="p">,</span> <span class="n">_missing_dependencies</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="c1"># numpy compat</span>
-<span class="ne">---&gt; </span><span class="mi">22</span> <span class="kn">from</span> <span class="nn">pandas.compat</span> <span class="kn">import</span> <span class="n">is_numpy_dev</span> <span class="k">as</span> <span class="n">_is_numpy_dev</span>  <span class="c1"># pyright: ignore # noqa:F401</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="kn">from</span> <span class="nn">pandas._libs</span> <span class="kn">import</span> <span class="n">hashtable</span> <span class="k">as</span> <span class="n">_hashtable</span><span class="p">,</span> <span class="n">lib</span> <span class="k">as</span> <span class="n">_lib</span><span class="p">,</span> <span class="n">tslib</span> <span class="k">as</span> <span class="n">_tslib</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">compat</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">18</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">pandas._typing</span> <span class="kn">import</span> <span class="n">F</span>
-<span class="ne">---&gt; </span><span class="mi">18</span> <span class="kn">from</span> <span class="nn">pandas.compat.numpy</span> <span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span>     <span class="n">is_numpy_dev</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="n">np_version_under1p21</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span> <span class="nn">pandas.compat.pyarrow</span> <span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">pa_version_under1p01</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">pa_version_under2p0</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span>     <span class="n">pa_version_under9p0</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.14</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">compat</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">22</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="n">np_percentile_argname</span> <span class="o">=</span> <span class="s2">&quot;interpolation&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">if</span> <span class="n">_nlv</span> <span class="o">&lt;</span> <span class="n">Version</span><span class="p">(</span><span class="n">_min_numpy_ver</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">22</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="sa">f</span><span class="s2">&quot;this version of pandas is incompatible with numpy &lt; </span><span class="si">{</span><span class="n">_min_numpy_ver</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>         <span class="sa">f</span><span class="s2">&quot;your numpy version is </span><span class="si">{</span><span class="n">_np_version</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span>         <span class="sa">f</span><span class="s2">&quot;Please upgrade numpy to &gt;= </span><span class="si">{</span><span class="n">_min_numpy_ver</span><span class="si">}</span><span class="s2"> to use this pandas version&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span>     <span class="s2">&quot;np&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span>     <span class="s2">&quot;_np_version&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span>     <span class="s2">&quot;is_numpy_dev&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="p">]</span>
-
-<span class="ne">ImportError</span>: this version of pandas is incompatible with numpy &lt; 1.20.3
-<span class="n">your</span> <span class="n">numpy</span> <span class="n">version</span> <span class="ow">is</span> <span class="mf">1.19.5</span><span class="o">.</span>
-<span class="n">Please</span> <span class="n">upgrade</span> <span class="n">numpy</span> <span class="n">to</span> <span class="o">&gt;=</span> <span class="mf">1.20.3</span> <span class="n">to</span> <span class="n">use</span> <span class="n">this</span> <span class="n">pandas</span> <span class="n">version</span>
 </pre></div>
 </div>
 </div>
@@ -806,13 +605,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-16 20:34:45.520236: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
-2022-11-16 20:34:45.520271: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-17 08:22:17.204712: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-11-17 08:22:17.204747: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-16 20:34:46.892430: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
-2022-11-16 20:34:46.892472: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-2022-11-16 20:34:46.892497: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az213-184): /proc/driver/nvidia/version does not exist
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-17 08:22:18.641888: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-11-17 08:22:18.641928: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-11-17 08:22:18.641955: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az426-674): /proc/driver/nvidia/version does not exist
 </pre></div>
 </div>
 </div>
@@ -825,13 +624,11 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">FTANetCarnatic</span><span class="p">()</span>  <span class="c1"># initializing an FTANet instance</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;../audio/testing_samples/test_1.wav&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;FTANetCarnatic&#39; is not defined
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-17 08:22:18.662124: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CFP process in ../audio/testing_samples/test_1.wav
 </pre></div>
 </div>
 </div>
@@ -852,19 +649,21 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">D</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">amplitude_to_db</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">librosa</span><span class="o">.</span><span class="n">stft</span><span class="p">(</span><span class="n">y</span><span class="p">)),</span> <span class="n">ref</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pitch_track</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">img</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">specshow</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">y_axis</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">x_axis</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;pitch_track&#39; is not defined
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-17 08:22:28,795] WARNING [matplotlib.font_manager.&lt;lambda&gt;:1097] Matplotlib is building the font cache; this may take a moment.
 </pre></div>
 </div>
-<img alt="../_images/pitch-extraction_13_1.png" src="../_images/pitch-extraction_13_1.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">D</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">amplitude_to_db</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">librosa</span><span class="o">.</span><span class="n">stft</span><span class="p">(</span><span class="n">y</span><span class="p">)),</span> <span class="n">ref</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pitch_track</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">img</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">specshow</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">y_axis</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">x_axis</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: module &#39;librosa&#39; has no attribute &#39;display&#39;
+</pre></div>
+</div>
+<img alt="../_images/pitch-extraction_13_2.png" src="../_images/pitch-extraction_13_2.png" />
 </div>
 </div>
 </section>
