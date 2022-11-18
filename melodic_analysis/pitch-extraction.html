@@ -618,6 +618,33 @@ title="Print to PDF"
 <p><strong>Cool! FTANet tuned to Carnatic Music is there.</strong> Therefore, let’s load it and run inference on an example track.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">ls</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>melodic-pattern-discovery.ipynb  raga-recognition.ipynb
+pitch-extraction.ipynb           tonic-identification.ipynb
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">WORKDIR</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">models_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages
+{&#39;melody:deepsrgm&#39;: {&#39;module_name&#39;: &#39;compiam.melody.raga_recognition.deepsrgm&#39;, &#39;class_name&#39;: &#39;DEEPSRGM&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: {&#39;lstm&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/melody/deepsrgm/lstm_25_checkpoint.pth&#39;, &#39;gru&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/melody/deepsrgm/gru_30_checkpoint.pth&#39;}, &#39;mapping_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/raga_recognition/deepsrgm/conf/DEEPSRGM_mapping.json&#39;}}, &#39;melody:ftanet-carnatic&#39;: {&#39;module_name&#39;: &#39;compiam.melody.pitch_extraction.ftanet_carnatic&#39;, &#39;class_name&#39;: &#39;FTANetCarnatic&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/melody/ftanet/carnatic/carnatic&#39;, &#39;sample_rate&#39;: 8000}}, &#39;melody:cae-carnatic&#39;: {&#39;module_name&#39;: &#39;compiam.melody.pattern.sancara_search&#39;, &#39;class_name&#39;: &#39;CAEWrapper&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/melody/caecarnatic/model_complex_auto_cqt.save&#39;, &#39;conf_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/melody/caecarnatic/config_cqt.ini&#39;, &#39;spec_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/melody/caecarnatic/config_spec.cfg&#39;}}, &#39;rhythm:1way-tabla&#39;: {&#39;module_name&#39;: &#39;compiam.rhythm.transcription.tabla_transcription&#39;, &#39;class_name&#39;: &#39;FourWayTabla&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/rhythm/4wayTabla/1way&#39;}}, &#39;rhythm:4way-tabla&#39;: {&#39;module_name&#39;: &#39;compiam.rhythm.transcription.tabla_transcription&#39;, &#39;class_name&#39;: &#39;FourWayTabla&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/rhythm/4wayTabla/4way&#39;}}, &#39;structure:dhrupad-bandish-segmentation&#39;: {&#39;module_name&#39;: &#39;compiam.structure.segmentation.dhrupad_bandish_segmentation&#39;, &#39;class_name&#39;: &#39;DhrupadBandishSegmentation&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: {&#39;net&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/structure/dhrupad_bandish_segmentation/pretrained_models/net&#39;, &#39;pakh&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/structure/dhrupad_bandish_segmentation/pretrained_models/pakh&#39;, &#39;voc&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/structure/dhrupad_bandish_segmentation/pretrained_models/voc&#39;}, &#39;splits_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/structure/dhrupad_bandish_segmentation/splits&#39;, &#39;annotations_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/structure/dhrupad_bandish_segmentation/annotations&#39;, &#39;original_audios_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/structure/dhrupad_bandish_segmentation/audio_original&#39;, &#39;processed_audios_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/structure/dhrupad_bandish_segmentation/audio_sections&#39;}}}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initializing an FTANet instance</span>
 <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:ftanet-carnatic&quot;</span><span class="p">)</span>
 
@@ -629,7 +656,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModelNotFoundError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Initializing an FTANet instance</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:ftanet-carnatic&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Predict!</span>
@@ -683,7 +710,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/pitch-extraction_17_0.png" src="../_images/pitch-extraction_17_0.png" />
+<img alt="../_images/pitch-extraction_19_0.png" src="../_images/pitch-extraction_19_0.png" />
 </div>
 </div>
 </section>
