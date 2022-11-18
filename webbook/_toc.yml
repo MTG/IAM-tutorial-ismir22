@@ -1,5 +1,6 @@
 format: jb-book
 root: landing
+title: Landing page
 parts:
 - caption: Introduction
   chapters:
