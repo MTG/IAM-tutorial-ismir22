@@ -108,7 +108,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../landing.html">
-                    Computational Methods for Supporting Corpus-Based Research on Indian Art Music
+                    Welcome
                 </a>
             </li>
         </ul>
@@ -119,8 +119,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/welcome.html">
-   Welcome and setup
+  <a class="reference internal" href="../introduction/setup.html">
+   Setting everything up
   </a>
  </li>
  <li class="toctree-l1">
@@ -557,10 +557,47 @@ title="Print to PDF"
 
 <span class="c1"># Running extraction for an example track</span>
 <span class="n">melodia_pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;../audio/testing_samples/test_1.wav&quot;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of the output pitch:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of the output pitch:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">))</span>
 <span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;First 5 time-stamps:&quot;</span><span class="p">,</span> <span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 <span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;Last 5 pitch values:&quot;</span><span class="p">,</span> <span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape of the output pitch: (699, 2)
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of the output pitch:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;First 5 time-stamps:&quot;</span><span class="p">,</span> <span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;Last 5 pitch values:&quot;</span><span class="p">,</span> <span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/pprint.py:53,</span> in <span class="ni">pprint</span><span class="nt">(object, stream, indent, width, depth, compact, sort_dicts)</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span> <span class="sd">&quot;&quot;&quot;Pretty-print a Python object to a stream [default is sys.stdout].&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="n">printer</span> <span class="o">=</span> <span class="n">PrettyPrinter</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span>     <span class="n">stream</span><span class="o">=</span><span class="n">stream</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="n">compact</span><span class="o">=</span><span class="n">compact</span><span class="p">,</span> <span class="n">sort_dicts</span><span class="o">=</span><span class="n">sort_dicts</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">53</span> <span class="n">printer</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/pprint.py:148,</span> in <span class="ni">PrettyPrinter.pprint</span><span class="nt">(self, object)</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span> <span class="k">def</span> <span class="nf">pprint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">object</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">148</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stream</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">{},</span> <span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/pprint.py:185,</span> in <span class="ni">PrettyPrinter._format</span><span class="nt">(self, object, stream, indent, allowance, context, level)</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span>         <span class="k">del</span> <span class="n">context</span><span class="p">[</span><span class="n">objid</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span>         <span class="k">return</span>
+<span class="ne">--&gt; </span><span class="mi">185</span> <span class="n">stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rep</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: &#39;numpy.ndarray&#39; object has no attribute &#39;write&#39;
 </pre></div>
 </div>
 </div>
@@ -581,24 +618,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Let’s first deactivate the GPU usage, since we assume no CUDA-capable GPU is available in most of the cases. We import <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> and set the visible GPU devices to none.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you have an available GPU to allocate the model, get the index of the GPU (probably 0 if you have only a single instance) and change <code class="docutils literal notranslate"><span class="pre">tf.config.set_visible_devices([],</span> <span class="pre">&quot;GPU&quot;)</span></code> for <code class="docutils literal notranslate"><span class="pre">os.environ[&quot;CUDA_VISIBLE_DEVICES&quot;]</span> <span class="pre">=</span> <span class="pre">&quot;0&quot;</span></code></p>
-</div>
-<p>We also disable the <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> warnings in order to keep the tutorial clean.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Disabling tensorflow warnings and debugging info</span>
-<span class="kn">import</span> <span class="nn">os</span> 
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;TF_CPP_MIN_LOG_LEVEL&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;3&quot;</span> 
-
-<span class="c1"># Importing tensorflow and disabling GPU usage</span>
-<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
-<span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">set_visible_devices</span><span class="p">([],</span> <span class="s2">&quot;GPU&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="admonition-this-is-a-non-trained-instance admonition">
+<p class="admonition-title">This is a non-trained instance!</p>
+<p>Directly importing a ML/DL-based tool from the corresponding task initialises a non-trained instance. However, if a <code class="docutils literal notranslate"><span class="pre">*</span></code> appears at the end of the tool name when running <code class="docutils literal notranslate"><span class="pre">.list_tools()</span></code>, the pre-trained weights can be loaded using the <code class="docutils literal notranslate"><span class="pre">compiam.load_model()</span></code> wrapper.</p>
 </div>
 <p>In ths case, we are only interested in inference. Therefore, we might be able to load FTANet as an already trained model. For that, let’s print the models with available weights to load in <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
 <div class="cell docutils container">
@@ -621,16 +643,23 @@ title="Print to PDF"
 <p><strong>Cool! FTANet tuned to Carnatic Music is there.</strong> Therefore, let’s load it and run inference on an example track.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">models_dict</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Disabling tensorflow warnings and debugging info</span>
+<span class="kn">import</span> <span class="nn">os</span> 
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;TF_CPP_MIN_LOG_LEVEL&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;3&quot;</span> 
+
+<span class="c1"># Importing tensorflow and disabling GPU usage</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">set_visible_devices</span><span class="p">([],</span> <span class="s2">&quot;GPU&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;melody:deepsrgm&#39;: {&#39;module_name&#39;: &#39;compiam.melody.raga_recognition.deepsrgm&#39;, &#39;class_name&#39;: &#39;DEEPSRGM&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: {&#39;lstm&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/models/melody/deepsrgm/lstm_25_checkpoint.pth&#39;, &#39;gru&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/models/melody/deepsrgm/gru_30_checkpoint.pth&#39;}, &#39;mapping_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/raga_recognition/deepsrgm/conf/DEEPSRGM_mapping.json&#39;}}, &#39;melody:ftanet-carnatic&#39;: {&#39;module_name&#39;: &#39;compiam.melody.pitch_extraction.ftanet_carnatic&#39;, &#39;class_name&#39;: &#39;FTANetCarnatic&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/models/melody/ftanet/carnatic/carnatic&#39;, &#39;sample_rate&#39;: 8000}}, &#39;melody:cae-carnatic&#39;: {&#39;module_name&#39;: &#39;compiam.melody.pattern.sancara_search&#39;, &#39;class_name&#39;: &#39;CAEWrapper&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/models/melody/caecarnatic/model_complex_auto_cqt.save&#39;, &#39;conf_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/models/melody/caecarnatic/config_cqt.ini&#39;, &#39;spec_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/models/melody/caecarnatic/config_spec.cfg&#39;}}, &#39;rhythm:1way-tabla&#39;: {&#39;module_name&#39;: &#39;compiam.rhythm.transcription.tabla_transcription&#39;, &#39;class_name&#39;: &#39;FourWayTabla&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/models/rhythm/4wayTabla/1way&#39;}}, &#39;rhythm:4way-tabla&#39;: {&#39;module_name&#39;: &#39;compiam.rhythm.transcription.tabla_transcription&#39;, &#39;class_name&#39;: &#39;FourWayTabla&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/models/rhythm/4wayTabla/4way&#39;}}, &#39;structure:dhrupad-bandish-segmentation&#39;: {&#39;module_name&#39;: &#39;compiam.structure.segmentation.dhrupad_bandish_segmentation&#39;, &#39;class_name&#39;: &#39;DhrupadBandishSegmentation&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: {&#39;net&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/models/structure/dhrupad_bandish_segmentation/pretrained_models/net&#39;, &#39;pakh&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/models/structure/dhrupad_bandish_segmentation/pretrained_models/pakh&#39;, &#39;voc&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/models/structure/dhrupad_bandish_segmentation/pretrained_models/voc&#39;}, &#39;splits_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/models/structure/dhrupad_bandish_segmentation/splits&#39;, &#39;annotations_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/models/structure/dhrupad_bandish_segmentation/annotations&#39;, &#39;original_audios_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/models/structure/dhrupad_bandish_segmentation/audio_original&#39;, &#39;processed_audios_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/models/structure/dhrupad_bandish_segmentation/audio_sections&#39;}}}
-</pre></div>
 </div>
+<p>Let’s first deactivate the GPU usage, since we assume no CUDA-capable GPU is available in most of the cases. We import <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> and set the visible GPU devices to none.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have an available GPU to allocate the model, get the index of the GPU (probably 0 if you have only a single instance) and change <code class="docutils literal notranslate"><span class="pre">tf.config.set_visible_devices([],</span> <span class="pre">&quot;GPU&quot;)</span></code> for <code class="docutils literal notranslate"><span class="pre">os.environ[&quot;CUDA_VISIBLE_DEVICES&quot;]</span> <span class="pre">=</span> <span class="pre">&quot;0&quot;</span></code></p>
 </div>
-</div>
+<p>We also disable the <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> warnings in order to keep the tutorial clean.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">ls</span> /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/
@@ -638,8 +667,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__init__.py   data.py  exceptions.py  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">melody</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">structure</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">utils</span>/
-<span class=" -Color -Color-Blue -Color-Blue-BGGreen">__pycache__</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">dunya</span>/   io.py          <span class=" -Color -Color-Blue -Color-Blue-BGGreen">rhythm</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">timbre</span>/     <span class=" -Color -Color-Blue -Color-Blue-BGGreen">visualisation</span>/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__init__.py   data.py        io.py    <span class=" -Color -Color-Blue -Color-Blue-BGGreen">rhythm</span>/     <span class=" -Color -Color-Blue -Color-Blue-BGGreen">utils</span>/
+<span class=" -Color -Color-Blue -Color-Blue-BGGreen">__pycache__</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">dunya</span>/         <span class=" -Color -Color-Blue -Color-Blue-BGGreen">melody</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">structure</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">visualisation</span>/
+<span class=" -Color -Color-Blue -Color-Blue-BGGreen">conf</span>/         exceptions.py  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">models</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">timbre</span>/
 </pre></div>
 </div>
 </div>
@@ -651,7 +681,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ls: cannot access &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/models&#39;: No such file or directory
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Blue -Color-Blue-BGGreen">melody</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">rhythm</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">structure</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">timbre</span>/
 </pre></div>
 </div>
 </div>
@@ -667,40 +697,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModelNotFoundError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Initializing an FTANet instance</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:ftanet-carnatic&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Predict!</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ftanet_pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;../audio/testing_samples/test_1.wav&quot;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/__init__.py:28,</span> in <span class="ni">load_model</span><span class="nt">(model_name, models_dict)</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">m_dict</span> <span class="o">=</span> <span class="n">models_dict</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="n">module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">import_module</span><span class="p">(</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;module_name&quot;</span><span class="p">]),</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;class_name&quot;</span><span class="p">])</span>
-<span class="ne">---&gt; </span><span class="mi">28</span> <span class="k">return</span> <span class="n">module</span><span class="p">(</span><span class="o">**</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">])</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/pitch_extraction/ftanet_carnatic/__init__.py:42,</span> in <span class="ni">FTANetCarnatic.__init__</span><span class="nt">(self, model_path, sample_rate)</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model_path</span> <span class="o">+</span> <span class="s2">&quot;.data-00000-of-00001&quot;</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">42</span>         <span class="k">raise</span> <span class="n">ModelNotFoundError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span>             <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span><span class="sd">             Given path to model weights not found. Make sure you enter the path correctly.</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span><span class="sd">             A training process for the FTA-Net tuned to Carnatic is under development right</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span><span class="sd">             now and will be added to the library soon. Meanwhile, we provide the weights in the</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span><span class="sd">             latest repository version (https://github.com/MTG/compIAM) so make sure you have these</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span><span class="sd">             available before loading the Carnatic FTA-Net.</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span><span class="sd">         &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span>         <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="bp">self</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model_path</span><span class="p">)</span>
-
-<span class="ne">ModelNotFoundError</span>: 
-                    <span class="n">Given</span> <span class="n">path</span> <span class="n">to</span> <span class="n">model</span> <span class="n">weights</span> <span class="ow">not</span> <span class="n">found</span><span class="o">.</span> <span class="n">Make</span> <span class="n">sure</span> <span class="n">you</span> <span class="n">enter</span> <span class="n">the</span> <span class="n">path</span> <span class="n">correctly</span><span class="o">.</span>
-                    <span class="n">A</span> <span class="n">training</span> <span class="n">process</span> <span class="k">for</span> <span class="n">the</span> <span class="n">FTA</span><span class="o">-</span><span class="n">Net</span> <span class="n">tuned</span> <span class="n">to</span> <span class="n">Carnatic</span> <span class="ow">is</span> <span class="n">under</span> <span class="n">development</span> <span class="n">right</span>
-                    <span class="n">now</span> <span class="ow">and</span> <span class="n">will</span> <span class="n">be</span> <span class="n">added</span> <span class="n">to</span> <span class="n">the</span> <span class="n">library</span> <span class="n">soon</span><span class="o">.</span> <span class="n">Meanwhile</span><span class="p">,</span> <span class="n">we</span> <span class="n">provide</span> <span class="n">the</span> <span class="n">weights</span> <span class="ow">in</span> <span class="n">the</span>
-                    <span class="n">latest</span> <span class="n">repository</span> <span class="n">version</span> <span class="p">(</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">MTG</span><span class="o">/</span><span class="n">compIAM</span><span class="p">)</span> <span class="n">so</span> <span class="n">make</span> <span class="n">sure</span> <span class="n">you</span> <span class="n">have</span> <span class="n">these</span>
-                    <span class="n">available</span> <span class="n">before</span> <span class="n">loading</span> <span class="n">the</span> <span class="n">Carnatic</span> <span class="n">FTA</span><span class="o">-</span><span class="n">Net</span><span class="o">.</span>
-                
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CFP process in ../audio/testing_samples/test_1.wav
 </pre></div>
 </div>
 </div>
@@ -724,18 +721,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">img</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">specshow</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">y_axis</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">x_axis</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ftanet_pitch_track</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;ftanet_pitch_track&#39; is not defined
-</pre></div>
-</div>
-<img alt="../_images/pitch-extraction_20_1.png" src="../_images/pitch-extraction_20_1.png" />
+<img alt="../_images/pitch-extraction_20_0.png" src="../_images/pitch-extraction_20_0.png" />
 </div>
 </div>
 </section>

@@ -1,4 +1,6 @@
-# Computational Methods for Supporting Corpus-Based Research on Indian Art Music
+# Welcome
+
+## Tutorial on Computational Methods for Supporting Corpus-Based Research on Indian Art Music
 
 **By Thomas Nuttall, Genís Plaja, Lara Pearson, Brindha Manickavasakan, Kaustuv Kanti Ganguli, Ajay Srinivasamurthy and Xavier Serra.** 
 <br>
@@ -7,7 +9,7 @@
 This web book is a work in progress, many sections are incomplete.
 ```
 
-To be presented at the International Society of Music Information Retrieval (ISMIR) 2022, in Bengaluru, India.
+To be presented at the 23rd edition of the International Society of Music Information Retrieval Conference (ISMIR) 2022, in Bengaluru, India.
 
 ## What is this tutorial about?
 This tutorial is meant to be a starting point for cross-level researchers that aim at getting started on the computational analysis of Carnatic and Hindustani Music. While reading through this book you should expect to obtain:
