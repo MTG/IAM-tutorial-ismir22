@@ -766,57 +766,37 @@ title="Print to PDF"
 </table>
 <section id="why-wrappers">
 <h4>Why wrappers?<a class="headerlink" href="#why-wrappers" title="Permalink to this headline">#</a></h4>
+<p>Let us showcase the nice utility of <code class="docutils literal notranslate"><span class="pre">compiam</span></code> wrappers. We will start by listing the available datasets through <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Let us firts import the wrappers</span>
-<span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">load_dataset</span><span class="p">,</span> <span class="n">load_corpora</span><span class="p">,</span> <span class="n">load_model</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">list_datasets</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;saraga_carnatic&#39;, &#39;saraga_hindustani&#39;, &#39;mridangam_stroke&#39;, &#39;four_way_tabla&#39;]
 </pre></div>
 </div>
 </div>
 </div>
+<p>We can initialize a dataloader for a particular dataset in the list above using the <code class="docutils literal notranslate"><span class="pre">compiam.load_dataset()</span></code> wrapper.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Getting a list of available datasets</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available datasets through compiam are: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">list_datasets</span><span class="p">()))</span>
-
-<span class="c1">## Initializing dataloader for an example dataset</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Initializing dataloader for an example dataset</span>
 <span class="n">fw_tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
 <span class="n">fw_tabla_dataset</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Available datasets through compiam are: [&#39;saraga_carnatic&#39;, &#39;saraga_hindustani&#39;, &#39;mridangam_stroke&#39;, &#39;four_way_tabla&#39;]
-</pre></div>
-</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available datasets through compiam are: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">list_datasets</span><span class="p">()))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">## Initializing dataloader for an example dataset</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">fw_tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">fw_tabla_dataset</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">## Initializing dataloader for an example dataset</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">fw_tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">fw_tabla_dataset</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/__init__.py:44,</span> in <span class="ni">load_dataset</span><span class="nt">(dataset_name, data_home, version)</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span> <span class="k">if</span> <span class="n">dataset_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">datasets_list</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid dataset </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">))</span>
-<span class="ne">---&gt; </span><span class="mi">44</span> <span class="k">return</span> <span class="n">mirdata</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="n">dataset_name</span><span class="o">=</span><span class="n">dataset_name</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="n">data_home</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">version</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/__init__.py:51,</span> in <span class="ni">initialize</span><span class="nt">(dataset_name, data_home, version)</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="sd">&quot;&quot;&quot;Load a mirdata dataset by name</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span><span class="sd"> Example:</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="k">if</span> <span class="n">dataset_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">DATASETS</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">51</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid dataset </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">53</span> <span class="n">module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;mirdata.datasets.</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="k">return</span> <span class="n">module</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_home</span><span class="o">=</span><span class="n">data_home</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">version</span><span class="p">)</span>
-
-<span class="ne">ValueError</span>: Invalid dataset four_way_tabla
+<span class="ne">NameError</span>: name &#39;load_dataset&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -839,7 +819,7 @@ title="Print to PDF"
 <p class="admonition-title">Tip</p>
 <p>When listing available tools using the <code class="docutils literal notranslate"><span class="pre">list_tools()</span></code> functions, some will appear with a “*” at the end. That is meant to indicate that such tools have pre-trained models available, which may be loaded using the wrapper <code class="docutils literal notranslate"><span class="pre">compiam.load_model()</span></code>.</p>
 </div>
-<p>You may obviously initialize the <em>untrained</em> version of the model and load the weights afterwards, especially if you have your own checkpoints or seek to train the model yourself. However, the <code class="docutils literal notranslate"><span class="pre">compiam.load_model()</span></code> wrappers offers a handy and rapid way to load a pre-trained model for a particular task. You may find the weights for the integrated models in <code class="docutils literal notranslate"><span class="pre">compIAM/models/&lt;musical-aspect&gt;/&lt;model-name&gt;/</span></code>.</p>
+<p>You may obviously initialize the <em>untrained</em> version of the model and load the weights afterwards, especially if you have your own checkpoints or seek to train the model yourself. However, the <code class="docutils literal notranslate"><span class="pre">compiam.load_model()</span></code> wrappers offers a handy and rapid way to load a pre-trained model for a particular task. The weights for the integrated models are stored (and included in the release of <code class="docutils literal notranslate"><span class="pre">compiam</span></code>) in <code class="docutils literal notranslate"><span class="pre">compIAM/models/&lt;musical-aspect&gt;/&lt;model-name&gt;/</span></code> (writing the path UNIX-styled here!).</p>
 <p>Let’s list the available pre-trained ML/DL models through <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -887,38 +867,14 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Loading pre-trained four-way tabla model and dataset</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">trained_four_way</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;rhythm:4way-tabla&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Getting audio from random track in the dataset</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/__init__.py:28,</span> in <span class="ni">load_model</span><span class="nt">(model_name, models_dict)</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">m_dict</span> <span class="o">=</span> <span class="n">models_dict</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="n">module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">import_module</span><span class="p">(</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;module_name&quot;</span><span class="p">]),</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;class_name&quot;</span><span class="p">])</span>
-<span class="ne">---&gt; </span><span class="mi">28</span> <span class="k">return</span> <span class="n">module</span><span class="p">(</span><span class="o">**</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">])</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/rhythm/transcription/tabla_transcription/__init__.py:66,</span> in <span class="ni">FourWayTabla.__init__</span><span class="nt">(self, model_path, n_folds, seq_length, hop_dur, device)</span>
-<span class="g g-Whitespace">     </span><span class="mi">64</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_path</span> <span class="o">=</span> <span class="n">model_path</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_path</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">66</span>     <span class="bp">self</span><span class="o">.</span><span class="n">load_models</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/rhythm/transcription/tabla_transcription/__init__.py:71,</span> in <span class="ni">FourWayTabla.load_models</span><span class="nt">(self, model_path)</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="sd">&quot;&quot;&quot;TODO&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span> <span class="n">stats_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="s2">&quot;means_stds.npy&quot;</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">71</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">stats_path</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="k">for</span> <span class="n">cat</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">categories</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="bp">self</span><span class="o">.</span><span class="n">models</span><span class="p">[</span><span class="n">cat</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numpy/lib/npyio.py:390,</span> in <span class="ni">load</span><span class="nt">(file, mmap_mode, allow_pickle, fix_imports, encoding)</span>
-<span class="g g-Whitespace">    </span><span class="mi">388</span>     <span class="n">own_fid</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">389</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">390</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">enter_context</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os_fspath</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="s2">&quot;rb&quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">391</span>     <span class="n">own_fid</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">393</span> <span class="c1"># Code to distinguish from NumPy binary files and pickles.</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/rhythm/4wayTabla/4way/means_stds.npy&#39;
+<span class="ne">NameError</span>: name &#39;load_model&#39; is not defined
 </pre></div>
 </div>
 </div>
