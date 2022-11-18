@@ -1,5 +1,5 @@
 (welcome-setup)=
-# Welcome and setup
+# Setting everything up
 **Welcome to this tutorial, we are very glad to have you here!** 
 
 

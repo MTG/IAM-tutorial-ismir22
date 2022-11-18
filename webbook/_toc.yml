@@ -1,10 +1,9 @@
 format: jb-book
 root: landing
-title: Landing page
 parts:
 - caption: Introduction
   chapters:
-    - file: introduction/welcome
+    - file: introduction/setup
     - file: introduction/compiam
 
 - caption: Indian Art Music
