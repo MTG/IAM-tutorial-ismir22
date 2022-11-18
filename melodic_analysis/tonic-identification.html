@@ -515,14 +515,16 @@ title="Print to PDF"
 <p>As mentioned in the <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-tambura-drone"><span class="std std-ref">introduction of the tambūrā drone</span></a>, the sa played by the tambūrā is very important from a computational analysis point of view, because it provides information to locate the sa of the melody (and also the rest of svāras in the rāga), while it is also veru useful to normalise the melodic lines for better information processing.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Despite no term as ‘tonic’ exists in Indian Art Music, it is used in the literature to refer to the task of ‘tonic identification’.</p>
+<p>Despite no term as ‘tonic exists in Indian Art Music, it is used in the literature to refer to the task of ‘tonic identification’.</p>
 </div>
 <p>Let us first start by installing and importing the latest released version of <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You need to have <code class="docutils literal notranslate"><span class="pre">compiam</span></code> installed to execute the walkthroughs of this tutorial in your machine or in the cloud using, for instance, Google Collab. Make sure you install <code class="docutils literal notranslate"><span class="pre">compiam</span></code> by running: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">compiam</span></code>. You can run command line functions from a notebook by writing a <code class="docutils literal notranslate"><span class="pre">%</span></code> or <code class="docutils literal notranslate"><span class="pre">!</span></code> at the beginning of the command, e.g. <code class="docutils literal notranslate"><span class="pre">%pip</span> <span class="pre">install</span> <span class="pre">compiam</span></code>.</p>
+</div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%pip install compiam</span>
-
-<span class="c1">## Importing compiam to the project</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Importing compiam to the project</span>
 <span class="kn">import</span> <span class="nn">compiam</span>
 
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
@@ -533,10 +535,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All notebooks in this tutorial are meant to be standalone. Therefore, for each tool walkthrough we will install and import <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
-</div>
+<p>Let’s list the available tools in <code class="docutils literal notranslate"><span class="pre">compiam</span></code> to perform tonic identification.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">tonic_identification</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()</span>

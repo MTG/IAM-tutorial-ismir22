@@ -515,13 +515,12 @@ title="Print to PDF"
 <p>As seen in the melodic introduction, predominant and vocal pitch is a very relevant feature to tackle the melodic analysis of Carnatic and Hindustani Music.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%pip install compiam</span>
-
-<span class="c1">## Importing compiam to the project</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Importing compiam to the project</span>
 <span class="kn">import</span> <span class="nn">compiam</span>
 
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
@@ -557,7 +556,11 @@ title="Print to PDF"
 <span class="n">melodia</span> <span class="o">=</span> <span class="n">Melodia</span><span class="p">()</span>  
 
 <span class="c1"># Running extraction for an example track</span>
-<span class="n">pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;../audio/testing_samples/test_1.wav&quot;</span><span class="p">)</span>
+<span class="n">melodia_pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;../audio/testing_samples/test_1.wav&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of the output pitch:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">))</span>
+<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;First 5 time-stamps:&quot;</span><span class="p">,</span> <span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;Last 5 pitch values:&quot;</span><span class="p">,</span> <span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -618,49 +621,22 @@ title="Print to PDF"
 <p><strong>Cool! FTANet tuned to Carnatic Music is there.</strong> Therefore, let’s load it and run inference on an example track.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">ls</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>melodic-pattern-discovery.ipynb  raga-recognition.ipynb
-pitch-extraction.ipynb           tonic-identification.ipynb
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">WORKDIR</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">models_dict</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages
-{&#39;melody:deepsrgm&#39;: {&#39;module_name&#39;: &#39;compiam.melody.raga_recognition.deepsrgm&#39;, &#39;class_name&#39;: &#39;DEEPSRGM&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: {&#39;lstm&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/melody/deepsrgm/lstm_25_checkpoint.pth&#39;, &#39;gru&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/melody/deepsrgm/gru_30_checkpoint.pth&#39;}, &#39;mapping_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/raga_recognition/deepsrgm/conf/DEEPSRGM_mapping.json&#39;}}, &#39;melody:ftanet-carnatic&#39;: {&#39;module_name&#39;: &#39;compiam.melody.pitch_extraction.ftanet_carnatic&#39;, &#39;class_name&#39;: &#39;FTANetCarnatic&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/melody/ftanet/carnatic/carnatic&#39;, &#39;sample_rate&#39;: 8000}}, &#39;melody:cae-carnatic&#39;: {&#39;module_name&#39;: &#39;compiam.melody.pattern.sancara_search&#39;, &#39;class_name&#39;: &#39;CAEWrapper&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/melody/caecarnatic/model_complex_auto_cqt.save&#39;, &#39;conf_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/melody/caecarnatic/config_cqt.ini&#39;, &#39;spec_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/melody/caecarnatic/config_spec.cfg&#39;}}, &#39;rhythm:1way-tabla&#39;: {&#39;module_name&#39;: &#39;compiam.rhythm.transcription.tabla_transcription&#39;, &#39;class_name&#39;: &#39;FourWayTabla&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/rhythm/4wayTabla/1way&#39;}}, &#39;rhythm:4way-tabla&#39;: {&#39;module_name&#39;: &#39;compiam.rhythm.transcription.tabla_transcription&#39;, &#39;class_name&#39;: &#39;FourWayTabla&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/rhythm/4wayTabla/4way&#39;}}, &#39;structure:dhrupad-bandish-segmentation&#39;: {&#39;module_name&#39;: &#39;compiam.structure.segmentation.dhrupad_bandish_segmentation&#39;, &#39;class_name&#39;: &#39;DhrupadBandishSegmentation&#39;, &#39;kwargs&#39;: {&#39;model_path&#39;: {&#39;net&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/structure/dhrupad_bandish_segmentation/pretrained_models/net&#39;, &#39;pakh&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/structure/dhrupad_bandish_segmentation/pretrained_models/pakh&#39;, &#39;voc&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/structure/dhrupad_bandish_segmentation/pretrained_models/voc&#39;}, &#39;splits_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/structure/dhrupad_bandish_segmentation/splits&#39;, &#39;annotations_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/structure/dhrupad_bandish_segmentation/annotations&#39;, &#39;original_audios_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/structure/dhrupad_bandish_segmentation/audio_original&#39;, &#39;processed_audios_path&#39;: &#39;/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/models/structure/dhrupad_bandish_segmentation/audio_sections&#39;}}}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initializing an FTANet instance</span>
 <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:ftanet-carnatic&quot;</span><span class="p">)</span>
 
 <span class="c1"># Predict!</span>
-<span class="n">pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;../audio/testing_samples/test_1.wav&quot;</span><span class="p">)</span>
+<span class="n">ftanet_pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;../audio/testing_samples/test_1.wav&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModelNotFoundError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Initializing an FTANet instance</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:ftanet-carnatic&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Predict!</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;../audio/testing_samples/test_1.wav&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ftanet_pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;../audio/testing_samples/test_1.wav&quot;</span><span class="p">)</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/__init__.py:28,</span> in <span class="ni">load_model</span><span class="nt">(model_name, models_dict)</span>
 <span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">m_dict</span> <span class="o">=</span> <span class="n">models_dict</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span>
@@ -692,7 +668,7 @@ pitch-extraction.ipynb           tonic-identification.ipynb
 </div>
 </div>
 </div>
-<p>Let’s visualise the extracted pitch on top of the spectrogram of the input signal.</p>
+<p>Let’s visualise the extracted pitch tracks on top of the spectrogram of the input signal.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">librosa</span>
@@ -704,13 +680,25 @@ pitch-extraction.ipynb           tonic-identification.ipynb
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">D</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">amplitude_to_db</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">librosa</span><span class="o">.</span><span class="n">stft</span><span class="p">(</span><span class="n">y</span><span class="p">)),</span> <span class="n">ref</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
 <span class="n">img</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">specshow</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">y_axis</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">x_axis</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pitch_track</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ftanet_pitch_track</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/pitch-extraction_19_0.png" src="../_images/pitch-extraction_19_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">img</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">specshow</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">y_axis</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">x_axis</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ftanet_pitch_track</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;ftanet_pitch_track&#39; is not defined
+</pre></div>
+</div>
+<img alt="../_images/pitch-extraction_17_1.png" src="../_images/pitch-extraction_17_1.png" />
 </div>
 </div>
 </section>

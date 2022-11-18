@@ -590,7 +590,7 @@ title="Print to PDF"
 <span class="n">deepsrgm</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:deepsrgm&quot;</span><span class="p">)</span>
 
 <span class="c1"># Showing raga mapping</span>
-<span class="n">deepsrgm</span><span class="o">.</span><span class="n">mapping</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">deepsrgm</span><span class="o">.</span><span class="n">mapping</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -601,7 +601,7 @@ title="Print to PDF"
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># We initialize an instance of the tool</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">deepsrgm</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:deepsrgm&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Showing raga mapping</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">mapping</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">pprint</span><span class="p">(</span><span class="n">deepsrgm</span><span class="o">.</span><span class="n">mapping</span><span class="p">)</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/__init__.py:28,</span> in <span class="ni">load_model</span><span class="nt">(model_name, models_dict)</span>
 <span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">m_dict</span> <span class="o">=</span> <span class="n">models_dict</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span>
@@ -675,33 +675,29 @@ This recordings has unique Dunya ID: 123b09bd-9901-4e64-a65a-10b02c9e0597
 </div>
 </div>
 </div>
-<p><strong>Nice!</strong> Raga Bhairavi is both in this recording and included in the mapping of DEEPSRGM, therefore considered during the training process.</p>
-<div class="cell docutils container">
+<p><strong>Nice!</strong> Raga Bhairavi is both in this recording and included in the mapping of DEEPSRGM, therefore considered during the training process. We first need to extract the features from an audio recording.</p>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Computing features for the given recording</span>
 <span class="n">feat</span> <span class="o">=</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">get_features</span><span class="p">(</span><span class="n">track_data</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
-
-<span class="c1"># Predicting raga!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we pass the computed features through the pre-trained model to perform inference and try to automatically recognise the raga performed in the recording.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Predicting raga!</span>
 <span class="n">deepsrgm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   INFO   ] MusicExtractorSVM: no classifier models were configured by default
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting pitch track using melodia...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting tonic using multi-pitch approach...
-</pre></div>
-</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">feat</span> <span class="o">=</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">get_features</span><span class="p">(</span><span class="n">track_data</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Predicting raga!</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Predicting raga!</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/raga_recognition/deepsrgm/__init__.py:207,</span> in <span class="ni">DEEPSRGM.predict</span><span class="nt">(self, features, threshold)</span>
 <span class="g g-Whitespace">    </span><span class="mi">201</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
