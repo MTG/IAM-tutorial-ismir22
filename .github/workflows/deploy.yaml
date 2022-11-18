@@ -34,7 +34,6 @@ jobs:
     - name: Install dependencies
       run: |
         pip install git+https://github.com/MTG/compIAM.git
-        pip install git+https://github.com/mir-dataset-loaders/mirdata.git
         pip install -r requirements.txt
         pip install -e .
     - name: Build the book
