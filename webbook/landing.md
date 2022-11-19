@@ -1,9 +1,6 @@
-# Welcome
+# Welcome to this tutorial!
 
-## Tutorial on Computational Methods for Supporting Corpus-Based Research on Indian Art Music
-
-**By Thomas Nuttall, Genís Plaja, Lara Pearson, Brindha Manickavasakan, Kaustuv Kanti Ganguli, Ajay Srinivasamurthy and Xavier Serra.** 
-<br>
+This is the online book for the **Tutorial on Computational Methods for Supporting Corpus-Based Research on Indian Art Music**, by Thomas Nuttall, Genís Plaja, Lara Pearson, Brindha Manickavasakan, Kaustuv Kanti Ganguli, Ajay Srinivasamurthy and Xavier Serra.** 
 
 ```{warning}
 This web book is a work in progress, many sections are incomplete.
