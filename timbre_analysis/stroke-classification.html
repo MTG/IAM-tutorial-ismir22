@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Discussion" href="../wrapping_up/discussion.html" />
@@ -108,7 +110,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../landing.html">
-                    Welcome
+                    Welcome to this tutorial!
                 </a>
             </li>
         </ul>
@@ -509,8 +511,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mridangam">
-   Mridangam
+  <a class="reference internal nav-link" href="#mridangam-stroke-classification">
+   Mridangam stroke classification
   </a>
  </li>
 </ul>
@@ -533,8 +535,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mridangam">
-   Mridangam
+  <a class="reference internal nav-link" href="#mridangam-stroke-classification">
+   Mridangam stroke classification
   </a>
  </li>
 </ul>
@@ -549,12 +551,13 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="stroke-classification">
 <span id="id1"></span><h1>Stroke classification<a class="headerlink" href="#stroke-classification" title="Permalink to this headline">#</a></h1>
-<section id="mridangam">
-<h2>Mridangam<a class="headerlink" href="#mridangam" title="Permalink to this headline">#</a></h2>
+<p>Introduction here!</p>
+<section id="mridangam-stroke-classification">
+<h2>Mridangam stroke classification<a class="headerlink" href="#mridangam-stroke-classification" title="Permalink to this headline">#</a></h2>
 <p><span id="id2">[<a class="reference internal" href="../resources/references.html#id25" title="A. Anantapadmanabhan, J. P. Bello, R. Krishnan, and H. Murthy. Tonic-Independent Stroke Transcription of the Mridangam. In AES 53rd International Conference: Semantic Audio, London, UK. 2014.">ABKM14</a>, <a class="reference internal" href="../resources/references.html#id70" title="A. Anantapadmanabhan, A. Bellur, and H. A. Murthy. Modal analysis and transcription of strokes of the mridangam using non-negative matrix factorization. IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), Vancouver, Canada, pages 313–318, 2013.">ABM13</a>]</span></p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install compiam
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%pip install compiam</span>
 
 <span class="c1">## Importing compiam to the project</span>
 <span class="kn">import</span> <span class="nn">compiam</span>
@@ -579,7 +582,8 @@ title="Print to PDF"
 <p>Let’s start by loading the mridangam stroke dataset. Since <code class="docutils literal notranslate"><span class="pre">MridangamStrokeClassification</span></code>is based on the Mridangam Stroke Dataset, <code class="docutils literal notranslate"><span class="pre">compiam</span></code> includes a specific function to load the dataset and integrate it to the pipeline.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">load_mridangam_dataset</span><span class="p">(</span><span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;../workspace/&quot;</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">load_mridangam_dataset</span><span class="p">(</span>
+    <span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;../workspace/&quot;</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -614,12 +618,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;225488&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;229630&#39;,
  Track(
-   audio_path=&quot;../workspace/mridangam_stroke_1.5/C/225488__akshaylaya__dheem-c-080.wav&quot;,
-   stroke_name=&quot;dheem&quot;,
-   tonic=&quot;C&quot;,
-   track_id=&quot;225488&quot;,
+   audio_path=&quot;../workspace/mridangam_stroke_1.5/D#/229630__akshaylaya__thi-dsh-067.wav&quot;,
+   stroke_name=&quot;thi&quot;,
+   tonic=&quot;D#&quot;,
+   track_id=&quot;229630&quot;,
    audio: The track&#39;s audio
  
          Returns,
@@ -664,14 +668,17 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualise and evaluate a single prediction from the model output</span>
-<span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualise and evaluate some predictions from the model output</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">())))</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">())))</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">())))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;../workspace/mridangam_stroke_1.5/E/231060__akshaylaya__thi-e-302.wav&#39;,
- &#39;thi&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;../workspace/mridangam_stroke_1.5/C/226193__akshaylaya__thi-c-121.wav&#39;, &#39;ta&#39;)
+(&#39;../workspace/mridangam_stroke_1.5/B/224928__akshaylaya__thi-b-147.wav&#39;, &#39;thi&#39;)
+(&#39;../workspace/mridangam_stroke_1.5/B/224921__akshaylaya__thi-b-140.wav&#39;, &#39;ta&#39;)
 </pre></div>
 </div>
 </div>

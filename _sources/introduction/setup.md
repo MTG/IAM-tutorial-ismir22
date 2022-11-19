@@ -1,6 +1,6 @@
 (welcome-setup)=
 # Setting everything up
-**Welcome to this tutorial, we are very glad to have you here!** 
+**We would like to kindly ask you to carefully go through this section before reading the tutorial. **
 
 
 (tutorial-structure)=
@@ -25,6 +25,12 @@ Google Collaboratory (abbreviated as Collab) is a handy tool in which you can im
 
 ```{note}
 Google Collab hosts GPU/TPU access, which you can use to run the ML/DL based code in ``compiam``. In addition to that, it allows you to download large amounts of data (typically up to 70GB). Therefore, you will also be able to download and explore the datasets (expect long downloading times for the larger datasets).
+```
+
+Feel free to import our notebooks to a Google Collab session, where the code can be run, modified, and downloaded. 
+
+```{important}
+Most likely, after importing a particular notebook of this tutorial to a Google Collab session, the main tool for this tutorial, `compiam`, will not be installed. Make sure to install it by running ``!pip install compiam`` or `%pip install compiam`` (`!` and `%` indicates, in a Jupyter notebook cell, that the command is run in the command line).
 ```
 
 

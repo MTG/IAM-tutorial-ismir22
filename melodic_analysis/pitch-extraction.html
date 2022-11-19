@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Melodic pattern dicovery" href="melodic-pattern-discovery.html" />
@@ -108,7 +110,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../landing.html">
-                    Welcome
+                    Welcome to this tutorial!
                 </a>
             </li>
         </ul>
@@ -564,8 +566,8 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of the output pitch:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">))</span>
-<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;First 5 time-stamps:&quot;</span><span class="p">,</span> <span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;Last 5 pitch values:&quot;</span><span class="p">,</span> <span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;First 5 time-stamps:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;Last 5 pitch values:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -577,8 +579,8 @@ title="Print to PDF"
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of the output pitch:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;First 5 time-stamps:&quot;</span><span class="p">,</span> <span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;Last 5 pitch values:&quot;</span><span class="p">,</span> <span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;First 5 time-stamps:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;Last 5 pitch values:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/pprint.py:53,</span> in <span class="ni">pprint</span><span class="nt">(object, stream, indent, width, depth, compact, sort_dicts)</span>
 <span class="g g-Whitespace">     </span><span class="mi">49</span> <span class="sd">&quot;&quot;&quot;Pretty-print a Python object to a stream [default is sys.stdout].&quot;&quot;&quot;</span>
@@ -597,7 +599,7 @@ title="Print to PDF"
 <span class="g g-Whitespace">    </span><span class="mi">184</span>         <span class="k">return</span>
 <span class="ne">--&gt; </span><span class="mi">185</span> <span class="n">stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rep</span><span class="p">)</span>
 
-<span class="ne">AttributeError</span>: &#39;numpy.ndarray&#39; object has no attribute &#39;write&#39;
+<span class="ne">AttributeError</span>: &#39;list&#39; object has no attribute &#39;write&#39;
 </pre></div>
 </div>
 </div>
@@ -662,32 +664,6 @@ title="Print to PDF"
 <p>We also disable the <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> warnings in order to keep the tutorial clean.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">ls</span> /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__init__.py   data.py        io.py    <span class=" -Color -Color-Blue -Color-Blue-BGGreen">rhythm</span>/     <span class=" -Color -Color-Blue -Color-Blue-BGGreen">utils</span>/
-<span class=" -Color -Color-Blue -Color-Blue-BGGreen">__pycache__</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">dunya</span>/         <span class=" -Color -Color-Blue -Color-Blue-BGGreen">melody</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">structure</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">visualisation</span>/
-<span class=" -Color -Color-Blue -Color-Blue-BGGreen">conf</span>/         exceptions.py  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">models</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">timbre</span>/
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">ls</span> /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/models
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Blue -Color-Blue-BGGreen">melody</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">rhythm</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">structure</span>/  <span class=" -Color -Color-Blue -Color-Blue-BGGreen">timbre</span>/
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initializing an FTANet instance</span>
 <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:ftanet-carnatic&quot;</span><span class="p">)</span>
 
@@ -714,6 +690,7 @@ title="Print to PDF"
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">D</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">amplitude_to_db</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">librosa</span><span class="o">.</span><span class="n">stft</span><span class="p">(</span><span class="n">y</span><span class="p">)),</span> <span class="n">ref</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
 <span class="n">img</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">specshow</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">y_axis</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">x_axis</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ftanet_pitch_track</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -721,7 +698,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/pitch-extraction_20_0.png" src="../_images/pitch-extraction_20_0.png" />
+<img alt="../_images/pitch-extraction_18_0.png" src="../_images/pitch-extraction_18_0.png" />
 </div>
 </div>
 </section>

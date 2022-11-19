@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Pitch extraction" href="pitch-extraction.html" />
@@ -108,7 +110,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../landing.html">
-                    Welcome
+                    Welcome to this tutorial!
                 </a>
             </li>
         </ul>
@@ -515,7 +517,7 @@ title="Print to PDF"
 <p>As mentioned in the <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-tambura-drone"><span class="std std-ref">introduction of the tambūrā drone</span></a>, the sa played by the tambūrā is very important from a computational analysis point of view, because it provides information to locate the sa of the melody (and also the rest of svāras in the rāga), while it is also veru useful to normalise the melodic lines for better information processing.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Despite no term as ‘tonic exists in Indian Art Music, it is used in the literature to refer to the task of ‘tonic identification’.</p>
+<p>Despite no term as “tonic” exists in Indian Art Music, it is used in the literature to refer to the task of tonic identification.</p>
 </div>
 <p>Let us first start by installing and importing the latest released version of <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
 <div class="admonition important">
@@ -548,13 +550,18 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="cell tag_remove-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing the tool</span>
 <span class="kn">from</span> <span class="nn">compiam.melody.tonic_identification</span> <span class="kn">import</span> <span class="n">TonicIndianMultiPitch</span>
 
 <span class="c1"># We first initialize the tool we have just imported</span>
 <span class="n">tonic_multipitch</span> <span class="o">=</span> <span class="n">TonicIndianMultiPitch</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 </pre></div>
 </div>
 </div>

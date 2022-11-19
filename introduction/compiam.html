@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Indian Art Music" href="../indian_art_music/iam.html" />
@@ -108,7 +110,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../landing.html">
-                    Welcome
+                    Welcome to this tutorial!
                 </a>
             </li>
         </ul>
@@ -846,7 +848,7 @@ title="Print to PDF"
 <p class="admonition-title">Tip</p>
 <p>When listing available tools using the <code class="docutils literal notranslate"><span class="pre">list_tools()</span></code> functions, some will appear with a “*” at the end. That is meant to indicate that such tools have pre-trained models available, which may be loaded using the wrapper <code class="docutils literal notranslate"><span class="pre">compiam.load_model()</span></code>.</p>
 </div>
-<p>You may obviously initialize the <em>untrained</em> version of the model and load the weights afterwards, especially if you have your own checkpoints or seek to train the model yourself. However, the <code class="docutils literal notranslate"><span class="pre">compiam.load_model()</span></code> wrappers offers a handy and rapid way to load a pre-trained model for a particular task. The weights for the integrated models are stored (and included in the release of <code class="docutils literal notranslate"><span class="pre">compiam</span></code>) in <code class="docutils literal notranslate"><span class="pre">compIAM/models/&lt;musical-aspect&gt;/&lt;model-name&gt;/</span></code> (writing the path UNIX-styled here!).</p>
+<p>You may obviously initialize the <em>untrained</em> version of the model and load the weights afterwards, especially if you have your own checkpoints or seek to train the model yourself. However, the <code class="docutils literal notranslate"><span class="pre">compiam.load_model()</span></code> wrappers offers a handy and rapid way to load a pre-trained model for a particular task. The weights for the integrated models are stored (and included in the release of <code class="docutils literal notranslate"><span class="pre">compiam</span></code>) in <code class="docutils literal notranslate"><span class="pre">compiam/models/&lt;musical-aspect&gt;/&lt;model-name&gt;/</span></code> (writing the path UNIX-styled here!).</p>
 <p>Let’s list the available pre-trained ML/DL models through <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
