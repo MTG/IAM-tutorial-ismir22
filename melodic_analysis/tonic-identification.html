@@ -110,7 +110,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../landing.html">
-                    Welcome to this tutorial!
+                    Welcome!
                 </a>
             </li>
         </ul>
@@ -550,7 +550,23 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Make sure you take a look at the documentation of the tool you are willing to use, in case this needs an optional dependency, or it has some particularity.</p>
+</div>
+<p>In this case, in [the documentation of the tonic identification approach] we have in <code class="docutils literal notranslate"><span class="pre">compiam</span></code>, we observe the need of <code class="docutils literal notranslate"><span class="pre">essentia</span></code>, which is an optional dependency. Let’s install it before moving on.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Initializing a tool without a required optional dependency will throw and error and provide the user with instructions to easily install it.</p>
+</div>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install essentia
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing the tool</span>
 <span class="kn">from</span> <span class="nn">compiam.melody.tonic_identification</span> <span class="kn">import</span> <span class="n">TonicIndianMultiPitch</span>
@@ -560,27 +576,10 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   INFO   ] MusicExtractorSVM: no classifier models were configured by default
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>We observe that an error shows up:</strong> we need <code class="docutils literal notranslate"><span class="pre">essentia</span></code> to use this tool, and <code class="docutils literal notranslate"><span class="pre">essentia</span></code> is an optional dependency that is not installed by default.</p>
-<p>Let’s install essentia and re-import the tool.</p>
-<div class="cell tag_remove-output docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install essentia
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We initialize the tool again</span>
-<span class="n">tonic_multipitch</span> <span class="o">=</span> <span class="n">TonicIndianMultiPitch</span><span class="p">()</span>
-
-<span class="c1"># Let&#39;s first see the specific attributes of this tool</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s first see the specific attributes of this tool</span>
 <span class="n">attributes</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">tonic_multipitch</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;__&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
 <span class="n">pprint</span><span class="p">(</span><span class="n">attributes</span><span class="p">)</span>
 </pre></div>
