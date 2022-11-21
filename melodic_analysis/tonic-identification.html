@@ -210,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../rhythmic_analysis/percussion-transcription.html">
-   Percussion transcription: the case of tabla
+   Percussion transcription
   </a>
  </li>
 </ul>
@@ -514,16 +514,12 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="tonic-identification">
 <span id="id1"></span><h1>Tonic identification<a class="headerlink" href="#tonic-identification" title="Permalink to this headline">#</a></h1>
-<p>As mentioned in the <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-tambura-drone"><span class="std std-ref">introduction of the tambūrā drone</span></a>, the sa played by the tambūrā is very important from a computational analysis point of view, because it provides information to locate the sa of the melody (and also the rest of svāras in the rāga), while it is also veru useful to normalise the melodic lines for better information processing.</p>
+<p>As mentioned in the <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-tambura-drone"><span class="std std-ref">introduction of the tambūrā drone</span></a>, the sa played by the tambūrā is very important from a computational analysis point of view, because it provides information to locate the sa of the melody (and also the rest of svāras in the rāga), while it is also very useful to normalise the melodic lines for a better processing and understanding.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Despite no term as “tonic” exists in Indian Art Music, it is used in the literature to refer to the task of tonic identification.</p>
+<p>Although the term “tonic” does not appear in Indian Art Music, the sa (ṣaḍja) pitch position is often referred to as the “tonic” in MIR literature, due to similarities between the two concepts.</p>
 </div>
 <p>Let us first start by installing and importing the latest released version of <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>You need to have <code class="docutils literal notranslate"><span class="pre">compiam</span></code> installed to execute the walkthroughs of this tutorial in your machine or in the cloud using, for instance, Google Collab. Make sure you install <code class="docutils literal notranslate"><span class="pre">compiam</span></code> by running: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">compiam</span></code>. You can run command line functions from a notebook by writing a <code class="docutils literal notranslate"><span class="pre">%</span></code> or <code class="docutils literal notranslate"><span class="pre">!</span></code> at the beginning of the command, e.g. <code class="docutils literal notranslate"><span class="pre">%pip</span> <span class="pre">install</span> <span class="pre">compiam</span></code>.</p>
-</div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Importing compiam to the project</span>
@@ -536,6 +532,10 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You need to have <code class="docutils literal notranslate"><span class="pre">compiam</span></code> installed to execute the walkthroughs of this tutorial in your machine or in the cloud using, for instance, Google Collab. Make sure you install <code class="docutils literal notranslate"><span class="pre">compiam</span></code> by running: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">compiam</span></code>. You can run command line functions from a notebook by writing a <code class="docutils literal notranslate"><span class="pre">%</span></code> or <code class="docutils literal notranslate"><span class="pre">!</span></code> at the beginning of the command, e.g. <code class="docutils literal notranslate"><span class="pre">%pip</span> <span class="pre">install</span> <span class="pre">compiam</span></code>.</p>
 </div>
 <p>Let’s list the available tools in <code class="docutils literal notranslate"><span class="pre">compiam</span></code> to perform tonic identification.</p>
 <div class="cell docutils container">
@@ -552,12 +552,12 @@ title="Print to PDF"
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Make sure you take a look at the documentation of the tool you are willing to use, in case this needs an optional dependency, or it has some particularity.</p>
+<p>Make sure you take a look at the documentation of the tool you are willing to use, in case this needs an optional dependency, or has some relevant particularity.</p>
 </div>
-<p>In this case, in [the documentation of the tonic identification approach] we have in <code class="docutils literal notranslate"><span class="pre">compiam</span></code>, we observe the need of <code class="docutils literal notranslate"><span class="pre">essentia</span></code>, which is an optional dependency. Let’s install it before moving on.</p>
+<p>In this case, in <a class="reference external" href="https://mtg.github.io/compIAM/">the documentation of the tonic identification approach</a> we have in <code class="docutils literal notranslate"><span class="pre">compiam</span></code>, we observe the need of <code class="docutils literal notranslate"><span class="pre">essentia</span></code>, which is an optional dependency. Let’s install it before moving on.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Initializing a tool without a required optional dependency will throw and error and provide the user with instructions to easily install it.</p>
+<p>Initializing a tool without a required optional dependency will basically throw and error and provide the user with instructions to easily install it.</p>
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
@@ -616,6 +616,15 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Parameters can be updated by basically setting the new value to the attribute.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Updating value for a particular parameter</span>
+<span class="n">tonic_multipitch</span><span class="o">.</span><span class="n">minTonicFrequency</span> <span class="o">=</span> <span class="mi">80</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Let’s now load the CompMusic Indian Art Music Tonic dataset to evaluate the performance of this approach.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -629,7 +638,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Loading Tonic dataset using the mirdata loader</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tonic_dataset</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;compmusic_indian_tonic&quot;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;./workspace/&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">tonic_dataset</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
@@ -656,7 +665,7 @@ title="Print to PDF"
 <p>Right! We now have the dataset. Unfortunately, we observe that the audio tracks for this collections are not openly available but only shared under explicit request.</p>
 <p><strong>However that is not a problem!</strong> Possible solutions:</p>
 <ul class="simple">
-<li><p>You may request the audios as follow the instructions on the dataloader to have them considered.</p></li>
+<li><p>You may request the audios and follow the instructions on the dataloader to have them included.</p></li>
 <li><p>Otherwise, if available, you may get the audios from the Dunya database.</p></li>
 </ul>
 <p>Accessing the data in Dunya requires you to have a unique and non-shareable access token. For that reason, we cannot provide an interactive walkthrough of how to parse audio examples from Dunya.</p>
@@ -677,7 +686,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">random_track</span> <span class="o">=</span> <span class="n">tonic_dataset</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># We can print the mbid from the randomly chosen track</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">random_track</span><span class="o">.</span><span class="n">mbid</span><span class="p">)</span>

@@ -210,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../rhythmic_analysis/percussion-transcription.html">
-   Percussion transcription: the case of tabla
+   Percussion transcription
   </a>
  </li>
 </ul>
@@ -544,6 +544,35 @@ title="Print to PDF"
       <a class="reference internal nav-link" href="#why-wrappers">
        Why wrappers?
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#load-dataset">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           .load_dataset()
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#load-corpora">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           .load_corpora()
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#load-model">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           .load_model()
+          </span>
+         </code>
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -607,6 +636,35 @@ title="Print to PDF"
       <a class="reference internal nav-link" href="#why-wrappers">
        Why wrappers?
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#load-dataset">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           .load_dataset()
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#load-corpora">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           .load_corpora()
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#load-model">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           .load_model()
+          </span>
+         </code>
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -734,12 +792,12 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p><strong>Right, we got the integrated tools for melodic and rhythmic analysis.</strong> Initializing and using the integrated works in <code class="docutils literal notranslate"><span class="pre">compiam</span></code> can be done by basically importing these from the respective module. Use that to load <em>non-trainable</em> tools and <em>non-trained</em> machine or deep learning (ML/DL) models.</p>
+<p><strong>Right, we have now learned how to list the available tools in <code class="docutils literal notranslate"><span class="pre">compiam</span></code></strong>. Initializing and using the integrated works in <code class="docutils literal notranslate"><span class="pre">compiam</span></code> can be done by basically importing these from the respective module. Use that to load <em>non-trainable</em> tools and <em>non-trained</em> machine or deep learning (ML/DL) models.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.melody.tonic_identification</span> <span class="kn">import</span> <span class="n">TonicIndianMultiPitch</span>
 <span class="kn">from</span> <span class="nn">compiam.rhythm.transcription</span> <span class="kn">import</span> <span class="n">FourWayTabla</span>
 </pre></div>
 </div>
-<p>Each tool includes specific methods and attributes, so make sure to carefully check the <a class="reference external" href="https://mtg.github.io/compIAM/index.html"><code class="docutils literal notranslate"><span class="pre">compiam</span></code> documentation</a> before using a particular tool. However, integrated tools all include a <code class="docutils literal notranslate"><span class="pre">.extract()</span></code> (for <em>heuristic-based</em> tools) or a <code class="docutils literal notranslate"><span class="pre">.predict()</span></code> (for <em>data-based</em> tools) to directly run the tool on sample audios.</p>
+<p>Each tool includes specific methods and attributes, so make sure to carefully check the <a class="reference external" href="https://mtg.github.io/compIAM/index.html"><code class="docutils literal notranslate"><span class="pre">compiam</span></code> documentation</a> before using a particular tool. However, integrated tools all include a <code class="docutils literal notranslate"><span class="pre">.extract()</span></code> (for <em>heuristic-based</em> tools) or a <code class="docutils literal notranslate"><span class="pre">.predict()</span></code> (for <em>data-driven</em> tools) to directly run the tool on any input audio.</p>
 </section>
 <section id="wrappers">
 <span id="compiam-wrappers"></span><h3>Wrappers<a class="headerlink" href="#wrappers" title="Permalink to this headline">#</a></h3>
@@ -768,7 +826,11 @@ title="Print to PDF"
 </table>
 <section id="why-wrappers">
 <h4>Why wrappers?<a class="headerlink" href="#why-wrappers" title="Permalink to this headline">#</a></h4>
-<p>Wrappers can be directly imported from <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
+<p>Wrappers can be directly imported from <code class="docutils literal notranslate"><span class="pre">compiam</span></code>, and serve as a fast and standardized manner to access the data and pre-trained models in <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Only the ML/DL-based models with available weights can be loaded using the <code class="docutils literal notranslate"><span class="pre">.load_model()</span></code> wrapper.</strong> The non-trainable tools or the models with no available weights must be imported from their corresponding module.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">load_dataset</span><span class="p">,</span> <span class="n">load_corpora</span><span class="p">,</span> <span class="n">load_model</span>
@@ -776,7 +838,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Let us showcase the nice utility of <code class="docutils literal notranslate"><span class="pre">compiam</span></code> wrappers. We will start by listing the available datasets through <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
+<p>Let us showcase the nice utility of <code class="docutils literal notranslate"><span class="pre">compiam</span></code> wrappers.</p>
+<section id="load-dataset">
+<h5><code class="docutils literal notranslate"><span class="pre">.load_dataset()</span></code><a class="headerlink" href="#load-dataset" title="Permalink to this headline">#</a></h5>
+<p>We will start by listing the available datasets through <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">list_datasets</span><span class="p">())</span>
@@ -789,7 +854,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We can initialize a dataloader for a particular dataset in the list above using the <code class="docutils literal notranslate"><span class="pre">compiam.load_dataset()</span></code> wrapper.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">compiam.load_dataset()</span></code> wrapper allows the user to initialize the dataloader for any dataset included in the list displayed above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Initializing dataloader for an example dataset</span>
@@ -834,6 +899,9 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>To get a more insightful walkthrough of the dataset loaders, please <a class="reference internal" href="../corpora_and_datasets/datasets.html#datasets"><span class="std std-ref">see Datasets</span></a>.</p>
 </div>
+</section>
+<section id="load-corpora">
+<h5><code class="docutils literal notranslate"><span class="pre">.load_corpora()</span></code><a class="headerlink" href="#load-corpora" title="Permalink to this headline">#</a></h5>
 <p><code class="docutils literal notranslate"><span class="pre">compiam</span></code> provides access to both Carnatic and Hindustani <span id="id1">[<a class="reference internal" href="../resources/references.html#id19" title="Ajay Srinivasamurthy, Gopala Krishna Koduri, Sankalp Gulati, Vignesh Ishwar, and Xavier Serra. Corpora for music information research in Indian art music. In In Proc. of the 40th International Computer Music Conference (ICMC), Athens, Greece., 1029–1036. 2014.">SKG+14</a>]</span> corpora from Dunya. Initialize the access tool to these huge collections of data using the designated wrapper.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## Initializing dataloader for an example dataset</span>
 <span class="n">carnatic_corpora</span> <span class="o">=</span> <span class="n">load_corpora</span><span class="p">(</span><span class="s2">&quot;carnatic&quot;</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="s2">&quot;your-token-goes-here&quot;</span><span class="p">)</span>
@@ -843,10 +911,13 @@ title="Print to PDF"
 <p class="admonition-title">Warning</p>
 <p>A complete walkthrough of the corpora access in this book is not possible because of the explicit need of a unique, personal, and intransferible access token. Please get your token and check the <a class="reference external" href="https://mtg.github.io/compIAM/source/datasets.html#access-the-dunya-corpora">detailed documentation</a> we have put together. Feel free to reach out in case you encouter issues or questions.</p>
 </div>
+</section>
+<section id="load-model">
+<h5><code class="docutils literal notranslate"><span class="pre">.load_model()</span></code><a class="headerlink" href="#load-model" title="Permalink to this headline">#</a></h5>
 <p>For the case of ML/DL models that are data-driven and therefore trained using particular collections of data, we may use the <code class="docutils literal notranslate"><span class="pre">compiam.load_model()</span></code> wrapper to load the tool as you would do using <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">compiam.&lt;musical-aspect&gt;.&lt;task&gt;</span> <span class="pre">import</span> <span class="pre">&lt;particular-model&gt;</span></code>. However, <strong>loading the model using the wrapper will load by default the pre-trained model given publicly available weights and checkpoints for the integrated implementation</strong>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>When listing available tools using the <code class="docutils literal notranslate"><span class="pre">list_tools()</span></code> functions, some will appear with a “*” at the end. That is meant to indicate that such tools have pre-trained models available, which may be loaded using the wrapper <code class="docutils literal notranslate"><span class="pre">compiam.load_model()</span></code>.</p>
+<p>When listing available tools using the <code class="docutils literal notranslate"><span class="pre">list_tools()</span></code> functions, some will appear with a <code class="docutils literal notranslate"><span class="pre">*</span></code> at the end. That is meant to indicate that such tools have pre-trained models available, which may be loaded using the wrapper <code class="docutils literal notranslate"><span class="pre">compiam.load_model()</span></code>.</p>
 </div>
 <p>You may obviously initialize the <em>untrained</em> version of the model and load the weights afterwards, especially if you have your own checkpoints or seek to train the model yourself. However, the <code class="docutils literal notranslate"><span class="pre">compiam.load_model()</span></code> wrappers offers a handy and rapid way to load a pre-trained model for a particular task. The weights for the integrated models are stored (and included in the release of <code class="docutils literal notranslate"><span class="pre">compiam</span></code>) in <code class="docutils literal notranslate"><span class="pre">compiam/models/&lt;musical-aspect&gt;/&lt;model-name&gt;/</span></code> (writing the path UNIX-styled here!).</p>
 <p>Let’s list the available pre-trained ML/DL models through <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
@@ -931,6 +1002,7 @@ title="Print to PDF"
 </section>
 </section>
 </section>
+</section>
 <section id="contributing">
 <span id="compiam-contributing"></span><h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">compiam</span></code> is continuously evolving and <strong>it is very much open to contributions!</strong> We have put together <a class="reference external" href="https://mtg.github.io/compIAM/source/contributing.html">complete set of contribution guidelines</a> to help you improving and/or expanding the library. Potential contributions are:</p>
@@ -941,7 +1013,7 @@ title="Print to PDF"
 <li><p>Fixing bugs.</p></li>
 <li><p>Improving documentation.</p></li>
 </ul>
-<p>Don’t hestitate to [reach out](<a class="reference external" href="mailto:genis&#46;plaja&#37;&#52;&#48;upf&#46;edu">mailto:genis<span>&#46;</span>plaja<span>&#64;</span>upf<span>&#46;</span>edu</a>, <a class="reference external" href="mailto:thomas&#46;nuttall&#37;&#52;&#48;upf&#46;edu">thomas<span>&#46;</span>nuttall<span>&#64;</span>upf<span>&#46;</span>edu</a>) or <a class="reference external" href="https://github.com/MTG/compIAM/issues">open an issue in the <code class="docutils literal notranslate"><span class="pre">compaim</span></code> GitHub repository</a> to request for further help or raise questions.</p>
+<p>Don’t hestitate to [reach out](”<a class="reference external" href="mailto:genis&#46;plaja&#37;&#52;&#48;upf&#46;edu">mailto:genis<span>&#46;</span>plaja<span>&#64;</span>upf<span>&#46;</span>edu</a>, <a class="reference external" href="mailto:thomas&#46;nuttall&#37;&#52;&#48;upf&#46;edu">thomas<span>&#46;</span>nuttall<span>&#64;</span>upf<span>&#46;</span>edu</a>”) or <a class="reference external" href="https://github.com/MTG/compIAM/issues">open an issue in the <code class="docutils literal notranslate"><span class="pre">compaim</span></code> GitHub repository</a> to request for further help or raise questions.</p>
 </section>
 </section>
 

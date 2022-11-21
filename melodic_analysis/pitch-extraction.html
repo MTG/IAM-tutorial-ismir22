@@ -210,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../rhythmic_analysis/percussion-transcription.html">
-   Percussion transcription: the case of tabla
+   Percussion transcription
   </a>
  </li>
 </ul>
@@ -566,8 +566,6 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of the output pitch:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">))</span>
-<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;First 5 time-stamps:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
-<span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;Last 5 pitch values:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -575,31 +573,207 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape of the output pitch: (699, 2)
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of the output pitch:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;First 5 time-stamps:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pprint</span><span class="p">(</span><span class="s2">&quot;Last 5 pitch values:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/pprint.py:53,</span> in <span class="ni">pprint</span><span class="nt">(object, stream, indent, width, depth, compact, sort_dicts)</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span> <span class="sd">&quot;&quot;&quot;Pretty-print a Python object to a stream [default is sys.stdout].&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="n">printer</span> <span class="o">=</span> <span class="n">PrettyPrinter</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>     <span class="n">stream</span><span class="o">=</span><span class="n">stream</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="n">compact</span><span class="o">=</span><span class="n">compact</span><span class="p">,</span> <span class="n">sort_dicts</span><span class="o">=</span><span class="n">sort_dicts</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">53</span> <span class="n">printer</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/pprint.py:148,</span> in <span class="ni">PrettyPrinter.pprint</span><span class="nt">(self, object)</span>
-<span class="g g-Whitespace">    </span><span class="mi">147</span> <span class="k">def</span> <span class="nf">pprint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">object</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">148</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stream</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">{},</span> <span class="mi">0</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">149</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/pprint.py:185,</span> in <span class="ni">PrettyPrinter._format</span><span class="nt">(self, object, stream, indent, allowance, context, level)</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span>         <span class="k">del</span> <span class="n">context</span><span class="p">[</span><span class="n">objid</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span>         <span class="k">return</span>
-<span class="ne">--&gt; </span><span class="mi">185</span> <span class="n">stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">rep</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;list&#39; object has no attribute &#39;write&#39;
+</div>
+</div>
+<p>Let us show the first 5 time-stamps here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.0,
+ 0.0029024943310657597,
+ 0.005804988662131519,
+ 0.008707482993197279,
+ 0.011609977324263039]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s now print out the final 5 pitch values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([  0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        ,   0.        ,   0.        ,   0.        ,
+         0.        , 280.40603638, 282.03042603, 283.66421509,
+       283.66421509, 285.30749512, 285.30749512, 286.96026611,
+       286.96026611, 286.96026611, 286.96026611, 286.96026611,
+       286.96026611, 286.96026611, 286.96026611, 286.96026611,
+       286.96026611, 286.96026611, 286.96026611, 285.30749512,
+       285.30749512, 285.30749512, 283.66421509, 282.03042603,
+       280.40603638, 278.79101562, 277.18527222, 275.58880615,
+       274.00152588, 270.85430908, 269.29431152, 267.74328613,
+       266.20120239, 263.14358521, 261.62796021, 260.12109375,
+       258.6229248 , 257.13336182, 257.13336182, 257.13336182,
+       255.65234375, 255.65234375, 254.17990112, 252.71591187,
+       252.71591187, 251.26037598, 251.26037598, 249.81321716,
+       249.81321716, 248.37437439, 248.37437439, 246.94384766,
+       246.94384766, 246.94384766, 245.52153015, 245.52153015,
+       244.10742188, 244.10742188, 244.10742188, 244.10742188,
+       244.10742188, 244.10742188, 244.10742188, 244.10742188,
+       244.10742188, 244.10742188, 242.70147705, 241.30360413,
+       239.9138031 , 237.15812683, 234.43412781, 242.70147705,
+       242.70147705, 242.70147705, 241.30360413, 239.9138031 ,
+       239.9138031 , 241.30360413, 244.10742188, 245.52153015,
+       245.52153015, 246.94384766, 248.37437439, 248.37437439,
+       241.30360413, 248.37437439, 254.17990112, 258.6229248 ,
+       261.62796021, 266.20120239, 267.74328613, 270.85430908,
+       272.42337036, 274.00152588, 275.58880615, 275.58880615,
+       277.18527222, 277.18527222, 277.18527222, 275.58880615,
+       275.58880615, 275.58880615, 275.58880615, 275.58880615,
+       274.00152588, 274.00152588, 274.00152588, 274.00152588,
+       272.42337036, 272.42337036, 272.42337036, 272.42337036,
+       270.85430908, 270.85430908, 270.85430908, 270.85430908,
+       270.85430908, 269.29431152, 269.29431152, 269.29431152,
+       269.29431152, 269.29431152, 269.29431152, 269.29431152,
+       269.29431152, 269.29431152, 269.29431152, 267.74328613,
+       267.74328613, 267.74328613, 269.29431152, 269.29431152,
+       269.29431152, 269.29431152, 267.74328613, 267.74328613,
+       267.74328613, 267.74328613, 269.29431152, 269.29431152,
+       269.29431152, 269.29431152, 269.29431152, 269.29431152,
+       269.29431152, 270.85430908, 270.85430908, 270.85430908,
+       270.85430908, 270.85430908, 270.85430908, 270.85430908,
+       270.85430908, 272.42337036, 272.42337036, 272.42337036,
+       272.42337036, 274.00152588, 274.00152588, 274.00152588,
+       274.00152588, 274.00152588, 274.00152588, 272.42337036,
+       272.42337036, 266.20120239, 258.6229248 , 254.17990112,
+       251.26037598, 249.81321716, 249.81321716, 248.37437439,
+       248.37437439, 246.94384766, 246.94384766, 245.52153015,
+       245.52153015, 245.52153015, 245.52153015, 244.10742188,
+       245.52153015, 248.37437439, 249.81321716, 252.71591187,
+       254.17990112, 257.13336182, 260.12109375, 263.14358521,
+       267.74328613, 272.42337036, 277.18527222, 282.03042603,
+       286.96026611, 291.97628784, 297.07995605, 304.02392578,
+       311.13018799, 318.40252686, 323.96813965, 329.63104248,
+       335.39294434, 339.29003906, 343.23242188, 347.22061157,
+       349.23205566, 349.23205566, 351.25512695, 351.25512695,
+       351.25512695, 351.25512695, 349.23205566, 349.23205566,
+       347.22061157, 347.22061157, 345.22076416, 343.23242188,
+       343.23242188, 341.25552368, 339.29003906, 337.33584595,
+       335.39294434, 333.46121216, 333.46121216, 331.54058838,
+       329.63104248, 329.63104248, 327.73248291, 327.73248291,
+       327.73248291, 327.73248291, 327.73248291, 325.84490967,
+       325.84490967, 325.84490967, 323.96813965, 323.96813965,
+       322.10220337, 322.10220337, 322.10220337, 323.96813965,
+       323.96813965, 325.84490967, 325.84490967, 325.84490967,
+       327.73248291, 327.73248291, 329.63104248, 329.63104248,
+       329.63104248, 331.54058838, 331.54058838, 333.46121216,
+       333.46121216, 333.46121216, 335.39294434, 335.39294434,
+       337.33584595, 337.33584595, 337.33584595, 337.33584595,
+       337.33584595, 337.33584595, 339.29003906, 339.29003906,
+       339.29003906, 339.29003906, 339.29003906, 339.29003906,
+       339.29003906, 339.29003906, 339.29003906, 339.29003906,
+       339.29003906, 339.29003906, 339.29003906, 339.29003906,
+       339.29003906, 339.29003906, 337.33584595, 337.33584595,
+       335.39294434, 335.39294434, 333.46121216, 333.46121216,
+       331.54058838, 329.63104248, 327.73248291, 325.84490967,
+       323.96813965, 322.10220337, 320.24703979, 318.40252686,
+       318.40252686, 316.56866455, 316.56866455, 314.74536133,
+       314.74536133, 314.74536133, 314.74536133, 314.74536133,
+       314.74536133, 314.74536133, 314.74536133, 314.74536133,
+       316.56866455, 316.56866455, 318.40252686, 320.24703979,
+       322.10220337, 323.96813965, 325.84490967, 327.73248291,
+       329.63104248, 331.54058838, 333.46121216, 335.39294434,
+       337.33584595, 341.25552368, 343.23242188, 345.22076416,
+       347.22061157, 349.23205566, 351.25512695, 353.28994751,
+       355.33654785, 357.39501953, 359.46539307, 361.54776001,
+       363.6421814 , 365.7487793 , 367.86755371, 369.99859619,
+       372.14196777, 372.14196777, 374.29782104, 374.29782104,
+       374.29782104, 374.29782104, 374.29782104, 374.29782104,
+       374.29782104, 374.29782104, 374.29782104, 372.14196777,
+       372.14196777, 372.14196777, 372.14196777, 369.99859619,
+       369.99859619, 369.99859619, 369.99859619, 369.99859619,
+       369.99859619, 369.99859619, 367.86755371, 367.86755371,
+       367.86755371, 367.86755371, 365.7487793 , 365.7487793 ,
+       365.7487793 , 365.7487793 , 363.6421814 , 363.6421814 ,
+       363.6421814 , 361.54776001, 361.54776001, 359.46539307,
+       359.46539307, 357.39501953, 357.39501953, 355.33654785,
+       355.33654785, 353.28994751, 353.28994751, 353.28994751,
+       351.25512695, 351.25512695, 351.25512695, 351.25512695,
+       351.25512695, 351.25512695, 351.25512695, 351.25512695,
+       351.25512695, 353.28994751, 353.28994751, 353.28994751,
+       353.28994751, 355.33654785, 355.33654785, 357.39501953,
+       357.39501953, 359.46539307, 359.46539307, 361.54776001,
+       361.54776001, 363.6421814 , 363.6421814 , 365.7487793 ,
+       367.86755371, 367.86755371, 369.99859619, 372.14196777,
+       372.14196777, 374.29782104, 374.29782104, 376.46609497,
+       376.46609497, 376.46609497, 374.29782104, 374.29782104,
+       372.14196777, 372.14196777, 372.14196777, 369.99859619,
+       369.99859619, 367.86755371, 367.86755371, 367.86755371,
+       365.7487793 , 363.6421814 , 363.6421814 , 361.54776001,
+       361.54776001, 359.46539307, 359.46539307, 357.39501953,
+       357.39501953, 355.33654785, 355.33654785, 353.28994751,
+       353.28994751, 351.25512695, 351.25512695, 351.25512695,
+       351.25512695, 351.25512695, 351.25512695, 351.25512695,
+       353.28994751, 353.28994751, 353.28994751, 355.33654785,
+       355.33654785, 357.39501953, 359.46539307, 359.46539307,
+       361.54776001, 361.54776001, 363.6421814 , 365.7487793 ,
+       367.86755371, 367.86755371, 369.99859619, 372.14196777,
+       374.29782104, 376.46609497, 376.46609497, 378.64694214,
+       378.64694214, 378.64694214, 378.64694214, 376.46609497,
+       376.46609497, 376.46609497, 376.46609497, 376.46609497,
+       376.46609497, 376.46609497, 374.29782104, 374.29782104,
+       372.14196777, 372.14196777, 369.99859619, 367.86755371,
+       365.7487793 , 363.6421814 , 361.54776001, 361.54776001,
+       359.46539307, 359.46539307, 357.39501953, 357.39501953,
+       355.33654785, 353.28994751, 353.28994751, 351.25512695,
+       349.23205566, 347.22061157, 345.22076416, 345.22076416,
+       345.22076416, 343.23242188, 343.23242188, 341.25552368,
+       341.25552368, 339.29003906, 339.29003906, 337.33584595,
+       335.39294434, 335.39294434, 333.46121216, 331.54058838,
+       331.54058838, 331.54058838, 331.54058838, 329.63104248,
+       329.63104248, 329.63104248, 327.73248291, 325.84490967,
+       325.84490967, 323.96813965, 322.10220337, 320.24703979,
+       318.40252686, 316.56866455, 314.74536133, 314.74536133,
+       312.93252563, 312.93252563, 311.13018799, 311.13018799,
+       309.33816528, 309.33816528, 309.33816528, 307.55651855,
+       307.55651855, 309.33816528, 309.33816528, 309.33816528,
+       309.33816528, 311.13018799, 311.13018799, 312.93252563,
+       314.74536133, 316.56866455, 318.40252686, 318.40252686,
+       322.10220337, 325.84490967, 329.63104248, 331.54058838,
+       335.39294434, 339.29003906, 341.25552368, 343.23242188,
+       345.22076416, 347.22061157, 349.23205566, 353.28994751,
+       355.33654785, 357.39501953, 361.54776001, 363.6421814 ,
+       367.86755371, 369.99859619, 372.14196777, 372.14196777,
+       374.29782104, 374.29782104, 374.29782104, 374.29782104,
+       374.29782104, 372.14196777, 372.14196777, 372.14196777,
+       369.99859619, 367.86755371, 367.86755371, 365.7487793 ,
+       363.6421814 , 363.6421814 , 361.54776001, 361.54776001,
+       361.54776001, 359.46539307, 359.46539307, 357.39501953,
+       357.39501953, 357.39501953])
 </pre></div>
 </div>
 </div>
@@ -656,12 +830,11 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Let’s first deactivate the GPU usage, since we assume no CUDA-capable GPU is available in most of the cases. We import <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> and set the visible GPU devices to none.</p>
+<p>Let’s first deactivate the GPU usage, since we assume no CUDA-capable GPU is available in most of the cases. We import <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> and set the visible GPU devices to none. We also disable the <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> warnings in order to keep the tutorial clean.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you have an available GPU to allocate the model, get the index of the GPU (probably 0 if you have only a single instance) and change <code class="docutils literal notranslate"><span class="pre">tf.config.set_visible_devices([],</span> <span class="pre">&quot;GPU&quot;)</span></code> for <code class="docutils literal notranslate"><span class="pre">os.environ[&quot;CUDA_VISIBLE_DEVICES&quot;]</span> <span class="pre">=</span> <span class="pre">&quot;0&quot;</span></code></p>
 </div>
-<p>We also disable the <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> warnings in order to keep the tutorial clean.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initializing an FTANet instance</span>
@@ -698,7 +871,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/pitch-extraction_18_0.png" src="../_images/pitch-extraction_18_0.png" />
+<img alt="../_images/pitch-extraction_22_0.png" src="../_images/pitch-extraction_22_0.png" />
 </div>
 </div>
 </section>

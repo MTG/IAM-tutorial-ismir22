@@ -69,8 +69,7 @@ In Carnatic music there are formats that are more precomposed, and formats that 
 In this tradition, compositions are handed down orally through the teaching lineage, and as a result, different lineages may perform slightly different versions of the same composition {cite}`pearson_inscription_2022`. Therefore, published notations may also differ despite being of the same composition. Furthermore, as noted above, experienced musicians may add melodic variations on some lines of the composition during performance {cite}`vijayakrishnan_function_2009`. The upshot of all this is that we cannot expect a published notation to align precisely with what is performed. 
 
 > **Implications for MIR:** 
-> The fact that published notations will not precisely concur with what is performed, and that much of the performance is improvisational
-> with no published notation, means that Carnatic-based MIR tends to focus on audio recordings. 
+> The fact that published notations will not precisely concur with what is performed, and that much of the performance is improvisational with no published notation, means that many that research questions addressing this style can only be approached by analyzing audio recordings. As a result, Carnatic-based MIR tends to focus on audio.
 
 
 (carnatic-kalpita-sangita)=
@@ -94,7 +93,7 @@ Manodharma formats include ālāpana, niraval, kalpanasvara, and tani āvarttana
 
 Manodharma saṅgīta can be translated as ‘music of the imagination’ {cite}`kassebaum_karnatak_2000` referring to the way in which these formats are created on the spot (not fully pre-composed), based on existing materials (phrases) and using structural principles that are acquired by musicians through practice and exposure to the style. 
 
-These formats are typically performed alongside a composition, usually in the same rāga. For example, if the composition is a kīrtana in rāga Bhairavi, then the performer would usually open with ālāpana in the same rāga. Ālapana is a creative exploration of the rāga, without lyrics or meter, which is sung using extended vowels and syllables such as ‘ta’, ‘da’, ‘ri’ and ‘na’. Next the vocalist would perform the kīrtana, including a section of niraval (extemporization on a particular line of sāhitya in the kīrtana, chosen by the performer) and then end with some rounds of kalpanasvara (improvised passages of [sargam](carnatic-svara) syllables in different speeds). The tani āvartana is the percussion solo, involving a combination of pre-composed (by the percussionists involved) and improvisational elements.
+These formats are typically performed alongside a composition, usually in the same rāga. For example, if the composition is a kīrtana in rāga Bhairavi, then the performer would usually open with ālāpana in the same rāga. Ālāpana is a creative exploration of the rāga, without lyrics or meter, which is sung using extended vowels and syllables such as ‘ta’, ‘da’, ‘ri’ and ‘na’. Next the vocalist would perform the kīrtana, including a section of niraval (extemporization on a particular line of sāhitya in the kīrtana, chosen by the performer) and then end with some rounds of kalpanasvara (improvised passages of [sargam](carnatic-svara) syllables in different speeds). The tani āvartana is the percussion solo, involving a combination of pre-composed (by the percussionists involved) and improvisational elements.
 
 
 ```{figure} ../images/structure_2.png

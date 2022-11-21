@@ -1,6 +1,6 @@
 (welcome-setup)=
 # Setting everything up
-**We would like to kindly ask you to carefully go through this section before reading the tutorial. **
+**We would like to kindly ask you to carefully go through this section before reading the tutorial.**
 
 
 (tutorial-structure)=
@@ -30,7 +30,7 @@ Google Collab hosts GPU/TPU access, which you can use to run the ML/DL based cod
 Feel free to import our notebooks to a Google Collab session, where the code can be run, modified, and downloaded. 
 
 ```{important}
-Most likely, after importing a particular notebook of this tutorial to a Google Collab session, the main tool for this tutorial, `compiam`, will not be installed. Make sure to install it by running ``!pip install compiam`` or `%pip install compiam`` (`!` and `%` indicates, in a Jupyter notebook cell, that the command is run in the command line).
+Most likely, after importing a particular notebook of this tutorial to a Google Collab session, the main tool for this tutorial, `compiam`, will not be installed. Make sure to install it by running ``!pip install compiam`` or ``%pip install compiam`` (`!` and `%` indicates, in a Jupyter notebook cell, that the command is run in the command line).
 ```
 
 
@@ -48,7 +48,7 @@ You may be interested in building this book in your own machine. This can be don
     ```bash
     pip install -r requirements.txt
     ```
-4) Now build the book by running ``jupyter-book build webbook``. You should see that a ``_build`` folder just appeared into the ``webbook``folder. Navigate to ``webbook/_build/html/`` (writing the path UNIX-styled here) and just double-click on the ``index.html`` file there.
+4) Now build the book by running ``jupyter-book build webbook``. You should see that a ``_build`` folder just appeared into the ``webbook`` folder. Navigate to ``webbook/_build/html/`` (writing the path UNIX-styled here) and just double-click on the ``index.html`` file there.
 5) Your default browser should pop-up and the landing page of the book should appear. Now you can learn and run the snippets of code locally! 
 
 ```{note}
