@@ -1,6 +1,6 @@
 (corpora)=
 # Accessing the Dunya Corpora
-In a computer science context, a corpus is a large collection of data and annotations. Corpus-based research should build on top of collections of data that have been designed with a **purpose**, have **good coverage**, are **complete**, the data have **good quality**, and finally that ensures **reusability** {cite}`serra_2014`. The research built on top of these collections of data ensures *real-world results*. The corpora in Dunya, built within the context of the CompMusic project, have been designed taking these requirements into account.
+In a computer science context, a corpus is a large collection of data and annotations. Corpus-based research should build on top of collections of data that have been designed with a **purpose**, have **good coverage**, are **complete**, the data have **good quality**, and finally that ensures **reusability** {cite}`serra_2014`. The research built on top of these collections of data ensures *real-world results*. The corpora in Dunya, built within the context of the CompMusic project, have been designed taking these requirements into account, while access tools have been developed for an easy access to the data.
 
 ## What do the corpora include?
 The corpora in Dunya include audio recordings plus complementary musically-relevant metadata, expert annotations, and automatically-extracted features.

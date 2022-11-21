@@ -19,4 +19,4 @@ Meanwhile, **Hindustani music** is the term used to refer to the related styles 
 These two categories act as convenient headings that group together closely related styles and formats. For example, within the Hindustani category lies khayāl, dhrupad, tarāna and ṭhumri; and closely allied to Carnatic music we have Periya Mēḷam.
 ```
 
-Some of the shared features and differences between the Hindustani and Carnatic musical styles will become apparent along this chaper. 
+Some of the shared features and differences between the Hindustani and Carnatic musical styles will become apparent as we move through this introductory section.
