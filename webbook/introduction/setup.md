@@ -57,4 +57,4 @@ You may download the source code of a particular page using the download button 
 
 (getting-in-touch)=
 ## Getting in touch
-Do not hesitate to [get in touch](mailto:genis.plaja@upf.edu,thomas.nuttall@upf.edu) for any enquiries, questions, and suggestions! If you encounter an error, problem, or even a typo, please [do open an issue](https://github.com/MTG/IAM-tutorial-ismir22/issues) in the tutorial repository, which may be rapidly done by clicking in the GitHub button on the top right (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg" width="20" height="20">).
+Do not hesitate to [get in touch](mailto:thomas.nuttall@upf.edu) for any enquiries, questions, and suggestions! If you encounter an error, problem, or even a typo, please [do open an issue](https://github.com/MTG/IAM-tutorial-ismir22/issues) in the tutorial repository, which may be rapidly done by clicking in the GitHub button on the top right (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg" width="20" height="20">).
