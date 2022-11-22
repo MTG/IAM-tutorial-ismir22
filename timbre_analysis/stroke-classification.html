@@ -126,6 +126,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/python.html">
+   Python for audio signal processing
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../introduction/compiam.html">
    compIAM package
   </a>
@@ -551,15 +556,11 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="stroke-classification">
 <span id="id1"></span><h1>Stroke classification<a class="headerlink" href="#stroke-classification" title="Permalink to this headline">#</a></h1>
-<p>Introduction here!</p>
-<section id="mridangam-stroke-classification">
-<h2>Mridangam stroke classification<a class="headerlink" href="#mridangam-stroke-classification" title="Permalink to this headline">#</a></h2>
-<p><span id="id2">[<a class="reference internal" href="../resources/references.html#id25" title="A. Anantapadmanabhan, J. P. Bello, R. Krishnan, and H. Murthy. Tonic-Independent Stroke Transcription of the Mridangam. In AES 53rd International Conference: Semantic Audio, London, UK. 2014.">ABKM14</a>, <a class="reference internal" href="../resources/references.html#id70" title="A. Anantapadmanabhan, A. Bellur, and H. A. Murthy. Modal analysis and transcription of strokes of the mridangam using non-negative matrix factorization. IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), Vancouver, Canada, pages 313–318, 2013.">ABM13</a>]</span></p>
+<p>The task of percussion stroke classification has been, historically, the principal target on the timbre-side of computational analysis of Indian Art Music. As seen in the <a class="reference internal" href="../indian_art_music/carnatic-music.html#instrumentation"><span class="std std-ref">instrumentation presentation</span></a>, the musical arrangement in Indian Art Music is quite well-defined, while there is an important scarcity of good-quality data (specially monphonic recordings) for many of the Carnatic and Hindustani specific instruments. These factors combined with the importance of the different stroke types in the main percussion instruments, have given research importance on mridangam<span id="id2">[<a class="reference internal" href="../resources/references.html#id25" title="A. Anantapadmanabhan, J. P. Bello, R. Krishnan, and H. Murthy. Tonic-Independent Stroke Transcription of the Mridangam. In AES 53rd International Conference: Semantic Audio, London, UK. 2014.">ABKM14</a>, <a class="reference internal" href="../resources/references.html#id71" title="A. Anantapadmanabhan, A. Bellur, and H. A. Murthy. Modal analysis and transcription of strokes of the mridangam using non-negative matrix factorization. IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), Vancouver, Canada, pages 313–318, 2013.">ABM13</a>]</span> and tabla stroke classification<span id="id3">[<a class="reference internal" href="../resources/references.html#id27" title="M.A. Rohit, Amitrajit Bhattacharjee, and Preeti Rao. Four-way classification of tabla strokes with models adapted from automatic drum transcription. In In Proc. of the 22nd International Society for Music Information Retrieval Conference, ISMIR, Online, 19–26. 2021.">RBR21</a>]</span>.</p>
+<p>We will go through examples of these tasks in this walkthrough.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%pip install compiam</span>
-
-<span class="c1">## Importing compiam to the project</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Importing compiam to the project</span>
 <span class="kn">import</span> <span class="nn">compiam</span>
 
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
@@ -571,10 +572,12 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<section id="mridangam-stroke-classification">
+<h2>Mridangam stroke classification<a class="headerlink" href="#mridangam-stroke-classification" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.timbre.stroke_classification</span> <span class="kn">import</span> <span class="n">MridangamStrokeClassification</span>
-<span class="n">mridangam_stroke_classification</span> <span class="o">=</span> <span class="n">MridangamStrokeClassification</span><span class="p">()</span>
+<span class="n">msc</span> <span class="o">=</span> <span class="n">MridangamStrokeClassification</span><span class="p">()</span>  <span class="c1"># Let&#39;s use msc for simplicity</span>
 </pre></div>
 </div>
 </div>
@@ -582,8 +585,7 @@ title="Print to PDF"
 <p>Let’s start by loading the mridangam stroke dataset. Since <code class="docutils literal notranslate"><span class="pre">MridangamStrokeClassification</span></code>is based on the Mridangam Stroke Dataset, <code class="docutils literal notranslate"><span class="pre">compiam</span></code> includes a specific function to load the dataset and integrate it to the pipeline.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">load_mridangam_dataset</span><span class="p">(</span>
-    <span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;../workspace/&quot;</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msc</span><span class="o">.</span><span class="n">load_mridangam_dataset</span><span class="p">(</span><span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;../audio/mir_datasets/&quot;</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -595,7 +597,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print list of available mirdangam strokes in the dataset</span>
-<span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">list_strokes</span><span class="p">()</span>
+<span class="n">msc</span><span class="o">.</span><span class="n">list_strokes</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -610,7 +612,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.utils.datasets</span> <span class="kn">import</span> <span class="n">split_mirdata_tracks</span>
 
-<span class="n">train_split</span><span class="p">,</span> <span class="n">evaluation_split</span> <span class="o">=</span> <span class="n">split_mirdata_tracks</span><span class="p">(</span><span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">dataset</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">train_split</span><span class="p">,</span> <span class="n">evaluation_split</span> <span class="o">=</span> <span class="n">split_mirdata_tracks</span><span class="p">(</span><span class="n">msc</span><span class="o">.</span><span class="n">dataset</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 
 <span class="c1"># Let&#39;s print out a random track from the created evaluation split</span>
 <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">evaluation_split</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
@@ -618,12 +620,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;226806&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;227514&#39;,
  Track(
-   audio_path=&quot;../workspace/mridangam_stroke_1.5/C#/226806__akshaylaya__ta-csh-026.wav&quot;,
-   stroke_name=&quot;ta&quot;,
+   audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/C#/227514__akshaylaya__thi-csh-271.wav&quot;,
+   stroke_name=&quot;thi&quot;,
    tonic=&quot;C#&quot;,
-   track_id=&quot;226806&quot;,
+   track_id=&quot;227514&quot;,
    audio: The track&#39;s audio
  
          Returns,
@@ -635,8 +637,8 @@ title="Print to PDF"
 <p>Our class will assume that the entire dataset is used for the training process. We need to update the dataset in the class with the training split.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">mridangam_tracks</span> <span class="o">=</span> <span class="n">train_split</span>
-<span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">mridangam_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">train_split</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msc</span><span class="o">.</span><span class="n">mridangam_tracks</span> <span class="o">=</span> <span class="n">train_split</span>
+<span class="n">msc</span><span class="o">.</span><span class="n">mridangam_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">train_split</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -648,12 +650,12 @@ title="Print to PDF"
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svm_accuracy</span> <span class="o">=</span> <span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">train_model</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svm_accuracy</span> <span class="o">=</span> <span class="n">msc</span><span class="o">.</span><span class="n">train_model</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>The model has been trained. That is good!</strong> We have also got the accuracy returned in case we want to store it, re-train the model again using different settings, and compare.</p>
+<p><strong>The model has been trained!</strong> We have also got the testing accuracy returned in case we want to store it, re-train the model again using different settings, and compare.</p>
 <p>Now we can predict the stroke on a particular list of instances. First, we need to get the list of paths for the <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> dataset split we generated a few steps earlier.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
@@ -661,7 +663,7 @@ title="Print to PDF"
 <span class="n">eval_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">evaluation_split</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">audio_path</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">evaluation_split</span><span class="o">.</span><span class="n">keys</span><span class="p">())]</span>
 
 <span class="c1"># Compute prediction from list of paths</span>
-<span class="n">prediction</span> <span class="o">=</span> <span class="n">mridangam_stroke_classification</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">eval_paths</span><span class="p">)</span>
+<span class="n">prediction</span> <span class="o">=</span> <span class="n">msc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">eval_paths</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -676,11 +678,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;../workspace/mridangam_stroke_1.5/C#/227201__akshaylaya__tha-csh-204.wav&#39;,
- &#39;tha&#39;)
-(&#39;../workspace/mridangam_stroke_1.5/C#/227059__akshaylaya__tha-csh-062.wav&#39;,
- &#39;tha&#39;)
-(&#39;../workspace/mridangam_stroke_1.5/C/225896__akshaylaya__tha-c-091.wav&#39;, &#39;tha&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;../audio/mir_datasets/mridangam_stroke_1.5/B/225250__akshaylaya__thom-b-031.wav&#39;,
+ &#39;thom&#39;)
+(&#39;../audio/mir_datasets/mridangam_stroke_1.5/C#/227486__akshaylaya__thi-csh-243.wav&#39;,
+ &#39;thi&#39;)
+(&#39;../audio/mir_datasets/mridangam_stroke_1.5/B/224867__akshaylaya__thi-b-086.wav&#39;,
+ &#39;thi&#39;)
 </pre></div>
 </div>
 </div>

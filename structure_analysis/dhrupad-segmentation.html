@@ -126,6 +126,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/python.html">
+   Python for audio signal processing
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../introduction/compiam.html">
    compIAM package
   </a>
@@ -516,9 +521,7 @@ title="Print to PDF"
 <span id="dhrupad-segmentation"></span><h1>Dhrupad bandish segmentation<a class="headerlink" href="#dhrupad-bandish-segmentation" title="Permalink to this headline">#</a></h1>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install compiam
-
-<span class="c1">## Importing compiam to the project</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Importing compiam to the project</span>
 <span class="kn">import</span> <span class="nn">compiam</span>
 
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
@@ -531,14 +534,128 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.structure.segmentation</span> <span class="kn">import</span> <span class="n">DhrupadBandishSegmentation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compiam</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">segmentation</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;DhrupadBandishSegmentation*&#39;]
 </pre></div>
 </div>
 </div>
 </div>
+<p>We will go through the dhrupad bandish segmentation model <span id="id1">[<a class="reference internal" href="../resources/references.html#id70" title="Rohit M. A., T. P. Vinutha, and Preeti Rao. Structural segmentation of Dhrupad vocal bandish audio based on tempo. In Proc. of the 21st International Society for Music Information Retrieval Conference (ISMIR), 678–684. Montreal, Canada, 2020. ISMIR. URL: https://doi.org/10.5281/zenodo.4245522, doi:10.5281/zenodo.4245522.">MAVR20</a>]</span>. As seen in the <a class="reference external" href="https://mtg.github.io/compIAM/source/structure.html#dhrupad-bandish-segmentation">documentation</a>, this segmentation model is based on PyTorch. Therefore, we proceed to install <code class="docutils literal notranslate"><span class="pre">torch</span></code>.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install torch==1.8.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>This tool may be accessed from the <code class="docutils literal notranslate"><span class="pre">structure.segmentation</span></code>, however, the tool name has an <code class="docutils literal notranslate"><span class="pre">*</span></code> appended, therefore we can use the wrapper for models to rapidly initialize it with the pre-trained weights loaded.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Get the correct code for the wrapper by running <code class="docutils literal notranslate"><span class="pre">compiam.list_models()</span></code>.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Walkthrough coming soon...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dbs</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;structure:dhrupad-bandish-segmentation&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the documentation we observe that this model includes quite a number of attributes, and particularly we observe two of them that are interesting:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mode</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fold</span></code></p></li>
+</ul>
+<p>These attributes are important because define the training pipeline that has been used and therefore, a different mode of operating with this model. <code class="docutils literal notranslate"><span class="pre">mode</span></code> has options: <em>net</em>, <em>voc</em>, or <em>pakh</em>, which indicate the source for  surface tempo multiple (s.t.m.) estimation. <em>net</em> mode is for input mixture signal, <em>voc</em> is for clean or source-separated singing voice recordings, and <em>pakh</em> for pakhawaj tracks (pakhawaj is a percussion instrument from Northern India). <code class="docutils literal notranslate"><span class="pre">fold</span></code> is basically an integer indicating with validation fold we do consider for training.</p>
+<p>These configuration variables are loaded by default as <code class="docutils literal notranslate"><span class="pre">net</span></code> and <code class="docutils literal notranslate"><span class="pre">0</span></code> respectively, however these may be easily changed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dbs</span><span class="o">.</span><span class="n">update_mode</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;voc&quot;</span><span class="p">)</span>
+<span class="n">dbs</span><span class="o">.</span><span class="n">update_fold</span><span class="p">(</span><span class="n">fold</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dbs</span><span class="o">.</span><span class="n">update_mode</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;voc&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">dbs</span><span class="o">.</span><span class="n">update_fold</span><span class="p">(</span><span class="n">fold</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/structure/segmentation/dhrupad_bandish_segmentation/__init__.py:138,</span> in <span class="ni">DhrupadBandishSegmentation.update_mode</span><span class="nt">(self, mode)</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="bp">self</span><span class="o">.</span><span class="n">classes</span> <span class="o">=</span> <span class="n">pars</span><span class="o">.</span><span class="n">classes_dict</span><span class="p">[</span><span class="n">mode</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="n">path_to_model</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>     <span class="bp">self</span><span class="o">.</span><span class="n">model_path</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">],</span> <span class="s2">&quot;saved_model_fold_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fold</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.pt&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span> <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">138</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="n">path_to_model</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/structure/segmentation/dhrupad_bandish_segmentation/__init__.py:121,</span> in <span class="ni">DhrupadBandishSegmentation.load_model</span><span class="nt">(self, path_to_model)</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path_to_model</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">116</span>     <span class="k">raise</span> <span class="n">ModelNotFoundError</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">117</span><span class="s2">         Given path to model weights not found. Make sure you enter the path correctly.</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span><span class="s2">         We provide the weights in the latest repository version (https://github.com/MTG/compIAM) </span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span><span class="s2">         so make sure you have these available before loading the tool.</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span><span class="s2">     &quot;&quot;&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">121</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path_to_model</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span> <span class="bp">self</span><span class="o">.</span><span class="n">trained</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/nn/modules/module.py:1223,</span> in <span class="ni">Module.load_state_dict</span><span class="nt">(self, state_dict, strict)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1218</span>         <span class="n">error_msgs</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1219</span>             <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Missing key(s) in state_dict: </span><span class="si">{}</span><span class="s1">. &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1220</span>                 <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;&quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">missing_keys</span><span class="p">)))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1222</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">error_msgs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1223</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Error(s) in loading state_dict for </span><span class="si">{}</span><span class="s1">:</span><span class="se">\n\t</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1224</span>                        <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">error_msgs</span><span class="p">)))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1225</span> <span class="k">return</span> <span class="n">_IncompatibleKeys</span><span class="p">(</span><span class="n">missing_keys</span><span class="p">,</span> <span class="n">unexpected_keys</span><span class="p">)</span>
+
+<span class="ne">RuntimeError</span>: Error(s) in loading state_dict for Sequential:
+	<span class="n">size</span> <span class="n">mismatch</span> <span class="k">for</span> <span class="mf">4.</span><span class="n">dense_mod</span><span class="mf">.4</span><span class="o">.</span><span class="n">weight</span><span class="p">:</span> <span class="n">copying</span> <span class="n">a</span> <span class="n">param</span> <span class="k">with</span> <span class="n">shape</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">128</span><span class="p">])</span> <span class="kn">from</span> <span class="nn">checkpoint</span><span class="p">,</span> <span class="n">the</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">current</span> <span class="n">model</span> <span class="ow">is</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">128</span><span class="p">])</span><span class="o">.</span>
+	<span class="n">size</span> <span class="n">mismatch</span> <span class="k">for</span> <span class="mf">4.</span><span class="n">dense_mod</span><span class="mf">.4</span><span class="o">.</span><span class="n">bias</span><span class="p">:</span> <span class="n">copying</span> <span class="n">a</span> <span class="n">param</span> <span class="k">with</span> <span class="n">shape</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">4</span><span class="p">])</span> <span class="kn">from</span> <span class="nn">checkpoint</span><span class="p">,</span> <span class="n">the</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">current</span> <span class="n">model</span> <span class="ow">is</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">5</span><span class="p">])</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>At this moment, the <code class="docutils literal notranslate"><span class="pre">mode</span></code> and <code class="docutils literal notranslate"><span class="pre">fold</span></code> have been updated and consequently, the class has automatically loaded the model weights corresponding to <code class="docutils literal notranslate"><span class="pre">mode=voc</span></code> and <code class="docutils literal notranslate"><span class="pre">fold=1</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Typically in <code class="docutils literal notranslate"><span class="pre">compiam</span></code>, importing a model from the corresponding module or initializing it using the wrapper, can make an important difference on how the loaded instance works. Generally speaking, if you use the wrapper you will probably be only interested in running inference. If your goal is to train or deep-dive into a particular model, you should avoid the use of the model wrapper and start from a clean model instance.</p>
+</div>
+<p>Let’s now run prediction on an input file. Our mode now is <code class="docutils literal notranslate"><span class="pre">voc</span></code>, therefore the model expects a clean or source separated vocal signal. Let’s use a source separated example of “Sharanu Janakana”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dbs</span><span class="o">.</span><span class="n">predict_stm</span><span class="p">(</span><span class="n">path_to_file</span><span class="o">=</span><span class="s2">&quot;../audio/sharanu_janakana.mp3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dbs</span><span class="o">.</span><span class="n">predict_stm</span><span class="p">(</span><span class="n">path_to_file</span><span class="o">=</span><span class="s2">&quot;../audio/sharanu_janakana.mp3&quot;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/structure/segmentation/dhrupad_bandish_segmentation/__init__.py:363,</span> in <span class="ni">DhrupadBandishSegmentation.predict_stm</span><span class="nt">(self, path_to_file, output_dir)</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path_to_file</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input file not found&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_dir</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span>         <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span><span class="sd">         Folder to store output does not exists or it is not specified. Please enter a valid folder</span>
+<span class="g g-Whitespace">    </span><span class="mi">367</span><span class="sd">         to store the outputs.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">368</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">369</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">trained</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/genericpath.py:19,</span> in <span class="ni">exists</span><span class="nt">(path)</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="sd">&quot;&quot;&quot;Test whether a path exists.  Returns False for broken symbolic links&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">19</span>     <span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="k">return</span> <span class="kc">False</span>
+
+<span class="ne">TypeError</span>: stat: path should be string, bytes, os.PathLike or integer, not NoneType
 </pre></div>
 </div>
 </div>
