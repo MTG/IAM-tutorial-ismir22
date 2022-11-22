@@ -4,6 +4,7 @@ parts:
 - caption: Introduction
   chapters:
     - file: introduction/setup
+    - file: introduction/python
     - file: introduction/compiam
 
 - caption: Indian Art Music
