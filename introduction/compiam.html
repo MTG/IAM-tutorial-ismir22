@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Indian Art Music" href="../indian_art_music/iam.html" />
-    <link rel="prev" title="Python for audio signal processing" href="python.html" />
+    <link rel="prev" title="Python for audio processing" href="python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -127,7 +127,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="python.html">
-   Python for audio signal processing
+   Python for audio processing
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -551,30 +551,36 @@ title="Print to PDF"
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#load-dataset">
+        <a class="reference internal nav-link" href="#the-load-dataset-wrapper">
+         The
          <code class="docutils literal notranslate">
           <span class="pre">
            .load_dataset()
           </span>
          </code>
+         wrapper
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#load-corpora">
+        <a class="reference internal nav-link" href="#the-load-corpora-wrapper">
+         The
          <code class="docutils literal notranslate">
           <span class="pre">
            .load_corpora()
           </span>
          </code>
+         wrapper
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#load-model">
+        <a class="reference internal nav-link" href="#the-load-model-wrapper">
+         The
          <code class="docutils literal notranslate">
           <span class="pre">
            .load_model()
           </span>
          </code>
+         wrapper
         </a>
        </li>
       </ul>
@@ -643,30 +649,36 @@ title="Print to PDF"
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#load-dataset">
+        <a class="reference internal nav-link" href="#the-load-dataset-wrapper">
+         The
          <code class="docutils literal notranslate">
           <span class="pre">
            .load_dataset()
           </span>
          </code>
+         wrapper
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#load-corpora">
+        <a class="reference internal nav-link" href="#the-load-corpora-wrapper">
+         The
          <code class="docutils literal notranslate">
           <span class="pre">
            .load_corpora()
           </span>
          </code>
+         wrapper
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#load-model">
+        <a class="reference internal nav-link" href="#the-load-model-wrapper">
+         The
          <code class="docutils literal notranslate">
           <span class="pre">
            .load_model()
           </span>
          </code>
+         wrapper
         </a>
        </li>
       </ul>
@@ -834,7 +846,7 @@ title="Print to PDF"
 <p>Wrappers can be directly imported from <code class="docutils literal notranslate"><span class="pre">compiam</span></code>, and serve as a fast and standardized manner to access the data and pre-trained models in <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>Only the ML/DL-based models with available weights can be loaded using the <code class="docutils literal notranslate"><span class="pre">.load_model()</span></code> wrapper.</strong> The non-trainable tools or the models with no available weights must be imported from their corresponding module.</p>
+<p><strong>Only the ML and DL-based models with available weights can be loaded using the <code class="docutils literal notranslate"><span class="pre">.load_model()</span></code> wrapper.</strong> The non-trainable tools or the models with no available weights must be imported from their corresponding module.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -844,8 +856,8 @@ title="Print to PDF"
 </div>
 </div>
 <p>Let us showcase the nice utility of <code class="docutils literal notranslate"><span class="pre">compiam</span></code> wrappers.</p>
-<section id="load-dataset">
-<h5><code class="docutils literal notranslate"><span class="pre">.load_dataset()</span></code><a class="headerlink" href="#load-dataset" title="Permalink to this headline">#</a></h5>
+<section id="the-load-dataset-wrapper">
+<h5>The <code class="docutils literal notranslate"><span class="pre">.load_dataset()</span></code> wrapper<a class="headerlink" href="#the-load-dataset-wrapper" title="Permalink to this headline">#</a></h5>
 <p>We will start by listing the available datasets through <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -905,8 +917,8 @@ title="Print to PDF"
 <p>To get a more insightful walkthrough of the dataset loaders, please <a class="reference internal" href="../corpora_and_datasets/datasets.html#datasets"><span class="std std-ref">see Datasets</span></a>.</p>
 </div>
 </section>
-<section id="load-corpora">
-<h5><code class="docutils literal notranslate"><span class="pre">.load_corpora()</span></code><a class="headerlink" href="#load-corpora" title="Permalink to this headline">#</a></h5>
+<section id="the-load-corpora-wrapper">
+<h5>The <code class="docutils literal notranslate"><span class="pre">.load_corpora()</span></code> wrapper<a class="headerlink" href="#the-load-corpora-wrapper" title="Permalink to this headline">#</a></h5>
 <p><code class="docutils literal notranslate"><span class="pre">compiam</span></code> provides access to both Carnatic and Hindustani <span id="id1">[<a class="reference internal" href="../resources/references.html#id19" title="Ajay Srinivasamurthy, Gopala Krishna Koduri, Sankalp Gulati, Vignesh Ishwar, and Xavier Serra. Corpora for music information research in Indian art music. In In Proc. of the 40th International Computer Music Conference (ICMC), Athens, Greece., 1029–1036. 2014.">SKG+14</a>]</span> corpora from Dunya. Initialize the access tool to these huge collections of data using the designated wrapper.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## Initializing dataloader for an example dataset</span>
 <span class="n">carnatic_corpora</span> <span class="o">=</span> <span class="n">load_corpora</span><span class="p">(</span><span class="s2">&quot;carnatic&quot;</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="s2">&quot;your-token-goes-here&quot;</span><span class="p">)</span>
@@ -917,8 +929,8 @@ title="Print to PDF"
 <p>A complete walkthrough of the corpora access in this book is not possible because of the explicit need of a unique, personal, and intransferible access token. Please get your token and check the <a class="reference external" href="https://mtg.github.io/compIAM/source/datasets.html#access-the-dunya-corpora">detailed documentation</a> we have put together. Feel free to reach out in case you encouter issues or questions.</p>
 </div>
 </section>
-<section id="load-model">
-<h5><code class="docutils literal notranslate"><span class="pre">.load_model()</span></code><a class="headerlink" href="#load-model" title="Permalink to this headline">#</a></h5>
+<section id="the-load-model-wrapper">
+<h5>The <code class="docutils literal notranslate"><span class="pre">.load_model()</span></code> wrapper<a class="headerlink" href="#the-load-model-wrapper" title="Permalink to this headline">#</a></h5>
 <p>For the case of ML/DL models that are data-driven and therefore trained using particular collections of data, we may use the <code class="docutils literal notranslate"><span class="pre">compiam.load_model()</span></code> wrapper to load the tool as you would do using <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">compiam.&lt;musical-aspect&gt;.&lt;task&gt;</span> <span class="pre">import</span> <span class="pre">&lt;particular-model&gt;</span></code>. However, <strong>loading the model using the wrapper will load by default the pre-trained model given publicly available weights and checkpoints for the integrated implementation</strong>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1018,7 +1030,7 @@ title="Print to PDF"
 <li><p>Fixing bugs.</p></li>
 <li><p>Improving documentation.</p></li>
 </ul>
-<p>Don’t hestitate to [reach out](”<a class="reference external" href="mailto:genis&#46;plaja&#37;&#52;&#48;upf&#46;edu">mailto:genis<span>&#46;</span>plaja<span>&#64;</span>upf<span>&#46;</span>edu</a>, <a class="reference external" href="mailto:thomas&#46;nuttall&#37;&#52;&#48;upf&#46;edu">thomas<span>&#46;</span>nuttall<span>&#64;</span>upf<span>&#46;</span>edu</a>”) or <a class="reference external" href="https://github.com/MTG/compIAM/issues">open an issue in the <code class="docutils literal notranslate"><span class="pre">compaim</span></code> GitHub repository</a> to request for further help or raise questions.</p>
+<p>Don’t hestitate to <a class="reference external" href="mailto:thomas&#46;nuttall&#37;&#52;&#48;upf&#46;edu">reach out</a> or <a class="reference external" href="https://github.com/MTG/compIAM/issues">open an issue in the <code class="docutils literal notranslate"><span class="pre">compaim</span></code> GitHub repository</a> to request for further help or raise questions.</p>
 </section>
 </section>
 
@@ -1053,7 +1065,7 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Python for audio signal processing</p>
+            <p class="prev-next-title">Python for audio processing</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../indian_art_music/iam.html" title="next page">

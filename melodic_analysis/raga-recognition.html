@@ -127,7 +127,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/python.html">
-   Python for audio signal processing
+   Python for audio processing
   </a>
  </li>
  <li class="toctree-l1">
@@ -593,14 +593,16 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize saraga Carnatic on our example audio folder</span>
-<span class="n">saraga_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;saraga_carnatic&quot;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;./../audio/&quot;</span><span class="p">)</span>
+<span class="n">saraga_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span>
+    <span class="s2">&quot;saraga_carnatic&quot;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;./../audio/mir_datasets/&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Please note that for space purposes, we are not loading the entire dataset but just a single recording. However, we can still use the dataset loader, which in this case will properly work as long as we only retrieve the data for this particular recording.</p>
+<p>Please note that to save space, we are not loading the entire dataset but just a single recording. However, we can still use the dataset loader, which in this case will properly work as long as we only retrieve the data for this particular recording.</p>
 </div>
 <p>The recording we have included beforehand for tutoring purposes is <em>Sri Raghuvara Sugunaalaya</em>, performed by Sanjay Subrahmanyan, at Vani Mahal. We will load this track by first parsing its id in the data loader, which is something we do beforehand, and we obtain a dataloder id: <code class="docutils literal notranslate"><span class="pre">109_Sri_Raghuvara_Sugunaalaya</span></code></p>
 <div class="cell docutils container">
@@ -612,52 +614,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">track_data</span> <span class="o">=</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()[</span><span class="s2">&quot;109_Sri_Raghuvara_Sugunaalaya&quot;</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This recording includes raaga:&quot;</span><span class="p">,</span> <span class="n">track_data</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This recordings has unique Dunya ID:&quot;</span><span class="p">,</span> <span class="n">track_data</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;uuid&quot;</span><span class="p">])</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="k">return</span> <span class="bp">self</span>
-<span class="ne">---&gt; </span><span class="mi">46</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">return</span> <span class="n">value</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/datasets/saraga_carnatic.py:163,</span> in <span class="ni">Track.metadata</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">163</span>     <span class="k">return</span> <span class="n">load_metadata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata_path</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/io.py:22,</span> in <span class="ni">coerce_to_string_io.&lt;locals&gt;.wrapper</span><span class="nt">(file_path_or_obj)</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="k">return</span> <span class="kc">None</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">22</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">):</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:177,</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="k">if</span> <span class="n">transport_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="n">transport_params</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="ne">--&gt; </span><span class="mi">177</span> <span class="n">fobj</span> <span class="o">=</span> <span class="n">_shortcut_open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span>     <span class="n">uri</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span>     <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="k">if</span> <span class="n">fobj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="k">return</span> <span class="n">fobj</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:363,</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">360</span> <span class="k">if</span> <span class="n">errors</span> <span class="ow">and</span> <span class="s1">&#39;b&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="n">open_kwargs</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">errors</span>
-<span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">return</span> <span class="n">_builtin_open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./../audio/saraga1.5_carnatic/Live at Vani Mahal by Sanjay Subrahmanyan/Sri Raghuvara Sugunaalaya/Sanjay Subrahmanyan - Sri Raghuvara Sugunaalaya.json&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This recording includes raaga: Bhairavi
+This recordings has unique Dunya ID: 123b09bd-9901-4e64-a65a-10b02c9e0597
 </pre></div>
 </div>
 </div>
@@ -675,10 +633,10 @@ title="Print to PDF"
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">deepsrgm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Oops this code is not runable!</strong> As you may now, DL models tend to occupy an important amount of memory from your computer to run, especially in the training stage. Some light-weight models can be run from a conventional laptop, but in some other cases you might need a machine with enough power to run your models and perform inference.</p>
+<p><strong>Oops! Why is this code not runable?</strong> As you may now, DL models tend to occupy an important amount of memory from your computer to run, especially in the training stage. Some light-weight models can be run from a conventional laptop, but in some other cases you might need a machine with enough power to run your models and perform inference.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>As mentioned in the <span class="xref myst">introduction</span>, Google Collab has GPU and TPU access which may allow you running certain models that are too big for your machine.</p>
+<p>As mentioned in the <a class="reference internal" href="../introduction/setup.html#google-collab"><span class="std std-ref">introduction</span></a>, Google Collab has GPU and TPU access which may allow you running certain models that are too big for your machine.</p>
 </div>
 </section>
 

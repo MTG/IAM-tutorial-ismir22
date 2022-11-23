@@ -127,7 +127,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/python.html">
-   Python for audio signal processing
+   Python for audio processing
   </a>
  </li>
  <li class="toctree-l1">
@@ -578,46 +578,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dbs</span><span class="o">.</span><span class="n">update_mode</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;voc&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">dbs</span><span class="o">.</span><span class="n">update_fold</span><span class="p">(</span><span class="n">fold</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/structure/segmentation/dhrupad_bandish_segmentation/__init__.py:138,</span> in <span class="ni">DhrupadBandishSegmentation.update_mode</span><span class="nt">(self, mode)</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="bp">self</span><span class="o">.</span><span class="n">classes</span> <span class="o">=</span> <span class="n">pars</span><span class="o">.</span><span class="n">classes_dict</span><span class="p">[</span><span class="n">mode</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="n">path_to_model</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span>     <span class="bp">self</span><span class="o">.</span><span class="n">model_path</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">],</span> <span class="s2">&quot;saved_model_fold_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fold</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.pt&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">138</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="n">path_to_model</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/structure/segmentation/dhrupad_bandish_segmentation/__init__.py:121,</span> in <span class="ni">DhrupadBandishSegmentation.load_model</span><span class="nt">(self, path_to_model)</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path_to_model</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span>     <span class="k">raise</span> <span class="n">ModelNotFoundError</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">117</span><span class="s2">         Given path to model weights not found. Make sure you enter the path correctly.</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span><span class="s2">         We provide the weights in the latest repository version (https://github.com/MTG/compIAM) </span>
-<span class="g g-Whitespace">    </span><span class="mi">119</span><span class="s2">         so make sure you have these available before loading the tool.</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span><span class="s2">     &quot;&quot;&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">121</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path_to_model</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span> <span class="bp">self</span><span class="o">.</span><span class="n">trained</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/torch/nn/modules/module.py:1223,</span> in <span class="ni">Module.load_state_dict</span><span class="nt">(self, state_dict, strict)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1218</span>         <span class="n">error_msgs</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1219</span>             <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Missing key(s) in state_dict: </span><span class="si">{}</span><span class="s1">. &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1220</span>                 <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;&quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">missing_keys</span><span class="p">)))</span>
-<span class="g g-Whitespace">   </span><span class="mi">1222</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">error_msgs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1223</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Error(s) in loading state_dict for </span><span class="si">{}</span><span class="s1">:</span><span class="se">\n\t</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1224</span>                        <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">error_msgs</span><span class="p">)))</span>
-<span class="g g-Whitespace">   </span><span class="mi">1225</span> <span class="k">return</span> <span class="n">_IncompatibleKeys</span><span class="p">(</span><span class="n">missing_keys</span><span class="p">,</span> <span class="n">unexpected_keys</span><span class="p">)</span>
-
-<span class="ne">RuntimeError</span>: Error(s) in loading state_dict for Sequential:
-	<span class="n">size</span> <span class="n">mismatch</span> <span class="k">for</span> <span class="mf">4.</span><span class="n">dense_mod</span><span class="mf">.4</span><span class="o">.</span><span class="n">weight</span><span class="p">:</span> <span class="n">copying</span> <span class="n">a</span> <span class="n">param</span> <span class="k">with</span> <span class="n">shape</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">128</span><span class="p">])</span> <span class="kn">from</span> <span class="nn">checkpoint</span><span class="p">,</span> <span class="n">the</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">current</span> <span class="n">model</span> <span class="ow">is</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">128</span><span class="p">])</span><span class="o">.</span>
-	<span class="n">size</span> <span class="n">mismatch</span> <span class="k">for</span> <span class="mf">4.</span><span class="n">dense_mod</span><span class="mf">.4</span><span class="o">.</span><span class="n">bias</span><span class="p">:</span> <span class="n">copying</span> <span class="n">a</span> <span class="n">param</span> <span class="k">with</span> <span class="n">shape</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">4</span><span class="p">])</span> <span class="kn">from</span> <span class="nn">checkpoint</span><span class="p">,</span> <span class="n">the</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">current</span> <span class="n">model</span> <span class="ow">is</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">5</span><span class="p">])</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
 </div>
 <p>At this moment, the <code class="docutils literal notranslate"><span class="pre">mode</span></code> and <code class="docutils literal notranslate"><span class="pre">fold</span></code> have been updated and consequently, the class has automatically loaded the model weights corresponding to <code class="docutils literal notranslate"><span class="pre">mode=voc</span></code> and <code class="docutils literal notranslate"><span class="pre">fold=1</span></code>.</p>
 <div class="admonition note">
@@ -633,29 +593,78 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/librosa/core/audio.py:146,</span> in <span class="ni">load</span><span class="nt">(path, sr, mono, offset, duration, dtype, res_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">145</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">146</span>     <span class="k">with</span> <span class="n">sf</span><span class="o">.</span><span class="n">SoundFile</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">sf_desc</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span>         <span class="n">sr_native</span> <span class="o">=</span> <span class="n">sf_desc</span><span class="o">.</span><span class="n">samplerate</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/soundfile.py:629,</span> in <span class="ni">SoundFile.__init__</span><span class="nt">(self, file, mode, samplerate, channels, subtype, endian, format, closefd)</span>
+<span class="g g-Whitespace">    </span><span class="mi">627</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info</span> <span class="o">=</span> <span class="n">_create_info_struct</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">samplerate</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">628</span>                                  <span class="nb">format</span><span class="p">,</span> <span class="n">subtype</span><span class="p">,</span> <span class="n">endian</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">629</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">mode_int</span><span class="p">,</span> <span class="n">closefd</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">630</span> <span class="k">if</span> <span class="nb">set</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">seekable</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span>     <span class="c1"># Move write position to 0 (like in Python file objects)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/soundfile.py:1183,</span> in <span class="ni">SoundFile._open</span><span class="nt">(self, file, mode_int, closefd)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1182</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Invalid file: </span><span class="si">{0!r}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+<span class="ne">-&gt; </span><span class="mi">1183</span> <span class="n">_error_check</span><span class="p">(</span><span class="n">_snd</span><span class="o">.</span><span class="n">sf_error</span><span class="p">(</span><span class="n">file_ptr</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1184</span>              <span class="s2">&quot;Error opening </span><span class="si">{0!r}</span><span class="s2">: &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1185</span> <span class="k">if</span> <span class="n">mode_int</span> <span class="o">==</span> <span class="n">_snd</span><span class="o">.</span><span class="n">SFM_WRITE</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1186</span>     <span class="c1"># Due to a bug in libsndfile version &lt;= 1.0.25, frames != 0</span>
+<span class="g g-Whitespace">   </span><span class="mi">1187</span>     <span class="c1"># when opening a named pipe in SFM_WRITE mode.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1188</span>     <span class="c1"># See http://github.com/erikd/libsndfile/issues/77.</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/soundfile.py:1357,</span> in <span class="ni">_error_check</span><span class="nt">(err, prefix)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1356</span> <span class="n">err_str</span> <span class="o">=</span> <span class="n">_snd</span><span class="o">.</span><span class="n">sf_error_number</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1357</span> <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">prefix</span> <span class="o">+</span> <span class="n">_ffi</span><span class="o">.</span><span class="n">string</span><span class="p">(</span><span class="n">err_str</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="s1">&#39;replace&#39;</span><span class="p">))</span>
+
+<span class="ne">RuntimeError</span>: Error opening &#39;../audio/sharanu_janakana.mp3&#39;: Format not recognised.
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">NoBackendError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dbs</span><span class="o">.</span><span class="n">predict_stm</span><span class="p">(</span><span class="n">path_to_file</span><span class="o">=</span><span class="s2">&quot;../audio/sharanu_janakana.mp3&quot;</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/structure/segmentation/dhrupad_bandish_segmentation/__init__.py:363,</span> in <span class="ni">DhrupadBandishSegmentation.predict_stm</span><span class="nt">(self, path_to_file, output_dir)</span>
-<span class="g g-Whitespace">    </span><span class="mi">361</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path_to_file</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">362</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input file not found&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_dir</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">365</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span><span class="sd">         Folder to store output does not exists or it is not specified. Please enter a valid folder</span>
-<span class="g g-Whitespace">    </span><span class="mi">367</span><span class="sd">         to store the outputs.&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">368</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">369</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">trained</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/structure/segmentation/dhrupad_bandish_segmentation/__init__.py:416,</span> in <span class="ni">DhrupadBandishSegmentation.predict_stm</span><span class="nt">(self, path_to_file, output_dir)</span>
+<span class="g g-Whitespace">    </span><span class="mi">410</span>     <span class="k">raise</span> <span class="n">ModelNotTrainedError</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">411</span><span class="s2">         Model is not trained. Please load model before running inference!</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span><span class="s2">         You can load the pre-trained instance with the load_model wrapper.</span>
+<span class="g g-Whitespace">    </span><span class="mi">413</span><span class="s2">     &quot;&quot;&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">415</span> <span class="c1"># load input audio</span>
+<span class="ne">--&gt; </span><span class="mi">416</span> <span class="n">audio</span><span class="p">,</span> <span class="n">fs</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path_to_file</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">418</span> <span class="c1"># convert to mel-spectrogram</span>
+<span class="g g-Whitespace">    </span><span class="mi">419</span> <span class="n">melgram</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">melspectrogram</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">420</span>     <span class="n">audio</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">421</span>     <span class="n">sr</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">427</span>     <span class="n">fmax</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span> <span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/genericpath.py:19,</span> in <span class="ni">exists</span><span class="nt">(path)</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="sd">&quot;&quot;&quot;Test whether a path exists.  Returns False for broken symbolic links&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">19</span>     <span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="k">return</span> <span class="kc">False</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/librosa/core/audio.py:163,</span> in <span class="ni">load</span><span class="nt">(path, sr, mono, offset, duration, dtype, res_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">PurePath</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;PySoundFile failed. Trying audioread instead.&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">163</span>     <span class="n">y</span><span class="p">,</span> <span class="n">sr_native</span> <span class="o">=</span> <span class="n">__audioread_load</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">duration</span><span class="p">,</span> <span class="n">dtype</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span>     <span class="k">raise</span> <span class="p">(</span><span class="n">exc</span><span class="p">)</span>
 
-<span class="ne">TypeError</span>: stat: path should be string, bytes, os.PathLike or integer, not NoneType
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/librosa/core/audio.py:187,</span> in <span class="ni">__audioread_load</span><span class="nt">(path, offset, duration, dtype)</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span> <span class="sd">&quot;&quot;&quot;Load an audio buffer using audioread.</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span><span class="sd"> This loads one block at a time, and then concatenates the results.</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">--&gt; </span><span class="mi">187</span> <span class="k">with</span> <span class="n">audioread</span><span class="o">.</span><span class="n">audio_open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span>     <span class="n">sr_native</span> <span class="o">=</span> <span class="n">input_file</span><span class="o">.</span><span class="n">samplerate</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span>     <span class="n">n_channels</span> <span class="o">=</span> <span class="n">input_file</span><span class="o">.</span><span class="n">channels</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/audioread/__init__.py:132,</span> in <span class="ni">audio_open</span><span class="nt">(path, backends)</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span>         <span class="k">pass</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span> <span class="c1"># All backends failed!</span>
+<span class="ne">--&gt; </span><span class="mi">132</span> <span class="k">raise</span> <span class="n">NoBackendError</span><span class="p">()</span>
+
+<span class="ne">NoBackendError</span>: 
 </pre></div>
 </div>
 </div>
