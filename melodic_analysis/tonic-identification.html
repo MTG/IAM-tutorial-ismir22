@@ -209,25 +209,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../rhythmic_analysis/akshara-pulse-tracker.html">
-   Akshara pulse tracker
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../rhythmic_analysis/percussion-transcription.html">
    Percussion transcription
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Structure Analysis
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../structure_analysis/dhrupad-segmentation.html">
-   Dhrupad bandish segmentation
   </a>
  </li>
 </ul>
@@ -627,6 +610,12 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Updating value for a particular parameter</span>
 <span class="n">tonic_multipitch</span><span class="o">.</span><span class="n">minTonicFrequency</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="n">tonic_multipitch</span><span class="o">.</span><span class="n">minTonicFrequency</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>80
 </pre></div>
 </div>
 </div>
@@ -664,7 +653,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Unfortunately, the audio tracks for the Indian Art Music Tonic dataset are not openly available but only shared under explicit request. <strong>However that is not a problem!</strong> The workflow to get the entire dataset would look like that:</p>
+<p>Unfortunately, the audio tracks for the Indian Art Music Tonic dataset are not openly available but only shared under explicit request. <strong>However that is not a problem!</strong> The workflow to get the entire dataset would look as simple as that:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tonic_dataset</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;compmusic_indian_tonic&quot;</span><span class="p">)</span>
 <span class="n">tonic_dataset</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
 <span class="c1">### Request audio in https://zenodo.org/record/7342372</span>
@@ -673,7 +662,7 @@ title="Print to PDF"
 <span class="c1">### You are ready to go!</span>
 </pre></div>
 </div>
-<p>Otherwise, if available, you may get the audios from the Dunya database. Accessing the data in Dunya requires you to have a unique and non-shareable access token. For that reason, we cannot provide an interactive walkthrough of how to parse audio examples from Dunya.</p>
+<p>Otherwise, if available, you may get the audios from the Dunya database. Accessing the data in Dunya requires you to have a unique and non-shareable access token. For that reason, we cannot provide here interactive walkthrough of how to parse audio examples from Dunya.</p>
 <p><strong>Not a problem though!</strong> We list here an example code block that may be run to parse audio from Dunya, and we provide, within the tutorial materials, a couple of audio excerpts to show you through the available tools.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -692,7 +681,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We observe that the tracks in the Indian Art Music Tonic dataloader have a <code class="docutils literal notranslate"><span class="pre">mbid</span></code> attribute. Having a MusicBrainz ID at hand, we could a code snippet, as the example below, to get the audio from the Dunya database.</p>
+<p>We observe that the tracks in the Indian Art Music Tonic dataloader have a <code class="docutils literal notranslate"><span class="pre">mbid</span></code> attribute. Having a MusicBrainz ID at hand, we can run a code snippet, as the example below, to get the audio from the Dunya database.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">compiam</span>
 <span class="n">carnatic_corpora</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_corpora</span><span class="p">(</span><span class="s2">&quot;carnatic&quot;</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="s2">&quot;&lt;your-token&gt;&quot;</span><span class="p">)</span>
 
