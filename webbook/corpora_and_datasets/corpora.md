@@ -48,7 +48,7 @@ carnatic_corpora = load_corpora("carnatic", cc=True, token="your-token-goes-here
 ```
 
 ```{note}
-Carnatic and Hindustani corpora are both divided in two parts, one part licensed under Creative Commons 4.0 which can be openly shared for research purposes, while the other part is restricted and is only shared under an explicit research-related request. You can request access to the non-CC part of the corpora through the Dunya website. If granted, your access token will allow you to access these data. Set the cc parameter to False in ``compiam.load_corpora()`` to load these collection.
+Carnatic and Hindustani corpora are both divided in two parts, one part licensed under Creative Commons 4.0 which can be openly shared for research purposes, while the other part is restricted and is only shared under an explicit research-related request. You can request access to the non-CC part of the corpora through the Dunya website. If granted, your access token will allow you to access these data. Set the ``cc`` input parameter to False in ``compiam.load_corpora()`` to load these collection.
 ```
 
 ### Browsing the corpora using the API
