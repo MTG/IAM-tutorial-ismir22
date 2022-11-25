@@ -9,6 +9,6 @@ Jinja2==3.1.2
 # mirdata
 
 ### Optional dependencies
-# tensorflow==2.5.0
+# tensorflow==2.9.3
 # torch==1.8.0
 # essentia
