@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Discussion" href="../wrapping_up/discussion.html" />
-    <link rel="prev" title="Percussion transcription" href="../rhythmic_analysis/percussion-transcription.html" />
+    <link rel="prev" title="Music segmentation" href="../structure_analysis/music-segmentation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -209,8 +209,25 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../rhythmic_analysis/meter_analysis.html">
+   Meter analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../rhythmic_analysis/percussion-transcription.html">
    Percussion transcription
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Structure Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../structure_analysis/music-segmentation.html">
+   Music segmentation
   </a>
  </li>
 </ul>
@@ -539,7 +556,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="stroke-classification">
 <span id="id1"></span><h1>Stroke classification<a class="headerlink" href="#stroke-classification" title="Permalink to this headline">#</a></h1>
-<p>The task of percussion stroke classification has been, historically, the principal target on the timbre-side of computational analysis of Indian Art Music. As seen in the <a class="reference internal" href="../indian_art_music/carnatic-music.html#instrumentation"><span class="std std-ref">instrumentation presentation</span></a>, the musical arrangement in Indian Art Music is quite well-defined, while there is an important scarcity of good-quality data (specially monphonic recordings) for many of the Carnatic and Hindustani specific instruments. These factors combined with the importance of the different stroke types in the main percussion instruments, have given research importance on mridangam<span id="id2">[<a class="reference internal" href="../resources/references.html#id25" title="A. Anantapadmanabhan, J. P. Bello, R. Krishnan, and H. Murthy. Tonic-Independent Stroke Transcription of the Mridangam. In AES 53rd International Conference: Semantic Audio, London, UK. 2014.">ABKM14</a>, <a class="reference internal" href="../resources/references.html#id71" title="A. Anantapadmanabhan, A. Bellur, and H. A. Murthy. Modal analysis and transcription of strokes of the mridangam using non-negative matrix factorization. IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), Vancouver, Canada, pages 313–318, 2013.">ABM13</a>]</span> and tabla stroke classification<span id="id3">[<a class="reference internal" href="../resources/references.html#id27" title="M.A. Rohit, Amitrajit Bhattacharjee, and Preeti Rao. Four-way classification of tabla strokes with models adapted from automatic drum transcription. In In Proc. of the 22nd International Society for Music Information Retrieval Conference, ISMIR, Online, 19–26. 2021.">RBR21</a>]</span>.</p>
+<p>The task of percussion stroke classification has been, historically, the principal target on the timbre-side of computational analysis of Indian Art Music. As seen in the <a class="reference internal" href="../indian_art_music/carnatic-music.html#instrumentation"><span class="std std-ref">instrumentation presentation</span></a>, the musical arrangement in Indian Art Music is quite well-defined, while there is an important scarcity of good-quality data (specially monphonic recordings) for many of the Carnatic and Hindustani specific instruments. These factors combined with the importance of the different stroke types in the main percussion instruments, have given research importance on mridangam <span id="id2">[<a class="reference internal" href="../resources/references.html#id25" title="A. Anantapadmanabhan, J. P. Bello, R. Krishnan, and H. Murthy. Tonic-Independent Stroke Transcription of the Mridangam. In AES 53rd International Conference: Semantic Audio, London, UK. 2014.">ABKM14</a>, <a class="reference internal" href="../resources/references.html#id71" title="A. Anantapadmanabhan, A. Bellur, and H. A. Murthy. Modal analysis and transcription of strokes of the mridangam using non-negative matrix factorization. IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), Vancouver, Canada, pages 313–318, 2013.">ABM13</a>]</span> and tabla stroke classification <span id="id3">[<a class="reference internal" href="../resources/references.html#id27" title="M.A. Rohit, Amitrajit Bhattacharjee, and Preeti Rao. Four-way classification of tabla strokes with models adapted from automatic drum transcription. In In Proc. of the 22nd International Society for Music Information Retrieval Conference, ISMIR, Online, 19–26. 2021.">RBR21</a>]</span>.</p>
 <p>We will go through examples of these tasks in this walkthrough.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
@@ -547,6 +564,7 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">compiam</span>
 
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
+<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
@@ -590,12 +608,19 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Let’s train and evaluate a very basic model to perform classification of mridangam strokes. We first use a util function in <code class="docutils literal notranslate"><span class="pre">compiam</span></code> to separate a part of the mridangam dataset, which we will use for evaluation.</p>
+<p>Let’s train and evaluate a very basic model to perform classification of mridangam strokes. We first use a util function in the <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> Dataset class to separate the Mridangam Stroke Dataset in paticular splits. We will use <a class="reference external" href="https://mirdata.readthedocs.io/en/latest/source/mirdata.html#mirdata.core.Dataset.get_random_track_splits"><code class="docutils literal notranslate"><span class="pre">get_random_track_splits</span></code></a>, since this dataset does not have pre-determined splits, and we will create these randomly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.utils.datasets</span> <span class="kn">import</span> <span class="n">split_mirdata_tracks</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loading tracks for the mirdangam dataset</span>
+<span class="n">mridangam_tracks</span> <span class="o">=</span> <span class="n">msc</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()</span>
 
-<span class="n">train_split</span><span class="p">,</span> <span class="n">evaluation_split</span> <span class="o">=</span> <span class="n">split_mirdata_tracks</span><span class="p">(</span><span class="n">msc</span><span class="o">.</span><span class="n">dataset</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="c1"># Getting list of id per split</span>
+<span class="c1"># NOTE: We use (0.9, 0.1): two splits, including 90% and 10% of the tracks respectively</span>
+<span class="n">train_list</span><span class="p">,</span> <span class="n">evaluation_list</span> <span class="o">=</span> <span class="n">msc</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_random_track_splits</span><span class="p">(</span><span class="n">splits</span><span class="o">=</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
+
+<span class="c1"># Get track dictionaries given the created splits</span>
+<span class="n">train_split</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">mridangam_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">train_list</span><span class="p">}</span>
+<span class="n">evaluation_split</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">mridangam_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">evaluation_list</span><span class="p">}</span>
 
 <span class="c1"># Let&#39;s print out a random track from the created evaluation split</span>
 <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">evaluation_split</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
@@ -603,16 +628,16 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;230564&#39;,
- Track(
-   audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/E/230564__akshaylaya__tha-e-017.wav&quot;,
-   stroke_name=&quot;tha&quot;,
-   tonic=&quot;E&quot;,
-   track_id=&quot;230564&quot;,
-   audio: The track&#39;s audio
- 
-         Returns,
- ))
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">train_list</span><span class="p">,</span> <span class="n">evaluation_list</span> <span class="o">=</span> <span class="n">msc</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_random_track_splits</span><span class="p">(</span><span class="n">splits</span><span class="o">=</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Get track dictionaries given the created splits</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">train_split</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">mridangam_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">train_list</span><span class="p">}</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">evaluation_split</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">mridangam_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">evaluation_list</span><span class="p">}</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># Let&#39;s print out a random track from the created evaluation split</span>
+
+<span class="ne">TypeError</span>: &#39;numpy.int64&#39; object is not iterable
 </pre></div>
 </div>
 </div>
@@ -622,6 +647,17 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msc</span><span class="o">.</span><span class="n">mridangam_tracks</span> <span class="o">=</span> <span class="n">train_split</span>
 <span class="n">msc</span><span class="o">.</span><span class="n">mridangam_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">train_split</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">msc</span><span class="o">.</span><span class="n">mridangam_tracks</span> <span class="o">=</span> <span class="n">train_split</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">msc</span><span class="o">.</span><span class="n">mridangam_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">train_split</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="ne">NameError</span>: name &#39;train_split&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -661,12 +697,67 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;../audio/mir_datasets/mridangam_stroke_1.5/B/224062__akshaylaya__cha-b-028.wav&#39;,
- &#39;cha&#39;)
-(&#39;../audio/mir_datasets/mridangam_stroke_1.5/C/226054__akshaylaya__tham-c-063.wav&#39;,
- &#39;tham&#39;)
-(&#39;../audio/mir_datasets/mridangam_stroke_1.5/C#/227199__akshaylaya__tha-csh-202.wav&#39;,
- &#39;tha&#39;)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Visualise and evaluate some predictions from the model output</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">pprint</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">())))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pprint</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">())))</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">pprint</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">())))</span>
+
+<span class="ne">NameError</span>: name &#39;prediction&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the file paths of this validation files we can already see the actual stroke that is present in the recording, so we can evaluate how good our model classified the mridangam strokes. Otherwise, we can also get the actual tonic using the <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> loader and a particular track ID.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msc</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Track(
+  audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/D/228076__akshaylaya__tha-d-101.wav&quot;,
+  stroke_name=&quot;tha&quot;,
+  tonic=&quot;D&quot;,
+  track_id=&quot;228076&quot;,
+  audio: The track&#39;s audio
+
+        Returns,
+)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We note that the ID has been directly taken from the file name of the stroke recordings. Let’s use that to compare, for a random prediction, the predicted and ground-truth stroke annotations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predicted_file</span><span class="p">,</span> <span class="n">predicted_stroke</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+
+<span class="c1"># Getting the ID from filepath</span>
+<span class="n">identifier</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">predicted_file</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Comparing target and estimation</span>
+<span class="k">if</span> <span class="n">evaluation_split</span><span class="p">[</span><span class="n">identifier</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span> <span class="o">==</span> <span class="n">predicted_file</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nice! Predicted stroke </span><span class="si">{}</span><span class="s2"> coincides with ground-truth </span><span class="si">{}</span><span class="s2">&quot;</span>\
+        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predicted_file</span><span class="p">,</span> <span class="n">evaluation_split</span><span class="p">[</span><span class="n">identifier</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Missed! Predicted stroke </span><span class="si">{}</span><span class="s2"> does NOT coincide with ground-truth </span><span class="si">{}</span><span class="s2">&quot;</span>\
+        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predicted_file</span><span class="p">,</span> <span class="n">evaluation_split</span><span class="p">[</span><span class="n">identifier</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">predicted_file</span><span class="p">,</span> <span class="n">predicted_stroke</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Getting the ID from filepath</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">identifier</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">predicted_file</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;prediction&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -701,11 +792,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../rhythmic_analysis/percussion-transcription.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../structure_analysis/music-segmentation.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Percussion transcription</p>
+            <p class="prev-next-title">Music segmentation</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../wrapping_up/discussion.html" title="next page">

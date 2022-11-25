@@ -209,8 +209,25 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../rhythmic_analysis/meter_analysis.html">
+   Meter analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../rhythmic_analysis/percussion-transcription.html">
    Percussion transcription
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Structure Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../structure_analysis/music-segmentation.html">
+   Music segmentation
   </a>
  </li>
 </ul>
@@ -624,31 +641,9 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loading Tonic dataset using the mirdata loader</span>
-<span class="n">tonic_dataset</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;compmusic_indian_tonic&quot;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;./audio/mir_datasets/&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Loading Tonic dataset using the mirdata loader</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tonic_dataset</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;compmusic_indian_tonic&quot;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;./audio/mir_datasets/&quot;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/__init__.py:43,</span> in <span class="ni">load_dataset</span><span class="nt">(dataset_name, data_home, version)</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="sd">&quot;&quot;&quot;Alias function to load a mirdata Dataset class.</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="sd"> :param dataset_name: the dataset&#39;s name, see mirdata.DATASETS for a</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span><span class="sd"> :returns: a mirdata.core.Dataset object.</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span> <span class="k">if</span> <span class="n">dataset_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">datasets_list</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">43</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid dataset </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">return</span> <span class="n">mirdata</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="n">dataset_name</span><span class="o">=</span><span class="n">dataset_name</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="n">data_home</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">version</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="p">)</span>
-
-<span class="ne">ValueError</span>: Invalid dataset compmusic_indian_tonic
+<span class="n">tonic_dataset</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span>
+    <span class="s2">&quot;compmusic_indian_tonic&quot;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;./audio/mir_datasets/&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -671,12 +666,33 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tonic_dataset</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The compmusic_indian_tonic dataset
+----------------------------------------------------------------------------------------------------
 
-<span class="ne">NameError</span>: name &#39;tonic_dataset&#39; is not defined
+
+Call the .cite method for bibtex citations.
+----------------------------------------------------------------------------------------------------
+
+
+CompMusic Tonic Dataset track class
+
+    Args:
+        track_id (str): track id of the track
+        data_home (str): Local path where the dataset is stored.
+
+    Attributes:
+        track_id (str): track id
+        audio_path (str): audio path
+
+    Cached Properties:
+        tonic (float): tonic annotation
+        artist (str): performing artist
+        gender (str): gender of the recording artists
+        mbid (str): MusicBrainz ID of the piece (if available)
+        type (str): type of piece (vocal, instrumental, etc.)
+        tradition (str): tradition of the piece (Carnatic or Hindustani)
+
+    ----------------------------------------------------------------------------------------------------
 </pre></div>
 </div>
 </div>
@@ -718,14 +734,19 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tonic_tracks</span> <span class="o">=</span> <span class="n">tonic_dataset</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">track_1</span> <span class="o">=</span> <span class="n">tonic_tracks</span><span class="p">[</span><span class="s2">&quot;0a6ebaa4-87cc-452d-a7af-a2006e96f16a_0-180&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">track_2</span> <span class="o">=</span> <span class="n">tonic_tracks</span><span class="p">[</span><span class="s2">&quot;01-varnam-nayaki&quot;</span><span class="p">]</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Track(
+  audio_path=&quot;...udio/mir_datasets/indian_art_music_tonic_1.0/CM/audio/0a6ebaa4-87cc-452d-a7af-a2006e96f16a_0-180.mp3&quot;,
+  track_id=&quot;0a6ebaa4-87cc-452d-a7af-a2006e96f16a_0-180&quot;,
+  artist: ,
+  audio: The track&#39;s audio
 
-<span class="ne">NameError</span>: name &#39;tonic_dataset&#39; is not defined
+        Returns,
+  gender: ,
+  mbid: ,
+  tonic: ,
+  tradition: ,
+  type: ,
+)
 </pre></div>
 </div>
 </div>
@@ -741,13 +762,35 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mbid:&quot;</span><span class="p">,</span> <span class="n">track_1</span><span class="o">.</span><span class="n">mbid</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tonic:&quot;</span><span class="p">,</span> <span class="n">track_1</span><span class="o">.</span><span class="n">tonic</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Artist:&quot;</span><span class="p">,</span> <span class="n">track_1</span><span class="o">.</span><span class="n">artist</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;track_1&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="k">return</span> <span class="bp">self</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">return</span> <span class="n">value</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/datasets/compmusic_indian_tonic.py:164,</span> in <span class="ni">Track.mbid</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span> <span class="k">def</span> <span class="nf">mbid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">164</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_track_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mbid&quot;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="k">return</span> <span class="bp">self</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">return</span> <span class="n">value</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/core.py:547,</span> in <span class="ni">Track._track_metadata</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">545</span> <span class="k">elif</span> <span class="n">metadata</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">546</span>     <span class="k">return</span> <span class="n">metadata</span>
+<span class="ne">--&gt; </span><span class="mi">547</span> <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;This Track does not have metadata.&quot;</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: This Track does not have metadata.
 </pre></div>
 </div>
 </div>
@@ -763,12 +806,93 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/librosa/core/audio.py:146,</span> in <span class="ni">load</span><span class="nt">(path, sr, mono, offset, duration, dtype, res_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">145</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">146</span>     <span class="k">with</span> <span class="n">sf</span><span class="o">.</span><span class="n">SoundFile</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">sf_desc</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span>         <span class="n">sr_native</span> <span class="o">=</span> <span class="n">sf_desc</span><span class="o">.</span><span class="n">samplerate</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/soundfile.py:629,</span> in <span class="ni">SoundFile.__init__</span><span class="nt">(self, file, mode, samplerate, channels, subtype, endian, format, closefd)</span>
+<span class="g g-Whitespace">    </span><span class="mi">627</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info</span> <span class="o">=</span> <span class="n">_create_info_struct</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">samplerate</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">628</span>                                  <span class="nb">format</span><span class="p">,</span> <span class="n">subtype</span><span class="p">,</span> <span class="n">endian</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">629</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">mode_int</span><span class="p">,</span> <span class="n">closefd</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">630</span> <span class="k">if</span> <span class="nb">set</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">seekable</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span>     <span class="c1"># Move write position to 0 (like in Python file objects)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/soundfile.py:1183,</span> in <span class="ni">SoundFile._open</span><span class="nt">(self, file, mode_int, closefd)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1182</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Invalid file: </span><span class="si">{0!r}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+<span class="ne">-&gt; </span><span class="mi">1183</span> <span class="n">_error_check</span><span class="p">(</span><span class="n">_snd</span><span class="o">.</span><span class="n">sf_error</span><span class="p">(</span><span class="n">file_ptr</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1184</span>              <span class="s2">&quot;Error opening </span><span class="si">{0!r}</span><span class="s2">: &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1185</span> <span class="k">if</span> <span class="n">mode_int</span> <span class="o">==</span> <span class="n">_snd</span><span class="o">.</span><span class="n">SFM_WRITE</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1186</span>     <span class="c1"># Due to a bug in libsndfile version &lt;= 1.0.25, frames != 0</span>
+<span class="g g-Whitespace">   </span><span class="mi">1187</span>     <span class="c1"># when opening a named pipe in SFM_WRITE mode.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1188</span>     <span class="c1"># See http://github.com/erikd/libsndfile/issues/77.</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/soundfile.py:1357,</span> in <span class="ni">_error_check</span><span class="nt">(err, prefix)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1356</span> <span class="n">err_str</span> <span class="o">=</span> <span class="n">_snd</span><span class="o">.</span><span class="n">sf_error_number</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1357</span> <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">prefix</span> <span class="o">+</span> <span class="n">_ffi</span><span class="o">.</span><span class="n">string</span><span class="p">(</span><span class="n">err_str</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="s1">&#39;replace&#39;</span><span class="p">))</span>
+
+<span class="ne">RuntimeError</span>: Error opening &#39;./audio/mir_datasets/indian_art_music_tonic_1.0/CM/audio/0a6ebaa4-87cc-452d-a7af-a2006e96f16a_0-180.mp3&#39;: System error.
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">IPython.display</span> <span class="k">as</span> <span class="nn">ipd</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">track_1</span><span class="o">.</span><span class="n">audio</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Returns tuple (audio, sr)!</span>
 
-<span class="ne">NameError</span>: name &#39;track_1&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/datasets/compmusic_indian_tonic.py:148,</span> in <span class="ni">Track.audio</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span> <span class="nd">@property</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span> <span class="k">def</span> <span class="nf">audio</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span>     <span class="sd">&quot;&quot;&quot;The track&#39;s audio</span>
+<span class="g g-Whitespace">    </span><span class="mi">142</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span><span class="sd">     Returns:</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">146</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">148</span>     <span class="k">return</span> <span class="n">load_audio</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/datasets/compmusic_indian_tonic.py:198,</span> in <span class="ni">load_audio</span><span class="nt">(audio_path)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span> <span class="k">def</span> <span class="nf">load_audio</span><span class="p">(</span><span class="n">audio_path</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span>     <span class="sd">&quot;&quot;&quot;Load a Indian Art Music Tonic audio file.</span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span><span class="sd">     Args:</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span><span class="sd">         * float - The sample rate of the audio file</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">198</span>     <span class="k">return</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">audio_path</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="mi">44100</span><span class="p">,</span> <span class="n">mono</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/librosa/core/audio.py:163,</span> in <span class="ni">load</span><span class="nt">(path, sr, mono, offset, duration, dtype, res_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">PurePath</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;PySoundFile failed. Trying audioread instead.&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">163</span>     <span class="n">y</span><span class="p">,</span> <span class="n">sr_native</span> <span class="o">=</span> <span class="n">__audioread_load</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">duration</span><span class="p">,</span> <span class="n">dtype</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span>     <span class="k">raise</span> <span class="p">(</span><span class="n">exc</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/librosa/core/audio.py:187,</span> in <span class="ni">__audioread_load</span><span class="nt">(path, offset, duration, dtype)</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span> <span class="sd">&quot;&quot;&quot;Load an audio buffer using audioread.</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span><span class="sd"> This loads one block at a time, and then concatenates the results.</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">--&gt; </span><span class="mi">187</span> <span class="k">with</span> <span class="n">audioread</span><span class="o">.</span><span class="n">audio_open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span>     <span class="n">sr_native</span> <span class="o">=</span> <span class="n">input_file</span><span class="o">.</span><span class="n">samplerate</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span>     <span class="n">n_channels</span> <span class="o">=</span> <span class="n">input_file</span><span class="o">.</span><span class="n">channels</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/audioread/__init__.py:127,</span> in <span class="ni">audio_open</span><span class="nt">(path, backends)</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span> <span class="k">for</span> <span class="n">BackendClass</span> <span class="ow">in</span> <span class="n">backends</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">127</span>         <span class="k">return</span> <span class="n">BackendClass</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="k">except</span> <span class="n">DecodeError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span>         <span class="k">pass</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/audioread/rawread.py:59,</span> in <span class="ni">RawAudioFile.__init__</span><span class="nt">(self, filename)</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">59</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span>     <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="n">aifc</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fh</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./audio/mir_datasets/indian_art_music_tonic_1.0/CM/audio/0a6ebaa4-87cc-452d-a7af-a2006e96f16a_0-180.mp3&#39;
 </pre></div>
 </div>
 </div>
@@ -783,12 +907,28 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tonic_1</span> <span class="o">=</span> <span class="n">tonic_multipitch</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">track_1</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">tonic_2</span> <span class="o">=</span> <span class="n">tonic_multipitch</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">track_2</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;track_1&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/tonic_identification/tonic_multipitch.py:55,</span> in <span class="ni">TonicIndianMultiPitch.extract</span><span class="nt">(self, path_to_audio)</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span> <span class="sd">&quot;&quot;&quot;Extract the tonic from a given file.</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span><span class="sd"> :param filename: path to file to extract.</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span><span class="sd"> :returns: a floating point number representing the tonic of the input recording.</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path_to_audio</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">55</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Target audio not found.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="n">audio</span> <span class="o">=</span> <span class="n">estd</span><span class="o">.</span><span class="n">MonoLoader</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">path_to_audio</span><span class="p">)()</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="n">extractor</span> <span class="o">=</span> <span class="n">estd</span><span class="o">.</span><span class="n">TonicIndianArtMusic</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span>     <span class="n">binResolution</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">binResolution</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span>     <span class="n">frameSize</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">frameSize</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span>     <span class="n">sampleRate</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">sampleRate</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="p">)</span>
+
+<span class="ne">ValueError</span>: Target audio not found.
 </pre></div>
 </div>
 </div>
@@ -802,14 +942,39 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Track id: 0a6ebaa4-87cc-452d-a7af-a2006e96f16a_0-180
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Track id:&quot;</span><span class="p">,</span> <span class="n">track_1</span><span class="o">.</span><span class="n">track_id</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Annotated tonic:&quot;</span><span class="p">,</span> <span class="n">track_1</span><span class="o">.</span><span class="n">tonic</span><span class="p">)</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Track id:&quot;</span><span class="p">,</span> <span class="n">track_1</span><span class="o">.</span><span class="n">track_id</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Annotated tonic:&quot;</span><span class="p">,</span> <span class="n">track_1</span><span class="o">.</span><span class="n">tonic</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Extracted tonic:&quot;</span><span class="p">,</span> <span class="n">tonic_1</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;track_1&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="k">return</span> <span class="bp">self</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">return</span> <span class="n">value</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/datasets/compmusic_indian_tonic.py:152,</span> in <span class="ni">Track.tonic</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span> <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">def</span> <span class="nf">tonic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">152</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_track_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;tonic&quot;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="k">return</span> <span class="bp">self</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">return</span> <span class="n">value</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/core.py:547,</span> in <span class="ni">Track._track_metadata</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">545</span> <span class="k">elif</span> <span class="n">metadata</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">546</span>     <span class="k">return</span> <span class="n">metadata</span>
+<span class="ne">--&gt; </span><span class="mi">547</span> <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;This Track does not have metadata.&quot;</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: This Track does not have metadata.
 </pre></div>
 </div>
 </div>
@@ -830,14 +995,40 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Track id: 01-varnam-nayaki
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Track id:&quot;</span><span class="p">,</span> <span class="n">track_2</span><span class="o">.</span><span class="n">track_id</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Annotated tonic:&quot;</span><span class="p">,</span> <span class="n">track_2</span><span class="o">.</span><span class="n">tonic</span><span class="p">)</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Track id:&quot;</span><span class="p">,</span> <span class="n">track_2</span><span class="o">.</span><span class="n">track_id</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Annotated tonic:&quot;</span><span class="p">,</span> <span class="n">track_2</span><span class="o">.</span><span class="n">tonic</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Extracted tonic:&quot;</span><span class="p">,</span> <span class="n">tonic_2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Let&#39;s listen how that sounds like</span>
 
-<span class="ne">NameError</span>: name &#39;track_2&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="k">return</span> <span class="bp">self</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">return</span> <span class="n">value</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/datasets/compmusic_indian_tonic.py:152,</span> in <span class="ni">Track.tonic</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span> <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">def</span> <span class="nf">tonic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">152</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_track_metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;tonic&quot;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="k">return</span> <span class="bp">self</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">return</span> <span class="n">value</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/core.py:547,</span> in <span class="ni">Track._track_metadata</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">545</span> <span class="k">elif</span> <span class="n">metadata</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">546</span>     <span class="k">return</span> <span class="n">metadata</span>
+<span class="ne">--&gt; </span><span class="mi">547</span> <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;This Track does not have metadata.&quot;</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: This Track does not have metadata.
 </pre></div>
 </div>
 </div>

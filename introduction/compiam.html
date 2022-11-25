@@ -209,8 +209,25 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../rhythmic_analysis/meter_analysis.html">
+   Meter analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../rhythmic_analysis/percussion-transcription.html">
    Percussion transcription
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Structure Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../structure_analysis/music-segmentation.html">
+   Music segmentation
   </a>
  </li>
 </ul>
@@ -574,7 +591,12 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-extent-of-compiam">
-   The extent of `compiam``
+   The extent of
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     compiam
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -677,7 +699,12 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-extent-of-compiam">
-   The extent of `compiam``
+   The extent of
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     compiam
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -710,18 +737,19 @@ title="Print to PDF"
 <section id="installation">
 <span id="compiam-installation"></span><h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">compiam</span></code> is registered to PyPI, therefore the latest release can be installed with:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Importing compiam to the project</span>
-<span class="kn">import</span> <span class="nn">compiam</span>
-
-<span class="c1"># Supress warnings to keep the tutorial clean</span>
-<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install compiam
 </pre></div>
 </div>
-</div>
+<p>Nonetheless, to get the latest version of the library with the fresher updates, proceed as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/MTG/compIAM.git
+<span class="nb">cd</span> compIAM
+
+virtualenv -p python3 compiam_env
+<span class="nb">source</span> compiam_env/bin/activate
+
+pip install -e .
+pip install -r requirements.txt
+</pre></div>
 </div>
 </section>
 <section id="available-components">
@@ -751,7 +779,26 @@ title="Print to PDF"
 </section>
 <section id="basic-usage">
 <span id="compiam-usage"></span><h2>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">compiam</span></code> does not have terminal functionalities but it is to be used within Python based-projects. First, import the library to your Python project with: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">compiam</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">compiam</span></code> does not have terminal functionalities but it is to be used within Python based-projects. First, import the library to your Python project with:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Importing compiam to the project</span>
+<span class="kn">import</span> <span class="nn">compiam</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will import some additional util packages for improved user experience along the tutorial.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Supress warnings to keep the tutorial clean</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <section id="importing-the-integrated-tools">
 <h3>Importing the integrated tools<a class="headerlink" href="#importing-the-integrated-tools" title="Permalink to this headline">#</a></h3>
 <p>The integrated tools and models are organized by:</p>
@@ -841,6 +888,7 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p><strong>Only the ML and DL-based models with available weights can be loaded using the <code class="docutils literal notranslate"><span class="pre">.load_model()</span></code> wrapper.</strong> The non-trainable tools or the models with no available weights must be imported from their corresponding module.</p>
 </div>
+<p>Let us showcase the nice utility of <code class="docutils literal notranslate"><span class="pre">compiam</span></code> wrappers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">load_dataset</span><span class="p">,</span> <span class="n">load_corpora</span><span class="p">,</span> <span class="n">load_model</span>
@@ -848,7 +896,6 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Let us showcase the nice utility of <code class="docutils literal notranslate"><span class="pre">compiam</span></code> wrappers.</p>
 <section id="the-load-dataset-wrapper">
 <h5>The <code class="docutils literal notranslate"><span class="pre">.load_dataset()</span></code> wrapper<a class="headerlink" href="#the-load-dataset-wrapper" title="Permalink to this headline">#</a></h5>
 <p>We will start by listing the available datasets through <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
@@ -859,7 +906,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;saraga_carnatic&#39;, &#39;saraga_hindustani&#39;, &#39;mridangam_stroke&#39;, &#39;four_way_tabla&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;saraga_carnatic&#39;,
+ &#39;saraga_hindustani&#39;,
+ &#39;mridangam_stroke&#39;,
+ &#39;four_way_tabla&#39;,
+ &#39;compmusic_carnatic_rhythm&#39;,
+ &#39;compmusic_hindustani_rhythm&#39;,
+ &#39;compmusic_raga&#39;,
+ &#39;compmusic_indian_tonic&#39;]
 </pre></div>
 </div>
 </div>
@@ -874,33 +928,29 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">## Initializing dataloader for an example dataset</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">fw_tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">fw_tabla_dataset</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The four_way_tabla dataset
+----------------------------------------------------------------------------------------------------
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/__init__.py:44,</span> in <span class="ni">load_dataset</span><span class="nt">(dataset_name, data_home, version)</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span> <span class="k">if</span> <span class="n">dataset_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">datasets_list</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid dataset </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">))</span>
-<span class="ne">---&gt; </span><span class="mi">44</span> <span class="k">return</span> <span class="n">mirdata</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="n">dataset_name</span><span class="o">=</span><span class="n">dataset_name</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="n">data_home</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">version</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/__init__.py:51,</span> in <span class="ni">initialize</span><span class="nt">(dataset_name, data_home, version)</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="sd">&quot;&quot;&quot;Load a mirdata dataset by name</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span><span class="sd"> Example:</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="k">if</span> <span class="n">dataset_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">DATASETS</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">51</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid dataset </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">53</span> <span class="n">module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;mirdata.datasets.</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="k">return</span> <span class="n">module</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_home</span><span class="o">=</span><span class="n">data_home</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">version</span><span class="p">)</span>
+Call the .cite method for bibtex citations.
+----------------------------------------------------------------------------------------------------
 
-<span class="ne">ValueError</span>: Invalid dataset four_way_tabla
+
+Four-Way Tabla track class
+
+    Args:
+        track_id (str): track id of the track
+        data_home (str): Local path where the dataset is stored.
+
+    Attributes:
+        track_id (str): track id
+        audio_path (str): audio path
+        onsets_b_path (str): path to B onsets
+        onsets_d_path (str): path to D onsets
+        onsets_rb_path (str): path to RB onsets
+        onsets_rt_path (str): path to RT onsets
+
+    ----------------------------------------------------------------------------------------------------
 </pre></div>
 </div>
 </div>
@@ -977,34 +1027,53 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Loading pre-trained four-way tabla model and dataset</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">trained_four_way</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;rhythm:4way-tabla&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;four_way_tabla&quot;</span><span class="p">)</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Getting audio from random track in the dataset</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">random_track</span> <span class="o">=</span> <span class="n">tabla_dataset</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">audio</span> <span class="o">=</span> <span class="n">random_track</span><span class="o">.</span><span class="n">audio</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Predict!</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">trained_four_way</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">audio</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/__init__.py:44,</span> in <span class="ni">load_dataset</span><span class="nt">(dataset_name, data_home, version)</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span> <span class="k">if</span> <span class="n">dataset_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">datasets_list</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid dataset </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">))</span>
-<span class="ne">---&gt; </span><span class="mi">44</span> <span class="k">return</span> <span class="n">mirdata</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="n">dataset_name</span><span class="o">=</span><span class="n">dataset_name</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="n">data_home</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">version</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/__init__.py:51,</span> in <span class="ni">initialize</span><span class="nt">(dataset_name, data_home, version)</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="sd">&quot;&quot;&quot;Load a mirdata dataset by name</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span><span class="sd"> Example:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/datasets/four_way_tabla.py:120,</span> in <span class="ni">Track.audio</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="nd">@property</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="k">def</span> <span class="nf">audio</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span>     <span class="sd">&quot;&quot;&quot;The track&#39;s audio</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span><span class="sd">     Returns:</span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="k">if</span> <span class="n">dataset_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">DATASETS</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">51</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid dataset </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">53</span> <span class="n">module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;mirdata.datasets.</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="k">return</span> <span class="n">module</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_home</span><span class="o">=</span><span class="n">data_home</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">version</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">120</span>     <span class="k">return</span> <span class="n">load_audio</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
 
-<span class="ne">ValueError</span>: Invalid dataset four_way_tabla
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/mirdata/io.py:44,</span> in <span class="ni">coerce_to_bytes_io.&lt;locals&gt;.wrapper</span><span class="nt">(file_path_or_obj)</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">44</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">):</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:177,</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="k">if</span> <span class="n">transport_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="n">transport_params</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="ne">--&gt; </span><span class="mi">177</span> <span class="n">fobj</span> <span class="o">=</span> <span class="n">_shortcut_open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span>     <span class="n">uri</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span>     <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="k">if</span> <span class="n">fobj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="k">return</span> <span class="n">fobj</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:363,</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span> <span class="k">if</span> <span class="n">errors</span> <span class="ow">and</span> <span class="s1">&#39;b&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="n">open_kwargs</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">errors</span>
+<span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">return</span> <span class="n">_builtin_open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/home/runner/mir_datasets/four_way_tabla/4way-tabla-ismir21-dataset/train/audios/RMA_15.wav&#39;
 </pre></div>
 </div>
 </div>
@@ -1014,8 +1083,8 @@ title="Print to PDF"
 </section>
 </section>
 <section id="the-extent-of-compiam">
-<h2>The extent of `compiam``<a class="headerlink" href="#the-extent-of-compiam" title="Permalink to this headline">#</a></h2>
-<p>At the very moment we are presenting this tutorial (ISMIR in Bengaluru, Dec 4, 2022), <code class="docutils literal notranslate"><span class="pre">compiam</span></code> includes access to 7 datasets, access to the Carnatic and the Hindustani corpora in Dunya, and a bit more that 10 tools and models to use, covering 8 different tasks. We are aware, <em>and we are very interested in bringing that into the open</em>, that the topic of the computational analysis of Indian Art Music, especially on the tools and models side, is way broader. The literature includes a vast amount of very interesting and relevant works that, mainly because of the time constraint, are not included in the first release of <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
+<h2>The extent of <code class="docutils literal notranslate"><span class="pre">compiam</span></code><a class="headerlink" href="#the-extent-of-compiam" title="Permalink to this headline">#</a></h2>
+<p>In the very first launch of <code class="docutils literal notranslate"><span class="pre">compiam</span></code>, the package includes access to 7 datasets, access to the Carnatic and the Hindustani corpora in Dunya, and a bit more that 10 tools and models to use, covering 8 different tasks. We are aware, <em>and we are very interested in bringing that into the open</em>, that the topic of the computational analysis of Indian Art Music, especially on the tools and models side, <strong>is way broader</strong>. The literature includes a vast amount of very interesting and relevant works that, mainly because of the time constraint, are not included in the first release of <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
 <p>However, we have been designing <code class="docutils literal notranslate"><span class="pre">compiam</span></code> so that it evolves as a community-driven initiative, in which anyone can integrate datasts, tools, and models for the computational analysis of Indian Art Music.</p>
 <p>Therefore, this tutorial is also a great chance to present the official launch of <code class="docutils literal notranslate"><span class="pre">compiam</span></code>, and engage researchers and developers interested in the research topic of computational analysis of Carnatic and Hindustani music to contribute to this library. The ultimate goal of this software is that the relevant collections of data and versatile tools for this topic are made available an easy accessible for everyone, while boosting the visibility and community usage of these.</p>
 </section>

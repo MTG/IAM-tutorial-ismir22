@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Percussion transcription" href="../rhythmic_analysis/percussion-transcription.html" />
+    <link rel="next" title="Meter analysis" href="../rhythmic_analysis/meter_analysis.html" />
     <link rel="prev" title="Melodic pattern dicovery" href="melodic-pattern-discovery.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -209,8 +209,25 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../rhythmic_analysis/meter_analysis.html">
+   Meter analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../rhythmic_analysis/percussion-transcription.html">
    Percussion transcription
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Structure Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../structure_analysis/music-segmentation.html">
+   Music segmentation
   </a>
  </li>
 </ul>
@@ -502,14 +519,15 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="automatic-raga-recognition">
 <span id="raga-recognition"></span><h1>Automatic raga recognition<a class="headerlink" href="#automatic-raga-recognition" title="Permalink to this headline">#</a></h1>
-<p>Automatic raga recognition works intend to identify the raga that is performed in an Indian Art Music recording. Historically, raga recognition approaches have been based on melodic features from the vocal line, trying to identify relationships between the sung patterns and scales. More recently, this problem is being addressed by passing the melodic features through DL models that learn the relationships within the data and learn to discriminate between the different ragas in a dataset <span id="id1">[<a class="reference internal" href="../resources/references.html#id48" title="M. Clayton, P. Rao, N. Shikarpur, S. Roychowdhury, and J. Li. Raga classification from vocal performances using multimodal analysis. In In Proc. of the 23rd International Conference on Music Information Retrieval (ISMIR), Bengaluru, India. 2022.">CRS+22</a>, <a class="reference internal" href="../resources/references.html#id46" title="Siji John, M.S. Sinith, Sudheesh R S, and Lalu P P. Classification of indian classical carnatic music based on raga using deep learning. IEEE Recent Advances in Intelligent Computational Systems (RAICS), pages 110-113, 2020. doi:10.1109/RAICS51191.2020.9332482.">JSSP20</a>, <a class="reference internal" href="../resources/references.html#id45" title="Sathwik Tejaswi Madhusudhan and Girish Chowdhary. DEEPSRGM - Sequence classification and ranking in Indian classical music with deep learning. In In Proc. of the 20th International Society for Music Information Retrieval Conference, (ISMIR), Delft, The Netherlands., 533–540. 2019.">MC19</a>, <a class="reference internal" href="../resources/references.html#id43" title="Joe Cheri Ross, Abhijit Mishra, Kaustuv Kanti Ganguli, Pushpak Bhattacharyya, and Preeti Rao. Identifying raga similarity through embeddings learned from compositions' notation. In In Proc. of the 18th International Society for Music Information Retrieval Conference (ISMIR), 515–522. 2017.">RMG+17</a>]</span>.</p>
-<p>This is a core task within the melodic analysis of Indian Art Music, and most of the research on this topic build on top of the Dunya Carnatic and Hindustani corpora <span id="id2">[<a class="reference internal" href="../resources/references.html#id19" title="Ajay Srinivasamurthy, Gopala Krishna Koduri, Sankalp Gulati, Vignesh Ishwar, and Xavier Serra. Corpora for music information research in Indian art music. In In Proc. of the 40th International Computer Music Conference (ICMC), Athens, Greece., 1029–1036. 2014.">SKG+14</a>]</span>.</p>
+<p>Automatic raga recognition works intend to identify the raga that is performed in an Indian Art Music recording. Historically, raga recognition approaches have been based on melodic features from the singing voice, trying to identify relationships between the sung patterns and scales. More recently, this problem is being addressed by passing the said melodic features through DL models that learn, more efficiently the relationships within the data and learn to discriminate between the different ragas in a collection of data <span id="id1">[<a class="reference internal" href="../resources/references.html#id48" title="M. Clayton, P. Rao, N. Shikarpur, S. Roychowdhury, and J. Li. Raga classification from vocal performances using multimodal analysis. In In Proc. of the 23rd International Conference on Music Information Retrieval (ISMIR), Bengaluru, India. 2022.">CRS+22</a>, <a class="reference internal" href="../resources/references.html#id46" title="Siji John, M.S. Sinith, Sudheesh R S, and Lalu P P. Classification of indian classical carnatic music based on raga using deep learning. IEEE Recent Advances in Intelligent Computational Systems (RAICS), pages 110-113, 2020. doi:10.1109/RAICS51191.2020.9332482.">JSSP20</a>, <a class="reference internal" href="../resources/references.html#id45" title="Sathwik Tejaswi Madhusudhan and Girish Chowdhary. DEEPSRGM - Sequence classification and ranking in Indian classical music with deep learning. In In Proc. of the 20th International Society for Music Information Retrieval Conference, (ISMIR), Delft, The Netherlands., 533–540. 2019.">MC19</a>, <a class="reference internal" href="../resources/references.html#id43" title="Joe Cheri Ross, Abhijit Mishra, Kaustuv Kanti Ganguli, Pushpak Bhattacharyya, and Preeti Rao. Identifying raga similarity through embeddings learned from compositions' notation. In In Proc. of the 18th International Society for Music Information Retrieval Conference (ISMIR), 515–522. 2017.">RMG+17</a>]</span>.</p>
+<p>This is a core task within the melodic analysis of Indian Art Music, and most of the research on this topic builds on top of the Dunya Carnatic and Hindustani corpora <span id="id2">[<a class="reference internal" href="../resources/references.html#id19" title="Ajay Srinivasamurthy, Gopala Krishna Koduri, Sankalp Gulati, Vignesh Ishwar, and Xavier Serra. Corpora for music information research in Indian art music. In In Proc. of the 40th International Computer Music Conference (ICMC), Athens, Greece., 1029–1036. 2014.">SKG+14</a>]</span>.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Importing compiam to the project</span>
 <span class="kn">import</span> <span class="nn">compiam</span>
 
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
@@ -587,10 +605,14 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>Please note that to save space, we are not loading the entire dataset but just a single recording. However, we can still use the dataset loader, which in this case will properly work as long as we only retrieve the data for this particular recording.</p>
 </div>
-<p>The recording we have included beforehand for tutoring purposes is <em>Sri Raghuvara Sugunaalaya</em>, performed by Sanjay Subrahmanyan, at Vani Mahal. We will load this track by first parsing its id in the data loader, which is something we do beforehand, and we obtain a dataloder id: <code class="docutils literal notranslate"><span class="pre">109_Sri_Raghuvara_Sugunaalaya</span></code></p>
+<p>The recording we have included beforehand for tutoring purposes is <em>Sri Raghuvara Sugunaalaya</em>, performed by Sanjay Subrahmanyan, at Vani Mahal. We will load this track by first parsing its corresponding id in the <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> dataloader (we do that beforehand). The said identifier is: <code class="docutils literal notranslate"><span class="pre">109_Sri_Raghuvara_Sugunaalaya</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">track_data</span> <span class="o">=</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()[</span><span class="s2">&quot;109_Sri_Raghuvara_Sugunaalaya&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We first load the {ids: tracks} dict for Saraga Carnatic</span>
+<span class="n">saraga_tracks</span> <span class="o">=</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()</span>
+
+<span class="c1"># Now we can get a specific track</span>
+<span class="n">track_data</span> <span class="o">=</span> <span class="n">saraga_tracks</span><span class="p">[</span><span class="s2">&quot;109_Sri_Raghuvara_Sugunaalaya&quot;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This recording includes raaga:&quot;</span><span class="p">,</span> <span class="n">track_data</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This recordings has unique Dunya ID:&quot;</span><span class="p">,</span> <span class="n">track_data</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;uuid&quot;</span><span class="p">])</span>
 </pre></div>
@@ -608,6 +630,7 @@ This recordings has unique Dunya ID: 123b09bd-9901-4e64-a65a-10b02c9e0597
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Computing features for the given recording</span>
 <span class="n">feat</span> <span class="o">=</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">get_features</span><span class="p">(</span><span class="n">track_data</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -665,10 +688,10 @@ This recordings has unique Dunya ID: 123b09bd-9901-4e64-a65a-10b02c9e0597
             <p class="prev-next-title">Melodic pattern dicovery</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../rhythmic_analysis/percussion-transcription.html" title="next page">
+    <a class='right-next' id="next-link" href="../rhythmic_analysis/meter_analysis.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Percussion transcription</p>
+        <p class="prev-next-title">Meter analysis</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
