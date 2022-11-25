@@ -520,6 +520,11 @@ title="Print to PDF"
    FTANet-Carnatic
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-final-thoughts">
+   Some final thoughts
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -542,6 +547,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ftanet-carnatic">
    FTANet-Carnatic
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-final-thoughts">
+   Some final thoughts
   </a>
  </li>
 </ul>
@@ -658,7 +668,7 @@ title="Print to PDF"
 <p><strong>Maybe we can use a Carnatic-trained version of one of these models to extract the pitch?</strong> Let’s now import a DL model that learns to automatically extract the predominant melody from audio recordings. In the documentation we observe that this model is based on <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code>, therefore we must install this dependency before importing it.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install tensorflow==2.7.2
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install tensorflow==2.9.3
 </pre></div>
 </div>
 </div>
@@ -725,6 +735,13 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CFP process in ../audio/testing_samples/test_1.wav
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/1 [==============================] - ETA: 0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+1/1 [==============================] - 2s 2s/step
+</pre></div>
+</div>
 </div>
 </div>
 <p>Let’s visualise the extracted pitch tracks on top of the spectrogram of the input signal.</p>
@@ -757,7 +774,9 @@ title="Print to PDF"
 <img alt="../_images/pitch-extraction_22_0.png" src="../_images/pitch-extraction_22_0.png" />
 </div>
 </div>
-<p>## Some final thoughts</p>
+</section>
+<section id="some-final-thoughts">
+<h2>Some final thoughts<a class="headerlink" href="#some-final-thoughts" title="Permalink to this headline">#</a></h2>
 <p>Going through the melodic introduction of <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-melodic-concepts"><span class="std std-ref">Carnatic</span></a> and Hindustani Music, we note the importance of a reliable pitch extraction for the computational analysis of Indian Art Music. The task of pitch extraction has received quite a lot of attention recently and the state-of-the-art has been continuously moved forward, especially thanks to the use of DL techniques. However, to the best of our knowledge, no DL-based pitch extraction has been trained or evaluated on Indian Art Music signals, the lack of data being the principal cause. The FTA-Net trained for Carnatic Music that we present in this walkthrough and that we have included in <code class="docutils literal notranslate"><span class="pre">compiam</span></code> has been trained with the <a class="reference external" href="https://zenodo.org/record/5553925">Saraga Carnatic Melody Synth (SMCS)</a>, a recently released dataset that includes several hours of Carnatic Music recordings annotated with ground-truth vocal pitch data that have been artificially compiled.</p>
 <p>Alternative approaches to automatically transcribe melodies in Carnatic and Hindustani music have been proposed <span id="id3">[<a class="reference internal" href="../resources/references.html#id49" title="H. G. Ranjani, Deepak Paramashivan, and Thippur V. Sreenivas. Quantized Melodic Contours in Indian Art Music Perception: Application to Transcription. In Proceedings of the 18th International Society for Music Information Retrieval Conference, 174–180. Suzhou, China, 2017. doi:10.5281/zenodo.1417567.">RPS17</a>, <a class="reference internal" href="../resources/references.html#id50" title="H. G. Ranjani, Ajay Srinivasamurthy, Deepak Paramashivan, and Thippur V. Sreenivas. A compact pitch and time representation for melodic contours in Indian art music. The Journal of the Acoustical Society of America, 145(1):597–603, 2019. doi:10.1121/1.5087277.">RSPS19</a>, <a class="reference internal" href="../resources/references.html#id51" title="Venkata Subramanian Viraraghavan, Arpan Pal, Hema Murthy, and R Aravind. State-Based Transcription of Components of Carnatic Music. In 2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP 2020), 811–815. 2020. doi:10.1109/ICASSP40776.2020.9054435.">VPMA20</a>]</span>. These approaches show versatile strategies to obtain a descriptive notation for Indian Art Music melodies. Make sure to check these out as well.</p>
 </section>
