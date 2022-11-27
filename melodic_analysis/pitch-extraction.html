@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Melodic pattern dicovery" href="melodic-pattern-discovery.html" />
+    <link rel="next" title="Melodic transcription" href="melodic-transcription.html" />
     <link rel="prev" title="Tonic identification" href="tonic-identification.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -189,6 +189,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Pitch extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="melodic-transcription.html">
+   Melodic transcription
   </a>
  </li>
  <li class="toctree-l1">
@@ -566,7 +571,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="pitch-extraction">
 <span id="melody-extraction"></span><h1>Pitch extraction<a class="headerlink" href="#pitch-extraction" title="Permalink to this headline">#</a></h1>
-<p>As seen in the melodic introduction, predominant and vocal pitch is a very relevant feature to tackle the melodic analysis of Carnatic and Hindustani Music.</p>
+<p>As seen in the melodic introduction of <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-melodic-concepts"><span class="std std-ref">Carnatic</span></a> and Hindustani, pitch time-series is a very relevant feature to tackle the melodic analysis of these music traditions, showing utility for many musicologically-relevant problems. Given the shortage of recordings for isolated predominant melodic instruments, this task has had to be tackled directly from mixture recordings. In this context, the task is referred as <em>predominant</em> pitch extraction (otherwise commonly referred as <em>vocal</em> pitch extraction when the source is the singing voice).</p>
+<p>Historically, in the literature of computational analysis of Indian Art Music, this task has been tackled using knowledge-based approaches <span id="id1">[<a class="reference internal" href="../resources/references.html#id34" title="Vishweshwara Rao and Preeti Rao. Vocal melody extraction in the presence of pitched accompaniment in polyphonic music. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 2145–2154, 2010. doi:10.1109/TASL.2010.2042124.">RR10</a>, <a class="reference internal" href="../resources/references.html#id35" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>. Melodia <span id="id2">[<a class="reference internal" href="../resources/references.html#id35" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>, typically combined with additional post-processing steps <span id="id3">[<a class="reference internal" href="../resources/references.html#id41" title="Sankalp Gulati, Joan Serra, Vignesh Ishwar, and Xavier Serra. Mining melodic patterns in large audio collections of Indian art music. In In Proc. of the 10th International Conference on Signal-Image Technology and Internet-Based Systems (SITIS), Bangkok, Thailand., 264–271. 2015. doi:10.1109/SITIS.2014.73.">GSIS15</a>]</span>, has been the preferred approach until today.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Importing compiam to the project</span>
@@ -595,8 +601,8 @@ title="Print to PDF"
 </div>
 </div>
 <p>## Melodia</p>
-<p>In an Indian Art Music context, this task has been mainly approached through <em>heuristic or knowledge-based approaches</em> <span id="id1">[<a class="reference internal" href="../resources/references.html#id31" title="Vishweshwara Rao and Preeti Rao. Vocal melody extraction in the presence of pitched accompaniment in polyphonic music. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 2145–2154, 2010. doi:10.1109/TASL.2010.2042124.">RR10</a>, <a class="reference internal" href="../resources/references.html#id32" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>, which have been used yet in recent years.</p>
-<p>Let’s extract the pitch from an audio sample using Melodia <span id="id2">[<a class="reference internal" href="../resources/references.html#id32" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>. We first need to install <code class="docutils literal notranslate"><span class="pre">essentia</span></code>, which is the optional dependency required to load this tool.</p>
+<p>In an Indian Art Music context, this task has been mainly approached through <em>heuristic or knowledge-based approaches</em> <span id="id4">[<a class="reference internal" href="../resources/references.html#id34" title="Vishweshwara Rao and Preeti Rao. Vocal melody extraction in the presence of pitched accompaniment in polyphonic music. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 2145–2154, 2010. doi:10.1109/TASL.2010.2042124.">RR10</a>, <a class="reference internal" href="../resources/references.html#id35" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>, which have been used yet in recent years.</p>
+<p>Let’s extract the pitch from an audio sample using Melodia <span id="id5">[<a class="reference internal" href="../resources/references.html#id35" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>. We first need to install <code class="docutils literal notranslate"><span class="pre">essentia</span></code>, which is the optional dependency required to load this tool.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install essentia
@@ -765,8 +771,7 @@ title="Print to PDF"
 </section>
 <section id="some-final-thoughts">
 <h2>Some final thoughts<a class="headerlink" href="#some-final-thoughts" title="Permalink to this headline">#</a></h2>
-<p>Going through the melodic introduction of <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-melodic-concepts"><span class="std std-ref">Carnatic</span></a> and Hindustani Music, we note the importance of a reliable pitch extraction for the computational analysis of Indian Art Music. The task of pitch extraction has received quite a lot of attention recently and the state-of-the-art has been continuously moved forward, especially thanks to the use of DL techniques. However, to the best of our knowledge, no DL-based pitch extraction has been trained or evaluated on Indian Art Music signals, the lack of data being the principal cause. The FTA-Net trained for Carnatic Music that we present in this walkthrough and that we have included in <code class="docutils literal notranslate"><span class="pre">compiam</span></code> has been trained with the <a class="reference external" href="https://zenodo.org/record/5553925">Saraga Carnatic Melody Synth (SMCS)</a>, a recently released dataset that includes several hours of Carnatic Music recordings annotated with ground-truth vocal pitch data that have been artificially compiled.</p>
-<p>Alternative approaches to automatically transcribe melodies in Carnatic and Hindustani music have been proposed <span id="id3">[<a class="reference internal" href="../resources/references.html#id49" title="H. G. Ranjani, Deepak Paramashivan, and Thippur V. Sreenivas. Quantized Melodic Contours in Indian Art Music Perception: Application to Transcription. In Proceedings of the 18th International Society for Music Information Retrieval Conference, 174–180. Suzhou, China, 2017. doi:10.5281/zenodo.1417567.">RPS17</a>, <a class="reference internal" href="../resources/references.html#id50" title="H. G. Ranjani, Ajay Srinivasamurthy, Deepak Paramashivan, and Thippur V. Sreenivas. A compact pitch and time representation for melodic contours in Indian art music. The Journal of the Acoustical Society of America, 145(1):597–603, 2019. doi:10.1121/1.5087277.">RSPS19</a>, <a class="reference internal" href="../resources/references.html#id51" title="Venkata Subramanian Viraraghavan, Arpan Pal, Hema Murthy, and R Aravind. State-Based Transcription of Components of Carnatic Music. In 2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP 2020), 811–815. 2020. doi:10.1109/ICASSP40776.2020.9054435.">VPMA20</a>]</span>. These approaches show versatile strategies to obtain a descriptive notation for Indian Art Music melodies. Make sure to check these out as well.</p>
+<p>Again, going through the melodic introduction of <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-melodic-concepts"><span class="std std-ref">Carnatic</span></a> and Hindustani Music, we note the importance of a reliable pitch extraction for the computational analysis of Indian Art Music. The task of pitch extraction has received quite a lot of attention recently and the state-of-the-art has been continuously moved forward, especially given the use of DL techniques. However, to the best of our knowledge, no DL-based pitch extraction has been trained or evaluated on Indian Art Music signals, the lack of data being the principal cause. The FTA-Net trained for Carnatic Music that we present in this walkthrough and that we have included in <code class="docutils literal notranslate"><span class="pre">compiam</span></code> has been trained with the <a class="reference external" href="https://zenodo.org/record/5553925">Saraga Carnatic Melody Synth (SMCS)</a>, a recently released dataset that includes several hours of Carnatic Music recordings annotated with ground-truth vocal pitch data that have been artificially compiled.</p>
 </section>
 </section>
 
@@ -804,10 +809,10 @@ title="Print to PDF"
             <p class="prev-next-title">Tonic identification</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="melodic-pattern-discovery.html" title="next page">
+    <a class='right-next' id="next-link" href="melodic-transcription.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Melodic pattern dicovery</p>
+        <p class="prev-next-title">Melodic transcription</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
