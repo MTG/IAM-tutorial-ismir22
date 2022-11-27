@@ -636,12 +636,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;230420&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;230209&#39;,
  Track(
-   audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/E/230420__akshaylaya__num-e-038.wav&quot;,
-   stroke_name=&quot;num&quot;,
+   audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/E/230209__akshaylaya__cha-e-049.wav&quot;,
+   stroke_name=&quot;cha&quot;,
    tonic=&quot;E&quot;,
-   track_id=&quot;230420&quot;,
+   track_id=&quot;230209&quot;,
    audio: The track&#39;s audio
  
          Returns,
@@ -694,12 +694,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;../audio/mir_datasets/mridangam_stroke_1.5/C#/226965__akshaylaya__ta-csh-185.wav&#39;,
- &#39;ta&#39;)
-(&#39;../audio/mir_datasets/mridangam_stroke_1.5/B/225289__akshaylaya__thom-b-070.wav&#39;,
- &#39;tha&#39;)
-(&#39;../audio/mir_datasets/mridangam_stroke_1.5/C/225968__akshaylaya__tha-c-162.wav&#39;,
- &#39;tha&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;../audio/mir_datasets/mridangam_stroke_1.5/E/230945__akshaylaya__thi-e-187.wav&#39;,
+ &#39;thi&#39;)
+(&#39;../audio/mir_datasets/mridangam_stroke_1.5/C#/227222__akshaylaya__tham-csh-014.wav&#39;,
+ &#39;tham&#39;)
+(&#39;../audio/mir_datasets/mridangam_stroke_1.5/B/224856__akshaylaya__thi-b-075.wav&#39;,
+ &#39;thi&#39;)
 </pre></div>
 </div>
 </div>
@@ -713,10 +713,10 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Track(
-  audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/E/231215__akshaylaya__thom-e-109.wav&quot;,
-  stroke_name=&quot;thom&quot;,
-  tonic=&quot;E&quot;,
-  track_id=&quot;231215&quot;,
+  audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/D/228335__akshaylaya__thi-d-107.wav&quot;,
+  stroke_name=&quot;thi&quot;,
+  tonic=&quot;D&quot;,
+  track_id=&quot;228335&quot;,
   audio: The track&#39;s audio
 
         Returns,
@@ -734,17 +734,25 @@ title="Print to PDF"
 <span class="n">identifier</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">predicted_file</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="c1"># Comparing target and estimation</span>
-<span class="k">if</span> <span class="n">evaluation_split</span><span class="p">[</span><span class="n">identifier</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span> <span class="o">==</span> <span class="n">predicted_file</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">evaluation_split</span><span class="p">[</span><span class="n">identifier</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span> <span class="o">==</span> <span class="n">predicted_stroke</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nice! Predicted stroke </span><span class="si">{}</span><span class="s2"> coincides with ground-truth </span><span class="si">{}</span><span class="s2">&quot;</span>\
-        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predicted_file</span><span class="p">,</span> <span class="n">evaluation_split</span><span class="p">[</span><span class="n">identifier</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span><span class="p">))</span>
+        <span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">predicted_file</span><span class="p">),</span>
+            <span class="n">evaluation_split</span><span class="p">[</span><span class="n">identifier</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Missed! Predicted stroke </span><span class="si">{}</span><span class="s2"> does NOT coincide with ground-truth </span><span class="si">{}</span><span class="s2">&quot;</span>\
-        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predicted_file</span><span class="p">,</span> <span class="n">evaluation_split</span><span class="p">[</span><span class="n">identifier</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span><span class="p">))</span>
+        <span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">predicted_file</span><span class="p">),</span>
+            <span class="n">evaluation_split</span><span class="p">[</span><span class="n">identifier</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Missed! Predicted stroke ../audio/mir_datasets/mridangam_stroke_1.5/C/225630__akshaylaya__num-c-088.wav does NOT coincide with ground-truth num
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nice! Predicted stroke 224193__akshaylaya__dheem-b-102.wav coincides with ground-truth dheem
 </pre></div>
 </div>
 </div>
