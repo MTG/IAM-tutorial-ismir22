@@ -1032,32 +1032,78 @@ Four-Way Tabla track class
 <span class="n">random_track</span> <span class="o">=</span> <span class="n">tabla_dataset</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
 
 <span class="c1"># Predict!</span>
-<span class="n">trained_four_way</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">random_track</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
+<span class="n">onsets</span><span class="p">,</span> <span class="n">strokes</span> <span class="o">=</span> <span class="n">trained_four_way</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">random_track</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">onset</span><span class="p">,</span> <span class="n">stroke</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">onsets</span><span class="p">,</span> <span class="n">strokes</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stroke </span><span class="si">{}</span><span class="s2"> in time-step </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span>\
+        <span class="nb">format</span><span class="p">(</span><span class="n">stroke</span><span class="p">,</span> <span class="n">onset</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 0.51,  0.51,  0.51,  0.51,  1.1 ,  1.1 ,  1.1 ,  1.1 ,  1.73,
-         1.73,  1.73,  1.73,  2.35,  2.35,  2.35,  2.35,  2.93,  2.93,
-         2.93,  2.93,  3.5 ,  3.5 ,  3.5 ,  3.5 ,  4.1 ,  4.1 ,  4.1 ,
-         4.1 ,  4.71,  4.71,  4.71,  4.71,  5.3 ,  5.3 ,  5.3 ,  5.3 ,
-         8.26,  8.26,  8.26,  8.26,  8.86,  8.86,  8.86,  8.86,  9.44,
-         9.44,  9.44,  9.44, 10.03, 10.03, 10.03, 10.03, 10.66, 10.66,
-        10.66, 10.66, 11.26, 11.26, 11.26, 11.26, 11.84, 11.84, 11.84,
-        11.84, 12.45, 12.45, 12.45, 12.45, 13.07, 13.07, 13.07, 13.07,
-        13.68, 13.68, 13.68, 13.68, 14.31, 14.31, 14.31, 14.31, 14.9 ,
-        14.9 , 14.9 , 14.9 , 17.88, 17.88, 17.88, 17.88, 18.48, 18.48,
-        18.48, 18.48, 19.05, 19.05, 19.05, 19.05, 19.64, 19.64, 19.64,
-        19.64]),
- array([&#39;D&#39;, &#39;RB&#39;, &#39;B&#39;, &#39;RT&#39;, &#39;B&#39;, &#39;RT&#39;, &#39;RB&#39;, &#39;D&#39;, &#39;B&#39;, &#39;D&#39;, &#39;RB&#39;, &#39;RT&#39;,
-        &#39;B&#39;, &#39;RT&#39;, &#39;D&#39;, &#39;RB&#39;, &#39;RB&#39;, &#39;RT&#39;, &#39;B&#39;, &#39;D&#39;, &#39;RT&#39;, &#39;D&#39;, &#39;RB&#39;, &#39;B&#39;,
-        &#39;RT&#39;, &#39;RB&#39;, &#39;B&#39;, &#39;D&#39;, &#39;D&#39;, &#39;RT&#39;, &#39;RB&#39;, &#39;B&#39;, &#39;B&#39;, &#39;D&#39;, &#39;RT&#39;, &#39;RB&#39;,
-        &#39;B&#39;, &#39;RB&#39;, &#39;RT&#39;, &#39;D&#39;, &#39;D&#39;, &#39;RB&#39;, &#39;B&#39;, &#39;RT&#39;, &#39;B&#39;, &#39;D&#39;, &#39;RT&#39;, &#39;RB&#39;,
-        &#39;RB&#39;, &#39;B&#39;, &#39;D&#39;, &#39;RT&#39;, &#39;RB&#39;, &#39;B&#39;, &#39;RT&#39;, &#39;D&#39;, &#39;RB&#39;, &#39;RT&#39;, &#39;B&#39;, &#39;D&#39;,
-        &#39;D&#39;, &#39;B&#39;, &#39;RT&#39;, &#39;RB&#39;, &#39;RB&#39;, &#39;D&#39;, &#39;B&#39;, &#39;RT&#39;, &#39;RB&#39;, &#39;B&#39;, &#39;RT&#39;, &#39;D&#39;,
-        &#39;D&#39;, &#39;RT&#39;, &#39;B&#39;, &#39;RB&#39;, &#39;B&#39;, &#39;RT&#39;, &#39;RB&#39;, &#39;D&#39;, &#39;B&#39;, &#39;RB&#39;, &#39;RT&#39;, &#39;D&#39;,
-        &#39;RB&#39;, &#39;RT&#39;, &#39;D&#39;, &#39;B&#39;, &#39;RB&#39;, &#39;B&#39;, &#39;D&#39;, &#39;RT&#39;, &#39;RB&#39;, &#39;B&#39;, &#39;RT&#39;, &#39;D&#39;,
-        &#39;RT&#39;, &#39;D&#39;, &#39;RB&#39;, &#39;B&#39;], dtype=&#39;&lt;U2&#39;))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stroke D in time-step 1.22
+Stroke RB in time-step 1.22
+Stroke RT in time-step 1.22
+Stroke B in time-step 1.22
+Stroke RT in time-step 1.75
+Stroke RB in time-step 1.75
+Stroke D in time-step 1.75
+Stroke B in time-step 1.75
+Stroke B in time-step 2.32
+Stroke RT in time-step 2.32
+Stroke RB in time-step 2.32
+Stroke D in time-step 2.32
+Stroke RB in time-step 3.42
+Stroke RT in time-step 3.42
+Stroke B in time-step 3.42
+Stroke D in time-step 3.42
+Stroke D in time-step 6.76
+Stroke RB in time-step 6.76
+Stroke B in time-step 6.76
+Stroke RT in time-step 6.76
+Stroke RB in time-step 7.84
+Stroke RT in time-step 7.84
+Stroke B in time-step 7.84
+Stroke D in time-step 7.84
+Stroke RT in time-step 8.4
+Stroke RB in time-step 8.4
+Stroke B in time-step 8.4
+Stroke D in time-step 8.4
+Stroke RB in time-step 10.05
+Stroke D in time-step 10.05
+Stroke RT in time-step 10.05
+Stroke B in time-step 10.05
+Stroke D in time-step 10.63
+Stroke RT in time-step 10.63
+Stroke RB in time-step 10.63
+Stroke B in time-step 10.63
+Stroke B in time-step 11.19
+Stroke D in time-step 11.19
+Stroke RT in time-step 11.19
+Stroke RB in time-step 11.19
+Stroke RB in time-step 12.25
+Stroke B in time-step 12.25
+Stroke RT in time-step 12.25
+Stroke D in time-step 12.25
+Stroke B in time-step 15.51
+Stroke RB in time-step 15.51
+Stroke RT in time-step 15.51
+Stroke D in time-step 15.51
+Stroke B in time-step 16.57
+Stroke RT in time-step 16.57
+Stroke D in time-step 16.57
+Stroke RB in time-step 16.57
+Stroke RB in time-step 16.59
+Stroke B in time-step 16.59
+Stroke D in time-step 16.59
+Stroke RT in time-step 16.59
+Stroke RB in time-step 17.12
+Stroke B in time-step 17.12
+Stroke RT in time-step 17.12
+Stroke D in time-step 17.12
+Stroke RT in time-step 17.68
+Stroke D in time-step 17.68
+Stroke RB in time-step 17.68
+Stroke B in time-step 17.68
 </pre></div>
 </div>
 </div>
