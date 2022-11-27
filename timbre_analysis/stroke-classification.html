@@ -617,6 +617,8 @@ title="Print to PDF"
 <span class="c1"># Getting list of id per split</span>
 <span class="c1"># NOTE: We use (0.9, 0.1): two splits, including 90% and 10% of the tracks respectively</span>
 <span class="n">train_list</span><span class="p">,</span> <span class="n">evaluation_list</span> <span class="o">=</span> <span class="n">msc</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_random_track_splits</span><span class="p">(</span><span class="n">splits</span><span class="o">=</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">train_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">evaluation_list</span><span class="p">)</span>
 
 <span class="c1"># Get track dictionaries given the created splits</span>
 <span class="n">train_split</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">mridangam_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">train_list</span><span class="p">}</span>
@@ -628,14 +630,18 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">train_list</span><span class="p">,</span> <span class="n">evaluation_list</span> <span class="o">=</span> <span class="n">msc</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_random_track_splits</span><span class="p">(</span><span class="n">splits</span><span class="o">=</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Get track dictionaries given the created splits</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">train_split</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">mridangam_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">train_list</span><span class="p">}</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">evaluation_split</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">mridangam_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">evaluation_list</span><span class="p">}</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># Let&#39;s print out a random track from the created evaluation split</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">evaluation_list</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># Get track dictionaries given the created splits</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">train_split</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">mridangam_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">train_list</span><span class="p">}</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">evaluation_split</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">mridangam_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">evaluation_list</span><span class="p">}</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># Let&#39;s print out a random track from the created evaluation split</span>
 
 <span class="ne">TypeError</span>: &#39;numpy.int64&#39; object is not iterable
 </pre></div>
@@ -719,10 +725,10 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Track(
-  audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/D#/228647__akshaylaya__cha-dsh-008.wav&quot;,
+  audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/C/225395__akshaylaya__cha-c-037.wav&quot;,
   stroke_name=&quot;cha&quot;,
-  tonic=&quot;D#&quot;,
-  track_id=&quot;228647&quot;,
+  tonic=&quot;C&quot;,
+  track_id=&quot;225395&quot;,
   audio: The track&#39;s audio
 
         Returns,
