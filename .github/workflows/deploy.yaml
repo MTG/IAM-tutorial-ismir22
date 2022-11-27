@@ -29,7 +29,9 @@ jobs:
 
     - name: Install binaries
       run: |
-        sudo apt-get update && sudo apt-get install libsndfile1
+        sudo apt-get update
+        sudo apt-get install libsndfile1
+        sudo apt-get install ffmpeg
         python -m pip install --upgrade pip
     - name: Install dependencies
       run: |
