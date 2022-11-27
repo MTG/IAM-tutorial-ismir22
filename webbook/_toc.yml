@@ -23,6 +23,7 @@ parts:
   chapters:
     - file: melodic_analysis/tonic-identification
     - file: melodic_analysis/pitch-extraction
+    - file: melodic_analysis/melodic-transcription
     - file: melodic_analysis/melodic-pattern-discovery
     - file: melodic_analysis/raga-recognition
     #- file: resources/online-vis/view
