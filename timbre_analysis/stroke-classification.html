@@ -561,7 +561,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="stroke-classification">
 <span id="id1"></span><h1>Stroke classification<a class="headerlink" href="#stroke-classification" title="Permalink to this headline">#</a></h1>
-<p>The task of percussion stroke classification has been, historically, the principal target on the timbre-side of computational analysis of Indian Art Music. As seen in the <a class="reference internal" href="../indian_art_music/carnatic-music.html#instrumentation"><span class="std std-ref">instrumentation presentation</span></a>, the musical arrangement in Indian Art Music is quite well-defined, while there is an important scarcity of good-quality data (specially monphonic recordings) for many of the Carnatic and Hindustani specific instruments. These factors combined with the importance of the different stroke types in the main percussion instruments, have given research importance on mridangam <span id="id2">[<a class="reference internal" href="../resources/references.html#id25" title="A. Anantapadmanabhan, J. P. Bello, R. Krishnan, and H. Murthy. Tonic-Independent Stroke Transcription of the Mridangam. In AES 53rd International Conference: Semantic Audio, London, UK. 2014.">ABKM14</a>, <a class="reference internal" href="../resources/references.html#id74" title="A. Anantapadmanabhan, A. Bellur, and H. A. Murthy. Modal analysis and transcription of strokes of the mridangam using non-negative matrix factorization. IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), Vancouver, Canada, pages 313–318, 2013.">ABM13</a>]</span> and tabla stroke classification <span id="id3">[<a class="reference internal" href="../resources/references.html#id27" title="M.A. Rohit, Amitrajit Bhattacharjee, and Preeti Rao. Four-way classification of tabla strokes with models adapted from automatic drum transcription. In In Proc. of the 22nd International Society for Music Information Retrieval Conference, ISMIR, Online, 19–26. 2021.">RBR21</a>]</span>.</p>
+<p>The task of percussion stroke classification has been, historically, the principal target on the timbre-side of computational analysis of Indian Art Music. As seen in the <span class="xref myst">instrumentation presentation</span>, the musical arrangement in Indian Art Music is quite well-defined, while there is an important scarcity of good-quality data (specially monphonic recordings) for many of the Carnatic and Hindustani specific instruments. These factors combined with the importance of the different stroke types in the main percussion instruments, have given research importance on mridangam <span id="id2">[<a class="reference internal" href="../resources/references.html#id25" title="A. Anantapadmanabhan, J. P. Bello, R. Krishnan, and H. Murthy. Tonic-Independent Stroke Transcription of the Mridangam. In AES 53rd International Conference: Semantic Audio, London, UK. 2014.">ABKM14</a>, <a class="reference internal" href="../resources/references.html#id74" title="A. Anantapadmanabhan, A. Bellur, and H. A. Murthy. Modal analysis and transcription of strokes of the mridangam using non-negative matrix factorization. IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), Vancouver, Canada, pages 313–318, 2013.">ABM13</a>]</span> and tabla stroke classification <span id="id3">[<a class="reference internal" href="../resources/references.html#id27" title="M.A. Rohit, Amitrajit Bhattacharjee, and Preeti Rao. Four-way classification of tabla strokes with models adapted from automatic drum transcription. In In Proc. of the 22nd International Society for Music Information Retrieval Conference, ISMIR, Online, 19–26. 2021.">RBR21</a>]</span>.</p>
 <p>We will go through examples of these tasks in this walkthrough.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
@@ -607,6 +607,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;bheem&#39;, &#39;cha&#39;, &#39;dheem&#39;, &#39;dhin&#39;, &#39;num&#39;, &#39;ta&#39;, &#39;tha&#39;, &#39;tham&#39;, &#39;thi&#39;, &#39;thom&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Let’s train and evaluate a very basic model to perform classification of mridangam strokes. We first use a util function in the <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> Dataset class to separate the Mridangam Stroke Dataset in paticular splits. We will use <a class="reference external" href="https://mirdata.readthedocs.io/en/latest/source/mirdata.html#mirdata.core.Dataset.get_random_track_splits"><code class="docutils literal notranslate"><span class="pre">get_random_track_splits</span></code></a>, since this dataset does not have pre-determined splits, and we will create these randomly.</p>
 <div class="cell docutils container">
@@ -627,6 +632,20 @@ title="Print to PDF"
 
 <span class="c1"># Let&#39;s get random track from the created evaluation split</span>
 <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">evaluation_split</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;228879&#39;,
+ Track(
+   audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/D#/228879__akshaylaya__dhin-dsh-080.wav&quot;,
+   stroke_name=&quot;dhin&quot;,
+   tonic=&quot;D#&quot;,
+   track_id=&quot;228879&quot;,
+   audio: The track&#39;s audio
+ 
+         Returns,
+ ))
 </pre></div>
 </div>
 </div>
@@ -674,11 +693,34 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;../audio/mir_datasets/mridangam_stroke_1.5/C#/227676__akshaylaya__thom-csh-062.wav&#39;,
+ &#39;thom&#39;)
+(&#39;../audio/mir_datasets/mridangam_stroke_1.5/D/227844__akshaylaya__ta-d-049.wav&#39;,
+ &#39;ta&#39;)
+(&#39;../audio/mir_datasets/mridangam_stroke_1.5/C#/227560__akshaylaya__thi-csh-316.wav&#39;,
+ &#39;thi&#39;)
+</pre></div>
+</div>
+</div>
 </div>
 <p>In the file paths of this validation files we can already see the actual stroke that is present in the recording, so we can evaluate how good our model classified the mridangam strokes. Otherwise, we can also get the actual tonic using the <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> loader and a particular track ID.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msc</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Track(
+  audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/B/225041__akshaylaya__thi-b-260.wav&quot;,
+  stroke_name=&quot;thi&quot;,
+  tonic=&quot;B&quot;,
+  track_id=&quot;225041&quot;,
+  audio: The track&#39;s audio
+
+        Returns,
+)
 </pre></div>
 </div>
 </div>
@@ -706,6 +748,12 @@ title="Print to PDF"
             <span class="n">evaluation_split</span><span class="p">[</span><span class="n">identifier</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span>
         <span class="p">)</span>
     <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nice! Predicted stroke in 228769__akshaylaya__dheem-dsh-081.wav
+ coincides with ground-truth dheem
 </pre></div>
 </div>
 </div>

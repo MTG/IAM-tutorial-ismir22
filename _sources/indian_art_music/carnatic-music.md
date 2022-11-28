@@ -1,10 +1,10 @@
 (carnatic-music)=
 # Carnatic Music
 
-(instrumentation)=
+(carnatic-instrumentation)=
 ## Carnatic Music in Performance: Instrumentation
 
-(vocal-led-performance-group)=
+(carnatic-vocal-led-performance-group)=
 ### Vocal-led performance group 
 
 
@@ -25,7 +25,7 @@ The most popular performance format today is vocal-led, either by a single or mu
 > **Implications for MIR:**
 > Notwithstanding the dominant monophonic melodic line, the overall instrumental texture is heterophonic, which is a challenge for predominant pitch extraction.
 
-(instrumental-led-performances)=
+(carnatic-instrumental-led-performances)=
 ### Instrumental-led performances
 
 There are also instrumental-led performances, without vocalists: for example, groups led by vīṇa, veṇu (flute), violin, saxophone, mandolin, and others. 
