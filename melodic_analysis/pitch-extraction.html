@@ -521,6 +521,11 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#melodia">
+   Melodia
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ftanet-carnatic">
    FTANet-Carnatic
   </a>
@@ -549,6 +554,11 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#melodia">
+   Melodia
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ftanet-carnatic">
    FTANet-Carnatic
@@ -600,9 +610,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>## Melodia</p>
-<p>In an Indian Art Music context, this task has been mainly approached through <em>heuristic or knowledge-based approaches</em> <span id="id4">[<a class="reference internal" href="../resources/references.html#id34" title="Vishweshwara Rao and Preeti Rao. Vocal melody extraction in the presence of pitched accompaniment in polyphonic music. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 2145–2154, 2010. doi:10.1109/TASL.2010.2042124.">RR10</a>, <a class="reference internal" href="../resources/references.html#id35" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>, which have been used yet in recent years.</p>
-<p>Let’s extract the pitch from an audio sample using Melodia <span id="id5">[<a class="reference internal" href="../resources/references.html#id35" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>. We first need to install <code class="docutils literal notranslate"><span class="pre">essentia</span></code>, which is the optional dependency required to load this tool.</p>
+<section id="melodia">
+<h2>Melodia<a class="headerlink" href="#melodia" title="Permalink to this headline">#</a></h2>
+<p>Let’s extract the pitch from an audio sample using Melodia <span id="id4">[<a class="reference internal" href="../resources/references.html#id35" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>. We first need to install <code class="docutils literal notranslate"><span class="pre">essentia</span></code>, which is the optional dependency required to load this tool.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install essentia
@@ -634,7 +644,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We can infer from the shape that we have estimated <code class="docutils literal notranslate"><span class="pre">699</span></code> pitch values, while the two dimension refer to <code class="docutils literal notranslate"><span class="pre">(frequency</span> <span class="pre">values,</span> <span class="pre">time-stamps)</span></code>Let us show the first 5 time-stamps here.</p>
+<p>We can infer from the shape that we have estimated <code class="docutils literal notranslate"><span class="pre">699</span></code> pitch values, while the two dimension refer to <code class="docutils literal notranslate"><span class="pre">(frequency</span> <span class="pre">values,</span> <span class="pre">time-stamps)</span></code>. Let us show the first 5 time-stamps here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
@@ -669,6 +679,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>Melodia has been found, in the original paper experiments and also in the <a class="reference external" href="https://nema.lis.illinois.edu/nema_out/mirex2011/results/ame/indian08/sg1results.html">MIREX campaign</a>, to decently work on Indian Art Music samples. However, recent DL-based models have claimed the state-of-the-art for the task of pitch extraction.</p>
+</section>
 <section id="ftanet-carnatic">
 <h2>FTANet-Carnatic<a class="headerlink" href="#ftanet-carnatic" title="Permalink to this headline">#</a></h2>
 <p><strong>Maybe we can use a Carnatic-trained version of one of these models to extract the pitch?</strong> Let’s now import a DL model that learns to automatically extract the predominant melody from audio recordings. In the documentation we observe that this model is based on <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code>, therefore we must install this dependency before importing it.</p>

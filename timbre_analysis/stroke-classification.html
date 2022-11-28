@@ -607,11 +607,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;bheem&#39;, &#39;cha&#39;, &#39;dheem&#39;, &#39;dhin&#39;, &#39;num&#39;, &#39;ta&#39;, &#39;tha&#39;, &#39;tham&#39;, &#39;thi&#39;, &#39;thom&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <p>Let’s train and evaluate a very basic model to perform classification of mridangam strokes. We first use a util function in the <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> Dataset class to separate the Mridangam Stroke Dataset in paticular splits. We will use <a class="reference external" href="https://mirdata.readthedocs.io/en/latest/source/mirdata.html#mirdata.core.Dataset.get_random_track_splits"><code class="docutils literal notranslate"><span class="pre">get_random_track_splits</span></code></a>, since this dataset does not have pre-determined splits, and we will create these randomly.</p>
 <div class="cell docutils container">
@@ -632,20 +627,6 @@ title="Print to PDF"
 
 <span class="c1"># Let&#39;s get random track from the created evaluation split</span>
 <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">evaluation_split</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;230209&#39;,
- Track(
-   audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/E/230209__akshaylaya__cha-e-049.wav&quot;,
-   stroke_name=&quot;cha&quot;,
-   tonic=&quot;E&quot;,
-   track_id=&quot;230209&quot;,
-   audio: The track&#39;s audio
- 
-         Returns,
- ))
 </pre></div>
 </div>
 </div>
@@ -693,34 +674,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;../audio/mir_datasets/mridangam_stroke_1.5/E/230945__akshaylaya__thi-e-187.wav&#39;,
- &#39;thi&#39;)
-(&#39;../audio/mir_datasets/mridangam_stroke_1.5/C#/227222__akshaylaya__tham-csh-014.wav&#39;,
- &#39;tham&#39;)
-(&#39;../audio/mir_datasets/mridangam_stroke_1.5/B/224856__akshaylaya__thi-b-075.wav&#39;,
- &#39;thi&#39;)
-</pre></div>
-</div>
-</div>
 </div>
 <p>In the file paths of this validation files we can already see the actual stroke that is present in the recording, so we can evaluate how good our model classified the mridangam strokes. Otherwise, we can also get the actual tonic using the <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> loader and a particular track ID.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msc</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Track(
-  audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/D/228335__akshaylaya__thi-d-107.wav&quot;,
-  stroke_name=&quot;thi&quot;,
-  tonic=&quot;D&quot;,
-  track_id=&quot;228335&quot;,
-  audio: The track&#39;s audio
-
-        Returns,
-)
 </pre></div>
 </div>
 </div>
@@ -735,24 +693,19 @@ title="Print to PDF"
 
 <span class="c1"># Comparing target and estimation</span>
 <span class="k">if</span> <span class="n">evaluation_split</span><span class="p">[</span><span class="n">identifier</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span> <span class="o">==</span> <span class="n">predicted_stroke</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nice! Predicted stroke </span><span class="si">{}</span><span class="s2"> coincides with ground-truth </span><span class="si">{}</span><span class="s2">&quot;</span>\
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nice! Predicted stroke in </span><span class="si">{}</span><span class="se">\n</span><span class="s2"> coincides with ground-truth </span><span class="si">{}</span><span class="s2">&quot;</span>\
         <span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">predicted_file</span><span class="p">),</span>
             <span class="n">evaluation_split</span><span class="p">[</span><span class="n">identifier</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span>
         <span class="p">)</span>
     <span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Missed! Predicted stroke </span><span class="si">{}</span><span class="s2"> does NOT coincide with ground-truth </span><span class="si">{}</span><span class="s2">&quot;</span>\
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Missed! Predicted stroke in </span><span class="si">{}</span><span class="se">\n</span><span class="s2"> does NOT coincide with ground-truth </span><span class="si">{}</span><span class="s2">&quot;</span>\
         <span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">predicted_file</span><span class="p">),</span>
             <span class="n">evaluation_split</span><span class="p">[</span><span class="n">identifier</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span>
         <span class="p">)</span>
     <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nice! Predicted stroke 224193__akshaylaya__dheem-b-102.wav coincides with ground-truth dheem
 </pre></div>
 </div>
 </div>
