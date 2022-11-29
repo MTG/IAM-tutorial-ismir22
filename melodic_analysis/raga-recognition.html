@@ -498,12 +498,36 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deepsrgm">
+   DEEPSRGM
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -515,6 +539,19 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deepsrgm">
+   DEEPSRGM
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -553,6 +590,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<section id="deepsrgm">
+<span id="id4"></span><h2>DEEPSRGM<a class="headerlink" href="#deepsrgm" title="Permalink to this headline">#</a></h2>
 <p>We already see that the available tool appears with <code class="docutils literal notranslate"><span class="pre">*</span></code> at the end of the name, which indicates that it may be loaded using the <code class="docutils literal notranslate"><span class="pre">compiam.load_models()</span></code> wrapper. Observing <a class="reference external" href="https://mtg.github.io/compIAM/source/melody.html#module-compiam.melody.raga_recognition.deepsrgm">the entry of this tool in the <code class="docutils literal notranslate"><span class="pre">compiam</span></code> documentation</a>, we note that an optional dependency is needed to properly load this tool. Let’s install it:</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
@@ -561,13 +600,13 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>DEEPSRGM <span id="id4">[<a class="reference internal" href="../resources/references.html#id48" title="Sathwik Tejaswi Madhusudhan and Girish Chowdhary. DEEPSRGM - Sequence classification and ranking in Indian classical music with deep learning. In In Proc. of the 20th International Society for Music Information Retrieval Conference, (ISMIR), Delft, The Netherlands., 533–540. 2019.">MC19</a>]</span> is a DL-based model that uses melodic features to automatically identify the raga from an Indian Art Music recording. In the original paper, the authors use the Indian Art Music Raga Dataset <span id="id5">[<a class="reference internal" href="../resources/references.html#id24" title="Sankalp Gulati, Joan Serrà, Kaustuv K Ganguli, S Sertan, and Xavier Serra. Time-delayed melody surfaces for Raga recognition. In In Proc. of the 17th International Society for Music Information Retrieval Conference (ISMIR), New York City, USA., 751–757. 2016. doi:10.1080/09298215.2013.866145.">GSG+16</a>]</span>, and report accuracy higher than 95%.</p>
+<p>DEEPSRGM <span id="id5">[<a class="reference internal" href="../resources/references.html#id48" title="Sathwik Tejaswi Madhusudhan and Girish Chowdhary. DEEPSRGM - Sequence classification and ranking in Indian classical music with deep learning. In In Proc. of the 20th International Society for Music Information Retrieval Conference, (ISMIR), Delft, The Netherlands., 533–540. 2019.">MC19</a>]</span> is a DL-based model that uses melodic features to automatically identify the raga from an Indian Art Music recording. In the original paper, the authors use the Indian Art Music Raga Dataset <span id="id6">[<a class="reference internal" href="../resources/references.html#id24" title="Sankalp Gulati, Joan Serrà, Kaustuv K Ganguli, S Sertan, and Xavier Serra. Time-delayed melody surfaces for Raga recognition. In In Proc. of the 17th International Society for Music Information Retrieval Conference (ISMIR), New York City, USA., 751–757. 2016. doi:10.1080/09298215.2013.866145.">GSG+16</a>]</span>, and report accuracy higher than 95%.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing a tool for automatic recognition</span>
 <span class="kn">from</span> <span class="nn">compiam.melody.raga_recognition</span> <span class="kn">import</span> <span class="n">DEEPSRGM</span>
 
-<span class="c1"># This tools has * at the end so we can load the pre-trained instance</span>
+<span class="c1"># This tools has * at the end: we can load the pre-trained instance</span>
 <span class="n">deepsrgm</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:deepsrgm&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -656,6 +695,7 @@ This recordings has unique Dunya ID: 123b09bd-9901-4e64-a65a-10b02c9e0597
 </div>
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
