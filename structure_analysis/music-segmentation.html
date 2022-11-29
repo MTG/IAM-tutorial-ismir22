@@ -640,35 +640,79 @@ title="Print to PDF"
 <p>We will now directly download the pre-trained models for <code class="docutils literal notranslate"><span class="pre">Spleeter</span></code>, and use these for inference in this walkthrough.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">wget</span> https://github.com/deezer/spleeter/releases/download/v1.4.0/2stems.tar.gz
-<span class="o">%</span><span class="k">mkdir</span> pretrained_models
-<span class="o">%</span><span class="k">unzip</span> 2stems.tar.gz -d pretrained_models
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget https://github.com/deezer/spleeter/releases/download/v1.4.0/2stems.tar.gz
+<span class="o">!</span>mkdir pretrained_models
+<span class="o">!</span>unzip 2stems.tar.gz -d pretrained_models
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UsageError: Line magic function `%wget` not found.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2022-11-29 18:58:24--  https://github.com/deezer/spleeter/releases/download/v1.4.0/2stems.tar.gz
+Resolving github.com (github.com)... 140.82.114.4
+Connecting to github.com (github.com)|140.82.114.4|:443... connected.
+HTTP request sent, awaiting response... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/211124697/e5a4d280-f98d-11e9-905c-849465861ed7?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20221129%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20221129T185824Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=dcf0c213362de16636f4f36cb1a686608d8df8315909b2d79daf5ff2d88d3990&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;key_id=0&amp;repo_id=211124697&amp;response-content-disposition=attachment%3B%20filename%3D2stems.tar.gz&amp;response-content-type=application%2Foctet-stream [following]
+--2022-11-29 18:58:24--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/211124697/e5a4d280-f98d-11e9-905c-849465861ed7?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20221129%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20221129T185824Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=dcf0c213362de16636f4f36cb1a686608d8df8315909b2d79daf5ff2d88d3990&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;key_id=0&amp;repo_id=211124697&amp;response-content-disposition=attachment%3B%20filename%3D2stems.tar.gz&amp;response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.110.133, 185.199.111.133, 185.199.108.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.110.133|:443... connected.
+HTTP request sent, awaiting response... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
+Length: 73109797 (70M) [application/octet-stream]
+Saving to: ‘2stems.tar.gz’
+
+
+2stems.tar.gz         0%[                    ]       0  --.-KB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2stems.tar.gz        28%[====&gt;               ]  20.01M  98.8MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2stems.tar.gz        68%[============&gt;       ]  48.07M   119MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2stems.tar.gz        89%[================&gt;   ]  62.15M   103MB/s               
+2stems.tar.gz       100%[===================&gt;]  69.72M   110MB/s    in 0.6s    
+
+2022-11-29 18:58:25 (110 MB/s) - ‘2stems.tar.gz’ saved [73109797/73109797]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Archive:  2stems.tar.gz
+  End-of-central-directory signature not found.  Either this file is not
+  a zipfile, or it constitutes one disk of a multi-part archive.  In the
+  latter case the central directory and zipfile comment will be found on
+  the last disk(s) of this archive.
+unzip:  cannot find zipfile directory in one of 2stems.tar.gz or
+        2stems.tar.gz.zip, and cannot find 2stems.tar.gz.ZIP, period.
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell tag_output-remove docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">Spleeter</span></code> is based on <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code>. We disable the GPU usage and the <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> related warnings just like we did in the <a class="reference internal" href="../melodic_analysis/pitch-extraction.html#melody-extraction"><span class="std std-ref">pitch extraction walkthrough</span></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Disabling tensorflow warnings and debugging info</span>
+<span class="kn">import</span> <span class="nn">os</span> 
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;TF_CPP_MIN_LOG_LEVEL&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;3&quot;</span> 
+
+<span class="c1"># Importing tensorflow and disabling GPU usage</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">set_visible_devices</span><span class="p">([],</span> <span class="s2">&quot;GPU&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We may now load the <code class="docutils literal notranslate"><span class="pre">Spleeter</span></code> separator, which will automatically load the pre-trained weights for the model. We will use the <code class="docutils literal notranslate"><span class="pre">2:stems</span></code> model, which has been trained to separate vocals and accompaniment.</p>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">spleeter.separator</span> <span class="kn">import</span> <span class="n">Separator</span>
 
 <span class="c1"># Load default 2-stem spleeter separation</span>
 <span class="n">separator</span> <span class="o">=</span> <span class="n">Separator</span><span class="p">(</span><span class="s1">&#39;spleeter:2stems&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-29 16:55:49.681364: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
-2022-11-29 16:55:49.681396: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-29 16:55:51.197868: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
-2022-11-29 16:55:51.197918: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-2022-11-29 16:55:51.197938: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az446-297): /proc/driver/nvidia/version does not exist
 </pre></div>
 </div>
 </div>
@@ -688,7 +732,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 16:55:52,134] WARNING [tensorflow.new_func:350] From /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/keras/layers/normalization/batch_normalization.py:514: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 18:58:28,782] WARNING [tensorflow.new_func:350] From /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/keras/layers/normalization/batch_normalization.py:514: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
 Instructions for updating:
 Colocations handled automatically by placer.
 </pre></div>
@@ -696,12 +740,12 @@ Colocations handled automatically by placer.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:spleeter:Downloading model archive https://github.com/MTG/IAM-tutorial-ismir22/releases/download/v1.4.0/2stems.tar.gz
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 16:55:55,335] INFO [spleeter.download:138] Downloading model archive https://github.com/MTG/IAM-tutorial-ismir22/releases/download/v1.4.0/2stems.tar.gz
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 18:58:33,114] INFO [spleeter.download:138] Downloading model archive https://github.com/MTG/IAM-tutorial-ismir22/releases/download/v1.4.0/2stems.tar.gz
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">HTTPStatusError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Separating!</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">separator</span><span class="o">.</span><span class="n">separate_to_file</span><span class="p">(</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
@@ -800,7 +844,7 @@ Colocations handled automatically by placer.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dbs</span><span class="o">.</span><span class="n">predict_stm</span><span class="p">(</span><span class="n">path_to_file</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;test_1_vocals.wav&quot;</span><span class="p">))</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/structure/segmentation/dhrupad_bandish_segmentation/__init__.py:405,</span> in <span class="ni">DhrupadBandishSegmentation.predict_stm</span><span class="nt">(self, path_to_file, output_dir)</span>
