@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Percussion transcription" href="percussion-transcription.html" />
@@ -498,12 +496,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#carnatic-and-hindustani-music-rhyhtm-datasets">
+   Carnatic and Hindustani Music Rhyhtm datasets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#akshara-pulse-tracker">
+   Akshara pulse tracker
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -515,6 +542,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#carnatic-and-hindustani-music-rhyhtm-datasets">
+   Carnatic and Hindustani Music Rhyhtm datasets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#akshara-pulse-tracker">
+   Akshara pulse tracker
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -539,17 +584,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We import the tool</span>
-<span class="kn">from</span> <span class="nn">compiam.rhythm.meter</span> <span class="kn">import</span> <span class="n">AksharaPulseTracker</span>
-
-<span class="c1"># Let&#39;s initialize an instance of the tool</span>
-<span class="n">apt</span> <span class="o">=</span> <span class="n">AksharaPulseTracker</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
+<section id="carnatic-and-hindustani-music-rhyhtm-datasets">
+<h2>Carnatic and Hindustani Music Rhyhtm datasets<a class="headerlink" href="#carnatic-and-hindustani-music-rhyhtm-datasets" title="Permalink to this headline">#</a></h2>
+<p>That is a precise moment to introduce the (CompMusic) <a class="reference external" href="https://zenodo.org/record/1264394">Carnatic</a> and <a class="reference external" href="https://zenodo.org/record/1264742">Hindustani</a> Rhythm Datasets. These datasets, which include audio recordings, musically-relevant metadata, and beat and meter annotations, can be downloaded from Zenodo under request and used through the <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> dataloaders available from <a class="reference external" href="https://github.com/mir-dataset-loaders/mirdata/releases/tag/0.3.7">release 0.3.7</a>.</p>
+<p>Let’s initialise an instance of these datasets and browse through the available data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cmr</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span>
@@ -600,7 +638,7 @@ CompMusic Carnatic Music Rhythm class
 </div>
 </div>
 </div>
-<p>For showcasing purposes, we include a single-track version of the <a class="reference external" href="https://zenodo.org/record/1264394">(CompMusic) Carnatic Rhythm Dataset</a> within the materials of this tutorial. This dataset is private, but can be requested and downloaded for research purposes.</p>
+<p>For showcasing purposes, we include a single-track version of the (CompMusic) Carnatic Rhythm Dataset within the materials of this tutorial. This dataset is private, but can be requested and downloaded for research purposes.</p>
 <p>Reading through the dataset details we observe the available data for the tracks in the dataloader. We will load the tracks and select the specific track we have selected for tutoring purposes. Bear in mind that you can access the list of identifiers in the dataloader with the <code class="docutils literal notranslate"><span class="pre">.track_ids</span></code> attribute.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -622,6 +660,50 @@ CompMusic Carnatic Music Rhythm class
 </div>
 </div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">BeatData</span></code> is an annotation type that is used in <code class="docutils literal notranslate"><span class="pre">mirata</span></code> to store information related to rhythmic beats. We will print the time-steps for the first 20 annotated beats.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">track</span><span class="o">.</span><span class="n">beats</span><span class="o">.</span><span class="n">times</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.627846,  1.443197,  2.184898,  2.944127,  3.732721,  4.476644,
+        5.293333,  6.078821,  6.825918,  7.639819,  8.42873 ,  9.201905,
+       10.168209, 10.982404, 11.784082, 12.55551 , 13.325556, 14.09551 ,
+       14.858866, 15.585941])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s also observe that we have the actual magnitude of these annotations clear.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">track</span><span class="o">.</span><span class="n">beats</span><span class="o">.</span><span class="n">time_unit</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;s&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also observe the poisitons in the cycle (if available) that each of the beats occupy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">track</span><span class="o">.</span><span class="n">beats</span><span class="o">.</span><span class="n">positions</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4])
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mirdata</span></code> annotatios have been created aiming at providing standardized and useful data structures for MIR-related annotations. In this example we showcase the use of <code class="docutils literal notranslate"><span class="pre">BeatData</span></code>, but many more annotation types are included in <code class="docutils literal notranslate"><span class="pre">mirdata</span></code>. Make sure to <a class="reference external" href="https://mirdata.readthedocs.io/en/latest/source/mirdata.html#annotations">check them out</a>!.</p>
+<p>Let’s now observe how the meter annotations looks like.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">track</span><span class="o">.</span><span class="n">meter</span>
@@ -634,295 +716,105 @@ CompMusic Carnatic Music Rhythm class
 </div>
 </div>
 </div>
+</section>
+<section id="akshara-pulse-tracker">
+<h2>Akshara pulse tracker<a class="headerlink" href="#akshara-pulse-tracker" title="Permalink to this headline">#</a></h2>
 <p>We can now extract the beats (referred as akshara pulses within the context of Indian Art Music) from the input recording. Likewise the other extractors and models in <code class="docutils literal notranslate"><span class="pre">compiam</span></code> (if not indicated otherwise), the method for inference takes an audio path as input.</p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We import the tool</span>
+<span class="kn">from</span> <span class="nn">compiam.rhythm.meter</span> <span class="kn">import</span> <span class="n">AksharaPulseTracker</span>
+
+<span class="c1"># Let&#39;s initialize an instance of the tool</span>
+<span class="n">apt</span> <span class="o">=</span> <span class="n">AksharaPulseTracker</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predicted_beats</span> <span class="o">=</span> <span class="n">apt</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:48:49,234] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.getOnsetFunctions:583] Reading audio file...
-</pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:48:49,456] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.getOnsetFunctions:596] Extracting Onset functions...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:48:53,409] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.getOnsetFunctions:628] 10000/12833.791015625...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:48:54,610] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.getOnsetFunctions:630] Total frames processed = 12832
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:48:54,616] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.tempogram_viaDFT:117] Computing Tempogram...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:48:54,645] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.compute_fourierCoefficients:109] 0/1121...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:48:57,053] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.compute_fourierCoefficients:109] 100/1121...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:48:59,399] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.compute_fourierCoefficients:109] 200/1121...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:49:01,773] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.compute_fourierCoefficients:109] 300/1121...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:49:04,101] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.compute_fourierCoefficients:109] 400/1121...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:49:06,453] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.compute_fourierCoefficients:109] 500/1121...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:49:08,822] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.compute_fourierCoefficients:109] 600/1121...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:49:11,194] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.compute_fourierCoefficients:109] 700/1121...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:49:13,620] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.compute_fourierCoefficients:109] 800/1121...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:49:16,056] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.compute_fourierCoefficients:109] 900/1121...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:49:18,435] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.compute_fourierCoefficients:109] 1000/1121...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:49:20,784] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.compute_fourierCoefficients:109] 1100/1121...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:49:21,272] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.getTempoCurve:298] Computing IAI curve...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:49:24,503] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.getTempoCurve:349] 100/299...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:49:27,690] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.getTempoCurve:349] 200/299...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:49:30,850] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.getMatraPeriodEstimateFromTC:655] Computing akshara pulse period...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:49:30,852] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.correctOctaveErrors:379] Correcting octave errors in IAI estimation...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:49:30,855] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.estimateAksharaCandidates:694] Estimating akshara candidates...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 10:49:32,633] INFO [compiam.rhythm.meter.akshara_pulse_tracker.models.DPSearch:731] Searching through candidates...
-</pre></div>
-</div>
-</div>
-</div>
+<p>Let’s visualise the first 20 beat estimations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predicted_beats</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predicted_beats</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([  1.0247879 ,   1.23065405,   1.3127829 ,   1.47632963,
-         2.20208346,   2.40224309,   2.51977275,   2.73449479,
-         2.90140917,   3.08973219,   3.29537696,   3.52195812,
-         3.7465017 ,   3.81781861,   4.03828942,   4.82774189,
-         4.92245834,   5.08335718,   5.27987622,   5.85751717,
-         5.94996922,   6.10545644,   6.51178051,   6.6171918 ,
-         6.8160474 ,   7.45759461,   7.5428723 ,   7.73961213,
-         7.95126731,   8.04658112,   8.41642474,   8.91435853,
-         9.34578911,   9.62521695,   9.68302337,  10.17226185,
-        10.5884722 ,  10.79259704,  10.97274077,  11.37730027,
-        11.77244127,  12.15825381,  12.34343656,  12.53851362,
-        12.79716024,  12.84155139,  13.06013081,  13.32872038,
-        13.51394303,  13.70147643,  13.75252611,  13.97712415,
-        14.1395498 ,  14.35040533,  14.4066756 ,  14.64885208,
-        15.25657164,  15.30362878,  15.81564309,  15.92819906,
-        16.208119  ,  16.45063661,  16.8594777 ,  17.29543047,
-        18.07331292,  18.45113553,  18.50586784,  18.62886145,
-        19.06042592,  19.33041375,  19.59275525,  19.68979221,
-        19.83022784,  20.24407903,  20.32774865,  20.68882015,
-        20.85200212,  21.2260384 ,  21.30784253,  21.57567153,
-        21.6255477 ,  21.81682754,  22.23692205,  22.30358482,
-        22.40453286,  22.56747638,  22.79949317,  23.08862037,
-        23.48742574,  23.69646022,  23.76993952,  23.8573881 ,
-        24.00410194,  24.77803804,  25.08454399,  25.29699503,
-        25.69453631,  26.425072  ,  26.80359086,  26.94321379,
-        27.13809623,  27.68971436,  28.07447026,  28.12870596,
-        28.53582204,  28.90159874,  29.25467447,  30.34678935,
-        31.47523544,  31.64848195,  31.83557625,  32.17328005,
-        32.35853674,  32.96032758,  33.14704162,  33.3343429 ,
-        33.50132935,  33.6830335 ,  33.87832132,  34.0765484 ,
-        34.44700345,  34.63242627,  34.82213026,  34.98047128,
-        35.1501434 ,  35.35264142,  35.85281224,  35.96753311,
-        36.06182457,  36.16615703,  36.27298792,  36.41042331,
-        36.56092484,  36.73432903,  37.11848146,  37.30344343,
-        37.46459016,  37.62757292,  38.20789263,  38.25329673,
-        38.58201811,  38.95373074,  39.17994111,  39.4409061 ,
-        39.48354034,  39.56459208,  40.17244338,  40.35915539,
-        40.94706758,  41.3189123 ,  41.38682846,  41.84299798,
-        42.08870728,  42.29362568,  42.37468692,  42.58273781,
-        42.71263885,  42.91001782,  43.38923061,  43.57194695,
-        43.69277028,  43.84400568,  43.92407619,  44.09169859,
-        44.48876201,  44.67877672,  44.92908592,  45.03366086,
-        45.23279297,  45.41980954,  45.54630101,  45.64012351,
-        45.80707288,  46.03307635,  46.10732057,  46.31077487,
-        46.6052974 ,  46.80050775,  47.01071558,  47.20864352,
-        47.3822876 ,  47.5820284 ,  47.78238229,  47.97395494,
-        48.53004468,  48.75310257,  48.962231  ,  49.12111137,
-        49.21706725,  49.27204276,  49.47225557,  49.51864227,
-        49.73025178,  49.82022063,  49.98165993,  50.16926074,
-        50.23563595,  50.37446677,  50.48994385,  50.88605293,
-        51.07685007,  51.16454725,  51.22746533,  51.62791515,
-        51.79193772,  51.88498216,  52.21038004,  52.25386765,
-        52.78923582,  53.02338617,  53.28082533,  53.47397711,
-        53.57456247,  53.8114798 ,  53.87059178,  53.97652223,
-        54.03333073,  54.78585153,  55.04234348,  55.36843162,
-        55.49098946,  55.90771961,  56.12165168,  56.28898713,
-        56.49248704,  56.56006661,  56.64988463,  56.82886244,
-        56.91152227,  57.28104627,  57.33706129,  57.54314307,
-        57.634376  ,  57.88072452,  58.13004698,  58.47282543,
-        58.74849029,  58.89284967,  59.07342685,  59.46189187,
-        59.51925352,  59.73208272,  60.50222311,  60.54791029,
-        60.66324917,  60.84457642,  61.10726143,  61.23786029,
-        61.43165308,  61.60374312,  61.78692934,  61.95506669,
-        62.03902899,  62.28687344,  62.37245081,  62.4355137 ,
-        63.00398785,  63.07840993,  63.30493749,  63.37577589,
-        63.57654919,  63.68867315,  63.74018752,  63.90165017,
-        64.08725327,  64.31835051,  64.53765745,  64.9122951 ,
-        65.08407275,  65.20341211,  65.31811703,  65.48399712,
-        65.59388326,  65.81931032,  65.93275511,  66.10383222,
-        66.46321718,  66.53544519,  66.68010043,  66.86420835,
-        67.0553875 ,  67.14157071,  67.44597926,  67.53359596,
-        67.58799149,  67.75900925,  67.85657627,  68.02286383,
-        68.08451668,  68.64823964,  68.78778384,  68.96997183,
-        69.08130595,  69.2057    ,  69.56746652,  70.0618433 ,
-        70.23190495,  70.49497034,  70.92487071,  71.47228328,
-        72.05865319,  72.41236783,  72.46423016,  72.63396436,
-        72.71819479,  72.92161639,  73.02973473,  73.18631505,
-        73.30484379,  73.42405528,  73.4695284 ,  73.56647894,
-        73.75628237,  73.84132285,  74.03656716,  74.21287584,
-        74.4125552 ,  74.50062214,  74.57745544,  74.72191191,
-        74.78484641,  74.84863522,  74.94091398,  75.05387707,
-        75.24141578,  75.41988469,  75.51802165,  75.69761669,
-        75.98785525,  76.06893519,  76.28316677,  76.46148528,
-        76.62484661,  76.71880697,  76.84608196,  77.02429416,
-        77.21677608,  77.5783111 ,  77.79529975,  77.984712  ,
-        78.14680148,  78.30125839,  78.43707133,  78.5274052 ,
-        78.72431173,  78.91244545,  78.99210637,  79.35631903,
-        79.45587288,  79.65495031,  79.85461198,  80.61721468,
-        80.82507671,  80.91229711,  81.13650185,  81.23424051,
-        81.29363257,  82.23186167,  82.34659434,  82.46596586,
-        82.6494747 ,  82.82933882,  82.89021422,  82.96252187,
-        83.49852593,  83.62734361,  83.73919142,  83.86034245,
-        84.02860243,  84.42499274,  84.46930809,  85.04099067,
-        85.12642538,  85.65795567,  86.18343689,  86.58818099,
-        87.69626435,  88.0754454 ,  88.12885847,  88.51398188,
-        88.72294626,  88.88237373,  89.08718424,  89.13364149,
-        89.31585895,  89.38410578,  89.70072408,  90.33715276,
-        90.73086409,  91.11637357,  91.2805479 ,  91.37313764,
-        91.57872617,  91.93823786,  92.25314421,  92.57960591,
-        92.67235954,  92.86862064,  93.05177696,  93.36918409,
-        93.54669391,  93.93238055,  94.075918  ,  94.16300729,
-        94.5129568 ,  94.77137402,  94.8200961 ,  94.92371459,
-        95.02897717,  95.57322998,  95.64835427,  95.82667463,
-        96.36512301,  96.52437209,  96.6053952 ,  96.67452672,
-        96.76577528,  97.01297143,  97.19933992,  97.30528109,
-        97.53939827,  97.92490424,  98.22092939,  98.44534015,
-        98.5001471 ,  98.86278323,  98.9750647 ,  99.16350788,
-        99.37073168,  99.47452858,  99.60115419,  99.79056481,
-        99.93801121, 100.01966843, 100.3779979 , 100.57725205,
-       100.62518448, 100.82379488, 100.97664909, 101.04092037,
-       101.42316102, 101.96959128, 102.30743759, 102.5724544 ,
-       102.93757674, 103.05698046, 103.16595538, 103.55095132,
-       104.67200972, 105.01605791, 105.08977892, 105.797796  ,
-       106.55809505, 107.92744574, 108.26598414, 109.30761777,
-       109.67950881, 110.22861413, 110.30325967, 110.81992464,
-       111.17103379, 111.39862521, 111.56988142, 111.74378616,
-       112.13403054, 112.31246578, 112.36782088, 112.5134849 ,
-       112.59050865, 112.67907661, 112.74044875, 112.8886314 ,
-       112.95556019, 113.05348342, 113.10368632, 113.27997924,
-       113.63537436, 113.80307376, 114.03592127, 114.21780388,
-       114.2740567 , 114.62453416, 114.70641793, 114.76421801,
-       114.86374029, 115.41052682, 115.57322576, 115.79863325,
-       116.46224208, 116.69469518, 116.73795756, 116.83395086,
-       117.048818  , 117.22849693, 117.41141495, 117.91430462,
-       118.00227471, 118.2171583 , 118.49996048, 118.85130944,
-       119.07189284, 119.25774385, 119.38788763, 119.43407523,
-       119.66025384, 119.84523749, 120.82674397, 121.12640269,
-       121.32672183, 121.53164043, 121.71107845, 121.75045736,
-       121.94720591, 122.54685032, 122.64349826, 122.89686213,
-       123.0802427 , 124.06606418, 124.10644317, 124.35704097,
-       124.58494923, 124.67188425, 124.80650821, 124.97850344,
-       125.12900438, 125.40704344, 125.7460287 , 125.91686904,
-       126.1034145 , 126.16451386, 126.42535623, 126.59501114,
-       126.66476175, 126.85581597, 126.92101548, 127.09479212,
-       127.3008489 , 127.42028601, 127.47967223, 127.6533624 ,
-       128.00181927, 128.56935323, 129.14717335, 129.9015917 ,
-       130.09902075, 130.4552625 , 130.67105118, 130.86296465,
-       131.06712466, 131.22623201, 131.39680036, 131.60654077,
-       131.98747157, 132.03442642, 132.19592494, 132.57613647,
-       132.76959497, 132.82978453, 132.92990719, 132.9795121 ,
-       133.13503491, 133.49273365, 133.54104301, 133.70024011,
-       133.88231993, 133.95272234, 134.10225279, 134.67110778,
-       134.81366234, 134.8965529 , 135.09974665, 135.30025717,
-       135.3508353 , 135.54724875, 135.79870744, 135.8966199 ,
-       136.08092031, 136.26743833, 136.33499923, 136.49355613,
-       136.57319666, 136.70187005, 137.27049528, 137.45465106,
-       137.52117462, 137.78000855, 137.87147981, 138.06233215,
-       138.51809864, 138.90263178, 139.07633001, 139.44911117,
-       139.50145632, 139.79299862, 140.02942018, 140.39343081,
-       140.45650275, 141.77231053, 142.02798363, 142.59219975,
-       142.94978329, 143.15209779, 143.34696853, 143.46362716,
-       143.56796234, 143.9369016 , 143.99842783, 144.17014341,
-       144.31349227, 144.37586374, 144.89365664, 145.41913034,
-       145.47581821, 145.98871321, 146.07093933, 146.58391502,
-       147.07654814, 147.60940113, 148.12116368, 148.64361901,
-       148.7049196 ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.0247879 , 1.23065405, 1.3127829 , 1.47632963, 2.20208346,
+       2.40224309, 2.51977275, 2.73449479, 2.90140917, 3.08973219,
+       3.29537696, 3.52195812, 3.7465017 , 3.81781861, 4.03828942,
+       4.82774189, 4.92245834, 5.08335718, 5.27987622, 5.85751717])
 </pre></div>
 </div>
 </div>
 </div>
+<p>We can now use the <code class="docutils literal notranslate"><span class="pre">compiam.visualisation</span></code> to plot the input audio with the annotations on top.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.visualisation.audio</span> <span class="kn">import</span> <span class="n">plot_waveform</span>
+<span class="n">help</span><span class="p">(</span><span class="n">plot_waveform</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function plot_waveform in module compiam.visualisation.audio:
+
+plot_waveform(path_to_audio, t1, t2, labels=None, sr=44100, filepath=None)
+    TODO
+</pre></div>
+</div>
+</div>
+</div>
+<p>We observe that the <code class="docutils literal notranslate"><span class="pre">labels</span></code> input variable in <code class="docutils literal notranslate"><span class="pre">plot_waveforms</span></code> needs to be a dict with the following format: <code class="docutils literal notranslate"><span class="pre">{time-step:</span> <span class="pre">label}</span></code>, while our estimation is basically a list of pulses. Therefore, we first need to convert the prediction into a dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predicted_beats_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">time_step</span><span class="p">:</span> <span class="n">idx</span> <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">time_step</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">predicted_beats</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1"># And we plot!</span>
 <span class="n">plot_waveform</span><span class="p">(</span>
     <span class="n">path_to_audio</span><span class="o">=</span><span class="n">track</span><span class="o">.</span><span class="n">audio_path</span><span class="p">,</span>
     <span class="n">t1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-    <span class="n">t2</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
-    <span class="n">labels</span><span class="o">=</span><span class="n">predicted_beats</span><span class="p">,</span>
+    <span class="n">t2</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">predicted_beats_dict</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.visualisation.audio</span> <span class="kn">import</span> <span class="n">plot_waveform</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plot_waveform</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">path_to_audio</span><span class="o">=</span><span class="n">track</span><span class="o">.</span><span class="n">audio_path</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">t1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">t2</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">labels</span><span class="o">=</span><span class="n">predicted_beats</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/visualisation/audio.py:28,</span> in <span class="ni">plot_waveform</span><span class="nt">(path_to_audio, t1, t2, labels, sr, filepath)</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="n">min_y</span> <span class="o">-</span> <span class="n">min_y</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">max_y</span> <span class="o">+</span> <span class="n">max_y</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">28</span>     <span class="k">for</span> <span class="n">o</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">labels</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span>         <span class="k">if</span> <span class="n">t1</span> <span class="o">&lt;=</span> <span class="n">o</span> <span class="o">&lt;=</span> <span class="n">t2</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span>             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">o</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;numpy.ndarray&#39; object has no attribute &#39;items&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0247879048950763:0
+1.2306540519864908:1
+1.3127828952509681:2
+1.4763296264147416:3
+2.202083458945747:4
+2.402243091983678:5
+2.519772750636294:6
+2.7344947946999327:7
+2.901409168608751:8
+3.0897321852624526:9
+3.2953769624835365:10
+3.52195811841886:11
+3.7465017000162537:12
+3.8178186126347753:13
+4.038289423961506:14
+4.82774188586985:15
+4.922458344762212:16
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 2000x500 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="../_images/meter_analysis_12_2.png" src="../_images/meter_analysis_12_2.png" />
+<img alt="../_images/meter_analysis_24_2.png" src="../_images/meter_analysis_24_2.png" />
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
