@@ -630,306 +630,14 @@ title="Print to PDF"
 <p>Typically in <code class="docutils literal notranslate"><span class="pre">compiam</span></code>, importing a model from the corresponding module or initializing it using the wrapper, can make an important difference on how the loaded instance works. Generally speaking, if you use the wrapper you will probably be only interested in running inference. If your goal is to train or deep-dive into a particular model, you should avoid the use of the model wrapper and start from a clean model instance.</p>
 </div>
 <p>Let’s now run prediction on an input file. Our mode now is <code class="docutils literal notranslate"><span class="pre">voc</span></code>, therefore the model expects a clean or source separated vocal signal. Isolated singing voice signals are not commonly available for the case of Carnatic and Hindustani music. We will use a state-of-the-art and out-of-the-box model, <a class="reference external" href="https://github.com/deezer/spleeter"><code class="docutils literal notranslate"><span class="pre">Spleeter</span></code></a>, to try to separate the singing voice from the accompaniment.</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install spleeter
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting spleeter
-</pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading spleeter-2.3.2-py3-none-any.whl (51 kB)
-?25l
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/51.2 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">51.2/51.2 kB</span> <span class=" -Color -Color-Red">1.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting typer&lt;0.4.0,&gt;=0.3.2
-  Downloading typer-0.3.2-py3-none-any.whl (21 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting httpx[http2]&lt;0.20.0,&gt;=0.19.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading httpx-0.19.0-py3-none-any.whl (77 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/77.3 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">77.3/77.3 kB</span> <span class=" -Color -Color-Red">8.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hCollecting norbert==0.2.1
-  Downloading norbert-0.2.1-py2.py3-none-any.whl (11 kB)
-Requirement already satisfied: tensorflow&lt;3.0.0,&gt;=2.5.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from spleeter) (2.9.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas&lt;2.0,&gt;=1.2 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from spleeter) (1.5.2)
-Collecting ffmpeg-python==0.2.0
-  Downloading ffmpeg_python-0.2.0-py3-none-any.whl (25 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting llvmlite&lt;0.39.0,&gt;=0.38.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading llvmlite-0.38.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (34.5 MB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/34.5 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4.1/34.5 MB</span> <span class=" -Color -Color-Red">123.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">8.5/34.5 MB</span> <span class=" -Color -Color-Red">122.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.9/34.5 MB</span> <span class=" -Color -Color-Red">122.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">17.7/34.5 MB</span> <span class=" -Color -Color-Red">128.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━ <span class=" -Color -Color-Green">22.2/34.5 MB</span> <span class=" -Color -Color-Red">127.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━ <span class=" -Color -Color-Green">26.8/34.5 MB</span> <span class=" -Color -Color-Red">126.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━ <span class=" -Color -Color-Green">31.8/34.5 MB</span> <span class=" -Color -Color-Red">134.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.5/34.5 MB</span> <span class=" -Color -Color-Red">139.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.5/34.5 MB</span> <span class=" -Color -Color-Red">139.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">34.5/34.5 MB</span> <span class=" -Color -Color-Red">139.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">34.5/34.5 MB</span> <span class=" -Color -Color-Red">48.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&lt;2.0.0,&gt;=1.19.2 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from spleeter) (1.23.5)
-Requirement already satisfied: protobuf&lt;4.0.0,&gt;=3.19.4 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from spleeter) (3.19.6)
-Requirement already satisfied: librosa&lt;0.9.0,&gt;=0.8.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from spleeter) (0.8.0)
-Requirement already satisfied: future in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from ffmpeg-python==0.2.0-&gt;spleeter) (0.18.2)
-Requirement already satisfied: scipy in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from norbert==0.2.1-&gt;spleeter) (1.9.3)
-Requirement already satisfied: certifi in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from httpx[http2]&lt;0.20.0,&gt;=0.19.0-&gt;spleeter) (2022.9.24)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting httpcore&lt;0.14.0,&gt;=0.13.3
-  Downloading httpcore-0.13.7-py3-none-any.whl (58 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/58.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">58.8/58.8 kB</span> <span class=" -Color -Color-Red">19.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting rfc3986[idna2008]&lt;2,&gt;=1.3
-  Downloading rfc3986-1.5.0-py2.py3-none-any.whl (31 kB)
-Requirement already satisfied: charset-normalizer in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from httpx[http2]&lt;0.20.0,&gt;=0.19.0-&gt;spleeter) (2.1.1)
-Requirement already satisfied: sniffio in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from httpx[http2]&lt;0.20.0,&gt;=0.19.0-&gt;spleeter) (1.3.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting h2&lt;5,&gt;=3
-  Downloading h2-4.1.0-py3-none-any.whl (57 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/57.5 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">57.5/57.5 kB</span> <span class=" -Color -Color-Red">19.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: audioread&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from librosa&lt;0.9.0,&gt;=0.8.0-&gt;spleeter) (3.0.0)
-Requirement already satisfied: scikit-learn!=0.19.0,&gt;=0.14.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from librosa&lt;0.9.0,&gt;=0.8.0-&gt;spleeter) (0.24.2)
-Requirement already satisfied: joblib&gt;=0.14 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from librosa&lt;0.9.0,&gt;=0.8.0-&gt;spleeter) (1.2.0)
-Requirement already satisfied: decorator&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from librosa&lt;0.9.0,&gt;=0.8.0-&gt;spleeter) (5.1.1)
-Requirement already satisfied: resampy&gt;=0.2.2 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from librosa&lt;0.9.0,&gt;=0.8.0-&gt;spleeter) (0.4.2)
-Requirement already satisfied: numba&gt;=0.43.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from librosa&lt;0.9.0,&gt;=0.8.0-&gt;spleeter) (0.56.4)
-Requirement already satisfied: soundfile&gt;=0.9.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from librosa&lt;0.9.0,&gt;=0.8.0-&gt;spleeter) (0.10.3.post1)
-Requirement already satisfied: pooch&gt;=1.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from librosa&lt;0.9.0,&gt;=0.8.0-&gt;spleeter) (1.6.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from pandas&lt;2.0,&gt;=1.2-&gt;spleeter) (2022.6)
-Requirement already satisfied: python-dateutil&gt;=2.8.1 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from pandas&lt;2.0,&gt;=1.2-&gt;spleeter) (2.8.2)
-Requirement already satisfied: tensorflow-io-gcs-filesystem&gt;=0.23.1 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (0.28.0)
-Requirement already satisfied: gast&lt;=0.4.0,&gt;=0.2.1 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (0.4.0)
-Requirement already satisfied: google-pasta&gt;=0.1.1 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (0.2.0)
-Requirement already satisfied: wrapt&gt;=1.11.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (1.14.1)
-Requirement already satisfied: h5py&gt;=2.9.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (3.7.0)
-Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (56.0.0)
-Requirement already satisfied: typing-extensions&gt;=3.6.6 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (4.4.0)
-Requirement already satisfied: keras-preprocessing&gt;=1.1.1 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (1.1.2)
-Requirement already satisfied: astunparse&gt;=1.6.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (1.6.3)
-Requirement already satisfied: absl-py&gt;=1.0.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (1.3.0)
-Requirement already satisfied: keras&lt;2.10.0,&gt;=2.9.0rc0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (2.9.0)
-Requirement already satisfied: tensorboard&lt;2.10,&gt;=2.9 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (2.9.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: opt-einsum&gt;=2.3.2 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (3.3.0)
-Requirement already satisfied: libclang&gt;=13.0.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (14.0.6)
-Requirement already satisfied: termcolor&gt;=1.1.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (2.1.1)
-Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (21.3)
-Requirement already satisfied: six&gt;=1.12.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (1.16.0)
-Requirement already satisfied: flatbuffers&lt;2,&gt;=1.12 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (1.12)
-Requirement already satisfied: tensorflow-estimator&lt;2.10.0,&gt;=2.9.0rc0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (2.9.0)
-Requirement already satisfied: grpcio&lt;2.0,&gt;=1.24.3 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (1.50.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting click&lt;7.2.0,&gt;=7.1.1
-  Downloading click-7.1.2-py2.py3-none-any.whl (82 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/82.8 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">82.8/82.8 kB</span> <span class=" -Color -Color-Red">23.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: wheel&lt;1.0,&gt;=0.23.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from astunparse&gt;=1.6.0-&gt;tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (0.38.4)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting hpack&lt;5,&gt;=4.0
-  Downloading hpack-4.0.0-py3-none-any.whl (32 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting hyperframe&lt;7,&gt;=6.0
-  Downloading hyperframe-6.0.1-py3-none-any.whl (12 kB)
-Requirement already satisfied: anyio==3.* in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from httpcore&lt;0.14.0,&gt;=0.13.3-&gt;httpx[http2]&lt;0.20.0,&gt;=0.19.0-&gt;spleeter) (3.6.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting h11&lt;0.13,&gt;=0.11
-  Downloading h11-0.12.0-py3-none-any.whl (54 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/54.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">54.9/54.9 kB</span> <span class=" -Color -Color-Red">18.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: idna&gt;=2.8 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from anyio==3.*-&gt;httpcore&lt;0.14.0,&gt;=0.13.3-&gt;httpx[http2]&lt;0.20.0,&gt;=0.19.0-&gt;spleeter) (3.4)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: importlib-metadata in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from numba&gt;=0.43.0-&gt;librosa&lt;0.9.0,&gt;=0.8.0-&gt;spleeter) (5.1.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numba&gt;=0.43.0
-  Downloading numba-0.56.3-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.5 MB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.5 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">3.5/3.5 MB</span> <span class=" -Color -Color-Red">143.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.5/3.5 MB</span> <span class=" -Color -Color-Red">78.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading numba-0.56.2-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.5 MB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.5 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">3.5/3.5 MB</span> <span class=" -Color -Color-Red">152.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.5/3.5 MB</span> <span class=" -Color -Color-Red">53.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading numba-0.56.0-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.5 MB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.5 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━ <span class=" -Color -Color-Green">3.3/3.5 MB</span> <span class=" -Color -Color-Red">100.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.5/3.5 MB</span> <span class=" -Color -Color-Red">66.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numpy&lt;2.0.0,&gt;=1.19.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading numpy-1.22.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.9 MB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/16.9 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4.5/16.9 MB</span> <span class=" -Color -Color-Red">135.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">9.0/16.9 MB</span> <span class=" -Color -Color-Red">129.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━ <span class=" -Color -Color-Green">13.9/16.9 MB</span> <span class=" -Color -Color-Red">129.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">16.8/16.9 MB</span> <span class=" -Color -Color-Red">136.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">16.8/16.9 MB</span> <span class=" -Color -Color-Red">136.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.9/16.9 MB</span> <span class=" -Color -Color-Red">70.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numba&gt;=0.43.0
-  Downloading numba-0.55.2-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.4 MB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">3.3/3.4 MB</span> <span class=" -Color -Color-Red">150.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.4/3.4 MB</span> <span class=" -Color -Color-Red">90.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests&gt;=2.19.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from pooch&gt;=1.0-&gt;librosa&lt;0.9.0,&gt;=0.8.0-&gt;spleeter) (2.28.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: appdirs&gt;=1.3.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from pooch&gt;=1.0-&gt;librosa&lt;0.9.0,&gt;=0.8.0-&gt;spleeter) (1.4.4)
-Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from packaging-&gt;tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (3.0.9)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from scikit-learn!=0.19.0,&gt;=0.14.0-&gt;librosa&lt;0.9.0,&gt;=0.8.0-&gt;spleeter) (3.1.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cffi&gt;=1.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from soundfile&gt;=0.9.0-&gt;librosa&lt;0.9.0,&gt;=0.8.0-&gt;spleeter) (1.15.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: google-auth-oauthlib&lt;0.5,&gt;=0.4.1 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (0.4.6)
-Requirement already satisfied: werkzeug&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (2.2.2)
-Requirement already satisfied: tensorboard-data-server&lt;0.7.0,&gt;=0.6.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (0.6.1)
-Requirement already satisfied: google-auth&lt;3,&gt;=1.6.3 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (2.14.1)
-Requirement already satisfied: markdown&gt;=2.6.8 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (3.4.1)
-Requirement already satisfied: tensorboard-plugin-wit&gt;=1.6.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (1.8.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pycparser in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from cffi&gt;=1.0-&gt;soundfile&gt;=0.9.0-&gt;librosa&lt;0.9.0,&gt;=0.8.0-&gt;spleeter) (2.21)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cachetools&lt;6.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (5.2.0)
-Requirement already satisfied: rsa&lt;5,&gt;=3.1.4 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (4.9)
-Requirement already satisfied: pyasn1-modules&gt;=0.2.1 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (0.2.8)
-Requirement already satisfied: requests-oauthlib&gt;=0.7.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (1.3.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from requests&gt;=2.19.0-&gt;pooch&gt;=1.0-&gt;librosa&lt;0.9.0,&gt;=0.8.0-&gt;spleeter) (1.26.13)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: MarkupSafe&gt;=2.1.1 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from werkzeug&gt;=1.0.1-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (2.1.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=0.5 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from importlib-metadata-&gt;numba&gt;=0.43.0-&gt;librosa&lt;0.9.0,&gt;=0.8.0-&gt;spleeter) (3.11.0)
-Requirement already satisfied: pyasn1&lt;0.5.0,&gt;=0.4.6 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from pyasn1-modules&gt;=0.2.1-&gt;google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (0.4.8)
-Requirement already satisfied: oauthlib&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages (from requests-oauthlib&gt;=0.7.0-&gt;google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;3.0.0,&gt;=2.5.0-&gt;spleeter) (3.2.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: rfc3986, numpy, llvmlite, hyperframe, hpack, h11, ffmpeg-python, click, typer, numba, httpcore, h2, norbert, httpx, spleeter
-  Attempting uninstall: numpy
-    Found existing installation: numpy 1.23.5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Uninstalling numpy-1.23.5:
-      Successfully uninstalled numpy-1.23.5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: llvmlite
-    Found existing installation: llvmlite 0.39.1
-    Uninstalling llvmlite-0.39.1:
-      Successfully uninstalled llvmlite-0.39.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: click
-    Found existing installation: click 8.1.3
-    Uninstalling click-8.1.3:
-      Successfully uninstalled click-8.1.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: numba
-    Found existing installation: numba 0.56.4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Uninstalling numba-0.56.4:
-      Successfully uninstalled numba-0.56.4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed click-7.1.2 ffmpeg-python-0.2.0 h11-0.12.0 h2-4.1.0 hpack-4.0.0 httpcore-0.13.7 httpx-0.19.0 hyperframe-6.0.1 llvmlite-0.38.1 norbert-0.2.1 numba-0.55.2 numpy-1.22.4 rfc3986-1.5.0 spleeter-2.3.2 typer-0.3.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
+<div class="cell tag_output-remove docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">spleeter.separator</span> <span class="kn">import</span> <span class="n">Separator</span>
 
@@ -939,13 +647,13 @@ Requirement already satisfied: oauthlib&gt;=3.0.0 in /opt/hostedtoolcache/Python
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-29 14:32:15.911288: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
-2022-11-29 14:32:15.911321: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-29 15:28:25.832243: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-11-29 15:28:25.832267: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-29 14:32:17.730028: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
-2022-11-29 14:32:17.730073: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-2022-11-29 14:32:17.730096: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az572-542): /proc/driver/nvidia/version does not exist
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-11-29 15:28:27.225986: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2022-11-29 15:28:27.226042: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-11-29 15:28:27.226062: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az627-468): /proc/driver/nvidia/version does not exist
 </pre></div>
 </div>
 </div>
@@ -956,7 +664,7 @@ Requirement already satisfied: oauthlib&gt;=3.0.0 in /opt/hostedtoolcache/Python
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separating!</span>
 <span class="n">separator</span><span class="o">.</span><span class="n">separate_to_file</span><span class="p">(</span>
     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-        <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;mir_datasets&quot;</span><span class="p">,</span> <span class="s2">&quot;CMR_full_dataset_1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;mir_datasets&quot;</span><span class="p">,</span> <span class="s2">&quot;CMR_full_dataset_1.0&quot;</span><span class="p">,</span>
         <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;10001_05_Thunga_Theera_Virajam.wav&quot;</span>
     <span class="p">),</span>
     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">)</span>
@@ -965,43 +673,38 @@ Requirement already satisfied: oauthlib&gt;=3.0.0 in /opt/hostedtoolcache/Python
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 15:28:28,120] WARNING [tensorflow.new_func:350] From /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/keras/layers/normalization/batch_normalization.py:514: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:spleeter:Downloading model archive https://github.com/MTG/IAM-tutorial-ismir22/releases/download/v1.4.0/2stems.tar.gz
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-29 15:28:31,040] INFO [spleeter.download:138] Downloading model archive https://github.com/MTG/IAM-tutorial-ismir22/releases/download/v1.4.0/2stems.tar.gz
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">Error</span><span class="g g-Whitespace">                                     </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/spleeter/audio/ffmpeg.py:101,</span> in <span class="ni">FFMPEGProcessAudioAdapter.load</span><span class="nt">(_, path, offset, duration, sample_rate, dtype)</span>
-<span class="g g-Whitespace">    </span><span class="mi">100</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">101</span>     <span class="n">probe</span> <span class="o">=</span> <span class="n">ffmpeg</span><span class="o">.</span><span class="n">probe</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span> <span class="k">except</span> <span class="n">ffmpeg</span><span class="o">.</span><span class="n">_run</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/ffmpeg/_probe.py:23,</span> in <span class="ni">probe</span><span class="nt">(filename, cmd, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">23</span>     <span class="k">raise</span> <span class="n">Error</span><span class="p">(</span><span class="s1">&#39;ffprobe&#39;</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
-
-<span class="ne">Error</span>: ffprobe error (see stderr output for detail)
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">SpleeterError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="ne">HTTPStatusError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Separating!</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">separator</span><span class="o">.</span><span class="n">separate_to_file</span><span class="p">(</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;mir_datasets&quot;</span><span class="p">,</span> <span class="s2">&quot;CMR_full_dataset_1&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;mir_datasets&quot;</span><span class="p">,</span> <span class="s2">&quot;CMR_full_dataset_1.0&quot;</span><span class="p">,</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;10001_05_Thunga_Theera_Virajam.wav&quot;</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="p">),</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/spleeter/separator.py:372,</span> in <span class="ni">Separator.separate_to_file</span><span class="nt">(self, audio_descriptor, destination, audio_adapter, offset, duration, codec, bitrate, filename_format, synchronous)</span>
-<span class="g g-Whitespace">    </span><span class="mi">370</span> <span class="k">if</span> <span class="n">audio_adapter</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/spleeter/separator.py:378,</span> in <span class="ni">Separator.separate_to_file</span><span class="nt">(self, audio_descriptor, destination, audio_adapter, offset, duration, codec, bitrate, filename_format, synchronous)</span>
 <span class="g g-Whitespace">    </span><span class="mi">371</span>     <span class="n">audio_adapter</span> <span class="o">=</span> <span class="n">AudioAdapter</span><span class="o">.</span><span class="n">default</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">372</span> <span class="n">waveform</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">audio_adapter</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">372</span> <span class="n">waveform</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">audio_adapter</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">373</span>     <span class="n">audio_descriptor</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">374</span>     <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">375</span>     <span class="n">duration</span><span class="o">=</span><span class="n">duration</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">376</span>     <span class="n">sample_rate</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_sample_rate</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">377</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">378</span> <span class="n">sources</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">separate</span><span class="p">(</span><span class="n">waveform</span><span class="p">,</span> <span class="n">audio_descriptor</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">378</span> <span class="n">sources</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">separate</span><span class="p">(</span><span class="n">waveform</span><span class="p">,</span> <span class="n">audio_descriptor</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">379</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_to_file</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">380</span>     <span class="n">sources</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">381</span>     <span class="n">audio_descriptor</span><span class="p">,</span>
@@ -1009,31 +712,54 @@ Requirement already satisfied: oauthlib&gt;=3.0.0 in /opt/hostedtoolcache/Python
 <span class="g g-Whitespace">    </span><span class="mi">387</span>     <span class="n">synchronous</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">388</span> <span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/spleeter/audio/ffmpeg.py:103,</span> in <span class="ni">FFMPEGProcessAudioAdapter.load</span><span class="nt">(_, path, offset, duration, sample_rate, dtype)</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span>     <span class="n">probe</span> <span class="o">=</span> <span class="n">ffmpeg</span><span class="o">.</span><span class="n">probe</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span> <span class="k">except</span> <span class="n">ffmpeg</span><span class="o">.</span><span class="n">_run</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">103</span>     <span class="k">raise</span> <span class="n">SpleeterError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span>         <span class="s2">&quot;An error occurs with ffprobe (see ffprobe output below)</span><span class="se">\n\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span>             <span class="n">e</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">106</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="k">if</span> <span class="s2">&quot;streams&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">probe</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">probe</span><span class="p">[</span><span class="s2">&quot;streams&quot;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="k">raise</span> <span class="n">SpleeterError</span><span class="p">(</span><span class="s2">&quot;No stream was found with ffprobe&quot;</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/spleeter/separator.py:321,</span> in <span class="ni">Separator.separate</span><span class="nt">(self, waveform, audio_descriptor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_separate_tensorflow</span><span class="p">(</span><span class="n">waveform</span><span class="p">,</span> <span class="n">audio_descriptor</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span> <span class="k">elif</span> <span class="n">backend</span> <span class="o">==</span> <span class="n">STFTBackend</span><span class="o">.</span><span class="n">LIBROSA</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">321</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_separate_librosa</span><span class="p">(</span><span class="n">waveform</span><span class="p">,</span> <span class="n">audio_descriptor</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">322</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported STFT backend </span><span class="si">{</span><span class="n">backend</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="ne">SpleeterError</span>: An error occurs with ffprobe (see ffprobe output below)
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/spleeter/separator.py:265,</span> in <span class="ni">Separator._separate_librosa</span><span class="nt">(self, waveform, audio_descriptor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span> <span class="k">elif</span> <span class="n">stft</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">264</span>     <span class="n">stft</span> <span class="o">=</span> <span class="n">stft</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">265</span> <span class="n">sess</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_session</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span> <span class="n">outputs</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span>     <span class="n">outputs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span>     <span class="n">feed_dict</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_input_provider</span><span class="p">()</span><span class="o">.</span><span class="n">get_feed_dict</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span>         <span class="n">features</span><span class="p">,</span> <span class="n">stft</span><span class="p">,</span> <span class="n">audio_descriptor</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span>     <span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">272</span> <span class="k">for</span> <span class="n">inst</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_builder</span><span class="p">()</span><span class="o">.</span><span class="n">instruments</span><span class="p">:</span>
 
-<span class="n">ffprobe</span> <span class="n">version</span> <span class="mf">4.4.2</span><span class="o">-</span><span class="mi">0</span><span class="n">ubuntu0</span><span class="mf">.22.04.1</span> <span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">2007</span><span class="o">-</span><span class="mi">2021</span> <span class="n">the</span> <span class="n">FFmpeg</span> <span class="n">developers</span>
-  <span class="n">built</span> <span class="k">with</span> <span class="n">gcc</span> <span class="mi">11</span> <span class="p">(</span><span class="n">Ubuntu</span> <span class="mf">11.2.0</span><span class="o">-</span><span class="mi">19</span><span class="n">ubuntu1</span><span class="p">)</span>
-  <span class="n">configuration</span><span class="p">:</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=/</span><span class="n">usr</span> <span class="o">--</span><span class="n">extra</span><span class="o">-</span><span class="n">version</span><span class="o">=</span><span class="mi">0</span><span class="n">ubuntu0</span><span class="mf">.22.04.1</span> <span class="o">--</span><span class="n">toolchain</span><span class="o">=</span><span class="n">hardened</span> <span class="o">--</span><span class="n">libdir</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span> <span class="o">--</span><span class="n">incdir</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span> <span class="o">--</span><span class="n">arch</span><span class="o">=</span><span class="n">amd64</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">gpl</span> <span class="o">--</span><span class="n">disable</span><span class="o">-</span><span class="n">stripping</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">gnutls</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">ladspa</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libaom</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libass</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libbluray</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libbs2b</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libcaca</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libcdio</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libcodec2</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libdav1d</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libflite</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libfontconfig</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libfreetype</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libfribidi</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libgme</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libgsm</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libjack</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libmp3lame</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libmysofa</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libopenjpeg</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libopenmpt</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libopus</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libpulse</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">librabbitmq</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">librubberband</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libshine</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libsnappy</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libsoxr</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libspeex</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libsrt</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libssh</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libtheora</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libtwolame</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libvidstab</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libvorbis</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libvpx</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libwebp</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libx265</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libxml2</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libxvid</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libzimg</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libzmq</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libzvbi</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">lv2</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">omx</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">openal</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">opencl</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">opengl</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">sdl2</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">pocketsphinx</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">librsvg</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libmfx</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libdc1394</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libdrm</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libiec61883</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">chromaprint</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">frei0r</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">libx264</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">shared</span>
-  <span class="n">libavutil</span>      <span class="mf">56.</span> <span class="mf">70.100</span> <span class="o">/</span> <span class="mf">56.</span> <span class="mf">70.100</span>
-  <span class="n">libavcodec</span>     <span class="mf">58.134.100</span> <span class="o">/</span> <span class="mf">58.134.100</span>
-  <span class="n">libavformat</span>    <span class="mf">58.</span> <span class="mf">76.100</span> <span class="o">/</span> <span class="mf">58.</span> <span class="mf">76.100</span>
-  <span class="n">libavdevice</span>    <span class="mf">58.</span> <span class="mf">13.100</span> <span class="o">/</span> <span class="mf">58.</span> <span class="mf">13.100</span>
-  <span class="n">libavfilter</span>     <span class="mf">7.110.100</span> <span class="o">/</span>  <span class="mf">7.110.100</span>
-  <span class="n">libswscale</span>      <span class="mf">5.</span>  <span class="mf">9.100</span> <span class="o">/</span>  <span class="mf">5.</span>  <span class="mf">9.100</span>
-  <span class="n">libswresample</span>   <span class="mf">3.</span>  <span class="mf">9.100</span> <span class="o">/</span>  <span class="mf">3.</span>  <span class="mf">9.100</span>
-  <span class="n">libpostproc</span>    <span class="mf">55.</span>  <span class="mf">9.100</span> <span class="o">/</span> <span class="mf">55.</span>  <span class="mf">9.100</span>
-<span class="o">../</span><span class="n">audio</span><span class="o">/</span><span class="n">mir_datasets</span><span class="o">/</span><span class="n">CMR_full_dataset_1</span><span class="o">/</span><span class="n">audio</span><span class="o">/</span><span class="mi">10001_05</span><span class="n">_Thunga_Theera_Virajam</span><span class="o">.</span><span class="n">wav</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/spleeter/separator.py:237,</span> in <span class="ni">Separator._get_session</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="n">saver</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">compat</span><span class="o">.</span><span class="n">v1</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Saver</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span> <span class="n">provider</span> <span class="o">=</span> <span class="n">ModelProvider</span><span class="o">.</span><span class="n">default</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">237</span> <span class="n">model_directory</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_params</span><span class="p">[</span><span class="s2">&quot;model_dir&quot;</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span> <span class="n">latest_checkpoint</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">latest_checkpoint</span><span class="p">(</span><span class="n">model_directory</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">compat</span><span class="o">.</span><span class="n">v1</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/spleeter/model/provider/__init__.py:80,</span> in <span class="ni">ModelProvider.get</span><span class="nt">(self, model_directory)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">(</span><span class="n">model_directory</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span>         <span class="n">makedirs</span><span class="p">(</span><span class="n">model_directory</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">80</span>         <span class="bp">self</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">model_directory</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">model_directory</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span>         <span class="bp">self</span><span class="o">.</span><span class="n">writeProbe</span><span class="p">(</span><span class="n">model_directory</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span> <span class="k">return</span> <span class="n">model_directory</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/spleeter/model/provider/github.py:141,</span> in <span class="ni">GithubModelProvider.download</span><span class="nt">(self, name, path)</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span> <span class="k">with</span> <span class="n">httpx</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">http2</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span>     <span class="k">with</span> <span class="n">client</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">141</span>         <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">142</span>         <span class="n">archive</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span>         <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/httpx/_models.py:1423,</span> in <span class="ni">Response.raise_for_status</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1421</span> <span class="k">if</span> <span class="n">codes</span><span class="o">.</span><span class="n">is_client_error</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">status_code</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1422</span>     <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error_type</span><span class="o">=</span><span class="s2">&quot;Client Error&quot;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1423</span>     <span class="k">raise</span> <span class="n">HTTPStatusError</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1424</span> <span class="k">elif</span> <span class="n">codes</span><span class="o">.</span><span class="n">is_server_error</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">status_code</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1425</span>     <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error_type</span><span class="o">=</span><span class="s2">&quot;Server Error&quot;</span><span class="p">)</span>
+
+<span class="ne">HTTPStatusError</span>: 404 Client Error: Not Found for url: https://github.com/MTG/IAM-tutorial-ismir22/releases/download/v1.4.0/2stems.tar.gz
+<span class="n">For</span> <span class="n">more</span> <span class="n">information</span> <span class="n">check</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">httpstatuses</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="mi">404</span>
 </pre></div>
 </div>
 </div>
