@@ -21,7 +21,7 @@ This tutorial is meant to be a starting point for cross-level researchers that a
 
 ## Reference this Book
 
-If you would like to reference this book please use.
+If you would like to reference this book please use:
 
 ```bibtex
 @book{iam_tutorial_ismir22,
@@ -40,3 +40,4 @@ If you would like to reference this book please use.
   Url = {https://mtg.github.io/IAM-tutorial-ismir22}
 }
 ```
+Further citing details are given [here](citing).

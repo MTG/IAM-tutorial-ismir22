@@ -636,7 +636,7 @@ title="Print to PDF"
 <span class="n">mridangam_tracks</span> <span class="o">=</span> <span class="n">msc</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()</span>
 
 <span class="c1"># Getting list of id per split</span>
-<span class="c1"># NOTE: We use (0.9, 0.1): two splits, including 90% and 10% of the tracks respectively</span>
+<span class="c1"># NOTE: We use (0.9, 0.1): two splits including 90% and 10% of the whole dataset</span>
 <span class="n">split_dict</span> <span class="o">=</span> <span class="n">msc</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_random_track_splits</span><span class="p">(</span>
     <span class="n">splits</span><span class="o">=</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span>
     <span class="n">split_names</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="s2">&quot;validation&quot;</span><span class="p">)</span>
@@ -652,12 +652,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;229028&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;228716&#39;,
  Track(
-   audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/D#/229028__akshaylaya__num-dsh-030.wav&quot;,
-   stroke_name=&quot;num&quot;,
+   audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/D#/228716__akshaylaya__dheem-dsh-028.wav&quot;,
+   stroke_name=&quot;dheem&quot;,
    tonic=&quot;D#&quot;,
-   track_id=&quot;229028&quot;,
+   track_id=&quot;228716&quot;,
    audio: The track&#39;s audio
  
          Returns,
@@ -710,12 +710,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;../audio/mir_datasets/mridangam_stroke_1.5/D/228198__akshaylaya__tha-d-223.wav&#39;,
- &#39;tha&#39;)
-(&#39;../audio/mir_datasets/mridangam_stroke_1.5/D/228132__akshaylaya__tha-d-157.wav&#39;,
- &#39;tha&#39;)
-(&#39;../audio/mir_datasets/mridangam_stroke_1.5/C/225835__akshaylaya__tha-c-030.wav&#39;,
- &#39;tha&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;../audio/mir_datasets/mridangam_stroke_1.5/D#/229655__akshaylaya__thi-dsh-092.wav&#39;,
+ &#39;thi&#39;)
+(&#39;../audio/mir_datasets/mridangam_stroke_1.5/E/230723__akshaylaya__tham-e-015.wav&#39;,
+ &#39;tham&#39;)
+(&#39;../audio/mir_datasets/mridangam_stroke_1.5/C/226140__akshaylaya__thi-c-068.wav&#39;,
+ &#39;thi&#39;)
 </pre></div>
 </div>
 </div>
@@ -729,10 +729,10 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Track(
-  audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/B/224500__akshaylaya__tha-b-007.wav&quot;,
+  audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/D/228050__akshaylaya__tha-d-075.wav&quot;,
   stroke_name=&quot;tha&quot;,
-  tonic=&quot;B&quot;,
-  track_id=&quot;224500&quot;,
+  tonic=&quot;D&quot;,
+  track_id=&quot;228050&quot;,
   audio: The track&#39;s audio
 
         Returns,
@@ -768,8 +768,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nice! Predicted stroke in 230706__akshaylaya__tha-e-158.wav
- coincides with ground-truth tha
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nice! Predicted stroke in 229769__akshaylaya__thi-dsh-206.wav
+ coincides with ground-truth thi
 </pre></div>
 </div>
 </div>

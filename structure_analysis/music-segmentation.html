@@ -586,6 +586,7 @@ title="Print to PDF"
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
@@ -656,46 +657,9 @@ title="Print to PDF"
 </div>
 </div>
 <p>We will now directly download the pre-trained models for <code class="docutils literal notranslate"><span class="pre">Spleeter</span></code>, and use these for inference in this walkthrough.</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget https://github.com/deezer/spleeter/releases/download/v1.4.0/2stems.tar.gz
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2022-11-30 16:45:43--  https://github.com/deezer/spleeter/releases/download/v1.4.0/2stems.tar.gz
-Resolving github.com (github.com)... 140.82.114.3
-Connecting to github.com (github.com)|140.82.114.3|:443... connected.
-HTTP request sent, awaiting response... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>302 Found
-Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/211124697/e5a4d280-f98d-11e9-905c-849465861ed7?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20221130%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20221130T164543Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=dc5a7594f1afa73d7674093a7962c0a6365a2ef877d9f5b269919f0f919db2a3&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;key_id=0&amp;repo_id=211124697&amp;response-content-disposition=attachment%3B%20filename%3D2stems.tar.gz&amp;response-content-type=application%2Foctet-stream [following]
---2022-11-30 16:45:43--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/211124697/e5a4d280-f98d-11e9-905c-849465861ed7?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20221130%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20221130T164543Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=dc5a7594f1afa73d7674093a7962c0a6365a2ef877d9f5b269919f0f919db2a3&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;key_id=0&amp;repo_id=211124697&amp;response-content-disposition=attachment%3B%20filename%3D2stems.tar.gz&amp;response-content-type=application%2Foctet-stream
-Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.110.133, 185.199.111.133, 185.199.108.133, ...
-Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.110.133|:443... connected.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
-Length: 73109797 (70M) [application/octet-stream]
-Saving to: ‘2stems.tar.gz’
-
-
-2stems.tar.gz         0%[                    ]       0  --.-KB/s               
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2stems.tar.gz        34%[=====&gt;              ]  24.01M   114MB/s               
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2stems.tar.gz        80%[===============&gt;    ]  56.01M   133MB/s               
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2stems.tar.gz       100%[===================&gt;]  69.72M   140MB/s    in 0.5s    
-
-2022-11-30 16:45:44 (140 MB/s) - ‘2stems.tar.gz’ saved [73109797/73109797]
 </pre></div>
 </div>
 </div>
@@ -703,14 +667,16 @@ Saving to: ‘2stems.tar.gz’
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importing the &quot;tarfile&quot; module</span>
-<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">tarfile</span>
+
 <span class="c1"># open file</span>
-<span class="n">file</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;./2stems.tar.gz&quot;</span><span class="p">)</span>
-<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;./2stems/&quot;</span><span class="p">)</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;2stems.tar.gz&quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;pretrained_models/&quot;</span><span class="p">)</span>
 
 <span class="c1"># extracting file</span>
-<span class="n">file</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s2">&quot;./2stems/&quot;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;pretrained_models&quot;</span><span class="p">,</span> <span class="s2">&quot;2stems&quot;</span><span class="p">)</span>
+<span class="p">)</span>
 
 <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -757,19 +723,13 @@ Saving to: ‘2stems.tar.gz’
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-30 16:45:47,619] WARNING [tensorflow.new_func:350] From /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/keras/layers/normalization/batch_normalization.py:514: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-30 17:25:50,259] WARNING [tensorflow.new_func:350] From /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/keras/layers/normalization/batch_normalization.py:514: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
 Instructions for updating:
 Colocations handled automatically by placer.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:spleeter:Downloading model archive https://github.com/MTG/IAM-tutorial-ismir22/releases/download/v1.4.0/2stems.tar.gz
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2022-11-30 16:45:50,670] INFO [spleeter.download:138] Downloading model archive https://github.com/MTG/IAM-tutorial-ismir22/releases/download/v1.4.0/2stems.tar.gz
-</pre></div>
-</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">HTTPStatusError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Separating!</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">separator</span><span class="o">.</span><span class="n">separate_to_file</span><span class="p">(</span>
@@ -802,10 +762,7 @@ Colocations handled automatically by placer.
 <span class="ne">--&gt; </span><span class="mi">321</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_separate_librosa</span><span class="p">(</span><span class="n">waveform</span><span class="p">,</span> <span class="n">audio_descriptor</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">322</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported STFT backend </span><span class="si">{</span><span class="n">backend</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/spleeter/separator.py:265,</span> in <span class="ni">Separator._separate_librosa</span><span class="nt">(self, waveform, audio_descriptor)</span>
-<span class="g g-Whitespace">    </span><span class="mi">263</span> <span class="k">elif</span> <span class="n">stft</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">264</span>     <span class="n">stft</span> <span class="o">=</span> <span class="n">stft</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">265</span> <span class="n">sess</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_session</span><span class="p">()</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/spleeter/separator.py:273,</span> in <span class="ni">Separator._separate_librosa</span><span class="nt">(self, waveform, audio_descriptor)</span>
 <span class="g g-Whitespace">    </span><span class="mi">266</span> <span class="n">outputs</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">267</span>     <span class="n">outputs</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">268</span>     <span class="n">feed_dict</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_input_provider</span><span class="p">()</span><span class="o">.</span><span class="n">get_feed_dict</span><span class="p">(</span>
@@ -813,37 +770,78 @@ Colocations handled automatically by placer.
 <span class="g g-Whitespace">    </span><span class="mi">270</span>     <span class="p">),</span>
 <span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">272</span> <span class="k">for</span> <span class="n">inst</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_builder</span><span class="p">()</span><span class="o">.</span><span class="n">instruments</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">273</span>     <span class="n">out</span><span class="p">[</span><span class="n">inst</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stft</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">274</span>         <span class="n">outputs</span><span class="p">[</span><span class="n">inst</span><span class="p">],</span> <span class="n">inverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">waveform</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">275</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">276</span> <span class="k">return</span> <span class="n">out</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/spleeter/separator.py:237,</span> in <span class="ni">Separator._get_session</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="n">saver</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">compat</span><span class="o">.</span><span class="n">v1</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Saver</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span> <span class="n">provider</span> <span class="o">=</span> <span class="n">ModelProvider</span><span class="o">.</span><span class="n">default</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">237</span> <span class="n">model_directory</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_params</span><span class="p">[</span><span class="s2">&quot;model_dir&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span> <span class="n">latest_checkpoint</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">latest_checkpoint</span><span class="p">(</span><span class="n">model_directory</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">239</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">compat</span><span class="o">.</span><span class="n">v1</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/spleeter/separator.py:208,</span> in <span class="ni">Separator._stft</span><span class="nt">(self, data, inverse, length)</span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_channels</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span>     <span class="n">d</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span>         <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,)),</span> <span class="n">data</span><span class="p">[:,</span> <span class="n">c</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,))))</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">inverse</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span>         <span class="k">else</span> <span class="n">data</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">208</span>     <span class="n">s</span> <span class="o">=</span> <span class="n">fstft</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">hop_length</span><span class="o">=</span><span class="n">H</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="n">win</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">win_len_arg</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">if</span> <span class="n">inverse</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">N</span> <span class="p">:</span> <span class="n">N</span> <span class="o">+</span> <span class="n">length</span><span class="p">]</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/spleeter/model/provider/__init__.py:80,</span> in <span class="ni">ModelProvider.get</span><span class="nt">(self, model_directory)</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">(</span><span class="n">model_directory</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">79</span>         <span class="n">makedirs</span><span class="p">(</span><span class="n">model_directory</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">80</span>         <span class="bp">self</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">model_directory</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">model_directory</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">81</span>         <span class="bp">self</span><span class="o">.</span><span class="n">writeProbe</span><span class="p">(</span><span class="n">model_directory</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">82</span> <span class="k">return</span> <span class="n">model_directory</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/librosa/core/spectrum.py:403,</span> in <span class="ni">istft</span><span class="nt">(stft_matrix, hop_length, win_length, window, center, dtype, length)</span>
+<span class="g g-Whitespace">    </span><span class="mi">400</span>     <span class="n">ytmp</span> <span class="o">=</span> <span class="n">ifft_window</span> <span class="o">*</span> <span class="n">fft</span><span class="o">.</span><span class="n">irfft</span><span class="p">(</span><span class="n">stft_matrix</span><span class="p">[:,</span> <span class="n">bl_s</span><span class="p">:</span><span class="n">bl_t</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">402</span>     <span class="c1"># Overlap-add the istft block starting at the i&#39;th frame</span>
+<span class="ne">--&gt; </span><span class="mi">403</span>     <span class="n">__overlap_add</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">frame</span> <span class="o">*</span> <span class="n">hop_length</span> <span class="p">:],</span> <span class="n">ytmp</span><span class="p">,</span> <span class="n">hop_length</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">405</span>     <span class="n">frame</span> <span class="o">+=</span> <span class="n">bl_t</span> <span class="o">-</span> <span class="n">bl_s</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span> <span class="c1"># Normalize by sum of squared window</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/spleeter/model/provider/github.py:141,</span> in <span class="ni">GithubModelProvider.download</span><span class="nt">(self, name, path)</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span> <span class="k">with</span> <span class="n">httpx</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">http2</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">140</span>     <span class="k">with</span> <span class="n">client</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">141</span>         <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">142</span>         <span class="n">archive</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">143</span>         <span class="k">try</span><span class="p">:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numba/core/dispatcher.py:487,</span> in <span class="ni">_DispatcherBase._compile_for_args</span><span class="nt">(self, *args, **kws)</span>
+<span class="g g-Whitespace">    </span><span class="mi">485</span>             <span class="n">e</span><span class="o">.</span><span class="n">patch_message</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(),</span> <span class="n">help_msg</span><span class="p">)))</span>
+<span class="g g-Whitespace">    </span><span class="mi">486</span>     <span class="c1"># ignore the FULL_TRACEBACKS config, this needs reporting!</span>
+<span class="ne">--&gt; </span><span class="mi">487</span>     <span class="k">raise</span> <span class="n">e</span>
+<span class="g g-Whitespace">    </span><span class="mi">488</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">489</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_types_active_call</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/httpx/_models.py:1423,</span> in <span class="ni">Response.raise_for_status</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1421</span> <span class="k">if</span> <span class="n">codes</span><span class="o">.</span><span class="n">is_client_error</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">status_code</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1422</span>     <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error_type</span><span class="o">=</span><span class="s2">&quot;Client Error&quot;</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1423</span>     <span class="k">raise</span> <span class="n">HTTPStatusError</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1424</span> <span class="k">elif</span> <span class="n">codes</span><span class="o">.</span><span class="n">is_server_error</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">status_code</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1425</span>     <span class="n">message</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error_type</span><span class="o">=</span><span class="s2">&quot;Server Error&quot;</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numba/core/dispatcher.py:420,</span> in <span class="ni">_DispatcherBase._compile_for_args</span><span class="nt">(self, *args, **kws)</span>
+<span class="g g-Whitespace">    </span><span class="mi">418</span> <span class="n">return_val</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">419</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">420</span>     <span class="n">return_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">argtypes</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">421</span> <span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">ForceLiteralArg</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">422</span>     <span class="c1"># Received request for compiler re-entry with the list of arguments</span>
+<span class="g g-Whitespace">    </span><span class="mi">423</span>     <span class="c1"># indicated by e.requested_args.</span>
+<span class="g g-Whitespace">    </span><span class="mi">424</span>     <span class="c1"># First, check if any of these args are already Literal-ized</span>
+<span class="g g-Whitespace">    </span><span class="mi">425</span>     <span class="n">already_lit_pos</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">e</span><span class="o">.</span><span class="n">requested_args</span>
+<span class="g g-Whitespace">    </span><span class="mi">426</span>                        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">types</span><span class="o">.</span><span class="n">Literal</span><span class="p">)]</span>
 
-<span class="ne">HTTPStatusError</span>: 404 Client Error: Not Found for url: https://github.com/MTG/IAM-tutorial-ismir22/releases/download/v1.4.0/2stems.tar.gz
-<span class="n">For</span> <span class="n">more</span> <span class="n">information</span> <span class="n">check</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">httpstatuses</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="mi">404</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numba/core/dispatcher.py:946,</span> in <span class="ni">Dispatcher.compile</span><span class="nt">(self, sig)</span>
+<span class="g g-Whitespace">    </span><span class="mi">944</span>     <span class="k">return</span> <span class="n">existing</span><span class="o">.</span><span class="n">entry_point</span>
+<span class="g g-Whitespace">    </span><span class="mi">945</span> <span class="c1"># Try to load from disk cache</span>
+<span class="ne">--&gt; </span><span class="mi">946</span> <span class="n">cres</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="o">.</span><span class="n">load_overload</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">targetctx</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">947</span> <span class="k">if</span> <span class="n">cres</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">948</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_cache_hits</span><span class="p">[</span><span class="n">sig</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numba/core/caching.py:633,</span> in <span class="ni">load_overload</span><span class="nt">(self, sig, target_context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">630</span> <span class="k">def</span> <span class="nf">enable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_enabled</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">633</span> <span class="k">def</span> <span class="nf">disable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">634</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_enabled</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">636</span> <span class="k">def</span> <span class="nf">flush</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numba/core/base.py:270,</span> in <span class="ni">refresh</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span> <span class="k">def</span> <span class="nf">refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">270</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span><span class="sd">     Refresh context with new declarations from known registries.</span>
+<span class="g g-Whitespace">    </span><span class="mi">272</span><span class="sd">     Useful for third-party extensions.</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">274</span>     <span class="c1"># load target specific registries</span>
+<span class="g g-Whitespace">    </span><span class="mi">275</span>     <span class="bp">self</span><span class="o">.</span><span class="n">load_additional_registries</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/numba/core/cpu.py:76,</span> in <span class="ni">load_additional_registries</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="kn">from</span> <span class="nn">numba.core</span> <span class="kn">import</span> <span class="n">optional</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="kn">from</span> <span class="nn">numba.misc</span> <span class="kn">import</span> <span class="n">gdb_hook</span><span class="p">,</span> <span class="n">literal</span>
+<span class="ne">---&gt; </span><span class="mi">76</span> <span class="kn">from</span> <span class="nn">numba.np</span> <span class="kn">import</span> <span class="n">linalg</span><span class="p">,</span> <span class="n">polynomial</span><span class="p">,</span> <span class="n">arraymath</span><span class="p">,</span> <span class="n">arrayobj</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span> <span class="kn">from</span> <span class="nn">numba.typed</span> <span class="kn">import</span> <span class="n">typeddict</span><span class="p">,</span> <span class="n">dictimpl</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span> <span class="kn">from</span> <span class="nn">numba.typed</span> <span class="kn">import</span> <span class="n">typedlist</span><span class="p">,</span> <span class="n">listobject</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numba.np.random&#39;
 </pre></div>
 </div>
 </div>

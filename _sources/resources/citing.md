@@ -1,3 +1,4 @@
+(citing)=
 # Citing this work
 The cite the book as a whole please cite:
 ```bibtex
