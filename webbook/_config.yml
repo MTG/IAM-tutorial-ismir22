@@ -21,7 +21,7 @@ latex:
 launch_buttons:
   notebook_interface: "classic"
   colab_url: "https://colab.research.google.com"
-  #thebe: true
+  thebe: true
   #binderhub_url: "https://mybinder.org"
 
 # Add a bibtex file so that we can create citations
@@ -36,7 +36,7 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/MTG/compIAM/webbook  # Online location of your book
+  url: https://github.com/MTG/IAM-tutorial-ismir22  # Online location of your book
   path_to_book: webbook  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
