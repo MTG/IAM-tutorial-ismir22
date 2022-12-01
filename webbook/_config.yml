@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 title: #Logo instead of title
-author: Thomas Nuttall, Genís Plaja, Lara Pearson, Brindha Manickavasakan, Kaustuv Kanti Ganguli, Ajay Srinivasamurthy and Xavier Serra
+author: Thomas Nuttall, Genís Plaja-Roglans, Lara Pearson, Brindha Manickavasakan, Kaustuv Kanti Ganguli, Ajay Srinivasamurthy and Xavier Serra
 copyright: "2022"
 logo: images/logo.png
 
