@@ -40,4 +40,7 @@ If you would like to reference this book please use:
   Url = {https://mtg.github.io/IAM-tutorial-ismir22}
 }
 ```
+
+```{note}
 Further citing details are given [here](citing).
+```
