@@ -64,7 +64,6 @@ A raga is brought out through certain phrases that are linked to each other and 
 
 (hindustani-raga-epistemology)=
 ### Raga epistemology
-
 The melodic form in Hindustani music is governed by the system of ragas. A raga can be viewed as
 falling somewhere between a scale and a tune in terms of its defining grammar which specifies the
 tonal material, tonal hierarchy, and characteristic melodic phrases. The rules, which constitute
