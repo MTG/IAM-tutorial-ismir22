@@ -5,7 +5,7 @@ Efforts to automatically transcribe melodies in Carnatic and Hindustani music ha
 
 ## State Based Transcription (SBT) for Carnatic Music
 ```{note}
-The installation instructions, details of the API and data formats, are available [here](link:TODO). 
+The installation instructions, details of the API and data formats, are available [here](https://www.iitm.ac.in/donlab/preview/music/sbt_cm.html). 
 ```
 The SBT tool extracts the descriptive transcription of a pitch curve of an audio excerpt. The excerpt is typically a segment of a Carnatic rendition. The SBT also needs the excerpt's tonic and its raga as inputs. The descriptive transcription is obtained according to the algorithm described in {cite}`viraraghavan_transcription_2020`, in accordance with the raga's gamaka movements. This output is compact, and is provided as a csv file.
 

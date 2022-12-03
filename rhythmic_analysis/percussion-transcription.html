@@ -514,12 +514,36 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#four-way-tabla-transcription">
+   Four-way tabla transcription
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -531,6 +555,19 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#four-way-tabla-transcription">
+   Four-way tabla transcription
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -553,21 +590,55 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>We will start by listing the available percussion transcription tools in <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.rhythm.transcription</span> <span class="kn">import</span> <span class="n">FourWayTabla</span>
-<span class="kn">from</span> <span class="nn">compiam.rhythm.transcription</span> <span class="kn">import</span> <span class="n">MnemonicTranscription</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">rhythm</span><span class="o">.</span><span class="n">transcription</span><span class="o">.</span><span class="n">list_tools</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;FourWayTabla*&#39;, &#39;MnemonicTranscription&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this section we will showcase a tabla transcription tool in which a DL model is trained to locate the onsets of a tabla recordings while recognising which stroke is being played at each onset <span id="id2">[<a class="reference internal" href="../resources/references.html#id27" title="M.A. Rohit, Amitrajit Bhattacharjee, and Preeti Rao. Four-way classification of tabla strokes with models adapted from automatic drum transcription. In In Proc. of the 22nd International Society for Music Information Retrieval Conference, ISMIR, Online, 19–26. 2021.">RBR21</a>]</span>.</p>
+<section id="four-way-tabla-transcription">
+<span id="tabla-transcription"></span><h2>Four-way tabla transcription<a class="headerlink" href="#four-way-tabla-transcription" title="Permalink to this headline">#</a></h2>
+<p>Let’s observe how a DL model can learn to tackle the task of percussion transcription. This tool we showcase adapts a DL model for standard drums, drawing relationships between timbres in a regular drum set and a tabla instrument.</p>
+<p>We observe in the documentation that this model is based on <code class="docutils literal notranslate"><span class="pre">torch</span></code>, therefore we need to install this dependency before moving on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install torch==0.8.0
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">ERROR: Could not find a version that satisfies the requirement torch==0.8.0 (from versions: 1.4.0, 1.5.0, 1.5.1, 1.6.0, 1.7.0, 1.7.1, 1.8.0, 1.8.1, 1.9.0, 1.9.1, 1.10.0, 1.10.1, 1.10.2, 1.11.0, 1.12.0, 1.12.1, 1.13.0)</span>
+<span class=" -Color -Color-Red">ERROR: No matching distribution found for torch==0.8.0</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Walkthrough coming soon...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">list_models</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function list_models at 0x7eff7b7b2280&gt;
 </pre></div>
 </div>
 </div>
 </div>
+<p>We observe that this tools is available to be loaded with the <code class="docutils literal notranslate"><span class="pre">.load_models()</span></code> wrapper. Note that we do have two versions for this model: <code class="docutils literal notranslate"><span class="pre">rhythm:1way-tabla</span></code> and <code class="docutils literal notranslate"><span class="pre">rhythm:4way-tabla</span></code>. As seen in the paper, 1-way models is trained separatedly per each stroke class, while the 4-way model learns to classify the strokes into four different classes. Let’s take a look at the</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -618,7 +689,7 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Thomas Nuttall, Genís Plaja, Lara Pearson, Brindha Manickavasakan, Kaustuv Kanti Ganguli, Ajay Srinivasamurthy and Xavier Serra<br/>
+    By Thomas Nuttall, Genís Plaja-Roglans, Lara Pearson, Brindha Manickavasakan, Kaustuv Kanti Ganguli, Ajay Srinivasamurthy and Xavier Serra<br/>
   
       &copy; Copyright 2022.<br/>
 </p>
