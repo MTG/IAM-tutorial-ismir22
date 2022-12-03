@@ -19,7 +19,7 @@ This is an online, interactive, and self-contained book based on [Jupyter Book](
 This cool interface helps readers go through the learning materials on the web page. This tutorial can be entirely followed on the web, bypassing the need of installing anything locally. **However, the coding materials in this tutorial are interactive.** There are different ways in which you can explore and run the code in this tutorial. Next up, we briefly present the additional features of this webbook.
 
 (google-collab)=
-### Running the book online: Google Collaboratory
+### Running the book in the cloud: Google Collaboratory
 In some pages of the tutorial, you will observe that **a rocket icon (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/rocket.svg" width="20" height="20">) appears at the right top of the screen**. This is an indicator that such particular page is includes runable code, which you can conviniently run on the cloud.
 
 Google Collaboratory (abbreviated as Collab) is a handy tool in which you can import and run the code in this tutorial. Moreove, you will be able to edit the code, to further explore and extend what you will be learning throughout the tutorial.

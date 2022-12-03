@@ -16,7 +16,7 @@ The metadata is provided by [`MusicBrainz`](https://musicbrainz.org/). You can u
 
 In Dunya, each corpus has specific characteristics and the developed software tools allow to process the available information in order to study and explore the characteristics of each musical repertoire. 
 
-Let us now review the tools to access, browse, and parse the data in the Dunya corpora:
+Let us now review the tools to access, browse, and parse the data in the Dunya corpora.
 
 
 ## Dunya website
@@ -30,12 +30,12 @@ name: dunya_traditions
 Musical traditions represented in the Dunya corpora
 ```
 
-Although focusing on Carnatic and Hindustani music in this tutorial, note that Dunya opens the door for computational research of other traditions too! 
+Although focusing on Carnatic and Hindustani music in this tutorial, note that Dunya opens the door for computational research of other traditions too!
 
 
 (dunya-python-api)=
 ## Dunya Python API
-The data in Dunya can be programatically browsed, parsed and downloaded using the Dunya Python API in [`pycompmusic`](https://dunya.compmusic.upf.edu/docs/search.html). We have ported `pycompmusic` into `compiam`, so the corpora can be accessed through `compiam` as well. Through this software, you can parse statistics in the databaset, while the data in Dunya can be filtered by tradition, artist, raaga, taala. 
+The data in Dunya can be programatically browsed, parsed and downloaded using the Dunya Python API in [`pycompmusic`](https://dunya.compmusic.upf.edu/docs/search.html). We have ported a portion of `pycompmusic` into `compiam`, so the corpora can be accessed through `compiam` as well. Through this software, you can parse statistics in the databaset, while the data in Dunya can be filtered by tradition, artist, raaga, taala. 
 
 ```{note}
 To access the data in Dunya, you need a personal access token. You get the said token by registering to Dunya through the website.
@@ -48,8 +48,10 @@ carnatic_corpora = load_corpora("carnatic", cc=True, token="your-token-goes-here
 ```
 
 ```{note}
-Carnatic and Hindustani corpora are both divided in two parts, one part licensed under Creative Commons 4.0 which can be openly shared for research purposes, while the other part is restricted and is only shared under an explicit research-related request. You can request access to the non-CC part of the corpora through the Dunya website. If granted, your access token will allow you to access these data. Set the ``cc`` input parameter to False in ``compiam.load_corpora()`` to load these collection.
+Carnatic and Hindustani corpora are both divided in two parts, one part licensed under Creative Commons 4.0 which can be openly shared for research purposes, while the other part is restricted and is only shared under an explicit research-related request. You can request access to the non-CC part of the corpora through the Dunya website. If granted, your access token will allow you to access the restricted data. Set the ``cc`` input parameter to False in ``compiam.load_corpora()`` to load these collection.
 ```
+
+Your Dunya access token is **unique** and **must be kept in secret**. For that reason, we are not able to actively walkthrough the use of the Dunya corpora access in `compiam`. In the next sections we provide some examples of useful methods that you can use, while providing a [detailed documentation](https://mtg.github.io/compIAM/source/datasets.html#access-the-dunya-corpora) of all functionalities of this component in `compiam`.
 
 ### Browsing the corpora using the API
 Our corpora class include methods to get an overview of the available data in the database. Let us get you some examples below:
@@ -60,14 +62,14 @@ Our corpora class include methods to get an overview of the available data in th
 * ``list_concerts()``: list all available concerts in the selected database.
 * ``list_available_types(<artists-musicbrainz-id>)``:  prints you out the available types of file available for a particular recording.
 
-See the entire list of methods in the [`compiam` Corpora class documentation](https://mtg.github.io/compIAM/source/datasets.html#access-the-dunya-corpora).
-
 ### Getting the data
 The Dunya Python API also provides methods to get the data. You may use these set of functionalities to parse and/or download into your machine a particular annotation, metadata file, or audio track.
 
 * ``get_annotation(<recording-musicbrainz-id>, <annotation-type>)``: download annotation from database given a recording id and the annotation type.
 * ``save_annotation(<recording-musicbrainz-id>, <annotation-type>, <path/to/save>)``: an extension of ``get_annotation()`` but writing the annotation to a file.
 * ``download_mp3(<recording-musicbrainz-id>, <path/to/save>)``: download and save the audio for a recording.
+
+See the entire list of methods in the [`compiam` Corpora class documentation](https://mtg.github.io/compIAM/source/datasets.html#access-the-dunya-corpora).
 
 ```{tip}
 Loop through a list of ``mbid`` and run the downloading functions to get the data for a specific collection of recordings.

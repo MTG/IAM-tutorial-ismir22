@@ -41,15 +41,9 @@ parts:
   chapters:
     - file: timbre_analysis/stroke-classification
 
-- caption: Wrapping up
-  chapters:
-    - file: wrapping_up/discussion
-    - file: wrapping_up/conclusion
-
 - caption: Resources
   chapters:    
     - file: resources/references
     - file: resources/further-reading
     - file: resources/acknowledgements
     - file: resources/citing
-    - file: resources/about
