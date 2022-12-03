@@ -999,7 +999,10 @@ Four-Way Tabla track class
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;melody:deepsrgm&#39;,
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;melody:deepsrgm&#39;,
  &#39;melody:ftanet-carnatic&#39;,
  &#39;melody:cae-carnatic&#39;,
  &#39;structure:dhrupad-bandish-segmentation&#39;]
@@ -1019,7 +1022,7 @@ Four-Way Tabla track class
 <p class="admonition-title">Note</p>
 <p>Some tools require specific dependencies that are not installed by default. These dependencies are specified in the <a class="reference external" href="https://mtg.github.io/compIAM/">online <code class="docutils literal notranslate"><span class="pre">compiam</span></code> documentation</a>. In addition, if a tool is loaded and a dependency is missing, an error message will be thrown requesting the user to install the missing package.</p>
 </div>
-<div class="cell tag_remove-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loading pre-trained model for prediction</span>
 <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:ftanet-carnatic&quot;</span><span class="p">)</span>
@@ -1028,6 +1031,46 @@ Four-Way Tabla track class
     <span class="s2">&quot;saraga_carnatic&quot;</span><span class="p">,</span>
     <span class="n">data_home</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;mir_datasets&quot;</span><span class="p">),</span>
 <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/pitch_extraction/ftanet_carnatic/__init__.py:28,</span> in <span class="ni">FTANetCarnatic.__init__</span><span class="nt">(self, model_path, sample_rate)</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>     <span class="k">global</span> <span class="n">tf</span>
+<span class="ne">---&gt; </span><span class="mi">28</span>     <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="k">except</span><span class="p">:</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;tensorflow&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Loading pre-trained model for prediction</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:ftanet-carnatic&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">saraga_carnatic</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="s2">&quot;saraga_carnatic&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">data_home</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;mir_datasets&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/__init__.py:28,</span> in <span class="ni">load_model</span><span class="nt">(model_name, models_dict)</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">m_dict</span> <span class="o">=</span> <span class="n">models_dict</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="n">module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">import_module</span><span class="p">(</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;module_name&quot;</span><span class="p">]),</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;class_name&quot;</span><span class="p">])</span>
+<span class="ne">---&gt; </span><span class="mi">28</span> <span class="k">return</span> <span class="n">module</span><span class="p">(</span><span class="o">**</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">])</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/melody/pitch_extraction/ftanet_carnatic/__init__.py:31,</span> in <span class="ni">FTANetCarnatic.__init__</span><span class="nt">(self, model_path, sample_rate)</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span>     <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="k">except</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">31</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span>         <span class="s2">&quot;In order to use this tool you need to have tensorflow installed. &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>         <span class="s2">&quot;Please install tensorflow using: pip install tensorflow==2.7.2&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="c1">###</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_model</span><span class="p">()</span>
+
+<span class="ne">ImportError</span>: In order to use this tool you need to have tensorflow installed. Please install tensorflow using: pip install tensorflow==2.7.2
 </pre></div>
 </div>
 </div>
