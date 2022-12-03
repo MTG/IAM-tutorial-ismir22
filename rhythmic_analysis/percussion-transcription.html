@@ -248,23 +248,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Wrapping up
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../wrapping_up/discussion.html">
-   Discussion
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../wrapping_up/conclusion.html">
-   Concluding the tutorial
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Resources
  </span>
 </p>
@@ -287,11 +270,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../resources/citing.html">
    Citing this work
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../resources/about.html">
-   About the authoring of this tutorial
   </a>
  </li>
 </ul>
@@ -514,36 +492,12 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#four-way-tabla-transcription">
-   Four-way tabla transcription
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
@@ -555,19 +509,6 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#four-way-tabla-transcription">
-   Four-way tabla transcription
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -577,6 +518,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="percussion-transcription">
 <span id="id1"></span><h1>Percussion transcription<a class="headerlink" href="#percussion-transcription" title="Permalink to this headline">#</a></h1>
+<p>A presentation of the different strokes for the main percussion instruments in <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-rhythm"><span class="std std-ref">Carnatic</span></a> and <a class="reference internal" href="../indian_art_music/hindustani-music.html#hindustani-rhythm"><span class="std std-ref">Hindustani</span></a> music is given in the musical introductory session. The automatic transcription or categorization of these strokes, locating them in the corresponding point in time, is notably relevant given the key role of the percussion patterns in Indian Art Music performances. This task has tool in which More recently, DL models have been trained to locate the onsets in percussion recordings while recognising which stroke is being played at each onset. This has been achieved by adapts a DL model for standard drums, drawing relationships between timbres in a regular drum set and a tabla instrument <span id="id2">[<a class="reference internal" href="../resources/references.html#id27" title="M.A. Rohit, Amitrajit Bhattacharjee, and Preeti Rao. Four-way classification of tabla strokes with models adapted from automatic drum transcription. In In Proc. of the 22nd International Society for Music Information Retrieval Conference, ISMIR, Online, 19–26. 2021.">RBR21</a>]</span>.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Importing compiam to the project</span>
@@ -598,47 +540,11 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;FourWayTabla*&#39;, &#39;MnemonicTranscription&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;MnemonicTranscription&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p>In this section we will showcase a tabla transcription tool in which a DL model is trained to locate the onsets of a tabla recordings while recognising which stroke is being played at each onset <span id="id2">[<a class="reference internal" href="../resources/references.html#id27" title="M.A. Rohit, Amitrajit Bhattacharjee, and Preeti Rao. Four-way classification of tabla strokes with models adapted from automatic drum transcription. In In Proc. of the 22nd International Society for Music Information Retrieval Conference, ISMIR, Online, 19–26. 2021.">RBR21</a>]</span>.</p>
-<section id="four-way-tabla-transcription">
-<span id="tabla-transcription"></span><h2>Four-way tabla transcription<a class="headerlink" href="#four-way-tabla-transcription" title="Permalink to this headline">#</a></h2>
-<p>Let’s observe how a DL model can learn to tackle the task of percussion transcription. This tool we showcase adapts a DL model for standard drums, drawing relationships between timbres in a regular drum set and a tabla instrument.</p>
-<p>We observe in the documentation that this model is based on <code class="docutils literal notranslate"><span class="pre">torch</span></code>, therefore we need to install this dependency before moving on.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install torch==0.8.0
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">ERROR: Could not find a version that satisfies the requirement torch==0.8.0 (from versions: 1.4.0, 1.5.0, 1.5.1, 1.6.0, 1.7.0, 1.7.1, 1.8.0, 1.8.1, 1.9.0, 1.9.1, 1.10.0, 1.10.1, 1.10.2, 1.11.0, 1.12.0, 1.12.1, 1.13.0)</span>
-<span class=" -Color -Color-Red">ERROR: No matching distribution found for torch==0.8.0</span>
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">list_models</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function list_models at 0x7eff7b7b2280&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<p>We observe that this tools is available to be loaded with the <code class="docutils literal notranslate"><span class="pre">.load_models()</span></code> wrapper. Note that we do have two versions for this model: <code class="docutils literal notranslate"><span class="pre">rhythm:1way-tabla</span></code> and <code class="docutils literal notranslate"><span class="pre">rhythm:4way-tabla</span></code>. As seen in the paper, 1-way models is trained separatedly per each stroke class, while the 4-way model learns to classify the strokes into four different classes. Let’s take a look at the</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">

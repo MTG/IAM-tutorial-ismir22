@@ -250,23 +250,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Wrapping up
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../wrapping_up/discussion.html">
-   Discussion
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../wrapping_up/conclusion.html">
-   Concluding the tutorial
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Resources
  </span>
 </p>
@@ -289,11 +272,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../resources/citing.html">
    Citing this work
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../resources/about.html">
-   About the authoring of this tutorial
   </a>
  </li>
 </ul>
@@ -893,6 +871,65 @@ title="Print to PDF"
 <section id="time-frequency-representation">
 <h2>Time-frequency representation<a class="headerlink" href="#time-frequency-representation" title="Permalink to this headline">#</a></h2>
 <p>A spectrogram, commonly computed using the STFT (Short-Time Fourier Transform), is a time-frequency representation in which a chain of spectrums are calculated from a signal by sliding, with a particular <strong>hop size</strong> a window of particular <strong>window size (or frame size)</strong> which indicates the time section in which to apply the frequency decomposition. We always use <strong>window size</strong> &gt; <strong>hop size</strong>, therefore there is an overlap of windows, which actually provides a smoother chaining and better frequency analysis. A particular window function is applied to each frame to ensure a more natural overlap. For our computational musicology studies, this representation is very important.</p>
+<p>We will use <a class="reference external" href="https://librosa.org/doc/latest/index.html"><code class="docutils literal notranslate"><span class="pre">librosa</span></code></a> in this case: a Python-based package for audio signal processing. <code class="docutils literal notranslate"><span class="pre">librosa</span></code> includes nice visualisation tools. Let us show how a time-frequency representation looks like, and how we can compute it in a few steps.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">librosa</span>
+<span class="kn">import</span> <span class="nn">librosa.display</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Computing time-frequency representation for signal above</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">stft</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>  <span class="c1"># STFT of y</span>
+<span class="n">S_db</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">amplitude_to_db</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">D</span><span class="p">),</span> <span class="n">ref</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
+
+<span class="c1"># And plotting!</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">specshow</span><span class="p">(</span><span class="n">S_db</span><span class="p">,</span> <span class="n">x_axis</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">y_axis</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Time-frequency representation&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%+2.f dB&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f869ef64310&gt;
+</pre></div>
+</div>
+<img alt="../_images/python_28_1.png" src="../_images/python_28_1.png" />
+</div>
+</div>
+<p>Let’s now plot a more applied signal. We will use a testing audio of 2 seconds, and observe how it looks like.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># librosa may also be used to load audio</span>
+<span class="n">y</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;testing_samples&quot;</span><span class="p">,</span> <span class="s2">&quot;test_1.wav&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Computing time-frequency representation for signal above</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">stft</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>  <span class="c1"># STFT of y</span>
+<span class="n">S_db</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">amplitude_to_db</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">D</span><span class="p">),</span> <span class="n">ref</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
+
+<span class="c1"># And plotting!</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">specshow</span><span class="p">(</span><span class="n">S_db</span><span class="p">,</span> <span class="n">x_axis</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">y_axis</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Time-frequency representation&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%+2.f dB&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f869d34fc10&gt;
+</pre></div>
+</div>
+<img alt="../_images/python_30_1.png" src="../_images/python_30_1.png" />
+</div>
+</div>
+<p>We see that, since multiple pitches are being sung (even in only two seconds), this representation is more appropiate to use. We will refer to the time-frequency representation (aka spectrogram) many times durinng the tutorial, so make sure to understand it clearly.</p>
+<p>Other variants may be computed from the spectrogram, e.g. <a class="reference external" href="https://medium.com/analytics-vidhya/understanding-the-mel-spectrogram-fca2afa2ce53">mel-spectrogram</a>. Also, other time-frequency representations more specific for particular tasks may be used, e.g. <a class="reference external" href="https://en.wikipedia.org/wiki/Chroma_feature">chroma features</a>. No explicit use of these is included in this tutorial, but we suggest the reader to go through them. These are very important in the field of ASP and MIR.</p>
 </section>
 </section>
 

@@ -248,23 +248,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Wrapping up
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../wrapping_up/discussion.html">
-   Discussion
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../wrapping_up/conclusion.html">
-   Concluding the tutorial
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Resources
  </span>
 </p>
@@ -287,11 +270,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../resources/citing.html">
    Citing this work
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../resources/about.html">
-   About the authoring of this tutorial
   </a>
  </li>
 </ul>
@@ -583,7 +561,7 @@ title="Print to PDF"
 </tbody>
 </table>
 <p>In Dunya, each corpus has specific characteristics and the developed software tools allow to process the available information in order to study and explore the characteristics of each musical repertoire.</p>
-<p>Let us now review the tools to access, browse, and parse the data in the Dunya corpora:</p>
+<p>Let us now review the tools to access, browse, and parse the data in the Dunya corpora.</p>
 </section>
 <section id="dunya-website">
 <h2>Dunya website<a class="headerlink" href="#dunya-website" title="Permalink to this headline">#</a></h2>
@@ -598,7 +576,7 @@ title="Print to PDF"
 </section>
 <section id="dunya-python-api">
 <span id="id3"></span><h2>Dunya Python API<a class="headerlink" href="#dunya-python-api" title="Permalink to this headline">#</a></h2>
-<p>The data in Dunya can be programatically browsed, parsed and downloaded using the Dunya Python API in <a class="reference external" href="https://dunya.compmusic.upf.edu/docs/search.html"><code class="docutils literal notranslate"><span class="pre">pycompmusic</span></code></a>. We have ported <code class="docutils literal notranslate"><span class="pre">pycompmusic</span></code> into <code class="docutils literal notranslate"><span class="pre">compiam</span></code>, so the corpora can be accessed through <code class="docutils literal notranslate"><span class="pre">compiam</span></code> as well. Through this software, you can parse statistics in the databaset, while the data in Dunya can be filtered by tradition, artist, raaga, taala.</p>
+<p>The data in Dunya can be programatically browsed, parsed and downloaded using the Dunya Python API in <a class="reference external" href="https://dunya.compmusic.upf.edu/docs/search.html"><code class="docutils literal notranslate"><span class="pre">pycompmusic</span></code></a>. We have ported a portion of <code class="docutils literal notranslate"><span class="pre">pycompmusic</span></code> into <code class="docutils literal notranslate"><span class="pre">compiam</span></code>, so the corpora can be accessed through <code class="docutils literal notranslate"><span class="pre">compiam</span></code> as well. Through this software, you can parse statistics in the databaset, while the data in Dunya can be filtered by tradition, artist, raaga, taala.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To access the data in Dunya, you need a personal access token. You get the said token by registering to Dunya through the website.</p>
@@ -610,8 +588,9 @@ title="Print to PDF"
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Carnatic and Hindustani corpora are both divided in two parts, one part licensed under Creative Commons 4.0 which can be openly shared for research purposes, while the other part is restricted and is only shared under an explicit research-related request. You can request access to the non-CC part of the corpora through the Dunya website. If granted, your access token will allow you to access these data. Set the <code class="docutils literal notranslate"><span class="pre">cc</span></code> input parameter to False in <code class="docutils literal notranslate"><span class="pre">compiam.load_corpora()</span></code> to load these collection.</p>
+<p>Carnatic and Hindustani corpora are both divided in two parts, one part licensed under Creative Commons 4.0 which can be openly shared for research purposes, while the other part is restricted and is only shared under an explicit research-related request. You can request access to the non-CC part of the corpora through the Dunya website. If granted, your access token will allow you to access the restricted data. Set the <code class="docutils literal notranslate"><span class="pre">cc</span></code> input parameter to False in <code class="docutils literal notranslate"><span class="pre">compiam.load_corpora()</span></code> to load these collection.</p>
 </div>
+<p>Your Dunya access token is <strong>unique</strong> and <strong>must be kept in secret</strong>. For that reason, we are not able to actively walkthrough the use of the Dunya corpora access in <code class="docutils literal notranslate"><span class="pre">compiam</span></code>. In the next sections we provide some examples of useful methods that you can use, while providing a <a class="reference external" href="https://mtg.github.io/compIAM/source/datasets.html#access-the-dunya-corpora">detailed documentation</a> of all functionalities of this component in <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
 <section id="browsing-the-corpora-using-the-api">
 <h3>Browsing the corpora using the API<a class="headerlink" href="#browsing-the-corpora-using-the-api" title="Permalink to this headline">#</a></h3>
 <p>Our corpora class include methods to get an overview of the available data in the database. Let us get you some examples below:</p>
@@ -622,7 +601,6 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">list_concerts()</span></code>: list all available concerts in the selected database.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">list_available_types(&lt;artists-musicbrainz-id&gt;)</span></code>:  prints you out the available types of file available for a particular recording.</p></li>
 </ul>
-<p>See the entire list of methods in the <a class="reference external" href="https://mtg.github.io/compIAM/source/datasets.html#access-the-dunya-corpora"><code class="docutils literal notranslate"><span class="pre">compiam</span></code> Corpora class documentation</a>.</p>
 </section>
 <section id="getting-the-data">
 <h3>Getting the data<a class="headerlink" href="#getting-the-data" title="Permalink to this headline">#</a></h3>
@@ -632,6 +610,7 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">save_annotation(&lt;recording-musicbrainz-id&gt;,</span> <span class="pre">&lt;annotation-type&gt;,</span> <span class="pre">&lt;path/to/save&gt;)</span></code>: an extension of <code class="docutils literal notranslate"><span class="pre">get_annotation()</span></code> but writing the annotation to a file.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">download_mp3(&lt;recording-musicbrainz-id&gt;,</span> <span class="pre">&lt;path/to/save&gt;)</span></code>: download and save the audio for a recording.</p></li>
 </ul>
+<p>See the entire list of methods in the <a class="reference external" href="https://mtg.github.io/compIAM/source/datasets.html#access-the-dunya-corpora"><code class="docutils literal notranslate"><span class="pre">compiam</span></code> Corpora class documentation</a>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Loop through a list of <code class="docutils literal notranslate"><span class="pre">mbid</span></code> and run the downloading functions to get the data for a specific collection of recordings.</p>

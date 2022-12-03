@@ -248,23 +248,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Wrapping up
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../wrapping_up/discussion.html">
-   Discussion
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../wrapping_up/conclusion.html">
-   Concluding the tutorial
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Resources
  </span>
 </p>
@@ -287,11 +270,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../resources/citing.html">
    Citing this work
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../resources/about.html">
-   About the authoring of this tutorial
   </a>
  </li>
 </ul>
@@ -618,7 +596,7 @@ title="Print to PDF"
 </div>
 <section id="dhrupad-bandish-segmentation">
 <h2>Dhrupad Bandish segmentation<a class="headerlink" href="#dhrupad-bandish-segmentation" title="Permalink to this headline">#</a></h2>
-<p>In this section we will showcase a tool that attempts to identify, through the use of rhythmic features, the different sections in a Dhrupad Bandish performances <span id="id2">[<a class="reference internal" href="../resources/references.html#id72" title="Rohit M. A., T. P. Vinutha, and Preeti Rao. Structural segmentation of Dhrupad vocal bandish audio based on tempo. In Proc. of the 21st International Society for Music Information Retrieval Conference (ISMIR), 678–684. Montreal, Canada, 2020. ISMIR. URL: https://doi.org/10.5281/zenodo.4245522, doi:10.5281/zenodo.4245522.">MAVR20</a>]</span>, one of the main formats in Hindustani music. As seen in the <a class="reference external" href="https://mtg.github.io/compIAM/source/structure.html#dhrupad-bandish-segmentation">documentation</a>, this segmentation model is based on PyTorch. Therefore, we proceed to install <code class="docutils literal notranslate"><span class="pre">torch</span></code>.</p>
+<p>In this section we will showcase a tool that attempts to identify, through the use of rhythmic features, the different sections in a Dhrupad Bandish performances <span id="id2">[<a class="reference internal" href="../resources/references.html#id73" title="Rohit M. A., T. P. Vinutha, and Preeti Rao. Structural segmentation of Dhrupad vocal bandish audio based on tempo. In Proc. of the 21st International Society for Music Information Retrieval Conference (ISMIR), 678–684. Montreal, Canada, 2020. ISMIR. URL: https://doi.org/10.5281/zenodo.4245522, doi:10.5281/zenodo.4245522.">MAVR20</a>]</span>, one of the main formats in Hindustani music. As seen in the <a class="reference external" href="https://mtg.github.io/compIAM/source/structure.html#dhrupad-bandish-segmentation">documentation</a>, this segmentation model is based on PyTorch. Therefore, we proceed to install <code class="docutils literal notranslate"><span class="pre">torch</span></code>.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install torch==1.8.0
@@ -727,10 +705,28 @@ title="Print to PDF"
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Separator</span></code> class in <code class="docutils literal notranslate"><span class="pre">spleeter</span></code> has a method to directly separate the singing voice from an audio file, and the prediction is stored in a given output folder. Let’s use this method and get a source separated version of an example Dhrupad file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">list_datasets</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;saraga_carnatic&#39;,
+ &#39;saraga_hindustani&#39;,
+ &#39;mridangam_stroke&#39;,
+ &#39;four_way_tabla&#39;,
+ &#39;compmusic_carnatic_rhythm&#39;,
+ &#39;compmusic_hindustani_rhythm&#39;,
+ &#39;compmusic_raga&#39;,
+ &#39;compmusic_indian_tonic&#39;]
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Oops…</strong> We note that no Dhrupad Bandish dataset is available in <code class="docutils literal notranslate"><span class="pre">mirdata</span></code>. Therefore, we will need to refer to the Carnatic and Hindustani corpora in Dunya. Let’s get a couple of audio examples from Dunya using the <code class="docutils literal notranslate"><span class="pre">Corpora</span></code> class. As already mentioned before, you need a personal and non-shareable token to access the data in Dunya. Within the context of this tutorial, we provide here a snippet of code that we have used beforehand to parse the audios from the Dunya database.</p>
-<p>If we the folder <code class="docutils literal notranslate"><span class="pre">compiam/models/structure/dhrupad_bandish_segmentation/audio_original</span></code> within the installable <code class="docutils literal notranslate"><span class="pre">compiam</span></code>. We can see a .pdf file including the details of the files that form the dataset for the Dhrupad Segmentation tool. That .pdf file is also found in the <a class="reference external" href="https://github.com/DAP-Lab/dhrupad-bandish-segmentation/blob/master/annotations/dataset_sources.pdf">original repository of the tool</a>. We select the following two examples:</p>
+<p>If we the folder <code class="docutils literal notranslate"><span class="pre">compiam/models/structure/dhrupad_bandish_segmentation/audio_original</span></code> within the installable <code class="docutils literal notranslate"><span class="pre">compiam</span></code>. We can see a .pdf file including the details of the files that form the dataset for the Dhrupad Segmentation tool. That .pdf file is also found in the <a class="reference external" href="https://github.com/DAP-Lab/dhrupad-bandish-segmentation/blob/master/annotations/dataset_sources.pdf">original repository of the tool</a>. We select the following example:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://musicbrainz.org/recording/24ebe543-4197-4f7e-9be7-d6db7d1c4f2c">24ebe543-4197-4f7e-9be7-d6db7d1c4f2c</a></p></li>
 <li><p><a class="reference external" href="https://musicbrainz.org/recording/59c88c32-0bde-433b-b194-0f65281e5714">59c88c32-0bde-433b-b194-0f65281e5714</a></p></li>
 </ul>
 <div class="cell docutils container">
@@ -743,15 +739,9 @@ title="Print to PDF"
 <span class="c1">#    cc=False,  # Indicating we import de private collection</span>
 <span class="c1">#    token=&quot;&lt;your-access-token&gt;&quot;,</span>
 <span class="c1">#</span>
-
-<span class="c1">#tracks_to_download([</span>
-<span class="c1">#    &quot;24ebe543-4197-4f7e-9be7-d6db7d1c4f2c&quot;,</span>
-<span class="c1">#    &quot;59c88c32-0bde-433b-b194-0f65281e5714&quot;</span>
-<span class="c1">#])</span>
-<span class="c1">#for track in tracks_to_download:</span>
-<span class="c1">#    corpora.download_mp3(</span>
-<span class="c1">#        track,</span>
-<span class="c1">#        &quot;os.path.join(&quot;..&quot;, &quot;audio&quot;)</span>
+<span class="c1">#corpora.download_mp3(</span>
+<span class="c1">#    &quot;59c88c32-0bde-433b-b194-0f65281e5714&quot;,</span>
+<span class="c1">#    &quot;os.path.join(&quot;..&quot;, &quot;audio&quot;)</span>
 <span class="c1">#)</span>
 </pre></div>
 </div>
@@ -765,23 +755,15 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">mir_datasets</span>/  <span class=" -Color -Color-Bold -Color-Bold-Blue">testing_samples</span>/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>178b4cf6-88e6-414d-bfbd-3d90bb368a9a.mp3  <span class=" -Color -Color-Bold -Color-Bold-Blue">mir_datasets</span>/  <span class=" -Color -Color-Bold -Color-Bold-Blue">testing_samples</span>/
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Cool! There they are.</strong> Let’s therefore now run the <code class="docutils literal notranslate"><span class="pre">spleeter</span></code> separation on these tracks.</p>
+<p><strong>Cool! There it is.</strong> Let’s therefore now run the <code class="docutils literal notranslate"><span class="pre">spleeter</span></code> separation on this track.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separating file 1</span>
-<span class="n">separator</span><span class="o">.</span><span class="n">separate_to_file</span><span class="p">(</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-        <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;24ebe543-4197-4f7e-9be7-d6db7d1c4f2c&quot;</span>
-    <span class="p">),</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">)</span>
-<span class="p">)</span>
-
-<span class="c1"># Separating file 2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separating file</span>
 <span class="n">separator</span><span class="o">.</span><span class="n">separate_to_file</span><span class="p">(</span>
     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
         <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;59c88c32-0bde-433b-b194-0f65281e5714&quot;</span>
@@ -796,32 +778,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dbs</span><span class="o">.</span><span class="n">predict_stm</span><span class="p">(</span>
-    <span class="n">path_to_file</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-        <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;24ebe543-4197-4f7e-9be7-d6db7d1c4f2c&quot;</span><span class="p">,</span> <span class="s2">&quot;vocals.wav&quot;</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dbs</span><span class="o">.</span><span class="n">predict_stm</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">path_to_file</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>         <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;24ebe543-4197-4f7e-9be7-d6db7d1c4f2c&quot;</span><span class="p">,</span> <span class="s2">&quot;vocals.wav&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">)</span>
-
-<span class="ne">TypeError</span>: predict_stm() got an unexpected keyword argument &#39;path_to_file&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dbs</span><span class="o">.</span><span class="n">predict_stm</span><span class="p">(</span>
-    <span class="n">path_to_file</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">file_path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
         <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;59c88c32-0bde-433b-b194-0f65281e5714&quot;</span><span class="p">,</span> <span class="s2">&quot;vocals.wav&quot;</span>
     <span class="p">)</span>
 <span class="p">)</span>
@@ -830,131 +787,47 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dbs</span><span class="o">.</span><span class="n">predict_stm</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">path_to_file</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">file_path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>         <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;59c88c32-0bde-433b-b194-0f65281e5714&quot;</span><span class="p">,</span> <span class="s2">&quot;vocals.wav&quot;</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">)</span>
 
-<span class="ne">TypeError</span>: predict_stm() got an unexpected keyword argument &#39;path_to_file&#39;
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/compiam/structure/segmentation/dhrupad_bandish_segmentation/__init__.py:407,</span> in <span class="ni">DhrupadBandishSegmentation.predict_stm</span><span class="nt">(self, file_path, output_dir)</span>
+<span class="g g-Whitespace">    </span><span class="mi">401</span> <span class="sd">&quot;&quot;&quot;Predict Dhrupad Bandish Segmentation</span>
+<span class="g g-Whitespace">    </span><span class="mi">402</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">403</span><span class="sd"> :param file_path: path of the input file</span>
+<span class="g g-Whitespace">    </span><span class="mi">404</span><span class="sd"> :param output_dir: directory to store printed outputs</span>
+<span class="g g-Whitespace">    </span><span class="mi">405</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">407</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;Input file not found&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">408</span> <span class="k">if</span> <span class="n">output_dir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">409</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_dir</span><span class="p">):</span>
+
+<span class="ne">FileNotFoundError</span>: Input file not found
 </pre></div>
 </div>
 </div>
 </div>
 <p>We can observe the estimated sections (given rhythmic characteristics) in the output image. The <code class="docutils literal notranslate"><span class="pre">x</span></code> axis provides information about the actual time-stamps in seconds for each estimation.</p>
-<p>As a final experiment, let’s listen to the source separated files using <code class="docutils literal notranslate"><span class="pre">spleeter</span></code>.</p>
+<p>As a final experiment, let’s listen to the source separated file using <code class="docutils literal notranslate"><span class="pre">spleeter</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">IPython.display</span> <span class="k">as</span> <span class="nn">ipd</span>
 <span class="kn">import</span> <span class="nn">librosa</span>
 
-<span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-        <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;24ebe543-4197-4f7e-9be7-d6db7d1c4f2c&quot;</span><span class="p">,</span> <span class="s2">&quot;vocals.wav&quot;</span>
-    <span class="p">),</span>
-<span class="p">)</span>
-
-<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
-    <span class="n">data</span><span class="o">=</span><span class="n">audio</span><span class="p">[:</span><span class="n">sr</span><span class="o">*</span><span class="mi">30</span><span class="p">],</span>  <span class="c1"># Taking only the first 30 seconds</span>
-    <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/librosa/core/audio.py:146,</span> in <span class="ni">load</span><span class="nt">(path, sr, mono, offset, duration, dtype, res_type)</span>
-<span class="g g-Whitespace">    </span><span class="mi">145</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">146</span>     <span class="k">with</span> <span class="n">sf</span><span class="o">.</span><span class="n">SoundFile</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">sf_desc</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">147</span>         <span class="n">sr_native</span> <span class="o">=</span> <span class="n">sf_desc</span><span class="o">.</span><span class="n">samplerate</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/soundfile.py:629,</span> in <span class="ni">SoundFile.__init__</span><span class="nt">(self, file, mode, samplerate, channels, subtype, endian, format, closefd)</span>
-<span class="g g-Whitespace">    </span><span class="mi">627</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info</span> <span class="o">=</span> <span class="n">_create_info_struct</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">samplerate</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">628</span>                                  <span class="nb">format</span><span class="p">,</span> <span class="n">subtype</span><span class="p">,</span> <span class="n">endian</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">629</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">mode_int</span><span class="p">,</span> <span class="n">closefd</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">630</span> <span class="k">if</span> <span class="nb">set</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">seekable</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">631</span>     <span class="c1"># Move write position to 0 (like in Python file objects)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/soundfile.py:1183,</span> in <span class="ni">SoundFile._open</span><span class="nt">(self, file, mode_int, closefd)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1182</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Invalid file: </span><span class="si">{0!r}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
-<span class="ne">-&gt; </span><span class="mi">1183</span> <span class="n">_error_check</span><span class="p">(</span><span class="n">_snd</span><span class="o">.</span><span class="n">sf_error</span><span class="p">(</span><span class="n">file_ptr</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1184</span>              <span class="s2">&quot;Error opening </span><span class="si">{0!r}</span><span class="s2">: &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
-<span class="g g-Whitespace">   </span><span class="mi">1185</span> <span class="k">if</span> <span class="n">mode_int</span> <span class="o">==</span> <span class="n">_snd</span><span class="o">.</span><span class="n">SFM_WRITE</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1186</span>     <span class="c1"># Due to a bug in libsndfile version &lt;= 1.0.25, frames != 0</span>
-<span class="g g-Whitespace">   </span><span class="mi">1187</span>     <span class="c1"># when opening a named pipe in SFM_WRITE mode.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1188</span>     <span class="c1"># See http://github.com/erikd/libsndfile/issues/77.</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/soundfile.py:1357,</span> in <span class="ni">_error_check</span><span class="nt">(err, prefix)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1356</span> <span class="n">err_str</span> <span class="o">=</span> <span class="n">_snd</span><span class="o">.</span><span class="n">sf_error_number</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1357</span> <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">prefix</span> <span class="o">+</span> <span class="n">_ffi</span><span class="o">.</span><span class="n">string</span><span class="p">(</span><span class="n">err_str</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="s1">&#39;replace&#39;</span><span class="p">))</span>
-
-<span class="ne">RuntimeError</span>: Error opening &#39;../audio/24ebe543-4197-4f7e-9be7-d6db7d1c4f2c/vocals.wav&#39;: System error.
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">IPython.display</span> <span class="k">as</span> <span class="nn">ipd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">librosa</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;24ebe543-4197-4f7e-9be7-d6db7d1c4f2c&quot;</span><span class="p">,</span> <span class="s2">&quot;vocals.wav&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">data</span><span class="o">=</span><span class="n">audio</span><span class="p">[:</span><span class="n">sr</span><span class="o">*</span><span class="mi">30</span><span class="p">],</span>  <span class="c1"># Taking only the first 30 seconds</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/librosa/core/audio.py:163,</span> in <span class="ni">load</span><span class="nt">(path, sr, mono, offset, duration, dtype, res_type)</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">PurePath</span><span class="p">)):</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;PySoundFile failed. Trying audioread instead.&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">163</span>     <span class="n">y</span><span class="p">,</span> <span class="n">sr_native</span> <span class="o">=</span> <span class="n">__audioread_load</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">duration</span><span class="p">,</span> <span class="n">dtype</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">164</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">165</span>     <span class="k">raise</span> <span class="p">(</span><span class="n">exc</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/librosa/core/audio.py:187,</span> in <span class="ni">__audioread_load</span><span class="nt">(path, offset, duration, dtype)</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span> <span class="sd">&quot;&quot;&quot;Load an audio buffer using audioread.</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span><span class="sd"> This loads one block at a time, and then concatenates the results.</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="ne">--&gt; </span><span class="mi">187</span> <span class="k">with</span> <span class="n">audioread</span><span class="o">.</span><span class="n">audio_open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span>     <span class="n">sr_native</span> <span class="o">=</span> <span class="n">input_file</span><span class="o">.</span><span class="n">samplerate</span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span>     <span class="n">n_channels</span> <span class="o">=</span> <span class="n">input_file</span><span class="o">.</span><span class="n">channels</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/audioread/__init__.py:127,</span> in <span class="ni">audio_open</span><span class="nt">(path, backends)</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span> <span class="k">for</span> <span class="n">BackendClass</span> <span class="ow">in</span> <span class="n">backends</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">127</span>         <span class="k">return</span> <span class="n">BackendClass</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="k">except</span> <span class="n">DecodeError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span>         <span class="k">pass</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/audioread/rawread.py:59,</span> in <span class="ni">RawAudioFile.__init__</span><span class="nt">(self, filename)</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">59</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span>     <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="n">aifc</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fh</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../audio/24ebe543-4197-4f7e-9be7-d6db7d1c4f2c/vocals.wav&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
+<span class="n">vocals</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
         <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;59c88c32-0bde-433b-b194-0f65281e5714&quot;</span><span class="p">,</span> <span class="s2">&quot;vocals.wav&quot;</span>
     <span class="p">),</span>
 <span class="p">)</span>
 
-<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
-    <span class="n">data</span><span class="o">=</span><span class="n">audio</span><span class="p">[:</span><span class="n">sr</span><span class="o">*</span><span class="mi">30</span><span class="p">],</span>  <span class="c1"># Taking again only the first 30 seconds</span>
-    <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span>
+<span class="n">accompaniment</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;59c88c32-0bde-433b-b194-0f65281e5714&quot;</span><span class="p">,</span> <span class="s2">&quot;accompaniment.wav&quot;</span>
+    <span class="p">),</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -992,16 +865,19 @@ title="Print to PDF"
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>         <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;59c88c32-0bde-433b-b194-0f65281e5714&quot;</span><span class="p">,</span> <span class="s2">&quot;vocals.wav&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">data</span><span class="o">=</span><span class="n">audio</span><span class="p">[:</span><span class="n">sr</span><span class="o">*</span><span class="mi">30</span><span class="p">],</span>  <span class="c1"># Taking again only the first 30 seconds</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">IPython.display</span> <span class="k">as</span> <span class="nn">ipd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">librosa</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">vocals</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;59c88c32-0bde-433b-b194-0f65281e5714&quot;</span><span class="p">,</span> <span class="s2">&quot;vocals.wav&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">accompaniment</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;59c88c32-0bde-433b-b194-0f65281e5714&quot;</span><span class="p">,</span> <span class="s2">&quot;accompaniment.wav&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="p">)</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/librosa/core/audio.py:163,</span> in <span class="ni">load</span><span class="nt">(path, sr, mono, offset, duration, dtype, res_type)</span>
 <span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">PurePath</span><span class="p">)):</span>
@@ -1034,6 +910,52 @@ title="Print to PDF"
 <span class="g g-Whitespace">     </span><span class="mi">62</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="n">aifc</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fh</span><span class="p">)</span>
 
 <span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../audio/59c88c32-0bde-433b-b194-0f65281e5714/vocals.wav&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">vocals</span><span class="p">[</span><span class="o">-</span><span class="n">sr</span><span class="o">*</span><span class="mi">30</span><span class="p">:],</span>  <span class="c1"># Taking only the last 30 seconds</span>
+    <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">data</span><span class="o">=</span><span class="n">vocals</span><span class="p">[</span><span class="o">-</span><span class="n">sr</span><span class="o">*</span><span class="mi">30</span><span class="p">:],</span>  <span class="c1"># Taking only the last 30 seconds</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;vocals&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">accompaniment</span><span class="p">[</span><span class="o">-</span><span class="n">sr</span><span class="o">*</span><span class="mi">30</span><span class="p">:],</span>  <span class="c1"># Taking only the last 30 seconds</span>
+    <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">data</span><span class="o">=</span><span class="n">accompaniment</span><span class="p">[</span><span class="o">-</span><span class="n">sr</span><span class="o">*</span><span class="mi">30</span><span class="p">:],</span>  <span class="c1"># Taking only the last 30 seconds</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;accompaniment&#39; is not defined
 </pre></div>
 </div>
 </div>

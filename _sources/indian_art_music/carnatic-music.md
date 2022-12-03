@@ -175,7 +175,6 @@ The ṣaḍja (sa) has a ‘tonic-like’ effect, where we feel a sense of rest 
 > position of sa. The fact that sa may be placed at any pitch means that for many MIR processes, pitch needs to be normalized to wherever sa is placed.  
 
 
-
 (carnatic-rhythm)=
 ## Rhythm and Percussion in Carnatic Music
 The rhythmic framework is based on cyclic metrical structures called the tāl in Hindustani music and tāḷa in Carnatic music. Both words originate from Sanskrit and have the same literal meaning of a “hand-clap”. For consistency and convenience, when it is clear from the context, we will use the word tāḷa to mean both tāl and tāḷa when we refer collectively to the two traditions, and use the respective terms when referring to each music culture individually.

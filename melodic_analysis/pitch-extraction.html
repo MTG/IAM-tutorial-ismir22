@@ -248,23 +248,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Wrapping up
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../wrapping_up/discussion.html">
-   Discussion
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../wrapping_up/conclusion.html">
-   Concluding the tutorial
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Resources
  </span>
 </p>
@@ -287,11 +270,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../resources/citing.html">
    Citing this work
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../resources/about.html">
-   About the authoring of this tutorial
   </a>
  </li>
 </ul>
@@ -735,8 +713,6 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;melody:deepsrgm&#39;,
  &#39;melody:ftanet-carnatic&#39;,
  &#39;melody:cae-carnatic&#39;,
- &#39;rhythm:1way-tabla&#39;,
- &#39;rhythm:4way-tabla&#39;,
  &#39;structure:dhrupad-bandish-segmentation&#39;]
 </pre></div>
 </div>
@@ -782,9 +758,9 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">y</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;testing_samples&quot;</span><span class="p">,</span> <span class="s2">&quot;test_1.wav&quot;</span><span class="p">)</span>
-<span class="p">)</span>
+<span class="c1">#y, sr = librosa.load(</span>
+<span class="c1">#    os.path.join(&quot;..&quot;, &quot;audio&quot;, &quot;testing_samples&quot;, &quot;test_1.wav&quot;)</span>
+<span class="c1">#)</span>
 <span class="n">y</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
         <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;mir_datasets&quot;</span><span class="p">,</span> <span class="s2">&quot;saraga1.5_carnatic&quot;</span><span class="p">,</span>
@@ -792,10 +768,11 @@ title="Print to PDF"
         <span class="s2">&quot;Sanjay Subrahmanyan - Sri Raghuvara Sugunaalaya.mp3&quot;</span>
     <span class="p">)</span>
 <span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:</span><span class="mi">60</span><span class="o">*</span><span class="n">sr</span><span class="p">]</span>  <span class="c1"># Getting just the first minute of audio</span>
+
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
 <span class="n">D</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">amplitude_to_db</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">librosa</span><span class="o">.</span><span class="n">stft</span><span class="p">(</span><span class="n">y</span><span class="p">)),</span> <span class="n">ref</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
 <span class="n">img</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">specshow</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">y_axis</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">x_axis</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">);</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50000</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2400</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
     <span class="n">melodia_pitch_track</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">melodia_pitch_track</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>

@@ -248,23 +248,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Wrapping up
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../wrapping_up/discussion.html">
-   Discussion
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../wrapping_up/conclusion.html">
-   Concluding the tutorial
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
   Resources
  </span>
 </p>
@@ -287,11 +270,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../resources/citing.html">
    Citing this work
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../resources/about.html">
-   About the authoring of this tutorial
   </a>
  </li>
 </ul>
@@ -881,7 +859,7 @@ pip install -r requirements.txt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;FourWayTabla*&#39;, &#39;MnemonicTranscription&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;MnemonicTranscription&#39;]
 </pre></div>
 </div>
 </div>
@@ -1024,8 +1002,6 @@ Four-Way Tabla track class
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;melody:deepsrgm&#39;,
  &#39;melody:ftanet-carnatic&#39;,
  &#39;melody:cae-carnatic&#39;,
- &#39;rhythm:1way-tabla&#39;,
- &#39;rhythm:4way-tabla&#39;,
  &#39;structure:dhrupad-bandish-segmentation&#39;]
 </pre></div>
 </div>
@@ -1045,31 +1021,52 @@ Four-Way Tabla track class
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loading pre-trained four-way tabla model</span>
-<span class="n">trained_four_way</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;rhythm:4way-tabla&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loading pre-trained model for prediction</span>
+<span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:ftanet-carnatic&quot;</span><span class="p">)</span>
 
-<span class="n">tabla_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span>
-    <span class="s2">&quot;four_way_tabla&quot;</span><span class="p">,</span>
+<span class="n">saraga_carnatic</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span>
+    <span class="s2">&quot;saraga_carnatic&quot;</span><span class="p">,</span>
     <span class="n">data_home</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;mir_datasets&quot;</span><span class="p">),</span>
 <span class="p">)</span>
-<span class="n">tabla_dataset</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
-<span class="n">tabla_dataset</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>These methods in the following cell download the dataser for you, and make sure no files are missing or have been corrupted during the downloading/unzipping process.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#saraga_carnatic.download()</span>
+<span class="c1">#saraga_carnatic.validate()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Saraga Carnatic is about 24GB of data and therefore we will not download it within the context of this tutorial.</p>
+</div>
+<p>An audio example from the dataset has been selected for tutoring purposes: “Sri Raghuvara Sugunaalaya” performed by Sanjay Subrahmanyan. The <code class="docutils literal notranslate"><span class="pre">id</span></code> of this track in the Saraga Carnatic dataloader is <code class="docutils literal notranslate"><span class="pre">&quot;109_Sri_Raghuvara_Sugunaalaya&quot;</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Getting audio from random track in the dataset</span>
-<span class="n">random_track</span> <span class="o">=</span> <span class="n">tabla_dataset</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
+<span class="n">saraga_tracks</span> <span class="o">=</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()</span>
+<span class="n">our_track</span> <span class="o">=</span> <span class="n">saraga_tracks</span><span class="p">[</span><span class="s2">&quot;109_Sri_Raghuvara_Sugunaalaya&quot;</span><span class="p">]</span>
 
 <span class="c1"># Predict!</span>
-<span class="n">onsets</span><span class="p">,</span> <span class="n">strokes</span> <span class="o">=</span> <span class="n">trained_four_way</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">random_track</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
+<span class="n">predicted_pitch</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">our_track</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Getting audio from random track in the dataset</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">saraga_tracks</span> <span class="o">=</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">our_track</span> <span class="o">=</span> <span class="n">saraga_tracks</span><span class="p">[</span><span class="s2">&quot;109_Sri_Raghuvara_Sugunaalaya&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Predict!</span>
 
-<span class="c1"># Let&#39;s print out the first 10 automatically transcribed strokes</span>
-<span class="k">for</span> <span class="n">onset</span><span class="p">,</span> <span class="n">stroke</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">onsets</span><span class="p">[:</span><span class="mi">10</span><span class="p">],</span> <span class="n">strokes</span><span class="p">[:</span><span class="mi">10</span><span class="p">]):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stroke </span><span class="si">{}</span><span class="s2"> in time-step </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span>\
-        <span class="nb">format</span><span class="p">(</span><span class="n">stroke</span><span class="p">,</span> <span class="n">onset</span><span class="p">))</span>
+<span class="ne">NameError</span>: name &#39;saraga_carnatic&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1080,23 +1077,41 @@ Four-Way Tabla track class
 <section id="util-functions">
 <h3>Util functions<a class="headerlink" href="#util-functions" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">compiam</span></code> also includes visualisation and general util functions to assist the comprehensive computational study of musical repertoires and issue quite a number of operations that are useful for the said research field. Check the <a class="reference external" href="https://mtg.github.io/compIAM/source/visualisation.html">visualisation documentation</a> and the <a class="reference external" href="https://mtg.github.io/compIAM/source/utils.html">utils documentation</a> out for a detailed presentation of the available tools.</p>
-<p>We will now use the <code class="docutils literal notranslate"><span class="pre">.plot_waveform()</span></code> method which allows us to plot a waveform with particular annotations or labels.</p>
+<p>We will now use the <code class="docutils literal notranslate"><span class="pre">.plot_pitch()</span></code> method which allows us to plot the pitch curve we have just extracted from the audio example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.visualisation.audio</span> <span class="kn">import</span> <span class="n">plot_waveform</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.visualisation.pitch</span> <span class="kn">import</span> <span class="n">plot_pitch</span>
 
 <span class="c1"># Plotting waveform</span>
-<span class="n">plot_waveform</span><span class="p">(</span>
-    <span class="n">path_to_audio</span><span class="o">=</span><span class="n">random_track</span><span class="o">.</span><span class="n">audio_path</span><span class="p">,</span>  <span class="c1"># input audio path</span>
-    <span class="n">t1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>  <span class="c1"># start time for plot</span>
-    <span class="n">t2</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>  <span class="c1"># end time for plot</span>
-    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">y</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">onsets</span><span class="p">,</span> <span class="n">strokes</span><span class="p">)},</span>  <span class="c1"># annotations in a dict</span>
+<span class="n">plot_pitch</span><span class="p">(</span>
+    <span class="n">pitch</span><span class="o">=</span><span class="n">predicted_pitch</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="n">times</span><span class="o">=</span><span class="n">predicted_pitch</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
 <span class="p">);</span>
 
 <span class="c1"># Playing 10 seconds of audio used for prediction</span>
-<span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">random_track</span><span class="o">.</span><span class="n">audio</span>
+<span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">our_track</span><span class="o">.</span><span class="n">audio</span>
 <span class="n">audio_short</span> <span class="o">=</span> <span class="n">audio</span><span class="p">[:</span><span class="mi">10</span><span class="o">*</span><span class="n">sr</span><span class="p">]</span>
-<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">audio_short</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span> 
+<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">audio_short</span><span class="p">,</span>
+    <span class="n">rate</span><span class="o">=</span><span class="n">sr</span>
+<span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compiam.visualisation.pitch</span> <span class="kn">import</span> <span class="n">plot_pitch</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Plotting waveform</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plot_pitch</span><span class="p">(</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">pitch</span><span class="o">=</span><span class="n">predicted_pitch</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">times</span><span class="o">=</span><span class="n">predicted_pitch</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">);</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Playing 10 seconds of audio used for prediction</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">our_track</span><span class="o">.</span><span class="n">audio</span>
+
+<span class="ne">NameError</span>: name &#39;predicted_pitch&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1119,7 +1134,7 @@ Four-Way Tabla track class
 <li><p>Fixing bugs.</p></li>
 <li><p>Improving documentation.</p></li>
 </ul>
-<p>Don’t hestitate to <a class="reference external" href="mailto:thomas&#46;nuttall&#37;&#52;&#48;upf&#46;edu">reach out</a> or <a class="reference external" href="https://github.com/MTG/compIAM/issues">open an issue in the <code class="docutils literal notranslate"><span class="pre">compaim</span></code> GitHub repository</a> to request for further help or raise questions.</p>
+<p>Don’t hestitate to <a class="reference external" href="mailto:genis&#46;plaja&#37;&#52;&#48;upf&#46;edu">reach out</a> or <a class="reference external" href="https://github.com/MTG/compIAM/issues">open an issue in the <code class="docutils literal notranslate"><span class="pre">compaim</span></code> GitHub repository</a> to request for further help or raise questions.</p>
 </section>
 </section>
 
