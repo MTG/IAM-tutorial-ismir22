@@ -598,10 +598,7 @@ Time (LSTM) networks, given its ability to capture sequence information <span id
 <p>DEEPSRGM <span id="id7">[<a class="reference internal" href="../resources/references.html#id50" title="Sathwik Tejaswi Madhusudhan and Girish Chowdhary. DEEPSRGM - Sequence classification and ranking in Indian classical music with deep learning. In In Proc. of the 20th International Society for Music Information Retrieval Conference, (ISMIR), Delft, The Netherlands., 533–540. 2019.">MC19</a>]</span> is a DL-based model that uses melodic features to automatically identify the raga from an Indian Art Music recording. In the original paper, the authors use the Indian Art Music Raga Dataset <span id="id8">[<a class="reference internal" href="../resources/references.html#id24" title="Sankalp Gulati, Joan Serrà, Kaustuv K Ganguli, S Sertan, and Xavier Serra. Time-delayed melody surfaces for Raga recognition. In In Proc. of the 17th International Society for Music Information Retrieval Conference (ISMIR), New York City, USA., 751–757. 2016. doi:10.1080/09298215.2013.866145.">GSG+16</a>]</span>, and report accuracy higher than 95%.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing a tool for automatic recognition</span>
-<span class="kn">from</span> <span class="nn">compiam.melody.raga_recognition</span> <span class="kn">import</span> <span class="n">DEEPSRGM</span>
-
-<span class="c1"># This tools has * at the end: we can load the pre-trained instance</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This tool has * at the end: we can load the pre-trained instance</span>
 <span class="n">deepsrgm</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:deepsrgm&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
