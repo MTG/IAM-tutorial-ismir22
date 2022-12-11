@@ -967,17 +967,14 @@ title="Print to PDF"
 <p>To load the dataset metadata pass a <code class="docutils literal notranslate"><span class="pre">data_home</span></code> to <code class="docutils literal notranslate"><span class="pre">load_dataset()</span></code>. This <code class="docutils literal notranslate"><span class="pre">data_home</span></code> should be a path to a directory where the mirdata has been/will be downloaded.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;saraga1.5_carnatic&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">data_home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;saraga1.5_carnatic&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;os&#39; is not defined
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;saraga1.5_carnatic&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -985,16 +982,6 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">saraga</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;saraga_carnatic&#39;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="n">data_home</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">saraga</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;saraga_carnatic&#39;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="n">data_home</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;data_home&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1016,16 +1003,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">track_data</span> <span class="o">=</span> <span class="n">saraga</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;saraga&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <p>Each track in <code class="docutils literal notranslate"><span class="pre">track_data</span></code> contains all path information relating to the performance, metadata (such as rāga, tala, performer) and some automatically extracted features such as tonic and preodminant pitch track.</p>
 <div class="cell docutils container">
@@ -1035,12 +1012,35 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">track_data</span><span class="p">[</span><span class="s2">&quot;108_Pullum_Silambena_Kan&quot;</span><span class="p">]</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Track(
+  audio_ghatam_path=None,
+  audio_mridangam_left_path=None,
+  audio_mridangam_right_path=None,
+  audio_path=&quot;...ani Mahal by Sanjay Subrahmanyan/Pullum Silambena Kan/Sanjay Subrahmanyan - Pullum Silambena Kan.mp3&quot;,
+  audio_violin_path=None,
+  audio_vocal_path=None,
+  audio_vocal_s_path=None,
+  ctonic_path=&quot;...al by Sanjay Subrahmanyan/Pullum Silambena Kan/Sanjay Subrahmanyan - Pullum Silambena Kan.ctonic.txt&quot;,
+  metadata_path=&quot;...ni Mahal by Sanjay Subrahmanyan/Pullum Silambena Kan/Sanjay Subrahmanyan - Pullum Silambena Kan.json&quot;,
+  phrases_path=&quot;...jay Subrahmanyan/Pullum Silambena Kan/Sanjay Subrahmanyan - Pullum Silambena Kan.mphrases-manual.txt&quot;,
+  pitch_path=&quot;...hal by Sanjay Subrahmanyan/Pullum Silambena Kan/Sanjay Subrahmanyan - Pullum Silambena Kan.pitch.txt&quot;,
+  pitch_vocal_path=None,
+  sama_path=&quot;... Sanjay Subrahmanyan/Pullum Silambena Kan/Sanjay Subrahmanyan - Pullum Silambena Kan.sama-manual.txt&quot;,
+  sections_path=&quot;...y Subrahmanyan/Pullum Silambena Kan/Sanjay Subrahmanyan - Pullum Silambena Kan.sections-manual-p.txt&quot;,
+  tempo_path=&quot;...Sanjay Subrahmanyan/Pullum Silambena Kan/Sanjay Subrahmanyan - Pullum Silambena Kan.tempo-manual.txt&quot;,
+  track_id=&quot;108_Pullum_Silambena_Kan&quot;,
+  audio: The track&#39;s audio
 
-<span class="ne">NameError</span>: name &#39;track_data&#39; is not defined
+        Returns,
+  metadata: ,
+  phrases: ,
+  pitch: ,
+  pitch_vocal: ,
+  sama: ,
+  sections: ,
+  tempo: ,
+  tonic: ,
+)
 </pre></div>
 </div>
 </div>
@@ -1053,11 +1053,49 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">track_data</span><span class="p">[</span><span class="s2">&quot;108_Pullum_Silambena_Kan&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span>
 
-<span class="ne">NameError</span>: name &#39;track_data&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="k">return</span> <span class="bp">self</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">return</span> <span class="n">value</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/datasets/saraga_carnatic.py:163,</span> in <span class="ni">Track.metadata</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">163</span>     <span class="k">return</span> <span class="n">load_metadata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata_path</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/io.py:22,</span> in <span class="ni">coerce_to_string_io.&lt;locals&gt;.wrapper</span><span class="nt">(file_path_or_obj)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">22</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">):</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:177,</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="k">if</span> <span class="n">transport_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="n">transport_params</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="ne">--&gt; </span><span class="mi">177</span> <span class="n">fobj</span> <span class="o">=</span> <span class="n">_shortcut_open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span>     <span class="n">uri</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span>     <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="k">if</span> <span class="n">fobj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="k">return</span> <span class="n">fobj</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:363,</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span> <span class="k">if</span> <span class="n">errors</span> <span class="ow">and</span> <span class="s1">&#39;b&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="n">open_kwargs</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">errors</span>
+<span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">return</span> <span class="n">_builtin_open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../data/saraga1.5_carnatic/saraga1.5_carnatic/Live at Vani Mahal by Sanjay Subrahmanyan/Pullum Silambena Kan/Sanjay Subrahmanyan - Pullum Silambena Kan.json&#39;
 </pre></div>
 </div>
 </div>
@@ -1078,13 +1116,58 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">n_tracks</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">track_data</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">metadata</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">metadata</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="n">track_data</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">n_tracks</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">track_data</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">metadata</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">metadata</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="n">track_data</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># rāgas</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ragas</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;raaga&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">metadata</span><span class="p">]</span>
 
-<span class="ne">NameError</span>: name &#39;track_data&#39; is not defined
+<span class="nn">Cell In [10], line 2,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">n_tracks</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">track_data</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">metadata</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">metadata</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="n">track_data</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># rāgas</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ragas</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;raaga&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">metadata</span><span class="p">]</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="k">return</span> <span class="bp">self</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">return</span> <span class="n">value</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/datasets/saraga_carnatic.py:163,</span> in <span class="ni">Track.metadata</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">163</span>     <span class="k">return</span> <span class="n">load_metadata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata_path</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/io.py:22,</span> in <span class="ni">coerce_to_string_io.&lt;locals&gt;.wrapper</span><span class="nt">(file_path_or_obj)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">22</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">):</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:177,</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="k">if</span> <span class="n">transport_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="n">transport_params</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="ne">--&gt; </span><span class="mi">177</span> <span class="n">fobj</span> <span class="o">=</span> <span class="n">_shortcut_open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span>     <span class="n">uri</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span>     <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="k">if</span> <span class="n">fobj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="k">return</span> <span class="n">fobj</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:363,</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span> <span class="k">if</span> <span class="n">errors</span> <span class="ow">and</span> <span class="s1">&#39;b&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="n">open_kwargs</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">errors</span>
+<span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">return</span> <span class="n">_builtin_open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../data/saraga1.5_carnatic/saraga1.5_carnatic/Sumitra Nitin at Arkay by Sumitra Nitin/Dorakuna/Dorakuna.json&#39;
 </pre></div>
 </div>
 </div>
@@ -1100,14 +1183,18 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of recordings: 249
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of recordings: </span><span class="si">{</span><span class="n">n_tracks</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;    across </span><span class="si">{</span><span class="n">n_ragas</span><span class="si">}</span><span class="s1"> distinct ragas...&#39;</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of recordings: </span><span class="si">{</span><span class="n">n_tracks</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;    across </span><span class="si">{</span><span class="n">n_ragas</span><span class="si">}</span><span class="s1"> distinct ragas...&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">unique_ragas</span><span class="p">[:</span><span class="mi">50</span><span class="p">]:</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;n_tracks&#39; is not defined
+<span class="ne">NameError</span>: name &#39;n_ragas&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1134,10 +1221,13 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">raga_tracks</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">v</span> <span class="k">for</span> <span class="n">i</span><span class="p">,(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">track_data</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="k">if</span> <span class="n">ragas</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">raga</span><span class="p">}</span>
 
-<span class="ne">NameError</span>: name &#39;track_data&#39; is not defined
+<span class="nn">Cell In [13], line 1,</span> in <span class="ni">&lt;dictcomp&gt;</span><span class="nt">(.0)</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">raga_tracks</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">v</span> <span class="k">for</span> <span class="n">i</span><span class="p">,(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">track_data</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="k">if</span> <span class="n">ragas</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">raga</span><span class="p">}</span>
+
+<span class="ne">NameError</span>: name &#39;ragas&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1157,7 +1247,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">raga_tracks</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">raga</span><span class="si">}</span><span class="s2"> performances...&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">rt</span> <span class="ow">in</span> <span class="n">raga_tracks</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">name</span> <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;album_artists&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
@@ -1187,7 +1277,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">track</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">raga_tracks</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">i</span><span class="p">]</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">name</span> <span class="o">=</span> <span class="n">track</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;album_artists&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">concert</span> <span class="o">=</span> <span class="n">track</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;concert&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
@@ -1206,7 +1296,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1"> by </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> from </span><span class="si">{</span><span class="n">concert</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;title&#39; is not defined
@@ -1235,7 +1325,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Mix</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">audio_path</span> <span class="o">=</span> <span class="n">track</span><span class="o">.</span><span class="n">audio_path</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Ghatam</span>
@@ -1257,7 +1347,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">vocal_path</span><span class="p">,</span> <span class="n">accompanying_vocal_path</span><span class="p">,</span> <span class="n">violin_path</span><span class="p">,</span> <span class="n">mridangam_left</span><span class="p">,</span> <span class="n">mridangam_right</span><span class="p">,</span> <span class="n">ghatam_path</span><span class="p">]</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Vocal&quot;</span><span class="p">,</span> <span class="s2">&quot;Accompanying vocal&quot;</span><span class="p">,</span> <span class="s2">&quot;Violin&quot;</span><span class="p">,</span> <span class="s2">&quot;Mridangam left&quot;</span><span class="p">,</span> <span class="s2">&quot;Mridangam right&quot;</span><span class="p">,</span> <span class="s2">&quot;Ghatam&quot;</span><span class="p">]</span>
 
@@ -1280,7 +1370,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">_paths</span> <span class="k">if</span> <span class="n">p</span><span class="p">]</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">_names</span><span class="p">)</span> <span class="k">if</span> <span class="n">_paths</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -1308,7 +1398,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">Player</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">paths</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;names&#39; is not defined
@@ -1335,14 +1425,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-11 12:28:40.739126: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/cv2/../../lib64:
-2022-12-11 12:28:40.739157: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-11 12:56:02.744117: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/cv2/../../lib64:
+2022-12-11 12:56:02.744144: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-11 12:28:42.385337: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/cv2/../../lib64:
-2022-12-11 12:28:42.385377: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-2022-12-11 12:28:42.385401: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az178-779): /proc/driver/nvidia/version does not exist
-2022-12-11 12:28:42.385640: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-11 12:56:03.971427: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/cv2/../../lib64:
+2022-12-11 12:56:03.971469: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-12-11 12:56:03.971489: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az221-22): /proc/driver/nvidia/version does not exist
+2022-12-11 12:56:03.971687: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
 </pre></div>
 </div>
@@ -1361,7 +1451,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pitch_track</span> <span class="o">=</span> <span class="n">ftanet</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">audio_path</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">pitch</span> <span class="o">=</span> <span class="n">pitch_track</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Pitch in Hz</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">time</span>  <span class="o">=</span> <span class="n">pitch_track</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># Time in seconds</span>
@@ -1392,7 +1482,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">pitch</span> <span class="o">=</span> <span class="n">interpolate_below_length</span><span class="p">(</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">pitch</span><span class="p">,</span> <span class="c1"># track to interpolate</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="mi">0</span><span class="p">,</span> <span class="c1"># value to interpolate </span>
@@ -1430,7 +1520,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">librosa</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">sr</span> <span class="o">=</span> <span class="mi">44100</span> <span class="c1"># sampling_rate</span>
 <span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">audio</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">audio_path</span><span class="p">,</span><span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
@@ -1452,7 +1542,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">t1</span> <span class="o">=</span> <span class="mi">304</span> <span class="c1"># in seconds</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">t2</span> <span class="o">=</span> <span class="mi">324</span> <span class="c1"># in seconds</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">t1s</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">t1</span><span class="o">/</span><span class="n">timestep</span><span class="p">)</span> <span class="c1"># in sequence elements</span>
@@ -1473,7 +1563,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">this_pitch</span> <span class="o">=</span> <span class="n">pitch</span><span class="p">[</span><span class="n">t1s</span><span class="p">:</span><span class="n">t2s</span><span class="p">]</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">this_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="n">t1s</span><span class="p">:</span><span class="n">t2s</span><span class="p">]</span>
 
@@ -1492,7 +1582,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">31</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plot_pitch</span><span class="p">(</span><span class="n">this_pitch</span><span class="p">,</span> <span class="n">this_time</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Excerpt of </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1"> by </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ipy_audio</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
 
@@ -1511,7 +1601,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">31</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">32</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">silence_mask</span> <span class="o">=</span> <span class="n">this_pitch</span><span class="o">==</span><span class="mi">0</span>
 
 <span class="ne">NameError</span>: name &#39;this_pitch&#39; is not defined
@@ -1529,7 +1619,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">32</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">33</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plot_pitch</span><span class="p">(</span><span class="n">this_pitch</span><span class="p">,</span> <span class="n">this_time</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">silence_mask</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Excerpt of </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1"> by </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ipy_audio</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
 
@@ -1565,7 +1655,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">35</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">36</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plot_pitch</span><span class="p">(</span><span class="n">this_pitch</span><span class="p">,</span> <span class="n">this_time</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">silence_mask</span><span class="p">,</span> <span class="n">tonic</span><span class="o">=</span><span class="n">tonic</span><span class="p">,</span> <span class="n">cents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Excerpt of </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1"> by </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ipy_audio</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
 
@@ -1593,7 +1683,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">37</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_svara_pitch_carnatic</span><span class="p">(</span><span class="n">raga</span><span class="p">)</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/compiam/utils/__init__.py:117,</span> in <span class="ni">get_svara_pitch_carnatic</span><span class="nt">(raga, tonic)</span>
@@ -1622,7 +1712,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">39</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">svara_pitch</span> <span class="o">=</span> <span class="n">get_svara_pitch_carnatic</span><span class="p">(</span><span class="s1">&#39;ritigaula&#39;</span><span class="p">,</span> <span class="n">tonic</span><span class="o">=</span><span class="n">tonic</span><span class="p">)</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/compiam/utils/__init__.py:117,</span> in <span class="ni">get_svara_pitch_carnatic</span><span class="nt">(raga, tonic)</span>
@@ -1650,7 +1740,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">39</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">svara_pitch</span>
 
 <span class="ne">NameError</span>: name &#39;svara_pitch&#39; is not defined
@@ -1669,7 +1759,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plot_pitch</span><span class="p">(</span><span class="n">this_pitch</span><span class="p">,</span> <span class="n">this_time</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">silence_mask</span><span class="p">,</span> <span class="n">tonic</span><span class="o">=</span><span class="n">tonic</span><span class="p">,</span> <span class="n">yticks_dict</span><span class="o">=</span><span class="n">svara_pitch</span><span class="p">,</span> <span class="n">cents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Excerpt of </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1"> by </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ipy_audio</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
 
@@ -1761,7 +1851,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">43</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">44</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pitch_cents</span> <span class="o">=</span> <span class="n">pitch_seq_to_cents</span><span class="p">(</span><span class="n">pitch</span><span class="p">,</span> <span class="n">tonic</span><span class="o">=</span><span class="n">tonic</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;pitch&#39; is not defined
@@ -1780,7 +1870,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">44</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">45</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">p</span> <span class="o">=</span> <span class="n">pitch_cents</span><span class="p">[</span><span class="n">pitch_cents</span> <span class="o">!=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="kc">None</span><span class="p">)]</span>
 
@@ -1826,7 +1916,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">46</span><span class="p">],</span> <span class="n">line</span> <span class="mi">18</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">47</span><span class="p">],</span> <span class="n">line</span> <span class="mi">18</span>
 <span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Pitch (cents)&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="c1"># Plot using seaborn</span>
 <span class="ne">---&gt; </span><span class="mi">18</span> <span class="n">spltp</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">bw_method</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
@@ -1836,7 +1926,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <span class="ne">NameError</span>: name &#39;p&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/exploring-raga_87_1.png" src="../_images/exploring-raga_87_1.png" />
+<img alt="../_images/exploring-raga_88_1.png" src="../_images/exploring-raga_88_1.png" />
 </div>
 </div>
 <p>Force to one octave</p>
@@ -1849,7 +1939,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">47</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">48</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">p</span><span class="o">%</span><span class="k">1200</span>
 
 <span class="ne">NameError</span>: name &#39;p&#39; is not defined
@@ -1882,7 +1972,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">48</span><span class="p">],</span> <span class="n">line</span> <span class="mi">17</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">49</span><span class="p">],</span> <span class="n">line</span> <span class="mi">17</span>
 <span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Pitch (cents)&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1200</span><span class="p">))</span>
 <span class="ne">---&gt; </span><span class="mi">17</span> <span class="n">spltp1</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">bw_method</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
@@ -1890,7 +1980,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <span class="ne">NameError</span>: name &#39;p1&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/exploring-raga_90_1.png" src="../_images/exploring-raga_90_1.png" />
+<img alt="../_images/exploring-raga_91_1.png" src="../_images/exploring-raga_91_1.png" />
 </div>
 </div>
 <p>Add svara theoretical pitch positions</p>
@@ -1903,7 +1993,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">49</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">50</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">svara_pitch_cents</span> <span class="o">=</span> <span class="n">get_svara_pitch_carnatic</span><span class="p">(</span><span class="s1">&#39;ritigaula&#39;</span><span class="p">)</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/compiam/utils/__init__.py:117,</span> in <span class="ni">get_svara_pitch_carnatic</span><span class="nt">(raga, tonic)</span>
@@ -1956,7 +2046,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">50</span><span class="p">],</span> <span class="n">line</span> <span class="mi">17</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">51</span><span class="p">],</span> <span class="n">line</span> <span class="mi">17</span>
 <span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Pitch (cents)&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1200</span><span class="p">))</span>
 <span class="ne">---&gt; </span><span class="mi">17</span> <span class="n">spltp1</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">bw_method</span><span class="o">=</span><span class="mf">0.03</span><span class="p">)</span>
@@ -1966,7 +2056,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <span class="ne">NameError</span>: name &#39;p1&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/exploring-raga_93_1.png" src="../_images/exploring-raga_93_1.png" />
+<img alt="../_images/exploring-raga_94_1.png" src="../_images/exploring-raga_94_1.png" />
 </div>
 </div>
 <p>Looks good right? Any problems?</p>
@@ -1993,7 +2083,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">51</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">52</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">unfolded_data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">unfolded_data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
@@ -2001,7 +2091,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <span class="ne">NameError</span>: name &#39;unfolded_data&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/exploring-raga_101_1.png" src="../_images/exploring-raga_101_1.png" />
+<img alt="../_images/exploring-raga_102_1.png" src="../_images/exploring-raga_102_1.png" />
 </div>
 </div>
 <p>And now split plot into three sections, one for each octave</p>
@@ -2022,7 +2112,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">52</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">53</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Divide cent data into ocataves</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">2400</span><span class="p">,</span> <span class="mi">2400</span><span class="p">,</span> <span class="mi">1200</span><span class="p">):</span>
 <span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">unfolded_data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">i</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">unfolded_data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;</span><span class="n">i</span><span class="o">+</span><span class="mi">1200</span><span class="p">)</span>
@@ -2032,7 +2122,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <span class="ne">NameError</span>: name &#39;unfolded_data&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/exploring-raga_103_1.png" src="../_images/exploring-raga_103_1.png" />
+<img alt="../_images/exploring-raga_104_1.png" src="../_images/exploring-raga_104_1.png" />
 </div>
 </div>
 <p>Force each section to the 0cents -&gt; 1200cents octave</p>
@@ -2051,7 +2141,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/exploring-raga_105_0.png" src="../_images/exploring-raga_105_0.png" />
+<img alt="../_images/exploring-raga_106_0.png" src="../_images/exploring-raga_106_0.png" />
 </div>
 </div>
 <p>Since each of these lines do not necessarily terminate at exactly 0 and 1200. If we sum them we will observe big discrepancies in pitch towards these limits:</p>
@@ -2113,10 +2203,10 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4caae451c0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fdcba972fa0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/exploring-raga_109_1.png" src="../_images/exploring-raga_109_1.png" />
+<img alt="../_images/exploring-raga_110_1.png" src="../_images/exploring-raga_110_1.png" />
 </div>
 </div>
 <p>To avoid this we must ensure that each series terminates at exactly 0 and 1200 cents</p>
@@ -2199,7 +2289,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/exploring-raga_114_0.png" src="../_images/exploring-raga_114_0.png" />
+<img alt="../_images/exploring-raga_115_0.png" src="../_images/exploring-raga_115_0.png" />
 </div>
 </div>
 <p>Summing all together</p>
@@ -2230,10 +2320,10 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4caabfe1f0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fdcba8dc9a0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/exploring-raga_119_1.png" src="../_images/exploring-raga_119_1.png" />
+<img alt="../_images/exploring-raga_120_1.png" src="../_images/exploring-raga_120_1.png" />
 </div>
 </div>
 <p>An implementation for this folded and unfolded pitch density computation is provided at <code class="docutils literal notranslate"><span class="pre">compiam.visualisation.pitch.get_pitch_density</span></code></p>
@@ -2395,16 +2485,54 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">67</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">raga_track</span> <span class="o">=</span> <span class="p">{</span><span class="n">r</span><span class="p">:{</span><span class="s2">&quot;pitch_paths&quot;</span><span class="p">:[],</span><span class="s2">&quot;tonics&quot;</span><span class="p">:[],</span><span class="s2">&quot;names&quot;</span><span class="p">:[],</span><span class="s2">&quot;track_ids&quot;</span><span class="p">:[]}</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">sample_ragas</span><span class="p">}</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">68</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Iterate through track data, extract pitch track, save locally</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">track_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">raga</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span>   
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">track_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="n">raga</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;raaga&quot;</span><span class="p">]</span>   
 <span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="k">if</span> <span class="n">raga</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="c1"># raga annotation is sometimes None</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="n">raga</span> <span class="o">=</span> <span class="n">raga</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
 
-<span class="ne">NameError</span>: name &#39;track_data&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="k">return</span> <span class="bp">self</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">return</span> <span class="n">value</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/datasets/saraga_carnatic.py:163,</span> in <span class="ni">Track.metadata</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">163</span>     <span class="k">return</span> <span class="n">load_metadata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata_path</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/io.py:22,</span> in <span class="ni">coerce_to_string_io.&lt;locals&gt;.wrapper</span><span class="nt">(file_path_or_obj)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">22</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">):</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:177,</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="k">if</span> <span class="n">transport_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="n">transport_params</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="ne">--&gt; </span><span class="mi">177</span> <span class="n">fobj</span> <span class="o">=</span> <span class="n">_shortcut_open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span>     <span class="n">uri</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span>     <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="k">if</span> <span class="n">fobj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="k">return</span> <span class="n">fobj</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:363,</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span> <span class="k">if</span> <span class="n">errors</span> <span class="ow">and</span> <span class="s1">&#39;b&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="n">open_kwargs</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">errors</span>
+<span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">return</span> <span class="n">_builtin_open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../data/saraga1.5_carnatic/saraga1.5_carnatic/Sumitra Nitin at Arkay by Sumitra Nitin/Dorakuna/Dorakuna.json&#39;
 </pre></div>
 </div>
 </div>
@@ -2493,7 +2621,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">70</span><span class="p">],</span> <span class="n">line</span> <span class="mi">46</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">71</span><span class="p">],</span> <span class="n">line</span> <span class="mi">46</span>
 <span class="g g-Whitespace">     </span><span class="mi">43</span>     <span class="n">flush_matplotlib</span><span class="p">()</span>
 <span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="c1"># Store combined pitch histograms</span>
 <span class="ne">---&gt; </span><span class="mi">46</span> <span class="n">ph</span> <span class="o">=</span> <span class="n">get_pitch_density</span><span class="p">(</span><span class="n">all_pitch</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s1"> from </span><span class="si">{</span><span class="n">nr</span><span class="si">}</span><span class="s1"> performances&#39;</span><span class="p">,</span> <span class="n">bw</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">annotations</span><span class="o">=</span><span class="n">svara_map</span><span class="p">,</span> <span class="n">octave</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">imode</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -2543,7 +2671,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">72</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">73</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ritigaula_svaras</span> <span class="o">=</span> <span class="n">get_svara_pitch_carnatic</span><span class="p">(</span><span class="s2">&quot;ritigaula&quot;</span><span class="p">)</span> <span class="c1"># svaras for ritigaula</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">bhairavi_svaras</span> <span class="o">=</span> <span class="n">get_svara_pitch_carnatic</span><span class="p">(</span><span class="s2">&quot;bhairavi&quot;</span><span class="p">)</span> <span class="c1"># svaras for bhairavi</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rītigauḷa: </span><span class="si">{</span><span class="nb">set</span><span class="p">(</span><span class="n">ritigaula_svaras</span><span class="o">.</span><span class="n">values</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -2575,7 +2703,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">73</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">74</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ritigaula</span> <span class="o">=</span> <span class="n">pitch_hists</span><span class="p">[</span><span class="s2">&quot;Rītigauḷa&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">bhairavi</span> <span class="o">=</span> <span class="n">pitch_hists</span><span class="p">[</span><span class="s2">&quot;Bhairavi&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
@@ -2593,7 +2721,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">74</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">75</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ritigaula</span><span class="o">.</span><span class="n">figure</span>
 
 <span class="ne">NameError</span>: name &#39;ritigaula&#39; is not defined
@@ -2610,7 +2738,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">75</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">76</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">bhairavi</span><span class="o">.</span><span class="n">figure</span>
 
 <span class="ne">NameError</span>: name &#39;bhairavi&#39; is not defined
@@ -2715,7 +2843,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">79</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">80</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">AgglomerativeClustering</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">model</span> <span class="o">=</span> <span class="n">AgglomerativeClustering</span><span class="p">(</span><span class="n">affinity</span><span class="o">=</span><span class="s1">&#39;precomputed&#39;</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">sample_ragas</span><span class="p">),</span> <span class="n">linkage</span><span class="o">=</span><span class="s1">&#39;complete&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">performance_dist_matrix</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">results_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:[]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sample_ragas</span><span class="p">))}</span>
@@ -2776,7 +2904,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">80</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">81</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">perfs</span> <span class="ow">in</span> <span class="n">results_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Group </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">perfs</span><span class="p">:</span>
@@ -2802,17 +2930,6 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">81</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">track_id</span> <span class="o">=</span> <span class="s1">&#39;47_Koti_Janmani&#39;</span> 
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">track</span> <span class="o">=</span> <span class="n">track_data</span><span class="p">[</span><span class="n">track_id</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;track_data&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2823,12 +2940,50 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">82</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">audio_path</span> <span class="o">=</span> <span class="n">track</span><span class="o">.</span><span class="n">audio_vocal_path</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">tonic</span> <span class="o">=</span> <span class="n">track</span><span class="o">.</span><span class="n">tonic</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">83</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">audio_path</span> <span class="o">=</span> <span class="n">track</span><span class="o">.</span><span class="n">audio_vocal_path</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tonic</span> <span class="o">=</span> <span class="n">track</span><span class="o">.</span><span class="n">tonic</span>
 
-<span class="ne">NameError</span>: name &#39;track&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="k">return</span> <span class="bp">self</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">return</span> <span class="n">value</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/datasets/saraga_carnatic.py:167,</span> in <span class="ni">Track.tonic</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span> <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span> <span class="k">def</span> <span class="nf">tonic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">167</span>     <span class="k">return</span> <span class="n">load_tonic</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctonic_path</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/io.py:22,</span> in <span class="ni">coerce_to_string_io.&lt;locals&gt;.wrapper</span><span class="nt">(file_path_or_obj)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">22</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">):</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:177,</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="k">if</span> <span class="n">transport_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="n">transport_params</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="ne">--&gt; </span><span class="mi">177</span> <span class="n">fobj</span> <span class="o">=</span> <span class="n">_shortcut_open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span>     <span class="n">uri</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span>     <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="k">if</span> <span class="n">fobj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="k">return</span> <span class="n">fobj</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:363,</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span> <span class="k">if</span> <span class="n">errors</span> <span class="ow">and</span> <span class="s1">&#39;b&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="n">open_kwargs</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">errors</span>
+<span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">return</span> <span class="n">_builtin_open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../data/saraga1.5_carnatic/saraga1.5_carnatic/Akkarai Sisters at Arkay by Akkarai Sisters/Koti Janmani/Koti Janmani.ctonic.txt&#39;
 </pre></div>
 </div>
 </div>
@@ -2885,7 +3040,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
 <span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">85</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">86</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">load_model</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Feature Extraction</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># CAE features</span>
@@ -2923,7 +3078,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">86</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">87</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># returns magnitude and phase</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ampl</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cae</span><span class="o">.</span><span class="n">extract_features</span><span class="p">(</span><span class="n">audio_path</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ampl</span>
@@ -3006,7 +3161,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">91</span><span class="p">],</span> <span class="n">line</span> <span class="mi">13</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">92</span><span class="p">],</span> <span class="n">line</span> <span class="mi">13</span>
 <span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">this_stable_mask</span> <span class="o">=</span> <span class="n">stability_mask</span><span class="p">[</span><span class="n">t1s</span><span class="p">:</span><span class="n">t2s</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># get pitch plot</span>
 <span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_pitch</span><span class="p">(</span><span class="n">this_pitch</span><span class="p">,</span> <span class="n">this_time</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">this_silence_mask</span><span class="p">,</span> <span class="n">tonic</span><span class="o">=</span><span class="n">tonic</span><span class="p">,</span> <span class="n">yticks_dict</span><span class="o">=</span><span class="n">svara_pitch</span><span class="p">,</span> <span class="n">cents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Excerpt of </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1"> by </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -3056,7 +3211,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">93</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">94</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Mask of regions not interested in cite kaustuv, the papers that use </span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ss</span> <span class="o">=</span> <span class="n">self_similarity</span><span class="p">(</span>
 <span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">ampl</span><span class="p">,</span> <span class="c1"># features</span>
@@ -3088,7 +3243,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">94</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">95</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Self similarity matrix for </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">2000</span><span class="p">:</span><span class="mi">5000</span><span class="p">,</span><span class="mi">2000</span><span class="p">:</span><span class="mi">5000</span><span class="p">],</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
@@ -3097,7 +3252,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <span class="ne">NameError</span>: name &#39;title&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/exploring-raga_177_1.png" src="../_images/exploring-raga_177_1.png" />
+<img alt="../_images/exploring-raga_178_1.png" src="../_images/exploring-raga_178_1.png" />
 </div>
 </div>
 <p><a id='4.3'></a></p>
@@ -3128,7 +3283,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">96</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">97</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Emphasize Diagonal</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">se</span> <span class="o">=</span> <span class="n">segmentExtractor</span><span class="p">(</span>
 <span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">X</span><span class="p">,</span> <span class="c1"># self sim matrix</span>
@@ -3163,7 +3318,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">97</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">98</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X_proc</span> <span class="o">=</span> <span class="n">se</span><span class="o">.</span><span class="n">emphasize_diagonals</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">se</span><span class="o">.</span><span class="n">display_matrix</span><span class="p">(</span><span class="n">X_proc</span><span class="p">)</span>
 
@@ -3184,7 +3339,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">98</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">99</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.09</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">):</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">X_proc</span> <span class="o">=</span> <span class="n">se</span><span class="o">.</span><span class="n">emphasize_diagonals</span><span class="p">(</span><span class="n">bin_thresh</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">se</span><span class="o">.</span><span class="n">display_matrix</span><span class="p">(</span><span class="n">X_proc</span><span class="p">[</span><span class="mi">2000</span><span class="p">:</span><span class="mi">5000</span><span class="p">,</span><span class="mi">2000</span><span class="p">:</span><span class="mi">5000</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;bin_thresh=</span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -3205,7 +3360,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">99</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X_proc</span> <span class="o">=</span> <span class="n">se</span><span class="o">.</span><span class="n">emphasize_diagonals</span><span class="p">(</span><span class="n">bin_thresh</span><span class="o">=</span><span class="mf">0.10</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;se&#39; is not defined
@@ -3238,7 +3393,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">101</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">all_segments</span> <span class="o">=</span> <span class="n">se</span><span class="o">.</span><span class="n">extract_segments</span><span class="p">(</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">timestep</span><span class="o">=</span><span class="n">timestep</span><span class="p">,</span> <span class="c1"># timestep between</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">boundaries</span><span class="o">=</span><span class="n">boundaries_sparse</span><span class="p">,</span> <span class="c1"># boundaries of sparse regions (for conversion)</span>
@@ -3263,7 +3418,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">101</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">102</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Format: [(x0, y0), (x1, y1)]...&quot;</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">all_segments</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
 
@@ -3309,7 +3464,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">104</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">105</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Returns patterns in units of pitch sequence elements</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">starts_seq</span><span class="p">,</span> <span class="n">lengths_seq</span> <span class="o">=</span> <span class="n">se</span><span class="o">.</span><span class="n">group_segments</span><span class="p">(</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">all_segments</span><span class="p">,</span> <span class="c1"># segments from se.extract_segments()</span>
@@ -3334,7 +3489,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">105</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">106</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">starts_sec</span> <span class="o">=</span> <span class="p">[[</span><span class="n">x</span><span class="o">*</span><span class="n">timestep</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">p</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">starts_seq</span><span class="p">]</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">lengths_sec</span> <span class="o">=</span> <span class="p">[[</span><span class="n">x</span><span class="o">*</span><span class="n">timestep</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">l</span><span class="p">]</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lengths_seq</span><span class="p">]</span>
 
@@ -3352,7 +3507,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">106</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">107</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of groups: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">starts_sec</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;starts_sec&#39; is not defined
@@ -3388,7 +3543,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">108</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">109</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># kwargs for plot_pitch</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plot_kwargs</span> <span class="o">=</span> <span class="p">{</span>
 <span class="ne">----&gt; </span><span class="mi">3</span>     <span class="s1">&#39;yticks_dict&#39;</span><span class="p">:</span> <span class="n">svara_pitch</span><span class="p">,</span>
@@ -3423,7 +3578,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">109</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">110</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">7</span> <span class="c1"># Choose pattern group</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">S</span> <span class="o">=</span> <span class="n">starts_seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># get group</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">L</span> <span class="o">=</span> <span class="n">lengths_seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># get lengths</span>
@@ -3457,7 +3612,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">111</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">112</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">annotations_path</span> <span class="o">=</span> <span class="s2">&quot;../../annotations/47_Koti_Janmani.txt&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">annotations</span> <span class="o">=</span> <span class="n">load_annotations</span><span class="p">(</span><span class="n">annotations_path</span><span class="p">)</span>
 
@@ -3550,7 +3705,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">112</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">113</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">annotations</span>
 
 <span class="ne">NameError</span>: name &#39;annotations&#39; is not defined
@@ -3568,7 +3723,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">113</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">114</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">aeneas_annotations</span> <span class="o">=</span> <span class="n">to_aeneas</span><span class="p">(</span><span class="n">annotations</span><span class="p">,</span> <span class="n">label_row</span><span class="o">=</span><span class="s1">&#39;text_full&#39;</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;annotations&#39; is not defined
@@ -3585,7 +3740,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">114</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">115</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">Player</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">audio_path</span><span class="p">,</span> <span class="n">aeneas_annotations</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;title&#39; is not defined
@@ -3624,7 +3779,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">117</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">118</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">recall</span><span class="p">,</span> <span class="n">precision</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">annotations_ev</span> <span class="o">=</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">annotations</span><span class="p">,</span> <span class="n">starts_sec</span><span class="p">,</span> <span class="n">lengths_sec</span><span class="p">,</span> <span class="n">partial_perc</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;recall: </span><span class="si">{</span><span class="n">recall</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;precision: </span><span class="si">{</span><span class="n">precision</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -3644,7 +3799,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">118</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">119</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">annotations_ev</span><span class="p">[</span><span class="n">annotations_ev</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;nnnsndmgm&quot;</span><span class="p">]</span>
 
 <span class="ne">NameError</span>: name &#39;annotations_ev&#39; is not defined
@@ -3673,7 +3828,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">119</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">120</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">9</span> <span class="c1"># Choose pattern group</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">S</span> <span class="o">=</span> <span class="n">starts_seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># get group</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">L</span> <span class="o">=</span> <span class="n">lengths_seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># get lengths</span>
