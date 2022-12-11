@@ -26,7 +26,7 @@ parts:
     - file: melodic_analysis/melodic-transcription
     - file: melodic_analysis/melodic-pattern-discovery
     - file: melodic_analysis/raga-recognition
-    #- file: resources/online-vis/view
+    - file: melodic_analysis/exploring-raga
 
 - caption: Rhythmic Analysis
   chapters:
