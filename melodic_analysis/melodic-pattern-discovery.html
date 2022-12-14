@@ -204,11 +204,6 @@ const thebe_selector_output = ".output, .cell_output"
    Automatic raga recognition
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="exploring-raga.html">
-   Exploring Rāga Performance in Carnatic Music
-  </a>
- </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -492,12 +487,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Melodic pattern dicovery
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sancara-search">
+   Sañcara search
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -509,6 +533,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Melodic pattern dicovery
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sancara-search">
+   Sañcara search
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -520,9 +562,41 @@ title="Print to PDF"
 <span id="melodic-pattern-discovery"></span><h1>Melodic pattern dicovery<a class="headerlink" href="#melodic-pattern-dicovery" title="Permalink to this headline">#</a></h1>
 <p>Melodic pattern discovery is a core task within the melodic analysis of Indian Art Music, most of the approaches building on top of time-series of pitch <span id="id1">[<a class="reference internal" href="../resources/references.html#id41" title="Sankalp Gulati, Joan Serra, Vignesh Ishwar, and Xavier Serra. Mining melodic patterns in large audio collections of Indian art music. In In Proc. of the 10th International Conference on Signal-Image Technology and Internet-Based Systems (SITIS), Bangkok, Thailand., 264–271. 2015. doi:10.1109/SITIS.2014.73.">GSIS15a</a>, <a class="reference internal" href="../resources/references.html#id42" title="Sankalp Gulati, Joan Serra, Vignesh Ishwar, and Xavier Serra. Discovering rāga motifs by characterizing communities in networks of melodic patterns. In In Proc. of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 286–290. 2016. doi:10.1109/ICASSP.2016.7471682.">GSIS16</a>, <a class="reference internal" href="../resources/references.html#id40" title="Sankalp Gulati, Joan Serrà, Vignesh Ishwar, and Xavier Serra. Mining melodic patterns in large audio collections of Indian art music. In In Proc. of the 10th International Conference on Signal-Image Technology and Internet-Based Systems (SITIS), Bangkok, Thailand., 264–271. 2015. doi:10.1109/SITIS.2014.73.">GSIS15b</a>, <a class="reference internal" href="../resources/references.html#id38" title="Vignesh Ishwar, Shrey Dutta, Ashwin Bellur, and Hema A Murthy. Motif Spotting in an Alapana in Carnatic Music. In In Proc. of the 14th International Society for Music Information Retrieval Conference (ISMIR), \normalfont Curitiba, Brazil, 499–504. 2013.">IDBM13</a>, <a class="reference internal" href="../resources/references.html#id39" title="Preeti Rao, Joe Cheri Ross, Kaustuv Kanti Ganguli, Vedhas Pandit, Vignesh Ishwar, Ashwin Bellur, and HA Murthy. Melodic motivic analysis of indian music. Journal of New Music Research, 43(1):115–131, 2014.">RRG+14</a>]</span>. In fact, <span id="id2">[<a class="reference internal" href="../resources/references.html#id44">VK18</a>]</span> reviews the melodic recognition task in Carnatic Music and concludes that using pitch data drives to better performance. On the same line, a musically-relevant statistical analysis of melodic patterns is proposed in <span id="id3">[<a class="reference internal" href="../resources/references.html#id43" title="V. S. Viraraghavan, R. Aravind, and H.A. Murthy. A statistical analysis of gamakas in carnatic music. In In Proc. of the 8th International Society for Music Information Retrieval Conference, (ISMIR), 243–246. Suzhou, China, 2017. doi:10.1109/ICASSP.2016.7471682.">VAM17</a>]</span>, aiming at providing a more handy representation of this important aspect for Carnatic and Hindustani Music.</p>
 <p>More recently, the task of melodic pattern discovery has been approached taking advantage of DL techniques by combining the learnt features from a complex autoencoder and an attention-based vocal pitch extraction model <span id="id4">[<a class="reference internal" href="../resources/references.html#id47" title="Thomas Nuttall, Genís Plaja-Roglans, Lara Pearson, and Xavier Serra. In search of sancaras: tradition-informed repeated melodic pattern recognition in carnatic music. In In Proc. of the 23rd International Conference on Music Information Retrieval (ISMIR), Bengaluru, India. 2022.">NPRPS22</a>]</span>. Multiple design choices of this entire process are informed by tradition characteristics.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Importing compiam to the project</span>
+<span class="kn">import</span> <span class="nn">compiam</span>
+
+<span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sancara-search">
+<h1>Sañcara search<a class="headerlink" href="#sancara-search" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">pattern</span><span class="o">.</span><span class="n">list_tools</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;CAEWrapper*&#39;, &#39;segmentExtractor&#39;]
+</pre></div>
+</div>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Walkthrough presented during the live tutorial and to be added in this section soon.</p>
+<p>Walkthrough coming soon!
+To go through the tool available in compiam for this task, please refer to <a class="reference external" href="https://github.com/MTG/IAM-tutorial-ismir22/blob/master/webbook/melodic_analysis/exploring-raga.ipynb">this link</a>, download the notebook, and run it locally following the instructions provided in the notebook itself.</p>
 </div>
 </section>
 
