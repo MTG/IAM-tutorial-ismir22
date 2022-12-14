@@ -26,7 +26,7 @@ parts:
     - file: melodic_analysis/melodic-transcription
     - file: melodic_analysis/melodic-pattern-discovery
     - file: melodic_analysis/raga-recognition
-    - file: melodic_analysis/exploring-raga
+    #- file: melodic_analysis/exploring-raga  # To run locally
 
 - caption: Rhythmic Analysis
   chapters:
@@ -44,6 +44,6 @@ parts:
 - caption: Resources
   chapters:    
     - file: resources/references
-    #- file: resources/further-reading
+    #- file: resources/further-reading  # TODO
     - file: resources/acknowledgements
     - file: resources/citing
