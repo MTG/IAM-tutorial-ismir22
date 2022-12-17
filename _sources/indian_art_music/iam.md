@@ -20,3 +20,7 @@ These two categories act as convenient headings that group together closely rela
 ```
 
 Some of the shared features and differences between the Hindustani and Carnatic musical styles will become apparent as we move through this introductory section.
+
+```{note}
+The above content is authored by Lara Pearson and Brindha Manickavasakan (2022).
+```

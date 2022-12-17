@@ -1,11 +1,14 @@
 (carnatic-music)=
 # Carnatic Music
 
+(carnatic-melody)
+## Melodic Concepts and Performance Structure
+
 (carnatic-instrumentation)=
-## Carnatic Music in Performance: Instrumentation
+### Carnatic Music in Performance: Instrumentation
 
 (carnatic-vocal-led-performance-group)=
-### Vocal-led performance group 
+#### Vocal-led performance group 
 
 
 ```{figure} ../images/vocal.jpg
@@ -57,15 +60,15 @@ Periya Mēḷam performance - nāgasvaram by Iyermalai A B Selvam and Thiruloki 
 
 
 (carnatic-formats)=
-## Musical Formats and Performance Structure
+### Musical Formats and Performance Structure
 
 (carnatic-improvisation)=
-### Pre-composed or improvisational?
+#### Pre-composed or improvisational?
 In Carnatic music there are formats that are more precomposed, and formats that are more improvisational in their respective creative processes. Typically, the strongly precomposed formats are referred to as ‘kalpita saṅgīta’ or ‘compositions’, and the more improvisational sections are referred to as ‘manodharma saṅgīta’. It should be noted that in practice the performance of compositions often also includes some spontaneous variations (some extemporization), while the manodharma sections are based around well known, and hence precomposed, phrases {cite}`ramanathan_improvisation_2007`. Therefore, the performance of both formats actually include improvisational and precomposed elements, but to different degrees and in different ways {cite}`nooshin_improvisation_2006, pearson_improvisation_2021`. Furthermore, a composition itself is a composer’s imagined creation, that originally involved both improvisational and precomposed elements, and that later becomes part of the repertoire of precomposed formats.  
 
 
 (carnatic-variation)=
-### Variation in the performance of a given composition
+#### Variation in the performance of a given composition
 In this tradition, compositions are handed down orally through the teaching lineage, and as a result, different lineages may perform slightly different versions of the same composition {cite}`pearson_inscription_2022`. Therefore, published notations may also differ despite being of the same composition. Furthermore, as noted above, experienced musicians may add melodic variations on some lines of the composition during performance {cite}`vijayakrishnan_function_2009`. The upshot of all this is that we cannot expect a published notation to align precisely with what is performed. 
 
 > **Implications for MIR:** 
@@ -73,7 +76,7 @@ In this tradition, compositions are handed down orally through the teaching line
 
 
 (carnatic-kalpita-sangita)=
-### Kalpita saṅgīta
+#### Kalpita saṅgīta
 
 Types of compositions include kīrtana, varṇam, padam, and tillānā. These usually have three sections - pallavi, anupallavi and caraṇa. The pallavi is the refrain-like portion that returns again after the anupallavi and caraṇa. The presentation of a composition is in the order ‘pallavi-anupallavi-pallavi-caraṇa-pallavi’ (see {numref}`carnatic_structure_diagram`). 
 
@@ -88,7 +91,7 @@ Graphic showing the typical structure of a composition, e.g., a kīrtana. Time r
 ```
 
 (carnatic-manodharma-sangita)=
-### Manodharma saṅgīta
+#### Manodharma saṅgīta
 Manodharma formats include ālāpana, niraval, kalpanasvara, and tani āvarttanam. 
 
 Manodharma saṅgīta can be translated as ‘music of the imagination’ {cite}`kassebaum_karnatak_2000` referring to the way in which these formats are created on the spot (not fully pre-composed), based on existing materials (phrases) and using structural principles that are acquired by musicians through practice and exposure to the style. 
@@ -112,22 +115,22 @@ Graphic showing how manodharma elements can be integrated together with a compos
 
 
 (carnatic-melodic-concepts)=
-## Carnatic Melodic Concepts
+### Carnatic Melodic Concepts
 
 (carnatic-raga)=
-### Rāga and rāga bhāva
+#### Rāga and rāga bhāva
 The melodic frameworks on which Carnatic music is based are known as rāgas. One of the main aesthetic goals of Carnatic performance is the correct expression of rāga. Rāgas can be understood as collections of phrases or melodies, comprising gamakas (ornamentation) and svaras (notes) that are considered part of the melodic framework, and performed in ways that follow the grammar of the rāga. 
 
 Each rāga has its own character or mood, referred to as rāga bhāva. Rāga bhāva cannot be adequately described using words such as simple emotion terms, but it can be experienced when listening to or performing a rāga.
 
 (carnatic-svara)=
-### Svara
+#### Svara
 Svaras are note-length units with theoretical pitch positions, and are referred to using sargam syllables – sa ri ga ma pa dha and ni. Sargam syllables are used in written notation, and also in certain musical formats when the svara names are sung. 
 
 In practice, most svaras are performed with gamakas (ornamentation), rather than as plain notes {cite}`ramanathan_sargam_2004`. Therefore, although svaras are often referred to using the English term ‘notes’, they differ from notes in that the gamakas with which they are performed are considered integral to the svara {cite}`viswanathan_analysis_1977`. 
 
 (carnatic-gamaka)=
-### Gamaka
+#### Gamaka
 Many rāgas involve heavy use of gamakas (ornamentation) such as oscillations, slides and flicks to other pitches. Although gamaka typologies can be found in musical treatises, in practice, gamakas tend to evade categorisation due to the many subtle variations found in performance {cite}`viswanathan_analysis_1977`. Nevertheless, such typologies can provide some idea of the range of gamakas performed, as can be seen in [this webpage](https://saayujya.com/index.php/2019/12/03/gamaka-notation/) based on a gamaka typology from the **Saṅgīta-sampradāya-pradarśini** {cite}`diksitar_sangita_2008`, which draws on [original work by Gopala Krishna Koduri](https://freesound.org/people/gopalkoduri/packs/9949/).
 
 It’s important to note that gamakas are not superficial decoration but rather are integral to musical meaning {cite}`viswanathan_analysis_1977`. For example, when two rāgas have the same svaras, it is often the gamakas used that disambiguate the rāgas {cite}`kassebaum_karnatak_2000`.
@@ -149,7 +152,7 @@ This oscillatory movement is particularly characteristic of the Carnatic style, 
 > The heavy use of gamakas, especially oscillations, makes automated transcription of Carnatic music a challenging task. 
 
 (carnatic-sancara)=
-### Sañcāra
+#### Sañcāra
 Another important feature of the style is the structural and expressive significance of motifs and phrases known as sañcāras, which can be defined as coherent segments of melodic movement that follow the grammar of the rāga {cite}`viswanathan_analysis_1977, pesch_oxford_2009`. The term sañcāra comes from the Sanskrit root सञ्चर्, meaning to move. Although occasionally the term might be used to refer to phrases that are particularly characteristic of a rāga, the more common use of the term is in reference to any melodic segment that is coherent from a Carnatic music perspective. 
 
 These melodic patterns are the means through which the character of the rāga is expressed and they form the basis of various improvisatory and compositional formats in the style {cite}`viswanathan_analysis_1977, ishwar_patterns_2013`. There are no definitive lists of all possible sañcāras in each rāga, rather the body of existing compositions and the living oral tradition of rāga performance act as repositories for that knowledge. 
@@ -159,7 +162,7 @@ These melodic patterns are the means through which the character of the rāga is
 > segment at different hierarchical levels (for a related discussion in the context of Western popular music, see {cite}`bruderer_perception_2009`).
 
 (carnatic-pidis)=
-### Characteristic phrases or piḍis
+#### Characteristic phrases or piḍis
 These are phrases that can only be found in one rāga, and thus point clearly to that rāga. As explained by the Carnatic musician and musicologist, T. Viswanathan, “Each rāga has its own characteristic phrases which appear regularly in compositions, and which are guaranteed to produce instant recognition (and, if well performed, appreciation) in the audience” ({cite}`viswanathan_analysis_1977`, p. 38).
 
 > **Implications for MIR:**
@@ -173,6 +176,10 @@ The ṣaḍja (sa) has a ‘tonic-like’ effect, where we feel a sense of rest 
 > **Implications for MIR:**
 > sa can be placed at any pitch, and usually remains the same throughout a performance. However a few rāgas may be presented in the madhyama śruti, which shifts the
 > position of sa. The fact that sa may be placed at any pitch means that for many MIR processes, pitch needs to be normalized to wherever sa is placed.  
+
+```{note}
+The above sections ([instrumentation](carnatic-instrumentation), [format](carnatic-formats), and [melodic concepts](carnatic-melodic-concepts)) are authored by Lara Pearson and Brindha Manickavasakan (2022).
+```
 
 
 (carnatic-rhythm)=
@@ -259,5 +266,6 @@ name: solkattu
 | TG       | Pitch modulated bass stroke on the left head  |
 ```
 
-
-This section has been adapted, with consent, from the PhD thesis of Ajay Srinivasamurthy {cite}`ajaythesis`
+```{note}
+The section above has been adapted, with consent, from the PhD thesis of Ajay Srinivasamurthy  {cite}`ajaythesis`
+```
