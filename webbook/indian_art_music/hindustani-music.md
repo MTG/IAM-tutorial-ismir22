@@ -161,7 +161,7 @@ Svara salience histogram (salience is the cumulative duration of transcribed sva
 {numref}`hindustani_pitch_class_1` and {numref}`hindustani_pitch_class_2` show the relative low salience of the ‘R’ svara in raga Deshkar with respect to raga Bhupali. This reconfirms the lexical information being manifested in performance captured via audio analyses. The tonal hierarchy can be estimated from the detected melody line of a performance. In Western music, pitch-class profiles extracted from music pieces, both written scores and audio, have served well in validating the link between theoretical key profiles and their practical realization. In the pitch-continuous tradition of Indian art music where melodic shapes in terms of the connecting ornaments are at least as important in characterizing a raga as the notes of the scale, it becomes relevant to consider the dimensionality of the first order pitch distribution used to represent distributional information. Music theory however is not precise enough to help resolve the choices of bin width and distance measure between pitch distributions. We use a novel musicological viewpoint, namely a well-accepted notion of grammaticality in performance, to obtain the parameters of the computational representation based on audio performance data, we maximized the discrimination of allied raga performances using well-known evaluation metrics. Pitch salience histograms, as well as the stable segment based svara salience and count histograms, were considered as distinct representations of tonal hierarchy. We considered a variety of distance measures in order to derive a combination of histogram parameters and distance metrics that best separated same-raga pairs from allied-raga pairs.
 
 ```{note}
-This section has been adapted, with consent, from the PhD thesis of Dr. Kaustuv Kanti Ganguli, at Indian Institute of Technology Bombay, India {cite}`ganguli_thesis`.
+Th sections above have been adapted, with consent, from the PhD thesis of Dr. Kaustuv Kanti Ganguli, at Indian Institute of Technology Bombay, India {cite}`ganguli_thesis`.
 ```
 
 (hindustani-rhythm)=
@@ -273,5 +273,5 @@ name: bols
 ```
 
 ```{note}
-This section has been adapted, with consent, from the PhD thesis of Ajay Srinivasamurthy {cite}`ajaythesis`
+The section above has been adapted, with consent, from the PhD thesis of Ajay Srinivasamurthy  {cite}`ajaythesis`
 ```
