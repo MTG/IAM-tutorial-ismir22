@@ -1,7 +1,7 @@
 (carnatic-music)=
 # Carnatic Music
 
-(carnatic-melody)
+(carnatic-melody)=
 ## Melodic Concepts and Performance Structure
 
 (carnatic-instrumentation)=
