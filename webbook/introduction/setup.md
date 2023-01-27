@@ -20,7 +20,7 @@ This cool interface helps readers go through the learning materials on the web p
 
 (google-collab)=
 ### Running the book in the cloud: Google Collaboratory
-In some pages of the tutorial, you will observe that **a rocket icon (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/rocket.svg" width="20" height="20">) appears at the right top of the screen**. This is an indicator that such particular page is includes runable code, which you can conviniently run on the cloud.
+In some pages of the tutorial, you will observe that **a rocket icon (<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/rocket.svg" width="20" height="20">) appears at the right top of the screen**. This is an indicator that such a page includes runable code, which you can conveniently run on the cloud.
 
 Google Collaboratory (abbreviated as Collab) is a handy tool in which you can import and run the code in this tutorial. Moreove, you will be able to edit the code, to further explore and extend what you will be learning throughout the tutorial.
 
