@@ -56,11 +56,18 @@ Your Dunya access token is **unique** and **must be kept in secret**. For that r
 ### Browsing the corpora using the API
 Our corpora class include methods to get an overview of the available data in the database. Let us get you some examples below:
 
-* ``get_collection()``: prints you out all available recordings in the collection.
-* ``get_recording(<recording-musicbrainz-id>)``: prints out the available data for the recording associated with the input mbid.
-* ``get_artist(<artists-musicbrainz-id>)``: prints out the available information for the artist associated with the input mbid.
-* ``list_concerts()``: list all available concerts in the selected database.
-* ``list_available_types(<artists-musicbrainz-id>)``:  prints you out the available types of file available for a particular recording.
+* ``get_collection()``: returns a dictionary including `mbid` and title of all available recordings in the collection.
+* ``get_recording(<recording-musicbrainz-id>)``: returns the available data for the recording associated with the input mbid.
+* ``get_artist(<artists-musicbrainz-id>)``: returns the available information for the artist associated with the input mbid.
+* ``list_concerts()``: lists all available concerts in the selected database.
+* ``list_available_types(<artists-musicbrainz-id>)``: returns the available types of file available for a particular recording.
+
+### Parsing all the metadata at once
+The corpora class also includes a functionality to iterate over the initialized corpora. Run `get_metadata()` to get a dictionary containing all metadata available in the portion of the corpora in which you are interested on.
+
+```{note}
+Please note that there is no API call to get all metadata at once, so `get_metadata()` will run as many API calls as recordings are avialable in the corpora, so this operation might take a while...
+```
 
 ### Getting the data
 The Dunya Python API also provides methods to get the data. You may use these set of functionalities to parse and/or download into your machine a particular annotation, metadata file, or audio track.

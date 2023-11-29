@@ -951,7 +951,9 @@ title="Print to PDF"
  &#39;compmusic_carnatic_rhythm&#39;,
  &#39;compmusic_hindustani_rhythm&#39;,
  &#39;compmusic_raga&#39;,
- &#39;compmusic_indian_tonic&#39;]
+ &#39;compmusic_indian_tonic&#39;,
+ &#39;compmusic_carnatic_varnam&#39;,
+ &#39;scms&#39;]
 </pre></div>
 </div>
 </div>
@@ -1050,25 +1052,25 @@ title="Print to PDF"
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">track_data</span><span class="p">[</span><span class="s2">&quot;108_Pullum_Silambena_Kan&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
 <span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="k">return</span> <span class="bp">self</span>
 <span class="ne">---&gt; </span><span class="mi">46</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">return</span> <span class="n">value</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/datasets/saraga_carnatic.py:163,</span> in <span class="ni">Track.metadata</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">163</span>     <span class="k">return</span> <span class="n">load_metadata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata_path</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/mirdata/datasets/saraga_carnatic.py:150,</span> in <span class="ni">Track.metadata</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">148</span> <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span> <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">150</span>     <span class="k">return</span> <span class="n">load_metadata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata_path</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/io.py:22,</span> in <span class="ni">coerce_to_string_io.&lt;locals&gt;.wrapper</span><span class="nt">(file_path_or_obj)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/mirdata/io.py:22,</span> in <span class="ni">coerce_to_string_io.&lt;locals&gt;.wrapper</span><span class="nt">(file_path_or_obj)</span>
 <span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="k">return</span> <span class="kc">None</span>
 <span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">22</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">):</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:177,</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:177,</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
 <span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="k">if</span> <span class="n">transport_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="n">transport_params</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="ne">--&gt; </span><span class="mi">177</span> <span class="n">fobj</span> <span class="o">=</span> <span class="n">_shortcut_open</span><span class="p">(</span>
@@ -1083,7 +1085,7 @@ title="Print to PDF"
 <span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="k">if</span> <span class="n">fobj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="k">return</span> <span class="n">fobj</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:363,</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:363,</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
 <span class="g g-Whitespace">    </span><span class="mi">360</span> <span class="k">if</span> <span class="n">errors</span> <span class="ow">and</span> <span class="s1">&#39;b&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="n">open_kwargs</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">errors</span>
 <span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">return</span> <span class="n">_builtin_open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
@@ -1122,25 +1124,25 @@ title="Print to PDF"
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># rāgas</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ragas</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;raaga&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">metadata</span><span class="p">]</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
 <span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="k">return</span> <span class="bp">self</span>
 <span class="ne">---&gt; </span><span class="mi">46</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">return</span> <span class="n">value</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/datasets/saraga_carnatic.py:163,</span> in <span class="ni">Track.metadata</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">163</span>     <span class="k">return</span> <span class="n">load_metadata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata_path</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/mirdata/datasets/saraga_carnatic.py:150,</span> in <span class="ni">Track.metadata</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">148</span> <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span> <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">150</span>     <span class="k">return</span> <span class="n">load_metadata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata_path</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/io.py:22,</span> in <span class="ni">coerce_to_string_io.&lt;locals&gt;.wrapper</span><span class="nt">(file_path_or_obj)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/mirdata/io.py:22,</span> in <span class="ni">coerce_to_string_io.&lt;locals&gt;.wrapper</span><span class="nt">(file_path_or_obj)</span>
 <span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="k">return</span> <span class="kc">None</span>
 <span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">22</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">):</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:177,</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:177,</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
 <span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="k">if</span> <span class="n">transport_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="n">transport_params</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="ne">--&gt; </span><span class="mi">177</span> <span class="n">fobj</span> <span class="o">=</span> <span class="n">_shortcut_open</span><span class="p">(</span>
@@ -1155,7 +1157,7 @@ title="Print to PDF"
 <span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="k">if</span> <span class="n">fobj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="k">return</span> <span class="n">fobj</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:363,</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:363,</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
 <span class="g g-Whitespace">    </span><span class="mi">360</span> <span class="k">if</span> <span class="n">errors</span> <span class="ow">and</span> <span class="s1">&#39;b&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="n">open_kwargs</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">errors</span>
 <span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">return</span> <span class="n">_builtin_open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
@@ -1418,14 +1420,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-17 10:58:47.119280: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/cv2/../../lib64:
-2022-12-17 10:58:47.119306: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-29 12:08:15.052314: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/cv2/../../lib64:
+2023-11-29 12:08:15.052341: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-17 10:58:48.327326: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/cv2/../../lib64:
-2022-12-17 10:58:48.327357: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-2022-12-17 10:58:48.327376: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az487-765): /proc/driver/nvidia/version does not exist
-2022-12-17 10:58:48.327605: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-11-29 12:08:16.217724: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/cv2/../../lib64:
+2023-11-29 12:08:16.217749: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2023-11-29 12:08:16.217768: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az1022-658): /proc/driver/nvidia/version does not exist
+2023-11-29 12:08:16.217949: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
 </pre></div>
 </div>
@@ -1679,17 +1681,19 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_svara_pitch_carnatic</span><span class="p">(</span><span class="n">raga</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/compiam/utils/__init__.py:117,</span> in <span class="ni">get_svara_pitch_carnatic</span><span class="nt">(raga, tonic)</span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span> <span class="k">def</span> <span class="nf">get_svara_pitch_carnatic</span><span class="p">(</span><span class="n">raga</span><span class="p">,</span> <span class="n">tonic</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">117</span>     <span class="n">svara_pitch</span> <span class="o">=</span> <span class="n">get_svara_pitch</span><span class="p">(</span><span class="n">raga</span><span class="p">,</span> <span class="n">tonic</span><span class="p">,</span> <span class="n">svara_cents_carnatic_path</span><span class="p">,</span> <span class="n">svara_lookup_carnatic_path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span>     <span class="k">return</span> <span class="n">svara_pitch</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/compiam/utils/__init__.py:123,</span> in <span class="ni">get_svara_pitch_carnatic</span><span class="nt">(raga, tonic)</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span> <span class="k">def</span> <span class="nf">get_svara_pitch_carnatic</span><span class="p">(</span><span class="n">raga</span><span class="p">,</span> <span class="n">tonic</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">123</span>     <span class="n">svara_pitch</span> <span class="o">=</span> <span class="n">get_svara_pitch</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>         <span class="n">raga</span><span class="p">,</span> <span class="n">tonic</span><span class="p">,</span> <span class="n">svara_cents_carnatic_path</span><span class="p">,</span> <span class="n">svara_lookup_carnatic_path</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span>     <span class="k">return</span> <span class="n">svara_pitch</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/compiam/utils/__init__.py:132,</span> in <span class="ni">get_svara_pitch</span><span class="nt">(raga, tonic, svara_cents_path, svara_lookup_path)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="k">if</span> <span class="n">close</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span>         <span class="n">error_message</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; Nearest matches: </span><span class="si">{</span><span class="n">close</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">132</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="n">arohana</span> <span class="o">=</span> <span class="n">svara_lookup</span><span class="p">[</span><span class="n">raga</span><span class="p">][</span><span class="s1">&#39;arohana&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="n">avorohana</span> <span class="o">=</span> <span class="n">svara_lookup</span><span class="p">[</span><span class="n">raga</span><span class="p">][</span><span class="s1">&#39;avorohana&#39;</span><span class="p">]</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/compiam/utils/__init__.py:139,</span> in <span class="ni">get_svara_pitch</span><span class="nt">(raga, tonic, svara_cents_path, svara_lookup_path)</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="k">if</span> <span class="n">close</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span>         <span class="n">error_message</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; Nearest matches: </span><span class="si">{</span><span class="n">close</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">139</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span> <span class="n">arohana</span> <span class="o">=</span> <span class="n">svara_lookup</span><span class="p">[</span><span class="n">raga</span><span class="p">][</span><span class="s2">&quot;arohana&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">142</span> <span class="n">avorohana</span> <span class="o">=</span> <span class="n">svara_lookup</span><span class="p">[</span><span class="n">raga</span><span class="p">][</span><span class="s2">&quot;avorohana&quot;</span><span class="p">]</span>
 
 <span class="ne">ValueError</span>: Raga, Rītigauḷa not available in conf. Nearest matches: [&#39;ritigaula&#39;]
 </pre></div>
@@ -1711,17 +1715,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{58.268175617345825: &#39;G2&#39;,
- 116.53635123469165: &#39;G2&#39;,
- 233.0727024693833: &#39;G2&#39;,
- 466.1454049387666: &#39;G2&#39;,
- 932.2908098775332: &#39;G2&#39;,
- 73.4133009992652: &#39;P&#39;,
- 146.8266019985304: &#39;P&#39;,
- 293.6532039970608: &#39;P&#39;,
- 587.3064079941216: &#39;P&#39;,
- 659.229153702302: &#39;P&#39;,
- 65.40381575469627: &#39;M1&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{65.40381575469627: &#39;M1&#39;,
  130.80763150939254: &#39;M1&#39;,
  261.6152630187851: &#39;M1&#39;,
  523.2305260375701: &#39;M1&#39;,
@@ -1731,20 +1725,31 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
  349.21447953665023: &#39;N2&#39;,
  698.4289590733005: &#39;N2&#39;,
  1396.857918146601: &#39;N2&#39;,
+ 58.268175617345825: &#39;G2&#39;,
+ 116.53635123469165: &#39;G2&#39;,
+ 233.0727024693833: &#39;G2&#39;,
+ 466.1454049387666: &#39;G2&#39;,
+ 932.2908098775332: &#39;G2&#39;,
  82.40364421278775: &#39;D2&#39;,
  164.8072884255755: &#39;D2&#39;,
  329.614576851151: &#39;D2&#39;,
+ 659.229153702302: &#39;D2&#39;,
  1318.458307404604: &#39;D2&#39;,
+ 48.9975: &#39;S&#39;,
+ 97.995: &#39;S&#39;,
+ 195.99: &#39;S&#39;,
+ 391.98: &#39;S&#39;,
+ 783.96: &#39;S&#39;,
  54.997834212038505: &#39;R2&#39;,
  109.99566842407701: &#39;R2&#39;,
  219.99133684815402: &#39;R2&#39;,
  439.98267369630804: &#39;R2&#39;,
  879.965347392616: &#39;R2&#39;,
- 48.9975: &#39;S&#39;,
- 97.995: &#39;S&#39;,
- 195.99: &#39;S&#39;,
- 391.98: &#39;S&#39;,
- 783.96: &#39;S&#39;}
+ 73.4133009992652: &#39;P&#39;,
+ 146.8266019985304: &#39;P&#39;,
+ 293.6532039970608: &#39;P&#39;,
+ 587.3064079941216: &#39;P&#39;,
+ 1174.6128159882435: &#39;P&#39;}
 </pre></div>
 </div>
 </div>
@@ -2129,7 +2134,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sum distributions using interpolation</span>
 <span class="k">def</span> <span class="nf">sum_dist</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Sum two distributions, &lt;d1&gt; and &lt;d2&gt; along y axis</span>
 <span class="sd">    </span>
 <span class="sd">    :param d1,d2: numpy array of form [(x, y),...</span>
@@ -2183,7 +2188,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb773e740a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f71585cad00&gt;]
 </pre></div>
 </div>
 <img alt="../_images/exploring-raga_110_1.png" src="../_images/exploring-raga_110_1.png" />
@@ -2195,7 +2200,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">lstsq</span>
 
 <span class="k">def</span> <span class="nf">line_through_points</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return two functions corresponding to straight line learnt </span>
 <span class="sd">    via least squares regression between two points (x0,y0)</span>
 <span class="sd">    and (x1, y1). These functions retrieve x and y values </span>
@@ -2300,7 +2305,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb773a7f9d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f71584d14c0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/exploring-raga_120_1.png" src="../_images/exploring-raga_120_1.png" />
@@ -2350,7 +2355,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.utils</span> <span class="kn">import</span> <span class="n">create_if_not_exists</span>
 
 <span class="k">def</span> <span class="nf">get_audio_path</span><span class="p">(</span><span class="n">track_id</span><span class="p">,</span> <span class="n">track_data</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    For saraga &lt;track_id&gt;, return path of vocal source.</span>
 <span class="sd">    If isolated vocal source does not exist for track,</span>
 <span class="sd">    return path to mixed audio.</span>
@@ -2363,7 +2368,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
     <span class="k">return</span> <span class="n">audio_path</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">vocal_path</span> <span class="k">else</span> <span class="n">vocal_path</span>
 
 <span class="k">def</span> <span class="nf">extract_pitch_track</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Extract predominant pitch track of audio at</span>
 <span class="sd">    &lt;path&gt;. Return pitch, time and timestep</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2374,7 +2379,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
     <span class="k">return</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">timestep</span>
 
 <span class="k">def</span> <span class="nf">save_pitch_track</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Save pitch track as tsv to &lt;path&gt;</span>
 <span class="sd">    format: (time, pitch)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2385,7 +2390,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
             <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">load_pitch_track</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Load pitch track from tsv to</span>
 <span class="sd">    format: (time, pitch)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2474,25 +2479,25 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="c1"># raga annotation is sometimes None</span>
 <span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="n">raga</span> <span class="o">=</span> <span class="n">raga</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
 <span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="k">return</span> <span class="bp">self</span>
 <span class="ne">---&gt; </span><span class="mi">46</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">return</span> <span class="n">value</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/datasets/saraga_carnatic.py:163,</span> in <span class="ni">Track.metadata</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">163</span>     <span class="k">return</span> <span class="n">load_metadata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata_path</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/mirdata/datasets/saraga_carnatic.py:150,</span> in <span class="ni">Track.metadata</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">148</span> <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span> <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">150</span>     <span class="k">return</span> <span class="n">load_metadata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata_path</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/io.py:22,</span> in <span class="ni">coerce_to_string_io.&lt;locals&gt;.wrapper</span><span class="nt">(file_path_or_obj)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/mirdata/io.py:22,</span> in <span class="ni">coerce_to_string_io.&lt;locals&gt;.wrapper</span><span class="nt">(file_path_or_obj)</span>
 <span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="k">return</span> <span class="kc">None</span>
 <span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">22</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">):</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:177,</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:177,</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
 <span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="k">if</span> <span class="n">transport_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="n">transport_params</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="ne">--&gt; </span><span class="mi">177</span> <span class="n">fobj</span> <span class="o">=</span> <span class="n">_shortcut_open</span><span class="p">(</span>
@@ -2507,7 +2512,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 <span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="k">if</span> <span class="n">fobj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="k">return</span> <span class="n">fobj</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:363,</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:363,</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
 <span class="g g-Whitespace">    </span><span class="mi">360</span> <span class="k">if</span> <span class="n">errors</span> <span class="ow">and</span> <span class="s1">&#39;b&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="n">open_kwargs</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">errors</span>
 <span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">return</span> <span class="n">_builtin_open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
@@ -2649,8 +2654,8 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rītigauḷa: {&#39;G2&#39;, &#39;P&#39;, &#39;M1&#39;, &#39;N2&#39;, &#39;D2&#39;, &#39;R2&#39;, &#39;S&#39;}
-Bhairavi: {&#39;G2&#39;, &#39;P&#39;, &#39;M1&#39;, &#39;N2&#39;, &#39;D1&#39;, &#39;D2&#39;, &#39;R2&#39;, &#39;S&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rītigauḷa: {&#39;M1&#39;, &#39;N2&#39;, &#39;G2&#39;, &#39;D2&#39;, &#39;S&#39;, &#39;R2&#39;, &#39;P&#39;}
+Bhairavi: {&#39;M1&#39;, &#39;D1&#39;, &#39;N2&#39;, &#39;G2&#39;, &#39;D2&#39;, &#39;S&#39;, &#39;R2&#39;, &#39;P&#39;}
 </pre></div>
 </div>
 </div>
@@ -2721,7 +2726,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dist_measure</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">measure</span><span class="o">=</span><span class="k">lambda</span> <span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">:</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">y2</span><span class="p">))):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Compute measure between distributions d1 and d2 using &lt;measure&gt;. </span>
 <span class="sd">    Default: cross entropy</span>
 <span class="sd">    </span>
@@ -2812,43 +2817,34 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">results_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:[]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sample_ragas</span><span class="p">))}</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">l</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">labels_</span><span class="p">):</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/sklearn/cluster/_agglomerative.py:834,</span> in <span class="ni">AgglomerativeClustering.fit</span><span class="nt">(self, X, y)</span>
-<span class="g g-Whitespace">    </span><span class="mi">818</span> <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">819</span>     <span class="sd">&quot;&quot;&quot;Fit the hierarchical clustering from features, or distance matrix.</span>
-<span class="g g-Whitespace">    </span><span class="mi">820</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">821</span><span class="sd">     Parameters</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/sklearn/cluster/_agglomerative.py:955,</span> in <span class="ni">AgglomerativeClustering.fit</span><span class="nt">(self, X, y)</span>
+<span class="g g-Whitespace">    </span><span class="mi">937</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Fit the hierarchical clustering from features, or distance matrix.</span>
+<span class="g g-Whitespace">    </span><span class="mi">938</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">939</span><span class="sd"> Parameters</span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">832</span><span class="sd">     self</span>
-<span class="g g-Whitespace">    </span><span class="mi">833</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">834</span>     <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">ensure_min_samples</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">835</span>     <span class="n">memory</span> <span class="o">=</span> <span class="n">check_memory</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">memory</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">837</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_clusters</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_clusters</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">952</span><span class="sd">     Returns the fitted instance.</span>
+<span class="g g-Whitespace">    </span><span class="mi">953</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">954</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">955</span> <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">ensure_min_samples</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">956</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/sklearn/base.py:421,</span> in <span class="ni">BaseEstimator._validate_data</span><span class="nt">(self, X, y, reset, validate_separately, **check_params)</span>
-<span class="g g-Whitespace">    </span><span class="mi">419</span>     <span class="n">out</span> <span class="o">=</span> <span class="n">X</span>
-<span class="g g-Whitespace">    </span><span class="mi">420</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">==</span> <span class="s1">&#39;no_validation&#39;</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">421</span>     <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">check_params</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">422</span>     <span class="n">out</span> <span class="o">=</span> <span class="n">X</span>
-<span class="g g-Whitespace">    </span><span class="mi">423</span> <span class="k">else</span><span class="p">:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/sklearn/base.py:565,</span> in <span class="ni">BaseEstimator._validate_data</span><span class="nt">(self, X, y, reset, validate_separately, **check_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">563</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Validation should be done on X, y or both.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">564</span> <span class="k">elif</span> <span class="ow">not</span> <span class="n">no_val_X</span> <span class="ow">and</span> <span class="n">no_val_y</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">565</span>     <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">input_name</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">check_params</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">566</span>     <span class="n">out</span> <span class="o">=</span> <span class="n">X</span>
+<span class="g g-Whitespace">    </span><span class="mi">567</span> <span class="k">elif</span> <span class="n">no_val_X</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">no_val_y</span><span class="p">:</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/sklearn/utils/validation.py:63,</span> in <span class="ni">_deprecate_positional_args.&lt;locals&gt;._inner_deprecate_positional_args.&lt;locals&gt;.inner_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span> <span class="n">extra_args</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_args</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="k">if</span> <span class="n">extra_args</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">63</span>     <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span> <span class="c1"># extra_args &gt; 0</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span> <span class="n">args_msg</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">=</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span>             <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">arg</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">kwonly_args</span><span class="p">[:</span><span class="n">extra_args</span><span class="p">],</span>
-<span class="g g-Whitespace">     </span><span class="mi">68</span>                                  <span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="n">extra_args</span><span class="p">:])]</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/sklearn/utils/validation.py:726,</span> in <span class="ni">check_array</span><span class="nt">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator)</span>
-<span class="g g-Whitespace">    </span><span class="mi">724</span>     <span class="n">n_samples</span> <span class="o">=</span> <span class="n">_num_samples</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">725</span>     <span class="k">if</span> <span class="n">n_samples</span> <span class="o">&lt;</span> <span class="n">ensure_min_samples</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">726</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Found array with </span><span class="si">%d</span><span class="s2"> sample(s) (shape=</span><span class="si">%s</span><span class="s2">) while a&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">727</span>                          <span class="s2">&quot; minimum of </span><span class="si">%d</span><span class="s2"> is required</span><span class="si">%s</span><span class="s2">.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">728</span>                          <span class="o">%</span> <span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">ensure_min_samples</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">729</span>                             <span class="n">context</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">731</span> <span class="k">if</span> <span class="n">ensure_min_features</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">array</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">732</span>     <span class="n">n_features</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/sklearn/utils/validation.py:931,</span> in <span class="ni">check_array</span><span class="nt">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator, input_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">929</span>     <span class="n">n_samples</span> <span class="o">=</span> <span class="n">_num_samples</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">930</span>     <span class="k">if</span> <span class="n">n_samples</span> <span class="o">&lt;</span> <span class="n">ensure_min_samples</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">931</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">932</span>             <span class="s2">&quot;Found array with </span><span class="si">%d</span><span class="s2"> sample(s) (shape=</span><span class="si">%s</span><span class="s2">) while a&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">933</span>             <span class="s2">&quot; minimum of </span><span class="si">%d</span><span class="s2"> is required</span><span class="si">%s</span><span class="s2">.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">934</span>             <span class="o">%</span> <span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">ensure_min_samples</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">935</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">937</span> <span class="k">if</span> <span class="n">ensure_min_features</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">array</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">938</span>     <span class="n">n_features</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="ne">ValueError</span>: Found array with 0 sample(s) (shape=(0, 0)) while a minimum of 2 is required by AgglomerativeClustering.
 </pre></div>
@@ -2908,25 +2904,25 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">audio_path</span> <span class="o">=</span> <span class="n">track</span><span class="o">.</span><span class="n">audio_vocal_path</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">tonic</span> <span class="o">=</span> <span class="n">track</span><span class="o">.</span><span class="n">tonic</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/mirdata/core.py:46,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
 <span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="k">return</span> <span class="bp">self</span>
 <span class="ne">---&gt; </span><span class="mi">46</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">return</span> <span class="n">value</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/datasets/saraga_carnatic.py:167,</span> in <span class="ni">Track.tonic</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">165</span> <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
-<span class="g g-Whitespace">    </span><span class="mi">166</span> <span class="k">def</span> <span class="nf">tonic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">167</span>     <span class="k">return</span> <span class="n">load_tonic</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctonic_path</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/mirdata/datasets/saraga_carnatic.py:154,</span> in <span class="ni">Track.tonic</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span> <span class="nd">@core</span><span class="o">.</span><span class="n">cached_property</span>
+<span class="g g-Whitespace">    </span><span class="mi">153</span> <span class="k">def</span> <span class="nf">tonic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">154</span>     <span class="k">return</span> <span class="n">load_tonic</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctonic_path</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/mirdata/io.py:22,</span> in <span class="ni">coerce_to_string_io.&lt;locals&gt;.wrapper</span><span class="nt">(file_path_or_obj)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/mirdata/io.py:22,</span> in <span class="ni">coerce_to_string_io.&lt;locals&gt;.wrapper</span><span class="nt">(file_path_or_obj)</span>
 <span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="k">return</span> <span class="kc">None</span>
 <span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">22</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_obj</span><span class="p">,</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">):</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:177,</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:177,</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
 <span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="k">if</span> <span class="n">transport_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="n">transport_params</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="ne">--&gt; </span><span class="mi">177</span> <span class="n">fobj</span> <span class="o">=</span> <span class="n">_shortcut_open</span><span class="p">(</span>
@@ -2941,7 +2937,7 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="k">if</span> <span class="n">fobj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="k">return</span> <span class="n">fobj</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:363,</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/smart_open/smart_open_lib.py:363,</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
 <span class="g g-Whitespace">    </span><span class="mi">360</span> <span class="k">if</span> <span class="n">errors</span> <span class="ow">and</span> <span class="s1">&#39;b&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="n">open_kwargs</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">errors</span>
 <span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">return</span> <span class="n">_builtin_open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
@@ -2993,10 +2989,10 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/compiam/melody/pattern/sancara_search/__init__.py:58,</span> in <span class="ni">CAEWrapper.__init__</span><span class="nt">(self, model_path, conf_path, spec_path, device)</span>
-<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="k">global</span> <span class="n">torch</span>
-<span class="ne">---&gt; </span><span class="mi">58</span> <span class="kn">import</span> <span class="nn">torch</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="k">global</span> <span class="n">to_cqt_repr</span><span class="p">,</span> <span class="n">standardize</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/compiam/melody/pattern/sancara_search/__init__.py:33,</span> in <span class="ni">CAEWrapper.__init__</span><span class="nt">(self, model_path, conf_path, spec_path, device)</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="k">global</span> <span class="n">torch</span>
+<span class="ne">---&gt; </span><span class="mi">33</span> <span class="kn">import</span> <span class="nn">torch</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="k">global</span> <span class="n">to_cqt_repr</span><span class="p">,</span> <span class="n">standardize</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;torch&#39;
 
@@ -3009,20 +3005,26 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># CAE features</span>
 <span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">cae</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:cae-carnatic&quot;</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/compiam/__init__.py:28,</span> in <span class="ni">load_model</span><span class="nt">(model_name, models_dict)</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="n">m_dict</span> <span class="o">=</span> <span class="n">models_dict</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span>    
-<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="n">module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">import_module</span><span class="p">(</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;module_name&quot;</span><span class="p">]),</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;class_name&quot;</span><span class="p">])</span>
-<span class="ne">---&gt; </span><span class="mi">28</span> <span class="k">return</span> <span class="n">module</span><span class="p">(</span><span class="o">**</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">])</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/compiam/__init__.py:44,</span> in <span class="ni">load_model</span><span class="nt">(model_name, data_home, models_dict)</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>         <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">][</span><span class="n">kp</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span>             <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_home</span><span class="p">,</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">][</span><span class="n">kp</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>             <span class="k">if</span> <span class="n">data_home</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span>             <span class="k">else</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">WORKDIR</span><span class="p">,</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">][</span><span class="n">kp</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span>         <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="n">module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">import_module</span><span class="p">(</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;module_name&quot;</span><span class="p">]),</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;class_name&quot;</span><span class="p">])</span>
+<span class="ne">---&gt; </span><span class="mi">44</span> <span class="k">return</span> <span class="n">module</span><span class="p">(</span><span class="o">**</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">])</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/compiam/melody/pattern/sancara_search/__init__.py:70,</span> in <span class="ni">CAEWrapper.__init__</span><span class="nt">(self, model_path, conf_path, spec_path, device)</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span>     <span class="kn">from</span> <span class="nn">compiam.melody.pattern.sancara_search.complex_auto.util</span> <span class="kn">import</span> <span class="n">cuda_variable</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="k">except</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">70</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>         <span class="s2">&quot;In order to use this tool you need to have torch installed. &quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span>         <span class="s2">&quot;Please install torch using: pip install torch&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="c1">###</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">device</span><span class="p">:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/compiam/melody/pattern/sancara_search/__init__.py:52,</span> in <span class="ni">CAEWrapper.__init__</span><span class="nt">(self, model_path, conf_path, spec_path, device)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="kn">from</span> <span class="nn">compiam.melody.pattern.sancara_search.complex_auto.util</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span>         <span class="n">cuda_variable</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span> <span class="k">except</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">52</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span>         <span class="s2">&quot;In order to use this tool you need to have torch installed. &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span>         <span class="s2">&quot;Please install torch using: pip install torch&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="c1">###</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">device</span><span class="p">:</span>
 
 <span class="ne">ImportError</span>: In order to use this tool you need to have torch installed. Please install torch using: pip install torch
 </pre></div>
@@ -3547,80 +3549,68 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">annotations_path</span> <span class="o">=</span> <span class="s2">&quot;../../annotations/47_Koti_Janmani.txt&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">annotations</span> <span class="o">=</span> <span class="n">load_annotations</span><span class="p">(</span><span class="n">annotations_path</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/compiam/melody/pattern/sancara_search/extraction/evaluation.py:11,</span> in <span class="ni">load_annotations</span><span class="nt">(annotations_path, min_m, max_m, underlying)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">def</span> <span class="nf">load_annotations</span><span class="p">(</span><span class="n">annotations_path</span><span class="p">,</span> <span class="n">min_m</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_m</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">underlying</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">11</span>     <span class="n">annotations_orig</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">annotations_path</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">annotations_orig</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tier&#39;</span><span class="p">,</span> <span class="s1">&#39;not_used&#39;</span><span class="p">,</span> <span class="s1">&#39;s1&#39;</span><span class="p">,</span> <span class="s1">&#39;s2&#39;</span><span class="p">,</span> <span class="s1">&#39;duration&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">annotations_orig</span><span class="p">[</span><span class="s1">&#39;s1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">annotations_orig</span><span class="p">[</span><span class="s1">&#39;s1&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/compiam/melody/pattern/sancara_search/extraction/evaluation.py:11,</span> in <span class="ni">load_annotations</span><span class="nt">(annotations_path, min_m, max_m, underlying)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">def</span> <span class="nf">load_annotations</span><span class="p">(</span><span class="n">annotations_path</span><span class="p">,</span> <span class="n">min_m</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_m</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">underlying</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">11</span>     <span class="n">annotations_orig</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">annotations_path</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">annotations_orig</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;tier&quot;</span><span class="p">,</span> <span class="s2">&quot;not_used&quot;</span><span class="p">,</span> <span class="s2">&quot;s1&quot;</span><span class="p">,</span> <span class="s2">&quot;s2&quot;</span><span class="p">,</span> <span class="s2">&quot;duration&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">annotations_orig</span><span class="p">[</span><span class="s2">&quot;s1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">annotations_orig</span><span class="p">[</span><span class="s2">&quot;s1&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>         <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/pandas/util/_decorators.py:211,</span> in <span class="ni">deprecate_kwarg.&lt;locals&gt;._deprecate_kwarg.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">kwargs</span><span class="p">[</span><span class="n">new_arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_arg_value</span>
-<span class="ne">--&gt; </span><span class="mi">211</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/pandas/util/_decorators.py:331,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">325</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">331</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/pandas/io/parsers/readers.py:950,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">935</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">936</span>     <span class="n">dialect</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">937</span>     <span class="n">delimiter</span><span class="p">,</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/io/parsers/readers.py:912,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">    </span><span class="mi">899</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">900</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">901</span>     <span class="n">delimiter</span><span class="p">,</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">946</span>     <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;delimiter&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="p">},</span>
-<span class="g g-Whitespace">    </span><span class="mi">947</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">948</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">950</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">908</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">912</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/pandas/io/parsers/readers.py:605,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">602</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">604</span> <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">605</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">607</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="k">return</span> <span class="n">parser</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/io/parsers/readers.py:577,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">574</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">576</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">577</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">579</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">580</span>     <span class="k">return</span> <span class="n">parser</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/pandas/io/parsers/readers.py:1442,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1439</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1441</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">1442</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/io/parsers/readers.py:1407,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1404</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1406</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1407</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/pandas/io/parsers/readers.py:1735,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1733</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1734</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1735</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1736</span>     <span class="n">f</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1737</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1738</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1739</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1740</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1741</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1742</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1743</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1744</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1745</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1746</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/io/parsers/readers.py:1661,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1659</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1660</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1661</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1662</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1663</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1664</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1665</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1666</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1667</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1668</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1669</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1670</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1671</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1672</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/pandas/io/common.py:856,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">851</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">852</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
-<span class="g g-Whitespace">    </span><span class="mi">853</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
-<span class="g g-Whitespace">    </span><span class="mi">854</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">855</span>         <span class="c1"># Encoding</span>
-<span class="ne">--&gt; </span><span class="mi">856</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">857</span>             <span class="n">handle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">858</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">859</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">860</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">861</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">862</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">863</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">864</span>         <span class="c1"># Binary mode</span>
-<span class="g g-Whitespace">    </span><span class="mi">865</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/pandas/io/common.py:859,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">854</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">855</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">856</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">857</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">859</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">860</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">861</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">862</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">863</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">864</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">865</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">866</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">867</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
 
 <span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../../annotations/47_Koti_Janmani.txt&#39;
 </pre></div>

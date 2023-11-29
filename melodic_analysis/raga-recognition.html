@@ -555,7 +555,11 @@ Time (LSTM) networks, given its ability to capture sequence information <span id
 <p>Most of the research on this topic builds on top of the Dunya Carnatic and Hindustani corpora <span id="id5">[<a class="reference internal" href="../resources/references.html#id19" title="Ajay Srinivasamurthy, Gopala Krishna Koduri, Sankalp Gulati, Vignesh Ishwar, and Xavier Serra. Corpora for music information research in Indian art music. In In Proc. of the 40th International Computer Music Conference (ICMC), Athens, Greece., 1029–1036. 2014.">SKG+14</a>]</span>.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Importing compiam to the project</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Installing (if not) and importing compiam to the project</span>
+<span class="kn">import</span> <span class="nn">importlib.util</span>
+<span class="k">if</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s1">&#39;compiam&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1">## Bear in mind this will only run in a jupyter notebook / Collab session</span>
+    <span class="o">%</span><span class="k">pip</span> install compiam
 <span class="kn">import</span> <span class="nn">compiam</span>
 
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
@@ -595,6 +599,34 @@ Time (LSTM) networks, given its ability to capture sequence information <span id
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This tool has * at the end: we can load the pre-trained instance</span>
 <span class="n">deepsrgm</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:deepsrgm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading...
+From: https://drive.google.com/uc?id=1H2FU7q5Nl1e6LAP7c1jml3etFtTv3_lM&amp;export=download
+To: /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/compiam/models/melody/deepsrgm/baseline.zip
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0.00/20.4M [00:00&lt;?, ?B/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|▌         | 1.05M/20.4M [00:00&lt;00:02, 9.28MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|██▎       | 4.72M/20.4M [00:00&lt;00:01, 11.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 59%|█████▉    | 12.1M/20.4M [00:00&lt;00:00, 16.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 85%|████████▍ | 17.3M/20.4M [00:01&lt;00:00, 18.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 20.4M/20.4M [00:01&lt;00:00, 19.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2023-11-29 12:10:04,099] WARNING [compiam.melody.raga_recognition.deepsrgm.download_model:155] Files downloaded and extracted successfully.
 </pre></div>
 </div>
 </div>

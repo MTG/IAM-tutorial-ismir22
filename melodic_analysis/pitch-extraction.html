@@ -574,7 +574,11 @@ title="Print to PDF"
 <p>Historically, in the literature of computational analysis of Indian Art Music, this task has been tackled using knowledge-based approaches <span id="id1">[<a class="reference internal" href="../resources/references.html#id34" title="Vishweshwara Rao and Preeti Rao. Vocal melody extraction in the presence of pitched accompaniment in polyphonic music. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 2145–2154, 2010. doi:10.1109/TASL.2010.2042124.">RR10</a>, <a class="reference internal" href="../resources/references.html#id35" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>. Melodia <span id="id2">[<a class="reference internal" href="../resources/references.html#id35" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>, typically combined with additional post-processing steps <span id="id3">[<a class="reference internal" href="../resources/references.html#id41" title="Sankalp Gulati, Joan Serra, Vignesh Ishwar, and Xavier Serra. Mining melodic patterns in large audio collections of Indian art music. In In Proc. of the 10th International Conference on Signal-Image Technology and Internet-Based Systems (SITIS), Bangkok, Thailand., 264–271. 2015. doi:10.1109/SITIS.2014.73.">GSIS15a</a>]</span>, has been the preferred approach until today.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Importing compiam to the project</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Installing (if not) and importing compiam to the project</span>
+<span class="kn">import</span> <span class="nn">importlib.util</span>
+<span class="k">if</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s1">&#39;compiam&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1">## Bear in mind this will only run in a jupyter notebook / Collab session</span>
+    <span class="o">%</span><span class="k">pip</span> install compiam
 <span class="kn">import</span> <span class="nn">compiam</span>
 
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
@@ -708,7 +712,8 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;melody:deepsrgm&#39;,
  &#39;melody:ftanet-carnatic&#39;,
  &#39;melody:cae-carnatic&#39;,
- &#39;structure:dhrupad-bandish-segmentation&#39;]
+ &#39;structure:dhrupad-bandish-segmentation&#39;,
+ &#39;separation:cold-diff-sep&#39;]
 </pre></div>
 </div>
 </div>
@@ -732,7 +737,7 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>If you have an available GPU to allocate the model, get the index of the GPU (probably 0 if you have only a single instance) and change <code class="docutils literal notranslate"><span class="pre">tf.config.set_visible_devices([],</span> <span class="pre">&quot;GPU&quot;)</span></code> for <code class="docutils literal notranslate"><span class="pre">os.environ[&quot;CUDA_VISIBLE_DEVICES&quot;]</span> <span class="pre">=</span> <span class="pre">&quot;0&quot;</span></code></p>
 </div>
-<div class="cell tag_remove-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initializing an FTANet instance</span>
 <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:ftanet-carnatic&quot;</span><span class="p">)</span>
@@ -745,6 +750,29 @@ title="Print to PDF"
         <span class="s2">&quot;Sanjay Subrahmanyan - Sri Raghuvara Sugunaalaya.mp3&quot;</span>
     <span class="p">),</span>
 <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/1 [==============================] - ETA: 0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+1/1 [==============================] - 5s 5s/step
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/1 [==============================] - ETA: 0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+1/1 [==============================] - 4s 4s/step
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/1 [==============================] - ETA: 0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+1/1 [==============================] - 5s 5s/step
 </pre></div>
 </div>
 </div>

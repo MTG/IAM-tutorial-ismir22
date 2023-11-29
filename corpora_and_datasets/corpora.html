@@ -465,6 +465,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parsing-all-the-metadata-at-once">
+     Parsing all the metadata at once
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#getting-the-data">
      Getting the data
     </a>
@@ -508,6 +513,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#browsing-the-corpora-using-the-api">
      Browsing the corpora using the API
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parsing-all-the-metadata-at-once">
+     Parsing all the metadata at once
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -590,12 +600,20 @@ title="Print to PDF"
 <h3>Browsing the corpora using the API<a class="headerlink" href="#browsing-the-corpora-using-the-api" title="Permalink to this headline">#</a></h3>
 <p>Our corpora class include methods to get an overview of the available data in the database. Let us get you some examples below:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">get_collection()</span></code>: prints you out all available recordings in the collection.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">get_recording(&lt;recording-musicbrainz-id&gt;)</span></code>: prints out the available data for the recording associated with the input mbid.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">get_artist(&lt;artists-musicbrainz-id&gt;)</span></code>: prints out the available information for the artist associated with the input mbid.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">list_concerts()</span></code>: list all available concerts in the selected database.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">list_available_types(&lt;artists-musicbrainz-id&gt;)</span></code>:  prints you out the available types of file available for a particular recording.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_collection()</span></code>: returns a dictionary including <code class="docutils literal notranslate"><span class="pre">mbid</span></code> and title of all available recordings in the collection.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_recording(&lt;recording-musicbrainz-id&gt;)</span></code>: returns the available data for the recording associated with the input mbid.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_artist(&lt;artists-musicbrainz-id&gt;)</span></code>: returns the available information for the artist associated with the input mbid.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list_concerts()</span></code>: lists all available concerts in the selected database.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list_available_types(&lt;artists-musicbrainz-id&gt;)</span></code>: returns the available types of file available for a particular recording.</p></li>
 </ul>
+</section>
+<section id="parsing-all-the-metadata-at-once">
+<h3>Parsing all the metadata at once<a class="headerlink" href="#parsing-all-the-metadata-at-once" title="Permalink to this headline">#</a></h3>
+<p>The corpora class also includes a functionality to iterate over the initialized corpora. Run <code class="docutils literal notranslate"><span class="pre">get_metadata()</span></code> to get a dictionary containing all metadata available in the portion of the corpora in which you are interested on.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please note that there is no API call to get all metadata at once, so <code class="docutils literal notranslate"><span class="pre">get_metadata()</span></code> will run as many API calls as recordings are avialable in the corpora, so this operation might take a while…</p>
+</div>
 </section>
 <section id="getting-the-data">
 <h3>Getting the data<a class="headerlink" href="#getting-the-data" title="Permalink to this headline">#</a></h3>
