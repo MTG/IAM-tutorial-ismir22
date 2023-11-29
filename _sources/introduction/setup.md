@@ -5,7 +5,7 @@
 
 (tutorial-structure)=
 ## Structure of the book
-See the outline in the left side of the page for the complete structure of the tutorial. If not visible, click on the menu button (**☰**) and it will appear. The contents in this tutorial are organized by the main musical aspects studied in the computational analysis of Carnatic and Hindustani Music: **melody**, **rhythm**, **structure**, and **timbre**. An introduction to the tradition at a non-technical level is also provided, to provide context to those with little or no background.
+See the outline in the left side of the page for the complete structure of the tutorial. If not visible, click on the menu button (**☰**) and it will appear. The contents in this tutorial are organized by the main musical aspects studied in the computational analysis of Carnatic and Hindustani Music: **melody**, **rhythm**, **structure**, and **timbre** (and since Nov 2023 we have included **separation** as an additional music aspect!). An introduction to the tradition at a non-technical level is also provided, to provide context to those with little or no background.
 
 Before going through the technologies, we introduce the sources of data for the computational analysis of Indian Art Music that are available in the literature and are crucial for the development and evaluation of reliable tools for the said topic. 
 
