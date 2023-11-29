@@ -248,6 +248,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Music Source Separation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../separation/singing-voice-extraction.html">
+   Pitch extraction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Resources
  </span>
 </p>
@@ -737,42 +749,38 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>If you have an available GPU to allocate the model, get the index of the GPU (probably 0 if you have only a single instance) and change <code class="docutils literal notranslate"><span class="pre">tf.config.set_visible_devices([],</span> <span class="pre">&quot;GPU&quot;)</span></code> for <code class="docutils literal notranslate"><span class="pre">os.environ[&quot;CUDA_VISIBLE_DEVICES&quot;]</span> <span class="pre">=</span> <span class="pre">&quot;0&quot;</span></code></p>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initializing an FTANet instance</span>
 <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:ftanet-carnatic&quot;</span><span class="p">)</span>
 
-<span class="c1"># Predict!</span>
-<span class="n">ftanet_pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-        <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;mir_datasets&quot;</span><span class="p">,</span> <span class="s2">&quot;saraga1.5_carnatic&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Live at Vani Mahal by Sanjay Subrahmanyan&quot;</span><span class="p">,</span> <span class="s2">&quot;Sri Raghuvara Sugunaalaya&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Sanjay Subrahmanyan - Sri Raghuvara Sugunaalaya.mp3&quot;</span>
-    <span class="p">),</span>
+<span class="c1"># Importing and initializing again a melodia instance of comparison</span>
+<span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction</span> <span class="kn">import</span> <span class="n">Melodia</span>
+<span class="n">melodia</span> <span class="o">=</span> <span class="n">Melodia</span><span class="p">()</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will now initialize Saraga Carnatic dataset to get an example track, load it, and run inference using FTANet-Carnatic and Melodia, both accessed through <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">librosa</span>
+<span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">load_dataset</span>
+
+<span class="n">saraga_carnatic</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span>
+    <span class="s2">&quot;saraga_carnatic&quot;</span><span class="p">,</span>
+    <span class="n">data_home</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;mir_datasets&quot;</span><span class="p">)</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/1 [==============================] - ETA: 0s
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-1/1 [==============================] - 5s 5s/step
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/1 [==============================] - ETA: 0s
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-1/1 [==============================] - 4s 4s/step
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/1 [==============================] - ETA: 0s
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-1/1 [==============================] - 5s 5s/step
+<span class="n">saraga_tracks</span> <span class="o">=</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()</span>
+<span class="n">example</span> <span class="o">=</span> <span class="n">saraga_tracks</span><span class="p">[</span><span class="s2">&quot;109_Sri_Raghuvara_Sugunaalaya&quot;</span><span class="p">]</span>
+
+<span class="c1"># Loading the audio</span>
+<span class="n">y</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:</span><span class="mi">3</span><span class="o">*</span><span class="n">sr</span><span class="p">]</span>  <span class="c1"># Getting just the first 3 seconds</span>
+
+<span class="c1"># Predict!</span>
+<span class="n">ftanet_pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
+<span class="n">melodia_pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -784,15 +792,6 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">librosa.display</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">y</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-        <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;mir_datasets&quot;</span><span class="p">,</span> <span class="s2">&quot;saraga1.5_carnatic&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Live at Vani Mahal by Sanjay Subrahmanyan&quot;</span><span class="p">,</span> <span class="s2">&quot;Sri Raghuvara Sugunaalaya&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Sanjay Subrahmanyan - Sri Raghuvara Sugunaalaya.mp3&quot;</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:</span><span class="mi">3</span><span class="o">*</span><span class="n">sr</span><span class="p">]</span>  <span class="c1"># Getting just the first 3 seconds for better visualizatiom</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
 <span class="n">D</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">amplitude_to_db</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">librosa</span><span class="o">.</span><span class="n">stft</span><span class="p">(</span><span class="n">y</span><span class="p">)),</span> <span class="n">ref</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
@@ -812,7 +811,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/pitch-extraction_22_0.png" src="../_images/pitch-extraction_22_0.png" />
+<img alt="../_images/pitch-extraction_24_0.png" src="../_images/pitch-extraction_24_0.png" />
 </div>
 </div>
 </section>

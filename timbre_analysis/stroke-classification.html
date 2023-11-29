@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="References" href="../resources/references.html" />
+    <link rel="next" title="Pitch extraction" href="../separation/singing-voice-extraction.html" />
     <link rel="prev" title="Music segmentation" href="../structure_analysis/music-segmentation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -243,6 +243,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Stroke classification
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Music Source Separation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../separation/singing-voice-extraction.html">
+   Pitch extraction
   </a>
  </li>
 </ul>
@@ -554,7 +566,11 @@ title="Print to PDF"
 <p>We will go through examples of these tasks in this walkthrough.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Importing compiam to the project</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Installing (if not) and importing compiam to the project</span>
+<span class="kn">import</span> <span class="nn">importlib.util</span>
+<span class="k">if</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s1">&#39;compiam&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1">## Bear in mind this will only run in a jupyter notebook / Collab session</span>
+    <span class="o">%</span><span class="k">pip</span> install compiam
 <span class="kn">import</span> <span class="nn">compiam</span>
 
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
@@ -785,10 +801,10 @@ title="Print to PDF"
             <p class="prev-next-title">Music segmentation</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../resources/references.html" title="next page">
+    <a class='right-next' id="next-link" href="../separation/singing-voice-extraction.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">References</p>
+        <p class="prev-next-title">Pitch extraction</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

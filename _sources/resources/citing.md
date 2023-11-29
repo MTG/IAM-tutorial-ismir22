@@ -22,7 +22,7 @@ The cite the book as a whole please cite:
 We now explicitly attribute each author to their contribution, in case you need to cite bits of text or code instead of the book as a while.
 * [Setup](welcome-setup), [Python](python) and [compIAM](compiam), [corpora](corpora) and [datasets](datasets), and tool walkthroughs: **Thomas Nuttall, Genís Plaja-Roglans, Lara Pearson and Brindha Manickavasakan, Xavier Serra**
 * [What is Indian Art Music?](indian-art-music) and introduction to Carnatic Music ([instrumentation](carnatic-instrumentation), [format](carnatic-formats), and [melodic concepts](carnatic-melodic-concepts)): **Lara Pearson and Brindha Manickavasakan**
-* Introduction to Hindustani Music ([instrumentation](hindustani-instrumentation), [format](hindustani-formats), and [melodic concepts](hindustani-melodic-concepts)): **Kaustuv Kanti Ganguli**
+* [Introduction to Hindustani Music](hindustani-music): **Kaustuv Kanti Ganguli**
 * [Carnatic Rhythm](carnatic-rhythm) and [Hindustani Rhythm](hindustani-rhythm): **Ajay Srinivasamurthy**
 
 If you use `compiam` please cite as:

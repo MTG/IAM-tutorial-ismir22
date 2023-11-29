@@ -248,6 +248,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Music Source Separation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../separation/singing-voice-extraction.html">
+   Pitch extraction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Resources
  </span>
 </p>
@@ -611,25 +623,29 @@ To: /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/compiam/m
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0.00/20.4M [00:00&lt;?, ?B/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|▌         | 1.05M/20.4M [00:00&lt;00:02, 9.28MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|██▎       | 4.72M/20.4M [00:00&lt;00:00, 16.0MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|██▎       | 4.72M/20.4M [00:00&lt;00:01, 11.1MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 44%|████▎     | 8.91M/20.4M [00:00&lt;00:00, 18.3MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 59%|█████▉    | 12.1M/20.4M [00:00&lt;00:00, 16.8MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 85%|████████▍ | 17.3M/20.4M [00:00&lt;00:00, 28.8MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 85%|████████▍ | 17.3M/20.4M [00:01&lt;00:00, 18.0MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 20.4M/20.4M [00:00&lt;00:00, 29.2MB/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 20.4M/20.4M [00:01&lt;00:00, 19.4MB/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2023-11-29 12:10:04,099] WARNING [compiam.melody.raga_recognition.deepsrgm.download_model:155] Files downloaded and extracted successfully.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2023-11-29 16:37:09,310] WARNING [compiam.melody.raga_recognition.deepsrgm.download_model:155] Files downloaded and extracted successfully.
 </pre></div>
 </div>
 </div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Deep Learning model checkpoints tend to be large in size, therefore storing these in <code class="docutils literal notranslate"><span class="pre">compiam</span></code> may become unsustainable. For that reason, we store the checkpoints in the cloud and download these when the user initializes a model using the wrapper. Note that you can specify to which location the checkpoint should be donwloaded by specifying <code class="docutils literal notranslate"><span class="pre">data_home</span></code> argument in <code class="docutils literal notranslate"><span class="pre">load_model()</span></code>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -701,7 +717,7 @@ This recordings has unique Dunya ID: 123b09bd-9901-4e64-a65a-10b02c9e0597
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">deepsrgm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Oops! Why is this line of code not running?</strong> This <code class="docutils literal notranslate"><span class="pre">.predict()</span></code> method runs inference with the DEEPSRGM model using the passed features. As you may now, DL models tend to occupy an important amount of memory from your computer to run, especially in the training stage. Some light-weight models can be run from a conventional laptop, but in some other cases you might need a machine with enough power to run your models and perform inference.</p>
+<p><strong>Oops! Why is this line of code not being executed?</strong> This <code class="docutils literal notranslate"><span class="pre">.predict()</span></code> method runs inference with the DEEPSRGM model using the passed features. As you may now, DL models tend to occupy an important amount of memory from your computer to run, especially in the training stage. Some light-weight models can be run from a conventional laptop, but in some other cases you might need a machine with enough power to run your models and perform inference.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>As mentioned in the <a class="reference internal" href="../introduction/setup.html#google-collab"><span class="std std-ref">introduction</span></a>, Google Collab has GPU and TPU access which may allow you running certain models that are too big for your machine.</p>

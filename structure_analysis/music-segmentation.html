@@ -248,6 +248,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Music Source Separation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../separation/singing-voice-extraction.html">
+   Pitch extraction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Resources
  </span>
 </p>
@@ -563,7 +575,11 @@ title="Print to PDF"
 <p>We have seen in the musicological introduction that we may come across different formats of <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-formats"><span class="std std-ref">Carnatic</span></a> and <a class="reference internal" href="../indian_art_music/hindustani-music.html#hindustani-khayal-performance"><span class="std std-ref">Hindustani</span></a> performances. Let us review some example works that have been proposed for this task. <span id="id2">[<a class="reference internal" href="../resources/references.html#id73" title="Prateek Verma, T. P. Vinutha, Parthe Pandit, and Preeti Rao. Structural segmentation of hindustani concert audio with posterior features. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 136–140, 2015. doi:10.1109/ICASSP.2015.7177947.">VVPR15</a>]</span> proposes to use tempo cues combined with additional handcrafted features that aim at capturing tradition-relevant information. On the other hand, <span id="id3">[<a class="reference internal" href="../resources/references.html#id74" title="H. G. Ranjani, Deepak Paramashivan, and Thippur V. Sreenivas. Discovering structural similarities among raagas in indian art music: a computational approach. Sadhana, 2019. doi:10.1007/s12046-019-1112-2.">RPS19</a>]</span> quantize the pitch contours, identify repeated note sequences or patterns, and then compute posterior probabilities to identify the different sections. Alternatively, <span id="id4">[<a class="reference internal" href="../resources/references.html#id72" title="Kaustuv Kanti Ganguli, Sankalp Gulati, Xavier Serra, and Preeti Rao. Data-driven exploration of melodic structures in hindustani music. In In Proc. of the 17th International Society for Music Information Retrieval Conference (ISMIR), 605–611. New York City, USA, 2016.">GGSR16</a>]</span> builds on top of hand-crafted features of pitch time-series. Finally, DL models are also used to identify the meter and tempo surfaces of Dhrupad Bandish performances for segmentation <span id="id5">[<a class="reference internal" href="../resources/references.html#id75" title="Rohit M. A., T. P. Vinutha, and Preeti Rao. Structural segmentation of Dhrupad vocal bandish audio based on tempo. In Proc. of the 21st International Society for Music Information Retrieval Conference (ISMIR), 678–684. Montreal, Canada, 2020. ISMIR. URL: https://doi.org/10.5281/zenodo.4245522, doi:10.5281/zenodo.4245522.">MAVR20</a>]</span>.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Importing compiam to the project</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Installing (if not) and importing compiam to the project</span>
+<span class="kn">import</span> <span class="nn">importlib.util</span>
+<span class="k">if</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s1">&#39;compiam&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1">## Bear in mind this will only run in a jupyter notebook / Collab session</span>
+    <span class="o">%</span><span class="k">pip</span> install compiam
 <span class="kn">import</span> <span class="nn">compiam</span>
 
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
@@ -604,31 +620,20 @@ title="Print to PDF"
 <p class="admonition-title">Tip</p>
 <p>Get the correct identifier for the wrapper by running <code class="docutils literal notranslate"><span class="pre">compiam.list_models()</span></code>.</p>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dbs</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;structure:dhrupad-bandish-segmentation&quot;</span><span class="p">)</span>
-<span class="n">help</span><span class="p">(</span><span class="n">dbs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">dbs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading...
-From: https://drive.google.com/uc?id=1SVkvHFjL5yh5M7cjnM98JK-b1QnHYw7a&amp;export=download
-To: /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/compiam/models/structure/dhrupad_bandish_segmentation/baseline.zip
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0.00/1.59M [00:00&lt;?, ?B/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 66%|██████▌   | 1.05M/1.59M [00:00&lt;00:00, 9.33MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1.59M/1.59M [00:00&lt;00:00, 13.1MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2023-11-29 12:11:20,154] WARNING [compiam.structure.segmentation.dhrupad_bandish_segmentation.download_model:200] Files downloaded and extracted successfully.
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on DhrupadBandishSegmentation in module compiam.structure.segmentation.dhrupad_bandish_segmentation object:
 
 class DhrupadBandishSegmentation(builtins.object)
@@ -867,7 +872,7 @@ class DhrupadBandishSegmentation(builtins.object)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dbs</span><span class="o">.</span><span class="n">predict_stm</span><span class="p">(</span>
-    <span class="n">file_path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">input_data</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
         <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;59c88c32-0bde-433b-b194-0f65281e5714&quot;</span><span class="p">,</span> <span class="s2">&quot;vocals.wav&quot;</span>
     <span class="p">)</span>
 <span class="p">)</span>
@@ -877,14 +882,35 @@ class DhrupadBandishSegmentation(builtins.object)
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dbs</span><span class="o">.</span><span class="n">predict_stm</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">file_path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">input_data</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>         <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;59c88c32-0bde-433b-b194-0f65281e5714&quot;</span><span class="p">,</span> <span class="s2">&quot;vocals.wav&quot;</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">)</span>
 
-<span class="ne">TypeError</span>: predict_stm() got an unexpected keyword argument &#39;file_path&#39;
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/compiam/structure/segmentation/dhrupad_bandish_segmentation/__init__.py:478,</span> in <span class="ni">DhrupadBandishSegmentation.predict_stm</span><span class="nt">(self, input_data, input_sr, save_output, output_path)</span>
+<span class="g g-Whitespace">    </span><span class="mi">470</span>     <span class="k">raise</span> <span class="n">ModelNotTrainedError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">471</span><span class="w">         </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">472</span><span class="sd">         Model is not trained. Please load model before running inference!</span>
+<span class="g g-Whitespace">    </span><span class="mi">473</span><span class="sd">         You can load the pre-trained instance with the load_model wrapper.</span>
+<span class="g g-Whitespace">    </span><span class="mi">474</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">475</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">477</span> <span class="c1"># convert to mel-spectrogram</span>
+<span class="ne">--&gt; </span><span class="mi">478</span> <span class="n">melgram</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">melspectrogram</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">479</span>     <span class="n">audio</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">480</span>     <span class="n">sr</span><span class="o">=</span><span class="n">pars</span><span class="o">.</span><span class="n">fs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">481</span>     <span class="n">n_fft</span><span class="o">=</span><span class="n">pars</span><span class="o">.</span><span class="n">nfft</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">482</span>     <span class="n">hop_length</span><span class="o">=</span><span class="n">pars</span><span class="o">.</span><span class="n">hopsize</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">483</span>     <span class="n">win_length</span><span class="o">=</span><span class="n">pars</span><span class="o">.</span><span class="n">winsize</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="n">n_mels</span><span class="o">=</span><span class="n">pars</span><span class="o">.</span><span class="n">input_height</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">485</span>     <span class="n">fmin</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">486</span>     <span class="n">fmax</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">487</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">488</span> <span class="n">melgram</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">1e-10</span> <span class="o">+</span> <span class="n">melgram</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">489</span> <span class="n">melgram_chunks</span> <span class="o">=</span> <span class="n">makechunks</span><span class="p">(</span><span class="n">melgram</span><span class="p">,</span> <span class="n">pars</span><span class="o">.</span><span class="n">input_len</span><span class="p">,</span> <span class="n">pars</span><span class="o">.</span><span class="n">input_hop</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: melspectrogram() takes 0 positional arguments but 1 positional argument (and 4 keyword-only arguments) were given
 </pre></div>
 </div>
 </div>
@@ -929,6 +955,7 @@ class DhrupadBandishSegmentation(builtins.object)
 <p>First of all, although <code class="docutils literal notranslate"><span class="pre">spleeter</span></code> is trained with a massive amount of recordings, we can safely assume that Carnatic and Hindustani music do not have a considerable representation in the training set (this applies to the other out-of-the-box source separation models out there). In that sense, it is expected that these models struggle to generalize to Indian Art Music specific instruments and arrangements, which may cause abnormally low interference removal performance. The predominance of melodic monophonic accompaniment instruments in both <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-instrumentation"><span class="std std-ref">Carnatic</span></a> (the violin being the most common case) and <span class="xref myst">Hindustani</span> (harmonium in this case), the <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-tambura-drone"><span class="std std-ref">tambura drone</span></a>, the pitched percussion… These are high-level examples of elements that may cause the standardized source separation models to not generalize properly to Indian Art Music signals.</p>
 <p>What is more, the standardized source separation models target whether <em>vocals</em> and <em>accompaniment</em>, or <em>vocals</em>, <em>bass</em>, <em>drums</em>, and <em>other</em>. While to separate the singing voice from an accompaniment is OK, the <em>4 stem</em> configuration is far from being representative of the actual Carnatic and Hindustani Music arrangements.</p>
 <p>As a final note, another factor that is currently blocking the research on music source separation for Indian Art Music is the shortage of available datasets for this task. We have observed that the Saraga Carnatic collection has multi-track audio, but this has leakage (it has been recorded in live performances). In such case, a leakage-aware approach would be needed to use this data. Alternatively, a music source separation dataset including completely isolated and aligned tracks, which to the best of our knowledge is unavailable as of now, would open the door the music source separation research on Indian Art Music.</p>
+<p><strong>Nov 2023 Update:</strong> A Carnatic-specific singing voice separation model has been developed and presented at ISMIR 2023 in Milan, Italy. See <a class="reference internal" href="../separation/singing-voice-extraction.html#singing-voice-extraction"><span class="std std-ref">the separation walkthrough</span></a> for an example.</p>
 </section>
 </section>
 
