@@ -4,10 +4,6 @@ This online book is the main resource for the **Tutorial on Computational Method
 
 Presented at the 23rd edition of the International Society of Music Information Retrieval Conference (ISMIR) 2022, in Bengaluru, India.
 
-```{admonition} Join us!!!
-We have set up a [Slack channel](https://join.slack.com/t/compiam/shared_invite/zt-1kx4nx3nq-8xRltSxWhqD_QGaADUHFXw) to coordinate and enhance `compiam`, but also to have relevant dicussions about the entire topic of this tutorial. Let us know if the invite link does not work and we will invite you personally. Thanks! 
-```
-
 ## What is this tutorial about?
 This tutorial is designed to serve as a starting point for researchers of all levels looking to get started with the computational analysis of Carnatic and Hindustani Music. While reading through this book you should expect to obtain:
 * **Basic understanding of Carnatic and Hindustani Music**: important concepts and practices.
@@ -34,7 +30,7 @@ If you would like to reference this book please use:
     Ajay Srinivasamurthy and 
     Xavier Serra},
   Address = {Bengaluru, India},
-  Publisher = {https://mtg.github.io/IAM-tutorial-ismir22},
+  Publisher = {Music Technology Group},
   Title = {Computational Methods for Supporting Corpus-Based Research on Indian Art Music},
   Year = 2022,
   Url = {https://mtg.github.io/IAM-tutorial-ismir22}
