@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Pitch extraction</title>
+    <title>Singing voice extraction</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -254,7 +254,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Pitch extraction
+   Singing voice extraction
   </a>
  </li>
 </ul>
@@ -522,18 +522,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#melodia">
-   Melodia
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ftanet-carnatic">
-   FTANet-Carnatic
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-final-thoughts">
-   Some final thoughts
+  <a class="reference internal nav-link" href="#saraga-based-leakage-aware-source-separation-system">
+   Saraga-based leakage aware source separation system
   </a>
  </li>
 </ul>
@@ -545,7 +535,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Pitch extraction</h1>
+                <h1>Singing voice extraction</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -556,18 +546,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#melodia">
-   Melodia
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ftanet-carnatic">
-   FTANet-Carnatic
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-final-thoughts">
-   Some final thoughts
+  <a class="reference internal nav-link" href="#saraga-based-leakage-aware-source-separation-system">
+   Saraga-based leakage aware source separation system
   </a>
  </li>
 </ul>
@@ -580,10 +560,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="pitch-extraction">
-<span id="singing-voice-extraction"></span><h1>Pitch extraction<a class="headerlink" href="#pitch-extraction" title="Permalink to this headline">#</a></h1>
-<p>As seen in the melodic introduction of <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-melodic-concepts"><span class="std std-ref">Carnatic</span></a> and <a class="reference internal" href="../indian_art_music/hindustani-music.html#hindustani-raga"><span class="std std-ref">Hindustani</span></a>, pitch time-series is a very relevant feature to tackle the melodic analysis of these music traditions, showing utility for many musicologically-relevant problems. Given the shortage of recordings for isolated predominant melodic instruments, this task has had to be tackled directly from mixture recordings. In this context, the task is referred as <em>predominant</em> pitch extraction (otherwise commonly referred as <em>vocal</em> pitch extraction when the source is the singing voice).</p>
-<p>Historically, in the literature of computational analysis of Indian Art Music, this task has been tackled using knowledge-based approaches <span id="id1">[<a class="reference internal" href="../resources/references.html#id34" title="Vishweshwara Rao and Preeti Rao. Vocal melody extraction in the presence of pitched accompaniment in polyphonic music. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 2145–2154, 2010. doi:10.1109/TASL.2010.2042124.">RR10</a>, <a class="reference internal" href="../resources/references.html#id35" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>. Melodia <span id="id2">[<a class="reference internal" href="../resources/references.html#id35" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>, typically combined with additional post-processing steps <span id="id3">[<a class="reference internal" href="../resources/references.html#id41" title="Sankalp Gulati, Joan Serra, Vignesh Ishwar, and Xavier Serra. Mining melodic patterns in large audio collections of Indian art music. In In Proc. of the 10th International Conference on Signal-Image Technology and Internet-Based Systems (SITIS), Bangkok, Thailand., 264–271. 2015. doi:10.1109/SITIS.2014.73.">GSIS15a</a>]</span>, has been the preferred approach until today.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="singing-voice-extraction">
+<span id="id1"></span><h1>Singing voice extraction<a class="headerlink" href="#singing-voice-extraction" title="Permalink to this headline">#</a></h1>
+<p>TODO</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Installing (if not) and importing compiam to the project</span>
@@ -617,13 +596,11 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<section id="melodia">
-<h2>Melodia<a class="headerlink" href="#melodia" title="Permalink to this headline">#</a></h2>
-<p>Let’s extract the pitch from an audio sample using Melodia <span id="id4">[<a class="reference internal" href="../resources/references.html#id35" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>. This is a salience-based method, meaning that it captures the most salient melodic segments in the time-frequency representation of the input signal, keeping and connecting the segments that are more likely to belong to the predominant melody, using heuristic rules. Make sure you check out the paper for further detail!</p>
-<p>We first need to install <code class="docutils literal notranslate"><span class="pre">essentia</span></code>, which is the optional dependency required to load this tool.</p>
+<section id="saraga-based-leakage-aware-source-separation-system">
+<h2>Saraga-based leakage aware source separation system<a class="headerlink" href="#saraga-based-leakage-aware-source-separation-system" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install essentia
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install tensorflow==2.9.0
 </pre></div>
 </div>
 </div>
@@ -631,11 +608,11 @@ title="Print to PDF"
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing and initializing a melodia instance</span>
-<span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction</span> <span class="kn">import</span> <span class="n">Melodia</span>
-<span class="n">melodia</span> <span class="o">=</span> <span class="n">Melodia</span><span class="p">()</span>  
+<span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">load_model</span>
+<span class="n">separation_model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;separation:cold-diff-sep&#39;</span><span class="p">)</span>
 
 <span class="c1"># Running extraction for an example track</span>
-<span class="n">melodia_pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span>
+<span class="n">separation</span> <span class="o">=</span> <span class="n">separation_model</span><span class="o">.</span><span class="n">separate</span><span class="p">(</span>
     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
         <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;mir_datasets&quot;</span><span class="p">,</span> <span class="s2">&quot;saraga1.5_carnatic&quot;</span><span class="p">,</span>
         <span class="s2">&quot;Live at Vani Mahal by Sanjay Subrahmanyan&quot;</span><span class="p">,</span> <span class="s2">&quot;Sri Raghuvara Sugunaalaya&quot;</span><span class="p">,</span>
@@ -648,176 +625,32 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of the output pitch:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape of the output pitch: (20675, 2)
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can infer from the shape the number of estimated pitch values, while the dimension 2 refers to <code class="docutils literal notranslate"><span class="pre">(frequency</span> <span class="pre">values,</span> <span class="pre">time-stamps)</span></code>. Let us show the first 5 time-stamps here.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.0,
- 0.0029024943310657597,
- 0.005804988662131519,
- 0.008707482993197279,
- 0.011609977324263039]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Let’s now print out the final 5 pitch values.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">melodia_pitch_track</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:,</span> <span class="mi">1</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[220.00181579589844, 222.55812072753906, 222.55812072753906, 0.0, 0.0]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Melodia has been found, in the original paper experiments and also in the <a class="reference external" href="https://nema.lis.illinois.edu/nema_out/mirex2011/results/ame/indian08/sg1results.html">MIREX campaign</a>, to decently work on Indian Art Music samples. However, recent DL-based models have claimed the state-of-the-art for the task of pitch extraction.</p>
-</section>
-<section id="ftanet-carnatic">
-<h2>FTANet-Carnatic<a class="headerlink" href="#ftanet-carnatic" title="Permalink to this headline">#</a></h2>
-<p><strong>Maybe we can use a Carnatic-trained version of one of these models to extract the pitch?</strong> Let’s now import a DL model that learns to automatically extract the predominant melody from audio recordings. We will use FTANet <span id="id5">[<a class="reference internal" href="../resources/references.html#id36" title="Shuai Yu, Xiaoheng Sun, Yi Yu, and Wei Li. Frequency-Temporal Attention Network for Singing Melody Extraction. In In Proc. of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Toronto, Canada., 251–255. 2021. doi:10.1109/icassp39728.2021.9413444.">YSYL21</a>]</span>. This is an attention-based network that laverages and fuses information from frequency and periodicity domains to capture the right pitch values for the predominant source. It learns to focus on a particular source, using an additional branch that helps reducing the false alarm rate (detecting pitch values that do not correspond to the source we target).</p>
-<p>To train this model we need a dataset that includes mixture recordings plus annotated pitch time-series for the source we aim at capturing the pitch from. This FTANet instance is trained with the <a class="reference external" href="https://zenodo.org/record/5553925">Saraga Carnatic Melody Synth (SMCS)</a>.</p>
-<p>In the documentation we observe that this model is based on <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code>, therefore we must install this dependency before importing it.</p>
-<div class="cell tag_remove-output docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install tensorflow==2.9.3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction</span> <span class="kn">import</span> <span class="n">FTANetCarnatic</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-this-is-a-non-trained-instance admonition">
-<p class="admonition-title">This is a non-trained instance!</p>
-<p>Directly importing a ML/DL-based tool from the corresponding task initialises a non-trained instance. However, if a <code class="docutils literal notranslate"><span class="pre">*</span></code> appears at the end of the tool name when running <code class="docutils literal notranslate"><span class="pre">.list_tools()</span></code>, the pre-trained weights can be loaded using the <code class="docutils literal notranslate"><span class="pre">compiam.load_model()</span></code> wrapper.</p>
-</div>
-<p>In ths case, we are only interested in inference. Therefore, we might be able to load FTANet as an already trained model. For that, let’s print the models with available weights to load in <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">list_models</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;melody:deepsrgm&#39;,
- &#39;melody:ftanet-carnatic&#39;,
- &#39;melody:cae-carnatic&#39;,
- &#39;structure:dhrupad-bandish-segmentation&#39;,
- &#39;separation:cold-diff-sep&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Cool! A Carnatic-trained FTANet is there.</strong> Therefore, let’s load it and run inference on an example track.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Disabling tensorflow warnings and debugging info</span>
-<span class="kn">import</span> <span class="nn">os</span> 
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;TF_CPP_MIN_LOG_LEVEL&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;3&quot;</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">IPython.display</span> <span class="k">as</span> <span class="nn">ipd</span>
 
-<span class="c1"># Importing tensorflow and disabling GPU usage</span>
-<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
-<span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">set_visible_devices</span><span class="p">([],</span> <span class="s2">&quot;GPU&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Let’s first deactivate the GPU usage, since we assume no CUDA-capable GPU is available in most of the cases. We import <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> and set the visible GPU devices to none. We also disable the <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> warnings in order to keep the tutorial clean.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you have an available GPU to allocate the model, get the index of the GPU (probably 0 if you have only a single instance) and change <code class="docutils literal notranslate"><span class="pre">tf.config.set_visible_devices([],</span> <span class="pre">&quot;GPU&quot;)</span></code> for <code class="docutils literal notranslate"><span class="pre">os.environ[&quot;CUDA_VISIBLE_DEVICES&quot;]</span> <span class="pre">=</span> <span class="pre">&quot;0&quot;</span></code></p>
-</div>
-<div class="cell tag_remove-output docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initializing an FTANet instance</span>
-<span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:ftanet-carnatic&quot;</span><span class="p">)</span>
-
-<span class="c1"># Importing and initializing again a melodia instance of comparison</span>
-<span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction</span> <span class="kn">import</span> <span class="n">Melodia</span>
-<span class="n">melodia</span> <span class="o">=</span> <span class="n">Melodia</span><span class="p">()</span>  
-</pre></div>
-</div>
-</div>
-</div>
-<p>We will now initialize Saraga Carnatic dataset to get an example track, load it, and run inference using FTANet-Carnatic and Melodia, both accessed through <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
-<div class="cell tag_remove-output docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">librosa</span>
-<span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">load_dataset</span>
-
-<span class="n">saraga_carnatic</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span>
-    <span class="s2">&quot;saraga_carnatic&quot;</span><span class="p">,</span>
-    <span class="n">data_home</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;mir_datasets&quot;</span><span class="p">)</span>
+<span class="c1"># And we play it!</span>
+<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">separation</span><span class="p">,</span>
+    <span class="n">rate</span><span class="o">=</span><span class="mi">44100</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">saraga_tracks</span> <span class="o">=</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()</span>
-<span class="n">example</span> <span class="o">=</span> <span class="n">saraga_tracks</span><span class="p">[</span><span class="s2">&quot;109_Sri_Raghuvara_Sugunaalaya&quot;</span><span class="p">]</span>
-
-<span class="c1"># Loading the audio</span>
-<span class="n">y</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:</span><span class="mi">3</span><span class="o">*</span><span class="n">sr</span><span class="p">]</span>  <span class="c1"># Getting just the first 3 seconds</span>
-
-<span class="c1"># Predict!</span>
-<span class="n">ftanet_pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
-<span class="n">melodia_pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Let’s visualise the extracted pitch tracks on top of the spectrogram of the input signal.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">librosa</span>
-<span class="kn">import</span> <span class="nn">librosa.display</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
-<span class="n">D</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">amplitude_to_db</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">librosa</span><span class="o">.</span><span class="n">stft</span><span class="p">(</span><span class="n">y</span><span class="p">)),</span> <span class="n">ref</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
-<span class="n">img</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">specshow</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">y_axis</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">x_axis</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">);</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">melodia_pitch_track</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">melodia_pitch_track</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Melodia&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">ftanet_pitch_track</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">ftanet_pitch_track</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
-    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;FTANet-Carnatic&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/singing-voice-extraction_24_0.png" src="../_images/singing-voice-extraction_24_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">IPython.display</span> <span class="k">as</span> <span class="nn">ipd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># And we play it!</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">data</span><span class="o">=</span><span class="n">separation</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">rate</span><span class="o">=</span><span class="mi">44100</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;separation&#39; is not defined
+</pre></div>
 </div>
 </div>
-</section>
-<section id="some-final-thoughts">
-<h2>Some final thoughts<a class="headerlink" href="#some-final-thoughts" title="Permalink to this headline">#</a></h2>
-<p>Again, going through the melodic introduction of <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-melodic-concepts"><span class="std std-ref">Carnatic</span></a> and Hindustani Music, we note the importance of a reliable pitch extraction for the computational analysis of Indian Art Music. The task of pitch extraction has received quite a lot of attention recently and the state-of-the-art has been continuously moved forward, especially given the use of DL techniques. However, to the best of our knowledge, no DL-based pitch extraction has been trained or evaluated on Indian Art Music signals, the lack of data being the principal cause. The FTA-Net trained for Carnatic Music that we present in this walkthrough and that we have included in <code class="docutils literal notranslate"><span class="pre">compiam</span></code> has been trained with the <a class="reference external" href="https://zenodo.org/record/5553925">Saraga Carnatic Melody Synth (SMCS)</a>, a recently released dataset that includes several hours of Carnatic Music recordings annotated with ground-truth vocal pitch data that have been artificially compiled.</p>
+</div>
 </section>
 </section>
 
