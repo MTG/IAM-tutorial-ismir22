@@ -779,8 +779,8 @@ title="Print to PDF"
 <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:</span><span class="mi">3</span><span class="o">*</span><span class="n">sr</span><span class="p">]</span>  <span class="c1"># Getting just the first 3 seconds</span>
 
 <span class="c1"># Predict!</span>
-<span class="n">ftanet_pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
-<span class="n">melodia_pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
+<span class="n">ftanet_pitch_track</span> <span class="o">=</span> <span class="n">ftanet_carnatic</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">melodia_pitch_track</span> <span class="o">=</span> <span class="n">melodia</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
