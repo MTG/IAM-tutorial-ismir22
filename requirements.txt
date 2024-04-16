@@ -6,7 +6,7 @@ Jinja2==3.1.2
 openpyxl==3.0.7
 lxml[html_clean]
 
-s
+
 ### Dependencies installed in deployment action
 # compiam
 # mirdata
