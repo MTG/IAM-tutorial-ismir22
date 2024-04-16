@@ -66,7 +66,7 @@ Our corpora class include methods to get an overview of the available data in th
 The corpora class also includes a functionality to iterate over the initialized corpora. Run `get_metadata()` to get a dictionary containing all metadata available in the portion of the corpora in which you are interested on.
 
 ```{note}
-Please note that there is no API call to get all metadata at once, so `get_metadata()` will run as many API calls as recordings are avialable in the corpora, so this operation might take a while...
+Please note that there is no API call to get all metadata at once, so `get_metadata()` will run as many API calls as recordings are available in the corpora, so this operation might take a while...
 ```
 
 ### Getting the data
