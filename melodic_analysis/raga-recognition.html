@@ -609,32 +609,10 @@ Time (LSTM) networks, given its ability to capture sequence information <span id
 </div>
 </div>
 <p>DEEPSRGM <span id="id7">[<a class="reference internal" href="../resources/references.html#id50" title="Sathwik Tejaswi Madhusudhan and Girish Chowdhary. DEEPSRGM - Sequence classification and ranking in Indian classical music with deep learning. In In Proc. of the 20th International Society for Music Information Retrieval Conference, (ISMIR), Delft, The Netherlands., 533–540. 2019.">MC19</a>]</span> is a DL-based model that uses melodic features to automatically identify the raga from an Indian Art Music recording. In the original paper, the authors use the Indian Art Music Raga Dataset <span id="id8">[<a class="reference internal" href="../resources/references.html#id24" title="Sankalp Gulati, Joan Serrà, Kaustuv K Ganguli, S Sertan, and Xavier Serra. Time-delayed melody surfaces for Raga recognition. In In Proc. of the 17th International Society for Music Information Retrieval Conference (ISMIR), New York City, USA., 751–757. 2016. doi:10.1080/09298215.2013.866145.">GSG+16</a>]</span>, and report accuracy higher than 95%.</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This tool has * at the end: we can load the pre-trained instance</span>
 <span class="n">deepsrgm</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:deepsrgm&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading...
-From: https://drive.google.com/uc?id=1H2FU7q5Nl1e6LAP7c1jml3etFtTv3_lM&amp;export=download
-To: /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/compiam/models/melody/deepsrgm/baseline.zip
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0.00/20.4M [00:00&lt;?, ?B/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|██▎       | 4.72M/20.4M [00:00&lt;00:01, 15.6MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 85%|████████▍ | 17.3M/20.4M [00:00&lt;00:00, 39.7MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 20.4M/20.4M [00:00&lt;00:00, 37.6MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-16 16:00:48,694] WARNING [compiam.melody.raga_recognition.deepsrgm.download_model:155] Files downloaded and extracted successfully.
 </pre></div>
 </div>
 </div>

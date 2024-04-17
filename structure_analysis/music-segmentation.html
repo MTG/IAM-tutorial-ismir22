@@ -581,7 +581,7 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">importlib.util</span>
 <span class="k">if</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s1">&#39;compiam&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
     <span class="c1">## Bear in mind this will only run in a jupyter notebook / Collab session</span>
-    <span class="o">%</span><span class="k">pip</span> install compiam
+    <span class="o">%</span><span class="k">pip</span> install git+git://github.com/MTG/compIAM.git
 <span class="kn">import</span> <span class="nn">compiam</span>
 
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
@@ -882,37 +882,8 @@ class DhrupadBandishSegmentation(builtins.object)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dbs</span><span class="o">.</span><span class="n">predict_stm</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">input_data</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>         <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;59c88c32-0bde-433b-b194-0f65281e5714&quot;</span><span class="p">,</span> <span class="s2">&quot;vocals.wav&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/compiam/structure/segmentation/dhrupad_bandish_segmentation/__init__.py:478,</span> in <span class="ni">DhrupadBandishSegmentation.predict_stm</span><span class="nt">(self, input_data, input_sr, save_output, output_path)</span>
-<span class="g g-Whitespace">    </span><span class="mi">470</span>     <span class="k">raise</span> <span class="n">ModelNotTrainedError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">471</span><span class="w">         </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">472</span><span class="sd">         Model is not trained. Please load model before running inference!</span>
-<span class="g g-Whitespace">    </span><span class="mi">473</span><span class="sd">         You can load the pre-trained instance with the load_model wrapper.</span>
-<span class="g g-Whitespace">    </span><span class="mi">474</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">475</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">477</span> <span class="c1"># convert to mel-spectrogram</span>
-<span class="ne">--&gt; </span><span class="mi">478</span> <span class="n">melgram</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">melspectrogram</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">479</span>     <span class="n">audio</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">480</span>     <span class="n">sr</span><span class="o">=</span><span class="n">pars</span><span class="o">.</span><span class="n">fs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">481</span>     <span class="n">n_fft</span><span class="o">=</span><span class="n">pars</span><span class="o">.</span><span class="n">nfft</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">482</span>     <span class="n">hop_length</span><span class="o">=</span><span class="n">pars</span><span class="o">.</span><span class="n">hopsize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">483</span>     <span class="n">win_length</span><span class="o">=</span><span class="n">pars</span><span class="o">.</span><span class="n">winsize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="n">n_mels</span><span class="o">=</span><span class="n">pars</span><span class="o">.</span><span class="n">input_height</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span>     <span class="n">fmin</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">486</span>     <span class="n">fmax</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">488</span> <span class="n">melgram</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">1e-10</span> <span class="o">+</span> <span class="n">melgram</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">489</span> <span class="n">melgram_chunks</span> <span class="o">=</span> <span class="n">makechunks</span><span class="p">(</span><span class="n">melgram</span><span class="p">,</span> <span class="n">pars</span><span class="o">.</span><span class="n">input_len</span><span class="p">,</span> <span class="n">pars</span><span class="o">.</span><span class="n">input_hop</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: melspectrogram() takes 0 positional arguments but 1 positional argument (and 4 keyword-only arguments) were given
+<img alt="../_images/music-segmentation_30_0.png" src="../_images/music-segmentation_30_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 2, 2, ..., 2, 2, 2])
 </pre></div>
 </div>
 </div>
