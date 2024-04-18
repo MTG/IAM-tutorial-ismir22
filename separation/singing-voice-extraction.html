@@ -564,7 +564,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="singing-voice-extraction">
 <span id="id1"></span><h1>Singing voice extraction<a class="headerlink" href="#singing-voice-extraction" title="Permalink to this headline">#</a></h1>
-<p>TODO</p>
+<p>As seen in the <a class="reference internal" href="../structure_analysis/music-segmentation.html#music-segmentation"><span class="std std-ref">music segmentation example</span></a>, the vocal separation for Carnatic and Hindustani music remains an unsolved (and unexplored!) field. In this section we walkthrough a tool that has been trained using the <span id="id2">[<a class="reference internal" href="../resources/references.html#id26" title="Ajay Srinivasamurthy, Sankalp Gulati, Rafael Caro Repetto, and Xavier Serra. Saraga: Open Datasets for Research on Indian Art Music. Empirical Musicology Review, 2020.">SGRS20</a>]</span>. Given the live performance nature of Carnatic Music, it is difficult, in fact current impossible, to find fully-isolated multi-stem recordings to train or fine-tune existing separation approaches. Saraga includes multi-stem recordings, but these have source bleeding in the background, since these have been recorded in live performances. In this section we present an approach that has been designed having the bleeding problem in mind.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Installing (if not) and importing compiam to the project</span>
@@ -585,21 +585,27 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Let’s first print out the available tools we do have available to extract the pitch from Indian Art Music recordings.</p>
+<p>Let’s first print out the available tools we do have available to separate Indian Art Music recordings.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">pitch_extraction</span><span class="o">.</span><span class="n">list_tools</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">separation</span><span class="o">.</span><span class="n">singing_voice_extraction</span><span class="o">.</span><span class="n">list_tools</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;FTANetCarnatic*&#39;, &#39;Melodia&#39;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pprint</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">separation</span><span class="o">.</span><span class="n">singing_voice_extraction</span><span class="o">.</span><span class="n">list_tools</span><span class="p">())</span>
+
+<span class="ne">AttributeError</span>: module &#39;compiam&#39; has no attribute &#39;separation&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <section id="leakage-aware-source-separation-model">
 <h2>Leakage-aware source separation model<a class="headerlink" href="#leakage-aware-source-separation-model" title="Permalink to this headline">#</a></h2>
+<p>This model is able to separate clean singing voices even though it has been solely trained with data that have bleeding in the multi-track stems. Let’s test how it works in a real example. Since the model is DL-based, we first need to install tensorflow.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install tensorflow
@@ -666,6 +672,7 @@ title="Print to PDF"
 </audio>
 </div></div>
 </div>
+<p>Although perceptible artifacts in the vocals can be heard, the separation is surprisingly clean, hopefully helping musicians and musicologists to extract relevant information for it. Also, less pitched noise is present in the signal so melodic feature extraction systems may work better on these data rather than in a complete mixture or in a singing voice with source bleeding in the background.</p>
 </section>
 </section>
 
