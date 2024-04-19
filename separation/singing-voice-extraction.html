@@ -585,24 +585,6 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Let’s first print out the available tools we do have available to separate Indian Art Music recordings.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">separation</span><span class="o">.</span><span class="n">singing_voice_extraction</span><span class="o">.</span><span class="n">list_tools</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pprint</span><span class="p">(</span><span class="n">compiam</span><span class="o">.</span><span class="n">separation</span><span class="o">.</span><span class="n">singing_voice_extraction</span><span class="o">.</span><span class="n">list_tools</span><span class="p">())</span>
-
-<span class="ne">AttributeError</span>: module &#39;compiam&#39; has no attribute &#39;separation&#39;
-</pre></div>
-</div>
-</div>
-</div>
 <section id="leakage-aware-source-separation-model">
 <h2>Leakage-aware source separation model<a class="headerlink" href="#leakage-aware-source-separation-model" title="Permalink to this headline">#</a></h2>
 <p>This model is able to separate clean singing voices even though it has been solely trained with data that have bleeding in the multi-track stems. Let’s test how it works in a real example. Since the model is DL-based, we first need to install tensorflow.</p>

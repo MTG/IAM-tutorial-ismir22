@@ -1434,14 +1434,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-04-18 11:07:41.346624: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/cv2/../../lib64:
-2024-04-18 11:07:41.346651: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-04-19 11:02:52.277182: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/cv2/../../lib64:
+2024-04-19 11:02:52.277209: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-04-18 11:07:42.502753: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/cv2/../../lib64:
-2024-04-18 11:07:42.502779: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-2024-04-18 11:07:42.502800: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az1152-614): /proc/driver/nvidia/version does not exist
-2024-04-18 11:07:42.502972: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-04-19 11:02:53.453137: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/cv2/../../lib64:
+2024-04-19 11:02:53.453162: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2024-04-19 11:02:53.453178: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az1487-682): /proc/driver/nvidia/version does not exist
+2024-04-19 11:02:53.453349: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
 </pre></div>
 </div>
@@ -1729,26 +1729,11 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{87.30361988416256: &#39;N2&#39;,
- 174.60723976832512: &#39;N2&#39;,
- 349.21447953665023: &#39;N2&#39;,
- 698.4289590733005: &#39;N2&#39;,
- 1396.857918146601: &#39;N2&#39;,
- 48.9975: &#39;S&#39;,
- 97.995: &#39;S&#39;,
- 195.99: &#39;S&#39;,
- 391.98: &#39;S&#39;,
- 783.96: &#39;S&#39;,
- 73.4133009992652: &#39;P&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{73.4133009992652: &#39;P&#39;,
  146.8266019985304: &#39;P&#39;,
  293.6532039970608: &#39;P&#39;,
  587.3064079941216: &#39;P&#39;,
  1174.6128159882435: &#39;P&#39;,
- 54.997834212038505: &#39;R2&#39;,
- 109.99566842407701: &#39;R2&#39;,
- 219.99133684815402: &#39;R2&#39;,
- 439.98267369630804: &#39;R2&#39;,
- 879.965347392616: &#39;R2&#39;,
  65.40381575469627: &#39;M1&#39;,
  130.80763150939254: &#39;M1&#39;,
  261.6152630187851: &#39;M1&#39;,
@@ -1759,6 +1744,21 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
  329.614576851151: &#39;D2&#39;,
  659.229153702302: &#39;D2&#39;,
  1318.458307404604: &#39;D2&#39;,
+ 54.997834212038505: &#39;R2&#39;,
+ 109.99566842407701: &#39;R2&#39;,
+ 219.99133684815402: &#39;R2&#39;,
+ 439.98267369630804: &#39;R2&#39;,
+ 879.965347392616: &#39;R2&#39;,
+ 87.30361988416256: &#39;N2&#39;,
+ 174.60723976832512: &#39;N2&#39;,
+ 349.21447953665023: &#39;N2&#39;,
+ 698.4289590733005: &#39;N2&#39;,
+ 1396.857918146601: &#39;N2&#39;,
+ 48.9975: &#39;S&#39;,
+ 97.995: &#39;S&#39;,
+ 195.99: &#39;S&#39;,
+ 391.98: &#39;S&#39;,
+ 783.96: &#39;S&#39;,
  58.268175617345825: &#39;G2&#39;,
  116.53635123469165: &#39;G2&#39;,
  233.0727024693833: &#39;G2&#39;,
@@ -2202,7 +2202,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f316c017dc0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff098ee4250&gt;]
 </pre></div>
 </div>
 <img alt="../_images/exploring-raga_110_1.png" src="../_images/exploring-raga_110_1.png" />
@@ -2319,7 +2319,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f315cfa3ee0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff098bede50&gt;]
 </pre></div>
 </div>
 <img alt="../_images/exploring-raga_120_1.png" src="../_images/exploring-raga_120_1.png" />
@@ -2668,8 +2668,8 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rītigauḷa: {&#39;S&#39;, &#39;N2&#39;, &#39;P&#39;, &#39;R2&#39;, &#39;M1&#39;, &#39;D2&#39;, &#39;G2&#39;}
-Bhairavi: {&#39;N2&#39;, &#39;S&#39;, &#39;D1&#39;, &#39;P&#39;, &#39;R2&#39;, &#39;M1&#39;, &#39;D2&#39;, &#39;G2&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rītigauḷa: {&#39;P&#39;, &#39;M1&#39;, &#39;D2&#39;, &#39;R2&#39;, &#39;N2&#39;, &#39;S&#39;, &#39;G2&#39;}
+Bhairavi: {&#39;P&#39;, &#39;M1&#39;, &#39;S&#39;, &#39;D2&#39;, &#39;R2&#39;, &#39;N2&#39;, &#39;D1&#39;, &#39;G2&#39;}
 </pre></div>
 </div>
 </div>
