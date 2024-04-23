@@ -536,6 +536,11 @@ title="Print to PDF"
    Leakage-aware source separation model
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fine-tuning-spleeter-using-saraga">
+   Fine-tuning Spleeter using Saraga
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -568,6 +573,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#leakage-aware-source-separation-model">
    Leakage-aware source separation model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fine-tuning-spleeter-using-saraga">
+   Fine-tuning Spleeter using Saraga
   </a>
  </li>
 </ul>
@@ -603,38 +613,9 @@ title="Print to PDF"
 </div>
 </div>
 <p>We download the latest Spleeter pre-trained model in the official repository.</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget<span class="w"> </span>https://github.com/deezer/spleeter/releases/download/v1.4.0/2stems.tar.gz
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-04-22 17:46:50--  https://github.com/deezer/spleeter/releases/download/v1.4.0/2stems.tar.gz
-Resolving github.com (github.com)... 140.82.113.3
-Connecting to github.com (github.com)|140.82.113.3|:443... connected.
-HTTP request sent, awaiting response... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>302 Found
-Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/211124697/e5a4d280-f98d-11e9-905c-849465861ed7?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240422%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20240422T174650Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=9c4a46e339ace80b2f5e9c146c2be2d39dbb7f9c503d776d9316b13fefbf5115&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;key_id=0&amp;repo_id=211124697&amp;response-content-disposition=attachment%3B%20filename%3D2stems.tar.gz&amp;response-content-type=application%2Foctet-stream [following]
---2024-04-22 17:46:50--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/211124697/e5a4d280-f98d-11e9-905c-849465861ed7?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240422%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20240422T174650Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=9c4a46e339ace80b2f5e9c146c2be2d39dbb7f9c503d776d9316b13fefbf5115&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;key_id=0&amp;repo_id=211124697&amp;response-content-disposition=attachment%3B%20filename%3D2stems.tar.gz&amp;response-content-type=application%2Foctet-stream
-Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.110.133, 185.199.111.133, 185.199.108.133, ...
-Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.110.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 73109797 (70M) [application/octet-stream]
-Saving to: ‘2stems.tar.gz’
-
-
-2stems.tar.gz         0%[                    ]       0  --.-KB/s               
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2stems.tar.gz        73%[=============&gt;      ]  51.33M   257MB/s               
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2stems.tar.gz       100%[===================&gt;]  69.72M   271MB/s    in 0.3s    
-
-2024-04-22 17:46:50 (271 MB/s) - ‘2stems.tar.gz’ saved [73109797/73109797]
 </pre></div>
 </div>
 </div>
@@ -681,7 +662,7 @@ Saving to: ‘2stems.tar.gz’
 <p class="admonition-title">Note</p>
 <p>The other option, which is the <code class="docutils literal notranslate"><span class="pre">4:stems</span></code>, separates <em>vocals</em>, <em>bass</em>, <em>drums</em>, and <em>other</em>, does not properly apply to the case of Carnatic Music.</p>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">spleeter.separator</span> <span class="kn">import</span> <span class="n">Separator</span>
 
@@ -695,59 +676,6 @@ Saving to: ‘2stems.tar.gz’
     <span class="p">),</span>
     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">)</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Using config: {&#39;_model_dir&#39;: &#39;pretrained_models/2stems&#39;, &#39;_tf_random_seed&#39;: None, &#39;_save_summary_steps&#39;: 100, &#39;_save_checkpoints_steps&#39;: None, &#39;_save_checkpoints_secs&#39;: 600, &#39;_session_config&#39;: gpu_options {
-  per_process_gpu_memory_fraction: 0.7
-}
-, &#39;_keep_checkpoint_max&#39;: 5, &#39;_keep_checkpoint_every_n_hours&#39;: 10000, &#39;_log_step_count_steps&#39;: 100, &#39;_train_distribute&#39;: None, &#39;_device_fn&#39;: None, &#39;_protocol&#39;: None, &#39;_eval_distribute&#39;: None, &#39;_experimental_distribute&#39;: None, &#39;_experimental_max_worker_delay_secs&#39;: None, &#39;_session_creation_timeout_secs&#39;: 7200, &#39;_checkpoint_save_graph_def&#39;: True, &#39;_service&#39;: None, &#39;_cluster_spec&#39;: ClusterSpec({}), &#39;_task_type&#39;: &#39;worker&#39;, &#39;_task_id&#39;: 0, &#39;_global_id_in_cluster&#39;: 0, &#39;_master&#39;: &#39;&#39;, &#39;_evaluation_master&#39;: &#39;&#39;, &#39;_is_chief&#39;: True, &#39;_num_ps_replicas&#39;: 0, &#39;_num_worker_replicas&#39;: 1}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:tensorflow:From /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/spleeter/separator.py:146: calling DatasetV2.from_generator (from tensorflow.python.data.ops.dataset_ops) with output_types is deprecated and will be removed in a future version.
-Instructions for updating:
-Use output_signature instead
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:tensorflow:From /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/spleeter/separator.py:146: calling DatasetV2.from_generator (from tensorflow.python.data.ops.dataset_ops) with output_shapes is deprecated and will be removed in a future version.
-Instructions for updating:
-Use output_signature instead
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Calling model_fn.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Apply unet for vocals_spectrogram
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:tensorflow:From /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/keras/layers/normalization/batch_normalization.py:514: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
-Instructions for updating:
-Colocations handled automatically by placer.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Apply unet for accompaniment_spectrogram
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Done calling model_fn.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Graph was finalized.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Restoring parameters from pretrained_models/2stems/model
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Running local_init_op.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Done running local_init_op.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:spleeter:File ../audio/59c88c32-0bde-433b-b194-0f65281e5714/vocals.wav written succesfully
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:spleeter:File ../audio/59c88c32-0bde-433b-b194-0f65281e5714/accompaniment.wav written succesfully
 </pre></div>
 </div>
 </div>
@@ -815,7 +743,7 @@ Colocations handled automatically by placer.
 </div>
 </div>
 </div>
-<div class="cell tag_remove-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing and initializing a melodia instance</span>
 <span class="kn">import</span> <span class="nn">soundfile</span> <span class="k">as</span> <span class="nn">sf</span>
@@ -824,7 +752,7 @@ Colocations handled automatically by placer.
 
 <span class="c1"># We load the same example</span>
 <span class="n">audio_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-    <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;59c88c32-0bde-433b-b194-0f65281e5714&quot;</span><span class="p">,</span> <span class="s2">&quot;vocals.wav&quot;</span><span class="p">)</span>
+    <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;59c88c32-0bde-433b-b194-0f65281e5714.mp3&quot;</span><span class="p">)</span>
 <span class="n">input_mixture</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">audio_path</span><span class="p">)</span>
 
 <span class="n">input_mixture</span> <span class="o">=</span> <span class="n">input_mixture</span><span class="o">.</span><span class="n">T</span>
@@ -834,8 +762,547 @@ Colocations handled automatically by placer.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading...
+From (original): https://drive.google.com/uc?id=1yj9iHTY7nCh2qrIM2RIUOXhLXt1K8WcE&amp;export=download
+From (redirected): https://drive.google.com/uc?id=1yj9iHTY7nCh2qrIM2RIUOXhLXt1K8WcE&amp;export=download&amp;confirm=t&amp;uuid=e7ceb107-0e8c-41cb-a1b8-ea4d67ae048a
+To: /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/compiam/models/separation/cold_diff_sep/saraga-8.zip
+</pre></div>
 </div>
-<div class="cell tag_remove-output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0.00/1.47G [00:00&lt;?, ?B/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 524k/1.47G [00:00&lt;05:30, 4.45MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 4.72M/1.47G [00:00&lt;02:55, 8.37MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|          | 8.91M/1.47G [00:00&lt;01:42, 14.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|▏         | 24.1M/1.47G [00:00&lt;00:32, 43.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|▏         | 34.1M/1.47G [00:01&lt;00:30, 47.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|▎         | 42.5M/1.47G [00:01&lt;00:29, 48.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|▍         | 58.2M/1.47G [00:01&lt;00:19, 70.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|▍         | 67.6M/1.47G [00:01&lt;00:20, 68.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|▌         | 76.0M/1.47G [00:01&lt;00:26, 52.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|▌         | 91.8M/1.47G [00:01&lt;00:19, 72.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|▋         | 101M/1.47G [00:01&lt;00:19, 70.7MB/s] 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|▋         | 110M/1.47G [00:02&lt;00:29, 46.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|▊         | 125M/1.47G [00:02&lt;00:21, 62.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|▉         | 140M/1.47G [00:02&lt;00:16, 79.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|█         | 151M/1.47G [00:02&lt;00:20, 63.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|█▏        | 167M/1.47G [00:02&lt;00:16, 81.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|█▏        | 179M/1.47G [00:03&lt;00:20, 62.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|█▎        | 193M/1.47G [00:03&lt;00:17, 74.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|█▍        | 204M/1.47G [00:03&lt;00:16, 78.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|█▍        | 214M/1.47G [00:03&lt;00:28, 43.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|█▌        | 229M/1.47G [00:04&lt;00:21, 58.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|█▋        | 244M/1.47G [00:04&lt;00:21, 56.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|█▋        | 253M/1.47G [00:04&lt;00:19, 62.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|█▊        | 262M/1.47G [00:04&lt;00:18, 65.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|█▊        | 271M/1.47G [00:04&lt;00:20, 57.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|█▉        | 286M/1.47G [00:04&lt;00:15, 76.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|██        | 296M/1.47G [00:04&lt;00:14, 81.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|██        | 306M/1.47G [00:05&lt;00:18, 63.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|██▏       | 319M/1.47G [00:05&lt;00:16, 69.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|██▎       | 335M/1.47G [00:05&lt;00:12, 87.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|██▎       | 346M/1.47G [00:05&lt;00:16, 69.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|██▍       | 358M/1.47G [00:05&lt;00:13, 80.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|██▌       | 368M/1.47G [00:05&lt;00:13, 80.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|██▌       | 377M/1.47G [00:06&lt;00:15, 72.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|██▌       | 386M/1.47G [00:06&lt;00:17, 62.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|██▋       | 402M/1.47G [00:06&lt;00:13, 81.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 28%|██▊       | 412M/1.47G [00:06&lt;00:17, 60.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 29%|██▉       | 425M/1.47G [00:06&lt;00:14, 73.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|██▉       | 435M/1.47G [00:06&lt;00:13, 76.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|███       | 445M/1.47G [00:07&lt;00:14, 69.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 31%|███       | 454M/1.47G [00:07&lt;00:16, 61.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 32%|███▏      | 469M/1.47G [00:07&lt;00:12, 81.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|███▎      | 479M/1.47G [00:07&lt;00:12, 77.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|███▎      | 488M/1.47G [00:07&lt;00:14, 68.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 34%|███▎      | 496M/1.47G [00:07&lt;00:16, 59.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 35%|███▍      | 512M/1.47G [00:07&lt;00:12, 79.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 35%|███▌      | 521M/1.47G [00:08&lt;00:11, 82.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 36%|███▌      | 531M/1.47G [00:08&lt;00:14, 64.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 37%|███▋      | 538M/1.47G [00:08&lt;00:15, 60.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███▊      | 555M/1.47G [00:08&lt;00:11, 81.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███▊      | 565M/1.47G [00:08&lt;00:11, 79.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 39%|███▉      | 574M/1.47G [00:08&lt;00:13, 66.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 40%|███▉      | 588M/1.47G [00:09&lt;00:11, 74.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 41%|████      | 596M/1.47G [00:09&lt;00:12, 72.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 41%|████      | 605M/1.47G [00:09&lt;00:12, 69.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 42%|████▏     | 619M/1.47G [00:09&lt;00:09, 87.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 43%|████▎     | 629M/1.47G [00:09&lt;00:10, 79.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 43%|████▎     | 638M/1.47G [00:09&lt;00:11, 71.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 44%|████▍     | 652M/1.47G [00:09&lt;00:09, 84.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 45%|████▍     | 661M/1.47G [00:09&lt;00:09, 82.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 46%|████▌     | 672M/1.47G [00:10&lt;00:13, 58.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 47%|████▋     | 687M/1.47G [00:10&lt;00:10, 75.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 47%|████▋     | 698M/1.47G [00:10&lt;00:09, 83.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 48%|████▊     | 708M/1.47G [00:10&lt;00:10, 73.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 49%|████▉     | 717M/1.47G [00:10&lt;00:11, 65.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 50%|████▉     | 730M/1.47G [00:10&lt;00:10, 68.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 51%|█████     | 746M/1.47G [00:11&lt;00:08, 84.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 51%|█████▏    | 755M/1.47G [00:11&lt;00:09, 78.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 52%|█████▏    | 764M/1.47G [00:11&lt;00:09, 70.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 53%|█████▎    | 779M/1.47G [00:11&lt;00:08, 86.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 54%|█████▎    | 789M/1.47G [00:11&lt;00:07, 88.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 54%|█████▍    | 798M/1.47G [00:11&lt;00:09, 72.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 55%|█████▍    | 807M/1.47G [00:12&lt;00:12, 52.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|█████▌    | 822M/1.47G [00:12&lt;00:09, 69.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|█████▋    | 830M/1.47G [00:12&lt;00:08, 73.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 57%|█████▋    | 839M/1.47G [00:12&lt;00:10, 60.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 58%|█████▊    | 848M/1.47G [00:12&lt;00:09, 63.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 58%|█████▊    | 856M/1.47G [00:12&lt;00:10, 55.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 59%|█████▉    | 866M/1.47G [00:12&lt;00:09, 63.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 59%|█████▉    | 873M/1.47G [00:13&lt;00:10, 58.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 60%|█████▉    | 881M/1.47G [00:13&lt;00:09, 59.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 60%|██████    | 890M/1.47G [00:13&lt;00:10, 54.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 62%|██████▏   | 905M/1.47G [00:13&lt;00:07, 75.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 62%|██████▏   | 914M/1.47G [00:13&lt;00:07, 72.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 63%|██████▎   | 922M/1.47G [00:13&lt;00:09, 60.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 63%|██████▎   | 934M/1.47G [00:13&lt;00:07, 71.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 64%|██████▍   | 943M/1.47G [00:14&lt;00:06, 75.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 65%|██████▍   | 952M/1.47G [00:14&lt;00:07, 69.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 65%|██████▌   | 959M/1.47G [00:14&lt;00:07, 69.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 66%|██████▌   | 967M/1.47G [00:14&lt;00:07, 63.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 66%|██████▌   | 974M/1.47G [00:14&lt;00:10, 45.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 67%|██████▋   | 987M/1.47G [00:14&lt;00:07, 60.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 68%|██████▊   | 999M/1.47G [00:15&lt;00:07, 62.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 68%|██████▊   | 1.01G/1.47G [00:15&lt;00:07, 63.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 69%|██████▉   | 1.02G/1.47G [00:15&lt;00:06, 67.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 70%|██████▉   | 1.02G/1.47G [00:15&lt;00:07, 56.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 71%|███████   | 1.04G/1.47G [00:15&lt;00:05, 74.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 71%|███████▏  | 1.05G/1.47G [00:15&lt;00:05, 78.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 72%|███████▏  | 1.06G/1.47G [00:15&lt;00:05, 78.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 72%|███████▏  | 1.07G/1.47G [00:15&lt;00:05, 70.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 73%|███████▎  | 1.07G/1.47G [00:16&lt;00:05, 73.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 74%|███████▎  | 1.08G/1.47G [00:16&lt;00:06, 64.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 74%|███████▍  | 1.09G/1.47G [00:16&lt;00:05, 66.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 75%|███████▌  | 1.11G/1.47G [00:16&lt;00:04, 89.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 76%|███████▌  | 1.12G/1.47G [00:16&lt;00:06, 56.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 77%|███████▋  | 1.13G/1.47G [00:16&lt;00:04, 71.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 78%|███████▊  | 1.15G/1.47G [00:17&lt;00:03, 83.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 79%|███████▊  | 1.16G/1.47G [00:17&lt;00:04, 65.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 79%|███████▉  | 1.17G/1.47G [00:17&lt;00:04, 72.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 80%|████████  | 1.18G/1.47G [00:17&lt;00:03, 81.3MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 81%|████████  | 1.19G/1.47G [00:17&lt;00:04, 66.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 81%|████████▏ | 1.20G/1.47G [00:17&lt;00:04, 64.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 82%|████████▏ | 1.21G/1.47G [00:17&lt;00:03, 84.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 83%|████████▎ | 1.22G/1.47G [00:18&lt;00:03, 77.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 84%|████████▍ | 1.23G/1.47G [00:18&lt;00:03, 73.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 84%|████████▍ | 1.24G/1.47G [00:18&lt;00:03, 71.7MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 85%|████████▌ | 1.25G/1.47G [00:18&lt;00:02, 74.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 86%|████████▌ | 1.26G/1.47G [00:18&lt;00:02, 70.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 87%|████████▋ | 1.28G/1.47G [00:18&lt;00:02, 92.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 87%|████████▋ | 1.29G/1.47G [00:18&lt;00:02, 75.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 88%|████████▊ | 1.29G/1.47G [00:19&lt;00:03, 56.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 88%|████████▊ | 1.30G/1.47G [00:19&lt;00:03, 49.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 90%|████████▉ | 1.32G/1.47G [00:19&lt;00:02, 68.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 90%|█████████ | 1.33G/1.47G [00:19&lt;00:01, 72.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 91%|█████████ | 1.33G/1.47G [00:19&lt;00:02, 63.5MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 92%|█████████▏| 1.35G/1.47G [00:19&lt;00:01, 74.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 92%|█████████▏| 1.36G/1.47G [00:20&lt;00:01, 71.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 93%|█████████▎| 1.37G/1.47G [00:20&lt;00:01, 73.6MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 94%|█████████▎| 1.38G/1.47G [00:20&lt;00:01, 78.2MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 94%|█████████▍| 1.39G/1.47G [00:20&lt;00:01, 69.1MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 95%|█████████▌| 1.40G/1.47G [00:20&lt;00:00, 81.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 96%|█████████▌| 1.41G/1.47G [00:20&lt;00:00, 88.9MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 97%|█████████▋| 1.42G/1.47G [00:20&lt;00:00, 65.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 98%|█████████▊| 1.43G/1.47G [00:21&lt;00:00, 74.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 99%|█████████▊| 1.45G/1.47G [00:21&lt;00:00, 91.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 99%|█████████▉| 1.46G/1.47G [00:21&lt;00:00, 70.0MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1.47G/1.47G [00:21&lt;00:00, 68.4MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-23 08:11:23,372] WARNING [compiam.separation.singing_voice_extraction.cold_diff_sep.download_model:245] Files downloaded and extracted successfully.
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">soundfile</span> <span class="k">as</span> <span class="nn">sf</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">load_model</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">separation_model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;separation:cold-diff-sep&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># We load the same example</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">audio_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;59c88c32-0bde-433b-b194-0f65281e5714.mp3&quot;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/compiam/__init__.py:44,</span> in <span class="ni">load_model</span><span class="nt">(model_name, data_home, models_dict)</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>         <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">][</span><span class="n">kp</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span>             <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_home</span><span class="p">,</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">][</span><span class="n">kp</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>             <span class="k">if</span> <span class="n">data_home</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span>             <span class="k">else</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">WORKDIR</span><span class="p">,</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">][</span><span class="n">kp</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span>         <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="n">module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">import_module</span><span class="p">(</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;module_name&quot;</span><span class="p">]),</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;class_name&quot;</span><span class="p">])</span>
+<span class="ne">---&gt; </span><span class="mi">44</span> <span class="k">return</span> <span class="n">module</span><span class="p">(</span><span class="o">**</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">])</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/compiam/separation/singing_voice_extraction/cold_diff_sep/__init__.py:76,</span> in <span class="ni">ColdDiffSep.__init__</span><span class="nt">(self, model_path, config_path, sample_rate, gpu)</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_path</span> <span class="o">=</span> <span class="n">model_path</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">76</span>     <span class="bp">self</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model_path</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/compiam/separation/singing_voice_extraction/cold_diff_sep/__init__.py:83,</span> in <span class="ni">ColdDiffSep.load_model</span><span class="nt">(self, model_path)</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path_to_check</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span>     <span class="bp">self</span><span class="o">.</span><span class="n">download_model</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>  <span class="c1"># Dowloading model weights</span>
+<span class="ne">---&gt; </span><span class="mi">83</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span><span class="o">.</span><span class="n">expect_partial</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_path</span> <span class="o">=</span> <span class="n">model_path</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span> <span class="bp">self</span><span class="o">.</span><span class="n">trained</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/compiam/separation/singing_voice_extraction/cold_diff_sep/model/__init__.py:151,</span> in <span class="ni">DiffWave.restore</span><span class="nt">(self, path, optim)</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;optim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">optim</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span> <span class="n">ckpt</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Checkpoint</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">151</span> <span class="k">return</span> <span class="n">ckpt</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py:2537,</span> in <span class="ni">Checkpoint.restore</span><span class="nt">(self, save_path, options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2534</span>   <span class="n">save_path</span> <span class="o">=</span> <span class="n">utils_impl</span><span class="o">.</span><span class="n">get_variables_path</span><span class="p">(</span><span class="n">save_path</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2536</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2537</span>   <span class="n">status</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2538</span>   <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">executing_eagerly</span><span class="p">():</span>
+<span class="g g-Whitespace">   </span><span class="mi">2539</span>     <span class="n">context</span><span class="o">.</span><span class="n">async_wait</span><span class="p">()</span>  <span class="c1"># Ensure restore operations have completed.</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py:2417,</span> in <span class="ni">Checkpoint.read</span><span class="nt">(self, save_path, options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2415</span> <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">2416</span> <span class="n">options</span> <span class="o">=</span> <span class="n">options</span> <span class="ow">or</span> <span class="n">checkpoint_options</span><span class="o">.</span><span class="n">CheckpointOptions</span><span class="p">()</span>
+<span class="ne">-&gt; </span><span class="mi">2417</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saver</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="n">save_path</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2418</span> <span class="n">metrics</span><span class="o">.</span><span class="n">AddCheckpointReadDuration</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2419</span>     <span class="n">api_label</span><span class="o">=</span><span class="n">_CHECKPOINT_V2</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2420</span>     <span class="n">microseconds</span><span class="o">=</span><span class="n">_get_duration_microseconds</span><span class="p">(</span><span class="n">start_time</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span>
+<span class="g g-Whitespace">   </span><span class="mi">2421</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py:1451,</span> in <span class="ni">TrackableSaver.restore</span><span class="nt">(self, save_path, options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1449</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file_prefix_placeholder</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1450</span>   <span class="k">with</span> <span class="n">ops</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;/cpu:0&quot;</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1451</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_file_prefix_placeholder</span> <span class="o">=</span> <span class="n">constant_op</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1452</span> <span class="n">file_prefix_tensor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file_prefix_placeholder</span>
+<span class="g g-Whitespace">   </span><span class="mi">1453</span> <span class="n">file_prefix_feed_dict</span> <span class="o">=</span> <span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_file_prefix_placeholder</span><span class="p">:</span> <span class="n">save_path</span><span class="p">}</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/tensorflow/python/framework/constant_op.py:267,</span> in <span class="ni">constant</span><span class="nt">(value, dtype, shape, name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">170</span> <span class="nd">@tf_export</span><span class="p">(</span><span class="s2">&quot;constant&quot;</span><span class="p">,</span> <span class="n">v1</span><span class="o">=</span><span class="p">[])</span>
+<span class="g g-Whitespace">    </span><span class="mi">171</span> <span class="k">def</span> <span class="nf">constant</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Const&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">172</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;Creates a constant tensor from a tensor-like object.</span>
+<span class="g g-Whitespace">    </span><span class="mi">173</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span><span class="sd">   Note: All eager `tf.Tensor` values are immutable (in contrast to</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">265</span><span class="sd">     ValueError: if called on a symbolic tensor.</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span><span class="sd">   &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">267</span>   <span class="k">return</span> <span class="n">_constant_impl</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">verify_shape</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span>                         <span class="n">allow_broadcast</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/tensorflow/python/framework/constant_op.py:289,</span> in <span class="ni">_constant_impl</span><span class="nt">(value, dtype, shape, name, verify_shape, allow_broadcast)</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span> <span class="n">dtype_value</span> <span class="o">=</span> <span class="n">attr_value_pb2</span><span class="o">.</span><span class="n">AttrValue</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">tensor_value</span><span class="o">.</span><span class="n">tensor</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">288</span> <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">tensor_value</span><span class="p">,</span> <span class="s2">&quot;dtype&quot;</span><span class="p">:</span> <span class="n">dtype_value</span><span class="p">}</span>
+<span class="ne">--&gt; </span><span class="mi">289</span> <span class="n">const_tensor</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">_create_op_internal</span><span class="p">(</span>  <span class="c1"># pylint: disable=protected-access</span>
+<span class="g g-Whitespace">    </span><span class="mi">290</span>     <span class="s2">&quot;Const&quot;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[</span><span class="n">dtype_value</span><span class="o">.</span><span class="n">type</span><span class="p">],</span> <span class="n">attrs</span><span class="o">=</span><span class="n">attrs</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span> <span class="k">if</span> <span class="n">op_callbacks</span><span class="o">.</span><span class="n">should_invoke_op_callbacks</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span>   <span class="c1"># TODO(b/147670703): Once the special-op creation code paths</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>   <span class="c1"># are unified. Remove this `if` block.</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>   <span class="n">callback_outputs</span> <span class="o">=</span> <span class="n">op_callbacks</span><span class="o">.</span><span class="n">invoke_op_callbacks</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">296</span>       <span class="s2">&quot;Const&quot;</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(),</span> <span class="n">attrs</span><span class="p">,</span> <span class="p">(</span><span class="n">const_tensor</span><span class="p">,),</span> <span class="n">op_name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">graph</span><span class="o">=</span><span class="n">g</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/tensorflow/python/framework/ops.py:3737,</span> in <span class="ni">Graph._create_op_internal</span><span class="nt">(self, op_type, inputs, dtypes, input_types, name, attrs, op_def, compute_device)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3695</span> <span class="k">def</span> <span class="nf">_create_op_internal</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3696</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3697</span>     <span class="n">op_type</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3703</span>     <span class="n">op_def</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3704</span>     <span class="n">compute_device</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3705</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;Creates an `Operation` in this graph.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3706</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">3707</span><span class="sd">   Implements `Graph.create_op()` without the overhead of the deprecation</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3735</span><span class="sd">     An `Operation` object.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3736</span><span class="sd">   &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">3737</span>   <span class="bp">self</span><span class="o">.</span><span class="n">_check_not_finalized</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">3738</span>   <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3739</span>     <span class="n">name</span> <span class="o">=</span> <span class="n">op_type</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/tensorflow/python/framework/ops.py:3323,</span> in <span class="ni">Graph._check_not_finalized</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3317</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Check if the graph is finalized.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3318</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">3319</span><span class="sd"> Raises:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3320</span><span class="sd">   RuntimeError: If the graph finalized.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3321</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">3322</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_finalized</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3323</span>   <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Graph is finalized and cannot be modified.&quot;</span><span class="p">)</span>
+
+<span class="ne">RuntimeError</span>: Graph is finalized and cannot be modified.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Getting 20 seconds and separating</span>
 <span class="n">input_mixture</span> <span class="o">=</span> <span class="n">input_mixture</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">44100</span><span class="o">*</span><span class="mi">30</span><span class="p">:]</span>
@@ -845,6 +1312,23 @@ Colocations handled automatically by placer.
     <span class="n">clusters</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
     <span class="n">scheduler</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
 <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">### Getting 20 seconds and separating</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">input_mixture</span> <span class="o">=</span> <span class="n">input_mixture</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">44100</span><span class="o">*</span><span class="mi">30</span><span class="p">:]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">separation</span> <span class="o">=</span> <span class="n">separation_model</span><span class="o">.</span><span class="n">separate</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">input_data</span><span class="o">=</span><span class="n">input_mixture</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">input_sr</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">clusters</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">scheduler</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;input_mixture&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -878,6 +1362,123 @@ Colocations handled automatically by placer.
 </div>
 </div>
 <p>Although perceptible artifacts in the vocals can be heard, the separation is surprisingly clean, hopefully helping musicians and musicologists to extract relevant information for it. Also, less pitched noise is present in the signal so melodic feature extraction systems may work better on these data rather than in a complete mixture or in a singing voice with source bleeding in the background.</p>
+</section>
+<section id="fine-tuning-spleeter-using-saraga">
+<h2>Fine-tuning Spleeter using Saraga<a class="headerlink" href="#fine-tuning-spleeter-using-saraga" title="Permalink to this headline">#</a></h2>
+<p>Since DL systems tend to be quite tight to the data used for training, usually generalization for the same task on other domains is not ensured. Fortunately, we may rely on a technique called fine-tuning, which is very suitable for cases in which we have a small portion of annotated data or noisy data for a given domain, and training solely on these data is not feasible. Such technique consists of resuming the training process of a model that has been trained using data from domain 1, but this time using data from domain 2. Therefore, we take advantage of the knowledge that a pre-trained model has gained from a larger data of domain 1, while optimizing it to improve performance for domain 2.</p>
+<p>We perform an alike experiment using Saraga <span id="id5">[<a class="reference internal" href="../resources/references.html#id26" title="Ajay Srinivasamurthy, Sankalp Gulati, Rafael Caro Repetto, and Xavier Serra. Saraga: Open Datasets for Research on Indian Art Music. Empirical Musicology Review, 2020.">SGRS20</a>]</span>. We take pre-trained Spleeter, and fine-tune it using Saraga, a non-ideal separation data collection since it has source bleeding in the background. The goal here is to take advantage of the separation knowledge that Spleeter has already obtained, while using the data in Saraga to teach the model about instrumentation and practices of Carnatic Music.</p>
+<p>## Comparing performance
+Let’s run separation for several different audios and compare the performance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">soundfile</span> <span class="k">as</span> <span class="nn">sf</span>
+<span class="n">separation_examples</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;../audio/separation/*.mp3&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ex</span> <span class="ow">in</span> <span class="n">separation_examples</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#### Separating...&quot;</span><span class="p">,</span> <span class="n">ex</span><span class="p">)</span>
+    <span class="n">input_mixture</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+    <span class="c1"># Running spleeter</span>
+    <span class="n">spleeter_separation</span> <span class="o">=</span> <span class="n">separator</span><span class="o">.</span><span class="n">separate</span><span class="p">(</span><span class="n">input_mixture</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Playing Spleeter separation&quot;</span><span class="p">)</span>
+    <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">spleeter_separation</span><span class="p">[</span><span class="s2">&quot;vocals&quot;</span><span class="p">],</span>
+        <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># Running leakage-aware model</span>
+    <span class="n">leakage_aware_separation</span> <span class="o">=</span> <span class="n">separation_model</span><span class="o">.</span><span class="n">separate</span><span class="p">(</span>
+        <span class="n">input_data</span><span class="o">=</span><span class="n">input_mixture</span><span class="p">,</span>
+        <span class="n">input_sr</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span>
+        <span class="n">clusters</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+        <span class="n">scheduler</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Playing Leakage-aware separation&quot;</span><span class="p">)</span>
+    <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">leakage_aware_separation</span><span class="p">,</span>
+        <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># Running fine-tuned Spleeter</span>
+    <span class="c1">### TODO</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+
+
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#### Separating... ../audio/separation/Unnikrishnan - Vandeham.mp3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Playing Spleeter separation
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">error</span><span class="g g-Whitespace">                                     </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">spleeter_separation</span> <span class="o">=</span> <span class="n">separator</span><span class="o">.</span><span class="n">separate</span><span class="p">(</span><span class="n">input_mixture</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Playing Spleeter separation&quot;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">data</span><span class="o">=</span><span class="n">spleeter_separation</span><span class="p">[</span><span class="s2">&quot;vocals&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># Running leakage-aware model</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">leakage_aware_separation</span> <span class="o">=</span> <span class="n">separation_model</span><span class="o">.</span><span class="n">separate</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">input_data</span><span class="o">=</span><span class="n">input_mixture</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="n">input_sr</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>     <span class="n">clusters</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="n">scheduler</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/lib/display.py:130,</span> in <span class="ni">Audio.__init__</span><span class="nt">(self, data, filename, url, embed, rate, autoplay, normalize, element_id)</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span> <span class="k">if</span> <span class="n">rate</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;rate must be specified when data is a numpy array or list of audio samples.&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">130</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">Audio</span><span class="o">.</span><span class="n">_make_wav</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">rate</span><span class="p">,</span> <span class="n">normalize</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/lib/display.py:162,</span> in <span class="ni">Audio._make_wav</span><span class="nt">(data, rate, normalize)</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="n">waveobj</span><span class="o">.</span><span class="n">setsampwidth</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="n">waveobj</span><span class="o">.</span><span class="n">setcomptype</span><span class="p">(</span><span class="s1">&#39;NONE&#39;</span><span class="p">,</span><span class="s1">&#39;NONE&#39;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">162</span> <span class="n">waveobj</span><span class="o">.</span><span class="n">writeframes</span><span class="p">(</span><span class="n">scaled</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span> <span class="n">val</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span> <span class="n">waveobj</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/wave.py:438,</span> in <span class="ni">Wave_write.writeframes</span><span class="nt">(self, data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">437</span> <span class="k">def</span> <span class="nf">writeframes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">438</span>     <span class="bp">self</span><span class="o">.</span><span class="n">writeframesraw</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">439</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_datalength</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_datawritten</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">440</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_patchheader</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/wave.py:427,</span> in <span class="ni">Wave_write.writeframesraw</span><span class="nt">(self, data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">425</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="nb">bytes</span><span class="p">,</span> <span class="nb">bytearray</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">426</span>     <span class="n">data</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">427</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_header_written</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span> <span class="n">nframes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">//</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sampwidth</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nchannels</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">429</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/wave.py:468,</span> in <span class="ni">Wave_write._ensure_header_written</span><span class="nt">(self, datasize)</span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_framerate</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span>     <span class="k">raise</span> <span class="n">Error</span><span class="p">(</span><span class="s1">&#39;sampling rate not specified&#39;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">468</span> <span class="bp">self</span><span class="o">.</span><span class="n">_write_header</span><span class="p">(</span><span class="n">datasize</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/wave.py:480,</span> in <span class="ni">Wave_write._write_header</span><span class="nt">(self, initlength)</span>
+<span class="g g-Whitespace">    </span><span class="mi">478</span> <span class="k">except</span> <span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">479</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_form_length_pos</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">480</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&lt;L4s4sLHHLLHH4s&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">481</span>     <span class="mi">36</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_datalength</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;WAVE&#39;</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;fmt &#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">482</span>     <span class="n">WAVE_FORMAT_PCM</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nchannels</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_framerate</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">483</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_nchannels</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_framerate</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sampwidth</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_nchannels</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sampwidth</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">485</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_sampwidth</span> <span class="o">*</span> <span class="mi">8</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;data&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">486</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_form_length_pos</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">487</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_data_length_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+
+<span class="ne">error</span>: ushort format requires 0 &lt;= number &lt;= (0x7fff * 2 + 1)
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
