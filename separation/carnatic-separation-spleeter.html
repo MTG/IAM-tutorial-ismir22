@@ -610,7 +610,7 @@ title="Print to PDF"
     <span class="c1"># Running spleeter</span>
     <span class="n">spleeter_separation</span> <span class="o">=</span> <span class="n">separator</span><span class="o">.</span><span class="n">separate</span><span class="p">(</span><span class="n">input_mixture</span><span class="p">)</span>
     <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
-        <span class="n">data</span><span class="o">=</span><span class="n">spleeter_separation</span><span class="p">[</span><span class="s2">&quot;vocals&quot;</span><span class="p">],</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">spleeter_separation</span><span class="p">[</span><span class="s2">&quot;vocals&quot;</span><span class="p">][:,</span> <span class="p">:</span><span class="mi">44100</span><span class="o">*</span><span class="mi">120</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
         <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -666,60 +666,39 @@ Colocations handled automatically by placer.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Done running local_init_op.
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">error</span><span class="g g-Whitespace">                                     </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Running spleeter</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">spleeter_separation</span> <span class="o">=</span> <span class="n">separator</span><span class="o">.</span><span class="n">separate</span><span class="p">(</span><span class="n">input_mixture</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">data</span><span class="o">=</span><span class="n">spleeter_separation</span><span class="p">[</span><span class="s2">&quot;vocals&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/lib/display.py:130,</span> in <span class="ni">Audio.__init__</span><span class="nt">(self, data, filename, url, embed, rate, autoplay, normalize, element_id)</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span> <span class="k">if</span> <span class="n">rate</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;rate must be specified when data is a numpy array or list of audio samples.&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">130</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">Audio</span><span class="o">.</span><span class="n">_make_wav</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">rate</span><span class="p">,</span> <span class="n">normalize</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/IPython/lib/display.py:162,</span> in <span class="ni">Audio._make_wav</span><span class="nt">(data, rate, normalize)</span>
-<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="n">waveobj</span><span class="o">.</span><span class="n">setsampwidth</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span> <span class="n">waveobj</span><span class="o">.</span><span class="n">setcomptype</span><span class="p">(</span><span class="s1">&#39;NONE&#39;</span><span class="p">,</span><span class="s1">&#39;NONE&#39;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">162</span> <span class="n">waveobj</span><span class="o">.</span><span class="n">writeframes</span><span class="p">(</span><span class="n">scaled</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">163</span> <span class="n">val</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">164</span> <span class="n">waveobj</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/wave.py:438,</span> in <span class="ni">Wave_write.writeframes</span><span class="nt">(self, data)</span>
-<span class="g g-Whitespace">    </span><span class="mi">437</span> <span class="k">def</span> <span class="nf">writeframes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">438</span>     <span class="bp">self</span><span class="o">.</span><span class="n">writeframesraw</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">439</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_datalength</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_datawritten</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">440</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_patchheader</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/wave.py:427,</span> in <span class="ni">Wave_write.writeframesraw</span><span class="nt">(self, data)</span>
-<span class="g g-Whitespace">    </span><span class="mi">425</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="nb">bytes</span><span class="p">,</span> <span class="nb">bytearray</span><span class="p">)):</span>
-<span class="g g-Whitespace">    </span><span class="mi">426</span>     <span class="n">data</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">427</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_header_written</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">428</span> <span class="n">nframes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">//</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sampwidth</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nchannels</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">429</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/wave.py:468,</span> in <span class="ni">Wave_write._ensure_header_written</span><span class="nt">(self, datasize)</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_framerate</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span>     <span class="k">raise</span> <span class="n">Error</span><span class="p">(</span><span class="s1">&#39;sampling rate not specified&#39;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">468</span> <span class="bp">self</span><span class="o">.</span><span class="n">_write_header</span><span class="p">(</span><span class="n">datasize</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/wave.py:480,</span> in <span class="ni">Wave_write._write_header</span><span class="nt">(self, initlength)</span>
-<span class="g g-Whitespace">    </span><span class="mi">478</span> <span class="k">except</span> <span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">479</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_form_length_pos</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">480</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&lt;L4s4sLHHLLHH4s&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">481</span>     <span class="mi">36</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_datalength</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;WAVE&#39;</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;fmt &#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">482</span>     <span class="n">WAVE_FORMAT_PCM</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nchannels</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_framerate</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">483</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_nchannels</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_framerate</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sampwidth</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_nchannels</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sampwidth</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_sampwidth</span> <span class="o">*</span> <span class="mi">8</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;data&#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">486</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_form_length_pos</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_data_length_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
-
-<span class="ne">error</span>: ushort format requires 0 &lt;= number &lt;= (0x7fff * 2 + 1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#### Separating... ../audio/separation/K.V. Narayanaswami - Jaya Jaya Vande.mp3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#### Separating... ../audio/separation/M. D. Ramanathan - Smara Janaka Subhacharitha.mp3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#### Separating... ../audio/separation/Sumithra Vasudev - Sri Guruna Palitosmi.mp3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#### Separating... ../audio/separation/Gayathri Venkataraghavan - Kallarkkum.mp3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#### Separating... ../audio/separation/Sanjay Subrahmanyan - Tillana &amp; Mangalam.mp3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#### Separating... ../audio/separation/Dandapani Desikar - Chinamadaiyaade.mp3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#for ex in separation_examples:</span>
+<span class="c1">#    # Running spleeter</span>
+<span class="c1">#    spleeter_separation = separator.separate_to_file(</span>
+<span class="c1">#        ex,</span>
+<span class="c1">#        os.path.join(&quot;..&quot;, &quot;audio&quot;, &quot;separation&quot;, &quot;spleeter&quot;)</span>
+<span class="c1">#    )</span>
+<span class="c1">#</span>
+<span class="c1">#print(&quot;#### Separating...&quot;, ex)</span>
 </pre></div>
 </div>
 </div>
