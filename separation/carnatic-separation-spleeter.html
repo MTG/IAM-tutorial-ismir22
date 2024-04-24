@@ -606,11 +606,16 @@ title="Print to PDF"
 
 <span class="k">for</span> <span class="n">ex</span> <span class="ow">in</span> <span class="n">separation_examples</span><span class="p">:</span>
     <span class="n">input_mixture</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+    <span class="n">input_mixture</span> <span class="o">=</span> <span class="n">input_mixture</span><span class="o">.</span><span class="n">T</span>
     <span class="n">input_mixture</span> <span class="o">=</span> <span class="n">input_mixture</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">44100</span><span class="o">*</span><span class="mi">30</span><span class="p">]</span>
     <span class="c1"># Running spleeter</span>
-    <span class="n">separator</span><span class="o">.</span><span class="n">separate_to_file</span><span class="p">(</span>
-        <span class="n">ex</span><span class="p">,</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;separation&quot;</span><span class="p">,</span> <span class="s2">&quot;spleeter&quot;</span><span class="p">)</span>
+    <span class="n">separation</span> <span class="o">=</span> <span class="n">separator</span><span class="o">.</span><span class="n">separate</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+    <span class="c1"># Saving the results</span>
+    <span class="n">song_name</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.mp3&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">sf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;separation&quot;</span><span class="p">,</span> <span class="s2">&quot;spleeter&quot;</span><span class="p">,</span> <span class="n">song_name</span><span class="p">,</span> <span class="s2">&quot;vocals.wav&quot;</span><span class="p">),</span>
+        <span class="n">separation</span><span class="p">[</span><span class="s2">&quot;vocals&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
+        <span class="n">sr</span>
     <span class="p">)</span>
 
 <span class="n">separated_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;../audio/separation/spleeter/*/vocals.wav&quot;</span><span class="p">)</span>
@@ -620,154 +625,154 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">audio</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">T</span>
+<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">audio</span><span class="p">[:,</span> <span class="p">:</span><span class="n">sr</span><span class="o">*</span><span class="mi">30</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Separation: [&#39;../audio/separation/spleeter/K.V. Narayanaswami - Jaya Jaya Vande/vocals.wav&#39;, &#39;../audio/separation/spleeter/Unnikrishnan - Vandeham/vocals.wav&#39;, &#39;../audio/separation/spleeter/Dandapani Desikar - Chinamadaiyaade/vocals.wav&#39;, &#39;../audio/separation/spleeter/Gayathri Venkataraghavan - Kallarkkum/vocals.wav&#39;, &#39;../audio/separation/spleeter/Sumithra Vasudev - Sri Guruna Palitosmi/vocals.wav&#39;, &#39;../audio/separation/spleeter/Sanjay Subrahmanyan - Tillana &amp; Mangalam/vocals.wav&#39;, &#39;../audio/separation/spleeter/M. D. Ramanathan - Smara Janaka Subhacharitha/vocals.wav&#39;]
-</pre></div>
-</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">audio</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">T</span>
 
-<span class="ne">TypeError</span>: &#39;NoneType&#39; object is not subscriptable
+<span class="ne">NameError</span>: name &#39;separated_files&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">audio</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">T</span>
+<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">audio</span><span class="p">[:,</span> <span class="p">:</span><span class="n">sr</span><span class="o">*</span><span class="mi">30</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Separation: [&#39;../audio/separation/spleeter/K.V. Narayanaswami - Jaya Jaya Vande/vocals.wav&#39;, &#39;../audio/separation/spleeter/Unnikrishnan - Vandeham/vocals.wav&#39;, &#39;../audio/separation/spleeter/Dandapani Desikar - Chinamadaiyaade/vocals.wav&#39;, &#39;../audio/separation/spleeter/Gayathri Venkataraghavan - Kallarkkum/vocals.wav&#39;, &#39;../audio/separation/spleeter/Sumithra Vasudev - Sri Guruna Palitosmi/vocals.wav&#39;, &#39;../audio/separation/spleeter/Sanjay Subrahmanyan - Tillana &amp; Mangalam/vocals.wav&#39;, &#39;../audio/separation/spleeter/M. D. Ramanathan - Smara Janaka Subhacharitha/vocals.wav&#39;]
-</pre></div>
-</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">audio</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">T</span>
 
-<span class="ne">TypeError</span>: &#39;NoneType&#39; object is not subscriptable
+<span class="ne">NameError</span>: name &#39;separated_files&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">audio</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">T</span>
+<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">audio</span><span class="p">[:,</span> <span class="p">:</span><span class="n">sr</span><span class="o">*</span><span class="mi">30</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Separation: [&#39;../audio/separation/spleeter/K.V. Narayanaswami - Jaya Jaya Vande/vocals.wav&#39;, &#39;../audio/separation/spleeter/Unnikrishnan - Vandeham/vocals.wav&#39;, &#39;../audio/separation/spleeter/Dandapani Desikar - Chinamadaiyaade/vocals.wav&#39;, &#39;../audio/separation/spleeter/Gayathri Venkataraghavan - Kallarkkum/vocals.wav&#39;, &#39;../audio/separation/spleeter/Sumithra Vasudev - Sri Guruna Palitosmi/vocals.wav&#39;, &#39;../audio/separation/spleeter/Sanjay Subrahmanyan - Tillana &amp; Mangalam/vocals.wav&#39;, &#39;../audio/separation/spleeter/M. D. Ramanathan - Smara Janaka Subhacharitha/vocals.wav&#39;]
-</pre></div>
-</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">audio</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">T</span>
 
-<span class="ne">TypeError</span>: &#39;NoneType&#39; object is not subscriptable
+<span class="ne">NameError</span>: name &#39;separated_files&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span>
-<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">audio</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">T</span>
+<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">audio</span><span class="p">[:,</span> <span class="p">:</span><span class="n">sr</span><span class="o">*</span><span class="mi">30</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Separation: [&#39;../audio/separation/spleeter/K.V. Narayanaswami - Jaya Jaya Vande/vocals.wav&#39;, &#39;../audio/separation/spleeter/Unnikrishnan - Vandeham/vocals.wav&#39;, &#39;../audio/separation/spleeter/Dandapani Desikar - Chinamadaiyaade/vocals.wav&#39;, &#39;../audio/separation/spleeter/Gayathri Venkataraghavan - Kallarkkum/vocals.wav&#39;, &#39;../audio/separation/spleeter/Sumithra Vasudev - Sri Guruna Palitosmi/vocals.wav&#39;, &#39;../audio/separation/spleeter/Sanjay Subrahmanyan - Tillana &amp; Mangalam/vocals.wav&#39;, &#39;../audio/separation/spleeter/M. D. Ramanathan - Smara Janaka Subhacharitha/vocals.wav&#39;]
-</pre></div>
-</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">audio</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">T</span>
 
-<span class="ne">TypeError</span>: &#39;NoneType&#39; object is not subscriptable
+<span class="ne">NameError</span>: name &#39;separated_files&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span>
-<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">audio</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">T</span>
+<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">audio</span><span class="p">[:,</span> <span class="p">:</span><span class="n">sr</span><span class="o">*</span><span class="mi">30</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Separation: [&#39;../audio/separation/spleeter/K.V. Narayanaswami - Jaya Jaya Vande/vocals.wav&#39;, &#39;../audio/separation/spleeter/Unnikrishnan - Vandeham/vocals.wav&#39;, &#39;../audio/separation/spleeter/Dandapani Desikar - Chinamadaiyaade/vocals.wav&#39;, &#39;../audio/separation/spleeter/Gayathri Venkataraghavan - Kallarkkum/vocals.wav&#39;, &#39;../audio/separation/spleeter/Sumithra Vasudev - Sri Guruna Palitosmi/vocals.wav&#39;, &#39;../audio/separation/spleeter/Sanjay Subrahmanyan - Tillana &amp; Mangalam/vocals.wav&#39;, &#39;../audio/separation/spleeter/M. D. Ramanathan - Smara Janaka Subhacharitha/vocals.wav&#39;]
-</pre></div>
-</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">audio</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">T</span>
 
-<span class="ne">TypeError</span>: &#39;NoneType&#39; object is not subscriptable
+<span class="ne">NameError</span>: name &#39;separated_files&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span>
-<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">audio</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">T</span>
+<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">audio</span><span class="p">[:,</span> <span class="p">:</span><span class="n">sr</span><span class="o">*</span><span class="mi">30</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Separation: [&#39;../audio/separation/spleeter/K.V. Narayanaswami - Jaya Jaya Vande/vocals.wav&#39;, &#39;../audio/separation/spleeter/Unnikrishnan - Vandeham/vocals.wav&#39;, &#39;../audio/separation/spleeter/Dandapani Desikar - Chinamadaiyaade/vocals.wav&#39;, &#39;../audio/separation/spleeter/Gayathri Venkataraghavan - Kallarkkum/vocals.wav&#39;, &#39;../audio/separation/spleeter/Sumithra Vasudev - Sri Guruna Palitosmi/vocals.wav&#39;, &#39;../audio/separation/spleeter/Sanjay Subrahmanyan - Tillana &amp; Mangalam/vocals.wav&#39;, &#39;../audio/separation/spleeter/M. D. Ramanathan - Smara Janaka Subhacharitha/vocals.wav&#39;]
-</pre></div>
-</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">audio</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">T</span>
 
-<span class="ne">TypeError</span>: &#39;NoneType&#39; object is not subscriptable
+<span class="ne">NameError</span>: name &#39;separated_files&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">)[</span><span class="mi">6</span><span class="p">]</span>
-<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">audio</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">T</span>
+<span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">audio</span><span class="p">[:,</span> <span class="p">:</span><span class="n">sr</span><span class="o">*</span><span class="mi">30</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Separation: [&#39;../audio/separation/spleeter/K.V. Narayanaswami - Jaya Jaya Vande/vocals.wav&#39;, &#39;../audio/separation/spleeter/Unnikrishnan - Vandeham/vocals.wav&#39;, &#39;../audio/separation/spleeter/Dandapani Desikar - Chinamadaiyaade/vocals.wav&#39;, &#39;../audio/separation/spleeter/Gayathri Venkataraghavan - Kallarkkum/vocals.wav&#39;, &#39;../audio/separation/spleeter/Sumithra Vasudev - Sri Guruna Palitosmi/vocals.wav&#39;, &#39;../audio/separation/spleeter/Sanjay Subrahmanyan - Tillana &amp; Mangalam/vocals.wav&#39;, &#39;../audio/separation/spleeter/M. D. Ramanathan - Smara Janaka Subhacharitha/vocals.wav&#39;]
-</pre></div>
-</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">)[</span><span class="mi">6</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Separation:&quot;</span><span class="p">,</span> <span class="n">separated_files</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">separated_files</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">audio</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">T</span>
 
-<span class="ne">TypeError</span>: &#39;NoneType&#39; object is not subscriptable
+<span class="ne">NameError</span>: name &#39;separated_files&#39; is not defined
 </pre></div>
 </div>
 </div>
