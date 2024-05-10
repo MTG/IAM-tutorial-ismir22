@@ -597,7 +597,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>Let’s iterate over a few examples to analyze how the system performs.</p>
-<div class="cell tag_remove-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
 <span class="kn">import</span> <span class="nn">soundfile</span> <span class="k">as</span> <span class="nn">sf</span>
@@ -612,13 +612,54 @@ title="Print to PDF"
     <span class="n">separation</span> <span class="o">=</span> <span class="n">separator</span><span class="o">.</span><span class="n">separate</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
     <span class="c1"># Saving the results</span>
     <span class="n">song_name</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.mp3&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;separation&quot;</span><span class="p">,</span> <span class="s2">&quot;spleeter&quot;</span><span class="p">,</span> <span class="n">song_name</span><span class="p">))</span>
     <span class="n">sf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
         <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;separation&quot;</span><span class="p">,</span> <span class="s2">&quot;spleeter&quot;</span><span class="p">,</span> <span class="n">song_name</span><span class="p">,</span> <span class="s2">&quot;vocals.wav&quot;</span><span class="p">),</span>
-        <span class="n">separation</span><span class="p">[</span><span class="s2">&quot;vocals&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
+        <span class="n">separation</span><span class="p">[</span><span class="s2">&quot;vocals&quot;</span><span class="p">],</span>
         <span class="n">sr</span>
     <span class="p">)</span>
 
 <span class="n">separated_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;../audio/separation/spleeter/*/vocals.wav&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">input_mixture</span> <span class="o">=</span> <span class="n">input_mixture</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">44100</span><span class="o">*</span><span class="mi">30</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># Running spleeter</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">separation</span> <span class="o">=</span> <span class="n">separator</span><span class="o">.</span><span class="n">separate</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># Saving the results</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">song_name</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.mp3&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/spleeter/separator.py:241,</span> in <span class="ni">Separator.separate</span><span class="nt">(self, waveform, audio_descriptor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span> <span class="k">def</span> <span class="nf">separate</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span>     <span class="bp">self</span><span class="p">,</span> <span class="n">waveform</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">audio_descriptor</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">229</span><span class="sd">     Performs separation on a waveform.</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span><span class="sd">             Separated waveforms.</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">241</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_separate_tensorflow</span><span class="p">(</span><span class="n">waveform</span><span class="p">,</span> <span class="n">audio_descriptor</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/spleeter/separator.py:213,</span> in <span class="ni">Separator._separate_tensorflow</span><span class="nt">(self, waveform, audio_descriptor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="k">def</span> <span class="nf">_separate_tensorflow</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span>     <span class="bp">self</span><span class="p">,</span> <span class="n">waveform</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">audio_descriptor</span><span class="p">:</span> <span class="n">AudioDescriptor</span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">199</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">200</span><span class="sd">     Performs source separation over the given waveform with tensorflow</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span><span class="sd">     backend.</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">211</span><span class="sd">             Separated waveforms.</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">213</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">waveform</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>         <span class="n">waveform</span> <span class="o">=</span> <span class="n">to_stereo</span><span class="p">(</span><span class="n">waveform</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="n">prediction_generator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_prediction_generator</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: &#39;str&#39; object has no attribute &#39;shape&#39;
 </pre></div>
 </div>
 </div>
