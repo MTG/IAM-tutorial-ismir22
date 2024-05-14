@@ -16,21 +16,21 @@ The work done has been divided in two main areas:
 
 ### Feature extraction: Vocal pitch extraction
 
-* Genís Plaja-Roglans, Thomas Nuttall, Lara Pearson, Xavier Serra, Marius Miron. *Repertoire-specific vocal pitch data generation for improved melodic analysis of Carnatic Music.* Transaction of the Int. Society for Music Information Retrieval Conf (TISMIR, 2023), [link to paper](https://transactions.ismir.net/articles/10.5334/tismir.137).
+* Genís Plaja-Roglans, Thomas Nuttall, Lara Pearson, Xavier Serra, Marius Miron. **Repertoire-specific vocal pitch data generation for improved melodic analysis of Carnatic Music.** Transactions of the International Society for Music Information Retrieval Conf (TISMIR, 2023), [link to paper](https://transactions.ismir.net/articles/10.5334/tismir.137).
 
 ### Feature extraction: Singing voice separation
 
-* Genís Plaja-Roglans, Marius Miron, Adithi Shankar, Xavier Serra. *Carnatic singing voice separation using cold diffusion on training data with bleeding.* Proceedings of the 24rd International Society for Music Information Retrieval Conference (ISMIR, 2023), Milan, Italy, [link to paper](http://hdl.handle.net/10230/58188).
+* Genís Plaja-Roglans, Marius Miron, Adithi Shankar, Xavier Serra. **Carnatic singing voice separation using cold diffusion on training data with bleeding.** Proceedings of the 24rd International Society for Music Information Retrieval Conference (ISMIR, 2023), Milan, Italy, [link to paper](http://hdl.handle.net/10230/58188).
 
 
 
 ### Melodic pattern discovery
 
-* Thomas Nuttall, Genís Plaja, Lara Pearson, Xavier Serra. *The Matrix profile for motif discovery in audio - an example application in Carnatic music.* Proceedings of the 15th International Symposium on Computer Music Multidisciplinary Research (CMMR, 2021), Online, [link to paper](https://repositori.upf.edu/handle/10230/52182?locale-attribute=en).
+* Thomas Nuttall, Genís Plaja, Lara Pearson, Xavier Serra. **The Matrix profile for motif discovery in audio - an example application in Carnatic music.** Proceedings of the 15th International Symposium on Computer Music Multidisciplinary Research (CMMR, 2021), Online, [link to paper](https://repositori.upf.edu/handle/10230/52182?locale-attribute=en).
 
-* Thomas Nuttall, Genís Plaja, Lara Pearson, Xavier Serra. *In Search of Sañcaras: Tradition-Informed Repeated Melodic Pattern Recognition in Carnatic Music.* Proceedings of the 23rd International Society for Music Information Retrieval Conference, (ISMIR, 2022), Bengaluru, India, [link to paper](https://repositori.upf.edu/handle/10230/54155).
+* Thomas Nuttall, Genís Plaja, Lara Pearson, Xavier Serra. **In Search of Sañcaras: Tradition-Informed Repeated Melodic Pattern Recognition in Carnatic Music.** Proceedings of the 23rd International Society for Music Information Retrieval Conference, (ISMIR, 2022), Bengaluru, India, [link to paper](https://repositori.upf.edu/handle/10230/54155).
 
-* Lara Pearson, Thomas Nuttall, Wim Pouw. *Motif-Gesture Clustering in Karnatak Vocal Performance: A Multimodal Computational Music Analysis.* Proceedings of the 17th International Conference on Music Perception and Cognition, (ICMPC, 2023), link to paper coming soon.
+* Lara Pearson, Thomas Nuttall, Wim Pouw. **Motif-Gesture Clustering in Karnatak Vocal Performance: A Multimodal Computational Music Analysis.** Proceedings of the 17th International Conference on Music Perception and Cognition, (ICMPC, 2023), link to paper coming soon.
 
 
 (our-software)=
