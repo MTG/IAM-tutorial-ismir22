@@ -469,13 +469,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#melodic-motif-discovery">
+   Melodic motif discovery
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#svara-level-transcription">
    Svara-level transcription
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#melodic-motif-discovery">
-   Melodic motif discovery
+  <a class="reference internal nav-link" href="#data">
+   Data
   </a>
  </li>
 </ul>
@@ -503,13 +508,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#melodic-motif-discovery">
+   Melodic motif discovery
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#svara-level-transcription">
    Svara-level transcription
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#melodic-motif-discovery">
-   Melodic motif discovery
+  <a class="reference internal nav-link" href="#data">
+   Data
   </a>
  </li>
 </ul>
@@ -525,26 +535,25 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="open-challenges">
 <span id="id1"></span><h1>Open challenges<a class="headerlink" href="#open-challenges" title="Permalink to this headline">#</a></h1>
 <p>In this page we review some of the open challenges that remain unsolved or unaddressed in the field of computational musicology for Carnatic and Hindustani Music.</p>
-<p>Please note that this is not an exhaustive list, we only intend to provide, few research ideas and open challanges that may be tackled on top of the work that has been done throughout the past years.</p>
+<p>Please note that this is not an exhaustive list, we only intend to provide, few research ideas and open challenges that may be tackled on top of the work that has been done throughout the past years.</p>
 <section id="music-source-separation-for-indian-art-music">
 <h2>Music source separation for Indian Art Music<a class="headerlink" href="#music-source-separation-for-indian-art-music" title="Permalink to this headline">#</a></h2>
 <p>As already discussed in this tutorial, the problem of source separation in Carnatic and Hindustani Music remains unsolved. While currently available pre-trained models (e.g. Spleeter, Demucs) do not properly generalize to these repertoires, current bespoke solutions for Indian Art Music do not reach the performance level that is achieved for Western modern and mainstream recordings.</p>
 <p>The shortage of completely isolated recordings hinders to proper training and testing of DL-based solutions for Carnatic and Hindustani separation. Since these repertoire are normally performed in live performances, it is difficult to gather individual stems that present the ecologically-valid correlation and musical connexion, making the task more complicated.</p>
 </section>
-<section id="svara-level-transcription">
-<h2>Svara-level transcription<a class="headerlink" href="#svara-level-transcription" title="Permalink to this headline">#</a></h2>
-<p>Despite vocal ornamentation is a core aspect in the Carnatic and Hindustani melodic framework, svara(note)-level transcription is also relevant for … TODO</p>
-</section>
 <section id="melodic-motif-discovery">
 <h2>Melodic motif discovery<a class="headerlink" href="#melodic-motif-discovery" title="Permalink to this headline">#</a></h2>
 <p>Automatically spotting and understanding melodic motifs and phrases in Carnatic and Hindustani music is key to extract musically relevant information from the recordings. This has been a widely explored problem, with many approaches aiming at discovery characteristic phrases, and also relating those with additional features of the Indian Art Music performances (e.g. video, gestures, and more).</p>
-<p>Although huge advances have been done towards addressing this relevant task, again, the shortage of manual expert annotations and the extreme complexity and time-consumption of compiling those, makes the task complicated to tackle. A large amount of motif-level annotations would allow for:</p>
-<ul class="simple">
-<li><p>Data-driven solutions to such problem</p></li>
-<li><p>Reliable validation of proposed solutions</p></li>
-<li><p>Multi-annotator data which would probably improve generalization</p></li>
-</ul>
-<p>TODO</p>
+<p>A potential problem in this task is the variability in performance of characteristic/repeated patterns in IAM. Characteristic phrases, when repeated, are often elaborated on, which involves the insertion of additional svaras and gamakas. So the same basic or underlying phrase may appear many times in a composition with different elaborations. The commonly occurs in the style because the main compositional format, the kriti, has a theme and variation structure. Furthermore different IAM musicians’ annotations of the same phrase may vary subtly in places, with different degrees of symbolic detail being possible. This leaves motif detection through time series pitch data as one of the most viable and popular approaches to finding meaningful melodic units in the style <span id="id2">[<a class="reference internal" href="references.html#id48" title="Thomas Nuttall, Genís Plaja-Roglans, Lara Pearson, and Xavier Serra. In search of sancaras: tradition-informed repeated melodic pattern recognition in carnatic music. In In Proc. of the 23rd International Conference on Music Information Retrieval (ISMIR), Bengaluru, India. 2022.">NPRPS22</a>]</span>.</p>
+</section>
+<section id="svara-level-transcription">
+<h2>Svara-level transcription<a class="headerlink" href="#svara-level-transcription" title="Permalink to this headline">#</a></h2>
+<p>Symbolic transcription from audio is an important analytical tool, particularly valuable for the analysis of large audio recording datasets that have never previously been annotated. For IAM, however, such transcription is challenging. In this highly ornamented style, any given svara can be performed in multiple different ways, some of which do not rest on their theoretical pitch positions due to oscillatory ornamentation.</p>
+<p>A problem in achieving this task arises due to variation in svara performance, The highly ornamented and oscillatory qualities of the style means that the same svara may be performed in several different ways. However, according to the grammar of the Carnatic style, there are a limited number of ways that a svara may be realized in a given raga (melodic framework), and these ways depend to some extent on immediate melodic context and svara duration.</p>
+</section>
+<section id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h2>
+<p>Although huge advances have been done towards addressing these tasks, the shortage of expertly annotated/curated data, makes them complicated to tackle and evaluate. We are also concerned with compiling relevant IAM data and in providing tools to easily download and interact with it. Of particular interest is the collection of expert svara and phrase level annotations and clean isolated instrument audio recordings with minimal leakage or backing track.</p>
 </section>
 </section>
 

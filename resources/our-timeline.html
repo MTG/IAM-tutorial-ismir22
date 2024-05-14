@@ -488,6 +488,11 @@ title="Print to PDF"
    Software
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ongoing-work">
+   Ongoing work
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -534,6 +539,11 @@ title="Print to PDF"
    Software
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ongoing-work">
+   Ongoing work
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -547,8 +557,9 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="post-compmusic-timeline-at-mtg">
 <span id="our-timeline"></span><h1>Post-CompMusic timeline at MTG<a class="headerlink" href="#post-compmusic-timeline-at-mtg" title="Permalink to this headline">#</a></h1>
 <p>In this page we take a look at the work done in the Music Technology Group towards the computational analysis of Carnatic and Hindustani Music after the CompMusic project ended in 2017. After a hiatus of active research in this topic in the research group, a new team was assembled to build new research on top of the efforts done within the context of CompMusic.</p>
+<p>Here we summarize the work that has been already done in the form of <a class="reference internal" href="#conf-journal"><span class="std std-ref">conference and journal articles</span></a>, <span class="xref myst">software tools</span>, and we also talk about the <a class="reference internal" href="#ongoing-work"><span class="std std-ref">ongoing work</span></a>.</p>
 <section id="conference-and-journal-articles">
-<h2>Conference and journal articles<a class="headerlink" href="#conference-and-journal-articles" title="Permalink to this headline">#</a></h2>
+<span id="conf-journal"></span><h2>Conference and journal articles<a class="headerlink" href="#conference-and-journal-articles" title="Permalink to this headline">#</a></h2>
 <p>The work done has been divided in two main areas:</p>
 <ul class="simple">
 <li><p>High-quality <strong>feature extraction</strong> for Carnatic and Hindustani Music.</p></li>
@@ -573,6 +584,7 @@ title="Print to PDF"
 <li><p>Thomas Nuttall, Genís Plaja, Lara Pearson, Xavier Serra. “In Search of Sañcaras: Tradition-Informed Repeated Melodic Pattern Recognition in Carnatic Music.” Proceedings of the 23rd International Society for Music Information Retrieval Conference, (ISMIR, 2022), Bengaluru, India, <a class="reference external" href="https://repositori.upf.edu/handle/10230/54155">link to paper</a>.</p></li>
 <li><p>Lara Pearson, Thomas Nuttall, Wim Pouw. “Motif-Gesture Clustering in Karnatak Vocal Performance: A Multimodal Computational Music Analysis”. Proceedings of the 17th International Conference on Music Perception and Cognition, (ICMPC, 2023), link to paper coming soon.</p></li>
 </ul>
+<p>(our-software)</p>
 </section>
 </section>
 <section id="software">
@@ -583,6 +595,19 @@ title="Print to PDF"
 <li><p><a class="reference external" href="https://github.com/mir-dataset-loaders/mirdata">mirdata</a>. In fact, access to datasets in <code class="docutils literal notranslate"><span class="pre">compIAM</span></code> uses mirdata in the backend. <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> is a library aimed at providing standardized and friendly access to the canonical version of music datasets, contributing to a better and more reproducible research in music information.</p></li>
 <li><p><strong>This tutorial!</strong> It was presented in 2022 in within the context of the ISMIR Conference in Bengaluru, India. It provides an overview of the research done towards the computational analysis of Carnatic and Hindustani Music, providing walkthroughs of tools and models using <code class="docutils literal notranslate"><span class="pre">compIAM</span></code>. It involved several researchers and practitioners around the globe, including musicologists and musicians. After its presentation in the ISMIR Conference, it was also presented as a one-week Workshop in IT Chennai, counting with the participation of 30 students.</p></li>
 </ul>
+</section>
+<section id="ongoing-work">
+<span id="id1"></span><h2>Ongoing work<a class="headerlink" href="#ongoing-work" title="Permalink to this headline">#</a></h2>
+<p>Currently, we are also working on several research lines on top of the projects done in the past few years. In this section we review the ongoing efforts and the challenges we need to overcome.</p>
+<p><a class="reference external" href="https://mtg.github.io/saraga/">Saraga</a> is the largest collection of open data for the computational analysis of Carnatic and Hindustani Music. It comprises audio (including multi-track stems recorded in live performances), manual annotations, and musical and editorial tags. However, this collection has some problems we are trying to overcome:</p>
+<ul class="simple">
+<li><p><strong>Multi-stem recordings are not isolated.</strong> Since recoded in live performances, the multi-stem recordings are not completely isolated instrument tracks, but have bleeding from the rest of the sources in the background. Therefore, we cannot normally train a source separation model with these data, in order to automatically extract the singing voice or the violin from a rendition.</p></li>
+<li><p><strong>Shortage of melodic pattern annotations.</strong> Saraga includes melodic pattern annotations but the quantity is really far from an acceptable coverage. Also, there is a clear lack of consensus of the relevance of each annotated pattern, making it really difficult to perform a data-driven study or a reliable evaluation.</p></li>
+<li><p><strong>No multi-model data beyond audio.</strong> Saraga has a considerable amount of annotated audio, but no other aligned information of another modality is included. To better understand a musical repertoire, it is important to consider also diverse modalities such like visual cues.</p></li>
+<li><p><strong>Restricted representation of raga and talas.</strong> Although an important number of ragas and talas are represented in the original Saraga dataset, some of these only have a single instance. Additional openly shareable randitions including underrepresented ragas in the dataset could indeed improve the representativeness and research done on top of the dataset.</p></li>
+<li><p><strong>Can we enlarge it to allow of representation learning or other modern approaches to enhance its characterization and understanding?</strong></p></li>
+</ul>
+<p>We have been working on a Saraga extension to overcome problems (1), (3), (4), and (5). For problem (2), we do not have an ongoing effort, since annotation melodic motifs is complex, requires expertise, therefore although its crucial importance, we are still blocked on addressing these challenge.</p>
 </section>
 </section>
 
