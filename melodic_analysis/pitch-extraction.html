@@ -539,6 +539,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#violin-pitch-tracking">
+   Violin pitch tracking
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#some-final-thoughts">
    Some final thoughts
   </a>
@@ -570,6 +575,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ftanet-carnatic">
    FTANet-Carnatic
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#violin-pitch-tracking">
+   Violin pitch tracking
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -821,6 +831,15 @@ title="Print to PDF"
 <img alt="../_images/pitch-extraction_24_0.png" src="../_images/pitch-extraction_24_0.png" />
 </div>
 </div>
+</section>
+<section id="violin-pitch-tracking">
+<h2>Violin pitch tracking<a class="headerlink" href="#violin-pitch-tracking" title="Permalink to this headline">#</a></h2>
+<p>The FTANet-Carnatic in <span id="id7">[<a class="reference internal" href="../resources/references.html#id37" title="Genís Plaja-Roglans, Thomas Nuttall, Lara Pearson, Xavier Serra, and Marius Miron. Repertoire-specific vocal pitch data generation for improved melodic analysis of carnatic music. Transactions of the Int. Society for Music Information Retrieval, 6(1):13–26, 2023.">PRNP+23</a>]</span> is trained to focus on the melody singing voice, ignoring the rest of the melodic instruments in the mix. However, the pipeline in <span id="id8">[<a class="reference internal" href="../resources/references.html#id37" title="Genís Plaja-Roglans, Thomas Nuttall, Lara Pearson, Xavier Serra, and Marius Miron. Repertoire-specific vocal pitch data generation for improved melodic analysis of carnatic music. Transactions of the Int. Society for Music Information Retrieval, 6(1):13–26, 2023.">PRNP+23</a>]</span> can be extrapolated to other instruments in order to track their melodes. As seen, in Carnatic Music we have a very common accompanying melodic instrument: the violin, being the melodic counterpart of the harmonium in Hindustani Music.</p>
+<p>As of compiam v0.4.0, we have integrated a violin tracking system which can be initialized by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:ftaresnet-carnatic-violin&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The model operates using the same mechanics as the vocal <code class="docutils literal notranslate"><span class="pre">FTANetCarnatic</span></code>. See the <a class="reference external" href="https://mtg.github.io/compIAM/source/melody.html">compIAM documentation</a> and the <a class="reference external" href="https://github.com/venkatKrishnan86/Carnatic-Violin-FTA-ResNet">official repository</a> of the violin tracking model for more detail.</p>
 </section>
 <section id="some-final-thoughts">
 <h2>Some final thoughts<a class="headerlink" href="#some-final-thoughts" title="Permalink to this headline">#</a></h2>
