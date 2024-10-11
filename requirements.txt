@@ -1,10 +1,11 @@
-jupyter-book==1.0.3
+jupyter-book>=1.0.3  # Keeping jupyter-book up to date
 jupyterlab~=3.0
 ipywidgets>=7.0.0,<8
 ipython~=8.6.0
 Jinja2==3.1.2
 openpyxl==3.0.7
 sphinx~=5.0.0
+numpy<2  # Avoiding incompatibilities for now
 lxml[html_clean]
 
 
