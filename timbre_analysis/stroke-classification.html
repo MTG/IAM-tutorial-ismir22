@@ -488,7 +488,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="stroke-classification">
 <span id="id1"></span><h1>Stroke classification<a class="headerlink" href="#stroke-classification" title="Permalink to this heading">#</a></h1>
-<p>The task of percussion stroke classification has been, historically, the principal target on the timbre-side of computational analysis of Indian Art Music. As seen in the <a class="reference internal" href="#instrumentation"><span class="xref myst">instrumentation presentation</span></a>, the musical arrangement in Indian Art Music is quite well-defined, while there is an important scarcity of good-quality data (specially monphonic recordings) for many of the Carnatic and Hindustani specific instruments. These factors combined with the importance of the different stroke types in the main percussion instruments, have given research importance on mridangam <span id="id2">[<a class="reference internal" href="../resources/references.html#id25" title="A. Anantapadmanabhan, J. P. Bello, R. Krishnan, and H. Murthy. Tonic-Independent Stroke Transcription of the Mridangam. In AES 53rd International Conference: Semantic Audio, London, UK. 2014.">ABKM14</a>, <a class="reference internal" href="../resources/references.html#id77" title="A. Anantapadmanabhan, A. Bellur, and H. A. Murthy. Modal analysis and transcription of strokes of the mridangam using non-negative matrix factorization. IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), Vancouver, Canada, pages 313–318, 2013.">ABM13</a>]</span> and tabla stroke classification <span id="id3">[<a class="reference internal" href="../resources/references.html#id27" title="M.A. Rohit, Amitrajit Bhattacharjee, and Preeti Rao. Four-way classification of tabla strokes with models adapted from automatic drum transcription. In In Proc. of the 22nd International Society for Music Information Retrieval Conference, ISMIR, Online, 19–26. 2021.">RBR21</a>]</span>.</p>
+<p>The task of percussion stroke classification has been, historically, the principal target on the timbre-side of computational analysis of Indian Art Music. As seen in the <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-instrumentation"><span class="std std-ref">instrumentation presentation</span></a>, the musical arrangement in Indian Art Music is quite well-defined, while there is an important scarcity of good-quality data (specially monphonic recordings) for many of the Carnatic and Hindustani specific instruments. These factors combined with the importance of the different stroke types in the main percussion instruments, have given research importance on mridangam <span id="id2">[<a class="reference internal" href="../resources/references.html#id25" title="A. Anantapadmanabhan, J. P. Bello, R. Krishnan, and H. Murthy. Tonic-Independent Stroke Transcription of the Mridangam. In AES 53rd International Conference: Semantic Audio, London, UK. 2014.">ABKM14</a>, <a class="reference internal" href="../resources/references.html#id78" title="A. Anantapadmanabhan, A. Bellur, and H. A. Murthy. Modal analysis and transcription of strokes of the mridangam using non-negative matrix factorization. IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), Vancouver, Canada, pages 313–318, 2013.">ABM13</a>]</span> and tabla stroke classification <span id="id3">[<a class="reference internal" href="../resources/references.html#id27" title="M.A. Rohit, Amitrajit Bhattacharjee, and Preeti Rao. Four-way classification of tabla strokes with models adapted from automatic drum transcription. In In Proc. of the 22nd International Society for Music Information Retrieval Conference, ISMIR, Online, 19–26. 2021.">RBR21</a>]</span>.</p>
 <p>We will go through examples of these tasks in this walkthrough.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
@@ -539,13 +539,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Print list of available mirdangam strokes in the dataset</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">msc</span><span class="o">.</span><span class="n">list_strokes</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;msc&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;bheem&#39;, &#39;cha&#39;, &#39;dheem&#39;, &#39;dhin&#39;, &#39;num&#39;, &#39;ta&#39;, &#39;tha&#39;, &#39;tham&#39;, &#39;thi&#39;, &#39;thom&#39;]
 </pre></div>
 </div>
 </div>
@@ -573,19 +567,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Loading tracks for the mirdangam dataset</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">mridangam_tracks</span> <span class="o">=</span> <span class="n">msc</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Getting list of id per split</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># NOTE: We use (0.9, 0.1): two splits including 90% and 10% of the whole dataset</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">split_dict</span> <span class="o">=</span> <span class="n">msc</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_random_track_splits</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">splits</span><span class="o">=</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">split_names</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="s2">&quot;validation&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;msc&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;225104&#39;,
+ Track(
+   audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/B/225104__akshaylaya__thi-b-323.wav&quot;,
+   stroke_name=&quot;thi&quot;,
+   tonic=&quot;B&quot;,
+   track_id=&quot;225104&quot;,
+   audio: The track&#39;s audio
+ 
+         Returns,
+ ))
 </pre></div>
 </div>
 </div>
@@ -595,17 +586,6 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msc</span><span class="o">.</span><span class="n">mridangam_tracks</span> <span class="o">=</span> <span class="n">train_split</span>
 <span class="n">msc</span><span class="o">.</span><span class="n">mridangam_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">train_split</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">msc</span><span class="o">.</span><span class="n">mridangam_tracks</span> <span class="o">=</span> <span class="n">train_split</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">msc</span><span class="o">.</span><span class="n">mridangam_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">train_split</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-
-<span class="ne">NameError</span>: name &#39;train_split&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -645,15 +625,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Visualise and evaluate some predictions from the model output</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">pprint</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">())))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pprint</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">())))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">pprint</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">())))</span>
-
-<span class="ne">NameError</span>: name &#39;pprint&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;../audio/mir_datasets/mridangam_stroke_1.5/D#/228925__akshaylaya__dhin-dsh-126.wav&#39;,
+ &#39;dhin&#39;)
+(&#39;../audio/mir_datasets/mridangam_stroke_1.5/C#/226559__akshaylaya__dheem-csh-017.wav&#39;,
+ &#39;dheem&#39;)
+(&#39;../audio/mir_datasets/mridangam_stroke_1.5/D/227731__akshaylaya__cha-d-045.wav&#39;,
+ &#39;cha&#39;)
 </pre></div>
 </div>
 </div>
@@ -666,12 +643,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">msc</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Track(
+  audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/C/226097__akshaylaya__thi-c-026.wav&quot;,
+  stroke_name=&quot;thi&quot;,
+  tonic=&quot;C&quot;,
+  track_id=&quot;226097&quot;,
+  audio: The track&#39;s audio
 
-<span class="ne">NameError</span>: name &#39;msc&#39; is not defined
+        Returns,
+)
 </pre></div>
 </div>
 </div>
@@ -704,15 +684,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Selecting a random example from the predicted files</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">predicted_file</span><span class="p">,</span> <span class="n">predicted_stroke</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Getting the ID from filepath</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">identifier</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">predicted_file</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;random&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nice! Predicted stroke in 226722__akshaylaya__num-csh-039.wav
+ coincides with ground-truth num
 </pre></div>
 </div>
 </div>

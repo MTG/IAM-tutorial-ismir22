@@ -532,315 +532,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A module that was compiled using NumPy 1.x cannot be run in
-NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
-versions of NumPy, modules must be compiled with NumPy 2.0.
-Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
-
-If you are a user of the module, the easiest solution will be to
-downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
-We expect that some modules will need time to support NumPy 2.
-
-Traceback (most recent call last):  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/runpy.py&quot;, line 197, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/runpy.py&quot;, line 87, in _run_code
-    exec(code, run_globals)
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel_launcher.py&quot;, line 18, in &lt;module&gt;
-    app.launch_new_instance()
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/traitlets/config/application.py&quot;, line 1075, in launch_instance
-    app.start()
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel/kernelapp.py&quot;, line 739, in start
-    self.io_loop.start()
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tornado/platform/asyncio.py&quot;, line 205, in start
-    self.asyncio_loop.run_forever()
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/asyncio/base_events.py&quot;, line 601, in run_forever
-    self._run_once()
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/asyncio/base_events.py&quot;, line 1905, in _run_once
-    handle._run()
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/asyncio/events.py&quot;, line 80, in _run
-    self._context.run(self._callback, *self._args)
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 545, in dispatch_queue
-    await self.process_one()
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 534, in process_one
-    await dispatch(*args)
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 437, in dispatch_shell
-    await result
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 362, in execute_request
-    await super().execute_request(stream, ident, parent)
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 778, in execute_request
-    reply_content = await reply_content
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 449, in do_execute
-    res = shell.run_cell(
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel/zmqshell.py&quot;, line 549, in run_cell
-    return super().run_cell(*args, **kwargs)
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2940, in run_cell
-    result = self._run_cell(
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2995, in _run_cell
-    return runner(coro)
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/IPython/core/async_helpers.py&quot;, line 129, in _pseudo_sync_runner
-    coro.send(None)
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3194, in run_cell_async
-    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3373, in run_ast_nodes
-    if await self.run_code(code, result, async_=asy):
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3433, in run_code
-    exec(code_obj, self.user_global_ns, self.user_ns)
-  File &quot;/tmp/ipykernel_3970/2514514590.py&quot;, line 6, in &lt;module&gt;
-    import tensorflow as tf
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tensorflow/__init__.py&quot;, line 37, in &lt;module&gt;
-    from tensorflow.python.tools import module_util as _module_util
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tensorflow/python/__init__.py&quot;, line 37, in &lt;module&gt;
-    from tensorflow.python.eager import context
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tensorflow/python/eager/context.py&quot;, line 35, in &lt;module&gt;
-    from tensorflow.python.client import pywrap_tf_session
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tensorflow/python/client/pywrap_tf_session.py&quot;, line 19, in &lt;module&gt;
-    from tensorflow.python.client._pywrap_tf_session import *
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="ne">AttributeError</span>: _ARRAY_API not found
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A module that was compiled using NumPy 1.x cannot be run in
-NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
-versions of NumPy, modules must be compiled with NumPy 2.0.
-Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
-
-If you are a user of the module, the easiest solution will be to
-downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
-We expect that some modules will need time to support NumPy 2.
-
-Traceback (most recent call last):  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/runpy.py&quot;, line 197, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/runpy.py&quot;, line 87, in _run_code
-    exec(code, run_globals)
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel_launcher.py&quot;, line 18, in &lt;module&gt;
-    app.launch_new_instance()
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/traitlets/config/application.py&quot;, line 1075, in launch_instance
-    app.start()
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel/kernelapp.py&quot;, line 739, in start
-    self.io_loop.start()
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tornado/platform/asyncio.py&quot;, line 205, in start
-    self.asyncio_loop.run_forever()
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/asyncio/base_events.py&quot;, line 601, in run_forever
-    self._run_once()
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/asyncio/base_events.py&quot;, line 1905, in _run_once
-    handle._run()
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/asyncio/events.py&quot;, line 80, in _run
-    self._context.run(self._callback, *self._args)
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 545, in dispatch_queue
-    await self.process_one()
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 534, in process_one
-    await dispatch(*args)
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 437, in dispatch_shell
-    await result
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 362, in execute_request
-    await super().execute_request(stream, ident, parent)
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 778, in execute_request
-    reply_content = await reply_content
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 449, in do_execute
-    res = shell.run_cell(
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/ipykernel/zmqshell.py&quot;, line 549, in run_cell
-    return super().run_cell(*args, **kwargs)
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2940, in run_cell
-    result = self._run_cell(
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2995, in _run_cell
-    return runner(coro)
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/IPython/core/async_helpers.py&quot;, line 129, in _pseudo_sync_runner
-    coro.send(None)
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3194, in run_cell_async
-    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3373, in run_ast_nodes
-    if await self.run_code(code, result, async_=asy):
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3433, in run_code
-    exec(code_obj, self.user_global_ns, self.user_ns)
-  File &quot;/tmp/ipykernel_3970/2514514590.py&quot;, line 6, in &lt;module&gt;
-    import tensorflow as tf
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tensorflow/__init__.py&quot;, line 37, in &lt;module&gt;
-    from tensorflow.python.tools import module_util as _module_util
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tensorflow/python/__init__.py&quot;, line 42, in &lt;module&gt;
-    from tensorflow.python import data
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tensorflow/python/data/__init__.py&quot;, line 21, in &lt;module&gt;
-    from tensorflow.python.data import experimental
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tensorflow/python/data/experimental/__init__.py&quot;, line 95, in &lt;module&gt;
-    from tensorflow.python.data.experimental import service
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tensorflow/python/data/experimental/service/__init__.py&quot;, line 387, in &lt;module&gt;
-    from tensorflow.python.data.experimental.ops.data_service_ops import distribute
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tensorflow/python/data/experimental/ops/data_service_ops.py&quot;, line 22, in &lt;module&gt;
-    from tensorflow.python.data.experimental.ops import compression_ops
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tensorflow/python/data/experimental/ops/compression_ops.py&quot;, line 16, in &lt;module&gt;
-    from tensorflow.python.data.util import structure
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tensorflow/python/data/util/structure.py&quot;, line 22, in &lt;module&gt;
-    from tensorflow.python.data.util import nest
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tensorflow/python/data/util/nest.py&quot;, line 36, in &lt;module&gt;
-    from tensorflow.python.framework import sparse_tensor as _sparse_tensor
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tensorflow/python/framework/sparse_tensor.py&quot;, line 24, in &lt;module&gt;
-    from tensorflow.python.framework import constant_op
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tensorflow/python/framework/constant_op.py&quot;, line 25, in &lt;module&gt;
-    from tensorflow.python.eager import execute
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tensorflow/python/eager/execute.py&quot;, line 23, in &lt;module&gt;
-    from tensorflow.python.framework import dtypes
-  File &quot;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/tensorflow/python/framework/dtypes.py&quot;, line 26, in &lt;module&gt;
-    from tensorflow.python.lib.core import _pywrap_bfloat16
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="ne">AttributeError</span>: _ARRAY_API not found
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="ne">ImportError</span>: numpy.core._multiarray_umath failed to import
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="ne">ImportError</span>: numpy.core.umath failed to import
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;TF_CPP_MIN_LOG_LEVEL&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;3&quot;</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Importing tensorflow and disabling GPU usage</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">set_visible_devices</span><span class="p">([],</span> <span class="s2">&quot;GPU&quot;</span><span class="p">)</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.20</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">tensorflow</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">37</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="kn">import</span> <span class="nn">sys</span> <span class="k">as</span> <span class="nn">_sys</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">_typing</span>
-<span class="ne">---&gt; </span><span class="mi">37</span> <span class="kn">from</span> <span class="nn">tensorflow.python.tools</span> <span class="kn">import</span> <span class="n">module_util</span> <span class="k">as</span> <span class="n">_module_util</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="kn">from</span> <span class="nn">tensorflow.python.util.lazy_loader</span> <span class="kn">import</span> <span class="n">LazyLoader</span> <span class="k">as</span> <span class="n">_LazyLoader</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="c1"># Make sure code inside the TensorFlow codebase can use tf2.enabled() at import.</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.20</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">tensorflow</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">42</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="kn">from</span> <span class="nn">tensorflow.python.eager</span> <span class="kn">import</span> <span class="n">context</span>
-<span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="c1"># pylint: enable=wildcard-import</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span> 
-<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="c1"># Bring in subpackages.</span>
-<span class="ne">---&gt; </span><span class="mi">42</span> <span class="kn">from</span> <span class="nn">tensorflow.python</span> <span class="kn">import</span> <span class="n">data</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="kn">from</span> <span class="nn">tensorflow.python</span> <span class="kn">import</span> <span class="n">distribute</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="c1"># from tensorflow.python import keras</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.20</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">tensorflow</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">21</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;`tf.data.Dataset` API for input pipelines.</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span><span class="sd"> See [Importing Data](https://tensorflow.org/guide/data) for an overview.</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="c1"># pylint: disable=unused-import</span>
-<span class="ne">---&gt; </span><span class="mi">21</span> <span class="kn">from</span> <span class="nn">tensorflow.python.data</span> <span class="kn">import</span> <span class="n">experimental</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span> <span class="nn">tensorflow.python.data.ops.dataset_ops</span> <span class="kn">import</span> <span class="n">AUTOTUNE</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="kn">from</span> <span class="nn">tensorflow.python.data.ops.dataset_ops</span> <span class="kn">import</span> <span class="n">Dataset</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.20</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">tensorflow</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">experimental</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">95</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Experimental API for building input pipelines.</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span><span class="sd"> This module contains experimental `Dataset` sources and transformations that can</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span><span class="sd"> @@UNKNOWN_CARDINALITY</span>
-<span class="g g-Whitespace">     </span><span class="mi">92</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span> <span class="c1"># pylint: disable=unused-import</span>
-<span class="ne">---&gt; </span><span class="mi">95</span> <span class="kn">from</span> <span class="nn">tensorflow.python.data.experimental</span> <span class="kn">import</span> <span class="n">service</span>
-<span class="g g-Whitespace">     </span><span class="mi">96</span> <span class="kn">from</span> <span class="nn">tensorflow.python.data.experimental.ops.batching</span> <span class="kn">import</span> <span class="n">dense_to_ragged_batch</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span> <span class="kn">from</span> <span class="nn">tensorflow.python.data.experimental.ops.batching</span> <span class="kn">import</span> <span class="n">dense_to_sparse_batch</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.20</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">tensorflow</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">experimental</span><span class="o">/</span><span class="n">service</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">387</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Copyright 2020 The TensorFlow Authors. All Rights Reserved.</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># limitations under the License.</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># ==============================================================================</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;API for using the tf.data service.</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span><span class="sd"> This module contains:</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">384</span><span class="sd">   job of ParameterServerStrategy).</span>
-<span class="g g-Whitespace">    </span><span class="mi">385</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">387</span> <span class="kn">from</span> <span class="nn">tensorflow.python.data.experimental.ops.data_service_ops</span> <span class="kn">import</span> <span class="n">distribute</span>
-<span class="g g-Whitespace">    </span><span class="mi">388</span> <span class="kn">from</span> <span class="nn">tensorflow.python.data.experimental.ops.data_service_ops</span> <span class="kn">import</span> <span class="n">from_dataset_id</span>
-<span class="g g-Whitespace">    </span><span class="mi">389</span> <span class="kn">from</span> <span class="nn">tensorflow.python.data.experimental.ops.data_service_ops</span> <span class="kn">import</span> <span class="n">register_dataset</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.20</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">tensorflow</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">experimental</span><span class="o">/</span><span class="n">ops</span><span class="o">/</span><span class="n">data_service_ops</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">22</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">from</span> <span class="nn">tensorflow.core.protobuf</span> <span class="kn">import</span> <span class="n">data_service_pb2</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">from</span> <span class="nn">tensorflow.python</span> <span class="kn">import</span> <span class="n">tf2</span>
-<span class="ne">---&gt; </span><span class="mi">22</span> <span class="kn">from</span> <span class="nn">tensorflow.python.data.experimental.ops</span> <span class="kn">import</span> <span class="n">compression_ops</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="kn">from</span> <span class="nn">tensorflow.python.data.experimental.service</span> <span class="kn">import</span> <span class="n">_pywrap_server_lib</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="kn">from</span> <span class="nn">tensorflow.python.data.experimental.service</span> <span class="kn">import</span> <span class="n">_pywrap_utils</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.20</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">tensorflow</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">experimental</span><span class="o">/</span><span class="n">ops</span><span class="o">/</span><span class="n">compression_ops</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Copyright 2020 The TensorFlow Authors. All Rights Reserved.</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># limitations under the License.</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># ==============================================================================</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Ops for compressing and uncompressing dataset elements.&quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">tensorflow.python.data.util</span> <span class="kn">import</span> <span class="n">structure</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">tensorflow.python.ops</span> <span class="kn">import</span> <span class="n">gen_experimental_dataset_ops</span> <span class="k">as</span> <span class="n">ged_ops</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="k">def</span> <span class="nf">compress</span><span class="p">(</span><span class="n">element</span><span class="p">):</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.20</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">tensorflow</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">util</span><span class="o">/</span><span class="n">structure</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">22</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="kn">import</span> <span class="nn">six</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">import</span> <span class="nn">wrapt</span>
-<span class="ne">---&gt; </span><span class="mi">22</span> <span class="kn">from</span> <span class="nn">tensorflow.python.data.util</span> <span class="kn">import</span> <span class="n">nest</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="kn">from</span> <span class="nn">tensorflow.python.framework</span> <span class="kn">import</span> <span class="n">composite_tensor</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="kn">from</span> <span class="nn">tensorflow.python.framework</span> <span class="kn">import</span> <span class="n">ops</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.20</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">tensorflow</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">util</span><span class="o">/</span><span class="n">nest</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">36</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;## Functions for working with arbitrarily nested sequences of elements.</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span><span class="sd"> NOTE(mrry): This fork of the `tensorflow.python.util.nest` module</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span><span class="sd">    arrays.</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="kn">import</span> <span class="nn">six</span> <span class="k">as</span> <span class="nn">_six</span>
-<span class="ne">---&gt; </span><span class="mi">36</span> <span class="kn">from</span> <span class="nn">tensorflow.python.framework</span> <span class="kn">import</span> <span class="n">sparse_tensor</span> <span class="k">as</span> <span class="n">_sparse_tensor</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="kn">from</span> <span class="nn">tensorflow.python.util</span> <span class="kn">import</span> <span class="n">_pywrap_utils</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="kn">from</span> <span class="nn">tensorflow.python.util</span> <span class="kn">import</span> <span class="n">nest</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.20</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">tensorflow</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">framework</span><span class="o">/</span><span class="n">sparse_tensor</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">24</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span> <span class="nn">tensorflow.python</span> <span class="kn">import</span> <span class="n">tf2</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="kn">from</span> <span class="nn">tensorflow.python.framework</span> <span class="kn">import</span> <span class="n">composite_tensor</span>
-<span class="ne">---&gt; </span><span class="mi">24</span> <span class="kn">from</span> <span class="nn">tensorflow.python.framework</span> <span class="kn">import</span> <span class="n">constant_op</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="kn">from</span> <span class="nn">tensorflow.python.framework</span> <span class="kn">import</span> <span class="n">dtypes</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="kn">from</span> <span class="nn">tensorflow.python.framework</span> <span class="kn">import</span> <span class="n">ops</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.20</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">tensorflow</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">framework</span><span class="o">/</span><span class="n">constant_op</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">25</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="kn">from</span> <span class="nn">tensorflow.core.framework</span> <span class="kn">import</span> <span class="n">types_pb2</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="kn">from</span> <span class="nn">tensorflow.python.eager</span> <span class="kn">import</span> <span class="n">context</span>
-<span class="ne">---&gt; </span><span class="mi">25</span> <span class="kn">from</span> <span class="nn">tensorflow.python.eager</span> <span class="kn">import</span> <span class="n">execute</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="kn">from</span> <span class="nn">tensorflow.python.framework</span> <span class="kn">import</span> <span class="n">dtypes</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="kn">from</span> <span class="nn">tensorflow.python.framework</span> <span class="kn">import</span> <span class="n">op_callbacks</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.20</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">tensorflow</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">eager</span><span class="o">/</span><span class="n">execute</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">23</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">from</span> <span class="nn">tensorflow.python</span> <span class="kn">import</span> <span class="n">pywrap_tfe</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span> <span class="nn">tensorflow.python.eager</span> <span class="kn">import</span> <span class="n">core</span>
-<span class="ne">---&gt; </span><span class="mi">23</span> <span class="kn">from</span> <span class="nn">tensorflow.python.framework</span> <span class="kn">import</span> <span class="n">dtypes</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="kn">from</span> <span class="nn">tensorflow.python.framework</span> <span class="kn">import</span> <span class="n">ops</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="kn">from</span> <span class="nn">tensorflow.python.framework</span> <span class="kn">import</span> <span class="n">tensor_shape</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.20</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">tensorflow</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">framework</span><span class="o">/</span><span class="n">dtypes</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">29</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="kn">from</span> <span class="nn">tensorflow.python.lib.core</span> <span class="kn">import</span> <span class="n">_pywrap_bfloat16</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="kn">from</span> <span class="nn">tensorflow.python.util.tf_export</span> <span class="kn">import</span> <span class="n">tf_export</span>
-<span class="ne">---&gt; </span><span class="mi">29</span> <span class="n">_np_bfloat16</span> <span class="o">=</span> <span class="n">_pywrap_bfloat16</span><span class="o">.</span><span class="n">TF_bfloat16_type</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="nd">@tf_export</span><span class="p">(</span><span class="s2">&quot;dtypes.DType&quot;</span><span class="p">,</span> <span class="s2">&quot;DType&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="k">class</span> <span class="nc">DType</span><span class="p">(</span><span class="n">_dtypes</span><span class="o">.</span><span class="n">DType</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;Represents the type of the elements in a `Tensor`.</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span><span class="sd">   `DType`&#39;s are used to specify the output data type for operations which</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span><span class="sd">   See `tf.dtypes` for a complete list of `DType`&#39;s defined.</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span><span class="sd">   &quot;&quot;&quot;</span>
-
-<span class="ne">TypeError</span>: Unable to convert function return value to a Python type! The signature was
-	<span class="p">()</span> <span class="o">-&gt;</span> <span class="n">handle</span>
-</pre></div>
-</div>
-</div>
 </div>
 <p>We may now load the <code class="docutils literal notranslate"><span class="pre">spleeter</span></code> separator, which will automatically load the pre-trained weights for the model. We will use the <code class="docutils literal notranslate"><span class="pre">2:stems</span></code> model, which has been trained to separate <em>vocals</em> and <em>accompaniment</em>.</p>
 <div class="admonition note">
@@ -887,7 +578,7 @@ Traceback (most recent call last):  File &quot;/opt/hostedtoolcache/Python/3.9.2
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
 <span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">input_mixture</span> <span class="o">=</span> <span class="n">input_mixture</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">44100</span><span class="o">*</span><span class="mi">30</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># Running spleeter</span>
@@ -895,7 +586,33 @@ Traceback (most recent call last):  File &quot;/opt/hostedtoolcache/Python/3.9.2
 <span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># Saving the results</span>
 <span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">song_name</span> <span class="o">=</span> <span class="n">ex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.mp3&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;separator&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/spleeter/separator.py:241,</span> in <span class="ni">Separator.separate</span><span class="nt">(self, waveform, audio_descriptor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span> <span class="k">def</span> <span class="nf">separate</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span>     <span class="bp">self</span><span class="p">,</span> <span class="n">waveform</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">audio_descriptor</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">229</span><span class="sd">     Performs separation on a waveform.</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span><span class="sd">             Separated waveforms.</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">241</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_separate_tensorflow</span><span class="p">(</span><span class="n">waveform</span><span class="p">,</span> <span class="n">audio_descriptor</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/spleeter/separator.py:213,</span> in <span class="ni">Separator._separate_tensorflow</span><span class="nt">(self, waveform, audio_descriptor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="k">def</span> <span class="nf">_separate_tensorflow</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span>     <span class="bp">self</span><span class="p">,</span> <span class="n">waveform</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">audio_descriptor</span><span class="p">:</span> <span class="n">AudioDescriptor</span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">199</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">200</span><span class="sd">     Performs source separation over the given waveform with tensorflow</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span><span class="sd">     backend.</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">211</span><span class="sd">             Separated waveforms.</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">213</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">waveform</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>         <span class="n">waveform</span> <span class="o">=</span> <span class="n">to_stereo</span><span class="p">(</span><span class="n">waveform</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="n">prediction_generator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_prediction_generator</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: &#39;str&#39; object has no attribute &#39;shape&#39;
 </pre></div>
 </div>
 </div>

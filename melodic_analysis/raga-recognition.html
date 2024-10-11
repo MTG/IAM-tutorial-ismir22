@@ -517,12 +517,7 @@ Time (LSTM) networks, given its ability to capture sequence information <span id
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">compiam</span><span class="o">.</span><span class="n">melody</span><span class="o">.</span><span class="n">raga_recognition</span><span class="o">.</span><span class="n">list_tools</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;compiam&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;DEEPSRGM*&#39;]
 </pre></div>
 </div>
 </div>
@@ -558,13 +553,16 @@ Time (LSTM) networks, given its ability to capture sequence information <span id
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Showing raga mapping</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">pprint</span><span class="p">(</span><span class="n">deepsrgm</span><span class="o">.</span><span class="n">mapping</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;pprint&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: &#39;Bhairav&#39;,
+ 1: &#39;Madhukauns&#39;,
+ 2: &#39;Mōhanaṁ&#39;,
+ 3: &#39;Hamsadhvāni&#39;,
+ 4: &#39;Varāḷi&#39;,
+ 5: &#39;Dēś&#39;,
+ 6: &#39;Kamās&#39;,
+ 7: &#39;Yaman kalyāṇ&#39;,
+ 8: &#39;Bilahari&#39;,
+ 9: &#39;Ahira bhairav&#39;}
 </pre></div>
 </div>
 </div>
@@ -576,19 +574,6 @@ Time (LSTM) networks, given its ability to capture sequence information <span id
 <span class="n">saraga_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span>
     <span class="s2">&quot;saraga_carnatic&quot;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;./../audio/mir_datasets/&quot;</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Initialize saraga Carnatic on our example audio folder</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">saraga_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="s2">&quot;saraga_carnatic&quot;</span><span class="p">,</span> <span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;./../audio/mir_datasets/&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;compiam&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -611,15 +596,8 @@ Time (LSTM) networks, given its ability to capture sequence information <span id
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># We first load the {ids: tracks} dict for Saraga Carnatic</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">saraga_tracks</span> <span class="o">=</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Now we can get a specific track</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">track_data</span> <span class="o">=</span> <span class="n">saraga_tracks</span><span class="p">[</span><span class="s2">&quot;109_Sri_Raghuvara_Sugunaalaya&quot;</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;saraga_carnatic&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This recording includes raaga: Bhairavi
+This recordings has unique Dunya ID: 123b09bd-9901-4e64-a65a-10b02c9e0597
 </pre></div>
 </div>
 </div>
