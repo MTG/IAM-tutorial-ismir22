@@ -1,111 +1,178 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Datasets &#8212;  </title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'corpora_and_datasets/datasets';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Tonic identification" href="../melodic_analysis/tonic-identification.html" />
     <link rel="prev" title="Accessing the Dunya Corpora" href="corpora.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../landing.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title"> </h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="  - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="  - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -114,496 +181,320 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduction
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/setup.html">
-   Setting everything up
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/python.html">
-   Python for audio processing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/compiam.html">
-   compIAM package
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/setup.html">Setting everything up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/python.html">Python for audio processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/compiam.html">compIAM package</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Indian Art Music
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Indian Art Music</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../indian_art_music/iam.html">
-   What is Indian Art Music?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../indian_art_music/carnatic-music.html">
-   Carnatic Music
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../indian_art_music/hindustani-music.html">
-   Hindustani music
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../indian_art_music/iam.html">What is Indian Art Music?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../indian_art_music/carnatic-music.html">Carnatic Music</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../indian_art_music/hindustani-music.html">Hindustani music</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Corpora and Datasets
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Corpora and Datasets</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="corpora.html">
-   Accessing the Dunya Corpora
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Datasets
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="corpora.html">Accessing the Dunya Corpora</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Datasets</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Melodic Analysis
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Melodic Analysis</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../melodic_analysis/tonic-identification.html">
-   Tonic identification
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../melodic_analysis/pitch-extraction.html">
-   Pitch extraction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../melodic_analysis/melodic-transcription.html">
-   Melodic transcription
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../melodic_analysis/melodic-pattern-discovery.html">
-   Melodic pattern dicovery
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../melodic_analysis/raga-recognition.html">
-   Automatic raga recognition
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../melodic_analysis/tonic-identification.html">Tonic identification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../melodic_analysis/pitch-extraction.html">Pitch extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../melodic_analysis/melodic-transcription.html">Melodic transcription</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../melodic_analysis/melodic-pattern-discovery.html">Melodic pattern dicovery</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../melodic_analysis/raga-recognition.html">Automatic raga recognition</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Rhythmic Analysis
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Rhythmic Analysis</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../rhythmic_analysis/meter_analysis.html">
-   Meter analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../rhythmic_analysis/percussion-transcription.html">
-   Percussion transcription
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../rhythmic_analysis/meter_analysis.html">Meter analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rhythmic_analysis/percussion-transcription.html">Percussion transcription</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Structure Analysis
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Structure Analysis</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../structure_analysis/music-segmentation.html">
-   Music segmentation
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../structure_analysis/music-segmentation.html">Music segmentation</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Timbre Analysis
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Timbre Analysis</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../timbre_analysis/stroke-classification.html">
-   Stroke classification
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../timbre_analysis/stroke-classification.html">Stroke classification</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Music Source Separation
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Music Source Separation</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../separation/singing-voice-extraction.html">
-   Singing voice extraction
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../separation/singing-voice-extraction.html">Singing voice extraction</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Resources
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../resources/references.html">
-   References
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../resources/open-challenges.html">
-   Open challenges
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../resources/acknowledgements.html">
-   Acknowledgements
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../resources/citing.html">
-   Citing this work
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/open-challenges.html">Open challenges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/citing.html">Citing this work</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/MTG/IAM-tutorial-ismir22/master?urlpath=tree/webbook/corpora_and_datasets/datasets.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/MTG/IAM-tutorial-ismir22/blob/master/webbook/corpora_and_datasets/datasets.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        <a href="https://colab.research.google.com/github/MTG/IAM-tutorial-ismir22/blob/master/webbook/corpora_and_datasets/datasets.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_colab.png">
-  </span>
-<span class="headerbtn__text-container">Colab</span>
-</a>
-
-      </li>
-      
-      <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/MTG/IAM-tutorial-ismir22" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/MTG/IAM-tutorial-ismir22/issues/new?title=Issue%20on%20page%20%2Fcorpora_and_datasets/datasets.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/corpora_and_datasets/datasets.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/MTG/IAM-tutorial-ismir22"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/MTG/IAM-tutorial-ismir22/issues/new?title=Issue%20on%20page%20%2Fcorpora_and_datasets/datasets.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/corpora_and_datasets/datasets.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mirdata">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     mirdata
-    </span>
-   </code>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#why-mirdata-loaders">
-     Why mirdata loaders?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#contributing-with-a-dataloader">
-   Contributing with a dataloader
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Datasets</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mirdata">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     mirdata
-    </span>
-   </code>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#why-mirdata-loaders">
-     Why mirdata loaders?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#contributing-with-a-dataloader">
-   Contributing with a dataloader
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Datasets</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mirdata"><code class="docutils literal notranslate"><span class="pre">mirdata</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-mirdata-loaders">Why mirdata loaders?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-with-a-dataloader">Contributing with a dataloader</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="datasets">
-<span id="id1"></span><h1>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">#</a></h1>
+<span id="id1"></span><h1>Datasets<a class="headerlink" href="#datasets" title="Permalink to this heading">#</a></h1>
 <p>Datasets are key for the data-driven computational research of a music tradition. Thoroughly designed collections of data that represent the most relevant aspects of a musical repertoire may open the door for solutions of several problems. For that reason, huge efforts have been made within the scope of this tutorial and <code class="docutils literal notranslate"><span class="pre">compiam</span></code> to <strong>(1)</strong> boost the visibility and access to Carnatic and Hindustani music datasets, and <strong>(2)</strong> provide standardized tools to get and use the said datasets.</p>
 <section id="mirdata">
-<h2><code class="docutils literal notranslate"><span class="pre">mirdata</span></code><a class="headerlink" href="#mirdata" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">mirdata</span></code><a class="headerlink" href="#mirdata" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://mirdata.readthedocs.io/en/stable/"><code class="docutils literal notranslate"><span class="pre">mirdata</span></code></a> is an open-source and pip-installable Python library that provides tools for working with common Music Information Retrieval (MIR) datasets <span id="id2">[<a class="reference internal" href="../resources/references.html#id20" title="Rachel Bittner, Magdalena Fuentes, David Rubinstein, Andreas Jansson, Keunwoo Choi, and Thor Kell. mirdata: Software for Reproducible Usage of Datasets. In In Proc. of the 20th International Society for Music Information Retrieval Conference (ISMIR), Delft, The Netherlands., 99–106. 2019.">BFR+19</a>]</span>. Given the crucial importance of such a software for data and corpus-driven research, we have done a great efforts to integrate several IAM-centered datasets into <code class="docutils literal notranslate"><span class="pre">mirdata</span></code>. To date, the following datasets can be found in the latest <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> release:</p>
 <ul class="simple">
 <li><p>Carnatic collection of Saraga <span id="id3">[<a class="reference internal" href="../resources/references.html#id26" title="Ajay Srinivasamurthy, Sankalp Gulati, Rafael Caro Repetto, and Xavier Serra. Saraga: Open Datasets for Research on Indian Art Music. Empirical Musicology Review, 2020.">SGRS20</a>]</span></p></li>
@@ -661,15 +552,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Track(
-  audio_path=&quot;...me/runner/mir_datasets/mridangam_stroke/mridangam_stroke_1.5/D#/229472__akshaylaya__tham-dsh-001.wav&quot;,
-  stroke_name=&quot;tham&quot;,
-  tonic=&quot;D#&quot;,
-  track_id=&quot;229472&quot;,
-  audio: The track&#39;s audio
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">## Let&#39;s get a random track from the dataset!</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">track</span> <span class="o">=</span> <span class="n">mridangam_stroke</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">track</span>
 
-        Returns,
-)
+<span class="ne">NameError</span>: name &#39;mridangam_stroke&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -682,7 +572,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D#
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">tonic</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;track&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -694,7 +589,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tham
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">track</span><span class="o">.</span><span class="n">stroke_name</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;track&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -704,7 +604,7 @@ title="Print to PDF"
 <p>The <code class="docutils literal notranslate"><span class="pre">.choice_track()</span></code> method parses a random track from the dataloader.</p>
 </div>
 <section id="why-mirdata-loaders">
-<h3>Why mirdata loaders?<a class="headerlink" href="#why-mirdata-loaders" title="Permalink to this headline">#</a></h3>
+<h3>Why mirdata loaders?<a class="headerlink" href="#why-mirdata-loaders" title="Permalink to this heading">#</a></h3>
 <p>Accessing the datasets through <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> brings numerous advantages and provides a more standardized and easy integration of the said datasets into our pipelines. See:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -721,8 +621,17 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;bheem&#39;, &#39;cha&#39;, &#39;dheem&#39;, &#39;dhin&#39;, &#39;num&#39;, &#39;ta&#39;, &#39;tha&#39;, &#39;tham&#39;, &#39;thi&#39;,
-       &#39;thom&#39;], dtype=&#39;&lt;U5&#39;)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">## Loading all tracks from the dataset</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">mridangam_tracks</span> <span class="o">=</span> <span class="n">mridangam_stroke</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Get available ragas</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">available_strokes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">mridangam_tracks</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span> \
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mridangam_stroke</span><span class="o">.</span><span class="n">track_ids</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;mridangam_stroke&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -739,7 +648,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/runner/mir_datasets/mridangam_stroke/mridangam_stroke_1.5/B/224030__akshaylaya__bheem-b-001.wav&#39;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">stroke_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">item</span><span class="p">:</span> <span class="p">[]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">available_strokes</span><span class="p">}</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">mridangam_stroke</span><span class="o">.</span><span class="n">track_ids</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">stroke_dict</span><span class="p">[</span><span class="n">mridangam_tracks</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mridangam_tracks</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;available_strokes&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -766,21 +682,24 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Play recording of id: 224976, including stroke &#39;thi&#39; and tonic B
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Let&#39;s first get a random track</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">random_track</span> <span class="o">=</span> <span class="n">mridangam_stroke</span><span class="o">.</span><span class="n">choice_track</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">track_id</span> <span class="o">=</span> <span class="n">random_track</span><span class="o">.</span><span class="n">track_id</span>  <span class="c1"># Getting id of track</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">stroke_name</span> <span class="o">=</span> <span class="n">random_track</span><span class="o">.</span><span class="n">stroke_name</span>  <span class="c1"># Getting stroke label</span>
+
+<span class="ne">NameError</span>: name &#39;mridangam_stroke&#39; is not defined
 </pre></div>
 </div>
-<div class="output text_html">
-<audio  controls="controls" >
-    <source src="data:audio/wav;base64,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AAAAAAAAAAAHAAAABwAAAAcABwAHAAcABwAHAAcABwAHAAcABwAHAAcABwAHAAcABwAHAA4ABwAOAAcADgAOAA4ADgAOAA4ADgAOAA4AFQAOABUADgAVABUAFQAdABUAHQAVABUAHQAVAB0AFQAdAB0AHQAdAB0AHQAdAB0AHQAdAB0AHQAdAB0AHQAdAB0AJAAkACQAJAAkACQAJAAkACQAKwArACsAKwArACsAKwArACsAKwArADMAKwAzADMAKwAzACsAMwArADMAMwAzADMAMwAzADMAMwAzADMAMwArADMAMwAzADMAMwAzACsAMwAzADMAMwAzADMAMwAzADMAMwAzADMAMwAzADMAMwAzADMAOgAzADoAMwA6ADMAMwAzADMAMwAzADMAKwAzACsAKwArACsAKwArADMAKwAzACsAKwArACsAKwArACsAKwArACsAKwArACsAKwArACsAKwArACsAJAArACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAdACQAJAAkACQAJAAkACQAHQAkACQAJAAkACQAHQAkAB0AHQAdAB0AHQAdAB0AHQAdAB0AHQAdABUAHQAVAB0AFQAdABUAFQAVABUAFQAVABUAFQAVABUAFQAVABUAFQAVABUAFQAVABUAFQAVABUAFQAVABUAFQAOABUADgAVABUAFQAOABUAFQAVABUAFQAVABUAFQAOABUADgAOAA4ADgAOAA4ADgAOAA4ADgAOAA4ABwAOAAcADgAHAAcABwAHAAcABwAHAAcABwAHAAcABwAHAAcABwAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+f8AAPn/+f/5//n/+f/5/wAA+f/5//n/+f/5//n/+f/5//n/+f/5//n/8v/5//L/+f/y//L/+f/y//n/8v/5//L/8v/y//L/8v/y//L/8v/y//L/8v/y//L/8v/y//L/8v/y//L/8v/y//L/8v/y//L/8v/y//L/8v/y//L/8v/y//L/8v/y//L/8v/y//n/8v/5//L/8v/5//n/+f/5//n/+f/5//n/+f/5//n/+f/5//n/+f/5//n/+f/5//n/+f/5//n/+f/5//n/+f/5//n/+f/5//n/+f/5//n/+f/5//n/AAD5/wAA+f8AAAAAAAAAAAAAAAAAAPn/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" type="audio/wav" />
-    Your browser does not support the audio element.
-</audio>
-</div></div>
+</div>
 </div>
 <p>The relevance of <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> and the advantages that using the dataloaders will be further seen multiple times along the entire tutorial.</p>
 </section>
 </section>
 <section id="contributing-with-a-dataloader">
-<h2>Contributing with a dataloader<a class="headerlink" href="#contributing-with-a-dataloader" title="Permalink to this headline">#</a></h2>
+<h2>Contributing with a dataloader<a class="headerlink" href="#contributing-with-a-dataloader" title="Permalink to this heading">#</a></h2>
 <p>As already mentioned in the <a class="reference internal" href="../introduction/compiam.html#compiam-contributing"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">compiam</span></code> contribution insights</span></a>, if interested on including your Indian Art Music dataset in <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> and subsequently in <code class="docutils literal notranslate"><span class="pre">compiam</span></code>, feel free to follow the <a class="reference external" href="https://mirdata.readthedocs.io/en/latest/source/contributing.html"><code class="docutils literal notranslate"><span class="pre">mirdata</span></code> contributing guidelines</a> to get your dataset integrated to <code class="docutils literal notranslate"><span class="pre">mirdata</span></code>, and then open an issue in <code class="docutils literal notranslate"><span class="pre">compiam</span></code> to have your dataset considered there as well.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -801,7 +720,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./corpora_and_datasets"
         },
         predefinedOutput: true
@@ -809,50 +728,107 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="corpora.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Accessing the Dunya Corpora</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="corpora.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Accessing the Dunya Corpora</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../melodic_analysis/tonic-identification.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../melodic_analysis/tonic-identification.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Tonic identification</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mirdata"><code class="docutils literal notranslate"><span class="pre">mirdata</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-mirdata-loaders">Why mirdata loaders?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing-with-a-dataloader">Contributing with a dataloader</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Thomas Nuttall, Genís Plaja-Roglans, Lara Pearson, Brindha Manickavasakan, Kaustuv Kanti Ganguli, Ajay Srinivasamurthy and Xavier Serra<br/>
-  
-      &copy; Copyright 2024.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Thomas Nuttall, Genís Plaja-Roglans, Lara Pearson, Brindha Manickavasakan, Kaustuv Kanti Ganguli, Ajay Srinivasamurthy and Xavier Serra
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
