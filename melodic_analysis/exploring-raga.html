@@ -1080,14 +1080,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-10-11 11:09:28.562503: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/cv2/../../lib64:
-2024-10-11 11:09:28.562531: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-10-30 18:24:24.248092: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/cv2/../../lib64:
+2024-10-30 18:24:24.248121: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-10-11 11:09:29.804391: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/cv2/../../lib64:
-2024-10-11 11:09:29.804419: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-2024-10-11 11:09:29.804440: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az654-122): /proc/driver/nvidia/version does not exist
-2024-10-11 11:09:29.804613: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-10-30 18:24:25.556142: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/cv2/../../lib64:
+2024-10-30 18:24:25.556169: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2024-10-30 18:24:25.556186: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az1538-855): /proc/driver/nvidia/version does not exist
+2024-10-30 18:24:25.556381: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
 </pre></div>
 </div>
@@ -1375,21 +1375,11 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{54.997834212038505: &#39;R2&#39;,
- 109.99566842407701: &#39;R2&#39;,
- 219.99133684815402: &#39;R2&#39;,
- 439.98267369630804: &#39;R2&#39;,
- 879.965347392616: &#39;R2&#39;,
- 82.40364421278775: &#39;D2&#39;,
- 164.8072884255755: &#39;D2&#39;,
- 329.614576851151: &#39;D2&#39;,
- 659.229153702302: &#39;D2&#39;,
- 1318.458307404604: &#39;D2&#39;,
- 48.9975: &#39;S&#39;,
- 97.995: &#39;S&#39;,
- 195.99: &#39;S&#39;,
- 391.98: &#39;S&#39;,
- 783.96: &#39;S&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{65.40381575469627: &#39;M1&#39;,
+ 130.80763150939254: &#39;M1&#39;,
+ 261.6152630187851: &#39;M1&#39;,
+ 523.2305260375701: &#39;M1&#39;,
+ 1046.46105207514: &#39;M1&#39;,
  58.268175617345825: &#39;G2&#39;,
  116.53635123469165: &#39;G2&#39;,
  233.0727024693833: &#39;G2&#39;,
@@ -1400,16 +1390,26 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
  293.6532039970608: &#39;P&#39;,
  587.3064079941216: &#39;P&#39;,
  1174.6128159882435: &#39;P&#39;,
- 65.40381575469627: &#39;M1&#39;,
- 130.80763150939254: &#39;M1&#39;,
- 261.6152630187851: &#39;M1&#39;,
- 523.2305260375701: &#39;M1&#39;,
- 1046.46105207514: &#39;M1&#39;,
+ 48.9975: &#39;S&#39;,
+ 97.995: &#39;S&#39;,
+ 195.99: &#39;S&#39;,
+ 391.98: &#39;S&#39;,
+ 783.96: &#39;S&#39;,
  87.30361988416256: &#39;N2&#39;,
  174.60723976832512: &#39;N2&#39;,
  349.21447953665023: &#39;N2&#39;,
  698.4289590733005: &#39;N2&#39;,
- 1396.857918146601: &#39;N2&#39;}
+ 1396.857918146601: &#39;N2&#39;,
+ 82.40364421278775: &#39;D2&#39;,
+ 164.8072884255755: &#39;D2&#39;,
+ 329.614576851151: &#39;D2&#39;,
+ 659.229153702302: &#39;D2&#39;,
+ 1318.458307404604: &#39;D2&#39;,
+ 54.997834212038505: &#39;R2&#39;,
+ 109.99566842407701: &#39;R2&#39;,
+ 219.99133684815402: &#39;R2&#39;,
+ 439.98267369630804: &#39;R2&#39;,
+ 879.965347392616: &#39;R2&#39;}
 </pre></div>
 </div>
 </div>
@@ -1848,7 +1848,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f60acfe9130&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6c80a99fd0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/c831c1471e31410c0eb2e73483f71281c96ceb0c3010c75d6f951d20def5d441.png" src="../_images/c831c1471e31410c0eb2e73483f71281c96ceb0c3010c75d6f951d20def5d441.png" />
@@ -1965,7 +1965,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f60aced9dc0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6c802b5700&gt;]
 </pre></div>
 </div>
 <img alt="../_images/c831c1471e31410c0eb2e73483f71281c96ceb0c3010c75d6f951d20def5d441.png" src="../_images/c831c1471e31410c0eb2e73483f71281c96ceb0c3010c75d6f951d20def5d441.png" />
@@ -2314,8 +2314,8 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rītigauḷa: {&#39;R2&#39;, &#39;D2&#39;, &#39;S&#39;, &#39;G2&#39;, &#39;P&#39;, &#39;M1&#39;, &#39;N2&#39;}
-Bhairavi: {&#39;R2&#39;, &#39;D2&#39;, &#39;D1&#39;, &#39;S&#39;, &#39;G2&#39;, &#39;P&#39;, &#39;M1&#39;, &#39;N2&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rītigauḷa: {&#39;G2&#39;, &#39;M1&#39;, &#39;P&#39;, &#39;S&#39;, &#39;N2&#39;, &#39;D2&#39;, &#39;R2&#39;}
+Bhairavi: {&#39;G2&#39;, &#39;M1&#39;, &#39;P&#39;, &#39;S&#39;, &#39;N2&#39;, &#39;D2&#39;, &#39;R2&#39;, &#39;D1&#39;}
 </pre></div>
 </div>
 </div>
@@ -2649,10 +2649,10 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/compiam/melody/pattern/sancara_search/__init__.py:33,</span> in <span class="ni">CAEWrapper.__init__</span><span class="nt">(self, model_path, conf_path, spec_path, device)</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="k">global</span> <span class="n">torch</span>
-<span class="ne">---&gt; </span><span class="mi">33</span> <span class="kn">import</span> <span class="nn">torch</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="k">global</span> <span class="n">to_cqt_repr</span><span class="p">,</span> <span class="n">standardize</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/compiam/melody/pattern/sancara_search/__init__.py:42,</span> in <span class="ni">CAEWrapper.__init__</span><span class="nt">(self, model_path, conf_path, spec_path, download_link, download_checksum, device)</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="k">global</span> <span class="n">torch</span>
+<span class="ne">---&gt; </span><span class="mi">42</span> <span class="kn">import</span> <span class="nn">torch</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">global</span> <span class="n">to_cqt_repr</span><span class="p">,</span> <span class="n">standardize</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;torch&#39;
 
@@ -2665,26 +2665,22 @@ We can see from these two combined plots that ri is stronger in bhairavi than in
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># CAE features</span>
 <span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">cae</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:cae-carnatic&quot;</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/compiam/__init__.py:44,</span> in <span class="ni">load_model</span><span class="nt">(model_name, data_home, models_dict)</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span>         <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">][</span><span class="n">kp</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span>             <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_home</span><span class="p">,</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">][</span><span class="n">kp</span><span class="p">])</span>
-<span class="g g-Whitespace">     </span><span class="mi">39</span>             <span class="k">if</span> <span class="n">data_home</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span>             <span class="k">else</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">WORKDIR</span><span class="p">,</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">][</span><span class="n">kp</span><span class="p">])</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span>         <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="n">module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">import_module</span><span class="p">(</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;module_name&quot;</span><span class="p">]),</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;class_name&quot;</span><span class="p">])</span>
-<span class="ne">---&gt; </span><span class="mi">44</span> <span class="k">return</span> <span class="n">module</span><span class="p">(</span><span class="o">**</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;kwargs&quot;</span><span class="p">])</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/compiam/__init__.py:58,</span> in <span class="ni">load_model</span><span class="nt">(model_name, data_home, models_dict, version, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="n">module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">import_module</span><span class="p">(</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;module_name&quot;</span><span class="p">]),</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;class_name&quot;</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="n">model_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">58</span> <span class="k">return</span> <span class="n">module</span><span class="p">(</span><span class="o">**</span><span class="n">model_kwargs</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/compiam/melody/pattern/sancara_search/__init__.py:52,</span> in <span class="ni">CAEWrapper.__init__</span><span class="nt">(self, model_path, conf_path, spec_path, device)</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="kn">from</span> <span class="nn">compiam.melody.pattern.sancara_search.complex_auto.util</span> <span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>         <span class="n">cuda_variable</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span> <span class="k">except</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">52</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">53</span>         <span class="s2">&quot;In order to use this tool you need to have torch installed. &quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">54</span>         <span class="s2">&quot;Please install torch using: pip install torch&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="c1">###</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">device</span><span class="p">:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/compiam/melody/pattern/sancara_search/__init__.py:61,</span> in <span class="ni">CAEWrapper.__init__</span><span class="nt">(self, model_path, conf_path, spec_path, download_link, download_checksum, device)</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="kn">from</span> <span class="nn">compiam.melody.pattern.sancara_search.complex_auto.util</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span>         <span class="n">cuda_variable</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="k">except</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">61</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span>         <span class="s2">&quot;In order to use this tool you need to have torch installed. &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span>         <span class="s2">&quot;Please install torch using: pip install torch&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span> <span class="c1">###</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">device</span><span class="p">:</span>
 
 <span class="ne">ImportError</span>: In order to use this tool you need to have torch installed. Please install torch using: pip install torch
 </pre></div>
