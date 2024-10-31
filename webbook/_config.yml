@@ -47,4 +47,4 @@ html:
   use_repository_button: true
 
 # Exclude this patterns from build
-exclude_patterns: [.github/*, .venv/*, webbook/carnatic/*, webbook/hindustani/*, webbook/melodic_analysis/exploring-raga.ipynb]
+exclude_patterns: [.github/*, .venv/*, webbook/carnatic/*, webbook/hindustani/*, webbook/separation/misc/*, webbook/melodic_analysis/exploring-raga.ipynb]
