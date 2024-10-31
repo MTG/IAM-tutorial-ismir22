@@ -539,25 +539,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Print list of available mirdangam strokes in the dataset</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">msc</span><span class="o">.</span><span class="n">list_strokes</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/compiam/timbre/stroke_classification/mridangam_stroke_classification/__init__.py:98,</span> in <span class="ni">MridangamStrokeClassification.list_strokes</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span>     <span class="k">raise</span> <span class="n">DatasetNotLoadedError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span><span class="w">         </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">92</span><span class="sd">         Please load the dataset using the .load_mridangam_dataset() method or the strokes </span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span><span class="sd">         cannot be listed.</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span> <span class="n">stroke_names</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="ne">---&gt; </span><span class="mi">98</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mridangam_ids</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="n">stroke_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mridangam_tracks</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">stroke_name</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">100</span> <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">stroke_names</span><span class="p">))</span>
-
-<span class="ne">AttributeError</span>: &#39;MridangamStrokeClassification&#39; object has no attribute &#39;mridangam_ids&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;bheem&#39;, &#39;cha&#39;, &#39;dheem&#39;, &#39;dhin&#39;, &#39;num&#39;, &#39;ta&#39;, &#39;tha&#39;, &#39;tham&#39;, &#39;thi&#39;, &#39;thom&#39;]
 </pre></div>
 </div>
 </div>
@@ -643,15 +625,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Visualise and evaluate some predictions from the model output</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">pprint</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">())))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pprint</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">())))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">pprint</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">())))</span>
-
-<span class="ne">NameError</span>: name &#39;prediction&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;../audio/mir_datasets/mridangam_stroke_1.5/D#/228925__akshaylaya__dhin-dsh-126.wav&#39;,
+ &#39;dhin&#39;)
+(&#39;../audio/mir_datasets/mridangam_stroke_1.5/C#/226559__akshaylaya__dheem-csh-017.wav&#39;,
+ &#39;dheem&#39;)
+(&#39;../audio/mir_datasets/mridangam_stroke_1.5/D/227731__akshaylaya__cha-d-045.wav&#39;,
+ &#39;cha&#39;)
 </pre></div>
 </div>
 </div>
@@ -665,10 +644,10 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Track(
-  audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/B/224976__akshaylaya__thi-b-195.wav&quot;,
+  audio_path=&quot;../audio/mir_datasets/mridangam_stroke_1.5/C/226097__akshaylaya__thi-c-026.wav&quot;,
   stroke_name=&quot;thi&quot;,
-  tonic=&quot;B&quot;,
-  track_id=&quot;224976&quot;,
+  tonic=&quot;C&quot;,
+  track_id=&quot;226097&quot;,
   audio: The track&#39;s audio
 
         Returns,
@@ -705,15 +684,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Selecting a random example from the predicted files</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">predicted_file</span><span class="p">,</span> <span class="n">predicted_stroke</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">prediction</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Getting the ID from filepath</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">identifier</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">predicted_file</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;prediction&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nice! Predicted stroke in 226722__akshaylaya__num-csh-039.wav
+ coincides with ground-truth num
 </pre></div>
 </div>
 </div>
