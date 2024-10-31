@@ -1,8 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
-title: #Logo instead of title
+title: " " #Logo instead of title
 author: Thomas Nuttall, Genís Plaja-Roglans, Lara Pearson, Brindha Manickavasakan, Kaustuv Kanti Ganguli, Ajay Srinivasamurthy and Xavier Serra
-copyright: "2022"
+copyright: "2024"
 logo: images/logo.png
 
 # Force re-execution of notebooks on each build.
@@ -10,7 +10,7 @@ logo: images/logo.png
 execute:
   execute_notebooks: force
   allow_errors: true
-  timeout: 500
+  timeout: 5000
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -47,4 +47,4 @@ html:
   use_repository_button: true
 
 # Exclude this patterns from build
-exclude_patterns: [.github/*, .venv/*, webbook/carnatic/*, webbook/hindustani/*]
+exclude_patterns: [.github/*, .venv/*, webbook/carnatic/*, webbook/hindustani/*, webbook/melodic_analysis/exploring-raga.ipynb]

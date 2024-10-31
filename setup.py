@@ -14,7 +14,7 @@ setup(
         "Intended Audience :: Education",
         "Intended Audience :: Science/Research",
         "Natural Language :: English",
-        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.9",
         "Topic :: Multimedia",
         "Topic :: Multimedia :: Sound/Audio",
         "Topic :: Multimedia :: Sound/Audio :: Editors",

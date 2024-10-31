@@ -41,9 +41,13 @@ parts:
   chapters:
     - file: timbre_analysis/stroke-classification
 
+- caption: Music Source Separation
+  chapters:
+    - file: separation/singing-voice-extraction
+
 - caption: Resources
   chapters:    
     - file: resources/references
-    #- file: resources/further-reading  # TODO
+    - file: resources/open-challenges
     - file: resources/acknowledgements
     - file: resources/citing
