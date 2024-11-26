@@ -224,6 +224,13 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../separation/singing-voice-extraction.html">Singing voice extraction</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resources/exploring-performance.html">Hola</a></li>
+
+
+
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../resources/references.html">References</a></li>
@@ -537,9 +544,115 @@ document.write(`
 <p class="admonition-title">Tip</p>
 <p>Get the correct identifier for the wrapper by running <code class="docutils literal notranslate"><span class="pre">compiam.list_models()</span></code>.</p>
 </div>
-<div class="cell tag_remove-output docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dbs</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;structure:dhrupad-bandish-segmentation&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>modelpathhh /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/compiam/models/structure/dhrupad_bandish_segmentation/baseline/pretrained_models/net/saved_model_fold_0.pt
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0.00/1.59M [00:00&lt;?, ?iB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|▏         | 24.6k/1.59M [00:00&lt;00:09, 164kiB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|▎         | 49.2k/1.59M [00:00&lt;00:08, 190kiB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|▉         | 139k/1.59M [00:00&lt;00:03, 445kiB/s] 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|█▊        | 287k/1.59M [00:00&lt;00:01, 764kiB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 31%|███       | 492k/1.59M [00:00&lt;00:00, 1.12MiB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 47%|████▋     | 754k/1.59M [00:00&lt;00:00, 1.50MiB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 64%|██████▍   | 1.02M/1.59M [00:00&lt;00:00, 1.75MiB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 82%|████████▏ | 1.31M/1.59M [00:00&lt;00:00, 2.00MiB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 98%|█████████▊| 1.56M/1.59M [00:01&lt;00:00, 2.04MiB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1.59M/1.59M [00:01&lt;00:00, 1.48MiB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-11-26 15:04:59,336] INFO [compiam.utils.download.download_zip:95] Download complete: /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/compiam/models/structure/dhrupad_bandish_segmentation/dhrupad_bandish_segmentation.zip
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-11-26 15:04:59,341] INFO [compiam.utils.download.extract_zip:103] Extracting /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/compiam/models/structure/dhrupad_bandish_segmentation/dhrupad_bandish_segmentation.zip...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-11-26 15:04:59,357] INFO [compiam.utils.download.extract_zip:106] Extraction complete: Files extracted to /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/compiam/models/structure/dhrupad_bandish_segmentation
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-11-26 15:04:59,358] INFO [compiam.utils.download.download_remote_model:71] Files downloaded and extracted successfully.
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dbs</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;structure:dhrupad-bandish-segmentation&quot;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/compiam/__init__.py:58,</span> in <span class="ni">load_model</span><span class="nt">(model_name, data_home, models_dict, version, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="n">module</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">import_module</span><span class="p">(</span><span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;module_name&quot;</span><span class="p">]),</span> <span class="n">m_dict</span><span class="p">[</span><span class="s2">&quot;class_name&quot;</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="n">model_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">58</span> <span class="k">return</span> <span class="n">module</span><span class="p">(</span><span class="o">**</span><span class="n">model_kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/compiam/structure/segmentation/dhrupad_bandish_segmentation/__init__.py:108,</span> in <span class="ni">DhrupadBandishSegmentation.__init__</span><span class="nt">(self, mode, fold, model_path, splits_path, annotations_path, features_path, original_audios_path, processed_audios_path, download_link, download_checksum, device)</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>     <span class="n">path_to_model</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span>         <span class="bp">self</span><span class="o">.</span><span class="n">model_path</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">],</span> <span class="s2">&quot;saved_model_fold_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fold</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.pt&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">108</span>     <span class="bp">self</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="n">path_to_model</span><span class="p">)</span>  <span class="c1"># Loading pre-trained model for given mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span> <span class="bp">self</span><span class="o">.</span><span class="n">splits_path</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span>     <span class="n">splits_path</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="k">if</span> <span class="n">splits_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">116</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">117</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotations_path</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span>     <span class="n">annotations_path</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span>     <span class="k">if</span> <span class="n">annotations_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span> <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/compiam/structure/segmentation/dhrupad_bandish_segmentation/__init__.py:180,</span> in <span class="ni">DhrupadBandishSegmentation.load_model</span><span class="nt">(self, model_path)</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span>     <span class="bp">self</span><span class="o">.</span><span class="n">download_model</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_model</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">180</span>     <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">weights_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span> <span class="bp">self</span><span class="o">.</span><span class="n">loaded_model_path</span> <span class="o">=</span> <span class="n">model_path</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/torch/serialization.py:593,</span> in <span class="ni">load</span><span class="nt">(f, map_location, pickle_module, **pickle_load_args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">591</span>             <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">opened_file</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">592</span>         <span class="k">return</span> <span class="n">_load</span><span class="p">(</span><span class="n">opened_zipfile</span><span class="p">,</span> <span class="n">map_location</span><span class="p">,</span> <span class="n">pickle_module</span><span class="p">,</span> <span class="o">**</span><span class="n">pickle_load_args</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">593</span> <span class="k">return</span> <span class="n">_legacy_load</span><span class="p">(</span><span class="n">opened_file</span><span class="p">,</span> <span class="n">map_location</span><span class="p">,</span> <span class="n">pickle_module</span><span class="p">,</span> <span class="o">**</span><span class="n">pickle_load_args</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/torch/serialization.py:762,</span> in <span class="ni">_legacy_load</span><span class="nt">(f, map_location, pickle_module, **pickle_load_args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">756</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s1">&#39;readinto&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">757</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">758</span>         <span class="s2">&quot;torch.load does not work with file-like objects that do not implement readinto on Python 3.8.0 and 3.8.1. &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">759</span>         <span class="sa">f</span><span class="s2">&quot;Received object of type </span><span class="se">\&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">. Please update to Python 3.8.2 or newer to restore this &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">760</span>         <span class="s2">&quot;functionality.&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">762</span> <span class="n">magic_number</span> <span class="o">=</span> <span class="n">pickle_module</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="n">pickle_load_args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">763</span> <span class="k">if</span> <span class="n">magic_number</span> <span class="o">!=</span> <span class="n">MAGIC_NUMBER</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">764</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Invalid magic number; corrupt file?&quot;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: &#39;weights_only&#39; is an invalid keyword argument for load()
 </pre></div>
 </div>
 </div>
