@@ -26,7 +26,6 @@ parts:
     - file: melodic_analysis/melodic-transcription
     - file: melodic_analysis/melodic-pattern-discovery
     - file: melodic_analysis/raga-recognition
-    #- file: melodic_analysis/exploring-raga  # To run locally
 
 - caption: Rhythmic Analysis
   chapters:
@@ -44,6 +43,12 @@ parts:
 - caption: Music Source Separation
   chapters:
     - file: separation/singing-voice-extraction
+
+- caption: Demos
+  chapters:
+    - file: melodic_analysis/melodic-pattern-discovery
+    - file: resources/exploring-performance
+    #- file: melodic_analysis/exploring-raga  # To run locally
 
 - caption: Resources
   chapters:    
