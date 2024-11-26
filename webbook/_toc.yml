@@ -46,7 +46,7 @@ parts:
 
 - caption: Demos
   chapters:
-    - file: melodic_analysis/melodic-pattern-discovery
+    #- file: melodic_analysis/melodic-pattern-discovery
     - file: resources/exploring-performance
     #- file: melodic_analysis/exploring-raga  # To run locally
 
