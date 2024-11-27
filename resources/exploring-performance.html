@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Hola &#8212;  </title>
+    <title>Exploring performance &#8212;  </title>
   
   
   
@@ -227,7 +227,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Hola</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exploring performance</a></li>
 
 
 
@@ -472,7 +472,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hola</h1>
+    <h1>Exploring performance</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -482,7 +482,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hola</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exploring performance</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-and-visualising-the-data">Loading and visualising the data</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#low-level-feature-extraction">Low level feature extraction</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tonic-identification">Tonic Identification</a></li>
@@ -508,8 +508,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hola">
-<h1>Hola<a class="headerlink" href="#hola" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="exploring-performance">
+<h1>Exploring performance<a class="headerlink" href="#exploring-performance" title="Permalink to this heading">#</a></h1>
+<p>In this demo, we</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Installing (if not) and importing compiam to the project</span>
@@ -549,7 +550,9 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<p>We will work on a concert led by Dr. Brindha Manickavasakan, a well-known Carnatic music performer and Doctor which has been very much involved in our research efforts. This concert happened within the December Season 2023 in Chennai, India, at the well-known Arkay Convention Centre. Please note this recording in particular is part of the newly published Saraga Audiovisual Dataset (A. Shankar et al., 2024), which will be soon available for access through <code class="docutils literal notranslate"><span class="pre">mirdata</span></code> and <code class="docutils literal notranslate"><span class="pre">compIAM</span></code>.</p>
+<p>For now, we will download this particular concert and explore a given rendition.</p>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://drive.google.com/uc?id=1IMVRrYqBwz_lxpMCq1XwPCV8wrIoGdOu&amp;export=download&quot;</span>
 <span class="n">output</span> <span class="o">=</span>  <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">AUDIO_PATH</span><span class="p">,</span>  <span class="s2">&quot;dr-brindha-manickavasakan.zip&quot;</span><span class="p">)</span>
@@ -557,138 +560,8 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading...
-From (original): https://drive.google.com/uc?id=1IMVRrYqBwz_lxpMCq1XwPCV8wrIoGdOu&amp;export=download
-From (redirected): https://drive.google.com/uc?id=1IMVRrYqBwz_lxpMCq1XwPCV8wrIoGdOu&amp;export=download&amp;confirm=t&amp;uuid=8f016abd-883c-41a2-b05f-559369fbb49b
-To: /home/runner/work/IAM-tutorial-ismir22/IAM-tutorial-ismir22/webbook/audio/demos/dr-brindha-manickavasakan.zip
-</pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0.00/453M [00:00&lt;?, ?B/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|          | 4.72M/453M [00:00&lt;00:34, 13.2MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|▏         | 8.91M/453M [00:00&lt;00:26, 16.8MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|▌         | 25.7M/453M [00:01&lt;00:16, 26.5MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|▉         | 42.5M/453M [00:01&lt;00:13, 30.9MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|█▎        | 59.2M/453M [00:01&lt;00:09, 39.8MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|█▍        | 67.6M/453M [00:01&lt;00:09, 40.6MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|█▋        | 76.0M/453M [00:02&lt;00:10, 36.3MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|█▊        | 84.4M/453M [00:02&lt;00:09, 37.2MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|██        | 92.8M/453M [00:02&lt;00:09, 39.6MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|██▏       | 101M/453M [00:02&lt;00:08, 41.1MB/s] 
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|██▍       | 112M/453M [00:02&lt;00:06, 52.3MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|██▌       | 118M/453M [00:03&lt;00:08, 38.4MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|███       | 136M/453M [00:03&lt;00:05, 59.9MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 32%|███▏      | 145M/453M [00:03&lt;00:06, 51.2MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 35%|███▌      | 160M/453M [00:03&lt;00:05, 52.0MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 39%|███▉      | 177M/453M [00:04&lt;00:04, 67.4MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 41%|████      | 186M/453M [00:04&lt;00:05, 53.4MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 45%|████▍     | 202M/453M [00:04&lt;00:03, 69.5MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 47%|████▋     | 211M/453M [00:04&lt;00:03, 69.6MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 49%|████▊     | 220M/453M [00:04&lt;00:03, 69.9MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 52%|█████▏    | 238M/453M [00:04&lt;00:02, 91.2MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 55%|█████▍    | 249M/453M [00:05&lt;00:02, 75.8MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 59%|█████▉    | 269M/453M [00:05&lt;00:02, 79.6MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 63%|██████▎   | 285M/453M [00:05&lt;00:01, 94.9MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 66%|██████▌   | 297M/453M [00:05&lt;00:01, 89.3MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 68%|██████▊   | 310M/453M [00:05&lt;00:01, 97.9MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 71%|███████   | 321M/453M [00:05&lt;00:01, 79.9MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 74%|███████▍  | 336M/453M [00:06&lt;00:01, 70.0MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 76%|███████▌  | 344M/453M [00:06&lt;00:01, 69.4MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 78%|███████▊  | 353M/453M [00:06&lt;00:01, 65.0MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 82%|████████▏ | 370M/453M [00:06&lt;00:01, 68.8MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 85%|████████▌ | 386M/453M [00:06&lt;00:00, 83.7MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 87%|████████▋ | 396M/453M [00:06&lt;00:00, 81.1MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 89%|████████▉ | 405M/453M [00:07&lt;00:00, 74.1MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 93%|█████████▎| 420M/453M [00:07&lt;00:00, 74.3MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 97%|█████████▋| 441M/453M [00:07&lt;00:00, 101MB/s] 
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 453M/453M [00:07&lt;00:00, 93.9MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 453M/453M [00:07&lt;00:00, 60.7MB/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;../audio/demos/dr-brindha-manickavasakan.zip&#39;
-</pre></div>
-</div>
-</div>
-</div>
+<p>Once the audio is download, we can extract all the files and remove the .zip file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Unzip file</span>
@@ -706,49 +579,45 @@ To: /home/runner/work/IAM-tutorial-ismir22/IAM-tutorial-ismir22/webbook/audio/de
 <h1>Loading and visualising the data<a class="headerlink" href="#loading-and-visualising-the-data" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rendition</span> <span class="o">=</span> <span class="s2">&quot;Valapu Thala&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rendition</span> <span class="o">=</span> <span class="s2">&quot;Valapu Thala&quot;</span>  <span class="c1"># Selecting a rendition</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>We use <code class="docutils literal notranslate"><span class="pre">Essentia</span></code> to first load the mixture audio of the concert. The function <code class="docutils literal notranslate"><span class="pre">AudioLoader</span></code> can be used to load an audio signal from a file path and return the signal plus some important technical information about it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">AUDIO_PATH</span><span class="p">,</span> <span class="n">rendition</span> <span class="o">+</span> <span class="s2">&quot;.wav&quot;</span><span class="p">)</span>
-<span class="n">audio_mix</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">estd</span><span class="o">.</span><span class="n">AudioLoader</span><span class="p">(</span>
-    <span class="n">filename</span><span class="o">=</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sampleRate</span><span class="o">=</span><span class="mi">44100</span>
-<span class="p">)()</span>
+<span class="n">audio_mix</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">estd</span><span class="o">.</span><span class="n">AudioLoader</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">file_path</span><span class="p">)()</span>
 <span class="n">audio_mix</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">AUDIO_PATH</span><span class="p">,</span> <span class="n">rendition</span> <span class="o">+</span> <span class="s2">&quot;.wav&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">audio_mix</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">estd</span><span class="o">.</span><span class="n">AudioLoader</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">filename</span><span class="o">=</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sampleRate</span><span class="o">=</span><span class="mi">44100</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)()</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">audio_mix</span><span class="o">.</span><span class="n">shape</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">audio_mix</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">estd</span><span class="o">.</span><span class="n">AudioLoader</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">file_path</span><span class="p">)()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">audio_mix</span><span class="o">.</span><span class="n">shape</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/essentia/standard.py:44,</span> in <span class="ni">_create_essentia_class.&lt;locals&gt;.Algo.__init__</span><span class="nt">(self, **kwargs)</span>
 <span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="n">_essentia</span><span class="o">.</span><span class="n">Algorithm</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="c1"># configure the algorithm</span>
 <span class="ne">---&gt; </span><span class="mi">44</span> <span class="bp">self</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/essentia/standard.py:49,</span> in <span class="ni">_create_essentia_class.&lt;locals&gt;.Algo.configure</span><span class="nt">(self, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="k">def</span> <span class="nf">configure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="c1"># verify that all types match and do any necessary conversions</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>     <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">iteritems</span><span class="p">(</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">49</span>         <span class="n">goalType</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">paramType</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">.</span><span class="vm">__module__</span> <span class="o">==</span> <span class="s1">&#39;numpy&#39;</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">val</span><span class="o">.</span><span class="n">flags</span><span class="p">[</span><span class="s1">&#39;C_CONTIGUOUS&#39;</span><span class="p">]:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/essentia/standard.py:64,</span> in <span class="ni">_create_essentia_class.&lt;locals&gt;.Algo.configure</span><span class="nt">(self, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span>         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Error cannot convert parameter </span><span class="si">%s</span><span class="s1"> to </span><span class="si">%s</span><span class="s1">&#39;</span>\
+<span class="g g-Whitespace">     </span><span class="mi">60</span>                         <span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">_c</span><span class="o">.</span><span class="n">determineEdt</span><span class="p">(</span><span class="n">val</span><span class="p">)),</span><span class="nb">str</span><span class="p">(</span><span class="n">goalType</span><span class="p">)))</span> <span class="c1">#\&#39;&#39;+name+&#39;\&#39; parameter: &#39;+str(e))</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span>     <span class="n">kwargs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">convertedVal</span>
+<span class="ne">---&gt; </span><span class="mi">64</span> <span class="bp">self</span><span class="o">.</span><span class="n">__configure__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="ne">ValueError</span>: &#39;sampleRate&#39; is not a parameter of AudioLoader
+<span class="ne">RuntimeError</span>: Error while configuring AudioLoader: AudioLoader: Could not open file &quot;../audio/demos/Valapu Thala.wav&quot;, error = No such file or directory
 </pre></div>
 </div>
 </div>
 </div>
+<p>Let’s quickly listed to 30 seconds of this incredible performance!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">audio_mix</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">:</span><span class="mi">44100</span><span class="o">*</span><span class="mi">30</span><span class="p">],</span> <span class="n">rate</span><span class="o">=</span><span class="mi">44100</span><span class="p">)</span>
@@ -954,7 +823,7 @@ To: /home/runner/work/IAM-tutorial-ismir22/IAM-tutorial-ismir22/webbook/audio/de
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hola</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exploring performance</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-and-visualising-the-data">Loading and visualising the data</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#low-level-feature-extraction">Low level feature extraction</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tonic-identification">Tonic Identification</a></li>
