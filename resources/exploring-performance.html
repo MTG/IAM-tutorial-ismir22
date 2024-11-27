@@ -510,7 +510,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="exploring-performance">
 <h1>Exploring performance<a class="headerlink" href="#exploring-performance" title="Permalink to this heading">#</a></h1>
-<p>In this demo, we</p>
+<p>In this demo, we …</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Installing (if not) and importing compiam to the project</span>
@@ -541,6 +541,7 @@ document.write(`
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 
 <span class="n">AUDIO_PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;audio&quot;</span><span class="p">,</span> <span class="s2">&quot;demos&quot;</span><span class="p">)</span>
+<span class="n">ARTIST</span> <span class="o">=</span> <span class="s2">&quot;dr-brindha-manickavasakan&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -554,7 +555,7 @@ document.write(`
 <p>For now, we will download this particular concert and explore a given rendition.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://drive.google.com/uc?id=1IMVRrYqBwz_lxpMCq1XwPCV8wrIoGdOu&amp;export=download&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://drive.google.com/uc?id=1iR0bfxDLQbH8fEeHU_GFsg2kh7brZ0HZ&amp;export=download&quot;</span>
 <span class="n">output</span> <span class="o">=</span>  <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">AUDIO_PATH</span><span class="p">,</span>  <span class="s2">&quot;dr-brindha-manickavasakan.zip&quot;</span><span class="p">)</span>
 <span class="n">gdown</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
 </pre></div>
@@ -579,7 +580,7 @@ document.write(`
 <h1>Loading and visualising the data<a class="headerlink" href="#loading-and-visualising-the-data" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rendition</span> <span class="o">=</span> <span class="s2">&quot;Valapu Thala&quot;</span>  <span class="c1"># Selecting a rendition</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rendition</span> <span class="o">=</span> <span class="s2">&quot;Bhavanuta&quot;</span>  <span class="c1"># Selecting a rendition</span>
 </pre></div>
 </div>
 </div>
@@ -587,9 +588,9 @@ document.write(`
 <p>We use <code class="docutils literal notranslate"><span class="pre">Essentia</span></code> to first load the mixture audio of the concert. The function <code class="docutils literal notranslate"><span class="pre">AudioLoader</span></code> can be used to load an audio signal from a file path and return the signal plus some important technical information about it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">AUDIO_PATH</span><span class="p">,</span> <span class="n">rendition</span> <span class="o">+</span> <span class="s2">&quot;.wav&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">AUDIO_PATH</span><span class="p">,</span> <span class="n">ARTIST</span><span class="p">,</span> <span class="n">rendition</span> <span class="o">+</span> <span class="s2">&quot;.wav&quot;</span><span class="p">)</span>
 <span class="n">audio_mix</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">estd</span><span class="o">.</span><span class="n">AudioLoader</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">file_path</span><span class="p">)()</span>
-<span class="n">audio_mix</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">audio_mix</span> <span class="o">=</span> <span class="n">audio_mix</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># Put channels first</span>
 </pre></div>
 </div>
 </div>
@@ -597,9 +598,9 @@ document.write(`
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">AUDIO_PATH</span><span class="p">,</span> <span class="n">rendition</span> <span class="o">+</span> <span class="s2">&quot;.wav&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">AUDIO_PATH</span><span class="p">,</span> <span class="n">ARTIST</span><span class="p">,</span> <span class="n">rendition</span> <span class="o">+</span> <span class="s2">&quot;.wav&quot;</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">audio_mix</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">estd</span><span class="o">.</span><span class="n">AudioLoader</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">file_path</span><span class="p">)()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">audio_mix</span><span class="o">.</span><span class="n">shape</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">audio_mix</span> <span class="o">=</span> <span class="n">audio_mix</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># Put channels first</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/essentia/standard.py:44,</span> in <span class="ni">_create_essentia_class.&lt;locals&gt;.Algo.__init__</span><span class="nt">(self, **kwargs)</span>
 <span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="n">_essentia</span><span class="o">.</span><span class="n">Algorithm</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
@@ -612,7 +613,7 @@ document.write(`
 <span class="g g-Whitespace">     </span><span class="mi">62</span>     <span class="n">kwargs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">convertedVal</span>
 <span class="ne">---&gt; </span><span class="mi">64</span> <span class="bp">self</span><span class="o">.</span><span class="n">__configure__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="ne">RuntimeError</span>: Error while configuring AudioLoader: AudioLoader: Could not open file &quot;../audio/demos/Valapu Thala.wav&quot;, error = No such file or directory
+<span class="ne">RuntimeError</span>: Error while configuring AudioLoader: AudioLoader: Could not open file &quot;../audio/demos/dr-brindha-manickavasakan/Bhavanuta.wav&quot;, error = No such file or directory
 </pre></div>
 </div>
 </div>
@@ -656,6 +657,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">separated_vocals</span> <span class="o">=</span> <span class="n">separation_model</span><span class="o">.</span><span class="n">separate</span><span class="p">(</span><span class="n">audio_mix</span><span class="p">)</span>
+<span class="n">separated_vocals</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -664,6 +666,7 @@ document.write(`
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">separated_vocals</span> <span class="o">=</span> <span class="n">separation_model</span><span class="o">.</span><span class="n">separate</span><span class="p">(</span><span class="n">audio_mix</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">separated_vocals</span><span class="o">.</span><span class="n">shape</span>
 
 <span class="ne">NameError</span>: name &#39;audio_mix&#39; is not defined
 </pre></div>
@@ -739,19 +742,45 @@ document.write(`
 </div>
 </div>
 </div>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feat</span> <span class="o">=</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">get_features</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deepsrgm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">audio_mix</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">:</span><span class="mi">44100</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">2</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predicted_raga</span> <span class="o">=</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span>
+<span class="n">predicted_raga</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">audio_mix</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">:</span><span class="mi">44100</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">predicted_raga</span> <span class="o">=</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">predicted_raga</span>
 
-<span class="ne">NameError</span>: name &#39;audio_mix&#39; is not defined
+<span class="ne">NameError</span>: name &#39;feat&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deepsrgm</span><span class="o">.</span><span class="n">raga_mapping</span><span class="p">[</span><span class="n">predicted_raga</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">deepsrgm</span><span class="o">.</span><span class="n">raga_mapping</span><span class="p">[</span><span class="n">predicted_raga</span><span class="p">]</span>
+
+<span class="ne">AttributeError</span>: &#39;DEEPSRGM&#39; object has no attribute &#39;raga_mapping&#39;
 </pre></div>
 </div>
 </div>
