@@ -561,13 +561,16 @@ Time (LSTM) networks, given its ability to capture sequence information <span id
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Showing raga mapping</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">pprint</span><span class="p">(</span><span class="n">deepsrgm</span><span class="o">.</span><span class="n">mapping</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;deepsrgm&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: &#39;Bhairav&#39;,
+ 1: &#39;Madhukauns&#39;,
+ 2: &#39;Mōhanaṁ&#39;,
+ 3: &#39;Hamsadhvāni&#39;,
+ 4: &#39;Varāḷi&#39;,
+ 5: &#39;Dēś&#39;,
+ 6: &#39;Kamās&#39;,
+ 7: &#39;Yaman kalyāṇ&#39;,
+ 8: &#39;Bilahari&#39;,
+ 9: &#39;Ahira bhairav&#39;}
 </pre></div>
 </div>
 </div>
@@ -591,6 +594,7 @@ Time (LSTM) networks, given its ability to capture sequence information <span id
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We first load the {ids: tracks} dict for Saraga Carnatic</span>
+<span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">download</span><span class="p">([</span><span class="s2">&quot;index&quot;</span><span class="p">])</span>  <span class="c1"># mirdata&gt;0.3.8 needs to dowload index</span>
 <span class="n">saraga_tracks</span> <span class="o">=</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()</span>
 
 <span class="c1"># Now we can get a specific track</span>
@@ -601,89 +605,8 @@ Time (LSTM) networks, given its ability to capture sequence information <span id
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:169,</span> in <span class="ni">Dataset._index</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">168</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">169</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fhandle</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">170</span>         <span class="n">index</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fhandle</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/smart_open/smart_open_lib.py:177,</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="n">transport_params</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="ne">--&gt; </span><span class="mi">177</span> <span class="n">fobj</span> <span class="o">=</span> <span class="n">_shortcut_open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span>     <span class="n">uri</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span>     <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="k">if</span> <span class="n">fobj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/smart_open/smart_open_lib.py:363,</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="n">open_kwargs</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">errors</span>
-<span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">return</span> <span class="n">_builtin_open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/datasets/indexes/saraga_carnatic_index_1.5.json&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># We first load the {ids: tracks} dict for Saraga Carnatic</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">saraga_tracks</span> <span class="o">=</span> <span class="n">saraga_carnatic</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Now we can get a specific track</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">track_data</span> <span class="o">=</span> <span class="n">saraga_tracks</span><span class="p">[</span><span class="s2">&quot;109_Sri_Raghuvara_Sugunaalaya&quot;</span><span class="p">]</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:252,</span> in <span class="ni">Dataset.load_tracks</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span> <span class="k">def</span> <span class="nf">load_tracks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">242</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Load all tracks in the dataset</span>
-<span class="g g-Whitespace">    </span><span class="mi">243</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">244</span><span class="sd">     Returns:</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">251</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">252</span>     <span class="k">return</span> <span class="p">{</span><span class="n">track_id</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">track</span><span class="p">(</span><span class="n">track_id</span><span class="p">)</span> <span class="k">for</span> <span class="n">track_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">track_ids</span><span class="p">}</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:47,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="k">return</span> <span class="bp">self</span>
-<span class="ne">---&gt; </span><span class="mi">47</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="k">return</span> <span class="n">value</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:474,</span> in <span class="ni">Dataset.track_ids</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span> <span class="nd">@cached_property</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span> <span class="k">def</span> <span class="nf">track_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">468</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Return track ids</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">470</span><span class="sd">     Returns:</span>
-<span class="g g-Whitespace">    </span><span class="mi">471</span><span class="sd">         list: A list of track ids</span>
-<span class="g g-Whitespace">    </span><span class="mi">472</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">473</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">474</span>     <span class="k">if</span> <span class="s2">&quot;tracks&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">475</span>         <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;This dataset does not have tracks&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">476</span>     <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">[</span><span class="s2">&quot;tracks&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:47,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="k">return</span> <span class="bp">self</span>
-<span class="ne">---&gt; </span><span class="mi">47</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="k">return</span> <span class="n">value</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:173,</span> in <span class="ni">Dataset._index</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span> <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index_data</span><span class="o">.</span><span class="n">remote</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">173</span>         <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>             <span class="s2">&quot;This dataset&#39;s index must be downloaded. Did you run .download()?&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span>         <span class="sa">f</span><span class="s2">&quot;Dataset index for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> was expected &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span>         <span class="o">+</span> <span class="s2">&quot;but not found. Make sure your sample indexes for testing are in mirdata/tests/indexes/&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span> <span class="k">return</span> <span class="n">index</span>
-
-<span class="ne">FileNotFoundError</span>: This dataset&#39;s index must be downloaded. Did you run .download()?
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This recording includes raaga: Bhairavi
+This recordings has unique Dunya ID: 123b09bd-9901-4e64-a65a-10b02c9e0597
 </pre></div>
 </div>
 </div>

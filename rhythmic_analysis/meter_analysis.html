@@ -578,91 +578,153 @@ CompMusic Carnatic Music Rhythm class
 <p>Reading through the dataset details we observe the available data for the tracks in the dataloader. We will load the tracks and select the specific track we have selected for tutoring purposes. Bear in mind that you can access the list of identifiers in the dataloader with the <code class="docutils literal notranslate"><span class="pre">.track_ids</span></code> attribute.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">track</span> <span class="o">=</span> <span class="n">cmr</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()[</span><span class="s2">&quot;10001&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cmr</span><span class="o">.</span><span class="n">download</span><span class="p">([</span><span class="s2">&quot;index&quot;</span><span class="p">])</span>  <span class="c1"># mirdata&gt;0.3.8 needs to dowload index</span>
+<span class="n">track</span> <span class="o">=</span> <span class="n">cmr</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()[</span><span class="s2">&quot;10001&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:169,</span> in <span class="ni">Dataset._index</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">168</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">169</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fhandle</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">170</span>         <span class="n">index</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fhandle</span><span class="p">)</span>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00B [00:00, ?B/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-11-27 12:51:00,364] ERROR [root.download_from_remote:258] 
+                            mirdata failed to download the dataset from hhttps://zenodo.org/records/14007971/files/compmusic_carnatic_rhythm_full_index_1.0.json?download=1!
+                            Please try again in a few minutes.
+                            If this error persists, please raise an issue at
+                            https://github.com/mir-dataset-loaders/mirdata,
+                            and tag it with &#39;broken-link&#39;.
+                            
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00B [00:00, ?B/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+URLError                                  Traceback (most recent call last)
+Cell In [3], line 1
+----&gt; 1 cmr.download([&quot;index&quot;])  # mirdata&gt;0.3.8 needs to dowload index
+      2 track = cmr.load_tracks()[&quot;10001&quot;]
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/smart_open/smart_open_lib.py:177,</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="n">transport_params</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="ne">--&gt; </span><span class="mi">177</span> <span class="n">fobj</span> <span class="o">=</span> <span class="n">_shortcut_open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span>     <span class="n">uri</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span>     <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="k">if</span> <span class="n">fobj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/mirdata/core.py:455, in Dataset.download(self, partial_download, force_overwrite, cleanup, allow_invalid_checksum)
+    428 def download(
+    429     self,
+    430     partial_download=None,
+   (...)
+    433     allow_invalid_checksum=False,
+    434 ):
+    435     &quot;&quot;&quot;Download data to `save_dir` and optionally print a message.
+    436 
+    437     Args:
+   (...)
+    453 
+    454     &quot;&quot;&quot;
+--&gt; 455     download_utils.downloader(
+    456         self.data_home,
+    457         remotes=self.remotes,
+    458         index=self._index_data,
+    459         partial_download=partial_download,
+    460         info_message=self._download_info,
+    461         force_overwrite=force_overwrite,
+    462         cleanup=cleanup,
+    463         allow_invalid_checksum=allow_invalid_checksum,
+    464     )
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/smart_open/smart_open_lib.py:363,</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="n">open_kwargs</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">errors</span>
-<span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">return</span> <span class="n">_builtin_open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/mirdata/download_utils.py:155, in downloader(save_dir, remotes, index, partial_download, info_message, force_overwrite, cleanup, allow_invalid_checksum)
+    147     download_tar_file(
+    148         remotes[k],
+    149         save_dir,
+   (...)
+    152         allow_invalid_checksum,
+    153     )
+    154 else:
+--&gt; 155     download_from_remote(
+    156         remotes[k], save_dir, force_overwrite, allow_invalid_checksum
+    157     )
+    159 if remotes[k].unpack_directories:
+    160     for src_dir in remotes[k].unpack_directories:
+    161         # path to destination directory
 
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/datasets/indexes/compmusic_carnatic_rhythm_full_index_1.0.json&#39;
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/mirdata/download_utils.py:259, in download_from_remote(remote, save_dir, force_overwrite, allow_invalid_checksum)
+    249             error_msg = &quot;&quot;&quot;
+    250                         mirdata failed to download the dataset from {}!
+    251                         Please try again in a few minutes.
+   (...)
+    256                 remote.url
+    257             )
+    258             logging.error(error_msg)
+--&gt; 259             raise exc
+    260 else:
+    261     logging.info(
+    262         &quot;{} already exists and will not be downloaded. &quot;.format(download_path)
+    263         + &quot;Rerun with force_overwrite=True to delete this file and force the download.&quot;
+    264     )
 
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/mirdata/download_utils.py:242, in download_from_remote(remote, save_dir, force_overwrite, allow_invalid_checksum)
+    238 with DownloadProgressBar(
+    239     unit=&quot;B&quot;, unit_scale=True, unit_divisor=1024, miniters=1
+    240 ) as t:
+    241     try:
+--&gt; 242         urllib.request.urlretrieve(
+    243             remote.url,
+    244             filename=download_path,
+    245             reporthook=t.update_to,
+    246             data=None,
+    247         )
+    248     except Exception as exc:
+    249         error_msg = &quot;&quot;&quot;
+    250                     mirdata failed to download the dataset from {}!
+    251                     Please try again in a few minutes.
+   (...)
+    256             remote.url
+    257         )
 
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">track</span> <span class="o">=</span> <span class="n">cmr</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()[</span><span class="s2">&quot;10001&quot;</span><span class="p">]</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/urllib/request.py:241, in urlretrieve(url, filename, reporthook, data)
+    224 &quot;&quot;&quot;
+    225 Retrieve a URL into a temporary location on disk.
+    226 
+   (...)
+    237 data file as well as the resulting HTTPMessage object.
+    238 &quot;&quot;&quot;
+    239 url_type, path = _splittype(url)
+--&gt; 241 with contextlib.closing(urlopen(url, data)) as fp:
+    242     headers = fp.info()
+    244     # Just return the local path and the &quot;headers&quot; for file://
+    245     # URLs. No sense in performing a copy unless requested.
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:252,</span> in <span class="ni">Dataset.load_tracks</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span> <span class="k">def</span> <span class="nf">load_tracks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">242</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Load all tracks in the dataset</span>
-<span class="g g-Whitespace">    </span><span class="mi">243</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">244</span><span class="sd">     Returns:</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">251</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">252</span>     <span class="k">return</span> <span class="p">{</span><span class="n">track_id</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">track</span><span class="p">(</span><span class="n">track_id</span><span class="p">)</span> <span class="k">for</span> <span class="n">track_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">track_ids</span><span class="p">}</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/urllib/request.py:216, in urlopen(url, data, timeout, cafile, capath, cadefault, context)
+    214 else:
+    215     opener = _opener
+--&gt; 216 return opener.open(url, data, timeout)
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:47,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="k">return</span> <span class="bp">self</span>
-<span class="ne">---&gt; </span><span class="mi">47</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="k">return</span> <span class="n">value</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/urllib/request.py:519, in OpenerDirector.open(self, fullurl, data, timeout)
+    516     req = meth(req)
+    518 sys.audit(&#39;urllib.Request&#39;, req.full_url, req.data, req.headers, req.get_method())
+--&gt; 519 response = self._open(req, data)
+    521 # post-process response
+    522 meth_name = protocol+&quot;_response&quot;
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:474,</span> in <span class="ni">Dataset.track_ids</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span> <span class="nd">@cached_property</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span> <span class="k">def</span> <span class="nf">track_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">468</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Return track ids</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">470</span><span class="sd">     Returns:</span>
-<span class="g g-Whitespace">    </span><span class="mi">471</span><span class="sd">         list: A list of track ids</span>
-<span class="g g-Whitespace">    </span><span class="mi">472</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">473</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">474</span>     <span class="k">if</span> <span class="s2">&quot;tracks&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">475</span>         <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;This dataset does not have tracks&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">476</span>     <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">[</span><span class="s2">&quot;tracks&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/urllib/request.py:541, in OpenerDirector._open(self, req, data)
+    538 if result:
+    539     return result
+--&gt; 541 return self._call_chain(self.handle_open, &#39;unknown&#39;,
+    542                         &#39;unknown_open&#39;, req)
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:47,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="k">return</span> <span class="bp">self</span>
-<span class="ne">---&gt; </span><span class="mi">47</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="k">return</span> <span class="n">value</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/urllib/request.py:496, in OpenerDirector._call_chain(self, chain, kind, meth_name, *args)
+    494 for handler in handlers:
+    495     func = getattr(handler, meth_name)
+--&gt; 496     result = func(*args)
+    497     if result is not None:
+    498         return result
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:173,</span> in <span class="ni">Dataset._index</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span> <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index_data</span><span class="o">.</span><span class="n">remote</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">173</span>         <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>             <span class="s2">&quot;This dataset&#39;s index must be downloaded. Did you run .download()?&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span>         <span class="sa">f</span><span class="s2">&quot;Dataset index for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> was expected &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span>         <span class="o">+</span> <span class="s2">&quot;but not found. Make sure your sample indexes for testing are in mirdata/tests/indexes/&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span> <span class="k">return</span> <span class="n">index</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/urllib/request.py:1419, in UnknownHandler.unknown_open(self, req)
+   1417 def unknown_open(self, req):
+   1418     type = req.type
+-&gt; 1419     raise URLError(&#39;unknown url type: %s&#39; % type)
 
-<span class="ne">FileNotFoundError</span>: This dataset&#39;s index must be downloaded. Did you run .download()?
+URLError: &lt;urlopen error unknown url type: hhttps&gt;
 </pre></div>
 </div>
 </div>
@@ -767,6 +829,7 @@ CompMusic Carnatic Music Rhythm class
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s listen to 30 seconds of the input audio</span>
+<span class="n">cmr</span><span class="o">.</span><span class="n">download</span><span class="p">([</span><span class="s2">&quot;index&quot;</span><span class="p">])</span>  <span class="c1"># mirdata&gt;0.3.8 needs to dowload index</span>
 <span class="n">track</span> <span class="o">=</span> <span class="n">cmr</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()[</span><span class="s2">&quot;10001&quot;</span><span class="p">]</span>
 <span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">track</span><span class="o">.</span><span class="n">audio</span>
 <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
@@ -777,92 +840,149 @@ CompMusic Carnatic Music Rhythm class
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:169,</span> in <span class="ni">Dataset._index</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">168</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">169</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fhandle</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">170</span>         <span class="n">index</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fhandle</span><span class="p">)</span>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00B [00:00, ?B/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-11-27 12:51:00,895] ERROR [root.download_from_remote:258] 
+                            mirdata failed to download the dataset from hhttps://zenodo.org/records/14007971/files/compmusic_carnatic_rhythm_full_index_1.0.json?download=1!
+                            Please try again in a few minutes.
+                            If this error persists, please raise an issue at
+                            https://github.com/mir-dataset-loaders/mirdata,
+                            and tag it with &#39;broken-link&#39;.
+                            
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00B [00:00, ?B/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+URLError                                  Traceback (most recent call last)
+Cell In [9], line 2
+      1 # Let&#39;s listen to 30 seconds of the input audio
+----&gt; 2 cmr.download([&quot;index&quot;])  # mirdata&gt;0.3.8 needs to dowload index
+      3 track = cmr.load_tracks()[&quot;10001&quot;]
+      4 audio, sr = track.audio
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/smart_open/smart_open_lib.py:177,</span> in <span class="ni">open</span><span class="nt">(uri, mode, buffering, encoding, errors, newline, closefd, opener, compression, transport_params)</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="n">transport_params</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="ne">--&gt; </span><span class="mi">177</span> <span class="n">fobj</span> <span class="o">=</span> <span class="n">_shortcut_open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span>     <span class="n">uri</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span>     <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="k">if</span> <span class="n">fobj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/mirdata/core.py:455, in Dataset.download(self, partial_download, force_overwrite, cleanup, allow_invalid_checksum)
+    428 def download(
+    429     self,
+    430     partial_download=None,
+   (...)
+    433     allow_invalid_checksum=False,
+    434 ):
+    435     &quot;&quot;&quot;Download data to `save_dir` and optionally print a message.
+    436 
+    437     Args:
+   (...)
+    453 
+    454     &quot;&quot;&quot;
+--&gt; 455     download_utils.downloader(
+    456         self.data_home,
+    457         remotes=self.remotes,
+    458         index=self._index_data,
+    459         partial_download=partial_download,
+    460         info_message=self._download_info,
+    461         force_overwrite=force_overwrite,
+    462         cleanup=cleanup,
+    463         allow_invalid_checksum=allow_invalid_checksum,
+    464     )
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/smart_open/smart_open_lib.py:363,</span> in <span class="ni">_shortcut_open</span><span class="nt">(uri, mode, compression, buffering, encoding, errors, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="n">open_kwargs</span><span class="p">[</span><span class="s1">&#39;errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">errors</span>
-<span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">return</span> <span class="n">_builtin_open</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/mirdata/download_utils.py:155, in downloader(save_dir, remotes, index, partial_download, info_message, force_overwrite, cleanup, allow_invalid_checksum)
+    147     download_tar_file(
+    148         remotes[k],
+    149         save_dir,
+   (...)
+    152         allow_invalid_checksum,
+    153     )
+    154 else:
+--&gt; 155     download_from_remote(
+    156         remotes[k], save_dir, force_overwrite, allow_invalid_checksum
+    157     )
+    159 if remotes[k].unpack_directories:
+    160     for src_dir in remotes[k].unpack_directories:
+    161         # path to destination directory
 
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/datasets/indexes/compmusic_carnatic_rhythm_full_index_1.0.json&#39;
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/mirdata/download_utils.py:259, in download_from_remote(remote, save_dir, force_overwrite, allow_invalid_checksum)
+    249             error_msg = &quot;&quot;&quot;
+    250                         mirdata failed to download the dataset from {}!
+    251                         Please try again in a few minutes.
+   (...)
+    256                 remote.url
+    257             )
+    258             logging.error(error_msg)
+--&gt; 259             raise exc
+    260 else:
+    261     logging.info(
+    262         &quot;{} already exists and will not be downloaded. &quot;.format(download_path)
+    263         + &quot;Rerun with force_overwrite=True to delete this file and force the download.&quot;
+    264     )
 
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/mirdata/download_utils.py:242, in download_from_remote(remote, save_dir, force_overwrite, allow_invalid_checksum)
+    238 with DownloadProgressBar(
+    239     unit=&quot;B&quot;, unit_scale=True, unit_divisor=1024, miniters=1
+    240 ) as t:
+    241     try:
+--&gt; 242         urllib.request.urlretrieve(
+    243             remote.url,
+    244             filename=download_path,
+    245             reporthook=t.update_to,
+    246             data=None,
+    247         )
+    248     except Exception as exc:
+    249         error_msg = &quot;&quot;&quot;
+    250                     mirdata failed to download the dataset from {}!
+    251                     Please try again in a few minutes.
+   (...)
+    256             remote.url
+    257         )
 
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Let&#39;s listen to 30 seconds of the input audio</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">track</span> <span class="o">=</span> <span class="n">cmr</span><span class="o">.</span><span class="n">load_tracks</span><span class="p">()[</span><span class="s2">&quot;10001&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">audio</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">track</span><span class="o">.</span><span class="n">audio</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">data</span><span class="o">=</span><span class="n">audio</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">10</span><span class="o">*</span><span class="n">sr</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">rate</span><span class="o">=</span><span class="n">sr</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">)</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/urllib/request.py:241, in urlretrieve(url, filename, reporthook, data)
+    224 &quot;&quot;&quot;
+    225 Retrieve a URL into a temporary location on disk.
+    226 
+   (...)
+    237 data file as well as the resulting HTTPMessage object.
+    238 &quot;&quot;&quot;
+    239 url_type, path = _splittype(url)
+--&gt; 241 with contextlib.closing(urlopen(url, data)) as fp:
+    242     headers = fp.info()
+    244     # Just return the local path and the &quot;headers&quot; for file://
+    245     # URLs. No sense in performing a copy unless requested.
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:252,</span> in <span class="ni">Dataset.load_tracks</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span> <span class="k">def</span> <span class="nf">load_tracks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">242</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Load all tracks in the dataset</span>
-<span class="g g-Whitespace">    </span><span class="mi">243</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">244</span><span class="sd">     Returns:</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">251</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">252</span>     <span class="k">return</span> <span class="p">{</span><span class="n">track_id</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">track</span><span class="p">(</span><span class="n">track_id</span><span class="p">)</span> <span class="k">for</span> <span class="n">track_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">track_ids</span><span class="p">}</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/urllib/request.py:216, in urlopen(url, data, timeout, cafile, capath, cadefault, context)
+    214 else:
+    215     opener = _opener
+--&gt; 216 return opener.open(url, data, timeout)
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:47,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="k">return</span> <span class="bp">self</span>
-<span class="ne">---&gt; </span><span class="mi">47</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="k">return</span> <span class="n">value</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/urllib/request.py:519, in OpenerDirector.open(self, fullurl, data, timeout)
+    516     req = meth(req)
+    518 sys.audit(&#39;urllib.Request&#39;, req.full_url, req.data, req.headers, req.get_method())
+--&gt; 519 response = self._open(req, data)
+    521 # post-process response
+    522 meth_name = protocol+&quot;_response&quot;
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:474,</span> in <span class="ni">Dataset.track_ids</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span> <span class="nd">@cached_property</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span> <span class="k">def</span> <span class="nf">track_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">468</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Return track ids</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">470</span><span class="sd">     Returns:</span>
-<span class="g g-Whitespace">    </span><span class="mi">471</span><span class="sd">         list: A list of track ids</span>
-<span class="g g-Whitespace">    </span><span class="mi">472</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">473</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">474</span>     <span class="k">if</span> <span class="s2">&quot;tracks&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">475</span>         <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;This dataset does not have tracks&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">476</span>     <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">[</span><span class="s2">&quot;tracks&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/urllib/request.py:541, in OpenerDirector._open(self, req, data)
+    538 if result:
+    539     return result
+--&gt; 541 return self._call_chain(self.handle_open, &#39;unknown&#39;,
+    542                         &#39;unknown_open&#39;, req)
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:47,</span> in <span class="ni">cached_property.__get__</span><span class="nt">(self, obj, cls)</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="k">return</span> <span class="bp">self</span>
-<span class="ne">---&gt; </span><span class="mi">47</span> <span class="n">value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="k">return</span> <span class="n">value</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/urllib/request.py:496, in OpenerDirector._call_chain(self, chain, kind, meth_name, *args)
+    494 for handler in handlers:
+    495     func = getattr(handler, meth_name)
+--&gt; 496     result = func(*args)
+    497     if result is not None:
+    498         return result
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/mirdata/core.py:173,</span> in <span class="ni">Dataset._index</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span> <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index_data</span><span class="o">.</span><span class="n">remote</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">173</span>         <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>             <span class="s2">&quot;This dataset&#39;s index must be downloaded. Did you run .download()?&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span>         <span class="sa">f</span><span class="s2">&quot;Dataset index for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> was expected &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span>         <span class="o">+</span> <span class="s2">&quot;but not found. Make sure your sample indexes for testing are in mirdata/tests/indexes/&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span> <span class="k">return</span> <span class="n">index</span>
+File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/urllib/request.py:1419, in UnknownHandler.unknown_open(self, req)
+   1417 def unknown_open(self, req):
+   1418     type = req.type
+-&gt; 1419     raise URLError(&#39;unknown url type: %s&#39; % type)
 
-<span class="ne">FileNotFoundError</span>: This dataset&#39;s index must be downloaded. Did you run .download()?
+URLError: &lt;urlopen error unknown url type: hhttps&gt;
 </pre></div>
 </div>
 </div>
