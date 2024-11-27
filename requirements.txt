@@ -5,6 +5,7 @@ ipython~=8.6.0
 Jinja2==3.1.2
 openpyxl==3.0.7
 sphinx~=5.0.0
+gdown
 numpy<2  # Avoiding incompatibilities for now
 matplotlib
 lxml[html_clean]
