@@ -1088,16 +1088,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-27 17:00:42.249675: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
-2024-11-27 17:00:42.288356: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-2024-11-27 17:00:42.288387: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
-2024-11-27 17:00:42.289505: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-2024-11-27 17:00:42.295233: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
-2024-11-27 17:00:42.296057: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-28 11:37:35.567162: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2024-11-28 11:37:35.599298: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-11-28 11:37:35.599331: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-11-28 11:37:35.600458: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-11-28 11:37:35.606166: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2024-11-28 11:37:35.607025: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-27 17:00:43.077733: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-28 11:37:36.379411: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
 </pre></div>
 </div>
 </div>
@@ -1384,26 +1384,31 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{58.268175617345825: &#39;G2&#39;,
- 116.53635123469165: &#39;G2&#39;,
- 233.0727024693833: &#39;G2&#39;,
- 466.1454049387666: &#39;G2&#39;,
- 932.2908098775332: &#39;G2&#39;,
- 54.997834212038505: &#39;R2&#39;,
- 109.99566842407701: &#39;R2&#39;,
- 219.99133684815402: &#39;R2&#39;,
- 439.98267369630804: &#39;R2&#39;,
- 879.965347392616: &#39;R2&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{48.9975: &#39;S&#39;,
+ 97.995: &#39;S&#39;,
+ 195.99: &#39;S&#39;,
+ 391.98: &#39;S&#39;,
+ 783.96: &#39;S&#39;,
  87.30361988416256: &#39;N2&#39;,
  174.60723976832512: &#39;N2&#39;,
  349.21447953665023: &#39;N2&#39;,
  698.4289590733005: &#39;N2&#39;,
  1396.857918146601: &#39;N2&#39;,
+ 54.997834212038505: &#39;R2&#39;,
+ 109.99566842407701: &#39;R2&#39;,
+ 219.99133684815402: &#39;R2&#39;,
+ 439.98267369630804: &#39;R2&#39;,
+ 879.965347392616: &#39;R2&#39;,
  73.4133009992652: &#39;P&#39;,
  146.8266019985304: &#39;P&#39;,
  293.6532039970608: &#39;P&#39;,
  587.3064079941216: &#39;P&#39;,
  1174.6128159882435: &#39;P&#39;,
+ 58.268175617345825: &#39;G2&#39;,
+ 116.53635123469165: &#39;G2&#39;,
+ 233.0727024693833: &#39;G2&#39;,
+ 466.1454049387666: &#39;G2&#39;,
+ 932.2908098775332: &#39;G2&#39;,
  82.40364421278775: &#39;D2&#39;,
  164.8072884255755: &#39;D2&#39;,
  329.614576851151: &#39;D2&#39;,
@@ -1413,12 +1418,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
  130.80763150939254: &#39;M1&#39;,
  261.6152630187851: &#39;M1&#39;,
  523.2305260375701: &#39;M1&#39;,
- 1046.46105207514: &#39;M1&#39;,
- 48.9975: &#39;S&#39;,
- 97.995: &#39;S&#39;,
- 195.99: &#39;S&#39;,
- 391.98: &#39;S&#39;,
- 783.96: &#39;S&#39;}
+ 1046.46105207514: &#39;M1&#39;}
 </pre></div>
 </div>
 </div>
@@ -1857,7 +1857,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f316c329390&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1b58bc99d0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/c831c1471e31410c0eb2e73483f71281c96ceb0c3010c75d6f951d20def5d441.png" src="../_images/c831c1471e31410c0eb2e73483f71281c96ceb0c3010c75d6f951d20def5d441.png" />
@@ -1974,7 +1974,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f316c624a10&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1b58a51810&gt;]
 </pre></div>
 </div>
 <img alt="../_images/c831c1471e31410c0eb2e73483f71281c96ceb0c3010c75d6f951d20def5d441.png" src="../_images/c831c1471e31410c0eb2e73483f71281c96ceb0c3010c75d6f951d20def5d441.png" />
@@ -2323,8 +2323,8 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rītigauḷa: {&#39;G2&#39;, &#39;R2&#39;, &#39;N2&#39;, &#39;P&#39;, &#39;D2&#39;, &#39;M1&#39;, &#39;S&#39;}
-Bhairavi: {&#39;G2&#39;, &#39;R2&#39;, &#39;N2&#39;, &#39;P&#39;, &#39;D2&#39;, &#39;M1&#39;, &#39;S&#39;, &#39;D1&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rītigauḷa: {&#39;S&#39;, &#39;N2&#39;, &#39;P&#39;, &#39;R2&#39;, &#39;G2&#39;, &#39;D2&#39;, &#39;M1&#39;}
+Bhairavi: {&#39;S&#39;, &#39;N2&#39;, &#39;R2&#39;, &#39;P&#39;, &#39;G2&#39;, &#39;D2&#39;, &#39;M1&#39;, &#39;D1&#39;}
 </pre></div>
 </div>
 </div>
