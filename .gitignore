@@ -69,6 +69,7 @@ target/
 # Project specific directories
 output/
 workspace/
+webbook/audio/demos/*
 
 # Thumbnails
 ._*
