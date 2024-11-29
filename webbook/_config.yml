@@ -10,7 +10,7 @@ logo: images/logo.png
 execute:
   execute_notebooks: force
   allow_errors: true
-  timeout: 5000
+  timeout: 10000
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -32,6 +32,7 @@ bibtex_bibfiles:
   - bibliography/rhythmic_analysis.bib
   - bibliography/structure_analysis.bib
   - bibliography/timbre_analysis.bib
+  - bibliography/separation.bib
 
 
 # Information about where the book exists on the web
@@ -47,4 +48,16 @@ html:
   use_repository_button: true
 
 # Exclude this patterns from build
-exclude_patterns: [.github/*, .venv/*, webbook/carnatic/*, webbook/hindustani/*, webbook/separation/misc/*, webbook/resources/exploring-raga.ipynb]
+exclude_patterns:
+  - .github/*
+  - .venv/*
+  - webbook/carnatic/*
+  - webbook/hindustani/*
+  - webbook/separation/misc/*
+  - webbook/resources/exploring-raga.ipynb
+  - webbook/separation/misc/carnatic-separation-leakage-finetune.ipynb
+  - webbook/separation/misc/carnatic-separation-leakage.ipynb
+  - webbook/separation/misc/carnatic-separation-spleeter.ipynb
+  - webbook/separation/misc/intro-carnatic-music.md
+  - webbook/resources/our-timeline.md
+  - README.md
