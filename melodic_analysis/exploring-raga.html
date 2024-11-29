@@ -1088,16 +1088,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-28 11:37:35.567162: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
-2024-11-28 11:37:35.599298: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-2024-11-28 11:37:35.599331: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
-2024-11-28 11:37:35.600458: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-2024-11-28 11:37:35.606166: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
-2024-11-28 11:37:35.607025: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-29 13:05:24.837194: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2024-11-29 13:05:24.869425: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-11-29 13:05:24.869453: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-11-29 13:05:24.870580: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-11-29 13:05:24.876187: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2024-11-29 13:05:24.876724: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-28 11:37:36.379411: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-29 13:05:25.640983: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
 </pre></div>
 </div>
 </div>
@@ -1350,19 +1350,19 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_svara_pitch_carnatic</span><span class="p">(</span><span class="n">raga</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/compiam/utils/__init__.py:123,</span> in <span class="ni">get_svara_pitch_carnatic</span><span class="nt">(raga, tonic)</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span> <span class="k">def</span> <span class="nf">get_svara_pitch_carnatic</span><span class="p">(</span><span class="n">raga</span><span class="p">,</span> <span class="n">tonic</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">123</span>     <span class="n">svara_pitch</span> <span class="o">=</span> <span class="n">get_svara_pitch</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span>         <span class="n">raga</span><span class="p">,</span> <span class="n">tonic</span><span class="p">,</span> <span class="n">svara_cents_carnatic_path</span><span class="p">,</span> <span class="n">svara_lookup_carnatic_path</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span>     <span class="k">return</span> <span class="n">svara_pitch</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/compiam/utils/__init__.py:122,</span> in <span class="ni">get_svara_pitch_carnatic</span><span class="nt">(raga, tonic)</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="k">def</span> <span class="nf">get_svara_pitch_carnatic</span><span class="p">(</span><span class="n">raga</span><span class="p">,</span> <span class="n">tonic</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">122</span>     <span class="n">svara_pitch</span> <span class="o">=</span> <span class="n">get_svara_pitch</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span>         <span class="n">raga</span><span class="p">,</span> <span class="n">tonic</span><span class="p">,</span> <span class="n">svara_cents_carnatic_path</span><span class="p">,</span> <span class="n">svara_lookup_carnatic_path</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>     <span class="k">return</span> <span class="n">svara_pitch</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/compiam/utils/__init__.py:139,</span> in <span class="ni">get_svara_pitch</span><span class="nt">(raga, tonic, svara_cents_path, svara_lookup_path)</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="k">if</span> <span class="n">close</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span>         <span class="n">error_message</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; Nearest matches: </span><span class="si">{</span><span class="n">close</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">139</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span> <span class="n">arohana</span> <span class="o">=</span> <span class="n">svara_lookup</span><span class="p">[</span><span class="n">raga</span><span class="p">][</span><span class="s2">&quot;arohana&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">142</span> <span class="n">avorohana</span> <span class="o">=</span> <span class="n">svara_lookup</span><span class="p">[</span><span class="n">raga</span><span class="p">][</span><span class="s2">&quot;avorohana&quot;</span><span class="p">]</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/compiam/utils/__init__.py:138,</span> in <span class="ni">get_svara_pitch</span><span class="nt">(raga, tonic, svara_cents_path, svara_lookup_path)</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>     <span class="k">if</span> <span class="n">close</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span>         <span class="n">error_message</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; Nearest matches: </span><span class="si">{</span><span class="n">close</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">138</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span> <span class="n">arohana</span> <span class="o">=</span> <span class="n">svara_lookup</span><span class="p">[</span><span class="n">raga</span><span class="p">][</span><span class="s2">&quot;arohana&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span> <span class="n">avorohana</span> <span class="o">=</span> <span class="n">svara_lookup</span><span class="p">[</span><span class="n">raga</span><span class="p">][</span><span class="s2">&quot;avorohana&quot;</span><span class="p">]</span>
 
 <span class="ne">ValueError</span>: Raga, Rītigauḷa not available in conf. Nearest matches: [&#39;ritigaula&#39;]
 </pre></div>
@@ -1384,21 +1384,26 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{48.9975: &#39;S&#39;,
- 97.995: &#39;S&#39;,
- 195.99: &#39;S&#39;,
- 391.98: &#39;S&#39;,
- 783.96: &#39;S&#39;,
- 87.30361988416256: &#39;N2&#39;,
- 174.60723976832512: &#39;N2&#39;,
- 349.21447953665023: &#39;N2&#39;,
- 698.4289590733005: &#39;N2&#39;,
- 1396.857918146601: &#39;N2&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{65.40381575469627: &#39;M1&#39;,
+ 130.80763150939254: &#39;M1&#39;,
+ 261.6152630187851: &#39;M1&#39;,
+ 523.2305260375701: &#39;M1&#39;,
+ 1046.46105207514: &#39;M1&#39;,
  54.997834212038505: &#39;R2&#39;,
  109.99566842407701: &#39;R2&#39;,
  219.99133684815402: &#39;R2&#39;,
  439.98267369630804: &#39;R2&#39;,
  879.965347392616: &#39;R2&#39;,
+ 82.40364421278775: &#39;D2&#39;,
+ 164.8072884255755: &#39;D2&#39;,
+ 329.614576851151: &#39;D2&#39;,
+ 659.229153702302: &#39;D2&#39;,
+ 1318.458307404604: &#39;D2&#39;,
+ 48.9975: &#39;S&#39;,
+ 97.995: &#39;S&#39;,
+ 195.99: &#39;S&#39;,
+ 391.98: &#39;S&#39;,
+ 783.96: &#39;S&#39;,
  73.4133009992652: &#39;P&#39;,
  146.8266019985304: &#39;P&#39;,
  293.6532039970608: &#39;P&#39;,
@@ -1409,16 +1414,11 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
  233.0727024693833: &#39;G2&#39;,
  466.1454049387666: &#39;G2&#39;,
  932.2908098775332: &#39;G2&#39;,
- 82.40364421278775: &#39;D2&#39;,
- 164.8072884255755: &#39;D2&#39;,
- 329.614576851151: &#39;D2&#39;,
- 659.229153702302: &#39;D2&#39;,
- 1318.458307404604: &#39;D2&#39;,
- 65.40381575469627: &#39;M1&#39;,
- 130.80763150939254: &#39;M1&#39;,
- 261.6152630187851: &#39;M1&#39;,
- 523.2305260375701: &#39;M1&#39;,
- 1046.46105207514: &#39;M1&#39;}
+ 87.30361988416256: &#39;N2&#39;,
+ 174.60723976832512: &#39;N2&#39;,
+ 349.21447953665023: &#39;N2&#39;,
+ 698.4289590733005: &#39;N2&#39;,
+ 1396.857918146601: &#39;N2&#39;}
 </pre></div>
 </div>
 </div>
@@ -1857,7 +1857,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1b58bc99d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb6f4cda450&gt;]
 </pre></div>
 </div>
 <img alt="../_images/c831c1471e31410c0eb2e73483f71281c96ceb0c3010c75d6f951d20def5d441.png" src="../_images/c831c1471e31410c0eb2e73483f71281c96ceb0c3010c75d6f951d20def5d441.png" />
@@ -1974,7 +1974,7 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1b58a51810&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb6f4bde5d0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/c831c1471e31410c0eb2e73483f71281c96ceb0c3010c75d6f951d20def5d441.png" src="../_images/c831c1471e31410c0eb2e73483f71281c96ceb0c3010c75d6f951d20def5d441.png" />
@@ -2323,8 +2323,8 @@ To enable the following instructions: AVX2 FMA, in other operations, rebuild Ten
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rītigauḷa: {&#39;S&#39;, &#39;N2&#39;, &#39;P&#39;, &#39;R2&#39;, &#39;G2&#39;, &#39;D2&#39;, &#39;M1&#39;}
-Bhairavi: {&#39;S&#39;, &#39;N2&#39;, &#39;R2&#39;, &#39;P&#39;, &#39;G2&#39;, &#39;D2&#39;, &#39;M1&#39;, &#39;D1&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rītigauḷa: {&#39;M1&#39;, &#39;R2&#39;, &#39;D2&#39;, &#39;S&#39;, &#39;P&#39;, &#39;G2&#39;, &#39;N2&#39;}
+Bhairavi: {&#39;D1&#39;, &#39;M1&#39;, &#39;R2&#39;, &#39;D2&#39;, &#39;S&#39;, &#39;P&#39;, &#39;G2&#39;, &#39;N2&#39;}
 </pre></div>
 </div>
 </div>
