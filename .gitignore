@@ -1,6 +1,9 @@
 tests/data/output.wav
 *.DS_Store
 
+# Inactive notebooks
+webbook/resources/exploring-raga.ipynb
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
