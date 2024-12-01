@@ -504,6 +504,8 @@ document.write(`
 <span class="k">if</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s1">&#39;compiam&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
     <span class="c1">## Bear in mind this will only run in a jupyter notebook / Collab session</span>
     <span class="o">%</span><span class="k">pip</span> install git+git://github.com/MTG/compIAM.git
+<span class="c1"># installing mirdata from master branch, including fix for Carnatic Rhythm dataset</span>
+<span class="o">%</span><span class="k">pip</span> install -U https://github.com/mir-dataset-loaders/mirdata.git  
 <span class="kn">import</span> <span class="nn">compiam</span>
 
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
@@ -536,7 +538,7 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00B [00:00, ?B/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-12-01 17:58:39,946] ERROR [root.download_from_remote:258] 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-12-01 23:42:08,751] ERROR [root.download_from_remote:258] 
                             mirdata failed to download the dataset from hhttps://zenodo.org/records/14007971/files/compmusic_carnatic_rhythm_full_index_1.0.json?download=1!
                             Please try again in a few minutes.
                             If this error persists, please raise an issue at
