@@ -656,9 +656,7 @@ class DhrupadBandishSegmentation(builtins.object)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install spleeter
-<span class="o">%</span><span class="k">pip</span> install numba --upgrade
 <span class="o">%</span><span class="k">pip</span> install &quot;keras&lt;3&quot;
-<span class="o">%</span><span class="k">pip</span> install &quot;tensorflow==2.9.0&quot;
 <span class="o">%</span><span class="k">pip</span> install &quot;numpy&lt;2.0.0&quot;
 </pre></div>
 </div>
@@ -729,25 +727,27 @@ Collecting librosa==0.8.0 (from spleeter)
   <span class=" -Color -Color-Red">   </span>   File &quot;/opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 149, in prepare_metadata_for_build_wheel
   <span class=" -Color -Color-Red">   </span>     return hook(metadata_directory, config_settings)
   <span class=" -Color -Color-Red">   </span>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-build-env-wb164woz/overlay/lib/python3.11/site-packages/setuptools/build_meta.py&quot;, line 377, in prepare_metadata_for_build_wheel
+  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-build-env-odjwz3zf/overlay/lib/python3.11/site-packages/setuptools/build_meta.py&quot;, line 377, in prepare_metadata_for_build_wheel
   <span class=" -Color -Color-Red">   </span>     self.run_setup()
-  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-build-env-wb164woz/overlay/lib/python3.11/site-packages/setuptools/build_meta.py&quot;, line 522, in run_setup
+  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-build-env-odjwz3zf/overlay/lib/python3.11/site-packages/setuptools/build_meta.py&quot;, line 522, in run_setup
   <span class=" -Color -Color-Red">   </span>     super().run_setup(setup_script=setup_script)
-  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-build-env-wb164woz/overlay/lib/python3.11/site-packages/setuptools/build_meta.py&quot;, line 320, in run_setup
+  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-build-env-odjwz3zf/overlay/lib/python3.11/site-packages/setuptools/build_meta.py&quot;, line 320, in run_setup
   <span class=" -Color -Color-Red">   </span>     exec(code, locals())
   <span class=" -Color -Color-Red">   </span>   File &quot;&lt;string&gt;&quot;, line 488, in &lt;module&gt;
   <span class=" -Color -Color-Red">   </span>   File &quot;&lt;string&gt;&quot;, line 465, in setup_package
-  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-install-zxnckq34/numpy_5a7a75034fc548cfa986e7a38dfedbd9/numpy/distutils/core.py&quot;, line 26, in &lt;module&gt;
+  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-install-5sajg8f7/numpy_b543aec313974544bc19ddd035c763da/numpy/distutils/core.py&quot;, line 26, in &lt;module&gt;
   <span class=" -Color -Color-Red">   </span>     from numpy.distutils.command import config, config_compiler, \
-  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-install-zxnckq34/numpy_5a7a75034fc548cfa986e7a38dfedbd9/numpy/distutils/command/config.py&quot;, line 20, in &lt;module&gt;
+  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-install-5sajg8f7/numpy_b543aec313974544bc19ddd035c763da/numpy/distutils/command/config.py&quot;, line 20, in &lt;module&gt;
   <span class=" -Color -Color-Red">   </span>     from numpy.distutils.mingw32ccompiler import generate_manifest
-  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-install-zxnckq34/numpy_5a7a75034fc548cfa986e7a38dfedbd9/numpy/distutils/mingw32ccompiler.py&quot;, line 34, in &lt;module&gt;
+  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-install-5sajg8f7/numpy_b543aec313974544bc19ddd035c763da/numpy/distutils/mingw32ccompiler.py&quot;, line 34, in &lt;module&gt;
   <span class=" -Color -Color-Red">   </span>     from distutils.msvccompiler import get_build_version as get_build_msvc_version
   <span class=" -Color -Color-Red">   </span> ModuleNotFoundError: No module named &#39;distutils.msvccompiler&#39;
   <span class=" -Color -Color-Red">   </span> <span class=" -Color -Color-Red">[end of output]</span>
   
   <span class=" -Color -Color-Bold -Color-Bold-Magenta">note</span>: This error originates from a subprocess, and is likely not a problem with pip.
-<span class=" -Color -Color-Bold -Color-Bold-Red">error</span>: <span class=" -Color -Color-Bold">metadata-generation-failed</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Red">error</span>: <span class=" -Color -Color-Bold">metadata-generation-failed</span>
 
 <span class=" -Color -Color-Red">×</span> Encountered error while generating package metadata.
 <span class=" -Color -Color-Red">╰─&gt;</span> See above for output.
@@ -762,25 +762,7 @@ Collecting librosa==0.8.0 (from spleeter)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numba in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (0.60.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: llvmlite&lt;0.44,&gt;=0.43.0dev0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from numba) (0.43.0)
-Requirement already satisfied: numpy&lt;2.1,&gt;=1.22 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (from numba) (1.26.4)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: keras&lt;3 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (2.15.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">ERROR: Could not find a version that satisfies the requirement tensorflow==2.9.0 (from versions: 2.12.0rc0, 2.12.0rc1, 2.12.0, 2.12.1, 2.13.0rc0, 2.13.0rc1, 2.13.0rc2, 2.13.0, 2.13.1, 2.14.0rc0, 2.14.0rc1, 2.14.0, 2.14.1, 2.15.0rc0, 2.15.0rc1, 2.15.0, 2.15.0.post1, 2.15.1, 2.16.0rc0, 2.16.1, 2.16.2, 2.17.0rc0, 2.17.0rc1, 2.17.0, 2.17.1, 2.18.0rc0, 2.18.0rc1, 2.18.0rc2, 2.18.0)</span>
-<span class=" -Color -Color-Red">ERROR: No matching distribution found for tensorflow==2.9.0</span>
-
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -795,40 +777,9 @@ Requirement already satisfied: numpy&lt;2.1,&gt;=1.22 in /opt/hostedtoolcache/Py
 </div>
 </div>
 <p>We will now directly download the pre-trained models for <code class="docutils literal notranslate"><span class="pre">spleeter</span></code>, and use these for inference in this walkthrough. We will use <code class="docutils literal notranslate"><span class="pre">wget</span></code> (UNIX-based) to download the available pre-trained weights for <code class="docutils literal notranslate"><span class="pre">spleeter</span></code> online.</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget<span class="w"> </span>https://github.com/deezer/spleeter/releases/download/v1.4.0/2stems.tar.gz
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-12-07 03:18:31--  https://github.com/deezer/spleeter/releases/download/v1.4.0/2stems.tar.gz
-Resolving github.com (github.com)... 140.82.114.4
-Connecting to github.com (github.com)|140.82.114.4|:443... connected.
-HTTP request sent, awaiting response... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>302 Found
-Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/211124697/e5a4d280-f98d-11e9-905c-849465861ed7?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=releaseassetproduction%2F20241207%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241207T031831Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=d04b6f8670f1930810d2a3d26f1063f1500e96e30da20f4b86887413b8a0dbfe&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=attachment%3B%20filename%3D2stems.tar.gz&amp;response-content-type=application%2Foctet-stream [following]
---2024-12-07 03:18:31--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/211124697/e5a4d280-f98d-11e9-905c-849465861ed7?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=releaseassetproduction%2F20241207%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241207T031831Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=d04b6f8670f1930810d2a3d26f1063f1500e96e30da20f4b86887413b8a0dbfe&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=attachment%3B%20filename%3D2stems.tar.gz&amp;response-content-type=application%2Foctet-stream
-Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.110.133, 185.199.111.133, 185.199.109.133, ...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.110.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 73109797 (70M) [application/octet-stream]
-Saving to: ‘2stems.tar.gz’
-
-
-2stems.tar.gz         0%[                    ]       0  --.-KB/s               
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2stems.tar.gz        88%[================&gt;   ]  61.38M   307MB/s               
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2stems.tar.gz       100%[===================&gt;]  69.72M   314MB/s    in 0.2s    
-
-2024-12-07 03:18:31 (314 MB/s) - ‘2stems.tar.gz’ saved [73109797/73109797]
 </pre></div>
 </div>
 </div>
