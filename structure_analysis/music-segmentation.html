@@ -657,20 +657,21 @@ class DhrupadBandishSegmentation(builtins.object)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install spleeter
 <span class="o">%</span><span class="k">pip</span> install &quot;keras&lt;3&quot;
-<span class="o">%</span><span class="k">pip</span> install &quot;numpy&lt;2.0.0&quot;
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting spleeter
-  Using cached spleeter-2.1.0-py3-none-any.whl.metadata (10 kB)
-Collecting ffmpeg-python==0.2.0 (from spleeter)
-  Using cached ffmpeg_python-0.2.0-py3-none-any.whl.metadata (1.7 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting httpx&lt;0.17.0,&gt;=0.16.1 (from httpx[http2]&lt;0.17.0,&gt;=0.16.1-&gt;spleeter)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached spleeter-2.1.0-py3-none-any.whl.metadata (10 kB)
+Collecting ffmpeg-python==0.2.0 (from spleeter)
+  Using cached ffmpeg_python-0.2.0-py3-none-any.whl.metadata (1.7 kB)
+Collecting httpx&lt;0.17.0,&gt;=0.16.1 (from httpx[http2]&lt;0.17.0,&gt;=0.16.1-&gt;spleeter)
   Using cached httpx-0.16.1-py3-none-any.whl.metadata (38 kB)
-Collecting librosa==0.8.0 (from spleeter)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting librosa==0.8.0 (from spleeter)
   Using cached librosa-0.8.0.tar.gz (183 kB)
 </pre></div>
 </div>
@@ -719,27 +720,27 @@ Collecting librosa==0.8.0 (from spleeter)
   <span class=" -Color -Color-Red">   </span> Running from numpy source directory.
   <span class=" -Color -Color-Red">   </span> &lt;string&gt;:461: UserWarning: Unrecognized setuptools command, proceeding with generating Cython sources and expanding templates
   <span class=" -Color -Color-Red">   </span> Traceback (most recent call last):
-  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 353, in &lt;module&gt;
+  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 353, in &lt;module&gt;
   <span class=" -Color -Color-Red">   </span>     main()
-  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 335, in main
+  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 335, in main
   <span class=" -Color -Color-Red">   </span>     json_out[&#39;return_val&#39;] = hook(**hook_input[&#39;kwargs&#39;])
   <span class=" -Color -Color-Red">   </span>                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 149, in prepare_metadata_for_build_wheel
+  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 149, in prepare_metadata_for_build_wheel
   <span class=" -Color -Color-Red">   </span>     return hook(metadata_directory, config_settings)
   <span class=" -Color -Color-Red">   </span>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-build-env-odjwz3zf/overlay/lib/python3.11/site-packages/setuptools/build_meta.py&quot;, line 377, in prepare_metadata_for_build_wheel
+  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-build-env-p4z04grc/overlay/lib/python3.11/site-packages/setuptools/build_meta.py&quot;, line 377, in prepare_metadata_for_build_wheel
   <span class=" -Color -Color-Red">   </span>     self.run_setup()
-  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-build-env-odjwz3zf/overlay/lib/python3.11/site-packages/setuptools/build_meta.py&quot;, line 522, in run_setup
+  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-build-env-p4z04grc/overlay/lib/python3.11/site-packages/setuptools/build_meta.py&quot;, line 522, in run_setup
   <span class=" -Color -Color-Red">   </span>     super().run_setup(setup_script=setup_script)
-  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-build-env-odjwz3zf/overlay/lib/python3.11/site-packages/setuptools/build_meta.py&quot;, line 320, in run_setup
+  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-build-env-p4z04grc/overlay/lib/python3.11/site-packages/setuptools/build_meta.py&quot;, line 320, in run_setup
   <span class=" -Color -Color-Red">   </span>     exec(code, locals())
   <span class=" -Color -Color-Red">   </span>   File &quot;&lt;string&gt;&quot;, line 488, in &lt;module&gt;
   <span class=" -Color -Color-Red">   </span>   File &quot;&lt;string&gt;&quot;, line 465, in setup_package
-  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-install-5sajg8f7/numpy_b543aec313974544bc19ddd035c763da/numpy/distutils/core.py&quot;, line 26, in &lt;module&gt;
+  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-install-8jdonuj5/numpy_17eadd9dc5654456acc49e1753e48e8d/numpy/distutils/core.py&quot;, line 26, in &lt;module&gt;
   <span class=" -Color -Color-Red">   </span>     from numpy.distutils.command import config, config_compiler, \
-  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-install-5sajg8f7/numpy_b543aec313974544bc19ddd035c763da/numpy/distutils/command/config.py&quot;, line 20, in &lt;module&gt;
+  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-install-8jdonuj5/numpy_17eadd9dc5654456acc49e1753e48e8d/numpy/distutils/command/config.py&quot;, line 20, in &lt;module&gt;
   <span class=" -Color -Color-Red">   </span>     from numpy.distutils.mingw32ccompiler import generate_manifest
-  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-install-5sajg8f7/numpy_b543aec313974544bc19ddd035c763da/numpy/distutils/mingw32ccompiler.py&quot;, line 34, in &lt;module&gt;
+  <span class=" -Color -Color-Red">   </span>   File &quot;/tmp/pip-install-8jdonuj5/numpy_17eadd9dc5654456acc49e1753e48e8d/numpy/distutils/mingw32ccompiler.py&quot;, line 34, in &lt;module&gt;
   <span class=" -Color -Color-Red">   </span>     from distutils.msvccompiler import get_build_version as get_build_msvc_version
   <span class=" -Color -Color-Red">   </span> ModuleNotFoundError: No module named &#39;distutils.msvccompiler&#39;
   <span class=" -Color -Color-Red">   </span> <span class=" -Color -Color-Red">[end of output]</span>
@@ -762,13 +763,7 @@ Collecting librosa==0.8.0 (from spleeter)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: keras&lt;3 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (2.15.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&lt;2.0.0 in /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages (1.26.4)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: keras&lt;3 in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (2.15.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -933,7 +928,7 @@ Collecting librosa==0.8.0 (from spleeter)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c8386f136686fc981eacbdf0b22fddc717ec0ca3d3f4cf09a0e4f1b82585dad7.png" src="../_images/c8386f136686fc981eacbdf0b22fddc717ec0ca3d3f4cf09a0e4f1b82585dad7.png" />
+<img alt="../_images/d6a962aa2c5a571ddaf1e15b67a4be5fd40a9b6815a7d98ec6195dde5fd2ac2d.png" src="../_images/d6a962aa2c5a571ddaf1e15b67a4be5fd40a9b6815a7d98ec6195dde5fd2ac2d.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3, 3, 3, ..., 1, 0, 0])
 </pre></div>
 </div>
