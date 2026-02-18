@@ -18,6 +18,7 @@ parts:
   chapters:
     - file: corpora_and_datasets/corpora
     - file: corpora_and_datasets/datasets
+    - file: corpora_and_datasets/audiovisual
 
 - caption: Melodic Analysis
   chapters:
@@ -44,14 +45,14 @@ parts:
   chapters:
     - file: separation/singing-voice-extraction
 
-- caption: Demos
-  chapters:
+#- caption: Demos
+  #chapters:
     #- file: melodic_analysis/melodic-pattern-discovery
-    - file: resources/exploring-performance
+    #- file: resources/exploring-performance
     #- file: melodic_analysis/exploring-raga  # To run locally
 
 - caption: Resources
-  chapters:    
+  chapters:
     - file: resources/references
     - file: resources/open-challenges
     - file: resources/acknowledgements
