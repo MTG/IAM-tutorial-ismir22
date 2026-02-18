@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/myfile.css" />
@@ -197,6 +197,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../corpora_and_datasets/corpora.html">Accessing the Dunya Corpora</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../corpora_and_datasets/datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../corpora_and_datasets/audiovisual.html">Saraga Audiovisual</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Melodic Analysis</span></p>
 <ul class="nav bd-sidenav">
@@ -224,10 +225,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../singing-voice-extraction.html">Singing voice extraction</a></li>
 
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../resources/exploring-performance.html">Exploring Carnatic Performance</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -483,12 +480,12 @@ document.write(`
                   
   <section id="spleeter-by-deezer-for-carnatic-music">
 <h1>Spleeter (by Deezer) for Carnatic Music<a class="headerlink" href="#spleeter-by-deezer-for-carnatic-music" title="Permalink to this heading">#</a></h1>
-<p>One main model in the literature is Spleeter <span id="id1">[<a class="reference internal" href="../../resources/references.html#id80" title="Romain Hennequin, Anis Khlif, Felix Voituret, and Manuel Moussallam. Spleeter: a fast and efficient music source separation tool with pre-trained models. Journal of Open Source Software, pages 1–4, 2020. doi:10.21105/joss.02154.">HKVM20</a>]</span>, which is broadly used in many computational musicology works for the Carnatic repertoire.</p>
+<p>One main model in the literature is Spleeter <span id="id1">[<a class="reference internal" href="../../resources/references.html#id81" title="Romain Hennequin, Anis Khlif, Felix Voituret, and Manuel Moussallam. Spleeter: a fast and efficient music source separation tool with pre-trained models. Journal of Open Source Software, pages 1–4, 2020. doi:10.21105/joss.02154.">HKVM20</a>]</span>, which is broadly used in many computational musicology works for the Carnatic repertoire.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install spleeter
 <span class="o">%</span><span class="k">pip</span> install numba --upgrade
-<span class="kn">import</span> <span class="nn">spleeter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">spleeter</span>
 </pre></div>
 </div>
 </div>
@@ -504,8 +501,8 @@ document.write(`
 <p>We unzip it!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">tarfile</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tarfile</span>
 
 <span class="c1"># Open file</span>
 <span class="n">file</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;2stems.tar.gz&quot;</span><span class="p">)</span>
@@ -528,11 +525,11 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Disabling tensorflow warnings and debugging info</span>
-<span class="kn">import</span> <span class="nn">os</span> 
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span> 
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;TF_CPP_MIN_LOG_LEVEL&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;3&quot;</span> 
 
 <span class="c1"># Importing tensorflow and disabling GPU usage</span>
-<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
 <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">set_visible_devices</span><span class="p">([],</span> <span class="s2">&quot;GPU&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -546,7 +543,7 @@ document.write(`
 <p>Let’s reproduce the separated files using <code class="docutils literal notranslate"><span class="pre">IPython</span> <span class="pre">display</span></code>.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">spleeter.separator</span> <span class="kn">import</span> <span class="n">Separator</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">spleeter.separator</span><span class="w"> </span><span class="kn">import</span> <span class="n">Separator</span>
 
 <span class="c1"># Load default 2-stem spleeter separation</span>
 <span class="n">separator</span> <span class="o">=</span> <span class="n">Separator</span><span class="p">(</span><span class="s2">&quot;spleeter:2stems&quot;</span><span class="p">)</span>
@@ -557,9 +554,9 @@ document.write(`
 <p>Let’s iterate over a few examples to analyze how the system performs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">import</span> <span class="nn">soundfile</span> <span class="k">as</span> <span class="nn">sf</span>
-<span class="kn">import</span> <span class="nn">IPython.display</span> <span class="k">as</span> <span class="nn">ipd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">soundfile</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ipd</span>
 <span class="n">separation_examples</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;../audio/separation/*.mp3&quot;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">ex</span> <span class="ow">in</span> <span class="n">separation_examples</span><span class="p">:</span>

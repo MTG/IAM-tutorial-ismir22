@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
@@ -197,6 +197,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/corpora.html">Accessing the Dunya Corpora</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/audiovisual.html">Saraga Audiovisual</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Melodic Analysis</span></p>
 <ul class="current nav bd-sidenav">
@@ -224,10 +225,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../separation/singing-voice-extraction.html">Singing voice extraction</a></li>
 
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../resources/exploring-performance.html">Exploring Carnatic Performance</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -497,22 +494,22 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="pitch-extraction">
 <span id="melody-extraction"></span><h1>Pitch extraction<a class="headerlink" href="#pitch-extraction" title="Permalink to this heading">#</a></h1>
 <p>As seen in the melodic introduction of <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-melodic-concepts"><span class="std std-ref">Carnatic</span></a> and <a class="reference internal" href="../indian_art_music/hindustani-music.html#hindustani-raga"><span class="std std-ref">Hindustani</span></a>, pitch time-series is a very relevant feature to tackle the melodic analysis of these music traditions, showing utility for many musicologically-relevant problems. Given the shortage of recordings for isolated predominant melodic instruments, this task has had to be tackled directly from mixture recordings. In this context, the task is referred as <em>predominant</em> pitch extraction (otherwise commonly referred as <em>vocal</em> pitch extraction when the source is the singing voice).</p>
-<p>Historically, in the literature of computational analysis of Indian Art Music, this task has been tackled using knowledge-based approaches <span id="id1">[<a class="reference internal" href="../resources/references.html#id34" title="Vishweshwara Rao and Preeti Rao. Vocal melody extraction in the presence of pitched accompaniment in polyphonic music. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 2145–2154, 2010. doi:10.1109/TASL.2010.2042124.">RR10</a>, <a class="reference internal" href="../resources/references.html#id35" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>. Melodia <span id="id2">[<a class="reference internal" href="../resources/references.html#id35" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>, typically combined with additional post-processing steps <span id="id3">[<a class="reference internal" href="../resources/references.html#id42" title="Sankalp Gulati, Joan Serra, Vignesh Ishwar, and Xavier Serra. Mining melodic patterns in large audio collections of Indian art music. In In Proc. of the 10th International Conference on Signal-Image Technology and Internet-Based Systems (SITIS), Bangkok, Thailand., 264–271. 2015. doi:10.1109/SITIS.2014.73.">GSIS15a</a>]</span>, has been the preferred approach until today.</p>
+<p>Historically, in the literature of computational analysis of Indian Art Music, this task has been tackled using knowledge-based approaches <span id="id1">[<a class="reference internal" href="../resources/references.html#id35" title="Vishweshwara Rao and Preeti Rao. Vocal melody extraction in the presence of pitched accompaniment in polyphonic music. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 2145–2154, 2010. doi:10.1109/TASL.2010.2042124.">RR10</a>, <a class="reference internal" href="../resources/references.html#id36" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>. Melodia <span id="id2">[<a class="reference internal" href="../resources/references.html#id36" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>, typically combined with additional post-processing steps <span id="id3">[<a class="reference internal" href="../resources/references.html#id43" title="Sankalp Gulati, Joan Serra, Vignesh Ishwar, and Xavier Serra. Mining melodic patterns in large audio collections of Indian art music. In In Proc. of the 10th International Conference on Signal-Image Technology and Internet-Based Systems (SITIS), Bangkok, Thailand., 264–271. 2015. doi:10.1109/SITIS.2014.73.">GSIS15a</a>]</span>, has been the preferred approach until today.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Installing (if not) and importing compiam to the project</span>
-<span class="kn">import</span> <span class="nn">importlib.util</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">importlib.util</span>
 <span class="k">if</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s1">&#39;compiam&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
     <span class="c1">## Bear in mind this will only run in a jupyter notebook / Collab session</span>
     <span class="o">%</span><span class="k">pip</span> install compiam
-<span class="kn">import</span> <span class="nn">compiam</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">compiam</span>
 
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -533,7 +530,7 @@ document.write(`
 </div>
 <section id="melodia">
 <h2>Melodia<a class="headerlink" href="#melodia" title="Permalink to this heading">#</a></h2>
-<p>Let’s extract the pitch from an audio sample using Melodia <span id="id4">[<a class="reference internal" href="../resources/references.html#id35" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>. This is a salience-based method, meaning that it captures the most salient melodic segments in the time-frequency representation of the input signal, keeping and connecting the segments that are more likely to belong to the predominant melody, using heuristic rules. Make sure you check out the paper for further detail!</p>
+<p>Let’s extract the pitch from an audio sample using Melodia <span id="id4">[<a class="reference internal" href="../resources/references.html#id36" title="Justin Salamon and Emilia Gómez. Melody extraction from polyphonic music signals using pitch contour characteristics. ACM/IEEE Transactions on Audio, Speech and Language Processing (TASLP), pages 1759–1770, 2012. doi:10.1109/TASL.2012.2188515.">SG12</a>]</span>. This is a salience-based method, meaning that it captures the most salient melodic segments in the time-frequency representation of the input signal, keeping and connecting the segments that are more likely to belong to the predominant melody, using heuristic rules. Make sure you check out the paper for further detail!</p>
 <p>We first need to install <code class="docutils literal notranslate"><span class="pre">essentia</span></code>, which is the optional dependency required to load this tool.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
@@ -545,7 +542,7 @@ document.write(`
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing and initializing a melodia instance</span>
-<span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction</span> <span class="kn">import</span> <span class="n">Melodia</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">compiam.melody.pitch_extraction</span><span class="w"> </span><span class="kn">import</span> <span class="n">Melodia</span>
 <span class="n">melodia</span> <span class="o">=</span> <span class="n">Melodia</span><span class="p">()</span>  
 
 <span class="c1"># Running extraction for an example track</span>
@@ -606,8 +603,8 @@ document.write(`
 </section>
 <section id="ftanet-carnatic">
 <span id="melody-extraction-ftanet"></span><h2>FTANet-Carnatic<a class="headerlink" href="#ftanet-carnatic" title="Permalink to this heading">#</a></h2>
-<p><strong>Maybe we can use a Carnatic-trained version of one of these models to extract the pitch?</strong> Let’s now import a DL model that learns to automatically extract the predominant melody from audio recordings. We will use FTANet <span id="id5">[<a class="reference internal" href="../resources/references.html#id36" title="Shuai Yu, Xiaoheng Sun, Yi Yu, and Wei Li. Frequency-Temporal Attention Network for Singing Melody Extraction. In In Proc. of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Toronto, Canada., 251–255. 2021. doi:10.1109/icassp39728.2021.9413444.">YSYL21</a>]</span>. This is an attention-based network that laverages and fuses information from frequency and periodicity domains to capture the right pitch values for the predominant source. It learns to focus on a particular source, using an additional branch that helps reducing the false alarm rate (detecting pitch values that do not correspond to the source we target).</p>
-<p>To train this model we need a dataset that includes mixture recordings plus annotated pitch time-series for the source we aim at capturing the pitch from. This FTANet instance is trained with the <a class="reference external" href="https://zenodo.org/record/5553925">Saraga Carnatic Melody Synth (SMCS)</a>, a dataset compiled and presented within the context of the work in <span id="id6">[<a class="reference internal" href="../resources/references.html#id37" title="Genís Plaja-Roglans, Thomas Nuttall, Lara Pearson, Xavier Serra, and Marius Miron. Repertoire-specific vocal pitch data generation for improved melodic analysis of carnatic music. Transactions of the Int. Society for Music Information Retrieval, 6(1):13–26, 2023.">PRNP+23</a>]</span>.</p>
+<p><strong>Maybe we can use a Carnatic-trained version of one of these models to extract the pitch?</strong> Let’s now import a DL model that learns to automatically extract the predominant melody from audio recordings. We will use FTANet <span id="id5">[<a class="reference internal" href="../resources/references.html#id37" title="Shuai Yu, Xiaoheng Sun, Yi Yu, and Wei Li. Frequency-Temporal Attention Network for Singing Melody Extraction. In In Proc. of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Toronto, Canada., 251–255. 2021. doi:10.1109/icassp39728.2021.9413444.">YSYL21</a>]</span>. This is an attention-based network that laverages and fuses information from frequency and periodicity domains to capture the right pitch values for the predominant source. It learns to focus on a particular source, using an additional branch that helps reducing the false alarm rate (detecting pitch values that do not correspond to the source we target).</p>
+<p>To train this model we need a dataset that includes mixture recordings plus annotated pitch time-series for the source we aim at capturing the pitch from. This FTANet instance is trained with the <a class="reference external" href="https://zenodo.org/record/5553925">Saraga Carnatic Melody Synth (SMCS)</a>, a dataset compiled and presented within the context of the work in <span id="id6">[<a class="reference internal" href="../resources/references.html#id38" title="Genís Plaja-Roglans, Thomas Nuttall, Lara Pearson, Xavier Serra, and Marius Miron. Repertoire-specific vocal pitch data generation for improved melodic analysis of carnatic music. Transactions of the Int. Society for Music Information Retrieval, 6(1):13–26, 2023.">PRNP+23</a>]</span>.</p>
 <p>In the documentation we observe that this model is based on <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code>, therefore we must install this dependency before importing it.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
@@ -618,7 +615,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction</span> <span class="kn">import</span> <span class="n">FTANetCarnatic</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">compiam.melody.pitch_extraction</span><span class="w"> </span><span class="kn">import</span> <span class="n">FTANetCarnatic</span>
 </pre></div>
 </div>
 </div>
@@ -650,11 +647,11 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Disabling tensorflow warnings and debugging info</span>
-<span class="kn">import</span> <span class="nn">os</span> 
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span> 
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;TF_CPP_MIN_LOG_LEVEL&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;3&quot;</span> 
 
 <span class="c1"># Importing tensorflow and disabling GPU usage</span>
-<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
 <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">set_visible_devices</span><span class="p">([],</span> <span class="s2">&quot;GPU&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -671,7 +668,7 @@ document.write(`
 <span class="n">ftanet_carnatic</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:ftanet-carnatic&quot;</span><span class="p">)</span>
 
 <span class="c1"># Importing and initializing again a melodia instance of comparison</span>
-<span class="kn">from</span> <span class="nn">compiam.melody.pitch_extraction</span> <span class="kn">import</span> <span class="n">Melodia</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">compiam.melody.pitch_extraction</span><span class="w"> </span><span class="kn">import</span> <span class="n">Melodia</span>
 <span class="n">melodia</span> <span class="o">=</span> <span class="n">Melodia</span><span class="p">()</span>  
 </pre></div>
 </div>
@@ -680,7 +677,7 @@ document.write(`
 <p>We will now initialize Saraga Carnatic dataset to get an example track, load it, and run inference using FTANet-Carnatic and Melodia, both accessed through <code class="docutils literal notranslate"><span class="pre">compiam</span></code>.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">load_dataset</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">compiam</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dataset</span>
 
 <span class="n">saraga_carnatic</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span>
     <span class="s2">&quot;saraga_carnatic&quot;</span><span class="p">,</span>
@@ -702,10 +699,10 @@ document.write(`
 <p>Let’s visualise the extracted pitch tracks on top of the spectrogram of the input signal.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">librosa</span>
-<span class="kn">import</span> <span class="nn">librosa.display</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">librosa</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">librosa.display</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">y</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">audio_path</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
@@ -727,13 +724,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5871f16ddffe232a428868b6b9a6553b80b53defed843fa364de08ee739261e0.png" src="../_images/5871f16ddffe232a428868b6b9a6553b80b53defed843fa364de08ee739261e0.png" />
+<img alt="../_images/462dfb7e09fb0da0d065958f7ed89b414dc920577fbf8067be6ffd69f932d314.png" src="../_images/462dfb7e09fb0da0d065958f7ed89b414dc920577fbf8067be6ffd69f932d314.png" />
 </div>
 </div>
 </section>
 <section id="violin-pitch-tracking">
 <h2>Violin pitch tracking<a class="headerlink" href="#violin-pitch-tracking" title="Permalink to this heading">#</a></h2>
-<p>The FTANet-Carnatic in <span id="id7">[<a class="reference internal" href="../resources/references.html#id37" title="Genís Plaja-Roglans, Thomas Nuttall, Lara Pearson, Xavier Serra, and Marius Miron. Repertoire-specific vocal pitch data generation for improved melodic analysis of carnatic music. Transactions of the Int. Society for Music Information Retrieval, 6(1):13–26, 2023.">PRNP+23</a>]</span> is trained to focus on the melody singing voice, ignoring the rest of the melodic instruments in the mix. However, the pipeline in <span id="id8">[<a class="reference internal" href="../resources/references.html#id37" title="Genís Plaja-Roglans, Thomas Nuttall, Lara Pearson, Xavier Serra, and Marius Miron. Repertoire-specific vocal pitch data generation for improved melodic analysis of carnatic music. Transactions of the Int. Society for Music Information Retrieval, 6(1):13–26, 2023.">PRNP+23</a>]</span> can be extrapolated to other instruments in order to track their melodes. As seen, in Carnatic Music we have a very common accompanying melodic instrument: the violin, being the melodic counterpart of the harmonium in Hindustani Music.</p>
+<p>The FTANet-Carnatic in <span id="id7">[<a class="reference internal" href="../resources/references.html#id38" title="Genís Plaja-Roglans, Thomas Nuttall, Lara Pearson, Xavier Serra, and Marius Miron. Repertoire-specific vocal pitch data generation for improved melodic analysis of carnatic music. Transactions of the Int. Society for Music Information Retrieval, 6(1):13–26, 2023.">PRNP+23</a>]</span> is trained to focus on the melody singing voice, ignoring the rest of the melodic instruments in the mix. However, the pipeline in <span id="id8">[<a class="reference internal" href="../resources/references.html#id38" title="Genís Plaja-Roglans, Thomas Nuttall, Lara Pearson, Xavier Serra, and Marius Miron. Repertoire-specific vocal pitch data generation for improved melodic analysis of carnatic music. Transactions of the Int. Society for Music Information Retrieval, 6(1):13–26, 2023.">PRNP+23</a>]</span> can be extrapolated to other instruments in order to track their melodes. As seen, in Carnatic Music we have a very common accompanying melodic instrument: the violin, being the melodic counterpart of the harmonium in Hindustani Music.</p>
 <p>As of compiam v0.4.0, we have integrated a violin tracking system which can be initialized by running:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">compiam</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;melody:ftaresnet-carnatic-violin&quot;</span><span class="p">)</span>
 </pre></div>

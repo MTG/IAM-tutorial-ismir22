@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
@@ -197,6 +197,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/corpora.html">Accessing the Dunya Corpora</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/audiovisual.html">Saraga Audiovisual</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Melodic Analysis</span></p>
 <ul class="current nav bd-sidenav">
@@ -224,10 +225,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../separation/singing-voice-extraction.html">Singing voice extraction</a></li>
 
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../resources/exploring-performance.html">Exploring Carnatic Performance</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -493,22 +490,22 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="automatic-raga-recognition">
 <span id="raga-recognition"></span><h1>Automatic raga recognition<a class="headerlink" href="#automatic-raga-recognition" title="Permalink to this heading">#</a></h1>
-<p>Automatic <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-raga"><span class="std std-ref">raga</span></a> recognition works intend to identify the raga that is performed in an Indian Art Music recording. Tradition-specific crafted features <span id="id1">[<a class="reference internal" href="../resources/references.html#id43" title="Sankalp Gulati, Joan Serra, Vignesh Ishwar, and Xavier Serra. Discovering rāga motifs by characterizing communities in networks of melodic patterns. In In Proc. of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 286–290. 2016. doi:10.1109/ICASSP.2016.7471682.">GSIS16</a>]</span> or distributional representation of raga grammar <span id="id2">[<a class="reference internal" href="../resources/references.html#id50" title="Kaustuv Kanti Ganguli and Preeti Rao. On the Distributional Representation of Ragas: Experiments with Allied Raga Pairs. Transactions of the International Society for Music Information Retrieval (TISMIR), Paris, France., pages 79–95, 2018. doi:10.5334/tismir.11.">GR18</a>]</span> are used to identify and relate ragas. DL is also used to automatically recognize ragas on top of pitch curves using Long-Short Memory
-Time (LSTM) networks, given its ability to capture sequence information <span id="id3">[<a class="reference internal" href="../resources/references.html#id51" title="Sathwik Tejaswi Madhusudhan and Girish Chowdhary. DEEPSRGM - Sequence classification and ranking in Indian classical music with deep learning. In In Proc. of the 20th International Society for Music Information Retrieval Conference, (ISMIR), Delft, The Netherlands., 533–540. 2019.">MC19</a>]</span>. In a recently published paper – included in the list of ISMIR 2022 accepted papers – the authors propose a novel approach for classifying ragas in a multimodal scenario using pitch curves and tonic (audio domain), and hand movements (video domain) <span id="id4">[<a class="reference internal" href="../resources/references.html#id54" title="M. Clayton, P. Rao, N. Shikarpur, S. Roychowdhury, and J. Li. Raga classification from vocal performances using multimodal analysis. In In Proc. of the 23rd International Conference on Music Information Retrieval (ISMIR), Bengaluru, India. 2022.">CRS+22</a>]</span>.</p>
+<p>Automatic <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-raga"><span class="std std-ref">raga</span></a> recognition works intend to identify the raga that is performed in an Indian Art Music recording. Tradition-specific crafted features <span id="id1">[<a class="reference internal" href="../resources/references.html#id44" title="Sankalp Gulati, Joan Serra, Vignesh Ishwar, and Xavier Serra. Discovering rāga motifs by characterizing communities in networks of melodic patterns. In In Proc. of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 286–290. 2016. doi:10.1109/ICASSP.2016.7471682.">GSIS16</a>]</span> or distributional representation of raga grammar <span id="id2">[<a class="reference internal" href="../resources/references.html#id51" title="Kaustuv Kanti Ganguli and Preeti Rao. On the Distributional Representation of Ragas: Experiments with Allied Raga Pairs. Transactions of the International Society for Music Information Retrieval (TISMIR), Paris, France., pages 79–95, 2018. doi:10.5334/tismir.11.">GR18</a>]</span> are used to identify and relate ragas. DL is also used to automatically recognize ragas on top of pitch curves using Long-Short Memory
+Time (LSTM) networks, given its ability to capture sequence information <span id="id3">[<a class="reference internal" href="../resources/references.html#id52" title="Sathwik Tejaswi Madhusudhan and Girish Chowdhary. DEEPSRGM - Sequence classification and ranking in Indian classical music with deep learning. In In Proc. of the 20th International Society for Music Information Retrieval Conference, (ISMIR), Delft, The Netherlands., 533–540. 2019.">MC19</a>]</span>. In a recently published paper – included in the list of ISMIR 2022 accepted papers – the authors propose a novel approach for classifying ragas in a multimodal scenario using pitch curves and tonic (audio domain), and hand movements (video domain) <span id="id4">[<a class="reference internal" href="../resources/references.html#id55" title="M. Clayton, P. Rao, N. Shikarpur, S. Roychowdhury, and J. Li. Raga classification from vocal performances using multimodal analysis. In In Proc. of the 23rd International Conference on Music Information Retrieval (ISMIR), Bengaluru, India. 2022.">CRS+22</a>]</span>.</p>
 <p>Most of the research on this topic builds on top of the Dunya Carnatic and Hindustani corpora <span id="id5">[<a class="reference internal" href="../resources/references.html#id19" title="Ajay Srinivasamurthy, Gopala Krishna Koduri, Sankalp Gulati, Vignesh Ishwar, and Xavier Serra. Corpora for music information research in Indian art music. In In Proc. of the 40th International Computer Music Conference (ICMC), Athens, Greece., 1029–1036. 2014.">SKG+14</a>]</span>.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Installing (if not) and importing compiam to the project</span>
-<span class="kn">import</span> <span class="nn">importlib.util</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">importlib.util</span>
 <span class="k">if</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s1">&#39;compiam&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
     <span class="c1">## Bear in mind this will only run in a jupyter notebook / Collab session</span>
     <span class="o">%</span><span class="k">pip</span> install compiam
-<span class="kn">import</span> <span class="nn">compiam</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">compiam</span>
 
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -537,7 +534,7 @@ Time (LSTM) networks, given its ability to capture sequence information <span id
 </div>
 </div>
 </div>
-<p>DEEPSRGM <span id="id7">[<a class="reference internal" href="../resources/references.html#id51" title="Sathwik Tejaswi Madhusudhan and Girish Chowdhary. DEEPSRGM - Sequence classification and ranking in Indian classical music with deep learning. In In Proc. of the 20th International Society for Music Information Retrieval Conference, (ISMIR), Delft, The Netherlands., 533–540. 2019.">MC19</a>]</span> is a DL-based model that uses melodic features to automatically identify the raga from an Indian Art Music recording. In the original paper, the authors use the Indian Art Music Raga Dataset <span id="id8">[<a class="reference internal" href="../resources/references.html#id24" title="Sankalp Gulati, Joan Serrà, Kaustuv K Ganguli, S Sertan, and Xavier Serra. Time-delayed melody surfaces for Raga recognition. In In Proc. of the 17th International Society for Music Information Retrieval Conference (ISMIR), New York City, USA., 751–757. 2016. doi:10.1080/09298215.2013.866145.">GSG+16</a>]</span>, and report accuracy higher than 95%.</p>
+<p>DEEPSRGM <span id="id7">[<a class="reference internal" href="../resources/references.html#id52" title="Sathwik Tejaswi Madhusudhan and Girish Chowdhary. DEEPSRGM - Sequence classification and ranking in Indian classical music with deep learning. In In Proc. of the 20th International Society for Music Information Retrieval Conference, (ISMIR), Delft, The Netherlands., 533–540. 2019.">MC19</a>]</span> is a DL-based model that uses melodic features to automatically identify the raga from an Indian Art Music recording. In the original paper, the authors use the Indian Art Music Raga Dataset <span id="id8">[<a class="reference internal" href="../resources/references.html#id24" title="Sankalp Gulati, Joan Serrà, Kaustuv K Ganguli, S Sertan, and Xavier Serra. Time-delayed melody surfaces for Raga recognition. In In Proc. of the 17th International Society for Music Information Retrieval Conference (ISMIR), New York City, USA., 751–757. 2016. doi:10.1080/09298215.2013.866145.">GSG+16</a>]</span>, and report accuracy higher than 95%.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This tool has * at the end: we can load the pre-trained instance</span>

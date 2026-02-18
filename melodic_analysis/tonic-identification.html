@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Pitch extraction" href="pitch-extraction.html" />
-    <link rel="prev" title="Datasets" href="../corpora_and_datasets/datasets.html" />
+    <link rel="prev" title="Saraga Audiovisual" href="../corpora_and_datasets/audiovisual.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -197,6 +197,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/corpora.html">Accessing the Dunya Corpora</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/audiovisual.html">Saraga Audiovisual</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Melodic Analysis</span></p>
 <ul class="current nav bd-sidenav">
@@ -224,10 +225,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../separation/singing-voice-extraction.html">Singing voice extraction</a></li>
 
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../resources/exploring-performance.html">Exploring Carnatic Performance</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -494,7 +491,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="tonic-identification">
 <span id="id1"></span><h1>Tonic identification<a class="headerlink" href="#tonic-identification" title="Permalink to this heading">#</a></h1>
 <p>As mentioned in the <a class="reference internal" href="../indian_art_music/carnatic-music.html#carnatic-tambura-drone"><span class="std std-ref">introduction of the tambūrā drone</span></a>, the sa played by the tambūrā is very important from a computational analysis point of view, because it provides information to locate the sa of the melody (and also the rest of svāras in the rāga), while it is also very useful to normalise the melodic lines for a better processing and understanding.</p>
-<p>Several works have been proposed aiming at automatically identifying the tonic from Carnatic and Hindustani recordings <span id="id2">[<a class="reference internal" href="../resources/references.html#id30" title="A. Bellur, V. Ishwar, and X. Serra. A knowledge based signal processing approach to tonic identification in indian classical music. In 2nd CompMusic Workshop, 113–118. 2012.">BIS12</a>, <a class="reference internal" href="../resources/references.html#id29" title="S. Gulati, J. Salamon, and X. Serra. A two-stage approach for tonic identification in indian art music. In 2nd CompMusic Workshop, 119–127. 2012.">GSS12</a>, <a class="reference internal" href="../resources/references.html#id28" title="H. G. Ranjani, S. Arthi, and T. V. Sreenivas. Carnatic music analysis: shadja, swara identification and raga verification in alapana using stochastic models. In Applications of Signal Processing to Audio and Acoustics (WASPAA), 29–32. 2011.">RAS11</a>, <a class="reference internal" href="../resources/references.html#id31" title="Justin Salamon, Sankalp Gulati, and Xavier Serra. A multipitch approach to tonic identification in indian classical music. In In Proc. of the 13th International Society for Music Information Retrieval Conference (ISMIR), Porto, Portugal, 499–504. 2012.">SGS12</a>]</span>, being all of these methods knowledge-based and all operating on diverse features extracted from the pitch curves. The pitch curves are typically automatically extracted from the music signals (see the <a class="reference internal" href="pitch-extraction.html#melody-extraction"><span class="std std-ref">pitch extraction walkthrough</span></a> for further detail). More recently, a DL-based approach for the said task has been proposed <span id="id3">[<a class="reference internal" href="../resources/references.html#id33" title="Yeshwant Singh and Anupam Biswas. Deep learning based tonic identification in indian classical music. In In proc. of the 5th Conference on Information and Communication Technology (CICT), 1-6. 2021. doi:10.1109/CICT53865.2020.9672343.">SB21</a>]</span>.</p>
+<p>Several works have been proposed aiming at automatically identifying the tonic from Carnatic and Hindustani recordings <span id="id2">[<a class="reference internal" href="../resources/references.html#id31" title="A. Bellur, V. Ishwar, and X. Serra. A knowledge based signal processing approach to tonic identification in indian classical music. In 2nd CompMusic Workshop, 113–118. 2012.">BIS12</a>, <a class="reference internal" href="../resources/references.html#id30" title="S. Gulati, J. Salamon, and X. Serra. A two-stage approach for tonic identification in indian art music. In 2nd CompMusic Workshop, 119–127. 2012.">GSS12</a>, <a class="reference internal" href="../resources/references.html#id29" title="H. G. Ranjani, S. Arthi, and T. V. Sreenivas. Carnatic music analysis: shadja, swara identification and raga verification in alapana using stochastic models. In Applications of Signal Processing to Audio and Acoustics (WASPAA), 29–32. 2011.">RAS11</a>, <a class="reference internal" href="../resources/references.html#id32" title="Justin Salamon, Sankalp Gulati, and Xavier Serra. A multipitch approach to tonic identification in indian classical music. In In Proc. of the 13th International Society for Music Information Retrieval Conference (ISMIR), Porto, Portugal, 499–504. 2012.">SGS12</a>]</span>, being all of these methods knowledge-based and all operating on diverse features extracted from the pitch curves. The pitch curves are typically automatically extracted from the music signals (see the <a class="reference internal" href="pitch-extraction.html#melody-extraction"><span class="std std-ref">pitch extraction walkthrough</span></a> for further detail). More recently, a DL-based approach for the said task has been proposed <span id="id3">[<a class="reference internal" href="../resources/references.html#id34" title="Yeshwant Singh and Anupam Biswas. Deep learning based tonic identification in indian classical music. In In proc. of the 5th Conference on Information and Communication Technology (CICT), 1-6. 2021. doi:10.1109/CICT53865.2020.9672343.">SB21</a>]</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Although the term “tonic” does not appear in Indian Art Music, the sa (ṣaḍja) pitch position is often referred to as the “tonic” in MIR literature, due to similarities between the two concepts.</p>
@@ -503,17 +500,17 @@ document.write(`
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Installing (if not) and importing compiam to the project</span>
-<span class="kn">import</span> <span class="nn">importlib.util</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">importlib.util</span>
 <span class="k">if</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s1">&#39;compiam&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
     <span class="c1">## Bear in mind this will only run in a jupyter notebook / Collab session</span>
     <span class="o">%</span><span class="k">pip</span> install git+git://github.com/MTG/compIAM.git
-<span class="kn">import</span> <span class="nn">compiam</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">compiam</span>
 
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -550,7 +547,7 @@ document.write(`
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install essentia
-<span class="kn">import</span> <span class="nn">essentia</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">essentia</span>
 </pre></div>
 </div>
 </div>
@@ -558,7 +555,7 @@ document.write(`
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing the tool</span>
-<span class="kn">from</span> <span class="nn">compiam.melody.tonic_identification</span> <span class="kn">import</span> <span class="n">TonicIndianMultiPitch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">compiam.melody.tonic_identification</span><span class="w"> </span><span class="kn">import</span> <span class="n">TonicIndianMultiPitch</span>
 
 <span class="c1"># We first initialize the tool we have just imported</span>
 <span class="n">tonic_multipitch</span> <span class="o">=</span> <span class="n">TonicIndianMultiPitch</span><span class="p">()</span>
@@ -681,7 +678,7 @@ CompMusic Tonic Dataset track class
 </div>
 <p>Otherwise, if available, you may get the audios from the Dunya database. Accessing the data in Dunya requires you to have a unique and non-shareable access token. For that reason, we cannot provide here interactive walkthrough of how to parse audio examples from Dunya.</p>
 <p><strong>Not a problem though!</strong> We list here an example code block that may be run to parse audio from Dunya, and we provide, within the tutorial materials, a couple of audio excerpts to show you through the available tools. We have observed in the cell output above that the tracks in the Indian Art Music Tonic dataloader have a <code class="docutils literal notranslate"><span class="pre">mbid</span></code> attribute. Having a MusicBrainz ID at hand, we can run a code snippet, as the example below, to get the audio from the Dunya database.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">compiam</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">compiam</span>
 <span class="n">carnatic_corpora</span> <span class="o">=</span> <span class="n">compiam</span><span class="o">.</span><span class="n">load_corpora</span><span class="p">(</span><span class="s2">&quot;carnatic&quot;</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="s2">&quot;&lt;your-token&gt;&quot;</span><span class="p">)</span>
 
 <span class="c1"># Print out the available recordings in the database</span>
@@ -754,7 +751,7 @@ Artist: T. N. Seshagopalan
 <p>As you already know, we can listen to the actual recording.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">IPython.display</span> <span class="k">as</span> <span class="nn">ipd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ipd</span>
 
 <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
     <span class="n">data</span><span class="o">=</span><span class="n">track_1</span><span class="o">.</span><span class="n">audio</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">60</span><span class="o">*</span><span class="mi">44100</span><span class="p">],</span>  <span class="c1"># Getting the first minute</span>
@@ -891,12 +888,12 @@ Extracted tonic: 138.8064422607422
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../corpora_and_datasets/datasets.html"
+       href="../corpora_and_datasets/audiovisual.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Datasets</p>
+        <p class="prev-next-title">Saraga Audiovisual</p>
       </div>
     </a>
     <a class="right-next"

@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'separation/singing-voice-extraction';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exploring Carnatic Performance" href="../resources/exploring-performance.html" />
+    <link rel="next" title="References" href="../resources/references.html" />
     <link rel="prev" title="Stroke classification" href="../timbre_analysis/stroke-classification.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -197,6 +197,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/corpora.html">Accessing the Dunya Corpora</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/audiovisual.html">Saraga Audiovisual</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Melodic Analysis</span></p>
 <ul class="nav bd-sidenav">
@@ -224,10 +225,6 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Singing voice extraction</a></li>
 
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../resources/exploring-performance.html">Exploring Carnatic Performance</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -512,23 +509,23 @@ document.write(`
 <section id="the-problem-with-carnatic-music">
 <h2>The problem with Carnatic Music<a class="headerlink" href="#the-problem-with-carnatic-music" title="Permalink to this heading">#</a></h2>
 <p>For the case of Carnatic Music we observe such problem. Not only the available models in the literature do not have any knowledge on this repertoire, but also the task of MSS normally targets the following source setup: <em>vocals</em>, <em>bass</em>, <em>drums</em>, and <em>other</em>, and that does not comply with the actual arrangement and nature of Carnatic Music.</p>
-<p>Some well-known models for MSS are Spleeter <span id="id2">[<a class="reference internal" href="../resources/references.html#id80" title="Romain Hennequin, Anis Khlif, Felix Voituret, and Manuel Moussallam. Spleeter: a fast and efficient music source separation tool with pre-trained models. Journal of Open Source Software, pages 1–4, 2020. doi:10.21105/joss.02154.">HKVM20</a>]</span> by Deezer, Meta’s Demucs <span id="id3">[<a class="reference internal" href="../resources/references.html#id81">DUBB19</a>]</span>, and their related extensions and evolutions.</p>
+<p>Some well-known models for MSS are Spleeter <span id="id2">[<a class="reference internal" href="../resources/references.html#id81" title="Romain Hennequin, Anis Khlif, Felix Voituret, and Manuel Moussallam. Spleeter: a fast and efficient music source separation tool with pre-trained models. Journal of Open Source Software, pages 1–4, 2020. doi:10.21105/joss.02154.">HKVM20</a>]</span> by Deezer, Meta’s Demucs <span id="id3">[<a class="reference internal" href="../resources/references.html#id82">DUBB19</a>]</span>, and their related extensions and evolutions.</p>
 <p>Some efforts have been done on improving separation for Carnatic Music, given the existence of the Saraga dataset <span id="id4">[<a class="reference internal" href="../resources/references.html#id26" title="Ajay Srinivasamurthy, Sankalp Gulati, Rafael Caro Repetto, and Xavier Serra. Saraga: Open Datasets for Research on Indian Art Music. Empirical Musicology Review, 2020.">SGRS20</a>]</span>, which includes multi-track recordings for Carnatic renditions, although the stems of the different sources are not completely isolated, since the recordings are collected in live performances. Therefore, in the background on the stems, there is leakage or bleeding from the rest of the sources, convoluted by the room response. Some works have been trying to take advantage of these noisy data to use the inherent knowledge in the data, although there is still room for improvement.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Installing (if not) and importing compiam to the project</span>
-<span class="kn">import</span> <span class="nn">importlib.util</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">importlib.util</span>
 <span class="k">if</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s1">&#39;compiam&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
     <span class="c1">## Bear in mind this will only run in a jupyter notebook / Collab session</span>
     <span class="o">%</span><span class="k">pip</span> install compiam
-<span class="kn">import</span> <span class="nn">compiam</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">compiam</span>
 
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -548,8 +545,8 @@ document.write(`
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing and initializing a melodia instance</span>
-<span class="kn">import</span> <span class="nn">soundfile</span> <span class="k">as</span> <span class="nn">sf</span>
-<span class="kn">from</span> <span class="nn">compiam</span> <span class="kn">import</span> <span class="n">load_model</span><span class="p">,</span> <span class="n">load_dataset</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">soundfile</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">compiam</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_model</span><span class="p">,</span> <span class="n">load_dataset</span>
 <span class="n">separation_model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;separation:cold-diff-sep&#39;</span><span class="p">)</span>
 
 <span class="c1"># Loading an normalizing an example track</span>
@@ -585,7 +582,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">IPython.display</span> <span class="k">as</span> <span class="nn">ipd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ipd</span>
 
 <span class="c1"># And we play it!</span>
 <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span>
@@ -647,11 +644,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../resources/exploring-performance.html"
+       href="../resources/references.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exploring Carnatic Performance</p>
+        <p class="prev-next-title">References</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

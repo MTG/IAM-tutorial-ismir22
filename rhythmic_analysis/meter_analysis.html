@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
@@ -199,6 +199,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/corpora.html">Accessing the Dunya Corpora</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/audiovisual.html">Saraga Audiovisual</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Melodic Analysis</span></p>
 <ul class="nav bd-sidenav">
@@ -226,10 +227,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../separation/singing-voice-extraction.html">Singing voice extraction</a></li>
 
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../resources/exploring-performance.html">Exploring Carnatic Performance</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -496,22 +493,22 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="meter-analysis">
 <span id="id1"></span><h1>Meter analysis<a class="headerlink" href="#meter-analysis" title="Permalink to this heading">#</a></h1>
-<p>In the musical introduction, the main rhythmic characteristics of Carnatic and Hindustani traditions are provided. The presented hierarchical form of a tala is targeted in <span id="id2">[<a class="reference internal" href="../resources/references.html#id61" title="Ajay Srinivasamurthy and Xavier Serra. A supervised approach to hierarchical metrical cycle tracking from audio music recordings. In In Proc. of the International Conference on Acoustics, Speech and Signal Processing (ICASSP), 5217–5221. 2014. doi:10.1109/ICASSP.2014.6854598.">SS14b</a>]</span>, using a supervised approach on top of spectral hand-crafted features that capture tempo and onsets in the signal. Bayesian models are found to be the most capable of capture the rhythmic cycles in music signals, first applied in the form of particle filters <span id="id3">[<a class="reference internal" href="../resources/references.html#id62" title="Ajay Srinivasamurthy, Andre Holzapfel, Ali Taylan Cemgil, and Xavier Serra. Particle filters for efficient meter tracking with dynamic Bayesian networks. In In Proc. of the 16th International Society for Music Information Retrieval Conference (ISMIR), 197–203. 2015.">SHCS15</a>]</span> for an efficient inference, showing competetitive results on Carnatic recordings. The said approach is futher extended to a generalized model to capture long cycles <span id="id4">[<a class="reference internal" href="../resources/references.html#id63" title="Ajay Srinivasamurthy, Andre Holzapfel, Ali Taylan Cemgil, and Xavier Serra. A generalized bayesian model for tracking long metrical cycles in acoustic music signals. In In Proc. of the International Conference on Acoustics, Speech and Signal Processing (ICASSP), 76–80. 3 2016. doi:10.1109/ICASSP.2016.7471640.">SHTCS16</a>]</span>, being this very convenient for rhythm tracking in Hindustani Music.</p>
+<p>In the musical introduction, the main rhythmic characteristics of Carnatic and Hindustani traditions are provided. The presented hierarchical form of a tala is targeted in <span id="id2">[<a class="reference internal" href="../resources/references.html#id62" title="Ajay Srinivasamurthy and Xavier Serra. A supervised approach to hierarchical metrical cycle tracking from audio music recordings. In In Proc. of the International Conference on Acoustics, Speech and Signal Processing (ICASSP), 5217–5221. 2014. doi:10.1109/ICASSP.2014.6854598.">SS14b</a>]</span>, using a supervised approach on top of spectral hand-crafted features that capture tempo and onsets in the signal. Bayesian models are found to be the most capable of capture the rhythmic cycles in music signals, first applied in the form of particle filters <span id="id3">[<a class="reference internal" href="../resources/references.html#id63" title="Ajay Srinivasamurthy, Andre Holzapfel, Ali Taylan Cemgil, and Xavier Serra. Particle filters for efficient meter tracking with dynamic Bayesian networks. In In Proc. of the 16th International Society for Music Information Retrieval Conference (ISMIR), 197–203. 2015.">SHCS15</a>]</span> for an efficient inference, showing competetitive results on Carnatic recordings. The said approach is futher extended to a generalized model to capture long cycles <span id="id4">[<a class="reference internal" href="../resources/references.html#id64" title="Ajay Srinivasamurthy, Andre Holzapfel, Ali Taylan Cemgil, and Xavier Serra. A generalized bayesian model for tracking long metrical cycles in acoustic music signals. In In Proc. of the International Conference on Acoustics, Speech and Signal Processing (ICASSP), 76–80. 3 2016. doi:10.1109/ICASSP.2016.7471640.">SHTCS16</a>]</span>, being this very convenient for rhythm tracking in Hindustani Music.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Installing (if not) and importing compiam to the project</span>
-<span class="kn">import</span> <span class="nn">importlib.util</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">importlib.util</span>
 <span class="k">if</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s1">&#39;compiam&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
     <span class="c1">## Bear in mind this will only run in a jupyter notebook / Collab session</span>
     <span class="o">%</span><span class="k">pip</span> install compiam==0.4.1
-<span class="kn">import</span> <span class="nn">compiam</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">compiam</span>
 
 <span class="c1"># Import extras and supress warnings to keep the tutorial clean</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="kn">import</span> <span class="nn">IPython.display</span> <span class="k">as</span> <span class="nn">ipd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ipd</span>
 
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -694,7 +691,7 @@ CompMusic Carnatic Music Rhythm class
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We import the tool</span>
-<span class="kn">from</span> <span class="nn">compiam.rhythm.meter</span> <span class="kn">import</span> <span class="n">AksharaPulseTracker</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">compiam.rhythm.meter</span><span class="w"> </span><span class="kn">import</span> <span class="n">AksharaPulseTracker</span>
 
 <span class="c1"># Let&#39;s initialize an instance of the tool</span>
 <span class="n">apt</span> <span class="o">=</span> <span class="n">AksharaPulseTracker</span><span class="p">()</span>
@@ -781,7 +778,7 @@ CompMusic Carnatic Music Rhythm class
 <p>We can now use the <code class="docutils literal notranslate"><span class="pre">compiam.visualisation</span></code> to plot the input audio with the annotations on top.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compiam.visualisation.audio</span> <span class="kn">import</span> <span class="n">plot_waveform</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">compiam.visualisation.audio</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_waveform</span>
 <span class="n">help</span><span class="p">(</span><span class="n">plot_waveform</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -826,7 +823,7 @@ plot_waveform(input_data, t1, t2, labels=None, input_sr=44100, sr=44100, output_
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 2000x500 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="../_images/6c8f915eee468d25aafb76389735cb9d4de654fa926baacf3831fdf486f1e0b5.png" src="../_images/6c8f915eee468d25aafb76389735cb9d4de654fa926baacf3831fdf486f1e0b5.png" />
+<img alt="../_images/8251bd14421964a5b499d47c56bc2ca885a1e89cd051fb6a27937cb0646fd015.png" src="../_images/8251bd14421964a5b499d47c56bc2ca885a1e89cd051fb6a27937cb0646fd015.png" />
 </div>
 </div>
 </section>

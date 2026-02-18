@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
@@ -199,6 +199,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/corpora.html">Accessing the Dunya Corpora</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../corpora_and_datasets/audiovisual.html">Saraga Audiovisual</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Melodic Analysis</span></p>
 <ul class="nav bd-sidenav">
@@ -226,10 +227,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../separation/singing-voice-extraction.html">Singing voice extraction</a></li>
 
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../resources/exploring-performance.html">Exploring Carnatic Performance</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -542,17 +539,17 @@ document.write(`
 <p>Let’s now import the Essentia standard module, which includes several different algorithms for multiple purposes. Check out <a class="reference external" href="https://essentia.upf.edu/">the documentation</a> for further detail.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">essentia</span>
-<span class="kn">import</span> <span class="nn">essentia.standard</span> <span class="k">as</span> <span class="nn">estd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">essentia</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">essentia.standard</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">estd</span>
 
 <span class="c1"># Let&#39;s also import util modules for data processing and visualisation</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">IPython.display</span> <span class="k">as</span> <span class="nn">ipd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ipd</span>
 </pre></div>
 </div>
 </div>
@@ -665,7 +662,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ab1bf851aab676cffd7daecaf44ce54e5b156f5351f12da482ec154b7dabfd57.png" src="../_images/ab1bf851aab676cffd7daecaf44ce54e5b156f5351f12da482ec154b7dabfd57.png" />
+<img alt="../_images/2cbe1f7023c17d0ea8c17baed56cca4fa8baf6580ce52af8b7fe460bdb3bfc04.png" src="../_images/2cbe1f7023c17d0ea8c17baed56cca4fa8baf6580ce52af8b7fe460bdb3bfc04.png" />
 </div>
 </div>
 </section>
@@ -763,7 +760,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2ca0f59bf030b87b584ba65c24b0f6138c4d060362044b5e01bff22de408e279.png" src="../_images/2ca0f59bf030b87b584ba65c24b0f6138c4d060362044b5e01bff22de408e279.png" />
+<img alt="../_images/4f9cd714cb52764b59259349ae24023df9a09c13545237161bcaeb0af2643252.png" src="../_images/4f9cd714cb52764b59259349ae24023df9a09c13545237161bcaeb0af2643252.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -779,8 +776,8 @@ document.write(`
 <p>We will use <a class="reference external" href="https://librosa.org/doc/latest/index.html"><code class="docutils literal notranslate"><span class="pre">librosa</span></code></a> in this case: a Python-based package for audio signal processing. <code class="docutils literal notranslate"><span class="pre">librosa</span></code> includes nice visualisation tools. Let us show how a time-frequency representation looks like, and how we can compute it in a few steps.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">librosa</span>
-<span class="kn">import</span> <span class="nn">librosa.display</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">librosa</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">librosa.display</span>
 </pre></div>
 </div>
 </div>
@@ -801,7 +798,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a1d6b4ba0be9d56c2c86fdcadcddc04e0a3f65d1435eb2e0095fbfc6414799c7.png" src="../_images/a1d6b4ba0be9d56c2c86fdcadcddc04e0a3f65d1435eb2e0095fbfc6414799c7.png" />
+<img alt="../_images/bad6e9b68ac79d12ad0974e003c7930ecbb801896f297a1194466e8268127bc2.png" src="../_images/bad6e9b68ac79d12ad0974e003c7930ecbb801896f297a1194466e8268127bc2.png" />
 </div>
 </div>
 <p>Let’s now plot a more applied signal. We will use a testing audio of 2 seconds, and observe how it looks like.</p>
@@ -826,7 +823,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ea8e3babb8ac7bbeb0d8403ad13b11fc49aefbac22eb5ebd7fa245ff69781919.png" src="../_images/ea8e3babb8ac7bbeb0d8403ad13b11fc49aefbac22eb5ebd7fa245ff69781919.png" />
+<img alt="../_images/db43fe5d885f863fb7b3c4d8e2ebc63f64ba67bba28b05a9eaa276975f951e18.png" src="../_images/db43fe5d885f863fb7b3c4d8e2ebc63f64ba67bba28b05a9eaa276975f951e18.png" />
 </div>
 </div>
 <p>We see that, since multiple pitches are being sung (even in only two seconds), this representation is more appropiate to use. We will refer to the time-frequency representation (aka spectrogram) many times durinng the tutorial, so make sure to understand it clearly.</p>
